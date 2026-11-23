@@ -38,13 +38,6 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .primary{background:var(--marker);color:#fff}.primary:hover{background:#2638a8}
 .ghost{background:transparent;border-color:var(--line);color:var(--floor)}.ghost:hover{background:#24272b0a}
 .vb{background:var(--body);border-color:var(--line);color:var(--vb)}
-.vb[aria-expanded=true]{border-color:var(--vb)}
-.phone{order:-1;flex-basis:100%;display:flex;flex-direction:column;gap:8px;padding-bottom:4px}
-.phone[hidden]{display:none}
-.phone b{font-size:20px;font-weight:650;font-variant-numeric:tabular-nums;text-align:center}
-.phone-acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.phone-acts .btn{padding:0 8px;font-size:14px}
-.vbtext{color:var(--vb)}
 .block{flex:1}
 
 /* page */
@@ -279,7 +272,6 @@ const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
 const PRESETS = [{id:'lt8', label:'до 8 000 грн', max:8000}, {id:'8to20', label:'8 000–20 000 грн', min:8000, max:20000}, {id:'gt20', label:'від 20 000 грн', min:20000}];
 const WARRANTY = [0, 1, 3, 6];
 const NARROW = 45;
-const VIBER_NUM = SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
 const ALIASES = {Bosch:['бош','босх'],Siemens:['сіменс','сименс'],Miele:['міле','миле'],AEG:['аег'],Electrolux:['електролюкс','электролюкс'],Samsung:['самсунг'],LG:['лж','елджі','элджи'],Whirlpool:['вірпул','вирпул'],Beko:['беко'],Liebherr:['лібхер','либхер'],Candy:['канді','канди'],Haier:['хаєр','хайер'],Gorenje:['гореньє','горенье'],Philips:['філіпс','филипс'],Phillips:['філіпс','филипс'],Hisense:['хайсенс','хісенс'],Smeg:['смег'],Indesit:['індезит','индезит'],Ariston:['аристон','арістон'],Xiaomi:['сяомі','ксиаоми'],Krups:['крупс'],Saeco:['саеко'],Zanussi:['занусі','занусси'],Hotpoint:['хотпоінт']};
 
 /* ---------- іконки (сітка 48×48) ---------- */
@@ -659,11 +651,7 @@ function renderProduct(p) {
     ${sim.length ? `<section class="similar"><h3 class="h3">Схожі товари</h3><div class="simrow">${sim.map(x => card(x, null, true)).join('')}</div></section>` : ''}
   </article>`;
   $('#pfoot').innerHTML = `<a class="btn primary block" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(msg(p))}" target="_blank" rel="noopener">Написати в Telegram</a>
-    <button type="button" class="btn vb" data-viber aria-expanded="false" aria-controls="phone">Viber</button>
-    <div class="phone" id="phone" hidden><b>${VIBER_NUM}</b><div class="phone-acts">
-      <a class="btn ghost" href="tel:+${SHOP.viber}">Подзвонити</a>
-      <button type="button" class="btn ghost" data-copynum>Скопіювати</button>
-      <a class="btn ghost vbtext" href="viber://chat?number=%2B${SHOP.viber}">Чат Viber</a></div></div>`;
+    <a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-viber>Viber</a>`;
   $('#pbody').scrollTop = 0; $('#pmini').classList.remove('on');
   const tr = $('#pbody .gtrack');
   tr.onscroll = () => { const i = Math.round(tr.scrollLeft / tr.clientWidth); $('#pbody').querySelectorAll('.dots span').forEach((d, k) => d.className = k === i ? 'on' : ''); const pv = $('#pbody .prev'), nx = $('#pbody .next'); if (pv) { pv.disabled = i === 0; nx.disabled = i >= n - 1; } };
@@ -672,13 +660,7 @@ $('#pbody').addEventListener('scroll', e => $('#pmini').classList.toggle('on', e
 $('#pbody').addEventListener('click', async e => {
   const g = e.target.closest('[data-g]'); if (g) { const tr = $('#pbody .gtrack'); tr.scrollBy({left: +g.dataset.g * tr.clientWidth, behavior: 'smooth'}); return; }
 });
-// Viber: кнопка розгортає номер з діями «Подзвонити», «Скопіювати», «Viber».
-$('#pfoot').addEventListener('click', e => {
-  const b = e.target.closest('[data-viber]');
-  if (b) { const ph = $('#phone'); ph.hidden = !ph.hidden; b.setAttribute('aria-expanded', !ph.hidden); return; }
-  const c = e.target.closest('[data-copynum]');
-  if (c) copyText('+' + SHOP.viber).then(ok => { if (ok) { c.textContent = 'Скопійовано'; toast('Номер скопійовано'); setTimeout(() => c.textContent = 'Скопіювати', 1600); } });
-});
+$('#pfoot').addEventListener('click', e => { if (e.target.closest('[data-viber]')) copyText(msg(BY.get(openId))).then(ok => ok && toast('Текст скопійовано — вставте його у Viber')); });
 function showProduct(id, mode) {
   const p = BY.get(id); if (!p) return;
   if (mode === 'push') history.pushState({sheet: 1}, '', toURL(S, id)); else if (mode === 'replace') history.replaceState(history.state, '', toURL(S, id));
