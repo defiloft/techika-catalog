@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EEF0F2">
+<title>Техніка з Європи | Вигідно</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Marck+Script&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0f2;--ink:#14171c;--mute:#6b7480;--line:#dde1e6;--accent:#3a3fd1;--tg:#229ed9;--vb:#7360f2;--hand:#2230b5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.35 Onest,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:0 16px calc(24px + env(safe-area-inset-bottom))}
+.wrap{max-width:1200px;margin:0 auto}
+h1{margin:0;padding:18px 0 14px;font-size:24px;font-weight:700;letter-spacing:-.01em}
+h1 span{font-weight:400;color:var(--mute)}
+.search{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--ink);border-radius:22px;padding:0 18px}
+.search input{flex:1;border:0;outline:0;background:none;font:inherit;padding:15px 0;min-width:0}
+svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-top:12px;padding-bottom:2px}
+.scroll::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 16px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;color:inherit}
+.chip small{color:var(--mute);font-size:14px}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip[aria-pressed=true] small{color:#fff;opacity:.8}
+.chip.dark{background:var(--ink);border-color:var(--ink);color:#fff}
+#panel{display:none;gap:8px;margin-top:10px}
+#panel.on{display:flex}
+#panel input{flex:1;min-width:0;font:inherit;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.bar{display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px;color:var(--mute)}
+.sort{position:relative;color:var(--ink);font-weight:600}
+.sort select{appearance:none;border:0;background:none;font:inherit;color:inherit;padding:4px 26px 4px 4px;cursor:pointer}
+.sort svg{position:absolute;right:0;top:50%;width:16px;height:16px;transform:translateY(-50%);pointer-events:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:6px 6px 14px;cursor:pointer;display:flex;flex-direction:column}
+.ph{position:relative;margin-bottom:22px}
+.ph img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;display:block;background:#e4e7ea}
+.tag{position:absolute;left:10px;bottom:-16px;background:#fff;padding:2px 14px 4px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.18);transform:rotate(-2deg);font:400 29px/1.2 "Marck Script",cursive;color:var(--hand);white-space:nowrap}
+.tag small{font-size:.6em}
+.info{padding:0 12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.name{font-size:20px;line-height:1.2}.name b{font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{background:#eef0f2;border-radius:99px;padding:5px 13px;font-size:15px}
+.id{margin-top:auto;padding-top:10px;color:var(--mute);letter-spacing:.08em}
+.empty{grid-column:1/-1;padding:40px 0;text-align:center;color:var(--mute)}
+dialog{border:0;border-radius:24px;padding:0;width:min(460px,calc(100% - 24px));max-height:92vh;overflow:auto}
+dialog::backdrop{background:rgba(10,12,16,.55)}
+.gal{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px}
+.gal img{width:92%;flex:none;scroll-snap-align:center;aspect-ratio:4/5;object-fit:cover;border-radius:18px}
+.dbody{padding:8px 18px 18px}
+.dbody p{white-space:pre-line;color:#39414b;font-size:15px}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:sticky;bottom:0;background:#fff;padding:10px 18px 14px}
+.btn{border:0;border-radius:16px;padding:14px 8px;font:inherit;font-weight:600;color:#fff;text-align:center;text-decoration:none;cursor:pointer}
+.tg{background:var(--tg)}.vb{background:var(--vb)}
+.x{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.25);cursor:pointer;display:grid;place-items:center}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:99}
+#toast.on{opacity:1}
+:focus-visible{outline:3px solid #f5a623;outline-offset:2px}
+@media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.name{font-size:18px}.tag{font-size:25px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Техніка з Європи <span>Вигідно</span></h1>
+  <label class="search">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Бренд, модель або ID" aria-label="Пошук">
+  </label>
+  <div class="scroll" id="cats"></div>
+  <div class="scroll" id="prices"></div>
+  <div id="panel"><input id="pmin" type="number" inputmode="numeric" placeholder="Ціна від, грн"><input id="pmax" type="number" inputmode="numeric" placeholder="Ціна до, грн"></div>
+  <div class="bar">
+    <span id="count"></span>
+    <label class="sort"><select id="sort" aria-label="Сортування">
+      <option value="new">Новіші</option><option value="asc">Дешевші</option><option value="desc">Дорожчі</option></select>
+      <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></label>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+<dialog id="dlg"></dialog>
+<div id="toast"></div>
+<script>
+const TG='domforttop', VIBER='380509759605';
+const RANGES=[['до 8 000 грн',0,8000],['8 000–20 000 грн',8000,20000],['від 20 000 грн',20000,1e9]];
+const IC={
+ pralni_sushylni_mashyny:'<rect x="4" y="3" width="16" height="18" rx="2.5"/><circle cx="12" cy="13" r="4.2"/><path d="M8 6.5h.01M11 6.5h.01"/>',
+ holodylnyky_ta_morozylni_kamery:'<rect x="6" y="3" width="12" height="18" rx="2.5"/><path d="M6 10h12M9 6v1.5M9 13v3"/>'};
+const GENERIC='<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 10h16"/>';
+let D={products:[],categories:[]},cat='all',lo=0,hi=1e12,price=-1;
+const $=s=>document.querySelector(s), byId={};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const money=n=>n.toLocaleString('uk-UA').replace(/\u00a0/g,' ');
+const msg=p=>`Доброго дня! Цікавить: ${p.brand} ${p.model}, ID ${p.pid}${p.price?' ('+money(p.price)+' грн)':''} ${p.url}`;
+const plural=n=>n%10==1&&n%100!=11?'товар':(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?'товари':'товарів');
+
+function head(){
+  const n={};D.products.forEach(p=>n[p.channel]=(n[p.channel]||0)+1);
+  $('#cats').innerHTML=`<button class="chip" data-c="all" aria-pressed="${cat==='all'}">Усі <small>${D.products.length}</small></button>`+
+   D.categories.filter(c=>n[c.id]).map(c=>`<button class="chip" data-c="${c.id}" aria-pressed="${cat===c.id}"><svg viewBox="0 0 24 24">${IC[c.id]||GENERIC}</svg>${esc(c.name)} <small>${n[c.id]}</small></button>`).join('');
+  $('#prices').innerHTML=`<button class="chip dark" id="fbtn"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>Фільтри</button>`+
+   RANGES.map((r,i)=>`<button class="chip" data-r="${i}" aria-pressed="${price===i}">${r[0]}</button>`).join('');
+}
+function render(){
+  const t=$('#q').value.toLowerCase().split(/\s+/).filter(Boolean), s=$('#sort').value;
+  let l=D.products.filter(p=>(cat==='all'||p.channel===cat)&&(p.price==null?(lo==0&&hi>=1e12):(p.price>=lo&&p.price<hi))&&
+    t.every(w=>(p.title+' '+p.text+' '+p.pid).toLowerCase().includes(w)));
+  if(s!=='new'){l.sort((a,b)=>(a.price??1e12)-(b.price??1e12));if(s==='desc')l.reverse()}
+  $('#count').textContent=`${l.length} ${plural(l.length)}`;
+  $('#grid').innerHTML=l.map(p=>{byId[p.id]=p;return `<article class="card" data-id="${esc(p.id)}" tabindex="0">
+   <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(p.title)}" loading="lazy">${p.price?`<div class="tag">${money(p.price)} <small>грн</small></div>`:''}</div>
+   <div class="info"><div class="name"><b>${esc(p.brand)}</b> ${esc(p.model)}</div>
+   ${p.chips.length?`<div class="chips">${p.chips.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`:''}
+   <div class="id">ID ${esc(p.pid)}</div></div></article>`}).join('')||
+   `<div class="empty">${D.products.length?'Нічого не знайдено. Спробуйте коротший запит або інший фільтр.':'Товари з’являться після першого оновлення.'}</div>`;
+}
+function open(id){
+  const p=byId[id];if(!p)return;
+  $('#dlg').innerHTML=`<button class="x" aria-label="Закрити" onclick="dlg.close()"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+   <div class="gal">${p.images.map(i=>`<img src="${esc(i)}" alt="" loading="lazy">`).join('')}</div>
+   <div class="dbody"><div class="name"><b>${esc(p.brand)}</b> ${esc(p.model)}</div><div class="id">ID ${esc(p.pid)}${p.price?' · '+money(p.price)+' грн':''}</div><p>${esc(p.text)}</p></div>
+   <div class="btns"><a class="btn tg" href="https://t.me/${TG}?text=${encodeURIComponent(msg(p))}" target="_blank" rel="noopener">Telegram</a>
+   <a class="btn vb" href="viber://chat?number=%2B${VIBER}" data-id="${esc(p.id)}">Viber</a></div>`;
+  $('#dlg').showModal();
+}
+const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),3500)};
+$('#cats').onclick=e=>{const b=e.target.closest('.chip');if(b){cat=b.dataset.c;head();render()}};
+$('#prices').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  if(b.id==='fbtn'){$('#panel').classList.toggle('on');return}
+  const i=+b.dataset.r;price=price===i?-1:i;[lo,hi]=price<0?[0,1e12]:[RANGES[i][1],RANGES[i][2]];$('#pmin').value=$('#pmax').value='';head();render()};
+$('#panel').oninput=()=>{lo=+$('#pmin').value||0;hi=+$('#pmax').value||1e12;price=-1;head();$('#prices').querySelector('#fbtn');render()};
+$('#q').oninput=render;$('#sort').onchange=render;
+$('#grid').onclick=e=>{const c=e.target.closest('.card');if(c)open(c.dataset.id)};
+$('#grid').onkeydown=e=>{if(e.key==='Enter'){const c=e.target.closest('.card');if(c)open(c.dataset.id)}};
+$('#dlg').onclick=e=>{
+  if(e.target.id==='dlg')e.target.close();
+  const a=e.target.closest('.vb');if(a)navigator.clipboard?.writeText(msg(byId[a.dataset.id])).then(()=>toast('Текст скопійовано — вставте його у Viber')).catch(()=>{});
+};
+fetch('products.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{D=d;head();render()}).catch(()=>{head();render()});
+</script>
+</body>
+</html>
