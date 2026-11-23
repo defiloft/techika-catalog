@@ -31,7 +31,10 @@ def clean(h):
 
 
 def price_of(text):
-    m = re.search(r"(\d[\d \u00a0.,]*)\s*(?:грн|₴|uah)", text, re.I) or re.search(r"ціна[:\s-]*(\d[\d \u00a0]*)", text, re.I)
+    """Ціна товару; якщо в дописі є «Нова ціна», беремо її."""
+    num = r"(\d[\d \u00a0.,]*)\s*(?:грн|₴|uah)"
+    m = (re.search(r"нова\s+ціна[:\s-]*" + num, text, re.I) or re.search(num, text, re.I)
+         or re.search(r"ціна[:\s-]*(\d[\d \u00a0]*)", text, re.I))
     if not m:
         return None
     n = re.sub(r"\D", "", m.group(1))
@@ -41,17 +44,53 @@ def price_of(text):
 KEYWORDS = ["Крапельна", "Інверторна", "No Frost", "Двокамерна", "Однокамерна", "Вбудована", "Вбудований",
             "Індукційна", "Газова", "Електрична", "Фронтальна", "Вертикальна", "Окремостояча", "Настільна"]
 
+# Службові рядки на початку допису: ID, №, ціна, знижка, NEW/СТОК тощо.
+SKIP_LINE = re.compile(r"^(?:№|ID\b|ID[:\s#]*\d)|ціна|грн|знижка|^(?:new|сток|stock|розпродаж)$", re.I)
+CYR_LOWER = re.compile(r"[а-яіїєґ]")
+
+
+def bare(line):
+    """Рядок без емодзі та декоративних символів по краях."""
+    return re.sub(r"^[^\w№]+|[^\w)\]/+.-]+$", "", line).strip()
+
+
+def looks_like_model(line):
+    """Окремий рядок з моделлю: є цифра і немає звичайних українських слів."""
+    return bool(line) and bool(re.search(r"\d", line)) and not CYR_LOWER.search(line) and len(line) <= 40
+
+
+def is_product(text):
+    """Товар має ID або ціну; рекламні та інформаційні дописи відкидаємо."""
+    return bool(re.search(r"\bID[:\s#]*\d{4,}", text, re.I) or price_of(text))
+
 
 def extract(text, title, pid):
     """Бренд, модель, ID і короткі характеристики з тексту допису (best-effort)."""
-    t = re.sub(r"^[^\w]+", "", title)
-    t = re.split(r"\s+[-–—|]\s+|\s*(?:ціна|ID)\b", t, flags=re.I)[0].strip() or t
-    brand, _, model = t.partition(" ")
+    lines = [bare(l) for l in text.splitlines()]
+    lines = [l for l in lines if l]
+    i = next((k for k, l in enumerate(lines) if not SKIP_LINE.search(l)), None)
+    brand = model = ""
+    if i is not None and not CYR_LOWER.search(lines[i]):
+        brand, _, model = re.sub(r"\s+", " ", lines[i]).partition(" ")
+        # Модель часто стоїть окремим рядком: «Bosch» / «SRV55T03EU»
+        if i + 1 < len(lines) and looks_like_model(lines[i + 1]):
+            model = (model + " " + lines[i + 1]).strip()
     m = re.search(r"\bID[:\s#]*(\d{4,})", text, re.I)
-    chips = [k for k in KEYWORDS if k.lower() in text.lower()][:1]
+    low = text.lower()
+    chips = [k for k in KEYWORDS if k.lower() in low][:1]
     d = re.search(r"(\d{2,3})\s*[xх×*]\s*(\d{2,3})(?:\s*[xх×*]\s*(\d{2,3}))?\s*(?:см|cm)", text, re.I)
     if d:
         chips.append("×".join(g for g in d.groups() if g) + " см")
+    else:
+        hwd = [re.search(w + r"\D{0,12}?(\d{2,3})\s*см", text, re.I) for w in ("висота", "ширина", "глибина")]
+        if hwd[0] and hwd[1]:
+            chips.append("×".join(x.group(1) for x in hwd if x) + " см")
+    sets = re.search(r"(\d{1,2})(?:-?ти)?\s*комплект", text, re.I)
+    if sets:
+        chips.append(sets.group(1) + " компл.")
+    diag = re.search(r"діагональ\D{0,5}(\d{2,3})", text, re.I)
+    if diag:
+        chips.append(diag.group(1) + "″")
     kg = re.search(r"(\d+(?:[.,]\d)?)\s*кг", text, re.I)
     if kg:
         chips.append(kg.group(1).replace(",", ".") + " кг")
@@ -72,7 +111,7 @@ def parse_page(src, ch):
         t = re.search(r'class="tgme_widget_message_text[^"]*"[^>]*>(.*?)</div>', blk, re.S)
         text = clean(t.group(1)) if t else ""
         imgs = re.findall(r"tgme_widget_message_(?:photo_wrap|video_thumb)[^>]*background-image:url\('([^']+)'\)", blk)
-        if not text or not imgs:
+        if not text or not imgs or not is_product(text):
             continue
         d = re.search(r'<time[^>]*datetime="([^"]+)"', blk)
         title = next((l.strip() for l in text.splitlines() if l.strip()), "")[:120]
