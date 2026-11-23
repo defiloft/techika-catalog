@@ -256,7 +256,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 const SHOP = {
   name: 'Техніка з Європи', tagline: 'Вигідно', currency: 'грн',
   tg: 'domforttop', viber: '380509759605',
-  address: 'вул. Вадима Гетьмана, 1', city: 'Київ', addressHint: 'м. Шулявська',
+  address: 'вул. Вадима Гетьмана, 1', city: 'Київ', addressHint: 'метро Шулявська',
 };
 SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
 
@@ -654,7 +654,7 @@ function renderProduct(p) {
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
         <div><h3 class="h3">${p.warrantyText ? `Гарантія ${esc(p.warrantyText)}` : 'Гарантія — уточнюйте'}</h3><p class="muted">Перевіряємо кожен прилад перед продажем. Якщо щось не так — ремонт або заміна.</p></div></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-        <div><h3 class="h3">Де подивитись</h3><p>${esc(SHOP.address)}, ${esc(SHOP.addressHint)}</p><a class="link" href="${SHOP.mapUrl}" target="_blank" rel="noopener">Відкрити на карті</a></div></section>
+        <div><h3 class="h3">Де подивитись</h3><p>м. ${esc(SHOP.city)}, ${esc(SHOP.address)} (${esc(SHOP.addressHint)})</p><a class="link" href="${SHOP.mapUrl}" target="_blank" rel="noopener">Відкрити на карті</a></div></section>
     </div>
     ${sim.length ? `<section class="similar"><h3 class="h3">Схожі товари</h3><div class="simrow">${sim.map(x => card(x, null, true)).join('')}</div></section>` : ''}
   </article>`;
@@ -714,7 +714,7 @@ document.addEventListener('error', e => { const i = e.target; if (i.tagName === 
 
 function footer() {
   const t = UPDATED ? new Date(UPDATED) : null;
-  $('#footer').innerHTML = `<p>${esc(SHOP.name)}, ${esc(SHOP.city)}, ${esc(SHOP.address)}</p>${t && !isNaN(t) ? `<p>Каталог оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}`;
+  $('#footer').innerHTML = `<p>${esc(SHOP.name)}, м. ${esc(SHOP.city)}, ${esc(SHOP.address)}</p>${t && !isNaN(t) ? `<p>Каталог оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}`;
 }
 fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => {
   const seen = new Set();
