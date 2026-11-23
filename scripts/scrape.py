@@ -15,6 +15,11 @@ CHANNELS = {
     "kavomashyny": "Кавомашини",
     "smart_tv_domfort": "Телевізори",
     "sportyvni_trenagery": "Тренажери",
+    "morozylni_kamery": "Морозильні камери",
+    "bigovi_dorizhky": "Бігові доріжки",
+    "velotrenagery": "Велотренажери",
+    "orbitreky": "Орбітреки",
+    "superznygky": "Знижки",  # пересилає товари з різних каналів; категорію сайт визначає за джерелом і текстом
 }
 MAX_PAGES = 40  # ~20 дописів на сторінку
 OUT = Path(__file__).resolve().parent.parent / "products.json"
@@ -113,11 +118,13 @@ def parse_page(src, ch):
         imgs = re.findall(r"tgme_widget_message_(?:photo_wrap|video_thumb)[^>]*background-image:url\('([^']+)'\)", blk)
         if not text or not imgs or not is_product(text):
             continue
+        fw = re.search(r'tgme_widget_message_forwarded_from_name[^>]*>(.*?)</', blk, re.S)
         d = re.search(r'<time[^>]*datetime="([^"]+)"', blk)
         title = next((l.strip() for l in text.splitlines() if l.strip()), "")[:120]
         items.append({"id": f"{ch}/{pid}", "channel": ch, "title": title, "text": text,
                       "price": price_of(text), "images": imgs[:5], "date": d.group(1) if d else "",
-                      "url": f"https://t.me/{ch}/{pid}", **extract(text, title, pid)})
+                      "url": f"https://t.me/{ch}/{pid}",
+                      "from": clean(fw.group(1)) if fw else "", **extract(text, title, pid)})
     return items, ids
 
 
