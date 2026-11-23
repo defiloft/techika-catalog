@@ -5,139 +5,710 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#EEF0F2">
 <title>Техніка з Європи | Вигідно</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='8' y='5' width='32' height='38' rx='4' fill='%23fff' stroke='%2324272B' stroke-width='3'/%3E%3Ccircle cx='24' cy='27' r='9' fill='none' stroke='%232F45C9' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Marck+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef0f2;--ink:#14171c;--mute:#6b7480;--line:#dde1e6;--accent:#3a3fd1;--tg:#229ed9;--vb:#7360f2;--hand:#2230b5}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.35 Onest,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:0 16px calc(24px + env(safe-area-inset-bottom))}
-.wrap{max-width:1200px;margin:0 auto}
-h1{margin:0;padding:18px 0 14px;font-size:24px;font-weight:700;letter-spacing:-.01em}
-h1 span{font-weight:400;color:var(--mute)}
-.search{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--ink);border-radius:22px;padding:0 18px}
-.search input{flex:1;border:0;outline:0;background:none;font:inherit;padding:15px 0;min-width:0}
-svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
-.scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-top:12px;padding-bottom:2px}
-.scroll::-webkit-scrollbar{display:none}
-.chip{flex:none;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 16px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;color:inherit}
-.chip small{color:var(--mute);font-size:14px}
-.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
-.chip[aria-pressed=true] small{color:#fff;opacity:.8}
-.chip.dark{background:var(--ink);border-color:var(--ink);color:#fff}
-#panel{display:none;gap:8px;margin-top:10px}
-#panel.on{display:flex}
-#panel input{flex:1;min-width:0;font:inherit;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}
-.bar{display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px;color:var(--mute)}
-.sort{position:relative;color:var(--ink);font-weight:600}
-.sort select{appearance:none;border:0;background:none;font:inherit;color:inherit;padding:4px 26px 4px 4px;cursor:pointer}
-.sort svg{position:absolute;right:0;top:50%;width:16px;height:16px;transform:translateY(-50%);pointer-events:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
-.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:6px 6px 14px;cursor:pointer;display:flex;flex-direction:column}
-.ph{position:relative;margin-bottom:22px}
-.ph img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;display:block;background:#e4e7ea}
-.tag{position:absolute;left:10px;bottom:-16px;background:#fff;padding:2px 14px 4px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.18);transform:rotate(-2deg);font:400 29px/1.2 "Marck Script",cursive;color:var(--hand);white-space:nowrap}
-.tag small{font-size:.6em}
-.info{padding:0 12px;display:flex;flex-direction:column;gap:8px;flex:1}
-.name{font-size:20px;line-height:1.2}.name b{font-weight:700}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span{background:#eef0f2;border-radius:99px;padding:5px 13px;font-size:15px}
-.id{margin-top:auto;padding-top:10px;color:var(--mute);letter-spacing:.08em}
-.empty{grid-column:1/-1;padding:40px 0;text-align:center;color:var(--mute)}
-dialog{border:0;border-radius:24px;padding:0;width:min(460px,calc(100% - 24px));max-height:92vh;overflow:auto}
-dialog::backdrop{background:rgba(10,12,16,.55)}
-.gal{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px}
-.gal img{width:92%;flex:none;scroll-snap-align:center;aspect-ratio:4/5;object-fit:cover;border-radius:18px}
-.dbody{padding:8px 18px 18px}
-.dbody p{white-space:pre-line;color:#39414b;font-size:15px}
-.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:sticky;bottom:0;background:#fff;padding:10px 18px 14px}
-.btn{border:0;border-radius:16px;padding:14px 8px;font:inherit;font-weight:600;color:#fff;text-align:center;text-decoration:none;cursor:pointer}
-.tg{background:var(--tg)}.vb{background:var(--vb)}
-.x{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.25);cursor:pointer;display:grid;place-items:center}
-#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:99}
+:root{--wall:#eef0f2;--body:#fff;--concrete:#5b6169;--floor:#24272b;--marker:#2f45c9;--ok:#1f8a4c;--hold:#c98a12;--line:#d9dde2;--photo-wall:#e3e6ea;--photo-floor:#3a3f45;--tg:#229ed9;--vb:#7360f2;
+ --font-ui:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-marker:"Caveat","Segoe Print",cursive;
+ --r-photo:12px;--r-card:16px;--r-sheet:20px;--r-field:10px;--r-tag:3px;--gutter:16px;--tap:44px;--safe-b:env(safe-area-inset-bottom,0px);color-scheme:light}
+*,*:before,*:after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--wall)}
+body{margin:0;background:var(--wall);color:var(--floor);font-family:var(--font-ui);font-size:15px;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3,p{margin:0}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--marker);outline-offset:2px}
+mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;border-radius:1px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.no-scroll{overflow:hidden}
+
+/* chips & buttons */
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--body);color:var(--floor);font-size:14px;font-weight:500;white-space:nowrap;flex:none;transition:background-color .15s,border-color .15s,color .15s}
+.chip:hover{border-color:#b9bfc6}
+.chip[aria-pressed=true]{background:var(--marker);border-color:var(--marker);color:#fff}
+.chip[aria-pressed=true] .cnt{color:#ffffffd1}
+.chip svg{width:20px;height:20px}
+.cnt{color:var(--concrete);font-weight:400;font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:12px;border:1px solid transparent;font-weight:600;font-size:15px;text-decoration:none;transition:background-color .15s,transform .1s}
+.btn:active{transform:scale(.985)}
+.btn:disabled{opacity:.5;cursor:default}
+.primary{background:var(--marker);color:#fff}.primary:hover{background:#2638a8}
+.ghost{background:transparent;border-color:var(--line);color:var(--floor)}.ghost:hover{background:#24272b0a}
+.vb{background:var(--body);border-color:var(--line);color:var(--vb)}
+.block{flex:1}
+
+/* page */
+.page{max-width:1200px;margin:0 auto;padding-bottom:calc(24px + var(--safe-b))}
+.header{padding:14px var(--gutter) 6px}
+.shop{font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.tagline{font-weight:400;color:var(--concrete)}
+.sticky{position:sticky;top:0;z-index:10;padding:8px var(--gutter) 10px;background:var(--wall)}
+.search{display:flex;align-items:center;gap:10px;height:52px;padding:0 6px 0 14px;background:var(--body);border:1.5px solid var(--floor);border-radius:14px;color:var(--concrete)}
+.search:focus-within{border-color:var(--marker);box-shadow:0 0 0 3px #2f45c929}
+.search input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;color:var(--floor);font-size:16px;font-weight:500}
+.search input::placeholder{color:#7c828a;font-weight:400}
+.search input::-webkit-search-cancel-button{display:none}
+.iconbtn{display:grid;place-items:center;flex:none;width:var(--tap);height:var(--tap);border:0;border-radius:50%;background:transparent;color:var(--concrete)}
+.iconbtn:hover{background:var(--wall)}
+.iconbtn[hidden]{display:none}
+.scroller{display:flex;gap:8px;overflow-x:auto;padding:2px var(--gutter) 8px;scrollbar-width:none;scroll-padding:0 var(--gutter)}
+.scroller::-webkit-scrollbar{display:none}
+.fbtn{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);padding:0 16px 0 14px;border:0;border-radius:999px;background:var(--floor);color:#fff;font-weight:600;font-size:14px}
+.fbtn.on{background:var(--marker)}
+.active{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:6px var(--gutter) 0}
+.achip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 10px 0 12px;border:1.5px solid var(--marker);border-radius:999px;background:#2f45c912;color:var(--marker);font-size:13.5px;font-weight:600}
+.reset{min-height:var(--tap);padding:0 8px;border:0;background:none;color:var(--floor);font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px var(--gutter) 8px}
+.count{font-size:14px;color:var(--concrete)}
+.sort{position:relative;display:inline-flex;align-items:center}
+.sort select{appearance:none;-webkit-appearance:none;min-height:var(--tap);padding:0 30px 0 12px;border:0;border-radius:10px;background:transparent;font-size:14px;font-weight:600;cursor:pointer}
+.sort select:hover{background:#24272b0d}
+.sort svg{position:absolute;right:12px;pointer-events:none}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0 var(--gutter);list-style:none}
+.grid>li{display:flex;min-width:0}.grid>li>*{flex:1}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
+@media(min-width:960px){.cats{flex-wrap:wrap;overflow:visible}.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.header{padding-top:24px}.shop{font-size:22px}}
+.empty{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:8px var(--gutter);padding:28px 20px;border:1.5px dashed #b6bcc3;border-radius:var(--r-card)}
+.empty h2{font-size:19px;font-weight:650}.empty p{color:var(--concrete);margin-bottom:8px}
+.footer{margin-top:32px;padding:0 var(--gutter);font-size:13px;color:var(--concrete)}
+.footer p+p{margin-top:4px}
+
+/* price sticker */
+.sticker{display:inline-flex;align-items:baseline;gap:4px;padding:0 10px 1px 9px;background:var(--body);border:1px solid var(--line);border-radius:var(--r-tag);color:var(--marker);font-family:var(--font-marker);font-weight:700;line-height:1;transform:rotate(-2.5deg);transform-origin:left bottom;box-shadow:0 1px #24272b0f;white-space:nowrap}
+.sticker .cur{font-size:.62em}
+.sticker.m{font-size:30px;padding-top:2px}
+.sticker.l{font-size:46px;padding:4px 14px 3px 12px}
+.old{color:var(--concrete);font-size:12px;text-decoration:line-through;white-space:nowrap}
+.prow .old{margin:0 0 4px 12px}
+
+/* photo frame */
+.frame{position:relative;aspect-ratio:4/5;border-radius:var(--r-photo);overflow:hidden;background:linear-gradient(to bottom,var(--photo-wall) 0 67%,var(--floor) 67% 69.5%,var(--photo-floor) 69.5%)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.frame svg{display:block;width:100%;height:100%}
+
+/* card */
+.card{background:var(--body);border:1px solid var(--line);border-radius:var(--r-card);min-width:0}
+.card>a{display:flex;flex-direction:column;height:100%;padding:4px 4px 10px;color:inherit;text-decoration:none;border-radius:inherit}
+.card>a:hover .model{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.photo{position:relative}
+.flags{position:absolute;top:8px;left:8px;display:flex;gap:4px}
+.flags span{padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600;line-height:1.3}
+.hold{background:var(--hold);color:var(--floor)}
+.isnew{background:var(--floor);color:#fff}
+.prow{display:flex;align-items:flex-end;margin:-22px 0 0 8px;position:relative}
+.ctitle{margin:8px 8px 0;font-size:15px;font-weight:400;line-height:1.3;overflow-wrap:anywhere}
+.brand{font-weight:650}
+.pills{display:flex;flex-wrap:wrap;gap:4px;margin:8px 8px 0;padding:0;list-style:none}
+.pills li{padding:2px 8px;border-radius:999px;background:var(--wall);font-size:12px;line-height:1.3;white-space:nowrap}
+.foot{display:flex;justify-content:space-between;gap:2px 8px;flex-wrap:wrap;margin:auto 8px 0;padding-top:10px;font-size:12px;color:var(--concrete);font-variant-numeric:tabular-nums}
+.compact .ctitle{font-size:14px}
+
+/* sheet */
+.sheet{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.backdrop{position:absolute;inset:0;background:#14161980;opacity:0;transition:opacity .26s ease}
+.panel{position:relative;display:flex;flex-direction:column;width:100%;max-width:640px;max-height:calc(100dvh - 48px);background:var(--body);border-radius:var(--r-sheet) var(--r-sheet) 0 0;transform:translateY(100%);transition:transform .26s cubic-bezier(.2,.8,.2,1);outline:none}
+.full .panel{height:calc(100dvh - 8px);max-height:none;max-width:720px}
+.shown .backdrop{opacity:1}.shown .panel{transform:none}
+.handle{flex:none;width:36px;height:4px;margin:8px auto 0;border-radius:2px;background:var(--line)}
+.shead{flex:none;display:flex;align-items:center;justify-content:space-between;padding:4px 8px 4px var(--gutter);border-bottom:1px solid var(--line)}
+.shead h2{font-size:18px;font-weight:650}
+.floating{position:absolute;top:18px;right:18px;z-index:2;background:var(--body);border:1px solid var(--line);color:var(--floor)}
+.floating:hover{background:#fff}
+.mini{position:absolute;top:0;left:0;right:0;z-index:1;display:flex;align-items:center;height:64px;padding:12px 72px 0 var(--gutter);border-radius:var(--r-sheet) var(--r-sheet) 0 0;border-bottom:1px solid var(--line);background:var(--body);font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;pointer-events:none;transition:opacity .15s}
+.mini.on{opacity:1}.mini~.floating{top:14px}
+.sbody{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.sfoot{flex:none;display:flex;gap:8px;padding:10px var(--gutter) calc(10px + var(--safe-b));border-top:1px solid var(--line);background:var(--body)}
+@media(min-width:760px){.sheet{align-items:center;padding:24px}.panel{border-radius:var(--r-sheet);transform:translateY(32px);opacity:0;transition:transform .26s cubic-bezier(.2,.8,.2,1),opacity .2s}.shown .panel{opacity:1}.full .panel{height:min(860px,calc(100dvh - 48px))}.handle{display:none}}
+
+/* filters */
+.fwrap{padding:4px var(--gutter) 24px}
+.fsec{margin:0;padding:18px 0 2px;border:0;min-width:0}
+.fsec+.fsec{border-top:1px solid var(--line)}
+.fsec legend{float:left;width:100%;margin-bottom:12px;padding:0;font-size:16px;font-weight:650}
+.fsec legend+*{clear:both}
+.sub{margin:4px 0 8px;font-size:14px;color:var(--concrete)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.field{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-field);background:var(--body);color:var(--concrete);font-size:14px}
+.field:focus-within{border-color:var(--marker);box-shadow:0 0 0 1px var(--marker)}
+.field input{flex:1;min-width:0;width:100%;border:0;outline:0;background:transparent;color:var(--floor);font-size:16px;font-weight:500;font-variant-numeric:tabular-nums}
+.field input::placeholder{color:#8a9098;font-weight:400}
+.slider{position:relative;height:44px;margin:-4px 10px 10px}
+.track{position:absolute;top:50%;left:0;right:0;height:4px;margin-top:-2px;border-radius:2px;background:linear-gradient(to right,var(--line) var(--a),var(--marker) var(--a) var(--b),var(--line) var(--b))}
+.slider input{position:absolute;inset:0 -10px;width:calc(100% + 20px);height:44px;margin:0;background:none;pointer-events:none;-webkit-appearance:none;appearance:none}
+.slider input:focus-visible{outline:none}
+.slider input::-webkit-slider-runnable-track{background:none}
+.slider input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;border:2px solid var(--marker);background:var(--body);pointer-events:auto;cursor:grab}
+.slider input::-moz-range-thumb{width:22px;height:22px;border-radius:50%;border:2px solid var(--marker);background:var(--body);pointer-events:auto;cursor:grab}
+.slider input::-moz-range-track{background:none}
+.slider input:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(--body),0 0 0 5px var(--marker)}
+.switch{display:flex;align-items:center;gap:12px;min-height:var(--tap);margin-bottom:10px;font-size:15px;cursor:pointer}
+.switch input{width:22px;height:22px;margin:0;accent-color:var(--marker)}
+
+/* product */
+.pwrap{padding-bottom:24px}
+.gallery{position:relative;padding:8px 12px 0}
+.gtrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:var(--r-photo)}
+.gtrack::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center}
+.slide>.frame{aspect-ratio:4/4.4;max-height:62dvh;width:100%}
+.dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.dots span{width:6px;height:6px;border-radius:50%;background:#ffffff80}
+.dots .on{background:#fff;width:16px;border-radius:3px}
+.nav{position:absolute;top:50%;display:none;place-items:center;width:var(--tap);height:var(--tap);margin-top:-22px;border:0;border-radius:50%;background:#ffffffeb;color:var(--floor)}
+.nav:disabled{opacity:0;pointer-events:none}
+.prev{left:22px}.next{right:22px}
+@media(hover:hover) and (pointer:fine){.nav{display:grid}}
+.pmain{padding:0 var(--gutter)}
+.pmain .prow{margin:-30px 0 0 10px}
+.ptitle{margin-top:14px;font-size:22px;line-height:1.25;font-weight:400}
+.ptitle .brand{font-weight:700}
+.pcat{margin-top:2px;color:var(--concrete);font-size:14px}
+.idrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:12px}
+.idrow b{font-weight:600;font-variant-numeric:tabular-nums}
+.copy{min-height:36px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:var(--body);font-size:13px;font-weight:500;color:var(--marker)}
+.oktag,.holdtag{margin-left:auto;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600}
+.oktag{color:var(--ok);background:#1f8a4c1a}
+.holdtag{background:var(--hold);color:var(--floor)}
+.notice{margin-top:12px;padding:10px 12px;border-radius:var(--r-field);background:#c98a121f;font-size:14px}
+.pblock{margin-top:22px}
+.h3{font-size:16px;font-weight:650}
+.specs{margin:10px 0 0;border-top:1px solid var(--line)}
+.specs div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.specs dt{color:var(--concrete)}
+.specs dd{margin:0;text-align:right;font-weight:500}
+.desc{margin-top:8px;white-space:pre-line;color:#39414b}
+.info{display:flex;gap:12px;padding:14px;border-radius:12px;background:var(--wall)}
+.info p{margin-top:4px;font-size:14px}
+.info+.info{margin-top:8px}
+.info svg{flex:none;width:24px;height:24px;color:var(--floor)}
+.muted{color:var(--concrete)}
+.link{display:inline-flex;align-items:center;min-height:var(--tap);color:var(--marker);font-weight:600;font-size:14px;text-underline-offset:3px}
+.similar{margin-top:28px}
+.similar>h3{padding:0 var(--gutter)}
+.simrow{display:flex;gap:10px;overflow-x:auto;padding:12px var(--gutter) 4px;scroll-snap-type:x proximity;scroll-padding-inline:var(--gutter);scrollbar-width:none}
+.simrow::-webkit-scrollbar{display:none}
+.simrow>*{flex:0 0 150px;scroll-snap-align:start}
+
+#toast{position:fixed;left:50%;bottom:calc(84px + var(--safe-b));transform:translateX(-50%);background:var(--floor);color:#fff;padding:11px 18px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:99;max-width:calc(100% - 32px)}
 #toast.on{opacity:1}
-:focus-visible{outline:3px solid #f5a623;outline-offset:2px}
-@media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.name{font-size:18px}.tag{font-size:25px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Техніка з Європи <span>Вигідно</span></h1>
-  <label class="search">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="q" type="search" placeholder="Бренд, модель або ID" aria-label="Пошук">
-  </label>
-  <div class="scroll" id="cats"></div>
-  <div class="scroll" id="prices"></div>
-  <div id="panel"><input id="pmin" type="number" inputmode="numeric" placeholder="Ціна від, грн"><input id="pmax" type="number" inputmode="numeric" placeholder="Ціна до, грн"></div>
-  <div class="bar">
-    <span id="count"></span>
-    <label class="sort"><select id="sort" aria-label="Сортування">
-      <option value="new">Новіші</option><option value="asc">Дешевші</option><option value="desc">Дорожчі</option></select>
-      <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></label>
+<div class="page">
+  <header class="header"><h1 class="shop">Техніка з Європи <span class="tagline">Вигідно</span></h1></header>
+  <div class="sticky">
+    <label class="search">
+      <span class="vh">Пошук по каталогу</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input id="q" type="search" placeholder="Бренд, модель або ID" enterkeyhint="search" autocomplete="off" spellcheck="false">
+      <button type="button" class="iconbtn" id="qclear" aria-label="Очистити пошук" hidden></button>
+    </label>
   </div>
-  <div class="grid" id="grid"></div>
+  <nav class="scroller cats" id="cats" aria-label="Категорії"></nav>
+  <div class="scroller" id="prices" role="group" aria-label="Ціна"></div>
+  <div class="active" id="active" aria-label="Активні фільтри" hidden></div>
+  <div class="toolbar">
+    <p class="count" id="count" aria-live="polite"></p>
+    <label class="sort"><span class="vh">Сортування</span><select id="sort"></select>
+      <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg></label>
+  </div>
+  <div id="list"></div>
+  <footer class="footer" id="footer"></footer>
 </div>
-<dialog id="dlg"></dialog>
-<div id="toast"></div>
-<script>
-const TG='domforttop', VIBER='380509759605';
-const RANGES=[['до 8 000 грн',0,8000],['8 000–20 000 грн',8000,20000],['від 20 000 грн',20000,1e9]];
-const IC={
- pralni_sushylni_mashyny:'<rect x="4" y="3" width="16" height="18" rx="2.5"/><circle cx="12" cy="13" r="4.2"/><path d="M8 6.5h.01M11 6.5h.01"/>',
- holodylnyky_ta_morozylni_kamery:'<rect x="6" y="3" width="12" height="18" rx="2.5"/><path d="M6 10h12M9 6v1.5M9 13v3"/>'};
-const GENERIC='<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 10h16"/>';
-let D={products:[],categories:[]},cat='all',lo=0,hi=1e12,price=-1;
-const $=s=>document.querySelector(s), byId={};
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const money=n=>n.toLocaleString('uk-UA').replace(/\u00a0/g,' ');
-const msg=p=>`Доброго дня! Цікавить: ${p.brand} ${p.model}, ID ${p.pid}${p.price?' ('+money(p.price)+' грн)':''} ${p.url}`;
-const plural=n=>n%10==1&&n%100!=11?'товар':(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?'товари':'товарів');
 
-function head(){
-  const n={};D.products.forEach(p=>n[p.channel]=(n[p.channel]||0)+1);
-  $('#cats').innerHTML=`<button class="chip" data-c="all" aria-pressed="${cat==='all'}">Усі <small>${D.products.length}</small></button>`+
-   D.categories.filter(c=>n[c.id]).map(c=>`<button class="chip" data-c="${c.id}" aria-pressed="${cat===c.id}"><svg viewBox="0 0 24 24">${IC[c.id]||GENERIC}</svg>${esc(c.name)} <small>${n[c.id]}</small></button>`).join('');
-  $('#prices').innerHTML=`<button class="chip dark" id="fbtn"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>Фільтри</button>`+
-   RANGES.map((r,i)=>`<button class="chip" data-r="${i}" aria-pressed="${price===i}">${r[0]}</button>`).join('');
-}
-function render(){
-  const t=$('#q').value.toLowerCase().split(/\s+/).filter(Boolean), s=$('#sort').value;
-  let l=D.products.filter(p=>(cat==='all'||p.channel===cat)&&(p.price==null?(lo==0&&hi>=1e12):(p.price>=lo&&p.price<hi))&&
-    t.every(w=>(p.title+' '+p.text+' '+p.pid).toLowerCase().includes(w)));
-  if(s!=='new'){l.sort((a,b)=>(a.price??1e12)-(b.price??1e12));if(s==='desc')l.reverse()}
-  $('#count').textContent=`${l.length} ${plural(l.length)}`;
-  $('#grid').innerHTML=l.map(p=>{byId[p.id]=p;return `<article class="card" data-id="${esc(p.id)}" tabindex="0">
-   <div class="ph"><img src="${esc(p.images[0])}" alt="${esc(p.title)}" loading="lazy">${p.price?`<div class="tag">${money(p.price)} <small>грн</small></div>`:''}</div>
-   <div class="info"><div class="name"><b>${esc(p.brand)}</b> ${esc(p.model)}</div>
-   ${p.chips.length?`<div class="chips">${p.chips.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`:''}
-   <div class="id">ID ${esc(p.pid)}</div></div></article>`}).join('')||
-   `<div class="empty">${D.products.length?'Нічого не знайдено. Спробуйте коротший запит або інший фільтр.':'Товари з’являться після першого оновлення.'}</div>`;
-}
-function open(id){
-  const p=byId[id];if(!p)return;
-  $('#dlg').innerHTML=`<button class="x" aria-label="Закрити" onclick="dlg.close()"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-   <div class="gal">${p.images.map(i=>`<img src="${esc(i)}" alt="" loading="lazy">`).join('')}</div>
-   <div class="dbody"><div class="name"><b>${esc(p.brand)}</b> ${esc(p.model)}</div><div class="id">ID ${esc(p.pid)}${p.price?' · '+money(p.price)+' грн':''}</div><p>${esc(p.text)}</p></div>
-   <div class="btns"><a class="btn tg" href="https://t.me/${TG}?text=${encodeURIComponent(msg(p))}" target="_blank" rel="noopener">Telegram</a>
-   <a class="btn vb" href="viber://chat?number=%2B${VIBER}" data-id="${esc(p.id)}">Viber</a></div>`;
-  $('#dlg').showModal();
-}
-const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),3500)};
-$('#cats').onclick=e=>{const b=e.target.closest('.chip');if(b){cat=b.dataset.c;head();render()}};
-$('#prices').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
-  if(b.id==='fbtn'){$('#panel').classList.toggle('on');return}
-  const i=+b.dataset.r;price=price===i?-1:i;[lo,hi]=price<0?[0,1e12]:[RANGES[i][1],RANGES[i][2]];$('#pmin').value=$('#pmax').value='';head();render()};
-$('#panel').oninput=()=>{lo=+$('#pmin').value||0;hi=+$('#pmax').value||1e12;price=-1;head();$('#prices').querySelector('#fbtn');render()};
-$('#q').oninput=render;$('#sort').onchange=render;
-$('#grid').onclick=e=>{const c=e.target.closest('.card');if(c)open(c.dataset.id)};
-$('#grid').onkeydown=e=>{if(e.key==='Enter'){const c=e.target.closest('.card');if(c)open(c.dataset.id)}};
-$('#dlg').onclick=e=>{
-  if(e.target.id==='dlg')e.target.close();
-  const a=e.target.closest('.vb');if(a)navigator.clipboard?.writeText(msg(byId[a.dataset.id])).then(()=>toast('Текст скопійовано — вставте його у Viber')).catch(()=>{});
+<div class="sheet" id="fsheet" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Фільтри" tabindex="-1">
+    <div class="handle" aria-hidden="true"></div>
+    <header class="shead"><h2>Фільтри</h2><button type="button" class="iconbtn" data-close aria-label="Закрити"></button></header>
+    <div class="sbody" id="fbody"></div>
+    <div class="sfoot"><button type="button" class="btn ghost" id="freset">Скинути</button><button type="button" class="btn primary block" id="fapply"></button></div>
+  </div>
+</div>
+
+<div class="sheet full" id="psheet" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="handle" aria-hidden="true"></div>
+    <div class="mini" id="pmini" aria-hidden="true"></div>
+    <button type="button" class="iconbtn floating" data-close aria-label="Закрити"></button>
+    <div class="sbody" id="pbody"></div>
+    <div class="sfoot" id="pfoot"></div>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+
+<script>
+/* ---------- налаштування магазину ---------- */
+const SHOP = {
+  name: 'Техніка з Європи', tagline: 'Вигідно', currency: 'грн',
+  tg: 'domforttop', viber: '380509759605',
+  address: 'вул. Вадима Гетьмана, 1', city: 'Київ', addressHint: 'м. Шулявська',
 };
-fetch('products.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{D=d;head();render()}).catch(()=>{head();render()});
+SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
+
+// Категорії сайту. Канал Telegram → категорія; пральні/сушильні та холодильники/морозильні
+// розділяємо за текстом допису (terms).
+const CATS = [
+  {id:'washers', name:'Пральні машини', short:'Пральні', ch:'pralni_sushylni_mashyny', terms:['пралка','пральна','стиралка','стиральная']},
+  {id:'dryers', name:'Сушильні машини', short:'Сушильні', ch:'pralni_sushylni_mashyny', match:/сушил|сушарк|сушка|тепловий насос|dryer|trockner/i, terms:['сушка','сушильна','сушильная']},
+  {id:'fridges', name:'Холодильники', short:'Холодильники', ch:'holodylnyky_ta_morozylni_kamery', terms:['холодильник']},
+  {id:'freezers', name:'Морозильні камери', short:'Морозильні', ch:'holodylnyky_ta_morozylni_kamery', match:/морозил|freezer|gefrier/i, terms:['морозилка','морозильна','морозильник']},
+  {id:'dishwashers', name:'Посудомийні машини', short:'Посудомийні', ch:'posudomyini_mashyny', terms:['посудомийка','посудомойка','посудомийна']},
+  {id:'stoves', name:'Плити', short:'Плити', ch:'plyty_gas_electro', terms:['плита','газова','електроплита']},
+  {id:'ovens', name:'Духові шафи та варильні поверхні', short:'Духові', ch:'duhovi_shafy_varylni_poverhni', terms:['духовка','духова шафа','варильна поверхня']},
+  {id:'hoods', name:'Витяжки', short:'Витяжки', ch:'vytiazhky', terms:['витяжка','вытяжка']},
+  {id:'coffee', name:'Кавомашини', short:'Кавомашини', ch:'kavomashyny', terms:['кавомашина','кофемашина','кава']},
+  {id:'tvs', name:'Телевізори', short:'Телевізори', ch:'smart_tv_domfort', terms:['телевізор','телевизор','тв','tv']},
+  {id:'fitness', name:'Тренажери', short:'Тренажери', ch:'sportyvni_trenagery', terms:['тренажер','бігова доріжка','велотренажер','орбітрек']},
+];
+const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
+const PRESETS = [{id:'lt8', label:'до 8 000 грн', max:8000}, {id:'8to20', label:'8 000–20 000 грн', min:8000, max:20000}, {id:'gt20', label:'від 20 000 грн', min:20000}];
+const WARRANTY = [0, 1, 3, 6];
+const NARROW = 45;
+const ALIASES = {Bosch:['бош','босх'],Siemens:['сіменс','сименс'],Miele:['міле','миле'],AEG:['аег'],Electrolux:['електролюкс','электролюкс'],Samsung:['самсунг'],LG:['лж','елджі','элджи'],Whirlpool:['вірпул','вирпул'],Beko:['беко'],Liebherr:['лібхер','либхер'],Candy:['канді','канди'],Haier:['хаєр','хайер'],Gorenje:['гореньє','горенье'],Philips:['філіпс','филипс'],Phillips:['філіпс','филипс'],Hisense:['хайсенс','хісенс'],Smeg:['смег'],Indesit:['індезит','индезит'],Ariston:['аристон','арістон'],Xiaomi:['сяомі','ксиаоми'],Krups:['крупс'],Saeco:['саеко'],Zanussi:['занусі','занусси'],Hotpoint:['хотпоінт']};
+
+/* ---------- іконки (сітка 48×48) ---------- */
+const BOX = 'M9 5h30a2 2 0 0 1 2 2v34a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z', TALL = 'M14 3h20a2 2 0 0 1 2 2v38a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z';
+const ICONS = {
+  washers:[BOX,'M7 13h34M11 9h6M32 9h5M33.5 28a9.5 9.5 0 1 1-19 0a9.5 9.5 0 1 1 19 0zM19 28a5 5 0 0 1 5-5'],
+  dryers:[BOX,'M7 13h34M11 9h10M33 9h4M33.5 28a9.5 9.5 0 1 1-19 0a9.5 9.5 0 1 1 19 0zM19.5 26.5c1.5-1.2 3-1.2 4.5 0s3 1.2 4.5 0M19.5 30.5c1.5-1.2 3-1.2 4.5 0s3 1.2 4.5 0'],
+  fridges:[TALL,'M12 17h24M16 8v5M16 21v8'],
+  freezers:[TALL,'M12 15h24M12 26h24M12 36h24M21 9h6M21 20.5h6M21 31h6M21 40.5h6'],
+  dishwashers:[BOX,'M7 12h34M11 8.5h4M30 8.5h7M18 17h12M7 38h34'],
+  stoves:['M9 12h30a2 2 0 0 1 2 2v27a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z','M7 19h34M12 9.5h8M28 9.5h8M12 15.5h.01M18 15.5h.01M30 15.5h.01M36 15.5h.01M13 23h22a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H13a1 1 0 0 1-1-1V24a1 1 0 0 1 1-1zM17 26.5h14'],
+  ovens:[BOX,'M7 13h34M12 9h.01M17 9h.01M30 9h6M13 18h22a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1H13a1 1 0 0 1-1-1V19a1 1 0 0 1 1-1zM17 22h14'],
+  hoods:['M18 6h12v13l12 9v6H6v-6l12-9z','M6 28h36M21 31h6'],
+  coffee:['M12 4h24a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z','M10 13h28M15 8.5h6M30 8.5h3M20 19v5M28 19v5M17 28h14v7a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3zM10 40h28'],
+  tvs:['M6 9h36a2 2 0 0 1 2 2v22a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2z','M24 35v8M14 44h20'],
+  fitness:['M5 41h37l2-4H7z','M39 37L34 12M29 11h9M35 19h-9M10 41v3M38 41v3'],
+};
+const icon = (c, s = 20) => { const [b, d] = ICONS[c] || [BOX, '']; return `<svg width="${s}" height="${s}" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${b}"/><path d="${d}"/></svg>`; };
+const illustration = (c, label) => { const [b, d] = ICONS[c] || [BOX, '']; const k = 1.9;
+  return `<svg viewBox="0 0 120 150" preserveAspectRatio="xMidYMax slice" role="img" aria-label="${esc(label)}"><rect width="120" height="150" fill="#E3E6EA"/><rect y="104" width="120" height="46" fill="#3A3F45"/><rect y="100" width="120" height="4" fill="#24272B"/><path d="M0 126h120M38 104L28 150M82 104l10 46" stroke="#fff" stroke-opacity=".06" stroke-width=".6"/><ellipse cx="60" cy="132.5" rx="38" ry="2.8" fill="#000" opacity=".35"/><g transform="translate(${60 - 24 * k} ${132 - 45 * k}) scale(${k})" stroke="#24272B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="${b}" fill="#fff"/><path d="${d}" fill="none"/></g></svg>`; };
+const X = s => `<svg width="${s}" height="${s}" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>`;
+const ARROW = d => `<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${d === 'l' ? 'M11 4L6 9l5 5' : 'M7 4l5 5-5 5'}"/></svg>`;
+
+/* ---------- утиліти ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const NF = new Intl.NumberFormat('uk-UA');
+const money = n => NF.format(n).replace(/\s/g, ' ');
+const plural = (n, a, b, c) => { const d = Math.abs(n) % 100, f = d % 10; return d > 10 && d < 20 ? c : f > 1 && f < 5 ? b : f === 1 ? a : c; };
+const goods = n => `${n} ${plural(n, 'товар', 'товари', 'товарів')}`;
+const num = s => { const n = parseFloat(String(s).replace(',', '.')); return isNaN(n) ? undefined : n; };
+const TR = {а:'a',б:'b',в:'v',г:'g',ґ:'g',д:'d',е:'e',є:'ye',ж:'zh',з:'z',и:'i',і:'i',ї:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'h',ц:'ts',ч:'ch',ш:'sh',щ:'sch',ь:'',ъ:'',ы:'y',э:'e',ю:'yu',я:'ya',ё:'yo',"'":'','’':''};
+const translit = s => s.split('').map(c => TR[c] ?? c).join('');
+const flat = s => s.toLowerCase().replace(/[\s\-_./]/g, '');
+let toastT;
+const toast = t => { const e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => e.classList.remove('on'), 3200); };
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); return true; }
+  catch { const a = document.createElement('textarea'); a.value = t; a.style.cssText = 'position:fixed;opacity:0'; document.body.append(a); a.select(); const ok = document.execCommand('copy'); a.remove(); return ok; }
+}
+
+/* ---------- розбір допису з Telegram ---------- */
+const SKIP = /^(?:№|ID\b|ID[:\s#]*\d)|ціна|грн|знижка|^(?:new|сток|stock|розпродаж)$/i, CYR = /[а-яіїєґ]/;
+const bare = l => l.replace(/^[^\p{L}\p{N}№]+|[^\p{L}\p{N})\]/+.-]+$/gu, '').trim();
+const titleCase = b => /^[A-Z]{4,}$/.test(b) ? b[0] + b.slice(1).toLowerCase() : b;
+
+function brandModel(text) {
+  const lines = text.split('\n').map(bare).filter(Boolean);
+  const i = lines.findIndex(l => !SKIP.test(l));
+  if (i < 0 || CYR.test(lines[i])) return ['', ''];
+  let [brand, ...rest] = lines[i].replace(/\s+/g, ' ').split(' '), model = rest.join(' ');
+  const nx = lines[i + 1];
+  if (nx && /\d/.test(nx) && !CYR.test(nx) && nx.length <= 40) model = (model + ' ' + nx).trim();
+  return [brand, model];
+}
+
+function parse(p) {
+  const t = p.text || '', low = t.toLowerCase();
+  if (!/\bID[:\s#]*\d{4,}/i.test(t) && !p.price) return null;          // реклама, «як нас знайти»
+  if (/продано|sold out/i.test(t)) return null;
+  let brand = p.brand || '', model = p.model || '';
+  if (!/\p{L}/u.test(brand) || /^(?:ID|№)\d|ціна/i.test(brand)) [brand, model] = brandModel(t);  // старий парсер: «ID110274», «8423»
+  brand = titleCase(brand); model = model.trim();
+  const cat = CATS.find(c => c.ch === p.channel && c.match && c.match.test(t)) || CATS.find(c => c.ch === p.channel) || {id: p.channel, name: p.channel, short: p.channel, terms: []};
+  const cm = w => { const m = t.match(new RegExp(w + '\\D{0,14}?(\\d{2,3}(?:[.,]\\d)?)\\s*(?:см|cm)', 'i')); return m ? num(m[1]) : undefined; };
+  let height = cm('висота'), width = cm('ширина'), depth = cm('глибина');
+  const dims = t.match(/(\d{2,3})\s*[xх×*]\s*(\d{2,3})(?:\s*[xх×*]\s*(\d{2,3}))?\s*(?:см|cm)/i);
+  if (dims && height == null) [height, width, depth] = [num(dims[1]), num(dims[2]), dims[3] ? num(dims[3]) : undefined];
+  const kg = (t.match(/(\d+(?:[.,]\d)?)\s*кг/i) || [])[1], rpm = (t.match(/(\d{3,4})\s*(?:об|rpm)/i) || [])[1];
+  const wl = t.split('\n').find(l => /гаранті/i.test(l)) || '';
+  const wm = wl.match(/(\d+)\s*(міс|день|дні|днів|рік|роки|років)/i);
+  const wu = wm && wm[2].toLowerCase(), wn = wm && +wm[1];
+  const warrantyText = wm ? `${wn} ${wu.startsWith('міс') ? plural(wn, 'місяць', 'місяці', 'місяців') : wu.startsWith('д') ? plural(wn, 'день', 'дні', 'днів') : plural(wn, 'рік', 'роки', 'років')}` : '';
+  const warrantyMonths = wm ? (/міс/i.test(wm[2]) ? +wm[1] : /рік|рок/i.test(wm[2]) ? +wm[1] * 12 : +wm[1] / 30) : 0;
+  const isNew = /(^|\n)[^\wа-яіїє\n]*(?:new|нова|новий|нове)[^\wа-яіїє\n]*(?=\n|$)/i.test(t) || /в упаковці|в плівці|нова техніка/i.test(t);
+  const reserved = /(^|[^а-яіїє])(?:бронь|заброньован|резерв)/i.test(t);
+  // «Ціна 9999 грн / Нова ціна 7999 грн» → показуємо нову ціну і закреслену стару.
+  let price = p.price, oldPrice;
+  const pr = re => { const m = t.match(re); return m ? +m[1].replace(/\D/g, '') : undefined; };
+  const nova = pr(/нова\s+ціна[:\s-]*(\d[\d \u00a0]*)\s*грн/i), first = pr(/ціна[:\s-]*(\d[\d \u00a0]*)\s*грн/i);
+  if (nova) { price = nova; if (first > nova) oldPrice = first; }
+  const diag = (t.match(/діагональ\D{0,5}(\d{2,3})/i) || [])[1], sets = (t.match(/(\d{1,2})(?:-?ти)?\s*комплект/i) || [])[1];
+  const cooling = /no ?frost/i.test(t) ? 'No Frost' : /крапельн/i.test(t) ? 'Крапельна' : '';
+  // Опис: рядки, що не дублюють ID/ціну/бренд/габарити/гарантію/адресу.
+  const bm = flat(brand + model);
+  const desc = t.split('\n').map(l => l.trim()).filter(l => l && !SKIP.test(bare(l)) && !/висота|ширина|глибина|гаранті|гетьмана|товар з|^[^\wа-яіїє]*$/i.test(l) && !(bm && bm.includes(flat(bare(l)))) && flat(bare(l)) !== flat(brand)).join('\n');
+  const chips = [];
+  if (cat.id === 'washers' || cat.id === 'dryers') { kg && chips.push(`${kg.replace(',', '.')} кг`); rpm && chips.push(`${rpm} об`); }
+  if (cooling) chips.push(cooling);
+  if (sets) chips.push(`${sets} компл.`);
+  if (diag) chips.push(`${diag}″`);
+  if (height && width) chips.push(`${height}×${width}${depth ? '×' + depth : ''} см`);
+  for (const c of p.chips || []) if (chips.length < 3 && !chips.some(x => x.split(' ')[0] === c.split(' ')[0]) && !/см$/.test(c)) chips.push(c);
+  return {
+    id: String(p.pid || p.id), key: p.id, cat: cat.id, brand, model, price, oldPrice,
+    photos: p.images || [], date: p.date || '', url: p.url, text: t, desc,
+    isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
+    kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
+    load: /вертикальн/i.test(low) ? 'top' : /фронтальн/i.test(low) ? 'front' : '',
+  };
+}
+
+/* ---------- пошук: бренд, модель, ID, категорія, кирилиця → латиниця ---------- */
+let INDEX = [];
+function buildIndex(list) {
+  INDEX = list.map(p => { const c = CAT[p.cat] || {name: '', terms: []};
+    return {p, brand: p.brand.toLowerCase(), model: p.model.toLowerCase(), mflat: flat(p.model), id: p.id.toLowerCase(),
+      aliases: (ALIASES[p.brand] || []).join(' '), cat: [c.name, ...c.terms].join(' ').toLowerCase(), text: p.text.toLowerCase()}; });
+}
+function search(q) {
+  const words = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (!words.length) return null;
+  let res = null;
+  for (const w of words) {
+    const vars = new Set([w, flat(w)]); if (CYR.test(w)) vars.add(translit(w));
+    const cur = new Map();
+    for (const r of INDEX) {
+      let best = null;
+      const hit = (score, field, at, len) => { if (!best || score < best.score) best = {score, brand: [], model: [], id: []}; if (field && score <= best.score) best[field].push([at, at + len - 1]); };
+      for (const v of vars) {
+        if (v.length < 1) continue;
+        let i;
+        if ((i = r.id.indexOf(v)) >= 0) hit(i === 0 ? 0 : .05, 'id', i, v.length);
+        if (v.length < 2) continue;
+        if ((i = r.brand.indexOf(v)) >= 0) hit(i === 0 ? .02 : .1, 'brand', i, v.length);
+        if (r.aliases.includes(v)) hit(.03, 'brand', 0, r.brand.length);
+        if ((i = r.model.indexOf(v)) >= 0) hit(i === 0 ? .04 : .1, 'model', i, v.length);
+        else if (r.mflat.includes(v)) hit(.12);
+        if (r.cat.includes(v)) hit(.3);
+        if (v.length >= 3 && r.text.includes(v)) hit(.5);
+      }
+      if (best) cur.set(r.p.key, best);
+    }
+    if (res === null) res = cur;
+    else { const nx = new Map(); for (const [k, h] of cur) { const o = res.get(k); if (o) nx.set(k, {score: o.score + h.score, brand: [...o.brand, ...h.brand], model: [...o.model, ...h.model], id: [...o.id, ...h.id]}); } res = nx; }
+    if (!res.size) break;
+  }
+  return res;
+}
+function hl(text, ranges) {
+  if (!ranges || !ranges.length) return esc(text);
+  const rs = [...ranges].sort((a, b) => a[0] - b[0]), m = [];
+  for (const r of rs) { const l = m[m.length - 1]; l && r[0] <= l[1] + 1 ? l[1] = Math.max(l[1], r[1]) : m.push([...r]); }
+  let out = '', c = 0;
+  for (const [a, b] of m) { out += esc(text.slice(c, a)) + '<mark>' + esc(text.slice(a, b + 1)) + '</mark>'; c = b + 1; }
+  return out + esc(text.slice(c));
+}
+
+/* ---------- стан, URL ---------- */
+let ALL = [], BY = new Map(), BRANDS = [], PMAX = 50000, UPDATED = '';
+const EMPTY = {q: '', cat: null, brands: [], cond: [], load: [], narrow: false};
+let S = {...EMPTY}, HITS = null, openId = null, draft = null;
+const ints = v => v != null && v !== '' && !isNaN(+v) ? +v : undefined;
+const pair = v => { if (!v) return [undefined, undefined]; const [a, b] = v.split('-'); return [ints(a), ints(b)]; };
+const listp = v => v ? v.split(',').filter(Boolean) : [];
+function fromURL() {
+  const u = new URLSearchParams(location.search), s = {...EMPTY};
+  s.q = u.get('q') || ''; const c = u.get('cat'); s.cat = CAT[c] ? c : null;
+  [s.pmin, s.pmax] = pair(u.get('price')); [s.wmin, s.wmax] = pair(u.get('w')); [s.hmin, s.hmax] = pair(u.get('h'));
+  s.brands = listp(u.get('brand')); s.cond = listp(u.get('cond')).filter(x => x === 'used' || x === 'new');
+  s.load = listp(u.get('load')).filter(x => x === 'front' || x === 'top'); s.kg = ints(u.get('kg')); s.narrow = u.get('narrow') === '1';
+  s.war = ints(u.get('war')); const so = u.get('sort'); s.sort = ['new', 'cheap', 'expensive'].includes(so) ? so : undefined;
+  return s;
+}
+function toURL(s, p) {
+  const u = new URLSearchParams(), r = (a, b) => a == null && b == null ? '' : `${a ?? ''}-${b ?? ''}`, set = (k, v) => v && u.set(k, v);
+  set('q', s.q.trim()); set('cat', s.cat); set('price', r(s.pmin, s.pmax)); set('brand', s.brands.join(',')); set('cond', s.cond.join(','));
+  if (s.cat === 'washers') { set('load', s.load.join(',')); set('kg', s.kg && String(s.kg)); set('narrow', s.narrow && '1'); }
+  set('w', r(s.wmin, s.wmax)); set('h', r(s.hmin, s.hmax)); set('war', s.war && String(s.war)); set('sort', s.sort); set('p', p);
+  const q = u.toString(); return location.pathname + (q ? '?' + q : '');
+}
+function setState(next, push) {
+  S = next; history.replaceState(history.state, '', toURL(S, openId)); render();
+}
+
+/* ---------- фільтрація ---------- */
+function pass(p, s, hits, skip) {
+  if (hits && !hits.has(p.key)) return false;
+  if (skip !== 'cat' && s.cat && p.cat !== s.cat) return false;
+  if (s.pmin != null && !(p.price >= s.pmin)) return false;
+  if (s.pmax != null && !(p.price <= s.pmax)) return false;
+  if (skip !== 'brands' && s.brands.length && !s.brands.includes(p.brand)) return false;
+  if (s.cond.length && !s.cond.includes(p.isNew ? 'new' : 'used')) return false;
+  if (s.cat === 'washers' && skip !== 'cat') {
+    if (s.load.length && !s.load.includes(p.load)) return false;
+    if (s.kg && !((p.kg ?? 0) >= s.kg)) return false;
+    if (s.narrow && !(p.depth != null && p.depth <= NARROW)) return false;
+  }
+  if (s.wmin != null && !(p.width >= s.wmin)) return false;
+  if (s.wmax != null && !(p.width <= s.wmax)) return false;
+  if (s.hmin != null && !(p.height >= s.hmin)) return false;
+  if (s.hmax != null && !(p.height <= s.hmax)) return false;
+  if (s.war && !(p.warrantyMonths >= s.war)) return false;
+  return true;
+}
+const sortMode = s => s.sort || (s.q.trim() ? 'relevance' : 'new');
+function results(s, hits) {
+  const l = ALL.filter(p => pass(p, s, hits)), m = sortMode(s), byNew = (a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id);
+  return l.sort((a, b) => m === 'cheap' ? (a.price ?? 1e12) - (b.price ?? 1e12) : m === 'expensive' ? (b.price ?? -1) - (a.price ?? -1) : m === 'relevance' && (hits.get(a.key).score - hits.get(b.key).score) || byNew(a, b));
+}
+const countBy = (s, hits, skip, f) => { const m = new Map(); for (const p of ALL) if (pass(p, s, hits, skip)) m.set(f(p), (m.get(f(p)) || 0) + 1); return m; };
+const nFilters = s => (s.pmin != null || s.pmax != null) + s.brands.length + s.cond.length + (s.cat === 'washers' ? s.load.length + !!s.kg + !!s.narrow : 0) + (s.wmin != null || s.wmax != null) + (s.hmin != null || s.hmax != null) + !!s.war;
+const range = (a, b, u = '') => a != null && b != null ? `${money(a)}–${money(b)}${u}` : a != null ? `від ${money(a)}${u}` : `до ${money(b)}${u}`;
+
+/* ---------- відмальовка ---------- */
+const sticker = (price, size = 'm') => `<span class="sticker ${size}"><span class="vh">Ціна: </span><span>${money(price)}</span><span class="cur">${SHOP.currency}</span></span>`;
+const frame = (p, i = 0, eager) => p.photos[i]
+  ? `<div class="frame"><img src="${esc(p.photos[i])}" alt="${esc(p.brand + ' ' + p.model)}, фото ${i + 1}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" draggable="false" data-cat="${p.cat}"></div>`
+  : `<div class="frame">${illustration(p.cat, 'Фото ще немає, схематичне зображення: ' + (CAT[p.cat]?.name || ''))}</div>`;
+function card(p, hit, compact, eager) {
+  const flags = (p.reserved ? '<span class="hold">Бронь</span>' : '') + (p.isNew ? '<span class="isnew">нова</span>' : '');
+  return `<article class="card${compact ? ' compact' : ''}"><a href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}">
+    <div class="photo">${frame(p, 0, eager)}${flags ? `<span class="flags">${flags}</span>` : ''}</div>
+    ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}
+    <h3 class="ctitle"><span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
+    ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
+    <p class="foot"><span>ID ${hl(p.id, hit?.id)}</span>${p.oldPrice && !compact ? `<s class="old" aria-label="Стара ціна">${money(p.oldPrice)} грн</s>` : ''}</p></a></article>`;
+}
+
+function render() {
+  HITS = search(S.q);
+  $('#q').value !== S.q && ($('#q').value = S.q);
+  $('#qclear').hidden = !S.q;
+  const cc = countBy(S, HITS, 'cat', p => p.cat), total = [...cc.values()].reduce((a, b) => a + b, 0);
+  $('#cats').innerHTML = `<button type="button" class="chip" data-cat="" aria-pressed="${!S.cat}">Усі<span class="cnt">${total}</span></button>` +
+    CATS.filter(c => ALL.some(p => p.cat === c.id)).map(c => `<button type="button" class="chip" data-cat="${c.id}" aria-pressed="${S.cat === c.id}">${icon(c.id)}${esc(c.short)}<span class="cnt">${cc.get(c.id) || 0}</span></button>`).join('');
+  const nf = nFilters(S);
+  $('#prices').innerHTML = `<button type="button" class="fbtn${nf ? ' on' : ''}" id="fopen" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Фільтри${nf ? ` (${nf})` : ''}</span></button>` +
+    PRESETS.map(r => `<button type="button" class="chip" data-preset="${r.id}" aria-pressed="${S.pmin === r.min && S.pmax === r.max}">${r.label}</button>`).join('');
+  const act = activeChips(S);
+  $('#active').hidden = !act.length;
+  $('#active').innerHTML = act.map((a, i) => `<button type="button" class="achip" data-rm="${i}" aria-label="Прибрати фільтр: ${esc(a.label)}">${esc(a.label)}${X(12)}</button>`).join('') + (act.length ? '<button type="button" class="reset" data-resetall>Скинути все</button>' : '');
+  const list = results(S, HITS), m = sortMode(S);
+  $('#count').textContent = goods(list.length);
+  $('#sort').innerHTML = (S.q.trim() ? '<option value="relevance">За збігом</option>' : '') + [['new', 'Новіші'], ['cheap', 'Дешевші'], ['expensive', 'Дорожчі']].map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
+  $('#sort').value = m;
+  $('#list').innerHTML = list.length
+    ? `<ul class="grid">${list.map((p, i) => `<li>${card(p, HITS?.get(p.key), false, i < 4)}</li>`).join('')}</ul>`
+    : `<div class="empty"><h2>${ALL.length ? 'Нічого не знайшли' : 'Каталог оновлюється'}</h2><p>${ALL.length ? 'Спробуйте інший бренд або приберіть фільтр ціни' : 'Товари з’являться після першого оновлення.'}</p>${ALL.length ? '<button type="button" class="btn primary" data-resetall>Скинути фільтри</button>' : ''}</div>`;
+}
+function activeChips(s) {
+  const a = [], add = (label, rm) => a.push({label, rm});
+  if (s.pmin != null || s.pmax != null) { const pr = PRESETS.find(r => r.min === s.pmin && r.max === s.pmax); add(pr ? pr.label : range(s.pmin, s.pmax, ' грн'), x => ({...x, pmin: undefined, pmax: undefined})); }
+  s.brands.forEach(b => add(b, x => ({...x, brands: x.brands.filter(y => y !== b)})));
+  s.cond.forEach(c => add(c === 'new' ? 'нова' : 'б/в', x => ({...x, cond: x.cond.filter(y => y !== c)})));
+  if (s.cat === 'washers') {
+    s.load.forEach(l => add(l === 'front' ? 'Фронтальне' : 'Вертикальне', x => ({...x, load: x.load.filter(y => y !== l)})));
+    s.kg && add(`від ${s.kg} кг`, x => ({...x, kg: undefined}));
+    s.narrow && add(`Вузькі, до ${NARROW} см`, x => ({...x, narrow: false}));
+  }
+  (s.wmin != null || s.wmax != null) && add(`Ширина ${range(s.wmin, s.wmax, ' см')}`, x => ({...x, wmin: undefined, wmax: undefined}));
+  (s.hmin != null || s.hmax != null) && add(`Висота ${range(s.hmin, s.hmax, ' см')}`, x => ({...x, hmin: undefined, hmax: undefined}));
+  s.war && add(`Гарантія від ${s.war} міс`, x => ({...x, war: undefined}));
+  return a;
+}
+
+/* ---------- шторки ---------- */
+function sheetOpen(el) {
+  if (!el.hidden && el.classList.contains('shown')) return;
+  el._ret = document.activeElement; el.hidden = false; document.documentElement.classList.add('no-scroll');
+  requestAnimationFrame(() => requestAnimationFrame(() => { el.classList.add('shown'); el.querySelector('.panel').focus({preventScroll: true}); }));
+}
+function sheetClose(el) {
+  if (el.hidden) return;
+  el.classList.remove('shown');
+  setTimeout(() => { el.hidden = true; if ($('#fsheet').hidden && $('#psheet').hidden) document.documentElement.classList.remove('no-scroll'); el._ret?.focus?.({preventScroll: true}); }, 260);
+}
+for (const el of [$('#fsheet'), $('#psheet')]) {
+  el.querySelectorAll('[data-close]').forEach(b => { if (b.tagName === 'BUTTON') b.innerHTML = X(16); b.onclick = () => el.id === 'psheet' ? closeProduct() : sheetClose(el); });
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { e.stopPropagation(); el.id === 'psheet' ? closeProduct() : sheetClose(el); }
+    if (e.key === 'Tab') { const f = el.querySelectorAll('a[href],button:not([disabled]),input,select,[tabindex]:not([tabindex="-1"])'); if (!f.length) return;
+      const a = f[0], z = f[f.length - 1]; if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+  });
+}
+
+/* ---------- фільтри ---------- */
+const LI = 500;
+function renderFilters() {
+  const f = draft, bc = countBy(f, HITS, 'brands', p => p.brand), lo = f.pmin ?? 0, hi = f.pmax ?? PMAX, pc = v => (Math.min(Math.max(v, 0), PMAX)) / PMAX * 100;
+  const chip = (on, label, attrs, cnt) => `<button type="button" class="chip" aria-pressed="${on}" ${attrs}>${esc(label)}${cnt != null ? `<span class="cnt">${cnt}</span>` : ''}</button>`;
+  const fields = (k, label) => `<div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="${k}min" value="${f[k + 'min'] ?? ''}" placeholder="—" aria-label="${label}, від"></label><label class="field"><span>до</span><input inputmode="numeric" data-f="${k}max" value="${f[k + 'max'] ?? ''}" placeholder="—" aria-label="${label}, до"></label></div>`;
+  $('#fbody').innerHTML = `<div class="fwrap">
+    <fieldset class="fsec"><legend>Ціна</legend>
+      <div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="pmin" value="${f.pmin != null ? money(f.pmin) : ''}" placeholder="0" aria-label="Ціна, від"><span>грн</span></label>
+      <label class="field"><span>до</span><input inputmode="numeric" data-f="pmax" value="${f.pmax != null ? money(f.pmax) : ''}" placeholder="${money(PMAX)}" aria-label="Ціна, до"><span>грн</span></label></div>
+      <div class="slider" style="--a:${pc(lo)}%;--b:${pc(hi)}%"><div class="track"></div>
+        <input type="range" min="0" max="${PMAX}" step="${LI}" value="${Math.min(lo, PMAX)}" data-r="lo" aria-label="Ціна, від" aria-valuetext="${money(lo)} грн">
+        <input type="range" min="0" max="${PMAX}" step="${LI}" value="${Math.max(hi, 0)}" data-r="hi" aria-label="Ціна, до" aria-valuetext="${money(hi)} грн"></div>
+      <div class="row">${PRESETS.map(r => chip(f.pmin === r.min && f.pmax === r.max, r.label, `data-fp="${r.id}"`)).join('')}</div></fieldset>
+    <fieldset class="fsec"><legend>Бренд</legend><div class="row">${BRANDS.map(b => { const n = bc.get(b) || 0, on = f.brands.includes(b); return !on && !n ? '' : chip(on, b, `data-fb="${esc(b)}"`, n); }).join('')}</div></fieldset>
+    <fieldset class="fsec"><legend>Стан</legend><div class="row">${chip(f.cond.includes('used'), 'б/в', 'data-fc="used"')}${chip(f.cond.includes('new'), 'нова', 'data-fc="new"')}</div></fieldset>
+    ${f.cat === 'washers' ? `<fieldset class="fsec"><legend>Для пральних машин</legend>
+      <p class="sub">Тип завантаження</p><div class="row">${chip(f.load.includes('front'), 'Фронтальне', 'data-fl="front"')}${chip(f.load.includes('top'), 'Вертикальне', 'data-fl="top"')}</div>
+      <p class="sub">Завантаження</p><div class="row">${[0, 5, 6, 7, 8].map(k => chip((f.kg || 0) === k, k ? `від ${k} кг` : 'Будь-яке', `data-fk="${k}"`)).join('')}</div>
+      <label class="switch"><input type="checkbox" data-fn ${f.narrow ? 'checked' : ''}><span>Вузькі, до ${NARROW} см</span></label></fieldset>` : ''}
+    <fieldset class="fsec"><legend>Ширина, см</legend>${fields('w', 'Ширина, см')}</fieldset>
+    <fieldset class="fsec"><legend>Висота, см</legend>${fields('h', 'Висота, см')}</fieldset>
+    <fieldset class="fsec"><legend>Гарантія</legend><div class="row">${WARRANTY.map(w => chip((f.war || 0) === w, w ? `від ${w} міс` : 'Будь-яка', `data-fw="${w}"`)).join('')}</div></fieldset>
+  </div>`;
+  updApply();
+}
+function updApply() { const n = results(draft, HITS).length; $('#fapply').textContent = `Показати ${goods(n)}`; $('#fapply').disabled = !n; }
+function setDraft(patch, rerender = true) {
+  const st = $('#fbody').scrollTop; draft = {...draft, ...patch};
+  if (rerender) { renderFilters(); $('#fbody').scrollTop = st; } else updApply();
+}
+const toggle = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v];
+$('#fbody').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return; const d = b.dataset;
+  if (d.fp) { const r = PRESETS.find(x => x.id === d.fp), on = draft.pmin === r.min && draft.pmax === r.max; setDraft(on ? {pmin: undefined, pmax: undefined} : {pmin: r.min, pmax: r.max}); }
+  else if (d.fb) setDraft({brands: toggle(draft.brands, d.fb)});
+  else if (d.fc) setDraft({cond: toggle(draft.cond, d.fc)});
+  else if (d.fl) setDraft({load: toggle(draft.load, d.fl)});
+  else if (d.fk != null) setDraft({kg: +d.fk || undefined});
+  else if (d.fw != null) setDraft({war: +d.fw || undefined});
+});
+$('#fbody').addEventListener('input', e => {
+  const t = e.target, d = t.dataset;
+  if (d.fn != null) return setDraft({narrow: t.checked});
+  if (d.f) {
+    const v = parseInt(t.value.replace(/\D/g, ''), 10), val = isNaN(v) ? undefined : v;
+    if (d.f[0] === 'p' && val != null) t.value = money(val);
+    setDraft({[d.f]: val}, false);
+    if (d.f[0] === 'p') syncSlider();
+    return;
+  }
+  if (d.r) {
+    const lo = draft.pmin ?? 0, hi = draft.pmax ?? PMAX;
+    let a = lo, b = hi; if (d.r === 'lo') a = Math.min(+t.value, hi - LI); else b = Math.max(+t.value, lo + LI);
+    t.value = d.r === 'lo' ? a : b;
+    draft = {...draft, pmin: a <= 0 ? undefined : a, pmax: b >= PMAX ? undefined : b};
+    $('[data-f=pmin]').value = draft.pmin != null ? money(draft.pmin) : ''; $('[data-f=pmax]').value = draft.pmax != null ? money(draft.pmax) : '';
+    syncSlider(); updApply();
+  }
+});
+$('#fbody').addEventListener('change', e => { if (e.target.dataset.r || e.target.dataset.f?.[0] === 'p') { const st = $('#fbody').scrollTop; renderFilters(); $('#fbody').scrollTop = st; } });
+function syncSlider() {
+  const lo = draft.pmin ?? 0, hi = draft.pmax ?? PMAX, pc = v => Math.min(Math.max(v, 0), PMAX) / PMAX * 100, sl = $('#fbody .slider');
+  sl.style.setProperty('--a', pc(lo) + '%'); sl.style.setProperty('--b', pc(hi) + '%');
+  sl.querySelector('[data-r=lo]').value = Math.min(lo, PMAX); sl.querySelector('[data-r=hi]').value = hi;
+}
+$('#freset').onclick = () => setDraft({pmin: undefined, pmax: undefined, brands: [], cond: [], load: [], kg: undefined, narrow: false, wmin: undefined, wmax: undefined, hmin: undefined, hmax: undefined, war: undefined});
+$('#fapply').onclick = () => { setState(draft); sheetClose($('#fsheet')); };
+
+/* ---------- картка товару ---------- */
+const msg = p => `Добрий день! Цікавить ID ${p.id}, ${p.brand} ${p.model}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim();
+function specsOf(p) {
+  return [['Стан', p.isNew ? 'Нова' : 'Б/в'], ['Завантаження', p.kg && `${p.kg} кг`], ['Віджим', p.rpm && `${p.rpm} об/хв`],
+    ['Тип завантаження', p.load && (p.load === 'front' ? 'Фронтальне' : 'Вертикальне')], ['Система охолодження', p.cooling],
+    ['Місткість', p.sets && `до ${p.sets} комплектів`], ['Діагональ', p.diag && `${p.diag}″`],
+    ['Висота', p.height && `${p.height} см`], ['Ширина', p.width && `${p.width} см`], ['Глибина', p.depth && `${p.depth} см`]].filter(r => r[1]);
+}
+function renderProduct(p) {
+  const n = Math.max(p.photos.length, 1);
+  const sim = ALL.filter(x => x.cat === p.cat && x.key !== p.key).sort((a, b) => Math.abs((a.price || 0) - (p.price || 0)) - Math.abs((b.price || 0) - (p.price || 0))).slice(0, 6);
+  $('#psheet .panel').setAttribute('aria-label', `${p.brand} ${p.model}`);
+  $('#pmini').textContent = `${p.brand} ${p.model}`;
+  $('#pbody').innerHTML = `<article class="pwrap">
+    <div class="gallery"><div class="gtrack" tabindex="${n > 1 ? 0 : -1}" aria-roledescription="галерея" aria-label="${esc(p.brand + ' ' + p.model)}: ${n} фото">${Array.from({length: n}, (_, i) => `<div class="slide">${frame(p, i, i === 0)}</div>`).join('')}</div>
+      ${n > 1 ? `<div class="dots" aria-hidden="true">${Array.from({length: n}, (_, i) => `<span class="${i ? '' : 'on'}"></span>`).join('')}</div>
+      <button type="button" class="nav prev" data-g="-1" aria-label="Попереднє фото" disabled>${ARROW('l')}</button><button type="button" class="nav next" data-g="1" aria-label="Наступне фото">${ARROW('r')}</button>` : ''}</div>
+    <div class="pmain">
+      ${p.price ? `<div class="prow">${sticker(p.price, 'l')}${p.oldPrice ? `<s class="old" style="font-size:15px">${money(p.oldPrice)} грн</s>` : ''}</div>` : ''}
+      <h2 class="ptitle"><span class="brand">${esc(p.brand)}</span> ${esc(p.model)}</h2>
+      <p class="pcat">${esc(CAT[p.cat]?.name || '')}</p>
+      <div class="idrow"><b>ID ${esc(p.id)}</b><button type="button" class="copy" data-copy aria-live="polite">Скопіювати</button>
+        ${p.reserved ? '<span class="holdtag">Бронь</span>' : '<span class="oktag">В наявності</span>'}</div>
+      ${p.reserved ? '<p class="notice">Товар заброньований. Напишіть нам — підкажемо, чи звільниться.</p>' : ''}
+      <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsOf(p).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+        ${p.desc ? `<p class="desc">${esc(p.desc)}</p>` : ''}</section>
+      <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
+        <div><h3 class="h3">${p.warrantyText ? `Гарантія ${esc(p.warrantyText)}` : 'Гарантія — уточнюйте'}</h3><p class="muted">Перевіряємо кожен прилад перед продажем. Якщо щось не так — ремонт або заміна.</p></div></section>
+      <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <div><h3 class="h3">Де подивитись</h3><p>${esc(SHOP.address)}, ${esc(SHOP.addressHint)}</p><a class="link" href="${SHOP.mapUrl}" target="_blank" rel="noopener">Відкрити на карті</a>
+        ${p.url ? `<br><a class="link" href="${esc(p.url)}" target="_blank" rel="noopener">Допис у Telegram</a>` : ''}</div></section>
+    </div>
+    ${sim.length ? `<section class="similar"><h3 class="h3">Схожі товари</h3><div class="simrow">${sim.map(x => card(x, null, true)).join('')}</div></section>` : ''}
+  </article>`;
+  $('#pfoot').innerHTML = `<a class="btn primary block" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(msg(p))}" target="_blank" rel="noopener">Написати в Telegram</a>
+    <a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-viber>Viber</a>`;
+  $('#pbody').scrollTop = 0; $('#pmini').classList.remove('on');
+  const tr = $('#pbody .gtrack');
+  tr.onscroll = () => { const i = Math.round(tr.scrollLeft / tr.clientWidth); $('#pbody').querySelectorAll('.dots span').forEach((d, k) => d.className = k === i ? 'on' : ''); const pv = $('#pbody .prev'), nx = $('#pbody .next'); if (pv) { pv.disabled = i === 0; nx.disabled = i >= n - 1; } };
+}
+$('#pbody').addEventListener('scroll', e => $('#pmini').classList.toggle('on', e.target.scrollTop > 120));
+$('#pbody').addEventListener('click', async e => {
+  const g = e.target.closest('[data-g]'); if (g) { const tr = $('#pbody .gtrack'); tr.scrollBy({left: +g.dataset.g * tr.clientWidth, behavior: 'smooth'}); return; }
+  const c = e.target.closest('[data-copy]'); if (c) { if (await copyText(BY.get(openId).id)) { c.textContent = 'Скопійовано'; setTimeout(() => c.textContent = 'Скопіювати', 1600); } return; }
+});
+$('#pfoot').addEventListener('click', e => { if (e.target.closest('[data-viber]')) copyText(msg(BY.get(openId))).then(ok => ok && toast('Текст скопійовано — вставте його у Viber')); });
+function showProduct(id, mode) {
+  const p = BY.get(id); if (!p) return;
+  if (mode === 'push') history.pushState({sheet: 1}, '', toURL(S, id)); else if (mode === 'replace') history.replaceState(history.state, '', toURL(S, id));
+  openId = id; renderProduct(p); sheetOpen($('#psheet'));
+}
+function closeProduct() {
+  if (history.state?.sheet) history.back();
+  else { openId = null; history.replaceState(null, '', toURL(S, null)); sheetClose($('#psheet')); }
+}
+addEventListener('popstate', () => {
+  S = fromURL(); const p = new URLSearchParams(location.search).get('p'); render();
+  if (p && BY.has(p)) { openId = p; renderProduct(BY.get(p)); sheetOpen($('#psheet')); } else { openId = null; sheetClose($('#psheet')); }
+});
+
+/* ---------- події сторінки ---------- */
+$('#qclear').innerHTML = X(14);
+$('#q').addEventListener('input', e => setState({...S, q: e.target.value}));
+$('#qclear').onclick = () => { setState({...S, q: ''}); $('#q').focus(); };
+$('#sort').onchange = e => setState({...S, sort: e.target.value === 'relevance' ? undefined : e.target.value});
+$('#cats').onclick = e => { const b = e.target.closest('[data-cat]'); if (!b) return; const c = b.dataset.cat || null; setState({...S, cat: S.cat === c ? null : c}); };
+$('#prices').onclick = e => {
+  if (e.target.closest('#fopen')) { draft = {...S}; renderFilters(); sheetOpen($('#fsheet')); return; }
+  const b = e.target.closest('[data-preset]'); if (!b) return; const r = PRESETS.find(x => x.id === b.dataset.preset);
+  setState(S.pmin === r.min && S.pmax === r.max ? {...S, pmin: undefined, pmax: undefined} : {...S, pmin: r.min, pmax: r.max});
+};
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-resetall]')) return setState({...EMPTY, sort: S.sort});
+  const rm = e.target.closest('[data-rm]'); if (rm) return setState(activeChips(S)[+rm.dataset.rm].rm(S));
+  const a = e.target.closest('a[data-open]');
+  if (a && !(e.metaKey || e.ctrlKey || e.shiftKey || e.button)) { e.preventDefault(); showProduct(a.dataset.open, openId ? 'replace' : 'push'); }
+});
+document.addEventListener('error', e => { const i = e.target; if (i.tagName === 'IMG' && i.dataset.cat) i.parentNode.innerHTML = illustration(i.dataset.cat, 'Фото недоступне'); }, true);
+
+function footer() {
+  const t = UPDATED ? new Date(UPDATED) : null;
+  $('#footer').innerHTML = `<p>${esc(SHOP.name)}, ${esc(SHOP.city)}, ${esc(SHOP.address)}</p>${t && !isNaN(t) ? `<p>Каталог оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}`;
+}
+fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => {
+  const seen = new Set();
+  ALL = (d.products || []).map(parse).filter(p => p && !seen.has(p.id) && seen.add(p.id));
+  BY = new Map(ALL.map(p => [p.id, p])); UPDATED = d.updated || '';
+  BRANDS = [...new Set(ALL.map(p => p.brand).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  PMAX = Math.ceil(Math.max(1000, ...ALL.map(p => p.price || 0)) / 1000) * 1000;
+  buildIndex(ALL); S = fromURL(); render(); footer();
+  const p = new URLSearchParams(location.search).get('p'); if (p && BY.has(p)) showProduct(p);
+});
 </script>
 </body>
 </html>
