@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Збирає товари з публічних Telegram-каналів (t.me/s/...) у products.json.
+Якщо задані секрети TG_API_ID / TG_API_HASH / TG_SESSION, додатково читає приватні
+канали, на які є запрошення в публічних каналах (див. tg_private.py).
 Видалений в Telegram допис зникає з products.json при наступному запуску."""
 import html, json, re, time, urllib.request
+import tg_private
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -21,6 +24,9 @@ CHANNELS = {
     "orbitreky": "Орбітреки",
     "superznygky": "Знижки",  # пересилає товари з різних каналів; категорію сайт визначає за джерелом і текстом
 }
+# Запрошення в приватні канали, яких немає в публічних каналах. Категорію сайт визначить за текстом.
+EXTRA_INVITES = ["j9Kx30vij-IwNDJi", "dUeVwzAh1uJkODRi"]
+INVITE = re.compile(r"(?:t\.me|telegram\.me)/(?:joinchat/|\+|%2B)([\w-]{10,})")
 MAX_PAGES = 40  # ~20 дописів на сторінку
 OUT = Path(__file__).resolve().parent.parent / "products.json"
 
@@ -128,11 +134,13 @@ def parse_page(src, ch):
     return items, ids
 
 
-def fetch_channel(ch):
+def fetch_channel(ch, invites):
     posts, before = {}, None
     for _ in range(MAX_PAGES):
         src = get(f"https://t.me/s/{ch}" + (f"?before={before}" if before else ""))
         items, ids = parse_page(src, ch)
+        for h in INVITE.findall(src):
+            invites.setdefault(h, ch)
         if not ids:
             break
         for p in items:
@@ -145,21 +153,45 @@ def fetch_channel(ch):
     return list(posts.values())
 
 
+def private_post(text, pid):
+    """Товар з приватного каналу (без фото і службових полів) або None."""
+    if not is_product(text):
+        return None
+    title = next((l.strip() for l in text.splitlines() if l.strip()), "")[:120]
+    return {"title": title, "text": text, "price": price_of(text), **extract(text, title, pid)}
+
+
 def main():
     old = json.loads(OUT.read_text("utf-8")) if OUT.exists() else {"products": []}
-    products = []
+    old_public = [p for p in old.get("products", []) if not p.get("private")]
+    old_private = [p for p in old.get("products", []) if p.get("private")]
+    products, invites = [], {}
     for ch in CHANNELS:
         try:
-            got = fetch_channel(ch)
+            got = fetch_channel(ch, invites)
         except Exception as e:
             print(f"! {ch}: {e}")
             got = []
         if not got:  # помилка або порожньо: лишаємо попередні дані каналу
-            got = [p for p in old.get("products", []) if p["channel"] == ch]
+            got = [p for p in old_public if p["channel"] == ch]
             print(f"~ {ch}: залишено {len(got)} зі старих даних")
         else:
             print(f"+ {ch}: {len(got)}")
         products += got
+    if tg_private.configured():
+        for h in EXTRA_INVITES:
+            invites.setdefault(h, "superznygky")
+        print(f"Приватні канали: знайдено запрошень {len(invites)}")
+        res = tg_private.fetch(invites, private_post)
+        if res is None:  # вхід не вдався: лишаємо попередні товари з приватних каналів
+            products += old_private
+        else:
+            got, status = res
+            ok = {c for c, v in status.items() if v}
+            products += got + [p for p in old_private if p.get("chat") not in ok]
+        seen = set()  # якщо канал прочитано частково, нові дані важливіші за старі
+        products = [p for p in products if not (p["id"] in seen or seen.add(p["id"]))]
+        tg_private.cleanup(products)
     products.sort(key=lambda p: p["date"], reverse=True)
     new = {"categories": [{"id": k, "name": v} for k, v in CHANNELS.items()], "products": products}
     if {k: old.get(k) for k in new} != new:
