@@ -37,7 +37,14 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .btn:disabled{opacity:.5;cursor:default}
 .primary{background:var(--marker);color:#fff}.primary:hover{background:#2638a8}
 .ghost{background:transparent;border-color:var(--line);color:var(--floor)}.ghost:hover{background:#24272b0a}
-.vb{background:var(--body);border-color:var(--line);color:var(--vb);white-space:nowrap;font-variant-numeric:tabular-nums}
+.vb{background:var(--body);border-color:var(--line);color:var(--vb)}
+.vb[aria-expanded=true]{border-color:var(--vb)}
+.phone{order:-1;flex-basis:100%;display:flex;flex-direction:column;gap:8px;padding-bottom:4px}
+.phone[hidden]{display:none}
+.phone b{font-size:20px;font-weight:650;font-variant-numeric:tabular-nums;text-align:center}
+.phone-acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.phone-acts .btn{padding:0 8px;font-size:14px}
+.vbtext{color:var(--vb)}
 .block{flex:1}
 
 /* page */
@@ -121,7 +128,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .mini{position:absolute;top:0;left:0;right:0;z-index:1;display:flex;align-items:center;height:64px;padding:12px 72px 0 var(--gutter);border-radius:var(--r-sheet) var(--r-sheet) 0 0;border-bottom:1px solid var(--line);background:var(--body);font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;pointer-events:none;transition:opacity .15s}
 .mini.on{opacity:1}.mini~.floating{top:14px}
 .sbody{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
-.sfoot{flex:none;display:flex;gap:8px;padding:10px var(--gutter) calc(10px + var(--safe-b));border-top:1px solid var(--line);background:var(--body)}
+.sfoot{flex:none;display:flex;flex-wrap:wrap;gap:8px;padding:10px var(--gutter) calc(10px + var(--safe-b));border-top:1px solid var(--line);background:var(--body)}
 @media(min-width:760px){.sheet{align-items:center;padding:24px}.panel{border-radius:var(--r-sheet);transform:translateY(32px);opacity:0;transition:transform .26s cubic-bezier(.2,.8,.2,1),opacity .2s}.shown .panel{opacity:1}.full .panel{height:min(860px,calc(100dvh - 48px))}.handle{display:none}}
 
 /* filters */
@@ -171,7 +178,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .idrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:12px}
 .idrow b{font-weight:600;font-variant-numeric:tabular-nums}
 .copy{min-height:36px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:var(--body);font-size:13px;font-weight:500;color:var(--marker)}
-.oktag,.holdtag{margin-left:auto;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600}
+.oktag,.holdtag{padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600}
 .oktag{color:var(--ok);background:#1f8a4c1a}
 .holdtag{background:var(--hold);color:var(--floor)}
 .notice{margin-top:12px;padding:10px 12px;border-radius:var(--r-field);background:#c98a121f;font-size:14px}
@@ -206,7 +213,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
     <label class="search">
       <span class="vh">Пошук по каталогу</span>
       <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
-      <input id="q" type="search" placeholder="Бренд, модель або ID" enterkeyhint="search" autocomplete="off" spellcheck="false">
+      <input id="q" type="search" placeholder="Бренд або модель" enterkeyhint="search" autocomplete="off" spellcheck="false">
       <button type="button" class="iconbtn" id="qclear" aria-label="Очистити пошук" hidden></button>
     </label>
   </div>
@@ -272,6 +279,7 @@ const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
 const PRESETS = [{id:'lt8', label:'до 8 000 грн', max:8000}, {id:'8to20', label:'8 000–20 000 грн', min:8000, max:20000}, {id:'gt20', label:'від 20 000 грн', min:20000}];
 const WARRANTY = [0, 1, 3, 6];
 const NARROW = 45;
+const VIBER_NUM = SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
 const ALIASES = {Bosch:['бош','босх'],Siemens:['сіменс','сименс'],Miele:['міле','миле'],AEG:['аег'],Electrolux:['електролюкс','электролюкс'],Samsung:['самсунг'],LG:['лж','елджі','элджи'],Whirlpool:['вірпул','вирпул'],Beko:['беко'],Liebherr:['лібхер','либхер'],Candy:['канді','канди'],Haier:['хаєр','хайер'],Gorenje:['гореньє','горенье'],Philips:['філіпс','филипс'],Phillips:['філіпс','филипс'],Hisense:['хайсенс','хісенс'],Smeg:['смег'],Indesit:['індезит','индезит'],Ariston:['аристон','арістон'],Xiaomi:['сяомі','ксиаоми'],Krups:['крупс'],Saeco:['саеко'],Zanussi:['занусі','занусси'],Hotpoint:['хотпоінт']};
 
 /* ---------- іконки (сітка 48×48) ---------- */
@@ -357,7 +365,7 @@ function parse(p) {
   const cooling = /no ?frost/i.test(t) ? 'No Frost' : /крапельн/i.test(t) ? 'Крапельна' : '';
   // Опис: рядки, що не дублюють ID/ціну/бренд/габарити/гарантію/адресу.
   const bm = flat(brand + model);
-  const desc = t.split('\n').map(l => l.trim()).filter(l => l && !SKIP.test(bare(l)) && !/висота|ширина|глибина|гаранті|гетьмана|товар з|^[^\wа-яіїє]*$/i.test(l) && !(bm && bm.includes(flat(bare(l)))) && flat(bare(l)) !== flat(brand)).join('\n');
+  const desc = t.split('\n').map(l => l.trim()).filter(l => l && !SKIP.test(bare(l)) && !/висота|ширина|глибина|гаранті|гетьмана|товар з|комплект|діагональ|^[^\wа-яіїє]*$/i.test(l) && !(bm && bm.includes(flat(bare(l)))) && flat(bare(l)) !== flat(brand)).join('\n');
   const chips = [];
   if (cat.id === 'washers' || cat.id === 'dryers') { kg && chips.push(`${kg.replace(',', '.')} кг`); rpm && chips.push(`${rpm} об`); }
   if (cooling) chips.push(cooling);
@@ -488,7 +496,7 @@ function card(p, hit, compact, eager) {
     ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}
     <h3 class="ctitle"><span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
     ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
-    <p class="foot"><span>ID ${hl(p.id, hit?.id)}</span>${p.oldPrice && !compact ? `<s class="old" aria-label="Стара ціна">${money(p.oldPrice)} грн</s>` : ''}</p></a></article>`;
+    ${p.oldPrice && !compact ? `<p class="foot"><s class="old" aria-label="Стара ціна">${money(p.oldPrice)} грн</s></p>` : '<p class="foot"></p>'}</a></article>`;
 }
 
 function render() {
@@ -638,7 +646,7 @@ function renderProduct(p) {
       ${p.price ? `<div class="prow">${sticker(p.price, 'l')}${p.oldPrice ? `<s class="old" style="font-size:15px">${money(p.oldPrice)} грн</s>` : ''}</div>` : ''}
       <h2 class="ptitle"><span class="brand">${esc(p.brand)}</span> ${esc(p.model)}</h2>
       <p class="pcat">${esc(CAT[p.cat]?.name || '')}</p>
-      <div class="idrow"><b>ID ${esc(p.id)}</b><button type="button" class="copy" data-copy aria-live="polite">Скопіювати</button>
+      <div class="idrow">
         ${p.reserved ? '<span class="holdtag">Бронь</span>' : '<span class="oktag">В наявності</span>'}</div>
       ${p.reserved ? '<p class="notice">Товар заброньований. Напишіть нам — підкажемо, чи звільниться.</p>' : ''}
       <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsOf(p).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
@@ -651,7 +659,11 @@ function renderProduct(p) {
     ${sim.length ? `<section class="similar"><h3 class="h3">Схожі товари</h3><div class="simrow">${sim.map(x => card(x, null, true)).join('')}</div></section>` : ''}
   </article>`;
   $('#pfoot').innerHTML = `<a class="btn primary block" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(msg(p))}" target="_blank" rel="noopener">Написати в Telegram</a>
-    <a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-viber>Viber</a>`;
+    <button type="button" class="btn vb" data-viber aria-expanded="false" aria-controls="phone">Viber</button>
+    <div class="phone" id="phone" hidden><b>${VIBER_NUM}</b><div class="phone-acts">
+      <a class="btn ghost" href="tel:+${SHOP.viber}">Подзвонити</a>
+      <button type="button" class="btn ghost" data-copynum>Скопіювати</button>
+      <a class="btn ghost vbtext" href="viber://chat?number=%2B${SHOP.viber}">Чат Viber</a></div></div>`;
   $('#pbody').scrollTop = 0; $('#pmini').classList.remove('on');
   const tr = $('#pbody .gtrack');
   tr.onscroll = () => { const i = Math.round(tr.scrollLeft / tr.clientWidth); $('#pbody').querySelectorAll('.dots span').forEach((d, k) => d.className = k === i ? 'on' : ''); const pv = $('#pbody .prev'), nx = $('#pbody .next'); if (pv) { pv.disabled = i === 0; nx.disabled = i >= n - 1; } };
@@ -659,15 +671,13 @@ function renderProduct(p) {
 $('#pbody').addEventListener('scroll', e => $('#pmini').classList.toggle('on', e.target.scrollTop > 120));
 $('#pbody').addEventListener('click', async e => {
   const g = e.target.closest('[data-g]'); if (g) { const tr = $('#pbody .gtrack'); tr.scrollBy({left: +g.dataset.g * tr.clientWidth, behavior: 'smooth'}); return; }
-  const c = e.target.closest('[data-copy]'); if (c) { if (await copyText(BY.get(openId).id)) { c.textContent = 'Скопійовано'; setTimeout(() => c.textContent = 'Скопіювати', 1600); } return; }
 });
-// Viber: при натисканні показуємо номер на кнопці й копіюємо його (на компʼютері без Viber посилання нічого не відкриває).
-const VIBER_NUM = SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
+// Viber: кнопка розгортає номер з діями «Подзвонити», «Скопіювати», «Viber».
 $('#pfoot').addEventListener('click', e => {
-  const b = e.target.closest('[data-viber]'); if (!b) return;
-  b.textContent = VIBER_NUM; b.classList.add('block');
-  $('#pfoot .primary').textContent = 'Telegram';  // щоб номер вмістився поруч
-  copyText('+' + SHOP.viber).then(ok => ok && toast('Номер скопійовано'));
+  const b = e.target.closest('[data-viber]');
+  if (b) { const ph = $('#phone'); ph.hidden = !ph.hidden; b.setAttribute('aria-expanded', !ph.hidden); return; }
+  const c = e.target.closest('[data-copynum]');
+  if (c) copyText('+' + SHOP.viber).then(ok => { if (ok) { c.textContent = 'Скопійовано'; toast('Номер скопійовано'); setTimeout(() => c.textContent = 'Скопіювати', 1600); } });
 });
 function showProduct(id, mode) {
   const p = BY.get(id); if (!p) return;
