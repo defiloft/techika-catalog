@@ -81,7 +81,8 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .sticker .cur{font-size:.62em}
 .sticker.m{font-size:30px;padding-top:2px}
 .sticker.l{font-size:46px;padding:4px 14px 3px 12px}
-.old{color:var(--concrete);font-size:12px;text-decoration:line-through;margin-left:8px;white-space:nowrap}
+.old{color:var(--concrete);font-size:12px;text-decoration:line-through;white-space:nowrap}
+.prow .old{margin:0 0 4px 12px}
 
 /* photo frame */
 .frame{position:relative;aspect-ratio:4/5;border-radius:var(--r-photo);overflow:hidden;background:linear-gradient(to bottom,var(--photo-wall) 0 67%,var(--floor) 67% 69.5%,var(--photo-floor) 69.5%)}
@@ -102,7 +103,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .brand{font-weight:650}
 .pills{display:flex;flex-wrap:wrap;gap:4px;margin:8px 8px 0;padding:0;list-style:none}
 .pills li{padding:2px 8px;border-radius:999px;background:var(--wall);font-size:12px;line-height:1.3;white-space:nowrap}
-.foot{margin:auto 8px 0;padding-top:10px;font-size:12px;color:var(--concrete);font-variant-numeric:tabular-nums}
+.foot{display:flex;justify-content:space-between;gap:2px 8px;flex-wrap:wrap;margin:auto 8px 0;padding-top:10px;font-size:12px;color:var(--concrete);font-variant-numeric:tabular-nums}
 .compact .ctitle{font-size:14px}
 
 /* sheet */
@@ -484,10 +485,10 @@ function card(p, hit, compact, eager) {
   const flags = (p.reserved ? '<span class="hold">Бронь</span>' : '') + (p.isNew ? '<span class="isnew">нова</span>' : '');
   return `<article class="card${compact ? ' compact' : ''}"><a href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}">
     <div class="photo">${frame(p, 0, eager)}${flags ? `<span class="flags">${flags}</span>` : ''}</div>
-    ${p.price ? `<div class="prow">${sticker(p.price)}${p.oldPrice && !compact ? `<s class="old">${money(p.oldPrice)}</s>` : ''}</div>` : ''}
+    ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}
     <h3 class="ctitle"><span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
     ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
-    <p class="foot">ID ${hl(p.id, hit?.id)}</p></a></article>`;
+    <p class="foot"><span>ID ${hl(p.id, hit?.id)}</span>${p.oldPrice && !compact ? `<s class="old" aria-label="Стара ціна">${money(p.oldPrice)} грн</s>` : ''}</p></a></article>`;
 }
 
 function render() {
