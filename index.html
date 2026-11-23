@@ -37,7 +37,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .btn:disabled{opacity:.5;cursor:default}
 .primary{background:var(--marker);color:#fff}.primary:hover{background:#2638a8}
 .ghost{background:transparent;border-color:var(--line);color:var(--floor)}.ghost:hover{background:#24272b0a}
-.vb{background:var(--body);border-color:var(--line);color:var(--vb)}
+.vb{background:var(--body);border-color:var(--line);color:var(--vb);white-space:nowrap;font-variant-numeric:tabular-nums}
 .block{flex:1}
 
 /* page */
@@ -661,7 +661,14 @@ $('#pbody').addEventListener('click', async e => {
   const g = e.target.closest('[data-g]'); if (g) { const tr = $('#pbody .gtrack'); tr.scrollBy({left: +g.dataset.g * tr.clientWidth, behavior: 'smooth'}); return; }
   const c = e.target.closest('[data-copy]'); if (c) { if (await copyText(BY.get(openId).id)) { c.textContent = 'Скопійовано'; setTimeout(() => c.textContent = 'Скопіювати', 1600); } return; }
 });
-$('#pfoot').addEventListener('click', e => { if (e.target.closest('[data-viber]')) copyText(msg(BY.get(openId))).then(ok => ok && toast('Текст скопійовано — вставте його у Viber')); });
+// Viber: при натисканні показуємо номер на кнопці й копіюємо його (на компʼютері без Viber посилання нічого не відкриває).
+const VIBER_NUM = SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
+$('#pfoot').addEventListener('click', e => {
+  const b = e.target.closest('[data-viber]'); if (!b) return;
+  b.textContent = VIBER_NUM; b.classList.add('block');
+  $('#pfoot .primary').textContent = 'Telegram';  // щоб номер вмістився поруч
+  copyText('+' + SHOP.viber).then(ok => ok && toast('Номер скопійовано'));
+});
 function showProduct(id, mode) {
   const p = BY.get(id); if (!p) return;
   if (mode === 'push') history.pushState({sheet: 1}, '', toURL(S, id)); else if (mode === 'replace') history.replaceState(history.state, '', toURL(S, id));
