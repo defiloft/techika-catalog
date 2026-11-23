@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#EEF0F2">
+<meta name="theme-color" content="#DDE5EF">
 <title>Техніка з Європи | Вигідно</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='8' y='5' width='32' height='38' rx='4' fill='%23fff' stroke='%2324272B' stroke-width='3'/%3E%3Ccircle cx='24' cy='27' r='9' fill='none' stroke='%232F45C9' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--wall:#eef0f2;--body:#fff;--concrete:#5b6169;--floor:#24272b;--marker:#2f45c9;--ok:#1f8a4c;--hold:#c98a12;--line:#d9dde2;--photo-wall:#e3e6ea;--photo-floor:#3a3f45;--tg:#229ed9;--vb:#7360f2;
+:root{--wall:#dde5ef;--soft:#eef0f2;--body:#fff;--concrete:#5b6169;--floor:#24272b;--marker:#2f45c9;--ok:#1f8a4c;--hold:#c98a12;--line:#d9dde2;--photo-wall:#e3e6ea;--photo-floor:#3a3f45;--tg:#229ed9;--vb:#7360f2;
  --font-ui:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-marker:"Caveat","Segoe Print",cursive;
  --r-photo:12px;--r-card:16px;--r-sheet:20px;--r-field:10px;--r-tag:3px;--gutter:16px;--tap:44px;--safe-b:env(safe-area-inset-bottom,0px);color-scheme:light}
 *,*:before,*:after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;background:var(--wall)}
-body{margin:0;background:var(--wall);color:var(--floor);font-family:var(--font-ui);font-size:15px;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;background:var(--wall) url(bg.svg) 0 0/480px 480px}
+body{margin:0;background:transparent;color:var(--floor);font-family:var(--font-ui);font-size:15px;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
 h1,h2,h3,p{margin:0}
@@ -45,14 +45,14 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .header{padding:14px var(--gutter) 6px}
 .shop{font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
 .tagline{font-weight:400;color:var(--concrete)}
-.sticky{position:sticky;top:0;z-index:10;padding:8px var(--gutter) 10px;background:var(--wall)}
+.sticky{position:sticky;top:0;z-index:10;padding:8px var(--gutter) 10px;background:#dde5efd9;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .search{display:flex;align-items:center;gap:10px;height:52px;padding:0 6px 0 14px;background:var(--body);border:1.5px solid var(--floor);border-radius:14px;color:var(--concrete)}
 .search:focus-within{border-color:var(--marker);box-shadow:0 0 0 3px #2f45c929}
 .search input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;color:var(--floor);font-size:16px;font-weight:500}
 .search input::placeholder{color:#7c828a;font-weight:400}
 .search input::-webkit-search-cancel-button{display:none}
 .iconbtn{display:grid;place-items:center;flex:none;width:var(--tap);height:var(--tap);border:0;border-radius:50%;background:transparent;color:var(--concrete)}
-.iconbtn:hover{background:var(--wall)}
+.iconbtn:hover{background:var(--soft)}
 .iconbtn[hidden]{display:none}
 .scroller{display:flex;gap:8px;overflow-x:auto;padding:2px var(--gutter) 8px;scrollbar-width:none;scroll-padding:0 var(--gutter)}
 .scroller::-webkit-scrollbar{display:none}
@@ -102,7 +102,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .ctitle{margin:8px 8px 0;font-size:15px;font-weight:400;line-height:1.3;overflow-wrap:anywhere}
 .brand{font-weight:650}
 .pills{display:flex;flex-wrap:wrap;gap:4px;margin:8px 8px 0;padding:0;list-style:none}
-.pills li{padding:2px 8px;border-radius:999px;background:var(--wall);font-size:12px;line-height:1.3;white-space:nowrap}
+.pills li{padding:2px 8px;border-radius:999px;background:var(--soft);font-size:12px;line-height:1.3;white-space:nowrap}
 .foot{display:flex;justify-content:space-between;gap:2px 8px;flex-wrap:wrap;margin:auto 8px 0;padding-top:10px;font-size:12px;color:var(--concrete);font-variant-numeric:tabular-nums}
 .compact .ctitle{font-size:14px}
 
@@ -182,7 +182,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .specs dt{color:var(--concrete)}
 .specs dd{margin:0;text-align:right;font-weight:500}
 .desc{margin-top:8px;white-space:pre-line;color:#39414b}
-.info{display:flex;gap:12px;padding:14px;border-radius:12px;background:var(--wall)}
+.info{display:flex;gap:12px;padding:14px;border-radius:12px;background:var(--soft)}
 .info p{margin-top:4px;font-size:14px}
 .info+.info{margin-top:8px}
 .info svg{flex:none;width:24px;height:24px;color:var(--floor)}
