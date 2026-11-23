@@ -1,1 +1,783 @@
-{"categories":[],"products":[]}
+{
+ "categories": [
+  {
+   "id": "holodylnyky_ta_morozylni_kamery",
+   "name": "Холодильники"
+  },
+  {
+   "id": "pralni_sushylni_mashyny",
+   "name": "Пральні та сушильні"
+  },
+  {
+   "id": "plyty_gas_electro",
+   "name": "Плити"
+  },
+  {
+   "id": "posudomyini_mashyny",
+   "name": "Посудомийки"
+  },
+  {
+   "id": "duhovi_shafy_varylni_poverhni",
+   "name": "Духові та варильні"
+  },
+  {
+   "id": "vytiazhky",
+   "name": "Витяжки"
+  },
+  {
+   "id": "kavomashyny",
+   "name": "Кавомашини"
+  },
+  {
+   "id": "smart_tv_domfort",
+   "name": "Телевізори"
+  },
+  {
+   "id": "sportyvni_trenagery",
+   "name": "Тренажери"
+  }
+ ],
+ "products": [
+  {
+   "id": "posudomyini_mashyny/4329",
+   "channel": "posudomyini_mashyny",
+   "title": "ID110273",
+   "text": "ID110273\nЦіна 7400 грн\nBosch \nSRV55T03EU\nДо 10 комплектів \nВисота 81 см\nШирина 45 см\nГлибина 57 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 7400,
+   "images": [
+    "https://cdn4.telesco.pe/file/WTJFZKofx-olqj9sIgAT8tfDNbLKvOhNDVnnuwOCSQFAppa37rlzkCjGQIRrj7zPtpSu8pyAekzMx_W8_2C6oIaBRiHch7OXR8tAV8BvDd14HvWBAs4NRYqxeZrTev6DpATudJtp-iQAOeqr0oPKdhkjC7vZbblESog-iqLNeaWCMIXyyz0cj4GLR9I38jtiF4oQRpc5Dr6m215hQFt-9svJmg0pP3nxHEKqU546LIrsLdckEemFXwmiZcGRe4Z8Wt9POcNvnCHAbSI0m1RqsrvNJWc_uo4IZnAQMzoZmYPAaNtUAK0TWiGqVJ2fWKRo6yFZ_pPdGiHBVcER4p1zVQ.jpg",
+    "https://cdn4.telesco.pe/file/rgBFphDyzK082KUOxbkFRbsjjTsafntr5ppkxq0DhaiH8vDM9kKEcHk6ck44frSHj0REz6HYly2PubU0NwSJbOEIZ7LOBkfrH9WbLD4uczGGuCWcql0lpAGNIrLpFdpTEigjeSNBFF01FyvtoIJ3ZYLITuhP23W1JRBdWmP025fZvy-1LDQgvLHx9iMr7pMGsCysHcV5lViFCnhoLCaq_RWBBFrynz6ZFCTcZtP00Xza_7uPOpoFwHcMEwFUI2AlQ1JS7C9q0UcxmWmbnV_vCi8WfFzVsYb-lB50Yhyz7ZyG3WP3ETNzJv-j4IBp9khK4pvxgtAmpVJkqf6gjRq2Yw.jpg"
+   ],
+   "date": "2026-11-23T09:17:46+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4329",
+   "brand": "ID110273",
+   "model": "",
+   "pid": "110273",
+   "chips": []
+  },
+  {
+   "id": "smart_tv_domfort/233",
+   "channel": "smart_tv_domfort",
+   "title": "🔥🔥  👇👇👇   🔥🔥",
+   "text": "🔥🔥  👇👇👇   🔥🔥\n🌐https://t.me/superznygky",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/OAH61ge9CM6XTYFu13HvtUN3JliwZ6HQ0NPdeXArVTM36Oy22ujns2gb9-3wCaYfETlFQsfOuyiav6IVzNZAo_TFPZ4AYflE9XiqHALJCEvzTus1NOz8y9STipuu9IvEhlVM8G8Cir-EH_IuQQY5k_B4ifQM_V4RZKWaGmmrb0HdHViwua6svfLhO6Qe08aSGBMG9TzhaA6b_wd85Y9cniGtNT7Gq-ddLI7MNwaRorn3wgh9c0IsOp5Vt1Ezlc8RZx_-5jL0u6s2eFuyw7lD0tUfg15GFo0dID17BpAt6G9SfSrOpBvxU9JvoO0CnlBGjU9Kd1BQj0hc4EJV4wXGgg.jpg"
+   ],
+   "date": "2026-11-17T15:23:46+00:00",
+   "url": "https://t.me/smart_tv_domfort/233",
+   "brand": "",
+   "model": "",
+   "pid": "233",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/748",
+   "channel": "kavomashyny",
+   "title": "🔥🔥  👇👇👇   🔥🔥",
+   "text": "🔥🔥  👇👇👇   🔥🔥\n🌐https://t.me/superznygky",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/cidStSCvPrBk4so-2bHAErVDZt7gZvEMDcMtQ0r0ugpiYUzH3Y7mmzmNbxCMVHbqPzoT8jEnBb4xAI6u3D9Mfd8wVXdqPVoYjnrRDQonKWOtBTW_4iJzVXeu0ZTjbsEGhvEoGfuwmtiDlN1Z3Kf-BbJIfkKVzcsxN3mFhcrv--yTxPJcJUlpwYge2YMC-ShPumVFj1tIpdaf5nISvKtvrhPWgdFYP9npqQuGlbKEB8mmQ3u8mhvN4OKgU0AGdadK3Zp2RlP_QIKLDQ2xXqPmyoLHhe526WKLw7ncbVKTbOYZxF-xVw503EkCiYtWO63C0kQwa4G476l9zLvwM9wnkg.jpg"
+   ],
+   "date": "2026-11-17T15:23:35+00:00",
+   "url": "https://t.me/kavomashyny/748",
+   "brand": "",
+   "model": "",
+   "pid": "748",
+   "chips": []
+  },
+  {
+   "id": "vytiazhky/115",
+   "channel": "vytiazhky",
+   "title": "🔥🔥  👇👇👇   🔥🔥",
+   "text": "🔥🔥  👇👇👇   🔥🔥\n🌐https://t.me/superznygky",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/Qgj-jutcdamMUWesptFFwuIhAUnQBxzTuUV34yOCXcOKM3ybRfapwRb94Qf_9-Htz8LXIXYQ_gGBIpM2-rx1KZMWBYEjqNRXPL7P10VSGnuB-uyCGBs3sMzW-LmwO1avSVBELgKN2V_oTKF7ac4KqY7_FB_p6VrPpcGn6h7WVKQbQXwO52sGjm50-5zOb0D0rIeXmG_IsQWKn7A0wTX6N4H6OIygaqNPw_PDycmOiHa39iOt7Dv3htutCxjSvyIYi9FpTI27dXBBFlUS2utIDAABcWusyaWw492xM7h-dOM_TK62hSLWNBQyLsfZwwY5c2dw-Zw8J4gJ9LGHzqn5PQ.jpg"
+   ],
+   "date": "2026-11-17T15:23:26+00:00",
+   "url": "https://t.me/vytiazhky/115",
+   "brand": "",
+   "model": "",
+   "pid": "115",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4328",
+   "channel": "posudomyini_mashyny",
+   "title": "🔥🔥  👇👇👇   🔥🔥",
+   "text": "🔥🔥  👇👇👇   🔥🔥\n🌐https://t.me/superznygky",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/kmeljU3w_roxvJRLTVRaIP4_xSGP88aZv2tXBt6DN-pJc2wR16lwdf5whofcx4YN25SHcxHz4j84ZJWPBmxRKBsG25uqxFGf_EwVdc784b6fL3GtCxIWUuN7pg3euzXjyohLN4qnFWPXyPsxeeSXS-dEJqy7fDd1Pj9BkAAPC_t0D5CujB5Ns8GE2t87SC1s-sAHiv9f87hHYakxWZSjht22Bdebl6FhbTPDnLmFByHUYQt4MI3zq53nXYjkoOOtZZ_o-W1-PBI66h0MjXkWQcQYP5VYIrP6lsUiWaQAc47Vpgoa6WrXz7Ep5UW0IIRbvi9zzxolAGJMThL2wuMWxw.jpg"
+   ],
+   "date": "2026-11-17T15:21:21+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4328",
+   "brand": "",
+   "model": "",
+   "pid": "4328",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4326",
+   "channel": "posudomyini_mashyny",
+   "title": "ID108139",
+   "text": "ID108139\nЦіна 13 999 грн\nBosch SMS50M78\nДо 14 комплектів \nВисота 85 см\nШирина 60 см\nГлибина 60 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 13999,
+   "images": [
+    "https://cdn4.telesco.pe/file/gw8GRgfgCmY4gIOJmLe8D5oXKQ44yxXUKPGT4MvoZi17MmodiLFB2aePHitbE7tpVfkaudNOkrbJeXRrBu74YOfCoWua4ww8AcIhXgSYec6806uReQIpdAyqqUo6KZf-qe-R2MInYwsLXdzDiVl6ccWa-2VhTlNsywMbPSuO8QMwvvNQsTZMVy5Ug9eN-eJBAsVBznRV1KrHzrcyePndU_Uf3I3EtNUps2s82Rr2PxyJATL7-OZ0XIvfP7_9aQ2n23B81iL_wnV7bPAuheu-JtFvKf9ffD362giWi7eIvrmKjN8FVIXCY-WWCvHuQ4hZAtFVVW75m84rqanb38xdzA.jpg",
+    "https://cdn4.telesco.pe/file/mO78a5ZSkcodz5FutWnVC0B7HQBGDeQ_3bFyP7UoR5rEhVhw5qrZ5tDojjEMPY_BrYpegKy_5HCug_Znk_Wk80qRmpOqGSeyDI7A20cidM0NOr61fJ1AoyLrSslKUYfU3nGTakXth7hkX6HqgpPAuOTVy1Kr0FQdglEMBW9n5wzMbcSzh9HD33I11YlsqKK7uvJBDY8c-0wLK7yWlVLwB6ypyDRfwEBBoba1DMRp_WPAXwpRYSlWbwWZhh4xOOyO1MqfrrktlN2QisnVPw8gVfQPkGHirn6iYmYDhqt05FYJzLUU53JlA2oULRaKLZLCmfNpmOfcwh1n2BKhDZf9Dw.jpg"
+   ],
+   "date": "2026-11-17T12:06:18+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4326",
+   "brand": "ID108139",
+   "model": "",
+   "pid": "108139",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4324",
+   "channel": "posudomyini_mashyny",
+   "title": "ID110228",
+   "text": "ID110228\nЦіна 7999 грн\nAriston \nДо 10 комплектів \nВисота 81 см\nШирина 45 см\nГлибина 57 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 7999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Oa5RVQBC7U9GS-KsdBjFonlnc1Dy-cgVMDT_vLuD0vN47AeWefDm2VH_M5cUd9SvknPXAJLzxLxuMNHoK4rIib-nsKIRGBkXwPo8HpucyDbOKjWTTeTOU92zsfKpH2V46QiV9TdJFBSMqEc597mQ6tgikfWilv0x-gLXDhOaxa2VxImhgSz8ZwqxYdof3xWeomJVtSLtB12wahpZUEpk1LwG_GtfDbXFqVYZvMntSFyvoPYoNjftzf5PstfmDo7RLaW5gH7MYBuLIHg435FOQwlrAwS8_bu311SlCAW4d8LI_s8IGenYSuRoQ_xKuqpmCfumylk-lB-QfW2p-UhCnA.jpg",
+    "https://cdn4.telesco.pe/file/Jm2wXwAoIM2XqNZnfkhsj7fgPnhjdgCx2dKzyKuAm7fCA-CeOR0uwmObVO3Ev_xcJSA8DiEvCTXAkSjNpZfcdWP7RB6TEzpnAFFnLUVBKEo7P0YWML2J2jo8KEAUZhKgrxPCtddemp7zFlHsn-m23tz3iJIS9xxp76tYY7TlDJKxO2tPVfEWYt31sJos65LJ0QMVOYMSCPTu_N1WjNehLzZA_aBeJDRzquZjdG1zjh6NS4oNZzTOn1WqrIgDsspdYOO_Dtl-Qq6LNkZFrtEnwsm6OsT4lofsy23kHB-7_85cvBLVfMsy98e82fgpnuQwBbCqyfdZ7Scms4W3ePOP9g.jpg"
+   ],
+   "date": "2026-11-16T15:10:11+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4324",
+   "brand": "ID110228",
+   "model": "",
+   "pid": "110228",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4320",
+   "channel": "posudomyini_mashyny",
+   "title": "ID110198",
+   "text": "ID110198\nЦіна 8999 грн\nBeko \nDIN48534\nДо 16 комплектів \nВисота 81 см\nШирина 60 см\nГлибина 55 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 8999,
+   "images": [
+    "https://cdn4.telesco.pe/file/IiSlC5iV9Ah-pVDv0k33pKQRTclAY2uBrJABogLjRQ7_GhGmJ_z2OjdC6ws-4oJt03Y69f_NhjtDwDW51xlgZdlPkM8QhjNwPNqwTPMEUrSGhF1Ceppp5Oceaff0HIkYD3BnuYDs9oTflfW_jPxu_p3sWDu4fqldiE5X0tZB5N9p08fzcCSBFBQam-wMItxf9zMJ3i726Y5Tg_2cZAZGHu9j5ESrB6xiANxaW11za60xds3Kj6q1bh61MxTdH9kfl-2TY316e3HHbAgWFeshx-Nc4gcNUHxh6X4sehzGn4uYiNWdowRMQ2HIBLVML9GNfld1I-pqutlt7b7Ch8V-8A.jpg",
+    "https://cdn4.telesco.pe/file/g9kupdDiYUzodaNsSLsxyGpiToTGYL3aq4OtDyzRtYzog6rpF7SLkzmxPknU9kBe72kM4o5CqT9WrRW4jQriKJknRNfv-4VLdj313iKnDCVwKqapdqZTGjGXAS_1K-C_xsgh7QdCl1QCD5pOogckiA5bxmiSrLrCffO9vytV7GC9VY17wTKUiCkCovFvstg0gc05ppU5h8fdUfyejnPJwycSBqtoIzYQW1xRk18AbzbAEiJh2nxKWRY7kJ9JBJXk_hwRx4mOCTfQbQI05LZ5l1TyfQDxTCA_uW7AI6U2tI7BnvwPXLmi9wwalWU0khpe9jmjKz3AHu4OhDz-jOPg-A.jpg"
+   ],
+   "date": "2026-11-16T11:02:20+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4320",
+   "brand": "ID110198",
+   "model": "",
+   "pid": "110198",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4316",
+   "channel": "posudomyini_mashyny",
+   "title": "ID110239",
+   "text": "ID110239\nЦіна 7999 грн\nElectrolux  \nДо 10 комплектів \nВисота 82 см\nШирина 45 см\nГлибина 55 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 7999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Ca03BMOFoN6tH7Q5fbX4rMnFMFUtEJ53E0drKNVwDOVrmQMYW_IebdOJbWTcOqf-w0yZhghijdodPtXfRP4ToULYefgOJVzrKN21Fdi3u7ic6cCjY1rH4zGgne-HohcD8140rYe4rvCSAT3x0g0MPKnnT-5k0ZVXULnL2wmBsNTdTNytJn08yxZxLb9mzgnQUKnkxyO9MXOgc_lU6xfz1kI20ambse1SId9lpqdujY4XEuxmaTomvFPj6IpNyAG2REvPcS1JYZReqjSdA1vKDK_JPnCNhMne2NMbgXRAVc4VyNBq3vEL0YMPoqpCQKq3ah8F_GuoQ_XO0Ua-k2FitQ.jpg",
+    "https://cdn4.telesco.pe/file/minuq6-KgQwSnAD4E6xiVXpqWGOwuJJmsqo3NT7nrJLMUxRcMSAlSlm40I-W5Ha-yDHETDFuFGy89151TjOuJnANGTYMFxRG9zhjtaGZu8BXRv6FNs369TrwjJjliDJiLZNSbVeFEpB9Kce600PiHR78qH52rtMxw3I0mY6VlRnsuTSbz21R8I8aWCJyVbJrJKkf0aSqPY_mObItPsC0joSh_7q2FPqKuBJCfbArOAKkZCU5Pyhdx9jN7wnf6l9P0exFBARg4iSJZEs3goqc7Zvint3AuwyW6jMB_g6XKkKsttvWzbgxLalKZ-lb44qM4gMc4PaxtWcsDrmLWhY4aQ.jpg"
+   ],
+   "date": "2026-11-13T12:59:35+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4316",
+   "brand": "ID110239",
+   "model": "",
+   "pid": "110239",
+   "chips": []
+  },
+  {
+   "id": "vytiazhky/111",
+   "channel": "vytiazhky",
+   "title": "ID108109",
+   "text": "ID108109\nЦіна 3499 грн\nTurboAir K804R Twin  \nМаксимальна потужність 450 м³\nВисота 16 см\nШирина 60 см\nГлибина 48 см\n1 місяць гарантія \nВул. Вадима Гетьмана, 1",
+   "price": 3499,
+   "images": [
+    "https://cdn4.telesco.pe/file/hHEp71Y8NKA9wMfr4skiICDxt3crqBZigF21EDqYVfROJDnQCidWI0uhX9p20hNshqX5H_0XjOlL4fLMOz8sTwF0XraACaXwo8GmzgPzjID-o-vk66ddqz3A9Xp4bkCV7FVsKauEylNAXy30oyppRNhP-lsyrkXm8gfwAgzOjjwPi6V40gZ-1csxkVgimCzR8_D7inYxyGFTkCSpW-NA8Old_-taZ2_xbqvtsbBEVqBI_XBufXAoNwhx3xaW48TOeX53eb4_-8QG0F09irSWO9lSnbVZXqkvahOtnMikehc3FACqt-Hfnj2WpuHY52tEoohgIEGfPeMF5Ndh9KOLCA.jpg",
+    "https://cdn4.telesco.pe/file/tbrRAJCKXVa76OyOPkenaZYYlMCnRkzR8RX0zAHpjcFJUaDbrqJFW9gNzsHu4piK7wUXchIPObnZKbWFaDtyGlpneoSP5MFtg4IFb6-xiXvb71ziDDNU5RNJeVIq96QpdVz3u7UzikRsDWjBmG04kWrm7oEerTBY9nSiwwefrNZFEmHZbaoaOsTg0DS4Q7uwhSrmZFi5ylm4mejapDU8eHcjErYaNm9tbuqK3bFPSmiop-CEhAXHH3GHSN5is7zadlxsmhjUYPFSbFEq7UXh7HkDJVXS59HRIEJ9QcU6U8RRXvW6j5HikRKIYgsKYHDt7w8HO19GFEYdWm2fZ5cpNQ.jpg"
+   ],
+   "date": "2026-11-03T16:04:12+00:00",
+   "url": "https://t.me/vytiazhky/111",
+   "brand": "ID108109",
+   "model": "",
+   "pid": "108109",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4310",
+   "channel": "posudomyini_mashyny",
+   "title": "ID108095",
+   "text": "ID108095\nЦіна 11999 грн\nBeko\nDIN28321\nДо 15 комплектів \nВисота 85 см\nШирина 60 см\nГлибина 55 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 11999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Ni32aycrx4IAM_0-e9uuZjbaCb07o9esLGTW_855JsctKS9ze3jrvbYNvNNCmPkgAYLIKW2J-OlMkpB6xVXdIiDnZxTkmz4rzGcHh1IltIfWOZrD5T3Gi4KAFzMEyg1X1KTDyXLlvfOuET8s5mky_oc79BYXgdYfc_pZZcUL1sXDVzOmETNpHxX2meZASAGoaEiZec0sb5h3_lWiakzJdSesKq-NwBTCB92WVd8RwU__WU7A9YHo8YCm52Jq0-TjjdSXG5ofLJdw_pnEOJqToepJflGvcEwezlSnsBle0kbPuHeaXYJQtpYECBoG2DmbY1C8YyJ_X7rWb7Hh9EtDIg.jpg",
+    "https://cdn4.telesco.pe/file/E_IF9rv-f2idzRfrozioujEyxF5AlLBkmm8MJNiH90Cs_FpfRZ5SsGIf_3OCEDUcPlMo1cdkdcxyIEMQJiTf0nUewaf-mDdWGKQ3z_hbdpBPwF1A1ONJeRMDuNTucx6QF3N1BYzC6Mc5ZZUV36Ol94rBIE5bkELfzgdBgaL2cYEAZPS-8DV2tAbcM9699vp4wOJ5qhx59XEFeQHEX6DK3advRsrIfE33fzmCKkA2SnYLQlHDeOcO7lr8dZ3pJU2cDsprZKtdjkGq69sx3YDdM9f1Ec7GkcYRFICwHGo9J6Hi4xzsYyKf7Ve2HSx9wxpeHYmfmD6F1yYt0MvnFMmBdg.jpg"
+   ],
+   "date": "2026-11-01T16:01:09+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4310",
+   "brand": "ID108095",
+   "model": "",
+   "pid": "108095",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4308",
+   "channel": "posudomyini_mashyny",
+   "title": "ID107572",
+   "text": "ID107572\nЦіна 16999 грн\nSMEG ST145\nДо 15 комплектів \nВисота 85 см\nШирина 60 см\nГлибина 55 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 16999,
+   "images": [
+    "https://cdn4.telesco.pe/file/DjfjOvTkhC8rfxK4COYRM3KBHk1nvh-LXkYeKD_6QWnE1usb6o9oJqhTHhLixXGgcCtWAi0f3Tqv3X6TqDf2aT6lgfokJzzrhdkhc6S1NHX6gntUvozVUv1BHaQme_L4hYtLFFMlXbQr-NVPEfjeet4z9hR9biwWiZd9TMNS8lWxySs5xN12H31Y4lsLionhn_4fcrDN4K7FqDz4O55wuoTjSTXDu53N4UDhLPnrunVrxnoo_N8f5Jcjo0r5mtVtg8w5AcUKBk-DfyJNCxynd7-VOb74MfA6T_4dLQiM2ihO0WOsBvuocgOnW79In1b-gU78aUQm0nN_qJlbAIzJ1A.jpg",
+    "https://cdn4.telesco.pe/file/SZJfGIb_wXcSKJDWBvMHmNwsb9CS1o-0Xrs3ZOn19wbmhD5xOWY8hsRm9Rg3QFR8wg6l_JhKIBBuLOOa0PoZBdmmPc5ThW5gsw0cb-wy66EJqOaJQs870oSmEnNNIEogQx0j0x2Bh7PPK6_sX2S7rJtZ50qoHyqWBj487SzaofQhwUyy8bou_7ptYUVqGZXvgX2jPscXtMYXcL5-QzozIirSAe9ulrDUKLGaEySZtPloGb4Hln9zkFYv_w0KQrwt-sL0-Bh0WULKwwhvXFN-zS2-DlMSEwJ3AxHsp9dwL3dqAZBxKjIQ0J-GwAB8wp6ewpJlX9SY_u0Efo5mLhipkg.jpg"
+   ],
+   "date": "2026-11-01T12:47:24+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4308",
+   "brand": "ID107572",
+   "model": "",
+   "pid": "107572",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4306",
+   "channel": "posudomyini_mashyny",
+   "title": "ID108076",
+   "text": "ID108076\nЦіна 7999 грн\nWhirlpool ADG145 \nДо 10 комплектів \nВисота 85 см\nШирина 45 см\nГлибина 55 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 7999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Uh1Q73I0-IBVZDsvLw5dbIxoTPkTb7x68NXE4zVImTZfN-Ch_XuJ9Q2P_tPsyQTruveGyySP__-Sdb_OukZC5diDpuLAmmOWmXNWX5-rNmiWPpqbtaAKq0CsRNlJnaZSlLLg-yNrI0I4EoAJ98JY5z3QxT8acCZC98SeLF2AW5mly-MFp7pSDaxoML62mvaryYZzKYYln59e9mEy0S9pR8I0K7ap-UQLw4hk7yLS-p_3RhdE8aW0ch0-2tPfKquThOrYfP06TeoEz6NfAJNclmoW_-3uuo_ogWufD934gl85QwrHN5a-SC9JOhrw3G-l6xLPXa9thYg_JoJHPEUqUA.jpg",
+    "https://cdn4.telesco.pe/file/dzC5nq_Vh6fNK4bLKIeTfgqqCwcTFhnK6LAxglULseOWY5VGieQ5HAmEFp3RmYhWYWpQgEyvOLIfYRHwGsojCNPRuD2wxz10Pt_Th4aim_pKarUOVB8zpMu4DtULXqS5snCMW9TVl47DQcjo08aOCW42u9cf939nkX6xT_EkU-uBFEN74NgLq3btr0BfCE9XV248RxxkkOvvHqlrV_aBfnKTMahsAxrUK_3j62-eYEPgylqrD-R5FGLgo5g3ZkkIyHf_uVhduWhiB1twhXAU5JYUR9Uj9JiN5uGAeI8MbqMA_CV9M2Zz4HA_-QIMuoIIixi2SlpgJARtOO4ihmcTcg.jpg"
+   ],
+   "date": "2026-11-01T11:24:52+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4306",
+   "brand": "ID108076",
+   "model": "",
+   "pid": "108076",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/747",
+   "channel": "kavomashyny",
+   "title": "ID108140",
+   "text": "ID108140\n❗СТОК❗\nЦіна 19999 грн\nSaeco NL9206AD-4\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 40 см\nШирина 28 см\nГлибина 48 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 19999,
+   "images": [
+    "https://cdn4.telesco.pe/file/rXOVLaRhGYRkRoDNWvDQgaA0ekxJT26iY6MC3tsmGv50SjUvfD6Cl_fIYbKUUoUnWPN9mnYYdl5c8eJjaOKAamZ2pg31dTL1iWMfLXtfgkCUExDnfcxrdKLFklsSWARiJyFq-NdWdqw1aD0BE1MqGrK-yEjPil92_5qHwaY27jKege7bCn87l4tB2cIdT1QqHUPt5jmhGO1w-JTXt_AWNXQ5TRON_Hos0pAKkhQzJnet74v-T9Mc-DZv1mL-Bk9rRkAWGKVqBKnHalPihvY8JU7qMa4p1EM1MeOf5K4McKWWkz4eXrx2M184r7UGWZ1EPVN-sMx0OLDrzeCmLUOzMw.jpg"
+   ],
+   "date": "2026-10-30T16:04:47+00:00",
+   "url": "https://t.me/kavomashyny/747",
+   "brand": "ID108140",
+   "model": "",
+   "pid": "108140",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/746",
+   "channel": "kavomashyny",
+   "title": "ID62632",
+   "text": "ID62632\nЦіна 14999 грн\nAEG\nPE4551-M\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 46 см\nШирина 60 см\nГлибина 39 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 14999,
+   "images": [
+    "https://cdn4.telesco.pe/file/QAiwgTA-XRf53VW3isnwhqRqWlqX0AiC-qdYNYxxYiOsdOhydTpKaO982KGtusmi2TRzvfW2TRdHFO0yi3bPlovIxAArzIPoV3ASiIIuWtEFEN1m6SDzAnlK745c8s3mOILlfLzx7EvVISkukpNuUBo9AItP_DZVNfMiU9nx3st5R36RThiW5NAl2q9LG7fDScG1jY_l4KgIOQgsvKjf79mJmgpClBDD9N75f5xXXtgLU4KmfXhmxLVE-2r82dmD3OvU_S_R2855xEUY8STIQKkjdvG-X8EU2ggaGm2aWTBShL5jhicz_l5_i1Lo7TiQRm8uULUibFB_bdEol_b6nw.jpg"
+   ],
+   "date": "2026-10-24T12:56:52+00:00",
+   "url": "https://t.me/kavomashyny/746",
+   "brand": "ID62632",
+   "model": "",
+   "pid": "62632",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4304",
+   "channel": "posudomyini_mashyny",
+   "title": "ID107733",
+   "text": "ID107733\nЦіна 8800 грн\nAEG\nF55000VIOP\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 56 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 8800,
+   "images": [
+    "https://cdn4.telesco.pe/file/WrS3MYdcuEsztHZhOoAkCHhh8-sFblRR8tS_-wrw51D-dgrda2Zhnz_pEK9bIPF4JnGC4WifOQbE40kEUKopCrqiufPiimG8yBM1uj6tgYixOkIbA2o2d-bfFHx4xzXidIq0sOBr2lfdzNyvfBz_Vs7IZN1hLYhtY5bWm8RmQ4p_aFiW_RZQwWISIsqQquuhP7HskC_D9XUv7sGM55JNyoW_nS-u-SqNg7vfFZOgcVE9UnSmkbz2jUgvt9piBNJkpDcSTRj4UJm63SVf33jv0wZWFMWctiZ2SJc5PxwiV0mmiegOyPNM-0e1IT0AcVLOgtRME0Rw6f67OTK0n6b8ww.jpg",
+    "https://cdn4.telesco.pe/file/JSrcwhBgZ-9yUSxdI3JfNnhgB5BqQjZW3wgf20UyY7y5RilRyQcxh__nAqMn-zdT6ZCQzFGeTJJtR0djtIF6G_vaFv1a4iuN7NxB0nUoS-t_fo-UqTlhDWdAnSb3CDUeTCT-I6eIsueMPYRF7aw30Xvk4cdZSjz5QXAZ-rNDrnUgEdiKIpeaD0hVxI3vfHVANShgMlh7hHe3sFu4cRtDvLSiK147LwpdPcUgS2586J2xTrDM8L2CWn6NXrvO-Y5czyYe0MUz4x6hk7oDPoTgijyTWvEBdZ4vYkzP3in4rh-6PdPZqopxzlCkGiBTlx1m8u9kt_Ndmqf3Bw9EZT8lEQ.jpg"
+   ],
+   "date": "2026-10-24T08:48:08+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4304",
+   "brand": "ID107733",
+   "model": "",
+   "pid": "107733",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4302",
+   "channel": "posudomyini_mashyny",
+   "title": "ID107729",
+   "text": "ID107729\nЦіна 8499 грн\nGorenje\nДо 10 комплектів \nВисота 85 см\nШирина 45 см\nГлибина 55 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 8499,
+   "images": [
+    "https://cdn4.telesco.pe/file/QNvjBT0IIgc-IA7VKyfbFaadSYxMzwQUoYWeUZqyaai07yPJCPPwpPqhBtyxBWZ5eSjJVx7ZZDpHZrf1jGsGdvn5QAWMAeFmylEJu82Jy0nngLvCMQeSC880TCFf4GmlzgFYqxIhBUQnC-7Rd8kS68SeQPG_SVUfIKbsM-x-levEbSv1IR6G69kmTCfasuHpdnraLQKDd8B7ENMjzSy9tBni3knSeOXBpbcg52P-FzOpN9e72VYPZ2RQzjFdCNU9BMpdvN9XNVIL9zcI5bhu660lt82YtfZPEZHEhTVk7SgushvPV1NB-nMSSsHyh1CKx-52ErNgEPUmpE_sH8QcGg.jpg",
+    "https://cdn4.telesco.pe/file/F1eD2Btt3f5knU9JlDVg9mvKuBmb5nr4s7-0DN6Cadi-rC3L_LzwF_Pok8hylIHmlZnaO2vIuZmGVs1A3kEHlc6fpopJCOgrxUUlr7i10hVqRkAmba2Lt1eP9csdo9wIw1Oafu6iBuikDly8xq4Lde0JuDFoT5xnTR0b9E3vPBAfuXjwKTCkp-vv5Ys1354xaaqaCZumhfg7fVhPjf-uztXKT7y3aNJU0OGE_-vnqdeoLcdztYI-e5gpTX1mI9FxppLJmeP9XXkBYCLus4XGZf5d6V9MSGwF9n1TWHD9Cc15qL9wm7UJp-e34uD5jzGn9mJvnSv4EWY7I5vwmQ3YoA.jpg"
+   ],
+   "date": "2026-10-19T09:51:18+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4302",
+   "brand": "ID107729",
+   "model": "",
+   "pid": "107729",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4286",
+   "channel": "posudomyini_mashyny",
+   "title": "ID66926",
+   "text": "ID66926\nЦіна 9999 грн\nНова ціна 7999 грн\nЗнижка 20%\nHisense \nHV603D40\nДо 16 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 55 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 9999,
+   "images": [
+    "https://cdn4.telesco.pe/file/ViQ2rLH76mM8d2V5ZkbgJi9iMvEw5rs-vEjgsBOMOADDmsb2S8FcWNyYfc8MF49m4SelUwnA69Af4Xl1poLsCJHh6GBrkK5mVl-VZDgO3pcWqB0R1INWs3sUNiW4GdCI94xy0_0PrbniQXl1Wwyd3RSPZ7bbpxwuGnnM5VGqk4fuBqZe9EMLUhuj4M-Bovg-WnbnXZp8PH2UNqpY1CTz7_tBl-Tupo5og9IRZdSMm4Bg7mN0RYPVQ-5vA4dw5zJXqEBFevZpMPqTmHQhKM5xplGJGf3eAEHhRjnHcEZrGXHUUHySXuYcI279d0v7qtnbM9Zdn18kvkGzVNnTM_UNgQ.jpg",
+    "https://cdn4.telesco.pe/file/kZ36kTI-CsxHIeLlQBWBq7O-vDL3Kh51OxefqIELbC5lf9g7fmMRMF0fyqMjZ-uAq_1e2zVHIBrLhO2dGEMVqH-Dw6yNQ-2EPrM5nl0s7iSMJMFXQsmQvnq3-UmOB5qd0LmUh5HKgnXo-fGhXwJDDZ3UDy0WU7cNpITG7aoxdjW4tB40LMlSYlsToTzaHpWhwUtiV-Hjdkf4enzOKvtvsiNIHHpoR3Wm0wHtFJrxkfkuNp6BAin-W5wAC5ijkZiY22BxuS_7Hwwc6TCk4o0sIO5Ih6Vnfvui7_ObhQqW4XChQnZdCEul5l1ahcBI57rmAGKXKrj2XsISagSHF2Se8w.jpg"
+   ],
+   "date": "2026-10-11T16:05:51+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4286",
+   "brand": "ID66926",
+   "model": "",
+   "pid": "66926",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4290",
+   "channel": "posudomyini_mashyny",
+   "title": "ID15263",
+   "text": "ID15263\nЦіна 11999 грн\n🔥 Нова ціна 8800 грн\nMiele G 8051\n380 Вольт \nДо 15-ти комплектів \nВисота 83 см\nШирина 60 см \nГлибина 57 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 11999,
+   "images": [
+    "https://cdn4.telesco.pe/file/U4yy0xNQbIoY47fs3KnfCgRs8SJ9Xqo45a-iuwhSR6s07M9sd7mTtVXGwpAj5auU3m4i7rSeopz08GmBxlnhf90l8Qdex1zx_C3h96ENruZ9zrEy8Jl6mEDPm5IHBJo0qtClQa-foKPn37ypuaZFGfBxeX4ig1XNaceE7onY2vAS8JautYoztSYWdhXapdSBTHHta6KwKoZoS-hr847jM_M5h5kodLx9DIeY2R-7xs8Kde4SHPQTwgL-gd0Q74keKXvrPqkcIG2WRG8cDwYIiMYkUEdm0Lk9Tdz4NiI1st7bGqBdNO0A2FF7K2UWi9v_JnNdzgQLiFosojzniNBV0A.jpg",
+    "https://cdn4.telesco.pe/file/SaiFr5EC9J4aj3emMeQy4m5rZqbXsQBVOfXAdAWwc8BXnpzEdbMsbX6q01QLpb1njIXRjCmIWsMrKFnohlV3LUr2dyhJG2bOR-dT5hd3wGS8XDhbZD49xvmmptxVoIAPYEeQLHOPm2Tj6bWGAeoliO0lddMutEF4MB6vyFN2Wyy8XJztEkQk1r3CIo9KxvDcShJ1LjfZQ-u__kfWzbK_QM33-un8ZC2ElMWuZnlfLuMy_wbs0smdqKB6ek-S9JsnRC5mDZiW17FDiDe31OKNj4VdkjHZBOdMPjADmH-5yqb8Pq51zZ0ns5Tcc0GZJMDtLwuhVNAQCZZPvYSRmNrdtA.jpg"
+   ],
+   "date": "2026-10-11T16:05:51+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4290",
+   "brand": "ID15263",
+   "model": "",
+   "pid": "15263",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4272",
+   "channel": "posudomyini_mashyny",
+   "title": "ID102819",
+   "text": "ID102819\nЦіна 11999 грн\nBeko\nDSN6634FX\nДо 15 комплектів \nВисота 82 см\nШирина 61 см\nГлибина 58 см\nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 11999,
+   "images": [
+    "https://cdn4.telesco.pe/file/WpSIvuWIQkedtWRsOTGjpqacMdPiXlz3h_48VVlywvrdqDVxBy3XdbLMYOTBGwArYfpsKFwK9m86_ynooRClbjXM9pB5Bb4vyEw6mmtFA1J-2GrysF_4qhb6Ki4iWMakaFGTS35-hX5HlWxCer2h0-8lSX24bP8-xf96Qdg8nuQ6lQSdsGNwW27cl6lpJcNdH6Ro2oWTUme4kpq0GCYPR2RKwMGAwgcbMna11JGSiL0lf2Z2v3zRDCkFViWBl8l_uEsyf0LxFo4qD3wBDiu8ERFgbIC8Mjbofhhmybn03COe9O5JEUSl9XM_WyK_OTJBMf1Dl8nzGo3nl8R5mYU3yA.jpg",
+    "https://cdn4.telesco.pe/file/uhb_Soasf5BO1gfNHdXNjwrTO3GKasXfKNGJhFNQZi3a_S7ez0M0F5vRJ_7PImr6QIO2-LpuGAJdrChOnmLJV1VIt6PRTcRKHiHbprHCBsuBBhlwoxl2m2BME7mn4wy2pfUGlTiCRJqMJOynlwi64haajJLiqV7gpY8FTDr2V5Z93Brbtl3Lz4uBoIj3DTCXLV_Q6DjwVpcKd8g4mCDyDp3GUMZL2MYpVw8P4Ra0D6GFb3UWBfCAqAeSHPMrgf1nexuDVJ1wwLQpcgPiY0w7-FgQVIn2dZyw38894gMa7iBrJmd8dNYM_jg3gon9gkBoMHk_-u41bjH_Gjkio-s-jA.jpg"
+   ],
+   "date": "2026-10-11T16:05:50+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4272",
+   "brand": "ID102819",
+   "model": "",
+   "pid": "102819",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4280",
+   "channel": "posudomyini_mashyny",
+   "title": "ID74306",
+   "text": "ID74306\nЦіна 9999  грн\nHisense \nHV661C60\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 55 см\nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 9999,
+   "images": [
+    "https://cdn4.telesco.pe/file/ctD-kVyhPE1T7XF7qVOFgeka4gpXfpbTkUzeT3217Ryk9RgoxSs2QPvEf94wIAZb8FHFlOsH6D8T6mVGxVsklBlNuIx8CNSICxskawMQQ61BQcWPpUTgpFPuzyVtgiEzqxgLiqIdaQbbt6Pvlnnqw6VbrjZnIoKXClryz4m5SBl5w3Gp4aoa6MQl7uqnDfsTvf1m0e0HYaijC-8Ht01xUSp024-jeilefVxDcQwNRA1hdaUuBtvZV9e4oUtOdc513nfKh-fPor1f-a-tVHqRCKb2rKzquJJzJafJM2FKSHmplP8K_aty1F3eB4tCWfhKAoNCPgL1SVnKyPg42P48Zg.jpg",
+    "https://cdn4.telesco.pe/file/uYDun53sPtUl-bg_bB1sjG_A7MRLq5LporPiBKNPw8ME0qO_SRFbrWL-DizaiL8sKJA8Rsxurne5a6iJt8X91zg9hUib2FuMS7aoB7u7HRNKhpXM48UC1eEQnSLRmI6IufNTU6eInQF0I5ZNd9wWCYBXz81TjrqjsfmUKoc0QNDQDwSZ_dF_gkKlUxl8tZ5kIIvzUhMKD71PVwOR7gYbT5y1Kz1r7_Z4Z2hSZuPpRglBINnWQs5GBUwX9jXwLb90_fzK_KbEh1atdQ64MU0mt_sa6oxg6isQjYC3t-cOqtD_JYQ3aZ0BAmGvkI5_MQcquLSBD88Ewf0XqkNSgs07tA.jpg"
+   ],
+   "date": "2026-10-11T16:05:50+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4280",
+   "brand": "ID74306",
+   "model": "",
+   "pid": "74306",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4282",
+   "channel": "posudomyini_mashyny",
+   "title": "ID102819",
+   "text": "ID102819\nЦіна 11999 грн\nBeko \nDSN6634 FX\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 58 см\nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 11999,
+   "images": [
+    "https://cdn4.telesco.pe/file/b425ix3kzCcxDSdDkZmXierwQ2YZAp7Zj0OW9XFaZ7dBshvqI9wR_BwaQCbl6HpkH_LXvVkRqXAMH0I2GG-yL5xsVCZFdeh3nbSZqZzefCTUp1n0O_AuAybBs62lpd1ptE1WYu39PrQM-kI1avVL_SNs5IAiTGnTk_4XRQV5otG3KeYzWlHq8rllgFJYCa9zsn77X_Zyr52Mv9OP-FDuSgN9pvB6N0Sx5yNl9OedxJFHLW6574-JGLMvhhOlEmlmzHFdS4BkDbQoNo61scSBNyJ8OQHKNgpEFlxodcQnEN18_jSR2SZEKkYndFSQN1xrbHkh0dPX-kqQiRGKZK1gIQ.jpg",
+    "https://cdn4.telesco.pe/file/MsgkAE9iNvP_ac22qQA5acpqlFG1JQ_pbfcERXxCVLSGUfuwN39EC8oMF3e3lL6aA36Gx1vPAQ2hyy6j4_s-4C58nLuMNLBgXVl8u0feU8r7eEiS46zWq_ZTxLDPiBbaXDjKgGQrhVSBGCJ9tR2MwcLBF6DoonY_XGjxhqdcjYiS62O_3OfYRwJXcgFnFqmSJQ-gNBePrfol2xWRRNdcQYyr800dJ3ImnH5ajWxTo8667QrcbE1pIO2E3Gmq_XShu_pzpdpYYvfLXNqNnLOdDIJ2-xBjHa3VYpvgEveh3ouneMh8W2xORdETOTsK2iSeXMOJIJ9z22PD2CQGfkhEWg.jpg"
+   ],
+   "date": "2026-10-11T16:05:50+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4282",
+   "brand": "ID102819",
+   "model": "",
+   "pid": "102819",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4270",
+   "channel": "posudomyini_mashyny",
+   "title": "ID104578",
+   "text": "ID104578\nЦіна 8400 грн\nIndesit DIFP36\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 56 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 8400,
+   "images": [
+    "https://cdn4.telesco.pe/file/GCsau6ojCafL9SMO4BE4pP4I52wUSnTRG4jgI-trMhXjnHf32ODW45UkcAgFdssKIBwIyd2CzVOpL3tLlEo0DF8dGYjw_XRpX0k1DUtODH-Pgu11nZS5VpYnC9s__IdqaNPNezdQd_BprG56WA4Yt6ZMd-wlTQk6ktyC4-_dKpUPZtP_ZvB63rZ7kMBU2mxMzdcbB0qQLUOVZCONn5ZRi2zjRR4Eo6S5n7Kqut00YX6dqIUkBdT9g-pBgAKDlZo-Zd55Az6uH02DkE6XSqXijZiPgj9l_peA7bfpOdNC8ukB40TWEjiRl0DOnawaNScE36EwzXdvbgT4dXe6RJ6K6A.jpg",
+    "https://cdn4.telesco.pe/file/eMQckq4Dsaf_JAq2JM87BnFZfTUbbgbMtaCJelfUQwTsvSY10PA8o2DCtv394vBC1dgVZLPXm98ynfpCM94jylreNfOw8WKnhgJtj6Y8jfOTkDqXm4Pdc0m69IqAggo9yzCjxju2FmXgymw0LoiriOB_-w7r9xfKq5XGXJZE6aDB8JjTKQscKXXTDlL7Uvo8jzqvwD3VW_8Sb9nmSKtabo1Z1f7TeUob2btopi74zz2J1pf5OQZVrHKJ75GliiwF2Eci9wntwZlgecvYBaDdeyOKVxFXIrQm3zzIawx4X8jN7Ci7hXkYQpkyhVEUkAfNThy_6CM1per3_j-JgHKYDw.jpg"
+   ],
+   "date": "2026-10-11T10:45:23+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4270",
+   "brand": "ID104578",
+   "model": "",
+   "pid": "104578",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4262",
+   "channel": "posudomyini_mashyny",
+   "title": "ID105794",
+   "text": "ID105794\nЦіна 9999 грн\nSmeg STA6143\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 58 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 9999,
+   "images": [
+    "https://cdn4.telesco.pe/file/LyuRR40n5gt1L7RWDXhj4J6sGU3-gvlLikuLimnPhPD-Zv_4c3ICRsyA-mKTVUvmQ136CYWD3rpi-iVHYjp8Qhp5tCr2E_SHYZ3LnoDpVsqm2zrdgr5MZuk8xyhPVBt2px5jTdAdDWKq5Fzim_5FK9ASREftN1OmgumH4M9HcSxa3v7ENif0JcOXBxa2NY42fNaR7BUVGNXvV8M5eav4h_1vIAa7WQyw2pAxwvwo0vGuCPKJPIMWUbL4NpsUu9bIzyrcKgzrCoXTgixnrwWFDYtFFhS8LoS5DQPDFdMZAom8dgaLvpbazsW9Vv33OicyASQJuUGR9OryBeTv6PKZlg.jpg",
+    "https://cdn4.telesco.pe/file/ndYUO4oCvc9lEqa9O23fcy-E3Imk2PT6SE_HsjrlrPQzoY_bS9rjK9NyvOq1F4AhKOc2xtG8mJoqYvP77wyCCxyMoQotTR7MOlWGU-Gw7SJ331m4Qvh_FUArPmGN9Mi47rSFllbSF7vBy1PJCrWLchJhcA8BkPxljVDhBKgqABTULjw3Msq2v4SmgI4aQZre9RfmLde0IKG_aASRtXNNUEcoWecadl26ow6q2lmNEy19isS5plUYGfNMUV3wOjATCfIcV93KOHJ1aPSCPAkFIRFORZP1jWe533YQ1U8K5TOVUYiby45O7VVPCBjxUInra1duDcvZJ0bryUHQ1RZYzQ.jpg"
+   ],
+   "date": "2026-10-11T09:43:07+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4262",
+   "brand": "ID105794",
+   "model": "",
+   "pid": "105794",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/737",
+   "channel": "kavomashyny",
+   "title": "ID104221",
+   "text": "ID104221\nЦіна  12 999 грн\nKrups EA875E10\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 38 см\nШирина 24 см\nГлибина 35 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 12999,
+   "images": [
+    "https://cdn4.telesco.pe/file/aw1kxu73BvIv7xxi2-UGHOml2gqH8kXEwZ_a9NpaD4DsqOblxZVYTLryYajEUrUq9I1sVb1wdMa7B-LMtg_fW6QV_yfv86dWwLkuo5bHL9UeeTC6GcnlKMTPShkCXru0D4DArBi9ZUb6z4mXxPueg-6x1EWdVyI0zwa5-ht1FckOuhhQua0BJJWz-Zdj_KDifRGpFvsl5EZ2KWYMkKcxuKVQFbl2e_7ndrEPtHu2xNztb5qIucE1QHKJOUyVS4DYfVFQT4lm36muFqAzMFfvYQ3GRLGYyBm5JC-jVos6t4bEMURdRISntQL-J0M3qjwdtE45D6ops-rOFGE6zX-wPg.jpg"
+   ],
+   "date": "2026-10-07T19:33:27+00:00",
+   "url": "https://t.me/kavomashyny/737",
+   "brand": "ID104221",
+   "model": "",
+   "pid": "104221",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/738",
+   "channel": "kavomashyny",
+   "title": "ID86047",
+   "text": "ID86047\nЦіна 12999 грн\n❗СТОК❗\nPhillips 2200 series \nEP2220/10\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз \nЄ капучінатор \nВисота 37.5 см\nШирина 24 см\nГлибина 43 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 12999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Wt06VOKgKIXYwDMpuXJqN_DObvG62FBkA7XCmZyztrzmk4vVuVQntmhPzm4lI2m8QytO9ozdZieytwkUpZzqX7KCXz4BE4ndBrEIJ425lubcdxsrfavDT3iA17yH6eaayXNxW02G9ZPJNrPiIvPr4NbkdjfH-Yob551TFuPyWQm8KwGL3HsXD0Ew9vj_zVOw9HwM85iHXurk7w5nc-1SGHISFsa6gHXk3GTam6HoUN859LIkqi2hnrY2KbcLQ1t2QvnRy5plFEZhZohBYpWckEecPeI7ihuYsdWKNueyzNTALuf8neXIMhv_hqRLr4LsZZnYyEVYlv1narQKGacIkw.jpg"
+   ],
+   "date": "2026-10-07T19:33:27+00:00",
+   "url": "https://t.me/kavomashyny/738",
+   "brand": "ID86047",
+   "model": "",
+   "pid": "86047",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/742",
+   "channel": "kavomashyny",
+   "title": "№8423",
+   "text": "№8423\nID73440\nЦіна 19999 грн\n💫 Нова ціна 15999 грн\nLaCimbali\nМ1 Program \nЗернова кава\nРегулювання помолу є\nВисота 80 см\nШирина 35 см\nГлибина 62 см\nГарантія 3 місяці \nВул. Вадима Гетьмана, 1",
+   "price": 19999,
+   "images": [
+    "https://cdn4.telesco.pe/file/vaaDOYx5pAXpGyoZIN0mxRrVdiVrV4IHIf_WZRpG9QH-MSgIaoHuptmRHusmh2XFZLi3GR6E4q-YPk8dtuW_eWWd4-X7XMgADbMkRsZHd5DpkPd8xXYwrd_Tc3oZ1WsEfZw-xaxfIB1fg3huKxw1xoo_UwIXmHvwAodBJbx5OW3ztW0M9-f0bTMRTKbIuJq2wPeO_b3Cq-_v5Bbf2r8x_S8XvBxtJAOQSl50vJlG_Ok5ttI2Lkw3F9GZj13N900W8pZmkARGbCD7VKA3CT0cyq_1Z9Hv4gVFItZN2eNm3eOMFzWT_e3JOgGLncAzny6fbEJRzFC3sTrj33L_RAmDHA.jpg"
+   ],
+   "date": "2026-10-07T19:33:27+00:00",
+   "url": "https://t.me/kavomashyny/742",
+   "brand": "8423",
+   "model": "",
+   "pid": "73440",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/743",
+   "channel": "kavomashyny",
+   "title": "ID104265",
+   "text": "ID104265\n❗️NEW❗️\nЦіна 17 999 грн\nGrunhelm\nGACM20\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз \nПідігрів Чашок \nВисота 38 см\nШирина 22 см\nГлибина 47 см\n24 місяці гарантія \nВул. Вадима Гетьмана, 1",
+   "price": 17999,
+   "images": [
+    "https://cdn4.telesco.pe/file/bseWshlOMF_PQCamwqpSIiG0SqyISYh5lnbscJUKzwwV8gmpKPrv64DgrpkIaUBpAnXnkvuMNm9unkgtPLyYPshnDJUF4J4mJhSR-Alq7ue-ml2GhWdXQqFoxVUhEw2ZAGQcDTh-l0V8ani1hiUxtEEIbs87FQkAbN2cl76ADzT21x1dQ80d9OahIF6_v3pmeaG2Z7OgM3uP-a1G1iEbNl1QexY7M930HWfRiZBrh9qSobAbhliiG_HxCvBczvktSen1lG1LMhozBsMt66Hg6I3o0wzsMaY2z8W6wOXMbrRc9WdcYKOUb73j3xFvklptUv4orAxRJvsIX1rrOYQRiw.jpg"
+   ],
+   "date": "2026-10-07T19:33:27+00:00",
+   "url": "https://t.me/kavomashyny/743",
+   "brand": "ID104265",
+   "model": "",
+   "pid": "104265",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/744",
+   "channel": "kavomashyny",
+   "title": "ID104263",
+   "text": "ID104263\n❗️NEW❗️\nЦіна 17 999 грн\nGrunhelm\nGACM01\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз \nПідігрів Чашок \nВисота 36.5 см\nШирина 26 см\nГлибина 46 см\n24 місяці гарантія \nВул. Вадима Гетьмана, 1",
+   "price": 17999,
+   "images": [
+    "https://cdn4.telesco.pe/file/YSCh_iPsYhBTm89AvsJ-NU6VJVVm12WeQ0uNJKmak5B5mLVPf6vv_wmaIlUVqUHpbNdJYNKWXkyezQEc8_n5qAOsj3HmehTHBBTANdTUcDkSHHxW1eynbMMcpi7tXtLXaqCDz34y2C3ZHxj63dZwwbQUhTYYfSUF4GsHPUZJ4f66Qzm_0DpRabSj2bNpj-vU00K8YrRolKQaM_SVexQZd8X2_Hq50rWZXRPKcvXMf1Juk4i9vOtEKPKQyYXgW6VqMD4bY0ifV6axTndrJKO4lIFBq5O2w9zg65OptAq4XA2Sa_P7mQ05aPIbtBVAzBafniJVsWL1xx7XjaIEZgAEEg.jpg"
+   ],
+   "date": "2026-10-07T19:33:27+00:00",
+   "url": "https://t.me/kavomashyny/744",
+   "brand": "ID104263",
+   "model": "",
+   "pid": "104263",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/745",
+   "channel": "kavomashyny",
+   "title": "ID104300",
+   "text": "ID104300\nЦіна 19999 грн\nSaeco\nNL9206AD-4\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 40 см\nШирина 28 см\nГлибина 48 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 19999,
+   "images": [
+    "https://cdn4.telesco.pe/file/KqA7uAEs1GE7wDmnVfzB2IjmBE1SAsAW91Or2xu2OFsm5Iuj1rt2YMNYatsSYO9cWD0aQYdqk0ke2huu70nHUcb1jW0fJiST0wRuOSeuZhSiRoF5Ux9pnYTqisKYTcnGyNcRzC6LbClvPee2qEU3jmIwIiwubLinESScicL0lDCc5T5Vp3jFkNH0Uefdob93Ofgr4exACD2nzsag69eb5aotz5ngQyXCvkmGaJRr8ryGOv9NGFqIzc2eaQEAGqHYK4fAbbTt6OYI7iOb9ZWLl8rm02VZHGPdquDV-nYXk2M-HDZ28muevHUi_pK3_XyHc3qS6kd8lEUwbVVjm_Iq6w.jpg"
+   ],
+   "date": "2026-10-07T19:33:27+00:00",
+   "url": "https://t.me/kavomashyny/745",
+   "brand": "ID104300",
+   "model": "",
+   "pid": "104300",
+   "chips": []
+  },
+  {
+   "id": "smart_tv_domfort/231",
+   "channel": "smart_tv_domfort",
+   "title": "ID75638",
+   "text": "ID75638\nЦіна 42999 грн \n💥 NEW 💥\nHisense 75E7KQ PRO \nТип матриці QLED\nДіагональ 75 дюймів \n14 днів гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 42999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Gdh_C5p8iolBP5Y9wlaUUagN2i_NFRl-Uctxc3XoF5ZKiRVLyLuhuQ4_VtIyfzDKrhAqLngEqnDmcAAlxdo-vsHDw0LLC18N-fNbNT7E46mJmzOUyx5JuPL_5CPAcxnmn4vtxCaD_jkthCq1hvYdu8nUXE6d5xDayTyUPsSe1PPMVedHluYQzV2kmJrpv74WW4Y7-tpJyPkpSDO5QK5xXbNg4qH7N_MQ80YmdJbhXKokBldZmKvMoPo-EhzYKkUVKctaxMrCHBiFu7xRYsIgL6Iq9nG4mLhO4kYv5CYeZzM2vSxOyS5G5qoq43-Pwr5soPPmFv6sHSxf1yCmxnexkg.jpg"
+   ],
+   "date": "2026-10-07T19:31:04+00:00",
+   "url": "https://t.me/smart_tv_domfort/231",
+   "brand": "ID75638",
+   "model": "",
+   "pid": "75638",
+   "chips": []
+  },
+  {
+   "id": "smart_tv_domfort/232",
+   "channel": "smart_tv_domfort",
+   "title": "ID70698",
+   "text": "ID70698\nЦіна 7999 грн \n🔥Нова ціна 6999 грн🔥\n💥 NEW 💥\nMET 32466\nSmart TV\nТип матриці LCD \nДіагональ 32 дюйми \n14 днів гарантія \nТовар з 🇪🇺 🇪🇺 🇪🇺 \nВул. Вадима Гетьмана, 1",
+   "price": 7999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Wz3Hb_9Elp6fsY3n-q3Scf7CPFHLp6qpdsMI4uiaZYUQyW-5_ZmFeCCJOuFgue18aVkSykHHSmD5fh6tPXxJ1qTfclZD_Guvv0DNcIXrgkAnVxYhlEVkRrRcHhgO3jcG75ABsewHOiuA0U2BnG5Di0jkHPIU4jmkVYrW1Q3Pv4euPftnFJpqdWdCwIPVXaJ7hEYEjQEGiZx1CW3q8rMA54Fb5DJM9zG4q6SQt8eWDRk9IAzfrr2dJGGF3M_SZPa_nDDmTlb98VCtQBmH2BV7DNGz1HDJV8Y3acOdtVD4Sc-qdvDOQ-v6gv8wHTl70u8pDqwlng4uIN4TEhqMUGJIIQ.jpg"
+   ],
+   "date": "2026-10-07T19:31:04+00:00",
+   "url": "https://t.me/smart_tv_domfort/232",
+   "brand": "ID70698",
+   "model": "",
+   "pid": "70698",
+   "chips": []
+  },
+  {
+   "id": "vytiazhky/109",
+   "channel": "vytiazhky",
+   "title": "ID75441",
+   "text": "ID75441\nЦіна 13999 грн\nНова ціна 10 700 грн\n🔥NEW🔥\nSamsung \nNK36C5703TS/UR\nМаксимальна потужність 744 м³/год\nВисота 114.5 см\nШирина 90 см\nГлибина 45 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
+   "price": 13999,
+   "images": [
+    "https://cdn4.telesco.pe/file/mVCIfh0uPa0Fvk9R59SU9ZLVclCUDrucZUI7qAqF2GmnhEWQtQUPkGuCCSc6U1RJKp2-WIg016SY3l2WtXsgvU2l5rtPhIF5kck5xPYTlGf8FF8DkOnMHh_R9GBbP_2O9R3qFo-iA2svziQU9LasYzMRVeEzUo2lY0LH33kneq-QsX1W_0D18B1uMb-pkbnoqznNNSKrdqOuPUYvzg6d7MfK7cjfqvhh5kOlHSF6euKLTdd_jS6nyEpyHxUU9lk6rs2nFkWtqilk5xsujagIu_cqhgWiz-2IJ7tWpBIpblrFXqWkBbCQVvW09O5_LdeEskCxlkQepGhN9UtQbJgVXw.jpg",
+    "https://cdn4.telesco.pe/file/il3OH0kEMRdceeg0PuoP147izz6shP1b6u4T8PyA9bit6i3ZJcWnTcm_q5QoGbZSoNAPHpdd_hfk_0QA5iDp29pGQKFjgxp-c3UNV-EWiNQeJuluesbnvWQX0yZqezn1YIlVlUdC4CQi8-Jz_xAl7gh2kWKm2G489Szn0j96odw5BJJcoE4QHIWu85Y0W_E7KuBnoJSXbjgIpTEqfVESGjxASjvNaupnNIwR6CzUUJtAG5NIJXT_sMBJWVij61AL2NEtW4S67q8A2zlCIbOpcyx27Xzlw3Zyl0E39RulS270dJ_rY44UqG2b6kMDNsxZEgADCJv2C7iq9RtI0amcHQ.jpg"
+   ],
+   "date": "2026-10-07T19:30:24+00:00",
+   "url": "https://t.me/vytiazhky/109",
+   "brand": "ID75441",
+   "model": "",
+   "pid": "75441",
+   "chips": []
+  },
+  {
+   "id": "vytiazhky/107",
+   "channel": "vytiazhky",
+   "title": "ID105346",
+   "text": "ID105346\nЦіна 3400 грн\nInterline UNNA WH A/60 PB/2/T\nМаксимальна потужність 650 м³/год\nВисота 49 см\nШирина 60 см\nГлибина 22 см\n3 місяці гарантія \nВул. Вадима Гетьмана, 1",
+   "price": 3400,
+   "images": [
+    "https://cdn4.telesco.pe/file/ca8B6WqOOjzgdKqPeyjqMqHT3vOSEQ6LoRQ1T_GZll7CUlLXM24Q1JpChxVa2BRLNyvHrvWGbMzLKndxIGCra1awremNCuCCGsdZlIAYruZcLDNGOky1Uf_iqMexPKrzvBWD02SWEfOAtDLdK64Q3qJW8kNC34EzQmUntHBtzUmJfxtsq3Qd6ZdKAFfU7rGcqm8agN4W_EwKXhjvNzYSuYjgehIA1G8a2yV7a_BOjzjK_Ox7s2up6VPfiwol3DzO3jEZ-p7-nRZ1La7zE13Wl2vPoFj5XK436Y4dZmPgloCQHPuNsq5QFjnbBM1TxNWNb8eeZb94WYQTp_m5ohUKAg.jpg",
+    "https://cdn4.telesco.pe/file/LPb4qeVKcTJ8VeV7q8v8sfYX9KURvAtw0xxKlavEBmYl-6QSZvddSgOcreK2cC9VBC6qcAF-5WbChQngLjkMzcYKkOxUdikVoincbKf_2FV1wXyN3VmDNaonVFkeSZcOWbfVSXglO9vzcqJTTVX55gGwMCe2AZ6G2N3NEA2df3tsK9owmFBtz9xGjlFfve5HSxNcS5vY4xHy-bhHJ2zFYnYv69HA09CReG3z3gnF_TRXrYbQdKYdM_IbOJ2SvUiPANuFziKLREQ7tSEu_GkrDUL0Q30DWDZ1YexXMZqiSM67xzI5d-lQMD-o-xbTNMY5foaH8LhAURcsB3aIvVBPhA.jpg"
+   ],
+   "date": "2026-10-07T15:16:08+00:00",
+   "url": "https://t.me/vytiazhky/107",
+   "brand": "ID105346",
+   "model": "",
+   "pid": "105346",
+   "chips": []
+  },
+  {
+   "id": "smart_tv_domfort/230",
+   "channel": "smart_tv_domfort",
+   "title": "ID104539",
+   "text": "ID104539\nЦіна 3999грн\nKivi\n32HX10S\nДіагональ 32 дюйми\nSmart не працює\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
+   "price": 3999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Kk23tZTLhZGf4pfz_00xMz1n3VpiOoCJKyVwhL2-WMt7NxVWg5gmQZy2Vx0pNvwtQSYXorwXWuYFFEWMqKqkcJqRDsPlvDEz37Wb7EPM1MLBN1AUGNxXH0MBq5pzFgdVO4VPpAedeIgtIcTUMwNHKgprTKCBNj7AAEG5TkZs3fnSP6OIFapwVvUYr5RCBuq6rZEMmoE08ZOMEuUg_-E_sIRJrWTIo-nWkW_uO5Wy4vleXGTr1JtmNmviCWrq2Y1rbgVBWMqEXZp1Cl8af4tkk0ov4V2BebxDOdBKRrQwayZJDbkE4mOo_ZRtEH1Ze4IdCirgxyb4myCB0zOEMDwu5w.jpg"
+   ],
+   "date": "2026-10-07T14:56:20+00:00",
+   "url": "https://t.me/smart_tv_domfort/230",
+   "brand": "ID104539",
+   "model": "",
+   "pid": "104539",
+   "chips": []
+  },
+  {
+   "id": "smart_tv_domfort/229",
+   "channel": "smart_tv_domfort",
+   "title": "ID102569",
+   "text": "ID102569\nЦіна 2499грн\nSUPRA\nSTV-LC3277WL\nДіагональ 32 дюйми\nБез пульта\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
+   "price": 2499,
+   "images": [
+    "https://cdn4.telesco.pe/file/sPGO9CZ37iwYzhoi1FQsW6Yc8RkDRsgLaK286TM_pvbV00tn1R9LfC7R6xcRUO61EpcVvJ8Fy1aiZy9NwZIvcXPwiREKI6lpJYgIbIbAik5D4wzkYeC06q3dfloy5-4r7epImXgmXV3hl5cMTLYp6H47CdjswH7d0ii8kpfeSqSfGO6NF8FO6e7NlH66UXygduFlYR3d2r5cpW6FcLbXYh5nxYQu3vFreV61lKKaI5ZIoKJI_2nB42xa57XwGIF4PjUNQEErMXiKkmJiJRaPLaHzBBTLrOtTJYaxfaA8sPXnqJom2VrW1tHJfW1cq0LhcpSup2Aq-kmNPuuyXjiY1A.jpg"
+   ],
+   "date": "2026-10-07T14:30:25+00:00",
+   "url": "https://t.me/smart_tv_domfort/229",
+   "brand": "ID102569",
+   "model": "",
+   "pid": "102569",
+   "chips": []
+  },
+  {
+   "id": "smart_tv_domfort/228",
+   "channel": "smart_tv_domfort",
+   "title": "ID107308",
+   "text": "ID107308\n🔥Ціна 11999 грн🔥\n💥 NEW 💥\nXiaomi\nL43M77AEU\nSmart TV\nТип матриці LCD \nДіагональ 43 дюйми \n14 днів гарантія \nТовар з 🇪🇺 🇪🇺 🇪🇺 \nВул. Вадима Гетьмана, 1",
+   "price": 11999,
+   "images": [
+    "https://cdn4.telesco.pe/file/Eaaw0FOCHviMKJBR267OwdXRz0tO-WHaWu6N3ZWPuwE3cy_hZUb1O_rMZGhO0VY2YLbTnVNMngcnXwexTov7qruwefi_ff_GXVPvoeueGSWTb4927f1SM5uBOcXMkLOv-yZjC_jhNyDN9FMO0nMRrlbjo1HdSBYhdGWM9ApTRsWWF7GhndfKFy99m830FXORyJH7LdrVXpVgu23gAqVrnIumqUNRIBrKJqGjgC_c8kHREe2CzyV0mOiHYdgJUOD1k9d0yCa39Z6FCmvcniRRm0YK0oEjINxo7rtPYT-UtkxfivJUOej4UY1PCau-3D3uTgk8yfQr2jBHET9qcEjxog.jpg"
+   ],
+   "date": "2026-10-07T14:25:13+00:00",
+   "url": "https://t.me/smart_tv_domfort/228",
+   "brand": "ID107308",
+   "model": "",
+   "pid": "107308",
+   "chips": []
+  },
+  {
+   "id": "duhovi_shafy_varylni_poverhni/12",
+   "channel": "duhovi_shafy_varylni_poverhni",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/qyJSHMZi2Hbi-xgRBYncC9rSYjDQUJouNsp26-6u1f6aYS5Xtcaqv1Cig6LF8dvaZS6Inzq542KqCi80Sc65QJTxspev69eMbC5IPXP28NUF9LNkHt7edFNn09v0gTaDJVzWQ2H2C2WsxadFb0sQRR994usZjsv3r4sW8NJFgaUI6JsD9IzUDRx8TaleUUMpjqotOlqit7pou354S5SD89kPPLhvwlEj4rd92JWYGrrHMnYm1q1QiJKw6C5uRBYzcyEMpzy643pvdWN8bD8KykEWCtqO7tG9nas68yE0i26ZPCIjnfMyJf1esFOJ_mbC7_tVumpC7SE19iWb2snRqQ.jpg"
+   ],
+   "date": "2026-10-06T16:14:28+00:00",
+   "url": "https://t.me/duhovi_shafy_varylni_poverhni/12",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "12",
+   "chips": []
+  },
+  {
+   "id": "plyty_gas_electro/9",
+   "channel": "plyty_gas_electro",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/YyPmpScFwxcKjERtw39YBREbm0c0WpXZRFvrlxaX6CkmTtde9y7jI1yYwJL7xKJ8ylWz8ZPt_aqTyYNnOaFuSZRK5d9Wq1tjwv4Ik78KUT3603FtznwN_BmzcTFDzG-MDOVe50jwgHvsM9iKtwsKoY_BKFDxfjQ_ksDnXEi0_DoVUiwLzYZPwHISYl0-PB3Bo13CxLYoOyg_1IWXnm4mVcbp06633f0g3ejZk0XABJ5ec6jrOtpuKjHz_aIEd3Ihq-s0mGuq8AUunmiZnfLs0loxEFhyvHIbQ87RHoOdcwbw66d11QkInSFqZBN1yg8A69lMp4zYKnkdQOyuQn8rQA.jpg"
+   ],
+   "date": "2026-10-06T16:13:58+00:00",
+   "url": "https://t.me/plyty_gas_electro/9",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "9",
+   "chips": []
+  },
+  {
+   "id": "pralni_sushylni_mashyny/24",
+   "channel": "pralni_sushylni_mashyny",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/JJiscerqO5q8bjMduld97egkzSid2S4VlkTM1QMdQ1V26GnRr6R9WcY_EZFeJ6lyMJ9z0_NqLJP5XFCQsnQYVyOAt7UHUpDJNh30lqc8H5p2R3V-H6wsVkh9bu87HLrRagK0-slEDM5p9hgP6U4Sm77tCXB15GKV0N93FJkrxgSuA36H3a1_ioD5D4gp_gkzJrJ-ikIohpYN52jdiwqRTB3Q0FJnXbgjJ2nQj45GRVk73kCP6LG689Z8zEbNBqB5AO1ydySBzS5pcWyHmB2WPZyQAotsQOTgcO9yTFWm3AlmGvS_fDLJ0RyFVo_5h3aXMqBGEcQJCTcRO6ru76IuTQ.jpg"
+   ],
+   "date": "2026-10-06T16:13:42+00:00",
+   "url": "https://t.me/pralni_sushylni_mashyny/24",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "24",
+   "chips": []
+  },
+  {
+   "id": "holodylnyky_ta_morozylni_kamery/38",
+   "channel": "holodylnyky_ta_morozylni_kamery",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/jJul247MndyONNNi36O00wr3eehFiCMySsiWQKdUDYdVe1XKGLWGa8EQwpY6_ix7255yffiQ7Kg875r0vYj9eG20glbbAwGYqHqCS_YdIQh5yCXNQFXBCUbJr5tROtVtXDWEtTSixICQld7_htFXTDW1KX1T7i7DkpYHqDcQVRKj9KQpRVt8jGr_TAXIGmfqCnEa_VJmgY-f_fp-rcjI7GOv1d0aHk-mP_B82MZvXAE2pCibdXtQQ2Dk5GVI9s1j6jqrYBKedxrDomB6uz6qAOt7zLcl_YzAmXkjHgfTYWM2w0ApjRmNXyCsqNIQRno62mTBbLxCQu5PVuSRKzReYg.jpg"
+   ],
+   "date": "2026-10-06T16:13:10+00:00",
+   "url": "https://t.me/holodylnyky_ta_morozylni_kamery/38",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "38",
+   "chips": []
+  },
+  {
+   "id": "smart_tv_domfort/223",
+   "channel": "smart_tv_domfort",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/Dp4HpGheEyOb2sdnuGkJc3lvRMsKmsTN5LPkKCBpSWEYEF6Sy2VO_1Symve2HkOu2cWxUL9B2hDBUI3dD410jAJB28DFlRH7YUMFcsWuo9e5-Bb8vQbOgdRPPZNVtS4GPdJVKJbbvEbOe6Xe8npc4N_sENwGS5Uc6s0ybgnAe4jAMJLZPkqaGMfAwE0UXg_JNRub3MiqhYpGG1oNTkYiZ-HRCi-wAgBWqnqttT_MX-ATppyL7-UxppZ-mMo09Y2E0yVJesXj7WQupc1kwPs2A-Veji5gyeugrEWGhvJzYEGwQ7N6-oWjz-bwGXtQ4WfrDdIh1Hqa5yLMSNs3WJqR8A.jpg"
+   ],
+   "date": "2026-08-28T19:39:42+00:00",
+   "url": "https://t.me/smart_tv_domfort/223",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "223",
+   "chips": []
+  },
+  {
+   "id": "kavomashyny/732",
+   "channel": "kavomashyny",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/KDx-6fVwRWbxgp5953e97DQ6bai66HFAhOS4_2nUwQL6Dv6MmrhT2hjDWpJIw8jM8ImyF-OmwS5vU80J1IwZbdsLLDXuQb7nWWl5A7CDOoYyFyi7Zwpgr8Ba61lZx4iegnf-7Sgh_ohkKJZkA7FOsA7-h4X_Tx3zDkPckSufQar6rHzZgPPIh5_VJtSbudn-kI4e9lKVtjBpU2AyYB0yQ8beOP5ozezDsdxip-n_qnKeJigcL9BLdol0RXF0qgTC9VE9678o0JGEW5J8q-LoCIZtL2oRWjZ4vt7Oc8gXjhdOuPu3jyTMf51gQFOJf69UKjj07kk5_VVvezs_655vjQ.jpg"
+   ],
+   "date": "2026-08-28T19:39:30+00:00",
+   "url": "https://t.me/kavomashyny/732",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "732",
+   "chips": []
+  },
+  {
+   "id": "vytiazhky/97",
+   "channel": "vytiazhky",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/gGcdirEt5RSABLuLMsFnAR-FTDWOmYbmO7QWnCUd_yroatRLa0W5me0vOFNR5-GxtTY4IZjDuwB7FkRl0ogN9brNdWTif0doX6bgemWrV8OP_pzJuVTmGvxN5HleIq25rhkfttI5nocUcEDG_aF94LkPctWKLNQNPz17r3D6kqnS8TWwUwImmsJ1TN-zQIowa47ZZ50KS2OLRtgmIMgfY7h6dKcMVADYdoWFTf_LtYXz7oj5fhVDTZArMv5qfiQ9fDKIN9x_PRMraZEGaU79S-uqcUWkYChOssIuzlCzC81D1Tja8eInSSY6F9lf-ZCG5fdbnVdue9mdRsq7viVmRg.jpg"
+   ],
+   "date": "2026-08-28T19:39:17+00:00",
+   "url": "https://t.me/vytiazhky/97",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "97",
+   "chips": []
+  },
+  {
+   "id": "posudomyini_mashyny/4223",
+   "channel": "posudomyini_mashyny",
+   "title": "📍 Як потрапити до нас",
+   "text": "📍 Як потрапити до нас\n\n1. Станьте обличчям до центрального входу магазину «Сільпо».\n2. Обійдіть будівлю з правого боку.\n3. Рухайтеся вздовж будівлі до фасаду багатоповерхового будинку.\n4. Продовжуйте рух прямо — ми знаходимося безпосередньо перед Вами.\n👉 Орієнтуйтеся на фасад багатоповерхового будинку — наш магазин буде прямо навпроти Вас.\n\n🟢Нова адреса за 50 метрів від попередньої",
+   "price": null,
+   "images": [
+    "https://cdn4.telesco.pe/file/KZIHXjWQcr4kNUKwvLLsLtF9OwoZNTy8e7kEofntpai6BJnVyymk91K2yZp925d6cwNGOl9GaLZEiRtiBpA2sdKmt81GbU3Dhq1vJgzi2QriG9E8PgIzZTxkJqPmfa37smCY8r1f8o9c3UCS8Yy6tIRmUKOccR_Y1M6LSOF5PtQEsJlVK1uVbeiZoFRp9p-4I69SKUizAbwHVnSTSpFNzcwe0Ks-hQ9UTNRjZiDJN0Nwmg4OFxdcc6WyhpkYsuM8Ml0hwmP-aGNPn-Ty4tbPOVj_ILh5xXWzzlkF7cOclLUGtCwtpHsUXjxZ-vIR6D7MnriiqAJtw5RoMy8EJ6zcUg.jpg"
+   ],
+   "date": "2026-08-28T19:38:05+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4223",
+   "brand": "Як",
+   "model": "потрапити до нас",
+   "pid": "4223",
+   "chips": []
+  }
+ ],
+ "updated": "2026-11-23T11:11:26+00:00"
+}
