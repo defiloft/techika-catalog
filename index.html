@@ -370,9 +370,9 @@ function parse(p) {
   if (nova) { price = nova; if (first > nova) oldPrice = first; }
   const diag = (t.match(/діагональ\D{0,5}(\d{2,3})/i) || [])[1], sets = (t.match(/(\d{1,2})(?:-?ти)?\s*комплект/i) || [])[1];
   const cooling = /no ?frost/i.test(t) ? 'No Frost' : /крапельн/i.test(t) ? 'Крапельна' : '';
-  // Опис: рядки, що не дублюють ID/ціну/бренд/габарити/гарантію/адресу.
+  // Опис: рядки, що не дублюють ID/ціну/бренд/кг/оберти/охолодження/габарити/гарантію/адресу (вони вже в «Характеристиках»).
   const bm = flat(brand + model);
-  const desc = t.split('\n').map(l => l.trim()).filter(l => l && !SKIP.test(bare(l)) && !/висота|ширина|глибина|гаранті|гетьмана|товар з|комплект|діагональ|^[^\wа-яіїє]*$/i.test(l) && !(bm && bm.includes(flat(bare(l)))) && flat(bare(l)) !== flat(brand)).join('\n');
+  const desc = t.split('\n').map(l => l.trim()).filter(l => l && !SKIP.test(bare(l)) && !/\d\s*кг|оберт|об\/хв|rpm|охолодж|висота|ширина|глибина|гаранті|гетьмана|товар з|комплект|діагональ|^[^\wа-яіїє]*$/i.test(l) && !(bm && bm.includes(flat(bare(l)))) && flat(bare(l)) !== flat(brand)).join('\n');
   const chips = [];
   if (cat.id === 'washers' || cat.id === 'dryers') { kg && chips.push(`${kg.replace(',', '.')} кг`); rpm && chips.push(`${rpm} об`); }
   if (cooling) chips.push(cooling);
