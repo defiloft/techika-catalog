@@ -283,7 +283,7 @@ SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComp
 const CATS = [
   // ch: канали, з яких категорія береться цілком; kw: як упізнати її за текстом допису (усередині змішаного каналу та в каналі знижок).
   {id:'washers', name:'Пральні машини', short:'Пральні', ch:'pralni_sushylni_mashyny', kw:/пральн|прально|\d{3,4}\s*об/i, terms:['пралка','пральна','стиралка','стиральная']},
-  {id:'dryers', name:'Сушильні машини', short:'Сушильні', kw:/^(?![\s\S]*прально)[\s\S]*(?:сушильн|сушарк|сушка|тепловим? насос|dryer|trockner)/i, terms:['сушка','сушильна','сушильная']},
+  {id:'dryers', name:'Сушильні машини', short:'Сушильні', kw:/^(?![\s\S]*(?:прально|завантаження прання))[\s\S]*(?:сушильн|сушарк|сушка|теплов\S* насос|dryer|trockner)/i, terms:['сушка','сушильна','сушильная']},
   {id:'fridges', name:'Холодильники', short:'Холодильники', ch:'holodylnyky_ta_morozylni_kamery', kw:/холодильн|side.by.side|винн[аі] шаф/i, terms:['холодильник']},
   {id:'freezers', name:'Морозильні камери', short:'Морозильні', ch:'morozylni_kamery', kw:/морозил|freezer|gefrier/i, terms:['морозилка','морозильна','морозильник']},
   {id:'dishwashers', name:'Посудомийні машини', short:'Посудомийні', ch:'posudomyini_mashyny', kw:/посудомий|комплект/i, terms:['посудомийка','посудомойка','посудомийна']},
@@ -421,6 +421,7 @@ function parse(p) {
   return {
     id: String(p.pid || p.id), key: p.id, cat: cat.id, brand, model, price, oldPrice,
     photos: p.images || [], date: p.date || '', url: p.url, text: t,
+    washdry: cat.id === 'washers' && /прально.?сушильн|завантаження\s+суш/i.test(t),  // прально-сушильна: показуємо і в «Сушильних»
     isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
     load: /вертикальн/i.test(low) ? 'top' : /фронтальн/i.test(low) ? 'front' : '',
@@ -501,9 +502,10 @@ function setState(next, push) {
 }
 
 /* ---------- фільтрація ---------- */
+const inCat = (p, c) => c === 'sale' ? !!p.oldPrice : p.cat === c || (c === 'dryers' && p.washdry);
 function pass(p, s, hits, skip) {
   if (hits && !hits.has(p.key)) return false;
-  if (skip !== 'cat' && s.cat && (s.cat === 'sale' ? !p.oldPrice : p.cat !== s.cat)) return false;
+  if (skip !== 'cat' && s.cat && !inCat(p, s.cat)) return false;
   if (s.pmin != null && !(p.price >= s.pmin)) return false;
   if (s.pmax != null && !(p.price <= s.pmax)) return false;
   if (skip !== 'brands' && s.brands.length && !s.brands.includes(p.brand)) return false;
@@ -552,6 +554,7 @@ function render() {
   // Рядок: найбільші категорії першими; решта ховається під «Ще» (див. fitCats).
   const shown = CATS.filter(c => c.id !== 'other' && CNT.get(c.id)).sort((a, b) => CNT.get(b.id) - CNT.get(a.id));
   const sale = ALL.filter(p => p.oldPrice && pass(p, S, HITS, 'cat')).length;
+  cc.set('dryers', (cc.get('dryers') || 0) + ALL.filter(p => p.washdry && pass(p, S, HITS, 'cat')).length);
   const car = '<svg class="car" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg>';
   $('#cats').innerHTML = `<button type="button" class="chip" data-cat="" aria-pressed="${!S.cat}">Усі<span class="cnt">${total}</span></button>` +
     (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
@@ -784,6 +787,7 @@ fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({pr
   PMAX = Math.ceil(Math.max(1000, ...ALL.map(p => p.price || 0)) / 1000) * 1000;
   CNT = new Map(); for (const p of ALL) CNT.set(p.cat, (CNT.get(p.cat) || 0) + 1);
   SALES = ALL.filter(p => p.oldPrice).length;
+  CNT.set('dryers', (CNT.get('dryers') || 0) + ALL.filter(p => p.washdry).length);
   buildIndex(ALL); S = fromURL(); render(); footer();
   const p = new URLSearchParams(location.search).get('p'); if (p && BY.has(p)) showProduct(p);
 });
