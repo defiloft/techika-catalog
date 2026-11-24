@@ -181,7 +181,6 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .specs div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
 .specs dt{color:var(--concrete)}
 .specs dd{margin:0;text-align:right;font-weight:500}
-.desc{margin-top:8px;white-space:pre-line;color:#39414b}
 .info{display:flex;gap:12px;padding:14px;border-radius:12px;background:var(--soft)}
 .info p{margin-top:4px;font-size:14px}
 .info+.info{margin-top:8px}
@@ -370,9 +369,6 @@ function parse(p) {
   if (nova) { price = nova; if (first > nova) oldPrice = first; }
   const diag = (t.match(/діагональ\D{0,5}(\d{2,3})/i) || [])[1], sets = (t.match(/(\d{1,2})(?:-?ти)?\s*комплект/i) || [])[1];
   const cooling = /no ?frost/i.test(t) ? 'No Frost' : /крапельн/i.test(t) ? 'Крапельна' : '';
-  // Опис: рядки, що не дублюють ID/ціну/бренд/габарити/гарантію/адресу.
-  const bm = flat(brand + model);
-  const desc = t.split('\n').map(l => l.trim()).filter(l => l && !SKIP.test(bare(l)) && !/висота|ширина|глибина|гаранті|гетьмана|товар з|комплект|діагональ|^[^\wа-яіїє]*$/i.test(l) && !(bm && bm.includes(flat(bare(l)))) && flat(bare(l)) !== flat(brand)).join('\n');
   const chips = [];
   if (cat.id === 'washers' || cat.id === 'dryers') { kg && chips.push(`${kg.replace(',', '.')} кг`); rpm && chips.push(`${rpm} об`); }
   if (cooling) chips.push(cooling);
@@ -382,7 +378,7 @@ function parse(p) {
   for (const c of p.chips || []) if (chips.length < 3 && !chips.some(x => x.split(' ')[0] === c.split(' ')[0]) && !/см$/.test(c)) chips.push(c);
   return {
     id: String(p.pid || p.id), key: p.id, cat: cat.id, brand, model, price, oldPrice,
-    photos: p.images || [], date: p.date || '', url: p.url, text: t, desc,
+    photos: p.images || [], date: p.date || '', url: p.url, text: t,
     isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
     load: /вертикальн/i.test(low) ? 'top' : /фронтальн/i.test(low) ? 'front' : '',
@@ -656,8 +652,7 @@ function renderProduct(p) {
       <div class="idrow">
         ${p.reserved ? '<span class="holdtag">Бронь</span>' : '<span class="oktag">В наявності</span>'}</div>
       ${p.reserved ? '<p class="notice">Товар заброньований. Напишіть нам — підкажемо, чи звільниться.</p>' : ''}
-      <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsOf(p).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
-        ${p.desc ? `<p class="desc">${esc(p.desc)}</p>` : ''}</section>
+      <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsOf(p).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
         <div><h3 class="h3">${p.warrantyText ? `Гарантія ${esc(p.warrantyText)}` : 'Гарантія — уточнюйте'}</h3><p class="muted">Перевіряємо кожен прилад перед продажем. Якщо щось не так — ремонт або заміна.</p></div></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
