@@ -551,7 +551,7 @@ function card(p, hit, compact, eager) {
     ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}
     <h3 class="ctitle"><span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
     ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
-    <p class="foot"><span>ID ${hl(p.id, hit?.id)}</span>${p.oldPrice && !compact ? `<s class="old" aria-label="Стара ціна">${money(p.oldPrice)} грн</s>` : ''}</p></a></article>`;
+    ${p.oldPrice && !compact ? `<p class="foot"><s class="old" aria-label="Стара ціна">${money(p.oldPrice)} грн</s></p>` : '<p class="foot"></p>'}</a></article>`;
 }
 
 function render() {
