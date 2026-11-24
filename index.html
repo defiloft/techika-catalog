@@ -367,9 +367,17 @@ const titleCase = b => /^[A-Z]{4,}$/.test(b) ? b[0] + b.slice(1).toLowerCase() :
 
 function brandModel(text) {
   const lines = text.split('\n').map(bare).filter(Boolean);
-  const i = lines.findIndex(l => !SKIP.test(l));
-  if (i < 0 || CYR.test(lines[i])) return ['', ''];
-  let [brand, ...rest] = lines[i].replace(/\s+/g, ' ').split(' '), model = rest.join(' ');
+  // Назва — перший рядок, що починається латиницею. Перед нею бувають позначки й вид техніки
+  // («Під вбудову», «Медичний», «Бігова доріжка», «Орбітрек ProForm 320»): їх пропускаємо або відрізаємо.
+  let i = -1, name = '';
+  for (let j = 0, seen = 0; j < lines.length && seen < 5; j++) {
+    if (SKIP.test(lines[j])) continue;
+    seen++;
+    const l = lines[j].replace(/\s+/g, ' ').replace(/^(?:[а-яіїєґʼ'’-]+ )+(?=[A-Za-z])/i, '');
+    if (/^[A-Za-z]/.test(l)) { i = j; name = l; break; }
+  }
+  if (i < 0) return ['', ''];
+  let [brand, ...rest] = name.split(' '), model = rest.join(' ');
   const nx = lines[i + 1];
   if (nx && /\d/.test(nx) && !CYR.test(nx) && nx.length <= 40) model = (model + ' ' + nx).trim();
   return [brand, model];
