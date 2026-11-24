@@ -77,6 +77,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .more svg.car{width:12px;height:12px;transition:transform .15s}
 .more[aria-expanded=true]{border-color:var(--floor)}
 .more[aria-expanded=true] svg.car{transform:rotate(180deg)}
+.chip.sale svg{color:#d2361f}.chip.sale[aria-pressed=true] svg{color:#fff}.citem.sale svg{color:#d2361f}
 .catmenu{margin:0 var(--gutter) 10px;padding:14px 14px 6px;background:var(--body);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:0 8px 24px #24272b14;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px 8px}
 .catmenu[hidden]{display:none}
 .cgroup{margin-bottom:10px}
@@ -90,7 +91,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .citem.zero{opacity:.45}
 .citem span.nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:639px){.catmenu{display:block;padding:12px 12px 2px}.cgroup{display:flex;flex-wrap:wrap;gap:6px}.cgroup h3{width:100%;padding:0 2px}.citem{width:auto;min-height:38px;gap:6px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:14px}.citem svg{width:18px;height:18px}.citem .cnt{margin-left:0}.citem[aria-pressed=true]{border-color:var(--marker)}}
-@media(min-width:960px){.catmenu{grid-template-columns:repeat(4,minmax(0,1fr))}.cats{flex-wrap:nowrap;overflow:hidden}.more{order:0}.more .m-m{display:none}.more .m-d{display:inline}}
+@media(min-width:960px){.catmenu{grid-template-columns:repeat(5,minmax(0,1fr))}.cats{flex-wrap:nowrap;overflow:hidden}.more{order:0}.more .m-m{display:none}.more .m-d{display:inline}}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0 var(--gutter);list-style:none}
 .grid>li{display:flex;min-width:0}.grid>li>*{flex:1}
 @media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
@@ -296,15 +297,17 @@ const CATS = [
   {id:'treadmills', name:'Бігові доріжки', short:'Бігові доріжки', ch:['sportyvni_trenagery', 'bigovi_dorizhky'], kw:/бігов/i, terms:['бігова доріжка','беговая дорожка','тренажер']},
   {id:'bikes', name:'Велотренажери', short:'Велотренажери', ch:'velotrenagery', kw:/велотрен/i, terms:['велотренажер','тренажер']},
   {id:'orbitreks', name:'Орбітреки', short:'Орбітреки', ch:'orbitreky', kw:/орбітрек|орбитрек|еліпт/i, terms:['орбітрек','орбитрек','тренажер']},
-  {id:'other', name:'Інша техніка', short:'Інше', terms:[]},
+  {id:'other', name:'Інша техніка', short:'Інше', terms:[]},  // окремо не показуємо: такі товари видно в «Усі»
+  {id:'sale', name:'Розпродаж', short:'Розпродаж', terms:['розпродаж','знижка','акція','уцінка']},  // не категорія товару, а добірка: усе зі старою ціною
 ];
 const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
 // Групи для розгорнутого списку категорій.
+const SALEICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l8 8a1.4 1.4 0 0 1 0 2l-6.6 6.6a1.4 1.4 0 0 1-2 0z"/><circle cx="8.5" cy="8.5" r="1.6"/></svg>';
 const GROUPS = [
   ['Прання і сушіння', ['washers', 'dryers']],
   ['Кухня', ['fridges', 'freezers', 'dishwashers', 'stoves', 'ovens', 'hobs', 'hoods', 'micro', 'coffee']],
   ['Спорт', ['treadmills', 'orbitreks', 'bikes']],
-  ['Інше', ['tvs', 'other']],
+  ['Телевізори', ['tvs']],
 ];
 // Канали, де разом кілька видів техніки: ці категорії відокремлюємо за текстом допису.
 const MIXED = {pralni_sushylni_mashyny:['dryers'], holodylnyky_ta_morozylni_kamery:['freezers'], duhovi_shafy_varylni_poverhni:['hobs', 'micro'], sportyvni_trenagery:['bikes', 'orbitreks']};
@@ -372,6 +375,13 @@ function brandModel(text) {
   return [brand, model];
 }
 
+// Дописи з каналу знижок часто без назви виду техніки: впізнаємо за характеристиками.
+function byFeatures(t) {
+  if (/система охолодження|no\s?frost/i.test(t)) return CAT.fridges;
+  if (/автопідпал|газ-контроль|під балон|склокераміка|інфрачервон/i.test(t)) return CAT.stoves;
+  if (/гриль|конвекц|конвенц/i.test(t)) return CAT.ovens;
+  if (/індукц/i.test(t)) return CAT.hobs;
+}
 function parse(p) {
   const t = p.text || '', low = t.toLowerCase();
   if (!/\bID[:\s#]*\d{4,}/i.test(t) && !p.price) return null;          // реклама, «як нас знайти»
@@ -381,7 +391,7 @@ function parse(p) {
   brand = titleCase(brand); model = model.trim();
   // Категорія: за каналом; у змішаному каналі й у каналі знижок — за назвою джерела пересилання та текстом.
   const own = CATS.filter(c => [].concat(c.ch || []).includes(p.channel)), kw = x => x && CATS.find(c => c.kw && c.kw.test(x));
-  const cat = (MIXED[p.channel] || []).map(id => CAT[id]).find(c => c.kw.test(t)) || own[0] || kw(p.from) || kw(t) || CAT.other;
+  const cat = (MIXED[p.channel] || []).map(id => CAT[id]).find(c => c.kw.test(t)) || own[0] || kw(p.from) || kw(t) || byFeatures(t) || CAT.other;
   const cm = w => { const m = t.match(new RegExp(w + '\\D{0,14}?(\\d{2,3}(?:[.,]\\d)?)\\s*(?:см|cm)', 'i')); return m ? num(m[1]) : undefined; };
   let height = cm('висота'), width = cm('ширина'), depth = cm('глибина');
   const dims = t.match(/(\d{2,3})\s*[xх×*]\s*(\d{2,3})(?:\s*[xх×*]\s*(\d{2,3}))?\s*(?:см|cm)/i);
@@ -466,7 +476,7 @@ function hl(text, ranges) {
 /* ---------- стан, URL ---------- */
 let ALL = [], BY = new Map(), BRANDS = [], PMAX = 50000, UPDATED = '';
 const EMPTY = {q: '', cat: null, brands: [], cond: [], load: [], narrow: false};
-let S = {...EMPTY}, HITS = null, openId = null, draft = null, CATMENU = false, CNT = new Map();
+let S = {...EMPTY}, HITS = null, openId = null, draft = null, CATMENU = false, CNT = new Map(), SALES = 0;
 const ints = v => v != null && v !== '' && !isNaN(+v) ? +v : undefined;
 const pair = v => { if (!v) return [undefined, undefined]; const [a, b] = v.split('-'); return [ints(a), ints(b)]; };
 const listp = v => v ? v.split(',').filter(Boolean) : [];
@@ -493,7 +503,7 @@ function setState(next, push) {
 /* ---------- фільтрація ---------- */
 function pass(p, s, hits, skip) {
   if (hits && !hits.has(p.key)) return false;
-  if (skip !== 'cat' && s.cat && p.cat !== s.cat) return false;
+  if (skip !== 'cat' && s.cat && (s.cat === 'sale' ? !p.oldPrice : p.cat !== s.cat)) return false;
   if (s.pmin != null && !(p.price >= s.pmin)) return false;
   if (s.pmax != null && !(p.price <= s.pmax)) return false;
   if (skip !== 'brands' && s.brands.length && !s.brands.includes(p.brand)) return false;
@@ -540,12 +550,14 @@ function render() {
   $('#qclear').hidden = !S.q;
   const cc = countBy(S, HITS, 'cat', p => p.cat), total = [...cc.values()].reduce((a, b) => a + b, 0);
   // Рядок: найбільші категорії першими; решта ховається під «Ще» (див. fitCats).
-  const shown = CATS.filter(c => CNT.get(c.id)).sort((a, b) => (a.id === 'other') - (b.id === 'other') || CNT.get(b.id) - CNT.get(a.id));
+  const shown = CATS.filter(c => c.id !== 'other' && CNT.get(c.id)).sort((a, b) => CNT.get(b.id) - CNT.get(a.id));
+  const sale = ALL.filter(p => p.oldPrice && pass(p, S, HITS, 'cat')).length;
   const car = '<svg class="car" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg>';
   $('#cats').innerHTML = `<button type="button" class="chip" data-cat="" aria-pressed="${!S.cat}">Усі<span class="cnt">${total}</span></button>` +
+    (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
     shown.map(c => `<button type="button" class="chip" data-cat="${c.id}" aria-pressed="${S.cat === c.id}">${icon(c.id)}${esc(c.short)}<span class="cnt">${cc.get(c.id) || 0}</span></button>`).join('') +
     `<button type="button" class="chip more" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="m-m">Категорії</span><span class="m-d">Усі категорії</span>${car}</button>`;
-  $('#catmenu').innerHTML = GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>`).join('')}</div>` : ''; }).join('');
+  $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>`).join('')}</div>` : ''; }).join('');
   $('#catmenu').hidden = !CATMENU;
   fitCats();
   const nf = nFilters(S);
@@ -564,7 +576,7 @@ function render() {
 }
 // На широкому екрані категорії — в один рядок: що не влізло, ховаємо (воно є в «Усі категорії»).
 function fitCats() {
-  const nav = $('#cats'), chips = [...nav.querySelectorAll('.chip[data-cat]:not([data-cat=""])')], more = $('#catmore');
+  const nav = $('#cats'), chips = [...nav.querySelectorAll('.chip[data-cat]:not([data-cat=""]):not(.sale)')], more = $('#catmore');
   chips.forEach(c => c.hidden = false);
   if (!matchMedia('(min-width:960px)').matches) return;
   const max = nav.clientWidth - parseFloat(getComputedStyle(nav).paddingRight), sel = chips.find(c => c.getAttribute('aria-pressed') === 'true');
@@ -771,6 +783,7 @@ fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({pr
   BRANDS = [...new Set(ALL.map(p => p.brand).filter(Boolean))].sort((a, b) => a.localeCompare(b));
   PMAX = Math.ceil(Math.max(1000, ...ALL.map(p => p.price || 0)) / 1000) * 1000;
   CNT = new Map(); for (const p of ALL) CNT.set(p.cat, (CNT.get(p.cat) || 0) + 1);
+  SALES = ALL.filter(p => p.oldPrice).length;
   buildIndex(ALL); S = fromURL(); render(); footer();
   const p = new URLSearchParams(location.search).get('p'); if (p && BY.has(p)) showProduct(p);
 });
