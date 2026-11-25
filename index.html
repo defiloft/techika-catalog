@@ -227,6 +227,10 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 #toast.on{opacity:1}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
+<!-- Статистика відвідувань (GoatCounter, без cookie). Усі відвідування рахуються як «/»,
+     кліки на месенджери — як події «click-telegram» / «click-viber». -->
+<script>window.goatcounter = {path: () => '/'};</script>
+<script data-goatcounter="https://techika-catalog.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="page">
@@ -787,7 +791,11 @@ $('#pbody').addEventListener('click', async e => {
   const g = e.target.closest('[data-g]'); if (g) { const tr = $('#pbody .gtrack'); tr.scrollBy({left: +g.dataset.g * tr.clientWidth, behavior: 'smooth'}); return; }
   const c = e.target.closest('[data-copy]'); if (c) { if (await copyText(BY.get(openId).id)) { c.textContent = 'Скопійовано'; setTimeout(() => c.textContent = 'Скопіювати', 1600); } return; }
 });
-$('#pfoot').addEventListener('click', e => { if (e.target.closest('[data-viber]')) copyText(msg(BY.get(openId))).then(ok => ok && toast('Текст скопійовано — вставте його у Viber')); });
+// Рахуємо кліки на месенджери (якщо скрипт статистики заблоковано — просто пропускаємо).
+const track = (path, p) => { try { window.goatcounter?.count?.({path, title: p ? `ID ${p.id} ${p.brand || ''} ${p.model || ''}`.trim() : '', event: true}); } catch {} };
+$('#pfoot').addEventListener('click', e => {
+  const a = e.target.closest('a'); if (a) track(a.hasAttribute('data-viber') ? 'click-viber' : 'click-telegram', BY.get(openId));
+  if (e.target.closest('[data-viber]')) copyText(msg(BY.get(openId))).then(ok => ok && toast('Текст скопійовано — вставте його у Viber')); });
 function showProduct(id, mode) {
   const p = BY.get(id); if (!p) return;
   if (mode === 'push') history.pushState({sheet: 1}, '', toURL(S, id)); else if (mode === 'replace') history.replaceState(history.state, '', toURL(S, id));
