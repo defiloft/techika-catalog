@@ -7,11 +7,15 @@ async def main():
     c = TelegramClient(StringSession(os.environ["TG_SESSION"]), int(os.environ["TG_API_ID"]), os.environ["TG_API_HASH"])
     await c.connect()
     found = []
-    async for d in c.iter_dialogs(limit=400):
-        t = (d.name or "").lower()
-        if "запит" in t or "наявн" in t or "фото" in t:
+    tot = grp = 0
+    lat = str.maketrans("aceiopxyKkMHTB", "асеіорхуКкМНТВ")
+    async for d in c.iter_dialogs():
+        tot += 1; grp += bool(d.is_group)
+        t = (d.name or "").translate(lat).casefold()
+        if any(w in t for w in ("запит", "запрос", "наявн", "наличи", "фото", "zapyt", "foto")):
             found.append(d)
             print("DIALOG", repr(d.name), d.id, type(d.entity).__name__, "megagroup=", getattr(d.entity, "megagroup", None), "forum=", getattr(d.entity, "forum", None))
+    print("DIALOGS", tot, "groups", grp)
     for d in found[:3]:
         n = 0
         async for m in c.iter_messages(d.entity, limit=400):
