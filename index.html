@@ -158,6 +158,8 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .card>a:hover .model{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .photo{position:relative}
 .flags{position:absolute;top:8px;left:8px;display:flex;gap:4px}
+.nph{position:absolute;bottom:8px;right:8px;display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;background:#000000a6;color:#fff;font-size:12px;font-weight:600;line-height:1.3;font-variant-numeric:tabular-nums}
+.nph svg{width:13px;height:13px}
 .flags span{padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600;line-height:1.3}
 .hold{background:var(--hold);color:var(--floor)}
 .isnew{background:var(--floor);color:#fff}
@@ -512,7 +514,7 @@ function parse(p) {
   for (const c of p.chips || []) if (chips.length < 3 && !chips.some(x => x.split(' ')[0] === c.split(' ')[0]) && !/см$/.test(c)) chips.push(c);
   return {
     id: String(p.pid || p.id), key: p.id, cat: cat.id, brand, model, price, oldPrice,
-    photos: p.images || [], date: p.date || '', url: p.url, text: t,
+    photos: [...new Set([...(p.images || []), ...(p.extra || [])])], date: p.date || '', url: p.url, text: t,  // extra — фото з теми «Запит фото» за ID
     washdry: cat.id === 'washers' && /прально.?сушильн|завантаження\s+суш/i.test(t),  // прально-сушильна: підкатегорія в «Пральних»
     isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
@@ -642,7 +644,7 @@ const frame = (p, i = 0, eager) => p.photos[i]
 function card(p, hit, compact, eager) {
   const flags = (p.reserved ? '<span class="hold">Бронь</span>' : '') + (p.isNew ? '<span class="isnew">нова</span>' : '');
   return `<article class="card${compact ? ' compact' : ''}"><a href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}">
-    <div class="photo">${frame(p, 0, eager)}${flags ? `<span class="flags">${flags}</span>` : ''}${p.oldPrice && p.price ? `<span class="off" aria-label="Знижка ${pct(p)}%">−${pct(p)}%</span>` : ''}</div>
+    <div class="photo">${frame(p, 0, eager)}${flags ? `<span class="flags">${flags}</span>` : ''}${p.oldPrice && p.price ? `<span class="off" aria-label="Знижка ${pct(p)}%">−${pct(p)}%</span>` : ''}${p.photos.length > 1 ? `<span class="nph" aria-label="${p.photos.length} фото"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>${p.photos.length}</span>` : ''}</div>
     ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}${compact ? '' : deal(p)}
     <h3 class="ctitle"><span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
     ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
