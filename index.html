@@ -455,6 +455,8 @@ function parse(p) {
   if (dims && height == null) [height, width, depth] = [num(dims[1]), num(dims[2]), dims[3] ? num(dims[3]) : undefined];
   if (cat.id === 'ovens' && height && height < 40) cat = CAT.micro;  // мікрохвильовки приходять з каналу духових: висота 25–32 см
   // Варильні поверхні теж приходять з каналу духових і пишуться без висоти: лише «Ширина … Глибина 51–52 см».
+  if (cat.id === 'ovens' && height >= 80) cat = CAT.stoves;  // окремостояча плита 85 см у каналі духових
+  if (cat.id === 'freezers' && /холодильн\S* камер/.test(low)) cat = CAT.fridges;  // «Холодильна камера … Морозильна камера» — двокамерний холодильник
   if ((cat.id === 'ovens' || cat.id === 'other') && height == null && (depth >= 40 && depth <= 58 || /газ-?\s?контроль|автопідпал|індукц|інфрачерв|склокерам|конфорк|блини/.test(low))) cat = CAT.hobs;
   const kg = (t.match(/(\d+(?:[.,]\d)?)\s*кг/i) || [])[1], rpm = (t.match(/(\d{3,4})\s*(?:об|rpm)/i) || [])[1];
   const wl = t.split('\n').find(l => /гаранті/i.test(l)) || '';
@@ -714,11 +716,13 @@ function renderFilters() {
   const cc = countBy(f, HITS, 'cat', p => p.cat);
   cc.set('dryers', (cc.get('dryers') || 0) + ALL.filter(p => p.washdry && pass(p, f, HITS, 'cat')).length);
   cc.set('sale', ALL.filter(p => p.oldPrice && pass(p, f, HITS, 'cat')).length);
-  const cats = [...(SALES ? ['sale'] : []), ...GROUPS.flatMap(([, ids]) => ids).filter(id => CNT.get(id))];
+  const ctotal = countBy(f, HITS, 'cat', p => p.cat), all = [...ctotal.values()].reduce((a, b) => a + b, 0);
+  const cchip = id => { const n = cc.get(id) || 0, on = f.cat === id; return !on && !n ? '' : chip(on, CAT[id].name, `data-fcat="${id}"`, n); };
   const subs = (SUBS[f.cat] || []).filter(x => SUBN.get(f.cat + '/' + x[0])), inc = subs.length ? ALL.filter(p => inCat(p, f.cat) && pass(p, f, HITS, 'sub')) : [];
   $('#fbody').innerHTML = `<div class="fwrap">
-    <fieldset class="fsec"><legend>Категорія</legend><div class="row">${chip(!f.cat, 'Усі', 'data-fcat=""')}${cats.map(id => { const n = cc.get(id) || 0, on = f.cat === id; return !on && !n ? '' : chip(on, CAT[id].short, `data-fcat="${id}"`, n); }).join('')}</div>
-      ${subs.length ? `<p class="sub">${esc(CAT[f.cat].name)}</p><div class="row">${chip(!f.sub, 'Усі', 'data-fsub=""', inc.length)}${subs.map(([id, nm, fn]) => chip(f.sub === id, nm, `data-fsub="${id}"`, inc.filter(fn).length)).join('')}</div>` : ''}</fieldset>
+    <fieldset class="fsec"><legend>Категорія</legend><div class="row">${chip(!f.cat, 'Усі', 'data-fcat=""', all)}${SALES ? cchip('sale') : ''}</div>
+      ${GROUPS.map(([g, ids]) => { const row = ids.filter(id => CNT.get(id)).map(cchip).join(''); return row ? `<p class="sub">${esc(g)}</p><div class="row">${row}</div>` : ''; }).join('')}
+      ${subs.length ? `<p class="sub">Підкатегорії: ${esc(CAT[f.cat].name.toLowerCase())}</p><div class="row">${chip(!f.sub, 'Усі', 'data-fsub=""', inc.length)}${subs.map(([id, nm, fn]) => chip(f.sub === id, nm, `data-fsub="${id}"`, inc.filter(fn).length)).join('')}</div>` : ''}</fieldset>
     <fieldset class="fsec"><legend>Ціна</legend>
       <div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="pmin" value="${f.pmin != null ? money(f.pmin) : ''}" placeholder="0" aria-label="Ціна, від"><span>грн</span></label>
       <label class="field"><span>до</span><input inputmode="numeric" data-f="pmax" value="${f.pmax != null ? money(f.pmax) : ''}" placeholder="${money(PMAX)}" aria-label="Ціна, до"><span>грн</span></label></div>
