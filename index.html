@@ -483,7 +483,7 @@ function parse(p) {
   return {
     id: String(p.pid || p.id), key: p.id, cat: cat.id, brand, model, price, oldPrice,
     photos: p.images || [], date: p.date || '', url: p.url, text: t,
-    washdry: cat.id === 'washers' && /прально.?сушильн|завантаження\s+суш/i.test(t),  // прально-сушильна: показуємо і в «Сушильних»
+    washdry: cat.id === 'washers' && /прально.?сушильн|завантаження\s+суш/i.test(t),  // прально-сушильна: підкатегорія в «Пральних»
     isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
     load: cat.id === 'washers' ? loadType(low, model, width, height) : '',
@@ -569,7 +569,7 @@ function setState(next, push) {
 }
 
 /* ---------- фільтрація ---------- */
-const inCat = (p, c) => c === 'sale' ? !!p.oldPrice : p.cat === c || (c === 'dryers' && p.washdry);
+const inCat = (p, c) => c === 'sale' ? !!p.oldPrice : p.cat === c;
 function pass(p, s, hits, skip) {
   if (hits && !hits.has(p.key)) return false;
   if (skip !== 'cat' && s.cat && !inCat(p, s.cat)) return false;
@@ -622,7 +622,6 @@ function render() {
   // Рядок: найбільші категорії першими; решта ховається під «Ще» (див. fitCats).
   const shown = CATS.filter(c => c.id !== 'other' && CNT.get(c.id)).sort((a, b) => CNT.get(b.id) - CNT.get(a.id));
   const sale = ALL.filter(p => p.oldPrice && pass(p, S, HITS, 'cat')).length;
-  cc.set('dryers', (cc.get('dryers') || 0) + ALL.filter(p => p.washdry && pass(p, S, HITS, 'cat')).length);
   const car = '<svg class="car" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg>';
   $('#cats').innerHTML = `<button type="button" class="chip" data-cat="" aria-pressed="${!S.cat}">Усі<span class="cnt">${total}</span></button>` +
     (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
@@ -714,7 +713,6 @@ function renderFilters() {
   const fields = (k, label) => `<div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="${k}min" value="${f[k + 'min'] ?? ''}" placeholder="—" aria-label="${label}, від"></label><label class="field"><span>до</span><input inputmode="numeric" data-f="${k}max" value="${f[k + 'max'] ?? ''}" placeholder="—" aria-label="${label}, до"></label></div>`;
   // Категорія і підкатегорія — ті самі, що в рядку над товарами.
   const cc = countBy(f, HITS, 'cat', p => p.cat);
-  cc.set('dryers', (cc.get('dryers') || 0) + ALL.filter(p => p.washdry && pass(p, f, HITS, 'cat')).length);
   cc.set('sale', ALL.filter(p => p.oldPrice && pass(p, f, HITS, 'cat')).length);
   const ctotal = countBy(f, HITS, 'cat', p => p.cat), all = [...ctotal.values()].reduce((a, b) => a + b, 0);
   const cchip = id => { const n = cc.get(id) || 0, on = f.cat === id; return !on && !n ? '' : chip(on, CAT[id].name, `data-fcat="${id}"`, n); };
@@ -889,7 +887,6 @@ fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({pr
   PMAX = Math.ceil(Math.max(1000, ...ALL.map(p => p.price || 0)) / 1000) * 1000;
   CNT = new Map(); for (const p of ALL) CNT.set(p.cat, (CNT.get(p.cat) || 0) + 1);
   SALES = ALL.filter(p => p.oldPrice).length; SUBN = new Map(Object.entries(SUBS).flatMap(([c, xs]) => xs.map(([id, , f]) => [c + '/' + id, ALL.filter(p => inCat(p, c) && f(p)).length])));
-  CNT.set('dryers', (CNT.get('dryers') || 0) + ALL.filter(p => p.washdry).length);
   buildIndex(ALL); S = fromURL(); render(); footer();
   const p = new URLSearchParams(location.search).get('p'); if (p && BY.has(p)) showProduct(p);
 });
