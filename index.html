@@ -189,7 +189,8 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .shead h2{font-size:18px;font-weight:650}
 .floating{position:absolute;top:14px;right:18px;z-index:2;background:var(--body);border:1px solid var(--line);color:var(--floor)}
 .floating:hover{background:#fff}
-.mini{position:absolute;top:0;left:0;right:0;z-index:1;display:flex;align-items:center;height:64px;padding:12px 72px 0 var(--gutter);border-radius:var(--r-sheet) var(--r-sheet) 0 0;border-bottom:1px solid var(--line);background:var(--body);font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;pointer-events:none;transition:opacity .15s}
+.fshare{right:72px}
+.mini{position:absolute;top:0;left:0;right:0;z-index:1;display:flex;align-items:center;height:64px;padding:12px 128px 0 var(--gutter);border-radius:var(--r-sheet) var(--r-sheet) 0 0;border-bottom:1px solid var(--line);background:var(--body);font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;pointer-events:none;transition:opacity .15s}
 .mini.on{opacity:1}
 .sbody{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .sfoot{flex:none;display:flex;flex-wrap:wrap;gap:8px;padding:10px var(--gutter) calc(10px + var(--safe-b));border-top:1px solid var(--line);background:var(--body)}
@@ -315,6 +316,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
     <div class="handle" aria-hidden="true"></div>
     <div class="mini" id="pmini" aria-hidden="true"></div>
     <button type="button" class="iconbtn floating" data-close aria-label="Закрити"></button>
+    <button type="button" class="iconbtn floating fshare" id="pshare" aria-label="Поділитися товаром" title="Поділитися"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3.5M7.5 8L12 3.5 16.5 8"/><path d="M8 11H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-2"/></svg></button>
     <div class="sbody" id="pbody"></div>
     <div class="sfoot" id="pfoot"></div>
   </div>
@@ -334,25 +336,28 @@ SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComp
 // розділяємо за текстом допису (kw); terms — слова для пошуку.
 const CATS = [
   // ch: канали, з яких категорія береться цілком; kw: як упізнати її за текстом допису (усередині змішаного каналу та в каналі знижок).
-  {id:'washers', name:'Пральні машини', short:'Пральні', ch:'pralni_sushylni_mashyny', kw:/пральн|прально|\d{3,4}\s*об/i, terms:['пралка','пральна','стиралка','стиральная']},
-  {id:'dryers', name:'Сушильні машини', short:'Сушильні', kw:/^(?![\s\S]*(?:прально|завантаження прання))[\s\S]*(?:сушильн|сушарк|сушка|теплов\S* насос|dryer|trockner)/i, terms:['сушка','сушильна','сушильная']},
-  {id:'fridges', name:'Холодильники', short:'Холодильники', ch:'holodylnyky_ta_morozylni_kamery', kw:/холодильн|side.by.side|винн[аі] шаф/i, terms:['холодильник']},
-  {id:'freezers', name:'Морозильні камери', short:'Морозильні', ch:'morozylni_kamery', kw:/морозил|freezer|gefrier/i, terms:['морозилка','морозильна','морозильник']},
-  {id:'dishwashers', name:'Посудомийні машини', short:'Посудомийні', ch:'posudomyini_mashyny', kw:/посудомий|комплект/i, terms:['посудомийка','посудомойка','посудомийна']},
-  {id:'hobs', name:'Варильні поверхні', short:'Варильні', kw:/варильн/i, terms:['варильна поверхня','варочна','індукційна','конфорки']},
-  {id:'stoves', name:'Плити', short:'Плити', ch:'plyty_gas_electro', kw:/плит/i, terms:['плита','газова','електроплита']},
-  {id:'ovens', name:'Духові шафи', short:'Духові', ch:'duhovi_shafy_varylni_poverhni', kw:/духов/i, terms:['духовка','духова шафа','духовий']},
-  {id:'micro', name:'Мікрохвильові печі', short:'Мікрохвильовки', kw:/мікрохвил|свч|microwave/i, terms:['мікрохвильовка','микроволновка','свч']},
-  {id:'hoods', name:'Витяжки', short:'Витяжки', ch:'vytiazhky', kw:/витяжк|м³|м3/i, terms:['витяжка','вытяжка']},
-  {id:'coffee', name:'Кавомашини', short:'Кавомашини', ch:'kavomashyny', kw:/кав[аио]|кофе|в зернах|еспресо/i, terms:['кавомашина','кофемашина','кава']},
-  {id:'tvs', name:'Телевізори', short:'Телевізори', ch:'smart_tv_domfort', kw:/телевіз|діагональ|дюйм|smart tv/i, terms:['телевізор','телевизор','тв','tv']},
-  {id:'treadmills', name:'Бігові доріжки', short:'Бігові доріжки', ch:['sportyvni_trenagery', 'bigovi_dorizhky'], kw:/бігов/i, terms:['бігова доріжка','беговая дорожка','тренажер']},
-  {id:'bikes', name:'Велотренажери', short:'Велотренажери', ch:'velotrenagery', kw:/велотрен/i, terms:['велотренажер','тренажер']},
-  {id:'orbitreks', name:'Орбітреки', short:'Орбітреки', ch:'orbitreky', kw:/орбітрек|орбитрек|еліпт/i, terms:['орбітрек','орбитрек','тренажер']},
+  {id:'washers', one:'Пральна машина', name:'Пральні машини', short:'Пральні', ch:'pralni_sushylni_mashyny', kw:/пральн|прально|\d{3,4}\s*об/i, terms:['пралка','пральна','стиралка','стиральная']},
+  {id:'dryers', one:'Сушильна машина', name:'Сушильні машини', short:'Сушильні', kw:/^(?![\s\S]*(?:прально|завантаження прання))[\s\S]*(?:сушильн|сушарк|сушка|теплов\S* насос|dryer|trockner)/i, terms:['сушка','сушильна','сушильная']},
+  {id:'fridges', one:'Холодильник', name:'Холодильники', short:'Холодильники', ch:'holodylnyky_ta_morozylni_kamery', kw:/холодильн|side.by.side|винн[аі] шаф/i, terms:['холодильник']},
+  {id:'freezers', one:'Морозильна камера', name:'Морозильні камери', short:'Морозильні', ch:'morozylni_kamery', kw:/морозил|freezer|gefrier/i, terms:['морозилка','морозильна','морозильник']},
+  {id:'dishwashers', one:'Посудомийна машина', name:'Посудомийні машини', short:'Посудомийні', ch:'posudomyini_mashyny', kw:/посудомий|комплект/i, terms:['посудомийка','посудомойка','посудомийна']},
+  {id:'hobs', one:'Варильна поверхня', name:'Варильні поверхні', short:'Варильні', kw:/варильн/i, terms:['варильна поверхня','варочна','індукційна','конфорки']},
+  {id:'stoves', one:'Плита', name:'Плити', short:'Плити', ch:'plyty_gas_electro', kw:/плит/i, terms:['плита','газова','електроплита']},
+  {id:'ovens', one:'Духова шафа', name:'Духові шафи', short:'Духові', ch:'duhovi_shafy_varylni_poverhni', kw:/духов/i, terms:['духовка','духова шафа','духовий']},
+  {id:'micro', one:'Мікрохвильова піч', name:'Мікрохвильові печі', short:'Мікрохвильовки', kw:/мікрохвил|свч|microwave/i, terms:['мікрохвильовка','микроволновка','свч']},
+  {id:'hoods', one:'Витяжка', name:'Витяжки', short:'Витяжки', ch:'vytiazhky', kw:/витяжк|м³|м3/i, terms:['витяжка','вытяжка']},
+  {id:'coffee', one:'Кавомашина', name:'Кавомашини', short:'Кавомашини', ch:'kavomashyny', kw:/кав[аио]|кофе|в зернах|еспресо/i, terms:['кавомашина','кофемашина','кава']},
+  {id:'tvs', one:'Телевізор', name:'Телевізори', short:'Телевізори', ch:'smart_tv_domfort', kw:/телевіз|діагональ|дюйм|smart tv/i, terms:['телевізор','телевизор','тв','tv']},
+  {id:'treadmills', one:'Бігова доріжка', name:'Бігові доріжки', short:'Бігові доріжки', ch:['sportyvni_trenagery', 'bigovi_dorizhky'], kw:/бігов/i, terms:['бігова доріжка','беговая дорожка','тренажер']},
+  {id:'bikes', one:'Велотренажер', name:'Велотренажери', short:'Велотренажери', ch:'velotrenagery', kw:/велотрен/i, terms:['велотренажер','тренажер']},
+  {id:'orbitreks', one:'Орбітрек', name:'Орбітреки', short:'Орбітреки', ch:'orbitreky', kw:/орбітрек|орбитрек|еліпт/i, terms:['орбітрек','орбитрек','тренажер']},
   {id:'other', name:'Інша техніка', short:'Інше', terms:[]},  // окремо не показуємо: такі товари видно в «Усі»
   {id:'sale', name:'Розпродаж', short:'Розпродаж', terms:['розпродаж','знижка','акція','уцінка']},  // не категорія товару, а добірка: усе зі старою ціною
 ];
 const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
+// Назва товару. Коли в дописі лише бренд, без моделі, додаємо вид техніки: «Морозильна камера Siemens», а не просто «Siemens».
+const kindOf = p => p.model ? '' : p.washdry ? 'Прально-сушильна машина' : CAT[p.cat]?.one || '';
+const nameOf = p => [kindOf(p), p.brand, p.model].filter(Boolean).join(' ');
 const SALEICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l8 8a1.4 1.4 0 0 1 0 2l-6.6 6.6a1.4 1.4 0 0 1-2 0z"/><circle cx="8.5" cy="8.5" r="1.6"/></svg>';
 // Групи для розгорнутого списку категорій.
 const GROUPS = [
@@ -653,14 +658,14 @@ const pct = p => Math.round((1 - p.price / p.oldPrice) * 100);
 const deal = (p, big) => p.oldPrice && p.price ? `<div class="deal${big ? ' pdeal' : ''}"><s class="old"><span class="vh">Стара ціна: </span>${money(p.oldPrice)} грн</s>${big ? `<span class="save pct">−${pct(p)}%</span>` : ''}<span class="save">Економія ${money(p.oldPrice - p.price)} грн</span></div>` : '';
 const sticker = (price, size = 'm') => `<span class="sticker ${size}"><span class="vh">Ціна: </span><span>${money(price)}</span><span class="cur">${SHOP.currency}</span></span>`;
 const frame = (p, i = 0, eager) => p.photos[i]
-  ? `<div class="frame"><img src="${esc(p.photos[i])}" alt="${esc(p.brand + ' ' + p.model)}, фото ${i + 1}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" draggable="false" data-cat="${p.cat}"></div>`
+  ? `<div class="frame"><img src="${esc(p.photos[i])}" alt="${esc(nameOf(p))}, фото ${i + 1}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" draggable="false" data-cat="${p.cat}"></div>`
   : `<div class="frame">${illustration(p.cat, 'Фото ще немає, схематичне зображення: ' + (CAT[p.cat]?.name || ''))}</div>`;
 function card(p, hit, compact, eager) {
   const flags = (p.reserved ? '<span class="hold">Бронь</span>' : '') + (p.isNew ? '<span class="isnew">Нова</span>' : '');
   return `<article class="card${compact ? ' compact' : ''}"><a href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}">
     <div class="photo">${frame(p, 0, eager)}${flags ? `<span class="flags">${flags}</span>` : ''}${p.oldPrice && p.price ? `<span class="off" aria-label="Знижка ${pct(p)}%">−${pct(p)}%</span>` : ''}${p.photos.length > 1 ? `<span class="nph" aria-label="${p.photos.length} фото"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>${p.photos.length}</span>` : ''}</div>
     ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}${compact ? '' : deal(p)}
-    <h3 class="ctitle"><span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
+    <h3 class="ctitle">${kindOf(p) ? `<span class="model">${esc(kindOf(p))}</span> ` : ''}<span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
     ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}</a></article>`;
 }
 
@@ -832,7 +837,7 @@ $('#freset').onclick = () => setDraft({pmin: undefined, pmax: undefined, brands:
 $('#fapply').onclick = () => { setState(draft); sheetClose($('#fsheet')); };
 
 /* ---------- картка товару ---------- */
-const msg = p => `Добрий день! Цікавить ID ${p.id}, ${p.brand} ${p.model}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim();
+const msg = p => `Добрий день! Цікавить ID ${p.id}, ${nameOf(p)}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim();
 function specsOf(p) {
   return [['Стан', p.isNew ? 'Нова' : 'Б/в'], ['Завантаження', p.kg && `${p.kg} кг`], ['Віджим', p.rpm && `${p.rpm} об/хв`],
     ['Тип завантаження', p.load && (p.load === 'front' ? 'Фронтальне' : 'Вертикальне')], ['Система охолодження', p.cooling],
@@ -841,23 +846,28 @@ function specsOf(p) {
 }
 function renderProduct(p) {
   const n = Math.max(p.photos.length, 1);
-  const sim = ALL.filter(x => x.cat === p.cat && x.key !== p.key).sort((a, b) => Math.abs((a.price || 0) - (p.price || 0)) - Math.abs((b.price || 0) - (p.price || 0))).slice(0, 6);
-  $('#psheet .panel').setAttribute('aria-label', `${p.brand} ${p.model}`);
-  $('#pmini').textContent = `${p.brand} ${p.model}`;
+  // Схожі: та сама категорія; вище ті, що з тих самих підкатегорій (No Frost, низькі, вузькі…), вільні (не бронь) і ближчі за ціною.
+  const subs = (SUBS[p.cat] || []).filter(x => x[2](p)), same = x => subs.filter(s => s[2](x)).length - (SUBS[p.cat] || []).filter(s => !s[2](p) && s[2](x)).length;
+  const gap = x => p.price && x.price ? Math.abs(Math.log(x.price / p.price)) : 9;
+  const sim = ALL.filter(x => x.cat === p.cat && x.key !== p.key).map(x => [x, gap(x) - same(x) * .35 + (x.reserved ? .5 : 0)]).sort((a, b) => a[1] - b[1]).slice(0, 8).map(a => a[0]);
+  $('#psheet .panel').setAttribute('aria-label', nameOf(p));
+  $('#pmini').textContent = nameOf(p);
   $('#pbody').innerHTML = `<article class="pwrap">
-    <div class="gallery"><div class="gtrack" tabindex="${n > 1 ? 0 : -1}" aria-roledescription="галерея" aria-label="${esc(p.brand + ' ' + p.model)}: ${n} фото">${Array.from({length: n}, (_, i) => `<div class="slide">${frame(p, i, i === 0)}</div>`).join('')}</div>
+    <div class="gallery"><div class="gtrack" tabindex="${n > 1 ? 0 : -1}" aria-roledescription="галерея" aria-label="${esc(nameOf(p))}: ${n} фото">${Array.from({length: n}, (_, i) => `<div class="slide">${frame(p, i, i === 0)}</div>`).join('')}</div>
       ${n > 1 ? `<div class="dots" aria-hidden="true">${Array.from({length: n}, (_, i) => `<span class="${i ? '' : 'on'}"></span>`).join('')}</div>
       <button type="button" class="nav prev" data-g="-1" aria-label="Попереднє фото" disabled>${ARROW('l')}</button><button type="button" class="nav next" data-g="1" aria-label="Наступне фото">${ARROW('r')}</button>` : ''}</div>
     <div class="pmain">
       ${p.price ? `<div class="prow">${sticker(p.price, 'l')}</div>${deal(p, 1)}` : ''}
-      <h2 class="ptitle"><span class="brand">${esc(p.brand)}</span> ${esc(p.model)}</h2>
-      <p class="pcat">${esc(CAT[p.cat]?.name || '')}</p>
+      <h2 class="ptitle">${kindOf(p) ? esc(kindOf(p)) + ' ' : ''}<span class="brand">${esc(p.brand)}</span> ${esc(p.model)}</h2>
+      ${kindOf(p) ? '' : `<p class="pcat">${esc(CAT[p.cat]?.name || '')}</p>`}
       <div class="idrow"><b>ID ${esc(p.id)}</b><button type="button" class="copy" data-copy aria-live="polite">Скопіювати</button>
         ${p.reserved ? '<span class="holdtag">Бронь</span>' : '<span class="oktag">В наявності</span>'}</div>
       ${p.reserved ? '<p class="notice">Товар заброньований. Напишіть нам — підкажемо, чи звільниться.</p>' : ''}
       <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsOf(p).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
         <div><h3 class="h3">${p.warrantyText ? `Гарантія ${esc(p.warrantyText)}` : 'Гарантія — уточнюйте'}</h3><p class="muted">Перевіряємо кожен прилад перед продажем. Якщо щось не так — ремонт або заміна.</p></div></section>
+      <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v10h-11zM13.5 9.5h4l3.5 3.5v3.5h-7.5"/><circle cx="6.5" cy="17.5" r="1.8" fill="var(--soft)"/><circle cx="17" cy="17.5" r="1.8" fill="var(--soft)"/></svg>
+        <div><h3 class="h3">Доставка по Києву та Україні</h3><p class="muted">Деталі й вартість підкажемо в Telegram чи Viber.</p></div></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
         <div><h3 class="h3">Де подивитись</h3><p>м. ${esc(SHOP.city)}, ${esc(SHOP.address)} (${esc(SHOP.addressHint)})</p><a class="link" href="${SHOP.mapUrl}" target="_blank" rel="noopener">Відкрити на карті</a></div></section>
     </div>
@@ -874,8 +884,17 @@ $('#pbody').addEventListener('click', async e => {
   const g = e.target.closest('[data-g]'); if (g) { const tr = $('#pbody .gtrack'); tr.scrollBy({left: +g.dataset.g * tr.clientWidth, behavior: 'smooth'}); return; }
   const c = e.target.closest('[data-copy]'); if (c) { if (await copyText(BY.get(openId).id)) { c.textContent = 'Скопійовано'; setTimeout(() => c.textContent = 'Скопіювати', 1600); } return; }
 });
+// «Поділитися»: посилання лише на товар (без фільтрів). На телефоні — системне меню, де нема — копіюємо посилання.
+const linkOf = p => location.origin + location.pathname + '?p=' + encodeURIComponent(p.id);
+async function share(p) {
+  const url = linkOf(p), title = nameOf(p), text = `${title}${p.price ? `, ${money(p.price)} грн` : ''}`;
+  track('click-share', p);
+  if (navigator.share) { try { await navigator.share({title, text, url}); return; } catch (e) { if (e.name === 'AbortError') return; } }
+  if (await copyText(url)) toast('Посилання на товар скопійовано');
+}
+$('#pshare').onclick = () => share(BY.get(openId));
 // Рахуємо кліки на месенджери (якщо скрипт статистики заблоковано — просто пропускаємо).
-const track = (path, p) => { try { window.goatcounter?.count?.({path, title: p ? `ID ${p.id} ${p.brand || ''} ${p.model || ''}`.trim() : '', event: true}); } catch {} };
+const track = (path, p) => { try { window.goatcounter?.count?.({path, title: p ? `ID ${p.id} ${nameOf(p)}`.trim() : '', event: true}); } catch {} };
 $('#pfoot').addEventListener('click', e => {
   const a = e.target.closest('a'); if (a) track(a.hasAttribute('data-viber') ? 'click-viber' : 'click-telegram', BY.get(openId));
   if (e.target.closest('[data-viber]')) copyText(msg(BY.get(openId))).then(ok => ok && toast('Текст скопійовано — вставте його у Viber')); });
