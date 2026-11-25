@@ -318,6 +318,10 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .promo b{display:block;font-size:17px;line-height:1.2}
 .promo small{display:block;margin-top:2px;font-size:13.5px;opacity:.92}
 .promo .go{margin-left:auto;flex:none;padding:9px 14px;border-radius:11px;background:#fff;color:var(--sale);font-weight:700;font-size:14px;white-space:nowrap}
+.promo.bf{background:#111214;background-image:radial-gradient(120% 140% at 0% 0%,#2a2c31 0,#111214 60%);box-shadow:0 6px 18px #11121459;border:1px solid #2f3238}
+.promo.bf .big{color:#ff4b2e}
+.promo.bf b{font-size:20px;letter-spacing:.06em;text-transform:uppercase}
+.promo.bf .go{background:#ff4b2e;color:#fff}
 @media(max-width:479px){.promo .go{display:none}.promo .big{font-size:38px}}
 @media(min-width:960px){.promo{padding:18px 24px}.promo .big{font-size:56px}.promo b{font-size:20px}}
 /* «Повідомити, коли з'явиться» */
@@ -326,10 +330,6 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 @media(min-width:760px){.wish{flex-direction:row;align-items:center}.wish .btn{margin-left:auto;flex:none}}
 .notice .link{min-height:36px}
 .empty .ghost{background:var(--body)}
-/* відгуки */
-.frev{display:flex;gap:10px;align-items:flex-start;color:var(--floor);font-size:15px}
-.frev svg{flex:none;margin-top:1px;color:#e0a100}
-.frev a{display:inline-block;margin-top:2px;margin-right:14px;color:var(--marker);font-size:13.5px;font-weight:600;text-decoration:none}
 
 #toast{position:fixed;left:50%;bottom:calc(84px + var(--safe-b));transform:translateX(-50%);background:var(--floor);color:#fff;padding:11px 18px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:99;max-width:calc(100% - 32px)}
 #toast.on{opacity:1}
@@ -407,8 +407,8 @@ const SHOP = {
   address: 'вул. Вадима Гетьмана, 1', city: 'Київ', addressHint: 'метро Шулявська', hours: '10:00–19:00, без вихідних',
   // Банер на головній. Порожньо — банер сам пише про розпродаж («Знижки до −N%»). Можна вписати свій текст, напр. 'Чорна п’ятниця: −10% на все'.
   promo: '', promoNote: '',
-  // Де читати відгуки. Порожньо — Google Карти магазину (там з’являться відгуки, коли буде профіль Google Business).
-  reviewsUrl: '',
+  // Black Friday: до цієї дати (включно, за київським часом) банер чорний з написом «Black Friday», після — знову звичайний «Розпродаж техніки».
+  blackFridayUntil: '2026-11-30',
 };
 SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
 
@@ -1042,6 +1042,12 @@ function promo() {
   const sale = ALL.filter(p => p.oldPrice && p.price), top = sale.length ? Math.max(...sale.map(pct)) : 0;
   if (!SHOP.promo && !top) return '';
   const big = SHOP.promo ? '%' : `−${top}%`;
+  // Сьогоднішня дата в Києві у вигляді 2026-11-30 — щоб Black Friday вимкнувся сам.
+  const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Kyiv'}).format(new Date());
+  if (!SHOP.promo && top && SHOP.blackFridayUntil && today <= SHOP.blackFridayUntil) {
+    const [, m, d] = SHOP.blackFridayUntil.split('-'), until = `${+d} ${['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'][m - 1]}`;
+    return `<button type="button" class="promo bf" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>Black Friday</b><small>${goods(sale.length)} зі знижкою до −${top}%. Лише до ${until}</small></span><span class="go">Дивитися →</span></button>`;
+  }
   return `<button type="button" class="promo" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>${esc(SHOP.promo || 'Розпродаж техніки')}</b><small>${esc(SHOP.promoNote || `${goods(sale.length)} зі знижкою до −${top}%. Кількість обмежена`)}</small></span><span class="go">Дивитися →</span></button>`;
 }
 // Що саме шукає людина: запит + вибрана категорія й фільтри.
@@ -1119,7 +1125,6 @@ function footer() {
     <a class="faddr" href="${SHOP.mapUrl}" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
       <span>м. ${esc(SHOP.city)}, ${esc(SHOP.address)}<small>${esc(SHOP.addressHint)}</small><u>Відкрити на карті →</u></span></a>
     <p class="faddr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>${esc(SHOP.hours)}</span></p>
-    <p class="frev"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .7-4.4 4.1 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.7z"/></svg><span>Відгуки покупців<br><a href="${esc(SHOP.reviewsUrl || SHOP.mapUrl)}" target="_blank" rel="noopener">Читати →</a><a href="${tgLink('Мій відгук про покупку: ')}" target="_blank" rel="noopener" data-track="click-telegram">Залишити відгук</a></span></p>
     <div class="fbtns"><a class="btn tgb" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></div>
   </div>${t && !isNaN(t) ? `<p class="fupd">Товар оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}
   <nav class="fcats" aria-label="Розділи каталогу">${GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id) && SLUG[id]).map(id => `<a href="katalog/${SLUG[id]}/">${esc(CAT[id].name)}</a>`).join('')}</nav>`;
