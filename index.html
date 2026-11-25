@@ -265,6 +265,61 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .simrow::-webkit-scrollbar{display:none}
 .simrow>*{flex:0 0 150px;scroll-snap-align:start}
 
+/* кошик */
+.hright{display:flex;align-items:center;gap:10px}
+.cartbtn{position:relative;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:50%;background:var(--body);color:var(--floor)}
+.cartbtn:hover{border-color:#b9bfc6}
+.badge{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--sale);color:#fff;font-size:12px;font-weight:700;line-height:20px;text-align:center;font-variant-numeric:tabular-nums}
+.badge[hidden]{display:none}
+.badge.pop{animation:pop .35s}
+@keyframes pop{40%{transform:scale(1.35)}}
+.card{position:relative;container-type:inline-size}
+.tocart{position:absolute;right:12px;top:calc((100cqw - 8px)*1.25 - 42px);z-index:1;display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:50%;background:#fffffff0;color:var(--floor);box-shadow:0 2px 8px #24272b33}
+.tocart:hover{background:#fff;color:var(--marker)}
+.tocart[aria-pressed=true]{background:var(--marker);color:#fff}
+.tocart svg{width:20px;height:20px}
+.cartbar{position:fixed;left:50%;bottom:calc(12px + var(--safe-b));z-index:40;display:flex;align-items:center;gap:10px;width:calc(100% - 2*var(--gutter));max-width:460px;min-height:56px;padding:0 8px 0 16px;border:0;border-radius:16px;background:var(--floor);color:#fff;font-weight:600;font-size:15px;box-shadow:0 8px 24px #24272b4d;transform:translateX(-50%)}
+.cartbar[hidden]{display:none}
+.cartbar .sum{margin-left:auto;padding:9px 14px;border-radius:11px;background:var(--marker);white-space:nowrap}
+.cartbar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.has-cart .page{padding-bottom:calc(92px + var(--safe-b))}
+.citems{list-style:none;margin:0;padding:6px var(--gutter) 0}
+.citems li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.citems .th{flex:none;width:64px;height:76px;border-radius:10px;overflow:hidden;background:var(--photo-wall);border:0;padding:0}
+.citems .th img,.citems .th svg{width:100%;height:100%;object-fit:cover}
+.citems .nm{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;padding:0;border:0;background:none;text-align:left}
+.citems .nm b{font-weight:600;font-size:15px;line-height:1.3}
+.citems .nm small{color:var(--concrete);font-size:13px}
+.citems .pr{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.citems .gone{opacity:.55}
+.ctotal{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px var(--gutter) 4px;font-size:16px;font-weight:600}
+.ctotal b{font-size:22px;font-variant-numeric:tabular-nums}
+.chint{padding:4px var(--gutter) 8px;color:var(--concrete);font-size:14px}
+.cclear{margin:0 var(--gutter) 16px;padding:0;min-height:var(--tap);border:0;background:none;color:var(--concrete);font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.cempty{display:flex;flex-direction:column;align-items:center;gap:10px;padding:48px 24px;text-align:center;color:var(--concrete)}
+.cempty svg{width:48px;height:48px;color:var(--line)}
+.cempty b{color:var(--floor);font-size:17px}
+.incart{background:#2f45c914;border-color:var(--marker);color:var(--marker)}
+.tg2{background:var(--tg);color:#fff}
+/* рекламний банер на головній */
+.promo{display:flex;align-items:center;gap:14px;width:calc(100% - 2*var(--gutter));margin:4px var(--gutter) 14px;padding:14px 16px;border:0;border-radius:var(--r-card);background:linear-gradient(105deg,#d2361f,#e8612c);color:#fff;text-align:left;box-shadow:0 6px 18px #d2361f33}
+.promo .big{flex:none;font-family:var(--font-marker);font-size:44px;font-weight:700;line-height:.9;transform:rotate(-4deg)}
+.promo b{display:block;font-size:17px;line-height:1.2}
+.promo small{display:block;margin-top:2px;font-size:13.5px;opacity:.92}
+.promo .go{margin-left:auto;flex:none;padding:9px 14px;border-radius:11px;background:#fff;color:var(--sale);font-weight:700;font-size:14px;white-space:nowrap}
+@media(max-width:479px){.promo .go{display:none}.promo .big{font-size:38px}}
+@media(min-width:960px){.promo{padding:18px 24px}.promo .big{font-size:56px}.promo b{font-size:20px}}
+/* «Повідомити, коли з'явиться» */
+.wish{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:28px var(--gutter) 0;padding:18px;border-radius:var(--r-card);background:var(--body);border:1px solid var(--line)}
+.wish b{font-size:16px}.wish p{color:var(--concrete);font-size:14px}
+@media(min-width:760px){.wish{flex-direction:row;align-items:center}.wish .btn{margin-left:auto;flex:none}}
+.notice .link{min-height:36px}
+.empty .ghost{background:var(--body)}
+/* відгуки */
+.frev{display:flex;gap:10px;align-items:flex-start;color:var(--floor);font-size:15px}
+.frev svg{flex:none;margin-top:1px;color:#e0a100}
+.frev a{display:inline-block;margin-top:2px;margin-right:14px;color:var(--marker);font-size:13.5px;font-weight:600;text-decoration:none}
+
 #toast{position:fixed;left:50%;bottom:calc(84px + var(--safe-b));transform:translateX(-50%);background:var(--floor);color:#fff;padding:11px 18px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:99;max-width:calc(100% - 32px)}
 #toast.on{opacity:1}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
@@ -276,7 +331,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 </head>
 <body>
 <div class="page">
-  <header class="header"><h1 class="shop"><a href="./" data-home>Техніка з Європи <span class="tagline">Вигідно</span></a></h1><a href="./" data-home aria-label="На головну"><img class="emblem" src="img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
+  <header class="header"><h1 class="shop"><a href="./" data-home>Техніка з Європи <span class="tagline">Вигідно</span></a></h1><div class="hright"><button type="button" class="cartbtn" id="cartopen" aria-haspopup="dialog" aria-label="Кошик"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 11h10.8l2-8H6.4"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg><span class="badge" id="cartn" hidden></span></button><a href="./" data-home aria-label="На головну"><img class="emblem" src="img/emblem.png?v=2" width="48" height="48" alt=""></a></div></header>
   <div class="sticky">
     <label class="search">
       <span class="vh">Пошук по каталогу</span>
@@ -321,6 +376,16 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
     <div class="sfoot" id="pfoot"></div>
   </div>
 </div>
+<div class="sheet" id="csheet" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Кошик" tabindex="-1">
+    <div class="handle" aria-hidden="true"></div>
+    <header class="shead"><h2 id="ctitle">Кошик</h2><button type="button" class="iconbtn" data-close aria-label="Закрити"></button></header>
+    <div class="sbody" id="cbody"></div>
+    <div class="sfoot" id="cfoot"></div>
+  </div>
+</div>
+<button type="button" class="cartbar" id="cartbar" hidden></button>
 <div id="toast" role="status"></div>
 
 <script>
@@ -329,6 +394,10 @@ const SHOP = {
   name: 'Техніка з Європи', tagline: 'Вигідно', currency: 'грн',
   tg: 'dossyyaa', viber: '380681015291',
   address: 'вул. Вадима Гетьмана, 1', city: 'Київ', addressHint: 'метро Шулявська', hours: '10:00–19:00, без вихідних',
+  // Банер на головній. Порожньо — банер сам пише про розпродаж («Знижки до −N%»). Можна вписати свій текст, напр. 'Чорна п’ятниця: −10% на все'.
+  promo: '', promoNote: '',
+  // Де читати відгуки. Порожньо — Google Карти магазину (там з’являться відгуки, коли буде профіль Google Business).
+  reviewsUrl: '',
 };
 SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
 
@@ -358,6 +427,7 @@ const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
 // Назва товару. Коли в дописі лише бренд, без моделі, додаємо вид техніки: «Морозильна камера Siemens», а не просто «Siemens».
 const kindOf = p => p.model ? '' : p.washdry ? 'Прально-сушильна машина' : CAT[p.cat]?.one || '';
 const nameOf = p => [kindOf(p), p.brand, p.model].filter(Boolean).join(' ');
+const CARTICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 11h10.8l2-8H6.4"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>';
 const SALEICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l8 8a1.4 1.4 0 0 1 0 2l-6.6 6.6a1.4 1.4 0 0 1-2 0z"/><circle cx="8.5" cy="8.5" r="1.6"/></svg>';
 // Групи для розгорнутого списку категорій.
 const GROUPS = [
@@ -603,7 +673,7 @@ const listp = v => v ? v.split(',').filter(Boolean) : [];
 function fromURL() {
   const u = new URLSearchParams(location.search), s = {...EMPTY};
   s.q = u.get('q') || ''; const c = u.get('cat'); s.cat = CAT[c] ? c : null; s.sub = subOf(s.cat, u.get('sub')) ? u.get('sub') : null;
-  [s.pmin, s.pmax] = pair(u.get('price')); [s.wmin, s.wmax] = pair(u.get('w')); [s.hmin, s.hmax] = pair(u.get('h'));
+  [s.pmin, s.pmax] = pair(u.get('price')); [s.wmin, s.wmax] = pair(u.get('w')); [s.hmin, s.hmax] = pair(u.get('h')); [s.dmin, s.dmax] = pair(u.get('d'));
   s.brands = listp(u.get('brand')); s.cond = listp(u.get('cond')).filter(x => x === 'used' || x === 'new');
   s.load = listp(u.get('load')).filter(x => x === 'front' || x === 'top');
   if (s.cat === 'washers' && !s.sub && s.load.length === 1) [s.sub, s.load] = [s.load[0], []];  // старі посилання ?load=top
@@ -615,7 +685,7 @@ function toURL(s, p) {
   const u = new URLSearchParams(), r = (a, b) => a == null && b == null ? '' : `${a ?? ''}-${b ?? ''}`, set = (k, v) => v && u.set(k, v);
   set('q', s.q.trim()); set('cat', s.cat); set('sub', s.sub); set('price', r(s.pmin, s.pmax)); set('brand', s.brands.join(',')); set('cond', s.cond.join(','));
   if (s.cat === 'washers') { set('load', s.load.join(',')); set('kg', s.kg && String(s.kg)); set('narrow', s.narrow && '1'); }
-  set('w', r(s.wmin, s.wmax)); set('h', r(s.hmin, s.hmax)); set('war', s.war && String(s.war)); set('sort', s.sort); set('p', p);
+  set('w', r(s.wmin, s.wmax)); set('h', r(s.hmin, s.hmax)); set('d', r(s.dmin, s.dmax)); set('war', s.war && String(s.war)); set('sort', s.sort); set('p', p);
   const q = u.toString(); return location.pathname + (q ? '?' + q : '');
 }
 function setState(next) {
@@ -641,6 +711,8 @@ function pass(p, s, hits, skip) {
   if (s.wmax != null && !(p.width <= s.wmax)) return false;
   if (s.hmin != null && !(p.height >= s.hmin)) return false;
   if (s.hmax != null && !(p.height <= s.hmax)) return false;
+  if (s.dmin != null && !(p.depth >= s.dmin)) return false;
+  if (s.dmax != null && !(p.depth <= s.dmax)) return false;
   if (s.war && !(p.warrantyMonths >= s.war)) return false;
   return true;
 }
@@ -650,7 +722,7 @@ function results(s, hits) {
   return l.sort((a, b) => m === 'cheap' ? (a.price ?? 1e12) - (b.price ?? 1e12) : m === 'expensive' ? (b.price ?? -1) - (a.price ?? -1) : m === 'relevance' && (hits.get(a.key).score - hits.get(b.key).score) || byNew(a, b));
 }
 const countBy = (s, hits, skip, f) => { const m = new Map(); for (const p of ALL) if (pass(p, s, hits, skip)) m.set(f(p), (m.get(f(p)) || 0) + 1); return m; };
-const nFilters = s => !!s.sub + (s.pmin != null || s.pmax != null) + s.brands.length + s.cond.length + (s.cat === 'washers' ? s.load.length + !!s.kg + !!s.narrow : 0) + (s.wmin != null || s.wmax != null) + (s.hmin != null || s.hmax != null) + !!s.war;
+const nFilters = s => !!s.sub + (s.pmin != null || s.pmax != null) + s.brands.length + s.cond.length + (s.cat === 'washers' ? s.load.length + !!s.kg + !!s.narrow : 0) + (s.wmin != null || s.wmax != null) + (s.hmin != null || s.hmax != null) + (s.dmin != null || s.dmax != null) + !!s.war;
 const range = (a, b, u = '') => a != null && b != null ? `${money(a)}–${money(b)}${u}` : a != null ? `від ${money(a)}${u}` : `до ${money(b)}${u}`;
 
 /* ---------- відмальовка ---------- */
@@ -666,7 +738,7 @@ function card(p, hit, compact, eager) {
     <div class="photo">${frame(p, 0, eager)}${flags ? `<span class="flags">${flags}</span>` : ''}${p.oldPrice && p.price ? `<span class="off" aria-label="Знижка ${pct(p)}%">−${pct(p)}%</span>` : ''}${p.photos.length > 1 ? `<span class="nph" aria-label="${p.photos.length} фото"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>${p.photos.length}</span>` : ''}</div>
     ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}${compact ? '' : deal(p)}
     <h3 class="ctitle">${kindOf(p) ? `<span class="model">${esc(kindOf(p))}</span> ` : ''}<span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
-    ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}</a></article>`;
+    ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}</a>${cartBtn(p)}</article>`;
 }
 
 function render() {
@@ -697,8 +769,8 @@ function render() {
   const shown = list.slice(0, LIMIT), left = list.length - shown.length;
   const more = left ? `<div class="morebtn"><button type="button" class="btn ghost" data-more>Показати ще ${Math.min(STEP, left)}</button><small>Показано ${shown.length} з ${list.length}</small></div>` : '';
   $('#list').innerHTML = home ? homeA(list) : list.length
-    ? `<ul class="grid">${shown.map((p, i) => `<li>${card(p, HITS?.get(p.key), false, i < 4)}</li>`).join('')}</ul>` + more
-    : `<div class="empty"><h2>${ALL.length ? 'Нічого не знайшли' : 'Каталог оновлюється'}</h2><p>${ALL.length ? 'Спробуйте інший запит або приберіть фільтри' : 'Товари з’являться після першого оновлення.'}</p>${ALL.length ? '<button type="button" class="btn primary" data-resetall>Скинути фільтри</button>' : ''}</div>`;
+    ? `<ul class="grid">${shown.map((p, i) => `<li>${card(p, HITS?.get(p.key), false, i < 4)}</li>`).join('')}</ul>` + more + wish()
+    : `<div class="empty"><h2>${ALL.length ? 'Нічого не знайшли' : 'Каталог оновлюється'}</h2><p>${ALL.length ? 'Спробуйте інший запит або приберіть фільтри. Або напишіть, що шукаєте, — повідомимо, коли з’явиться.' : 'Товари з’являться після першого оновлення.'}</p>${ALL.length ? `<div class="row"><a class="btn tg2" href="${tgLink(wishText())}" target="_blank" rel="noopener" data-track="click-telegram">Повідомити, коли з’явиться</a><button type="button" class="btn ghost" data-resetall>Скинути фільтри</button></div>` : ''}</div>`;
 }
 /* ---------- вітрина ---------- */
 function homeA(list) {
@@ -706,7 +778,7 @@ function homeA(list) {
   const tile = (id, nm, n, cls = '', ic = icon(id, 30)) => `<li><button type="button" class="tile ${cls}" data-cat="${id}">${ic}<span><b>${esc(nm)}</b><span class="cnt">${n}</span></span></button></li>`;
   const shelf = (title, items, btn) => items.length ? `<section class="shelf"><div class="shead2"><h2>${title}</h2>${btn}</div><ul class="hrow">${items.slice(0, 10).map(p => `<li>${card(p, null, true)}</li>`).join('')}</ul></section>` : '';
   const sale = list.filter(p => p.oldPrice && p.price).sort((a, b) => pct(b) - pct(a));
-  return `<ul class="tiles">${SALES ? tile('sale', 'Розпродаж', SALES, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}</ul>`
+  return promo() + `<ul class="tiles">${SALES ? tile('sale', 'Розпродаж', SALES, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}</ul>`
     + shelf('Найбільші знижки', sale, `<button type="button" data-cat="sale">Усі ${SALES} →</button>`)
     + shelf('Нові надходження', list, `<button type="button" data-showall>Усі →</button>`)
     + `<button type="button" class="btn primary allbtn" data-showall>Дивитися всі ${goods(list.length)}</button>`;
@@ -735,6 +807,7 @@ function activeChips(s) {
   }
   (s.wmin != null || s.wmax != null) && add(`Ширина ${range(s.wmin, s.wmax, ' см')}`, x => ({...x, wmin: undefined, wmax: undefined}));
   (s.hmin != null || s.hmax != null) && add(`Висота ${range(s.hmin, s.hmax, ' см')}`, x => ({...x, hmin: undefined, hmax: undefined}));
+  (s.dmin != null || s.dmax != null) && add(`Глибина ${range(s.dmin, s.dmax, ' см')}`, x => ({...x, dmin: undefined, dmax: undefined}));
   s.war && add(`Гарантія від ${s.war} міс`, x => ({...x, war: undefined}));
   return a;
 }
@@ -748,9 +821,9 @@ function sheetOpen(el) {
 function sheetClose(el) {
   if (el.hidden) return;
   el.classList.remove('shown');
-  setTimeout(() => { el.hidden = true; if ($('#fsheet').hidden && $('#psheet').hidden) document.documentElement.classList.remove('no-scroll'); el._ret?.focus?.({preventScroll: true}); }, 260);
+  setTimeout(() => { el.hidden = true; if ($('#fsheet').hidden && $('#psheet').hidden && $('#csheet').hidden) document.documentElement.classList.remove('no-scroll'); el._ret?.focus?.({preventScroll: true}); }, 260);
 }
-for (const el of [$('#fsheet'), $('#psheet')]) {
+for (const el of [$('#fsheet'), $('#psheet'), $('#csheet')]) {
   el.querySelectorAll('[data-close]').forEach(b => { if (b.tagName === 'BUTTON') b.innerHTML = X(16); b.onclick = () => el.id === 'psheet' ? closeProduct() : sheetClose(el); });
   el.addEventListener('keydown', e => {
     if (e.key === 'Escape') { e.stopPropagation(); el.id === 'psheet' ? closeProduct() : sheetClose(el); }
@@ -764,7 +837,7 @@ const LI = 500;
 function renderFilters() {
   const f = draft, bc = countBy(f, HITS, 'brands', p => p.brand), lo = f.pmin ?? 0, hi = f.pmax ?? PMAX, pc = v => (Math.min(Math.max(v, 0), PMAX)) / PMAX * 100;
   const chip = (on, label, attrs, cnt) => `<button type="button" class="chip" aria-pressed="${on}" ${attrs}>${esc(label)}${cnt != null ? `<span class="cnt">${cnt}</span>` : ''}</button>`;
-  const fields = (k, label) => `<div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="${k}min" value="${f[k + 'min'] ?? ''}" placeholder="—" aria-label="${label}, від"></label><label class="field"><span>до</span><input inputmode="numeric" data-f="${k}max" value="${f[k + 'max'] ?? ''}" placeholder="—" aria-label="${label}, до"></label></div>`;
+  const fields = (k, label) => `<p class="sub">${label}</p><div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="${k}min" value="${f[k + 'min'] ?? ''}" placeholder="—" aria-label="${label}, від"></label><label class="field"><span>до</span><input inputmode="numeric" data-f="${k}max" value="${f[k + 'max'] ?? ''}" placeholder="—" aria-label="${label}, до"></label></div>`;
   // Категорія і підкатегорія — ті самі, що в рядку над товарами.
   const cc = countBy(f, HITS, 'cat', p => p.cat), all = [...cc.values()].reduce((a, b) => a + b, 0);
   cc.set('sale', ALL.filter(p => p.oldPrice && pass(p, f, HITS, 'cat')).length);
@@ -786,8 +859,7 @@ function renderFilters() {
     ${f.cat === 'washers' ? `<fieldset class="fsec"><legend>Для пральних машин</legend>
       <p class="sub">Завантаження</p><div class="row">${[0, 5, 6, 7, 8].map(k => chip((f.kg || 0) === k, k ? `від ${k} кг` : 'Будь-яке', `data-fk="${k}"`)).join('')}</div>
       <label class="switch"><input type="checkbox" data-fn ${f.narrow ? 'checked' : ''}><span>Вузькі, до ${NARROW} см</span></label></fieldset>` : ''}
-    <fieldset class="fsec"><legend>Ширина, см</legend>${fields('w', 'Ширина, см')}</fieldset>
-    <fieldset class="fsec"><legend>Висота, см</legend>${fields('h', 'Висота, см')}</fieldset>
+    <fieldset class="fsec"><legend>Розміри, см</legend><p class="sub hint">Під нішу чи кут: впишіть її розміри в поля «до»</p>${fields('h', 'Висота')}${fields('w', 'Ширина')}${fields('d', 'Глибина')}</fieldset>
     <fieldset class="fsec"><legend>Гарантія</legend><div class="row">${WARRANTY.map(w => chip((f.war || 0) === w, w ? `від ${w} міс` : 'Будь-яка', `data-fw="${w}"`)).join('')}</div></fieldset>
   </div>`;
   updApply();
@@ -833,7 +905,7 @@ function syncSlider() {
   sl.style.setProperty('--a', pc(lo) + '%'); sl.style.setProperty('--b', pc(hi) + '%');
   sl.querySelector('[data-r=lo]').value = Math.min(lo, PMAX); sl.querySelector('[data-r=hi]').value = hi;
 }
-$('#freset').onclick = () => setDraft({pmin: undefined, pmax: undefined, brands: [], cond: [], load: [], kg: undefined, narrow: false, wmin: undefined, wmax: undefined, hmin: undefined, hmax: undefined, war: undefined});
+$('#freset').onclick = () => setDraft({pmin: undefined, pmax: undefined, brands: [], cond: [], load: [], kg: undefined, narrow: false, wmin: undefined, wmax: undefined, hmin: undefined, hmax: undefined, dmin: undefined, dmax: undefined, war: undefined});
 $('#fapply').onclick = () => { setState(draft); sheetClose($('#fsheet')); };
 
 /* ---------- картка товару ---------- */
@@ -862,7 +934,7 @@ function renderProduct(p) {
       ${kindOf(p) ? '' : `<p class="pcat">${esc(CAT[p.cat]?.name || '')}</p>`}
       <div class="idrow"><b>ID ${esc(p.id)}</b><button type="button" class="copy" data-copy aria-live="polite">Скопіювати</button>
         ${p.reserved ? '<span class="holdtag">Бронь</span>' : '<span class="oktag">В наявності</span>'}</div>
-      ${p.reserved ? '<p class="notice">Товар заброньований. Напишіть нам — підкажемо, чи звільниться.</p>' : ''}
+      ${p.reserved ? `<p class="notice">Товар заброньований. Можемо написати вам, якщо бронь зніметься.<br><a class="link" href="${tgLink(`Добрий день! ID ${p.id}, ${nameOf(p)} зараз у броні. Напишіть, будь ласка, якщо звільниться. ${linkOf(p)}`)}" target="_blank" rel="noopener" data-track="click-telegram">Повідомити, коли звільниться →</a></p>` : ''}
       <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsOf(p).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
         <div><h3 class="h3">${p.warrantyText ? `Гарантія ${esc(p.warrantyText)}` : 'Гарантія — уточнюйте'}</h3><p class="muted">Перевіряємо кожен прилад перед продажем. Якщо щось не так — ремонт або заміна.</p></div></section>
@@ -873,11 +945,17 @@ function renderProduct(p) {
     </div>
     ${sim.length ? `<section class="similar"><h3 class="h3">Схожі товари</h3><div class="simrow">${sim.map(x => card(x, null, true)).join('')}</div></section>` : ''}
   </article>`;
-  $('#pfoot').innerHTML = `<a class="btn primary block" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(msg(p))}" target="_blank" rel="noopener">Написати в Telegram</a>
-    <a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-viber>Viber</a>`;
+  pfoot(p);
   $('#pbody').scrollTop = 0; $('#pmini').classList.remove('on');
   const tr = $('#pbody .gtrack');
   tr.onscroll = () => { const i = Math.round(tr.scrollLeft / tr.clientWidth); $('#pbody').querySelectorAll('.dots span').forEach((d, k) => d.className = k === i ? 'on' : ''); const pv = $('#pbody .prev'), nx = $('#pbody .next'); if (pv) { pv.disabled = i === 0; nx.disabled = i >= n - 1; } };
+}
+// Низ картки товару: «У кошик» (або «У кошику» — відкриває кошик) і месенджери.
+function pfoot(p) {
+  const on = inCart(p.id);
+  $('#pfoot').innerHTML = `<button type="button" class="btn block ${on ? 'incart' : 'primary'}" data-pcart>${CARTICON.replace('<svg', '<svg width="20" height="20"')}${on ? 'У кошику ✓' : 'У кошик'}</button>
+    <a class="btn tg2" href="${tgLink(msg(p))}" target="_blank" rel="noopener">Telegram</a>
+    <a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-viber>Viber</a>`;
 }
 $('#pbody').addEventListener('scroll', e => $('#pmini').classList.toggle('on', e.target.scrollTop > 120));
 $('#pbody').addEventListener('click', async e => {
@@ -896,6 +974,7 @@ $('#pshare').onclick = () => share(BY.get(openId));
 // Рахуємо кліки на месенджери (якщо скрипт статистики заблоковано — просто пропускаємо).
 const track = (path, p) => { try { window.goatcounter?.count?.({path, title: p ? `ID ${p.id} ${nameOf(p)}`.trim() : '', event: true}); } catch {} };
 $('#pfoot').addEventListener('click', e => {
+  if (e.target.closest('[data-pcart]')) { const p = BY.get(openId); if (inCart(p.id)) openCart(); else { addCart(p); pfoot(p); } return; }
   const a = e.target.closest('a'); if (a) track(a.hasAttribute('data-viber') ? 'click-viber' : 'click-telegram', BY.get(openId));
   if (e.target.closest('[data-viber]')) copyText(msg(BY.get(openId))).then(ok => ok && toast('Текст скопійовано — вставте його у Viber')); });
 function showProduct(id, mode) {
@@ -937,7 +1016,83 @@ document.addEventListener('click', e => {
   const a = e.target.closest('a[data-open]');
   if (a && !(e.metaKey || e.ctrlKey || e.shiftKey || e.button)) { e.preventDefault(); showProduct(a.dataset.open, openId ? 'replace' : 'push'); }
 });
+$('#list').addEventListener('click', e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); });
 document.addEventListener('error', e => { const i = e.target; if (i.tagName === 'IMG' && i.dataset.cat) i.parentNode.innerHTML = illustration(i.dataset.cat, 'Фото недоступне'); }, true);
+
+/* ---------- банер, «Повідомити, коли з'явиться» ---------- */
+const tgLink = t => `https://t.me/${SHOP.tg}?text=${encodeURIComponent(t)}`;
+function promo() {
+  const sale = ALL.filter(p => p.oldPrice && p.price), top = sale.length ? Math.max(...sale.map(pct)) : 0;
+  if (!SHOP.promo && !top) return '';
+  const big = SHOP.promo ? '%' : `−${top}%`;
+  return `<button type="button" class="promo" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>${esc(SHOP.promo || 'Розпродаж техніки')}</b><small>${esc(SHOP.promoNote || `${goods(sale.length)} зі знижкою до −${top}%. Кількість обмежена`)}</small></span><span class="go">Дивитися →</span></button>`;
+}
+// Що саме шукає людина: запит + вибрана категорія й фільтри.
+const wishText = () => { const w = [S.q.trim() && `«${S.q.trim()}»`, S.cat === 'sale' && 'розпродаж', ...activeChips(S).map(a => a.label)].filter(Boolean);
+  return `Добрий день! Шукаю: ${w.join(', ') || 'техніку'}. Напишіть, будь ласка, коли з’явиться.`; };
+const wish = () => S.q.trim() || S.cat || nFilters(S) ? `<div class="wish"><div><b>Не знайшли потрібне?</b><p>Напишіть, що шукаєте, — повідомимо, щойно з’явиться.</p></div><a class="btn tg2" href="${tgLink(wishText())}" target="_blank" rel="noopener" data-track="click-telegram">Повідомити, коли з’явиться</a></div>` : '';
+
+/* ---------- кошик: зберігається в браузері, надсилається повідомленням у Telegram/Viber ---------- */
+let CART = [];
+try { CART = JSON.parse(localStorage.getItem('cart') || '[]').filter(x => x && x.id); } catch {}
+const fullName = p => (kindOf(p) ? '' : (CAT[p.cat]?.one ? CAT[p.cat].one + ' ' : '')) + nameOf(p);
+const inCart = id => CART.some(x => x.id === id);
+const saveCart = () => { try { localStorage.setItem('cart', JSON.stringify(CART)); } catch {} updCart(); };
+const cartBtn = p => `<button type="button" class="tocart" data-cart="${esc(p.id)}" aria-pressed="${inCart(p.id)}" aria-label="${inCart(p.id) ? 'Прибрати з кошика' : 'Додати в кошик'}: ${esc(nameOf(p))}" title="${inCart(p.id) ? 'У кошику' : 'У кошик'}">${inCart(p.id) ? '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' : CARTICON}</button>`;
+function addCart(p) {
+  if (inCart(p.id)) return;
+  CART.push({id: p.id, n: fullName(p), pr: p.price || 0}); saveCart(); track('cart-add', p);
+  const b = $('#cartn'); b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop');
+  toast('Додано в кошик');
+}
+const rmCart = id => { CART = CART.filter(x => x.id !== id); saveCart(); };
+// Товари з кошика, які ще є в каталозі (проданих уже немає в products.json).
+const cartLive = () => CART.map(x => BY.get(x.id)).filter(Boolean);
+const cartMsg = () => { const l = cartLive(), sum = l.reduce((a, p) => a + (p.price || 0), 0);
+  return `Добрий день! Хочу замовити:\n${l.map((p, i) => `${i + 1}. ID ${p.id} — ${fullName(p)}${p.price ? ` — ${money(p.price)} грн` : ''}\n${linkOf(p)}`).join('\n')}\nРазом: ${goods(l.length)}${sum ? `, ${money(sum)} грн` : ''}`; };
+function updCart() {
+  const live = cartLive(), n = CART.length, sum = live.reduce((a, p) => a + (p.price || 0), 0);
+  $('#cartn').hidden = !n; $('#cartn').textContent = n;
+  $('#cartopen').setAttribute('aria-label', n ? `Кошик: ${goods(n)}` : 'Кошик');
+  $('#cartbar').hidden = !n; document.documentElement.classList.toggle('has-cart', !!n);
+  $('#cartbar').innerHTML = `${CARTICON.replace('<svg', '<svg width="22" height="22"')}<span>${goods(n)}${sum ? ` · ${money(sum)} грн` : ''}</span><span class="sum">Оформити →</span>`;
+  document.querySelectorAll('[data-cart]').forEach(b => { const p = BY.get(b.dataset.cart); if (p) b.outerHTML = cartBtn(p); });
+  if (!$('#csheet').hidden) renderCart();
+}
+function renderCart() {
+  const sum = cartLive().reduce((a, p) => a + (p.price || 0), 0);
+  $('#ctitle').textContent = CART.length ? `Кошик · ${goods(CART.length)}` : 'Кошик';
+  if (!CART.length) {
+    $('#cbody').innerHTML = `<div class="cempty">${CARTICON}<b>Кошик порожній</b><p>Натискайте кнопку з візком на товарах, які сподобались, а потім надішліть список нам одним повідомленням.</p></div>`;
+    $('#cfoot').innerHTML = `<button type="button" class="btn primary block" data-close>До каталогу</button>`;
+    $('#cfoot [data-close]').onclick = () => sheetClose($('#csheet')); return;
+  }
+  $('#cbody').innerHTML = `<ul class="citems">${CART.map(x => { const p = BY.get(x.id);
+    return `<li${p ? '' : ' class="gone"'}>${p ? `<button type="button" class="th" data-copen="${esc(x.id)}" aria-label="Відкрити ${esc(x.n)}">${p.photos[0] ? `<img src="${esc(p.photos[0])}" alt="" loading="lazy" data-cat="${p.cat}">` : illustration(p.cat, '')}</button>` : `<span class="th"></span>`}
+      <button type="button" class="nm" ${p ? `data-copen="${esc(x.id)}"` : 'disabled'}><b>${esc(p ? fullName(p) : x.n)}</b><small>${p ? `ID ${esc(x.id)}${p.reserved ? ' · бронь' : ''}` : 'Уже продано'}</small></button>
+      ${p?.price ? `<span class="pr">${money(p.price)} грн</span>` : ''}<button type="button" class="iconbtn" data-crm="${esc(x.id)}" aria-label="Прибрати ${esc(x.n)}">${X(14)}</button></li>`; }).join('')}</ul>
+    ${sum ? `<div class="ctotal"><span>Разом</span><b>${money(sum)} грн</b></div>` : ''}
+    <p class="chint">Це ще не оплата. Надішліть список нам у Telegram або Viber — перевіримо наявність і домовимось про огляд чи доставку.</p>
+    <button type="button" class="cclear" data-cclear>Очистити кошик</button>`;
+  const ok = cartLive().length;
+  $('#cfoot').innerHTML = `<a class="btn tg2 block" href="${ok ? tgLink(cartMsg()) : '#'}" target="_blank" rel="noopener" data-csend="telegram"${ok ? '' : ' aria-disabled="true"'}>Надіслати в Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-csend="viber">Viber</a>`;
+}
+function openCart() { renderCart(); sheetOpen($('#csheet')); }
+$('#cartopen').onclick = openCart; $('#cartbar').onclick = openCart;
+$('#cbody').addEventListener('click', e => {
+  const r = e.target.closest('[data-crm]'); if (r) return rmCart(r.dataset.crm);
+  if (e.target.closest('[data-cclear]')) { CART = []; return saveCart(); }
+  const o = e.target.closest('[data-copen]'); if (o) { sheetClose($('#csheet')); showProduct(o.dataset.copen, openId ? 'replace' : 'push'); }
+});
+$('#cfoot').addEventListener('click', e => {
+  const a = e.target.closest('[data-csend]'); if (!a) return;
+  if (!cartLive().length) { e.preventDefault(); return; }
+  try { window.goatcounter?.count?.({path: 'click-' + a.dataset.csend, title: `Кошик: ${goods(cartLive().length)}`, event: true}); } catch {}
+  if (a.dataset.csend === 'viber') copyText(cartMsg()).then(ok => ok && toast('Список скопійовано — вставте його у Viber'));
+});
+// Кнопка на картці товару: додати / прибрати.
+document.addEventListener('click', e => { const b = e.target.closest('[data-cart]'); if (!b) return; e.stopPropagation(); const p = BY.get(b.dataset.cart); if (!p) return;
+  if (inCart(p.id)) { rmCart(p.id); toast('Прибрано з кошика'); } else addCart(p); }, true);
 
 function footer() {
   const t = UPDATED ? new Date(UPDATED) : null;
@@ -947,6 +1102,7 @@ function footer() {
     <a class="faddr" href="${SHOP.mapUrl}" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
       <span>м. ${esc(SHOP.city)}, ${esc(SHOP.address)}<small>${esc(SHOP.addressHint)}</small><u>Відкрити на карті →</u></span></a>
     <p class="faddr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>${esc(SHOP.hours)}</span></p>
+    <p class="frev"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .7-4.4 4.1 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.7z"/></svg><span>Відгуки покупців<br><a href="${esc(SHOP.reviewsUrl || SHOP.mapUrl)}" target="_blank" rel="noopener">Читати →</a><a href="${tgLink('Мій відгук про покупку: ')}" target="_blank" rel="noopener" data-track="click-telegram">Залишити відгук</a></span></p>
     <div class="fbtns"><a class="btn tgb" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></div>
   </div>${t && !isNaN(t) ? `<p class="fupd">Товар оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}`;
   $('#footer').onclick = e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); };
@@ -959,7 +1115,7 @@ fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({pr
   PMAX = Math.ceil(Math.max(1000, ...ALL.map(p => p.price || 0)) / 1000) * 1000;
   CNT = new Map(); for (const p of ALL) CNT.set(p.cat, (CNT.get(p.cat) || 0) + 1);
   SALES = ALL.filter(p => p.oldPrice).length; SUBN = new Map(Object.entries(SUBS).flatMap(([c, xs]) => xs.map(([id, , f]) => [c + '/' + id, ALL.filter(p => inCat(p, c) && f(p)).length])));
-  buildIndex(ALL); S = fromURL(); render(); footer();
+  buildIndex(ALL); S = fromURL(); render(); footer(); updCart();
   const p = new URLSearchParams(location.search).get('p'); if (p && BY.has(p)) showProduct(p);
 });
 </script>
