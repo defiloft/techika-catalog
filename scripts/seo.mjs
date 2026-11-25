@@ -68,7 +68,7 @@ ${json.map(ld).join('\n')}
 </head>
 <body>
 <div class="page">
-<header class="header"><a class="shop" href="${up}">Техніка з Європи <span>Вигідно</span></a><a href="${up}" aria-label="На головну"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
+<header class="header"><a class="shop" href="${up}">Техніка з Європи</a><a href="${up}" aria-label="На головну"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
 ${body}
 <footer class="footer">
   <p><b>${esc(SHOP.name)}</b> — вживана та нова побутова техніка з Європи в Києві.</p>
