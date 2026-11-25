@@ -10,7 +10,7 @@
 з якого на нього є посилання. Фото зберігаються в img/tg/, бо з приватного
 каналу Telegram не віддає публічних посилань на картинки.
 """
-import asyncio, os, re, time
+import asyncio, json, os, re, time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -29,11 +29,12 @@ def configured():
 # альбом із підписом «ID110376» — ці фото показуємо в галереї товару з тим самим ID.
 REQ_TOPIC = ("запит фото", "запрос фото")  # шукаємо тему за назвою
 REQ_CHAT, REQ_TOPIC_ID = -1002351969498, 14029  # де вона була 2026-11-25 (щоб не шукати щоразу)
-REQ_MSGS = 6000     # скільки останніх повідомлень теми переглядати
-REQ_DAYS = 60       # і не старші за стільки днів
+REQ_DAYS = 365      # перший раз переглядаємо тему за рік (альбоми там бувають і 3–4-місячні)
+REQ_RECHECK = 300   # далі лише нові повідомлення + стільки останніх (раптом підпис дописали пізніше)
+REQ_INDEX = IMG / "req" / "index.json"  # що вже знайдено в темі: {ID: [повідомлення з фото]}
 MAX_EXTRA = 6       # додаткових фото на товар (кожне ~65 КБ зберігається в репозиторії)
 REQ_BUDGET = 8 * 60
-REQ_ID = re.compile(r"\bI[DД]\s*[:#№-]?\s*(\d{5,7})\b|^\s*(\d{6})\s*$", re.I | re.M)
+REQ_ID = re.compile(r"\bI[DД]\s*[:#№-]?\s*(\d{4,7})\b|^\s*(\d{6})\s*$", re.I | re.M)
 
 
 def has_id(p):
@@ -180,45 +181,65 @@ async def _req_topic(client):
     return None
 
 
+def _album_id(msgs, texts, topic):
+    """ID товару з підпису альбому (або з повідомлення, на яке він відповідає); None, якщо ID немає чи їх кілька."""
+    cap = " ".join(m.message or "" for m in msgs)
+    if not REQ_ID.search(cap):
+        r = next((m.reply_to for m in msgs if m.reply_to and m.reply_to.reply_to_msg_id != topic), None)
+        cap = texts.get(getattr(r, "reply_to_msg_id", None), "") if r else ""
+    ids = {a or b for a, b in REQ_ID.findall(cap)}
+    return ids.pop() if len(ids) == 1 else None  # кілька ID в одному альбомі — не вгадуємо, чиє фото
+
+
 async def _requests(client, want, deadline):
-    """{ID товару: [фото]} з теми запитів; лише для товарів, які є в каталозі. None — тему не знайдено."""
+    """{ID товару: [фото]} з теми запитів; лише для товарів, які є в каталозі. None — тему не знайдено.
+    Переглянуте запам'ятовуємо в REQ_INDEX, тож щоразу читаємо лише нові повідомлення."""
     found = await _req_topic(client)
     if not found:
         print("~ додаткові фото: тему «Запит фото» не знайдено, акаунт має бути в робочій групі")
         return None
     chat, topic = found
+    idx = json.loads(REQ_INDEX.read_text()) if REQ_INDEX.exists() else {}
+    if idx.get("chat") != chat.id or idx.get("topic") != topic:
+        idx = {"chat": chat.id, "topic": topic, "max": 0, "ids": {}}
     since = datetime.now(timezone.utc) - timedelta(days=REQ_DAYS)
-    groups, texts = {}, {}
-    async for m in client.iter_messages(chat, limit=REQ_MSGS, reply_to=topic):
+    groups, texts, top = {}, {}, idx["max"]
+    async for m in client.iter_messages(chat, reply_to=topic, min_id=max(0, idx["max"] - REQ_RECHECK)):
         if m.date < since:
             break
+        top = max(top, m.id)
         texts[m.id] = m.message or ""
         if m.photo:
             groups.setdefault(m.grouped_id or ("m", m.id), []).append(m)
-    out, n = {}, 0
-    # Від нових альбомів до старих: свіжі фото важливіші.
-    for msgs in sorted(groups.values(), key=lambda g: -max(m.id for m in g)):
+    seen = {i for v in idx["ids"].values() for i in v}
+    # Від старих альбомів до нових: новіші фото стають першими.
+    for msgs in sorted(groups.values(), key=lambda g: max(m.id for m in g)):
+        msgs.sort(key=lambda m: m.id)
+        pid = _album_id(msgs, texts, topic)
+        new = [m.id for m in msgs if m.id not in seen]
+        if pid and new:
+            idx["ids"][pid] = (new + [i for i in idx["ids"].get(pid, []) if i not in new])[:MAX_EXTRA]
+    idx["max"] = top
+    deadline = max(deadline, time.monotonic() + 5 * 60)  # перший перегляд теми довгий; на фото лишаємо час
+    # Завантажуємо лише відсутні фото товарів, які зараз є в каталозі.
+    need = [i for pid in want for i in idx["ids"].get(pid, []) if not (IMG / "req" / f"{i}.jpg").exists()]
+    got = 0
+    for k in range(0, len(need), 100):
         if time.monotonic() > deadline:
             print("  ~ додаткові фото: час вичерпано, решту докачаю наступного разу")
             break
-        msgs.sort(key=lambda m: m.id)
-        cap = " ".join(m.message or "" for m in msgs)
-        if not REQ_ID.search(cap):  # без ID у підписі беремо ID з повідомлення, на яке відповіли
-            r = next((m.reply_to for m in msgs if m.reply_to and m.reply_to.reply_to_msg_id != topic), None)
-            cap = texts.get(getattr(r, "reply_to_msg_id", None), "") if r else ""
-        ids = {a or b for a, b in REQ_ID.findall(cap)} & want
-        if len(ids) != 1:  # кілька ID в одному альбомі — не вгадуємо, чиє фото
-            continue
-        pid = ids.pop()
-        have = out.setdefault(pid, [])
-        for m in msgs:
-            if len(have) >= MAX_EXTRA:
-                break
-            p = IMG / "req" / f"{m.id}.jpg"
-            if await _photo(client, m, p):
-                have.append(p.relative_to(ROOT).as_posix())
-                n += 1
-    print(f"+ додаткові фото: {n} фото для {len(out)} товарів (переглянуто альбомів: {len(groups)})")
+        for m in await client.get_messages(chat, ids=need[k:k + 100]):
+            if m and await _photo(client, m, IMG / "req" / f"{m.id}.jpg"):
+                got += 1
+    REQ_INDEX.parent.mkdir(parents=True, exist_ok=True)
+    REQ_INDEX.write_text(json.dumps(idx, separators=(",", ":")))
+    out = {}
+    for pid in want:
+        ph = [f"img/tg/req/{i}.jpg" for i in idx["ids"].get(pid, []) if (IMG / "req" / f"{i}.jpg").exists()]
+        if ph:
+            out[pid] = ph
+    print(f"+ додаткові фото: у темі є фото для {len(idx['ids'])} ID; з них у каталозі {len(out)} з {len(want)}; "
+          f"переглянуто альбомів {len(groups)}, завантажено нових фото {got}")
     return out
 
 
