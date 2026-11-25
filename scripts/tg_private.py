@@ -220,6 +220,7 @@ async def _requests(client, want, deadline):
         if pid and new:
             idx["ids"][pid] = (new + [i for i in idx["ids"].get(pid, []) if i not in new])[:MAX_EXTRA]
     idx["max"] = top
+    deadline = max(deadline, time.monotonic() + 5 * 60)  # перший перегляд теми довгий; на фото лишаємо час
     # Завантажуємо лише відсутні фото товарів, які зараз є в каталозі.
     need = [i for pid in want for i in idx["ids"].get(pid, []) if not (IMG / "req" / f"{i}.jpg").exists()]
     got = 0
