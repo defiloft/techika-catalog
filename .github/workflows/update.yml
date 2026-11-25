@@ -23,10 +23,13 @@ jobs:
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           TG_SESSION: ${{ secrets.TG_SESSION }}
+      # Статичні сторінки розділів і товарів + sitemap.xml для Google (scripts/seo.mjs)
+      - run: node scripts/seo.mjs
       - run: |
           git config user.name "shop-bot"
           git config user.email "shop-bot@users.noreply.github.com"
           git add products.json
           git add -A -- img/tg 2>/dev/null || true
+          git add -A -- katalog tovar sitemap.xml
           # Поки збирали товари, у main могли злити інші зміни: підтягуємо їх перед відправкою.
           git diff --cached --quiet || (git commit -m "update products" && git pull --rebase -X theirs origin main && git push)
