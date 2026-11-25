@@ -1,0 +1,24 @@
+name: Site stats
+on:
+  schedule:
+    - cron: "30 5 * * *"   # щодня ~7:30–8:30 за Києвом, до ранкового звіту
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update-products   # не штовхаємо одночасно з оновленням товарів
+  cancel-in-progress: false
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/stats.py
+      - run: |
+          git config user.name "shop-bot"
+          git config user.email "shop-bot@users.noreply.github.com"
+          git add stats/stats.json
+          git diff --cached --quiet || (git commit -m "update stats" && git pull --rebase -q && git push)
