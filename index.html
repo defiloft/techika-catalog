@@ -331,6 +331,7 @@ const SUBS = {
     ['low', 'Низькі, до 1 м', p => p.height < 100], ['sbs', 'Side-by-side', p => p.width >= 80]],
   freezers: [['tall', 'Високі', p => p.height >= 100], ['low', 'Низькі, до 1 м', p => p.height < 100], ['nofrost', 'No Frost', p => p.cooling === 'No Frost']],
   dryers: [['heatpump', 'Тепловий', p => p.dry === 'heatpump'], ['heater', 'Теновий', p => p.dry === 'heater'], ['washdry', 'Прально-сушильні', p => p.washdry]],
+  hobs: [['gas', 'Газові', p => p.gas], ['induction', 'Індукція', p => !p.gas && /індукц/i.test(p.text)], ['electric', 'Електричні', p => !p.gas && !/індукц/i.test(p.text)]],
   dishwashers: [['w60', 'Повнорозмірні, 60 см', p => p.width >= 55], ['w45', 'Вузькі, 45 см', p => p.width < 55]],
   stoves: [['gas', 'Газові', p => p.gas], ['electric', 'Електричні', p => !p.gas]],
 };
@@ -424,6 +425,19 @@ function loadType(low, model, width, height) {
   if (TOPMODEL.test(model) || (width && width <= 46 && (!height || height >= 80))) return 'top';
   return 'front';
 }
+// Дублі брендів: кирилиця замість латиниці («Аmica»), описки, модель злиплась з брендом.
+const LOOKALIKE = {'а':'a','е':'e','о':'o','р':'p','с':'c','х':'x','і':'i','к':'k','м':'m','т':'t','в':'b','н':'h','А':'A','Е':'E','О':'O','Р':'P','С':'C','Х':'X','І':'I','К':'K','М':'M','Т':'T','В':'B','Н':'H'};
+const BRANDFIX = {cndy:'Candy', evermed:'Evermed', fitlogic:'FitLogic', grindig:'Grundig', 'grünhelm':'Grunhelm', indeit:'Indesit', libherr:'Liebherr',
+  'pro-form':'ProForm', proform:'ProForm', zaanussi:'Zanussi'};
+const MODELBRAND = [[/^EW\d/i, 'Electrolux'], [/^DHQA/i, 'Hisense']];
+function fixBrand(brand, model) {
+  if (/[a-z]/i.test(brand)) brand = brand.replace(/[а-яіА-ЯІ]/g, c => LOOKALIKE[c] || c);
+  const glued = brand.match(/^(Hisense|Samsung|Bosch|Gorenje|Electrolux)([A-Z]{2,}\d.*)$/i);  // «HisenseDHQA903VT»
+  if (glued) [brand, model] = [glued[1], model || glued[2]];
+  brand = BRANDFIX[brand.toLowerCase()] || brand;
+  if (/\d/.test(brand) && !model) { const mb = MODELBRAND.find(([re]) => re.test(brand)); if (mb) [brand, model] = [mb[1], brand]; }  // у полі бренду — модель
+  return [brand, model];
+}
 function parse(p) {
   const t = p.text || '', low = t.toLowerCase();
   if (!/\bID[:\s#]*\d{4,}/i.test(t) && !p.price) return null;          // реклама, «як нас знайти»
@@ -431,6 +445,7 @@ function parse(p) {
   let brand = p.brand || '', model = p.model || '';
   if (!/\p{L}/u.test(brand) || /^(?:ID|№)\d|ціна/i.test(brand)) [brand, model] = brandModel(t);  // старий парсер: «ID110274», «8423»
   brand = titleCase(brand); model = model.trim();
+  [brand, model] = fixBrand(brand, model);
   // Категорія: за каналом; у змішаному каналі й у каналі знижок — за назвою джерела пересилання та текстом.
   const own = CATS.filter(c => [].concat(c.ch || []).includes(p.channel)), kw = x => x && CATS.find(c => c.kw && c.kw.test(x));
   let cat = (MIXED[p.channel] || []).map(id => CAT[id]).find(c => c.kw.test(t)) || own[0] || kw(p.from) || kw(t) || byFeatures(t) || CAT.other;
@@ -439,6 +454,8 @@ function parse(p) {
   const dims = t.match(/(\d{2,3})\s*[xх×*]\s*(\d{2,3})(?:\s*[xх×*]\s*(\d{2,3}))?\s*(?:см|cm)/i);
   if (dims && height == null) [height, width, depth] = [num(dims[1]), num(dims[2]), dims[3] ? num(dims[3]) : undefined];
   if (cat.id === 'ovens' && height && height < 40) cat = CAT.micro;  // мікрохвильовки приходять з каналу духових: висота 25–32 см
+  // Варильні поверхні теж приходять з каналу духових і пишуться без висоти: лише «Ширина … Глибина 51–52 см».
+  if ((cat.id === 'ovens' || cat.id === 'other') && height == null && (depth >= 40 && depth <= 58 || /газ-?\s?контроль|автопідпал|індукц|інфрачерв|склокерам|конфорк|блини/.test(low))) cat = CAT.hobs;
   const kg = (t.match(/(\d+(?:[.,]\d)?)\s*кг/i) || [])[1], rpm = (t.match(/(\d{3,4})\s*(?:об|rpm)/i) || [])[1];
   const wl = t.split('\n').find(l => /гаранті/i.test(l)) || '';
   const wm = wl.match(/(\d+)\s*(міс|день|дні|днів|рік|роки|років)/i);
@@ -468,7 +485,7 @@ function parse(p) {
     isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
     load: cat.id === 'washers' ? loadType(low, model, width, height) : '',
-    gas: cat.id === 'stoves' && /газ|підпал/.test(low),
+    gas: (cat.id === 'stoves' || cat.id === 'hobs') && /газ|підпал/.test(low),
     // Сушильні: з тепловим насосом або тенові (конденсаційні/вентиляційні з ТЕНом). Без жодної згадки — не відносимо нікуди.
     dry: cat.id !== 'dryers' ? '' : /теплов\S* насос|heat ?pump|wärmepumpe/.test(low) ? 'heatpump' : /(?:^|[^а-яіїє])тен(?:ов|ом|\b|[^а-яіїє])|конденсац|вентиляц|витяжн/.test(low) ? 'heater' : '',
   };
@@ -693,7 +710,15 @@ function renderFilters() {
   const f = draft, bc = countBy(f, HITS, 'brands', p => p.brand), lo = f.pmin ?? 0, hi = f.pmax ?? PMAX, pc = v => (Math.min(Math.max(v, 0), PMAX)) / PMAX * 100;
   const chip = (on, label, attrs, cnt) => `<button type="button" class="chip" aria-pressed="${on}" ${attrs}>${esc(label)}${cnt != null ? `<span class="cnt">${cnt}</span>` : ''}</button>`;
   const fields = (k, label) => `<div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="${k}min" value="${f[k + 'min'] ?? ''}" placeholder="—" aria-label="${label}, від"></label><label class="field"><span>до</span><input inputmode="numeric" data-f="${k}max" value="${f[k + 'max'] ?? ''}" placeholder="—" aria-label="${label}, до"></label></div>`;
+  // Категорія і підкатегорія — ті самі, що в рядку над товарами.
+  const cc = countBy(f, HITS, 'cat', p => p.cat);
+  cc.set('dryers', (cc.get('dryers') || 0) + ALL.filter(p => p.washdry && pass(p, f, HITS, 'cat')).length);
+  cc.set('sale', ALL.filter(p => p.oldPrice && pass(p, f, HITS, 'cat')).length);
+  const cats = [...(SALES ? ['sale'] : []), ...GROUPS.flatMap(([, ids]) => ids).filter(id => CNT.get(id))];
+  const subs = (SUBS[f.cat] || []).filter(x => SUBN.get(f.cat + '/' + x[0])), inc = subs.length ? ALL.filter(p => inCat(p, f.cat) && pass(p, f, HITS, 'sub')) : [];
   $('#fbody').innerHTML = `<div class="fwrap">
+    <fieldset class="fsec"><legend>Категорія</legend><div class="row">${chip(!f.cat, 'Усі', 'data-fcat=""')}${cats.map(id => { const n = cc.get(id) || 0, on = f.cat === id; return !on && !n ? '' : chip(on, CAT[id].short, `data-fcat="${id}"`, n); }).join('')}</div>
+      ${subs.length ? `<p class="sub">${esc(CAT[f.cat].name)}</p><div class="row">${chip(!f.sub, 'Усі', 'data-fsub=""', inc.length)}${subs.map(([id, nm, fn]) => chip(f.sub === id, nm, `data-fsub="${id}"`, inc.filter(fn).length)).join('')}</div>` : ''}</fieldset>
     <fieldset class="fsec"><legend>Ціна</legend>
       <div class="fields"><label class="field"><span>від</span><input inputmode="numeric" data-f="pmin" value="${f.pmin != null ? money(f.pmin) : ''}" placeholder="0" aria-label="Ціна, від"><span>грн</span></label>
       <label class="field"><span>до</span><input inputmode="numeric" data-f="pmax" value="${f.pmax != null ? money(f.pmax) : ''}" placeholder="${money(PMAX)}" aria-label="Ціна, до"><span>грн</span></label></div>
@@ -720,7 +745,9 @@ function setDraft(patch, rerender = true) {
 const toggle = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v];
 $('#fbody').addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return; const d = b.dataset;
-  if (d.fp) { const r = PRESETS.find(x => x.id === d.fp), on = draft.pmin === r.min && draft.pmax === r.max; setDraft(on ? {pmin: undefined, pmax: undefined} : {pmin: r.min, pmax: r.max}); }
+  if (d.fcat != null) setDraft({cat: d.fcat || null, sub: null});
+  else if (d.fsub != null) setDraft({sub: d.fsub || null});
+  else if (d.fp) { const r = PRESETS.find(x => x.id === d.fp), on = draft.pmin === r.min && draft.pmax === r.max; setDraft(on ? {pmin: undefined, pmax: undefined} : {pmin: r.min, pmax: r.max}); }
   else if (d.fb) setDraft({brands: toggle(draft.brands, d.fb)});
   else if (d.fc) setDraft({cond: toggle(draft.cond, d.fc)});
   else if (d.fl) setDraft({load: toggle(draft.load, d.fl)});
