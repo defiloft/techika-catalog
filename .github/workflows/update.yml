@@ -28,13 +28,21 @@ jobs:
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           TG_SESSION: ${{ secrets.TG_SESSION }}
       - if: ${{ inputs.probe }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: test
-          retention-days: 1
-          path: |
-            products.json
-            img/tg/req
+        run: |
+          python - <<'PY'
+          import json, os, pathlib
+          d = json.load(open("products.json"))["products"]
+          e = [p for p in d if p.get("extra") and all(os.path.exists(i) for i in p["images"])]
+          print("всього з extra:", sum(bool(p.get("extra")) for p in d))
+          keep = {i for p in e[:12] for i in p["extra"]}
+          for f in pathlib.Path("img/tg/req").glob("*.jpg"):
+              f.unlink() if str(f) not in keep else None
+          pathlib.Path("test").mkdir(exist_ok=True)
+          json.dump({p["pid"]: p["extra"] for p in e[:12]}, open("test/extra.json", "w"), indent=1)
+          PY
+          git config user.name "shop-bot"
+          git config user.email "shop-bot@users.noreply.github.com"
+          git add test img/tg/req && git commit -m "test sample" && git push
       - if: ${{ !inputs.probe }}
         run: |
           git config user.name "shop-bot"
