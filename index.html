@@ -64,6 +64,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .reset{min-height:var(--tap);padding:0 8px;border:0;background:none;color:var(--floor);font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px var(--gutter) 8px}
 .count{font-size:14px;color:var(--concrete)}
+.tools{display:flex;align-items:center;gap:4px}.tools .fbtn{min-height:40px;padding:0 14px 0 12px}
 .sort{position:relative;display:inline-flex;align-items:center}
 .sort select{appearance:none;-webkit-appearance:none;min-height:var(--tap);padding:0 30px 0 12px;border:0;border-radius:10px;background:transparent;font-size:14px;font-weight:600;cursor:pointer}
 .sort select:hover{background:#24272b0d}
@@ -250,8 +251,11 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
   <div class="active" id="active" aria-label="Активні фільтри" hidden></div>
   <div class="toolbar">
     <p class="count" id="count" aria-live="polite"></p>
+    <div class="tools">
+    <button type="button" class="fbtn" id="fopen" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Фільтри</span></button>
     <label class="sort"><span class="vh">Сортування</span><select id="sort"></select>
       <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg></label>
+    </div>
   </div>
   <div id="list"></div>
   <footer class="footer" id="footer"></footer>
@@ -612,8 +616,8 @@ function render() {
   $('#subcats').innerHTML = subs.length ? [['', 'Усі ' + CAT[S.cat].short.toLowerCase(), inc.length], ...subs.map(([id, nm, f]) => [id, nm, inc.filter(f).length])]
     .map(([id, nm, n]) => `<button type="button" class="chip" data-sub="${id}" aria-pressed="${(S.sub || '') === id}">${esc(nm)}<span class="cnt">${n}</span></button>`).join('') : '';
   const nf = nFilters(S);
-  $('#prices').innerHTML = `<button type="button" class="fbtn${nf ? ' on' : ''}" id="fopen" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Фільтри${nf ? ` (${nf})` : ''}</span></button>` +
-    PRESETS.map(r => `<button type="button" class="chip" data-preset="${r.id}" aria-pressed="${S.pmin === r.min && S.pmax === r.max}">${r.label}</button>`).join('');
+  $('#fopen').classList.toggle('on', !!nf); $('#fopen span').textContent = `Фільтри${nf ? ` (${nf})` : ''}`;
+  $('#prices').innerHTML = PRESETS.map(r => `<button type="button" class="chip" data-preset="${r.id}" aria-pressed="${S.pmin === r.min && S.pmax === r.max}">${r.label}</button>`).join('');
   const act = activeChips(S);
   $('#active').hidden = !act.length;
   $('#active').innerHTML = act.map((a, i) => `<button type="button" class="achip" data-rm="${i}" aria-label="Прибрати фільтр: ${esc(a.label)}">${esc(a.label)}${X(12)}</button>`).join('') + (act.length ? '<button type="button" class="reset" data-resetall>Скинути все</button>' : '');
@@ -826,8 +830,8 @@ $('#subcats').onclick = e => { const b = e.target.closest('[data-sub]'); if (!b)
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && CATMENU) { CATMENU = false; $('#catmenu').hidden = true; $('#catmore').setAttribute('aria-expanded', false); $('#catmore').focus(); } });
 let fitT; addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(fitCats, 80); });
 document.fonts?.ready.then(fitCats);
+$('#fopen').onclick = () => { draft = {...S}; renderFilters(); sheetOpen($('#fsheet')); };
 $('#prices').onclick = e => {
-  if (e.target.closest('#fopen')) { draft = {...S}; renderFilters(); sheetOpen($('#fsheet')); return; }
   const b = e.target.closest('[data-preset]'); if (!b) return; const r = PRESETS.find(x => x.id === b.dataset.preset);
   setState(S.pmin === r.min && S.pmax === r.max ? {...S, pmin: undefined, pmax: undefined} : {...S, pmin: r.min, pmax: r.max});
 };
