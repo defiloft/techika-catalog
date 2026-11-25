@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import * as RU from './ru.mjs';
 
 const SITE = 'https://techika.com.ua/';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -12,13 +13,6 @@ const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 const from = html.indexOf('/* ---------- налаштування магазину'), to = html.indexOf('/* ---------- пошук:');
 if (from < 0 || to < 0) throw new Error('index.html: не знайшов блок розбору дописів');
 const {CATS, CAT, SLUG, SHOP, parse} = vm.runInNewContext(html.slice(from, to) + ';({CATS, CAT, SLUG, SHOP, parse})', {Intl, encodeURIComponent});
-
-// Адреси розділів (SLUG) — з index.html; тут лише назви в однині для заголовків товарів.
-const ONE = {washers: 'Пральна машина', dryers: 'Сушильна машина', fridges: 'Холодильник', freezers: 'Морозильна камера',
-  dishwashers: 'Посудомийна машина', hobs: 'Варильна поверхня', stoves: 'Плита', ovens: 'Духова шафа', micro: 'Мікрохвильова піч',
-  hoods: 'Витяжка', coffee: 'Кавомашина', tvs: 'Телевізор', treadmills: 'Бігова доріжка', bikes: 'Велотренажер', orbitreks: 'Орбітрек', other: 'Техніка'};
-// Рід: «б/в» однаково, а «нова/новий» — ні.
-const FEM = new Set(['washers', 'dryers', 'freezers', 'dishwashers', 'hobs', 'stoves', 'ovens', 'micro', 'hoods', 'coffee', 'treadmills']);
 
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'products.json'), 'utf8'));
 const seen = new Set();
@@ -31,28 +25,88 @@ const money = n => new Intl.NumberFormat('uk-UA').format(n).replace(/\s/g, ' ');
 const src = (x, up) => /^https?:/.test(x) ? x : up + x;  // фото бувають і посиланнями на Telegram
 const file = p => String(p.id).replace(/[^\w-]+/g, '-') + '.html';
 const name = p => [p.brand, p.model].filter(Boolean).join(' ');
-const state = p => p.isNew ? (FEM.has(p.cat) ? 'нова' : 'новий') : 'б/в';
 const day = d => (d || '').slice(0, 10);
 const plural = (n, a, b, c) => { const d = Math.abs(n) % 100, f = d % 10; return d > 10 && d < 20 ? c : f > 1 && f < 5 ? b : f === 1 ? a : c; };
-const ADDR = `м. ${SHOP.city}, ${SHOP.address}`;
 const ld = o => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`;
 const STORE = {'@type': 'Store', '@id': SITE + '#shop', name: SHOP.name, url: SITE, image: SITE + 'img/emblem.png', telephone: '+' + SHOP.viber,
   address: {'@type': 'PostalAddress', streetAddress: SHOP.address, addressLocality: SHOP.city, addressCountry: 'UA'},
   openingHoursSpecification: {'@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '10:00', closes: '19:00'},
   sameAs: ['https://t.me/' + SHOP.tg]};
 
-function page({title, desc, canon, image, up, body, json}) {
+// Мови. Українська — основна (корінь сайту), російська — копія тих самих сторінок у ru/.
+// Google бачить їх як переклади одна одної через hreflang, тож кожна ранжується за запитами своєю мовою.
+const UK = {
+  code: 'uk', locale: 'uk_UA', base: '', slug: SLUG, tr: s => s,
+  // Адреси розділів (SLUG) — з index.html; тут лише назви в однині для заголовків товарів.
+  one: {washers: 'Пральна машина', dryers: 'Сушильна машина', fridges: 'Холодильник', freezers: 'Морозильна камера',
+    dishwashers: 'Посудомийна машина', hobs: 'Варильна поверхня', stoves: 'Плита', ovens: 'Духова шафа', micro: 'Мікрохвильова піч',
+    hoods: 'Витяжка', coffee: 'Кавомашина', tvs: 'Телевізор', treadmills: 'Бігова доріжка', bikes: 'Велотренажер', orbitreks: 'Орбітрек', other: 'Техніка'},
+  // Рід: «б/в» однаково, а «нова/новий» — ні.
+  fem: new Set(['washers', 'dryers', 'freezers', 'dishwashers', 'hobs', 'stoves', 'ovens', 'micro', 'hoods', 'coffee', 'treadmills']),
+  used: 'б/в', newF: 'нова', newM: 'новий', catName: c => c.name,
+  shop: SHOP.name, logo: `Техніка з Європи <span>Вигідно</span>`, home: 'Головна', toHome: 'На головну', sections: 'Розділи каталогу',
+  addr: `м. ${SHOP.city}, ${SHOP.address}`, hint: SHOP.addressHint, hours: SHOP.hours, map: 'На карті',
+  about: 'вживана та нова побутова техніка з Європи в Києві.',
+  goods: n => `${n} ${plural(n, 'товар', 'товари', 'товарів')}`,
+  catText(c, n, min) {
+    if (c.id === 'sale') return {h1: 'Розпродаж техніки з Європи в Києві', title: `Розпродаж б/в техніки з Європи — знижки, Київ | ${this.shop}`,
+      desc: `Знижки на вживану побутову техніку з Європи: ${this.goods(n)} зі зниженою ціною. Перевірені, з гарантією. ${this.addr}.`};
+    return {h1: `${c.name} б/в з Європи в Києві`, title: `${c.name} б/в з Європи — купити в Києві | ${this.shop}`,
+      desc: `${c.name} б/в та нові з Німеччини й Європи: ${n} в наявності, ціни від ${money(min)} грн. Перевірені, з гарантією. ${this.addr}, ${this.hours}.`};
+  },
+  lead: (n, addr, hours) => `${UK.goods(n)} в наявності. Уся техніка — з Європи, перевірена перед продажем, з гарантією. Подивитися наживо: ${addr}, щодня ${hours}.`,
+  filters: 'Відкрити з фільтрами', fromEU: 'з Європи', forPrice: 'за', warranty: 'гарантія', Warranty: 'Гарантія', look: 'Подивитися',
+  ask: 'Добрий день! Цікавить', photo: 'фото', isNew: 'Нова', isUsed: 'Б/в', reserved: 'Заброньовано', inStock: 'В наявності',
+  write: 'Написати в Telegram', open: 'Відкрити в каталозі', switchTo: 'ru', switchLabel: 'На русском',
+};
+const RUL = {
+  ...UK, code: 'ru', locale: 'ru_UA', base: 'ru/', slug: RU.SLUG, tr: RU.tr, one: RU.ONE, fem: RU.FEM,
+  used: 'б/у', newF: 'новая', newM: 'новый', catName: c => RU.NAME[c.id] || c.name,
+  shop: 'Техника из Европы', logo: `Техника из Европы <span>Выгодно</span>`, home: 'Главная', toHome: 'На главную', sections: 'Разделы каталога',
+  addr: `г. Киев, ${RU.tr(SHOP.address)}`, hint: SHOP.addressHint.replace('Шулявська', 'Шулявская'), hours: SHOP.hours.replace('без вихідних', 'без выходных'), map: 'На карте',
+  about: 'б/у и новая бытовая техника из Европы в Киеве.',
+  goods: n => `${n} ${plural(n, 'товар', 'товара', 'товаров')}`,
+  catText(c, n, min) {
+    if (c.id === 'sale') return {h1: 'Распродажа техники из Европы в Киеве', title: `Распродажа б/у техники из Европы — скидки, Киев | ${this.shop}`,
+      desc: `Скидки на б/у бытовую технику из Европы: ${this.goods(n)} по сниженной цене. Проверенные, с гарантией. ${this.addr}.`};
+    const nm = this.catName(c);
+    return {h1: `${nm} б/у из Европы в Киеве`, title: `${nm} б/у из Европы — купить в Киеве | ${this.shop}`,
+      desc: `${nm} б/у и новые из Германии и Европы: ${n} в наличии, цены от ${money(min)} грн. Проверенные, с гарантией. ${this.addr}, ${this.hours}.`};
+  },
+  lead: (n, addr, hours) => `${RUL.goods(n)} в наличии. Вся техника — из Европы, проверена перед продажей, с гарантией. Посмотреть вживую: ${addr}, ежедневно ${hours}.`,
+  filters: 'Открыть с фильтрами', fromEU: 'из Европы', forPrice: 'за', warranty: 'гарантия', Warranty: 'Гарантия', look: 'Посмотреть',
+  ask: 'Добрый день! Интересует', photo: 'фото', isNew: 'Новая', isUsed: 'Б/у', reserved: 'Забронировано', inStock: 'В наличии',
+  write: 'Написать в Telegram', open: 'Открыть в каталоге', switchTo: 'uk', switchLabel: 'Українською',
+};
+const LANGS = [UK, RUL];
+const BY = {uk: UK, ru: RUL};
+
+// Адреса однієї й тієї самої сторінки різними мовами: ключ 'home' | 'cat:<id>' | 'p:<файл>'.
+const rel = (L, key) => L.base + (key === 'home' ? '' : key.startsWith('cat:') ? `katalog/${L.slug[key.slice(4)]}/` : `tovar/${key.slice(2)}`);
+const urlOf = (L, key) => SITE + rel(L, key);
+const alternates = key => LANGS.map(L => `<link rel="alternate" hreflang="${L.code}" href="${urlOf(L, key)}">`).join('\n') +
+  `\n<link rel="alternate" hreflang="x-default" href="${urlOf(UK, key)}">`;
+
+const COUNT = {};
+for (const c of CATS) COUNT[c.id] = ALL.filter(p => inCat(p, c.id)).length;
+const CATLIST = CATS.filter(c => SLUG[c.id] && COUNT[c.id]);
+
+function page(L, {key, title, desc, image, up, body, json}) {
+  const canon = urlOf(L, key), other = BY[L.switchTo];
+  // Перемикач мови: на українських сторінках — скромне посилання внизу, на російських — ще й «UA» вгорі.
+  const sw = `<a class="lang" href="${up}${rel(other, key)}" hreflang="${other.code}" lang="${other.code}">${L.switchLabel}</a>`;
   return `<!doctype html>
-<html lang="uk">
+<html lang="${L.code}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${canon}">
+${alternates(key)}
 <meta property="og:type" content="website">
-<meta property="og:locale" content="uk_UA">
-<meta property="og:site_name" content="${esc(SHOP.name)}">
+<meta property="og:locale" content="${L.locale}">
+<meta property="og:site_name" content="${esc(L.shop)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${canon}">
@@ -68,13 +122,14 @@ ${json.map(ld).join('\n')}
 </head>
 <body>
 <div class="page">
-<header class="header"><a class="shop" href="${up}">Техніка з Європи <span>Вигідно</span></a><a href="${up}" aria-label="На головну"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
+<header class="header"><a class="shop" href="${up}${L.base}">${L.logo}</a>${L.code === 'uk' ? '' : `<span class="hlang"><a href="${up}${rel(other, key)}" hreflang="uk" lang="uk" title="${L.switchLabel}">UA</a></span>`}<a href="${up}${L.base}" aria-label="${L.toHome}"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
 ${body}
 <footer class="footer">
-  <p><b>${esc(SHOP.name)}</b> — вживана та нова побутова техніка з Європи в Києві.</p>
-  <p>${esc(ADDR)} (${esc(SHOP.addressHint)}) · ${esc(SHOP.hours)} · <a href="${esc(SHOP.mapUrl)}" target="_blank" rel="noopener">На карті</a></p>
+  <p><b>${esc(L.shop)}</b> — ${L.about}</p>
+  <p>${esc(L.addr)} (${esc(L.hint)}) · ${esc(L.hours)} · <a href="${esc(SHOP.mapUrl)}" target="_blank" rel="noopener">${L.map}</a></p>
   <p class="btns"><a class="btn tg" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></p>
-  <nav class="cats" aria-label="Розділи каталогу">${CATS.filter(c => SLUG[c.id] && COUNT[c.id]).map(c => `<a href="${up}katalog/${SLUG[c.id]}/">${esc(c.name)}</a>`).join('')}</nav>
+  <nav class="cats" aria-label="${L.sections}">${CATLIST.map(c => `<a href="${up}${L.base}katalog/${L.slug[c.id]}/">${esc(L.catName(c))}</a>`).join('')}</nav>
+  <p class="langs">${sw}</p>
 </footer>
 </div>
 <script>document.addEventListener('click', e => { const a = e.target.closest('[data-track]'); if (a) try { window.goatcounter?.count?.({path: a.dataset.track, title: document.title, event: true}); } catch {} });</script>
@@ -83,93 +138,110 @@ ${body}
 `;
 }
 
-const card = (p, up) => `<li><a class="card" href="${up}tovar/${file(p)}">
-  <span class="ph">${p.photos[0] ? `<img src="${esc(src(p.photos[0], up))}" alt="${esc(name(p) || ONE[p.cat])}" loading="lazy" decoding="async">` : ''}${p.oldPrice && p.price ? `<span class="off">−${Math.round((1 - p.price / p.oldPrice) * 100)}%</span>` : ''}</span>
+const state = (L, p) => p.isNew ? (L.fem.has(p.cat) ? L.newF : L.newM) : L.used;
+const card = (L, p, up) => `<li><a class="card" href="${up}${L.base}tovar/${file(p)}">
+  <span class="ph">${p.photos[0] ? `<img src="${esc(src(p.photos[0], up))}" alt="${esc(name(p) || L.one[p.cat])}" loading="lazy" decoding="async">` : ''}${p.oldPrice && p.price ? `<span class="off">−${Math.round((1 - p.price / p.oldPrice) * 100)}%</span>` : ''}</span>
   ${p.price ? `<span class="price">${money(p.price)} <small>грн</small></span>` : ''}
   <span class="nm"><b>${esc(p.brand)}</b> ${esc(p.model)}</span>
-  <span class="sub">${esc(ONE[p.cat])}, ${state(p)} · ID ${esc(p.id)}</span></a></li>`;
-
-const COUNT = {};
-for (const c of CATS) COUNT[c.id] = ALL.filter(p => inCat(p, c.id)).length;
-
-// Що писати в заголовках розділів: те, що люди шукають у Google.
-const lower = s => s[0].toLowerCase() + s.slice(1);
-function catText(c, n) {
-  if (c.id === 'sale') return {h1: 'Розпродаж техніки з Європи в Києві', title: `Розпродаж б/в техніки з Європи — знижки, Київ | ${SHOP.name}`,
-    desc: `Знижки на вживану побутову техніку з Європи: ${n} ${plural(n, 'товар', 'товари', 'товарів')} зі зниженою ціною. Перевірені, з гарантією. ${ADDR}.`};
-  return {h1: `${c.name} б/в з Європи в Києві`, title: `${c.name} б/в з Європи — купити в Києві | ${SHOP.name}`,
-    desc: `${c.name} б/в та нові з Німеччини й Європи: ${n} в наявності, ціни від ${money(Math.min(...ALL.filter(p => inCat(p, c.id) && p.price).map(p => p.price)))} грн. Перевірені, з гарантією. ${ADDR}, ${SHOP.hours}.`};
-}
+  <span class="sub">${esc(L.one[p.cat])}, ${state(L, p)} · ID ${esc(p.id)}</span></a></li>`;
 
 const out = new Map();  // шлях → вміст
-const urls = [];        // [адреса, дата]
+const urls = [];        // [ключ сторінки, дата]
 
-for (const c of CATS) {
-  if (!SLUG[c.id] || !COUNT[c.id]) continue;
-  const items = ALL.filter(p => inCat(p, c.id)), t = catText(c, items.length), canon = `${SITE}katalog/${SLUG[c.id]}/`, up = '../../';
-  const body = `<main>
-<nav class="crumbs"><a href="${up}">Головна</a> › <span>${esc(c.name)}</span></nav>
+for (const c of CATLIST) {
+  const items = ALL.filter(p => inCat(p, c.id)), key = 'cat:' + c.id, min = Math.min(...items.filter(p => p.price).map(p => p.price));
+  urls.push([key, day(items[0]?.date)]);
+  for (const L of LANGS) {
+    const t = L.catText(c, items.length, min), up = L.base ? '../../../' : '../../', canon = urlOf(L, key);
+    const body = `<main>
+<nav class="crumbs"><a href="${up}${L.base}">${L.home}</a> › <span>${esc(L.catName(c))}</span></nav>
 <h1>${esc(t.h1)}</h1>
-<p class="lead">${items.length} ${plural(items.length, 'товар', 'товари', 'товарів')} в наявності. Уся техніка — з Європи, перевірена перед продажем, з гарантією. Подивитися наживо: ${esc(ADDR)}, щодня ${esc(SHOP.hours.replace(/, без вихідних/, ''))}.</p>
-<p><a class="btn primary" href="${up}?cat=${c.id}">Відкрити з фільтрами</a></p>
-<ul class="grid">${items.map(p => card(p, up)).join('')}</ul>
+<p class="lead">${esc(L.lead(items.length, L.addr, L.hours.replace(/, без вих\S+/, '')))}</p>
+<p><a class="btn primary" href="${up}?cat=${c.id}">${L.filters}</a></p>
+<ul class="grid">${items.map(p => card(L, p, up)).join('')}</ul>
 </main>`;
-  out.set(`katalog/${SLUG[c.id]}/index.html`, page({title: t.title, desc: t.desc, canon, up, body, json: [
-    {'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
-      {'@type': 'ListItem', position: 1, name: 'Головна', item: SITE}, {'@type': 'ListItem', position: 2, name: c.name, item: canon}]}]}));
-  urls.push([canon, day(items[0]?.date)]);
+    out.set(rel(L, key) + 'index.html', page(L, {key, title: t.title, desc: t.desc, up, body, json: [
+      {'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+        {'@type': 'ListItem', position: 1, name: L.home, item: urlOf(L, 'home')}, {'@type': 'ListItem', position: 2, name: L.catName(c), item: canon}]}]}));
+  }
 }
 
 for (const p of ALL) {
-  const c = CAT[p.cat], nm = name(p), up = '../', canon = `${SITE}tovar/${file(p)}`;
-  const head = `${ONE[p.cat]} ${nm || 'ID ' + p.id}`;
-  const title = `${head} ${state(p)}${p.price ? ` — ${money(p.price)} грн` : ''}, Київ | ${SHOP.name}`;
-  const facts = [p.chips.join(', '), p.warrantyText && `гарантія ${p.warrantyText}`].filter(Boolean).join('; ');
-  const desc = `${head} ${state(p)} з Європи${p.price ? ` за ${money(p.price)} грн` : ''}${facts ? ` (${facts})` : ''}. ID ${p.id}. Подивитися: ${ADDR}.`;
-  const text = p.text.split('\n').map(l => l.trim()).filter(Boolean).map(esc).join('<br>');
-  const ask = `Добрий день! Цікавить ID ${p.id}, ${nm}${p.price ? `, ${money(p.price)} грн` : ''}`;
-  const body = `<main class="product">
-<nav class="crumbs"><a href="${up}">Головна</a> › ${SLUG[p.cat] ? `<a href="${up}katalog/${SLUG[p.cat]}/">${esc(c.name)}</a>` : esc(c.name)} › <span>ID ${esc(p.id)}</span></nav>
+  const c = CAT[p.cat], nm = name(p), key = 'p:' + file(p);
+  urls.push([key, day(p.date)]);
+  for (const L of LANGS) {
+    const up = L.base ? '../../' : '../', canon = urlOf(L, key), one = L.one[p.cat], cname = L.catName(c);
+    const head = `${one} ${nm || 'ID ' + p.id}`;
+    const title = `${head} ${state(L, p)}${p.price ? ` — ${money(p.price)} грн` : ''}, ${L.code === 'uk' ? 'Київ' : 'Киев'} | ${L.shop}`;
+    const warr = L.tr(p.warrantyText);
+    const facts = [L.tr(p.chips.join(', ')), warr && `${L.warranty} ${warr}`].filter(Boolean).join('; ');
+    const desc = `${head} ${state(L, p)} ${L.fromEU}${p.price ? ` ${L.forPrice} ${money(p.price)} грн` : ''}${facts ? ` (${facts})` : ''}. ID ${p.id}. ${L.look}: ${L.addr}.`;
+    const text = L.tr(p.text).split('\n').map(l => l.trim()).filter(Boolean).map(esc).join('<br>');
+    const ask = `${L.ask} ID ${p.id}, ${nm}${p.price ? `, ${money(p.price)} грн` : ''}`;
+    const body = `<main class="product">
+<nav class="crumbs"><a href="${up}${L.base}">${L.home}</a> › ${SLUG[p.cat] ? `<a href="${up}${L.base}katalog/${L.slug[p.cat]}/">${esc(cname)}</a>` : esc(cname)} › <span>ID ${esc(p.id)}</span></nav>
 <div class="pgrid">
-<div class="photos">${p.photos.map((ph, i) => `<img src="${esc(src(ph, up))}" alt="${esc(nm || ONE[p.cat])}, фото ${i + 1}" ${i ? 'loading="lazy" ' : ''}decoding="async">`).join('')}</div>
+<div class="photos">${p.photos.map((ph, i) => `<img src="${esc(src(ph, up))}" alt="${esc(nm || one)}, ${L.photo} ${i + 1}" ${i ? 'loading="lazy" ' : ''}decoding="async">`).join('')}</div>
 <div class="pinfo">
-<h1><span>${esc(ONE[p.cat])}</span> ${esc(nm || 'ID ' + p.id)}</h1>
+<h1><span>${esc(one)}</span> ${esc(nm || 'ID ' + p.id)}</h1>
 ${p.price ? `<p class="price big">${money(p.price)} <small>грн</small>${p.oldPrice ? ` <s>${money(p.oldPrice)} грн</s>` : ''}</p>` : ''}
-<p class="sub">ID ${esc(p.id)} · ${p.isNew ? 'Нова' : 'Б/в'} · ${p.reserved ? 'Заброньовано' : 'В наявності'}${p.warrantyText ? ` · Гарантія ${esc(p.warrantyText)}` : ''}</p>
-<p class="btns"><a class="btn primary" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(ask)}" target="_blank" rel="noopener" data-track="click-telegram">Написати в Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></p>
+<p class="sub">ID ${esc(p.id)} · ${p.isNew ? L.isNew : L.isUsed} · ${p.reserved ? L.reserved : L.inStock}${warr ? ` · ${L.Warranty} ${esc(warr)}` : ''}</p>
+<p class="btns"><a class="btn primary" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(ask)}" target="_blank" rel="noopener" data-track="click-telegram">${L.write}</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></p>
 <p class="desc">${text}</p>
-<p><a href="${up}?p=${encodeURIComponent(p.id)}">Відкрити в каталозі</a></p>
+<p><a href="${up}?p=${encodeURIComponent(p.id)}">${L.open}</a></p>
 </div>
 </div>
 </main>`;
-  const product = {'@context': 'https://schema.org', '@type': 'Product', name: `${ONE[p.cat]} ${nm}`.trim(), sku: p.id, category: c.name,
-    ...(p.brand && {brand: {'@type': 'Brand', name: p.brand}}), ...(p.model && {model: p.model}),
-    ...(p.photos.length && {image: p.photos.map(x => src(x, SITE))}), description: p.text.slice(0, 500),
-    ...(p.price && {offers: {'@type': 'Offer', url: canon, price: p.price, priceCurrency: 'UAH',
-      itemCondition: p.isNew ? 'https://schema.org/NewCondition' : 'https://schema.org/UsedCondition',
-      availability: p.reserved ? 'https://schema.org/LimitedAvailability' : 'https://schema.org/InStock', seller: {'@id': SITE + '#shop'}}})};
-  out.set(`tovar/${file(p)}`, page({title, desc, canon, image: p.photos[0] && src(p.photos[0], SITE), up, body, json: [product, {'@context': 'https://schema.org', ...STORE}]}));
-  urls.push([canon, day(p.date)]);
+    const product = {'@context': 'https://schema.org', '@type': 'Product', name: `${one} ${nm}`.trim(), sku: p.id, category: cname,
+      ...(p.brand && {brand: {'@type': 'Brand', name: p.brand}}), ...(p.model && {model: p.model}),
+      ...(p.photos.length && {image: p.photos.map(x => src(x, SITE))}), description: L.tr(p.text).slice(0, 500),
+      ...(p.price && {offers: {'@type': 'Offer', url: canon, price: p.price, priceCurrency: 'UAH',
+        itemCondition: p.isNew ? 'https://schema.org/NewCondition' : 'https://schema.org/UsedCondition',
+        availability: p.reserved ? 'https://schema.org/LimitedAvailability' : 'https://schema.org/InStock', seller: {'@id': SITE + '#shop'}}})};
+    out.set(rel(L, key), page(L, {key, title, desc, image: p.photos[0] && src(p.photos[0], SITE), up, body, json: [product, {'@context': 'https://schema.org', ...STORE}]}));
+  }
 }
 
-// Записуємо лише змінене; сторінки проданих товарів і порожніх розділів прибираємо.
+// Російська головна (ru/). Українська головна — сам каталог index.html, його не генеруємо.
+{
+  const L = RUL, up = '../', key = 'home';
+  const body = `<main>
+<h1>Б/у техника из Европы в Киеве</h1>
+<p class="lead">Стиральные и сушильные машины, холодильники, посудомоечные машины, плиты, духовые шкафы, кофемашины и другая бытовая техника из Германии и Европы. ${RUL.goods(ALL.length)} в наличии, каждая проверена перед продажей, с гарантией. Магазин: ${esc(L.addr)} (${esc(L.hint)}), ежедневно ${esc(L.hours.replace(/, без вых\S+/, ''))}.</p>
+<p class="btns"><a class="btn primary" href="${up}">Открыть весь каталог</a></p>
+<h2>Разделы</h2>
+<ul class="tiles">${CATLIST.map(c => `<li><a href="${up}${L.base}katalog/${L.slug[c.id]}/">${esc(L.catName(c))} <span>${COUNT[c.id]}</span></a></li>`).join('')}</ul>
+<h2>Новые поступления</h2>
+<ul class="grid">${ALL.slice(0, 24).map(p => card(L, p, up)).join('')}</ul>
+</main>`;
+  out.set('ru/index.html', page(L, {key, title: `Б/у техника из Европы в Киеве — стиральные машины, холодильники | ${L.shop}`,
+    desc: `Б/у и новая бытовая техника из Германии и Европы в Киеве: стиральные и сушильные машины, холодильники, посудомойки, плиты, кофемашины. Проверенная, с гарантией. ${L.addr}.`,
+    up, body, json: [{'@context': 'https://schema.org', ...STORE}]}));
+}
+
+// Записуємо лише змінене; сторінки проданих товарів і порожніх розділів прибираємо (обома мовами).
 let wrote = 0, removed = 0;
 for (const [rel, s] of out) {
   const f = path.join(ROOT, rel);
   if (fs.existsSync(f) && fs.readFileSync(f, 'utf8') === s) continue;
   fs.mkdirSync(path.dirname(f), {recursive: true}); fs.writeFileSync(f, s); wrote++;
 }
-const tdir = path.join(ROOT, 'tovar');
-for (const f of fs.existsSync(tdir) ? fs.readdirSync(tdir) : []) if (!out.has('tovar/' + f)) { fs.rmSync(path.join(tdir, f)); removed++; }
-const kdir = path.join(ROOT, 'katalog');
-for (const d of fs.readdirSync(kdir, {withFileTypes: true})) if (d.isDirectory() && !out.has(`katalog/${d.name}/index.html`)) { fs.rmSync(path.join(kdir, d.name), {recursive: true}); removed++; }
+for (const base of ['', 'ru/']) {
+  const tdir = path.join(ROOT, base + 'tovar');
+  for (const f of fs.existsSync(tdir) ? fs.readdirSync(tdir) : []) if (!out.has(base + 'tovar/' + f)) { fs.rmSync(path.join(tdir, f)); removed++; }
+  const kdir = path.join(ROOT, base + 'katalog');
+  for (const d of fs.existsSync(kdir) ? fs.readdirSync(kdir, {withFileTypes: true}) : [])
+    if (d.isDirectory() && !out.has(`${base}katalog/${d.name}/index.html`)) { fs.rmSync(path.join(kdir, d.name), {recursive: true}); removed++; }
+}
 
+// sitemap: кожна сторінка обома мовами, з посиланнями на переклад (так Google радить для багатомовних сайтів).
 const newest = urls.map(u => u[1]).filter(Boolean).sort().pop();
+const entry = (L, key, d) => `<url><loc>${esc(urlOf(L, key))}</loc>${d ? `<lastmod>${d}</lastmod>` : ''}${LANGS.map(A => `<xhtml:link rel="alternate" hreflang="${A.code}" href="${esc(urlOf(A, key))}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${esc(urlOf(UK, key))}"/></url>`;
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[[SITE, newest], ...urls].map(([u, d]) => `<url><loc>${esc(u)}</loc>${d ? `<lastmod>${d}</lastmod>` : ''}</url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${LANGS.flatMap(L => [['home', newest], ...urls].map(([k, d]) => entry(L, k, d))).join('\n')}
 </urlset>
 `;
 const sm = path.join(ROOT, 'sitemap.xml');
 if (!fs.existsSync(sm) || fs.readFileSync(sm, 'utf8') !== sitemap) fs.writeFileSync(sm, sitemap);
-console.log(`seo: ${out.size} сторінок (записано ${wrote}, прибрано ${removed}), ${ALL.length} товарів`);
+console.log(`seo: ${out.size} сторінок (записано ${wrote}, прибрано ${removed}), ${ALL.length} товарів, мови: ${LANGS.map(L => L.code).join(', ')}`);

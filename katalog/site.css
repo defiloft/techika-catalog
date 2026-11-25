@@ -38,3 +38,10 @@ h1{margin:4px 0 8px;font-size:24px;line-height:1.2}
 .footer{margin-top:40px;padding-top:18px;border-top:1px solid #24272b1f;color:var(--concrete);font-size:14px}
 .footer p{margin:0 0 10px}
 .cats{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;font-size:13px}.cats a{color:var(--concrete)}
+/* мова: скромне посилання внизу і «UA» вгорі на російських сторінках */
+.langs{margin-top:14px;font-size:13px}.langs a{color:var(--concrete)}
+.hlang{margin-left:auto;font-size:13px;font-weight:600}.hlang a{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border:1px solid var(--line);border-radius:999px;color:var(--concrete);text-decoration:none;background:var(--body)}
+h2{margin:26px 0 0;font-size:19px}
+.tiles{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+.tiles a{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--body);color:var(--floor);text-decoration:none;font-weight:500}
+.tiles span{color:var(--concrete);font-weight:400}

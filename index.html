@@ -7,6 +7,9 @@
 <title>Б/в техніка з Європи в Києві — пральні машини, холодильники | Техніка з Європи</title>
 <meta name="description" content="Вживана та нова побутова техніка з Німеччини й Європи в Києві: пральні та сушильні машини, холодильники, посудомийки, плити, духові шафи, кавомашини, телевізори, тренажери. Перевірена, з гарантією. вул. Вадима Гетьмана, 1 (м. Шулявська), щодня 10:00–19:00.">
 <link rel="canonical" href="https://techika.com.ua/">
+<link rel="alternate" hreflang="uk" href="https://techika.com.ua/">
+<link rel="alternate" hreflang="ru" href="https://techika.com.ua/ru/">
+<link rel="alternate" hreflang="x-default" href="https://techika.com.ua/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
 <meta property="og:site_name" content="Техніка з Європи">
@@ -124,6 +127,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .tgb{background:var(--tg);color:#fff}
 .fupd{margin:10px 2px 0}
 .fcats{display:flex;flex-wrap:wrap;gap:4px 14px;margin:14px 2px 0;font-size:12.5px}.fcats a{color:var(--concrete);text-decoration:none}.fcats a:hover{text-decoration:underline}
+.flang{margin:12px 2px 0;font-size:12.5px}.flang a{color:var(--concrete)}
 
 /* ---- вітрина на головній: плитки категорій + «Найбільші знижки» і «Нові надходження» ---- */
 .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:4px 0 0;padding:0 var(--gutter);list-style:none}
@@ -1127,7 +1131,8 @@ function footer() {
     <p class="faddr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>${esc(SHOP.hours)}</span></p>
     <div class="fbtns"><a class="btn tgb" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></div>
   </div>${t && !isNaN(t) ? `<p class="fupd">Товар оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}
-  <nav class="fcats" aria-label="Розділи каталогу">${GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id) && SLUG[id]).map(id => `<a href="katalog/${SLUG[id]}/">${esc(CAT[id].name)}</a>`).join('')}</nav>`;
+  <nav class="fcats" aria-label="Розділи каталогу">${GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id) && SLUG[id]).map(id => `<a href="katalog/${SLUG[id]}/">${esc(CAT[id].name)}</a>`).join('')}</nav>
+  <p class="flang"><a href="ru/" hreflang="ru" lang="ru">На русском</a></p>`;
   $('#footer').onclick = e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); };
 }
 fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => {
