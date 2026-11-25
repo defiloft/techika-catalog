@@ -659,7 +659,9 @@ function render() {
   const car = '<svg class="car" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg>';
   // Смуга над товарами: лише кнопка меню «Категорії» (з назвою вибраної категорії) і «Розпродаж». Самі категорії — у меню.
   const pick = S.cat && S.cat !== 'sale' ? CAT[S.cat].name : '';
-  $('#cats').innerHTML = (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
+  // Вітрина: головна без пошуку, категорії й фільтрів. На ній «Розпродаж» — плитка, тож кнопку над товарами ховаємо.
+  const home = !SHOWALL && !S.q.trim() && !S.cat && !nFilters(S) && !S.sort;
+  $('#cats').innerHTML = (SALES && !home ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
     `<button type="button" class="chip more${pick ? ' on' : ''}" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="m-m">${esc(pick || 'Категорії')}</span>${car}</button>`;
   $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => { const sm = subsMenu(id), it = `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id && !S.sub}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>`; return sm ? `<div class="cblock">${it}${sm}</div>` : it; }).join('')}</div>` : ''; }).join('');
   $('#catmenu').hidden = !CATMENU;
@@ -673,7 +675,6 @@ function render() {
   $('#count').textContent = goods(list.length);
   $('#sort').innerHTML = (S.q.trim() ? '<option value="relevance">За збігом</option>' : '') + [['new', 'Новіші'], ['cheap', 'Дешевші'], ['expensive', 'Дорожчі']].map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
   $('#sort').value = m;
-  const home = !SHOWALL && !S.q.trim() && !S.cat && !nFilters(S) && !S.sort;
   $('.toolbar').style.display = home ? 'none' : '';
   const shown = list.slice(0, LIMIT), left = list.length - shown.length;
   const more = left ? `<div class="morebtn"><button type="button" class="btn ghost" data-more>Показати ще ${Math.min(STEP, left)}</button><small>Показано ${shown.length} з ${list.length}</small></div>` : '';
