@@ -870,7 +870,7 @@ document.addEventListener('error', e => { const i = e.target; if (i.tagName === 
 
 function footer() {
   const t = UPDATED ? new Date(UPDATED) : null;
-  $('#footer').innerHTML = `<p>${esc(SHOP.name)}, м. ${esc(SHOP.city)}, ${esc(SHOP.address)}</p>${t && !isNaN(t) ? `<p>Каталог оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}`;
+  $('#footer').innerHTML = `<p>${esc(SHOP.name)}, м. ${esc(SHOP.city)}, ${esc(SHOP.address)}</p>${t && !isNaN(t) ? `<p>Товар оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}`;
 }
 fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => {
   const seen = new Set();
