@@ -4,7 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#DDE5EF">
-<title>Техніка з Європи | Вигідно</title>
+<title>Б/в техніка з Європи в Києві — пральні машини, холодильники | Техніка з Європи</title>
+<meta name="description" content="Вживана та нова побутова техніка з Німеччини й Європи в Києві: пральні та сушильні машини, холодильники, посудомийки, плити, духові шафи, кавомашини, телевізори, тренажери. Перевірена, з гарантією. вул. Вадима Гетьмана, 1 (м. Шулявська), щодня 10:00–19:00.">
+<link rel="canonical" href="https://techika.com.ua/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:site_name" content="Техніка з Європи">
+<meta property="og:title" content="Б/в техніка з Європи в Києві | Техніка з Європи">
+<meta property="og:description" content="Пральні машини, холодильники, посудомийки та інша техніка з Європи. Перевірена, з гарантією. Київ, вул. Вадима Гетьмана, 1.">
+<meta property="og:url" content="https://techika.com.ua/">
+<meta property="og:image" content="https://techika.com.ua/img/emblem.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","@id":"https://techika.com.ua/#shop","name":"Техніка з Європи","alternateName":"Техніка з Європи | Вигідно","description":"Вживана та нова побутова техніка з Європи в Києві: пральні машини, холодильники, посудомийки, плити, тренажери. Перевірена, з гарантією.","url":"https://techika.com.ua/","image":"https://techika.com.ua/img/emblem.png","telephone":"+380681015291","priceRange":"₴₴","address":{"@type":"PostalAddress","streetAddress":"вул. Вадима Гетьмана, 1","addressLocality":"Київ","addressCountry":"UA"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"19:00"},"sameAs":["https://t.me/dossyyaa"]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='8' y='5' width='32' height='38' rx='4' fill='%23fff' stroke='%2324272B' stroke-width='3'/%3E%3Ccircle cx='24' cy='27' r='9' fill='none' stroke='%232F45C9' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,6 +123,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .fbtns{display:flex;gap:8px}.fbtns .btn{flex:1;min-height:44px;padding:0 12px;font-size:14px}
 .tgb{background:var(--tg);color:#fff}
 .fupd{margin:10px 2px 0}
+.fcats{display:flex;flex-wrap:wrap;gap:4px 14px;margin:14px 2px 0;font-size:12.5px}.fcats a{color:var(--concrete);text-decoration:none}.fcats a:hover{text-decoration:underline}
 
 /* ---- вітрина на головній: плитки категорій + «Найбільші знижки» і «Нові надходження» ---- */
 .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:4px 0 0;padding:0 var(--gutter);list-style:none}
@@ -355,6 +366,8 @@ const CATS = [
   {id:'sale', name:'Розпродаж', short:'Розпродаж', terms:['розпродаж','знижка','акція','уцінка']},  // не категорія товару, а добірка: усе зі старою ціною
 ];
 const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
+// Адреси статичних сторінок розділів для Google (генерує scripts/seo.mjs, там такий самий список).
+const SLUG = {washers:'pralni-mashyny', dryers:'sushylni-mashyny', fridges:'kholodylnyky', freezers:'morozylni-kamery', dishwashers:'posudomyini-mashyny', hobs:'varylni-poverkhni', stoves:'plyty', ovens:'dukhovi-shafy', micro:'mikrokhvylovi-pechi', hoods:'vytiazhky', coffee:'kavomashyny', tvs:'televizory', treadmills:'bigovi-dorizhky', bikes:'velotrenazhery', orbitreks:'orbitreky', sale:'rozprodazh'};
 // Назва товару. Коли в дописі лише бренд, без моделі, додаємо вид техніки: «Морозильна камера Siemens», а не просто «Siemens».
 const kindOf = p => p.model ? '' : p.washdry ? 'Прально-сушильна машина' : CAT[p.cat]?.one || '';
 const nameOf = p => [kindOf(p), p.brand, p.model].filter(Boolean).join(' ');
@@ -948,7 +961,8 @@ function footer() {
       <span>м. ${esc(SHOP.city)}, ${esc(SHOP.address)}<small>${esc(SHOP.addressHint)}</small><u>Відкрити на карті →</u></span></a>
     <p class="faddr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>${esc(SHOP.hours)}</span></p>
     <div class="fbtns"><a class="btn tgb" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></div>
-  </div>${t && !isNaN(t) ? `<p class="fupd">Товар оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}`;
+  </div>${t && !isNaN(t) ? `<p class="fupd">Товар оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}
+  <nav class="fcats" aria-label="Розділи каталогу">${GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id) && SLUG[id]).map(id => `<a href="katalog/${SLUG[id]}/">${esc(CAT[id].name)}</a>`).join('')}</nav>`;
   $('#footer').onclick = e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); };
 }
 fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => {
