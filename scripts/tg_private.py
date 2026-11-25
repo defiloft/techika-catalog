@@ -31,6 +31,8 @@ REQ_TOPIC = ("запит фото", "запрос фото")  # шукаємо �
 REQ_CHAT, REQ_TOPIC_ID = -1002351969498, 14029  # де вона була 2026-11-25 (щоб не шукати щоразу)
 REQ_DAYS = 365      # перший раз переглядаємо тему за рік (альбоми там бувають і 3–4-місячні)
 REQ_RECHECK = 300   # далі лише нові повідомлення + стільки останніх (раптом підпис дописали пізніше)
+SEARCH_PER_RUN = 40  # ID без фото, які за один запуск шукаємо по всій групі (в інших темах)
+SEARCH_AGAIN = 3 * 86400  # той самий ID шукаємо знову не частіше, ніж раз на 3 дні
 REQ_INDEX = IMG / "req" / "index.json"  # що вже знайдено в темі: {ID: [повідомлення з фото]}
 MAX_EXTRA = 6       # додаткових фото на товар (кожне ~65 КБ зберігається в репозиторії)
 REQ_BUDGET = 8 * 60
@@ -191,6 +193,43 @@ def _album_id(msgs, texts, topic):
     return ids.pop() if len(ids) == 1 else None  # кілька ID в одному альбомі — не вгадуємо, чиє фото
 
 
+def _short(msgs):
+    """Підпис альбому — лише ID і кілька слів, а не повний допис товару (ті фото вже є з каналу)."""
+    cap = "\n".join(m.message or "" for m in msgs).strip()
+    return len([l for l in cap.splitlines() if l.strip()]) <= 3 and len(cap) <= 120
+
+
+async def _search_rest(client, chat, topic, want, idx, deadline):
+    """Шукає по всій групі (усі теми) ID товарів, для яких у темі «Запит фото» нічого немає."""
+    done = idx.setdefault("searched", {})
+    now = int(time.time())
+    todo = sorted((p for p in want if p not in idx["ids"] and now - done.get(p, 0) > SEARCH_AGAIN), key=lambda p: done.get(p, 0))
+    found = 0
+    for pid in todo[:SEARCH_PER_RUN]:
+        if time.monotonic() > deadline:
+            break
+        hits = {}
+        for q in ("ID" + pid, pid):
+            async for m in client.iter_messages(chat, search=q, limit=30):
+                if m.photo and pid in {a or b for a, b in REQ_ID.findall(m.message or "")}:
+                    hits[m.id] = m
+            await asyncio.sleep(1)
+        done[pid] = now
+        photos = []
+        for m in sorted(hits.values(), key=lambda m: -m.id):  # від нових до старих
+            album = [m]
+            if m.grouped_id:  # решта фото альбому — сусідні повідомлення з тим самим grouped_id
+                near = await client.get_messages(chat, ids=list(range(m.id - 10, m.id + 11)))
+                album = sorted((x for x in near if x and x.grouped_id == m.grouped_id and x.photo), key=lambda x: x.id)
+            if len({a or b for a, b in REQ_ID.findall(" ".join(x.message or "" for x in album))}) == 1 and _short(album):
+                photos += [x.id for x in album if x.id not in photos]
+        if photos:
+            idx["ids"][pid] = photos[:MAX_EXTRA]
+            found += 1
+    if todo:
+        print(f"  пошук по всій групі: перевірено {min(len(todo), SEARCH_PER_RUN)} ID з {len(todo)}, знайдено фото для {found}")
+
+
 async def _requests(client, want, deadline):
     """{ID товару: [фото]} з теми запитів; лише для товарів, які є в каталозі. None — тему не знайдено.
     Переглянуте запам'ятовуємо в REQ_INDEX, тож щоразу читаємо лише нові повідомлення."""
@@ -220,6 +259,7 @@ async def _requests(client, want, deadline):
         if pid and new:
             idx["ids"][pid] = (new + [i for i in idx["ids"].get(pid, []) if i not in new])[:MAX_EXTRA]
     idx["max"] = top
+    await _search_rest(client, chat, topic, want, idx, deadline - REQ_BUDGET / 2)
     deadline = max(deadline, time.monotonic() + 5 * 60)  # перший перегляд теми довгий; на фото лишаємо час
     # Завантажуємо лише відсутні фото товарів, які зараз є в каталозі.
     need = [i for pid in want for i in idx["ids"].get(pid, []) if not (IMG / "req" / f"{i}.jpg").exists()]
