@@ -182,13 +182,22 @@ def main():
         for h in EXTRA_INVITES:
             invites.setdefault(h, "superznygky")
         print(f"Приватні канали: знайдено запрошень {len(invites)}")
-        res = tg_private.fetch(invites, private_post)
+        want = {p["pid"] for p in products + old_private if tg_private.has_id(p)}
+        res = tg_private.fetch(invites, private_post, want)
+        old_extra = {p["pid"]: p["extra"] for p in old.get("products", []) if p.get("extra")}
+        extra = None
         if res is None:  # вхід не вдався: лишаємо попередні товари з приватних каналів
             products += old_private
         else:
-            got, status = res
+            got, status, extra = res
             ok = {c for c, v in status.items() if v}
             products += got + [p for p in old_private if p.get("chat") not in ok]
+        # Додаткові фото з теми «Запит фото»: нові замінюють старі; якщо тему не прочитали — лишаємо старі.
+        extra = {**old_extra, **(extra or {})}
+        for p in products:
+            p.pop("extra", None)
+            if extra.get(p["pid"]):
+                p["extra"] = extra[p["pid"]]
         seen = set()  # якщо канал прочитано частково, нові дані важливіші за старі
         products = [p for p in products if not (p["id"] in seen or seen.add(p["id"]))]
         tg_private.cleanup(products)
