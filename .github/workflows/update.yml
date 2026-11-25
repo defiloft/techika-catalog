@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: "*/30 * * * *"
   workflow_dispatch:
+    inputs:
+      probe:
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -17,13 +21,21 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install --quiet telethon==1.46.0 cryptg
-      - run: python scripts/scrape.py
+      - if: ${{ inputs.probe }}
+        run: python scripts/tg_probe.py
+        env:
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          TG_SESSION: ${{ secrets.TG_SESSION }}
+      - if: ${{ !inputs.probe }}
+        run: python scripts/scrape.py
         env:
           # Необов'язково: вхід у ваш Telegram для приватних каналів (див. TELEGRAM.md)
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           TG_SESSION: ${{ secrets.TG_SESSION }}
-      - run: |
+      - if: ${{ !inputs.probe }}
+        run: |
           git config user.name "shop-bot"
           git config user.email "shop-bot@users.noreply.github.com"
           git add products.json
