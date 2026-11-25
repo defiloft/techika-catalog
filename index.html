@@ -388,7 +388,7 @@ const SUBS = {
   dryers: [['heatpump', 'Тепловий', p => p.dry === 'heatpump'], ['heater', 'Теновий', p => p.dry === 'heater']],
   hobs: [['gas', 'Газові', p => p.gas], ['induction', 'Індукція', p => !p.gas && /індукц/i.test(p.text)], ['electric', 'Електричні', p => !p.gas && !/індукц/i.test(p.text)]],
   dishwashers: [['w60', 'Повнорозмірні, 60 см', p => p.width >= 55], ['w45', 'Вузькі, 45 см', p => p.width < 55]],
-  stoves: [['gas', 'Газові', p => p.gas], ['electric', 'Електричні', p => !p.gas]],
+  stoves: [['gas', 'Газові', p => p.stove === 'gas'], ['combi', 'Комбіновані', p => p.stove === 'combi'], ['electric', 'Електричні', p => p.stove === 'electric']],
 };
 const subOf = (c, id) => (SUBS[c] || []).find(x => x[0] === id);
 // Канали, де разом кілька видів техніки: ці категорії відокремлюємо за текстом допису.
@@ -552,6 +552,10 @@ function parse(p) {
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
     load: cat.id === 'washers' ? loadType(low, model, width, height) : '',
     gas: (cat.id === 'stoves' || cat.id === 'hobs') && /газ|підпал/.test(low),
+    // Плити: газова конфорка + електродуховка = комбінована. У дописах так прямо не пишуть, але конвекція («Конвекція є»),
+    // електрогриль чи електроконфорка бувають лише з електрикою.
+    stove: cat.id !== 'stoves' ? '' : !/газ|підпал/.test(low) ? 'electric'
+      : /комбінов|гриль\s+електр|конфорка\s*-?\s*електр|конве[кн]ц\S*\s+(?:є|так)/.test(low) ? 'combi' : 'gas',
     // Сушильні: з тепловим насосом або тенові (конденсаційні/вентиляційні з ТЕНом). Без жодної згадки — не відносимо нікуди.
     dry: cat.id !== 'dryers' ? '' : /теплов\S* насос|heat ?pump|wärmepumpe/.test(low) ? 'heatpump' : /(?:^|[^а-яіїє])тен(?:ов|ом|\b|[^а-яіїє])|конденсац|вентиляц|витяжн/.test(low) ? 'heater' : '',
   };
