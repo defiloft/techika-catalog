@@ -73,6 +73,8 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .cats .chip{min-height:38px;padding:0 12px;gap:5px;font-size:13.5px}
 .cats .chip svg{width:18px;height:18px}
 .cats .chip[hidden]{display:none}
+.subcats{padding-top:0}.subcats[hidden]{display:none}.subcats .chip{min-height:34px;font-size:13px}
+.citem.sub{padding-left:38px;min-height:34px;font-size:13.5px}
 .more{order:-1;background:var(--soft)}
 .more .m-d{display:none}
 .more svg.car{width:12px;height:12px;transition:transform .15s}
@@ -91,7 +93,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .citem[aria-pressed=true] .cnt{color:var(--marker)}
 .citem.zero{opacity:.45}
 .citem span.nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media(max-width:639px){.catmenu{display:block;padding:12px 12px 2px}.cgroup{display:flex;flex-wrap:wrap;gap:6px}.cgroup h3{width:100%;padding:0 2px}.citem{width:auto;min-height:38px;gap:6px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:14px}.citem svg{width:18px;height:18px}.citem .cnt{margin-left:0}.citem[aria-pressed=true]{border-color:var(--marker)}}
+@media(max-width:639px){.catmenu{display:block;padding:12px 12px 2px}.cgroup{display:flex;flex-wrap:wrap;gap:6px}.cgroup h3{width:100%;padding:0 2px}.citem{width:auto;min-height:38px;gap:6px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:14px}.citem svg{width:18px;height:18px}.citem .cnt{margin-left:0}.citem[aria-pressed=true]{border-color:var(--marker)}.citem.sub{padding-left:12px}.citem.sub::before{content:"↳";color:var(--concrete)}}
 @media(min-width:960px){.catmenu{grid-template-columns:repeat(5,minmax(0,1fr))}.cats{flex-wrap:nowrap;overflow:hidden}.more{order:0}.more .m-m{display:none}.more .m-d{display:inline}}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0 var(--gutter);list-style:none}
 .grid>li{display:flex;min-width:0}.grid>li>*{flex:1}
@@ -237,6 +239,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
   </div>
   <nav class="scroller cats" id="cats" aria-label="Категорії"></nav>
   <div class="catmenu" id="catmenu" role="group" aria-label="Усі категорії" hidden></div>
+  <nav class="scroller cats subcats" id="subcats" aria-label="Тип пральної машини" hidden></nav>
   <div class="scroller" id="prices" role="group" aria-label="Ціна"></div>
   <div class="active" id="active" aria-label="Активні фільтри" hidden></div>
   <div class="toolbar">
@@ -391,6 +394,15 @@ function byFeatures(t) {
   if (/гриль|конвекц|конвенц/i.test(t)) return CAT.ovens;
   if (/індукц/i.test(t)) return CAT.hobs;
 }
+// Вертикальна пральна: так написано в описі, відома серія моделі, або габарити «40–46 см завширшки, 80+ заввишки»
+// (фронтальні не бувають вужчими за ~50 см; продавці пишуть «Ширина 40 см Глибина 60 см»).
+const TOPMODEL = /^(?:EWT|EW\dT|TDLR|TDLX|WITP|BTW|ITW|ZWQ|ZWY|ARTF|AWE\s?6|AWE\s?5|WOT|WOR|L\dTB|LTX|CST|TF\d|WT\d|WVT)/i;
+function loadType(low, model, width, height) {
+  if (/вертикальн|верхн\S* завантаж|завантаження зверху|top.?load|toplader/.test(low)) return 'top';
+  if (/фронтальн/.test(low)) return 'front';
+  if (TOPMODEL.test(model) || (width && width <= 46 && (!height || height >= 80))) return 'top';
+  return 'front';
+}
 function parse(p) {
   const t = p.text || '', low = t.toLowerCase();
   if (!/\bID[:\s#]*\d{4,}/i.test(t) && !p.price) return null;          // реклама, «як нас знайти»
@@ -433,7 +445,7 @@ function parse(p) {
     washdry: cat.id === 'washers' && /прально.?сушильн|завантаження\s+суш/i.test(t),  // прально-сушильна: показуємо і в «Сушильних»
     isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
-    load: /вертикальн/i.test(low) ? 'top' : /фронтальн/i.test(low) ? 'front' : '',
+    load: cat.id === 'washers' ? loadType(low, model, width, height) : '',
   };
 }
 
@@ -486,7 +498,8 @@ function hl(text, ranges) {
 /* ---------- стан, URL ---------- */
 let ALL = [], BY = new Map(), BRANDS = [], PMAX = 50000, UPDATED = '';
 const EMPTY = {q: '', cat: null, brands: [], cond: [], load: [], narrow: false};
-let S = {...EMPTY}, HITS = null, openId = null, draft = null, CATMENU = false, CNT = new Map(), SALES = 0;
+let S = {...EMPTY}, HITS = null, openId = null, draft = null, CATMENU = false, CNT = new Map(), SALES = 0, TOPS = 0;
+const LOADS = [['front', 'Фронтальні'], ['top', 'Вертикальні']];
 const ints = v => v != null && v !== '' && !isNaN(+v) ? +v : undefined;
 const pair = v => { if (!v) return [undefined, undefined]; const [a, b] = v.split('-'); return [ints(a), ints(b)]; };
 const listp = v => v ? v.split(',').filter(Boolean) : [];
@@ -563,15 +576,21 @@ function render() {
   // Рядок: найбільші категорії першими; решта ховається під «Ще» (див. fitCats).
   const shown = CATS.filter(c => c.id !== 'other' && CNT.get(c.id)).sort((a, b) => CNT.get(b.id) - CNT.get(a.id));
   const sale = ALL.filter(p => p.oldPrice && pass(p, S, HITS, 'cat')).length;
+  const topN = ALL.filter(p => p.load === 'top' && pass(p, S, HITS, 'cat')).length;
   cc.set('dryers', (cc.get('dryers') || 0) + ALL.filter(p => p.washdry && pass(p, S, HITS, 'cat')).length);
   const car = '<svg class="car" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg>';
   $('#cats').innerHTML = `<button type="button" class="chip" data-cat="" aria-pressed="${!S.cat}">Усі<span class="cnt">${total}</span></button>` +
     (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
     shown.map(c => `<button type="button" class="chip" data-cat="${c.id}" aria-pressed="${S.cat === c.id}">${icon(c.id)}${esc(c.short)}<span class="cnt">${cc.get(c.id) || 0}</span></button>`).join('') +
     `<button type="button" class="chip more" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="m-m">Категорії</span><span class="m-d">Усі категорії</span>${car}</button>`;
-  $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>`).join('')}</div>` : ''; }).join('');
+  $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id && !(id === 'washers' && S.load.length === 1)}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>` + (id === 'washers' && TOPS ? `<button type="button" class="citem sub${topN ? '' : ' zero'}" data-cat="washers" data-load="top" aria-pressed="${S.cat === 'washers' && S.load.length === 1 && S.load[0] === 'top'}"><span class="nm">Вертикальні</span><span class="cnt">${topN}</span></button>` : '')).join('')}</div>` : ''; }).join('');
   $('#catmenu').hidden = !CATMENU;
   fitCats();
+  // Підкатегорії пральних: «Фронтальні» / «Вертикальні» (те саме, що фільтр «Тип завантаження»).
+  const wsub = S.cat === 'washers' ? ALL.filter(p => p.cat === 'washers' && pass(p, {...S, load: []}, HITS)) : [];
+  $('#subcats').hidden = !wsub.length;
+  $('#subcats').innerHTML = wsub.length ? [['', 'Усі пральні', wsub.length], ...LOADS.map(([id, nm]) => [id, nm, wsub.filter(p => p.load === id).length])]
+    .map(([id, nm, n]) => `<button type="button" class="chip" data-load="${id}" aria-pressed="${id ? S.load.length === 1 && S.load[0] === id : S.load.length !== 1}">${nm}<span class="cnt">${n}</span></button>`).join('') : '';
   const nf = nFilters(S);
   $('#prices').innerHTML = `<button type="button" class="fbtn${nf ? ' on' : ''}" id="fopen" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Фільтри${nf ? ` (${nf})` : ''}</span></button>` +
     PRESETS.map(r => `<button type="button" class="chip" data-preset="${r.id}" aria-pressed="${S.pmin === r.min && S.pmax === r.max}">${r.label}</button>`).join('');
@@ -589,6 +608,7 @@ function render() {
 // На широкому екрані категорії — в один рядок: що не влізло, ховаємо (воно є в «Усі категорії»).
 function fitCats() {
   const nav = $('#cats'), chips = [...nav.querySelectorAll('.chip[data-cat]:not([data-cat=""]):not(.sale)')], more = $('#catmore');
+  if (!more) return;  // шрифти можуть довантажитись раніше за перший render
   chips.forEach(c => c.hidden = false);
   if (!matchMedia('(min-width:960px)').matches) return;
   const max = nav.clientWidth - parseFloat(getComputedStyle(nav).paddingRight), sel = chips.find(c => c.getAttribute('aria-pressed') === 'true');
@@ -768,7 +788,10 @@ $('#cats').onclick = e => {
   if (e.target.closest('#catmore')) { CATMENU = !CATMENU; $('#catmenu').hidden = !CATMENU; $('#catmore').setAttribute('aria-expanded', CATMENU); return; }
   const b = e.target.closest('[data-cat]'); if (!b) return; const c = b.dataset.cat || null; setState({...S, cat: S.cat === c ? null : c});
 };
-$('#catmenu').onclick = e => { const b = e.target.closest('[data-cat]'); if (!b) return; CATMENU = false; setState({...S, cat: S.cat === b.dataset.cat ? null : b.dataset.cat}); };
+$('#catmenu').onclick = e => { const b = e.target.closest('[data-cat]'); if (!b) return; CATMENU = false;
+  if (b.dataset.load) return setState({...S, cat: 'washers', load: b.getAttribute('aria-pressed') === 'true' ? [] : [b.dataset.load]});
+  setState({...S, cat: S.cat === b.dataset.cat && !(b.dataset.cat === 'washers' && S.load.length === 1) ? null : b.dataset.cat, load: b.dataset.cat === 'washers' ? [] : S.load}); };
+$('#subcats').onclick = e => { const b = e.target.closest('[data-load]'); if (!b) return; const l = b.dataset.load; setState({...S, load: l && !(S.load.length === 1 && S.load[0] === l) ? [l] : []}); };
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && CATMENU) { CATMENU = false; $('#catmenu').hidden = true; $('#catmore').setAttribute('aria-expanded', false); $('#catmore').focus(); } });
 let fitT; addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(fitCats, 80); });
 document.fonts?.ready.then(fitCats);
@@ -796,7 +819,7 @@ fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({pr
   BRANDS = [...new Set(ALL.map(p => p.brand).filter(Boolean))].sort((a, b) => a.localeCompare(b));
   PMAX = Math.ceil(Math.max(1000, ...ALL.map(p => p.price || 0)) / 1000) * 1000;
   CNT = new Map(); for (const p of ALL) CNT.set(p.cat, (CNT.get(p.cat) || 0) + 1);
-  SALES = ALL.filter(p => p.oldPrice).length;
+  SALES = ALL.filter(p => p.oldPrice).length; TOPS = ALL.filter(p => p.load === 'top').length;
   CNT.set('dryers', (CNT.get('dryers') || 0) + ALL.filter(p => p.washdry).length);
   buildIndex(ALL); S = fromURL(); render(); footer();
   const p = new URLSearchParams(location.search).get('p'); if (p && BY.has(p)) showProduct(p);
