@@ -115,7 +115,6 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .tile b{display:block;font-size:13.5px;font-weight:600;line-height:1.2}
 .tile .cnt{font-size:12px}
 .tile.sale{background:var(--sale-bg);border-color:#f3c4bd}.tile.sale svg{color:var(--sale)}
-.tile.all{background:var(--floor);color:#fff;border-color:var(--floor)}.tile.all svg{color:#fff}.tile.all .cnt{color:#ffffffb0}
 .shelf{margin:22px 0 0}
 .shead2{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 var(--gutter);margin-bottom:6px}
 .shead2 h2{font-size:18px;font-weight:700;letter-spacing:-.01em}
@@ -682,11 +681,11 @@ function render() {
 }
 /* ---------- вітрина ---------- */
 function homeA(list) {
-  const cats = GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id)).sort((a, b) => CNT.get(b) - CNT.get(a)).slice(0, 7);
-  const tile = (id, nm, n, cls = '', ic = icon(id, 30)) => `<li><button type="button" class="tile ${cls}" ${id ? `data-cat="${id}"` : 'data-allcats'}>${ic}<span><b>${esc(nm)}</b><span class="cnt">${n}</span></span></button></li>`;
+  const cats = GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id)).sort((a, b) => CNT.get(b) - CNT.get(a)).slice(0, 8);
+  const tile = (id, nm, n, cls = '', ic = icon(id, 30)) => `<li><button type="button" class="tile ${cls}" data-cat="${id}">${ic}<span><b>${esc(nm)}</b><span class="cnt">${n}</span></span></button></li>`;
   const shelf = (title, items, btn) => items.length ? `<section class="shelf"><div class="shead2"><h2>${title}</h2>${btn}</div><ul class="hrow">${items.slice(0, 10).map(p => `<li>${card(p, null, true)}</li>`).join('')}</ul></section>` : '';
   const sale = list.filter(p => p.oldPrice && p.price).sort((a, b) => pct(b) - pct(a));
-  return `<ul class="tiles">${SALES ? tile('sale', 'Розпродаж', `${SALES} товарів`, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}${tile(null, 'Усі категорії', `${GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id)).length} розділів`, 'all', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>')}</ul>`
+  return `<ul class="tiles">${SALES ? tile('sale', 'Розпродаж', `${SALES} товарів`, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}</ul>`
     + shelf('Найбільші знижки', sale, `<button type="button" data-cat="sale">Усі ${SALES} →</button>`)
     + shelf('Нові надходження', list, `<button type="button" data-showall>Усі →</button>`)
     + `<button type="button" class="btn primary allbtn" data-showall>Дивитися всі ${goods(list.length)}</button>`;
@@ -899,7 +898,6 @@ $('#fopen').onclick = () => { draft = {...S}; renderFilters(); sheetOpen($('#fsh
 document.addEventListener('click', e => {
   if (e.target.closest('[data-more]')) { LIMIT += STEP; return render(); }
   if (e.target.closest('[data-showall]')) { SHOWALL = true; render(); return $('.toolbar').scrollIntoView({behavior: 'smooth'}); }
-  if (e.target.closest('[data-allcats]')) { CATMENU = true; render(); return scrollTo({top: 0, behavior: 'smooth'}); }
   const tc = e.target.closest('#list [data-cat]'); if (tc) { setState({...S, cat: tc.dataset.cat, sub: null}); return scrollTo({top: 0}); }
   if (e.target.closest('[data-resetall]')) return setState({...EMPTY, sort: S.sort});
   const rm = e.target.closest('[data-rm]'); if (rm) return setState(activeChips(S)[+rm.dataset.rm].rm(S));
