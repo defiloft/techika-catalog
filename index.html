@@ -330,6 +330,7 @@ const SUBS = {
   fridges: [['nofrost', 'No Frost', p => p.cooling === 'No Frost'], ['drip', 'Крапельні', p => p.cooling === 'Крапельна'],
     ['low', 'Низькі, до 1 м', p => p.height < 100], ['sbs', 'Side-by-side', p => p.width >= 80]],
   freezers: [['tall', 'Високі', p => p.height >= 100], ['low', 'Низькі, до 1 м', p => p.height < 100], ['nofrost', 'No Frost', p => p.cooling === 'No Frost']],
+  dryers: [['heatpump', 'Тепловий', p => p.dry === 'heatpump'], ['heater', 'Теновий', p => p.dry === 'heater'], ['washdry', 'Прально-сушильні', p => p.washdry]],
   dishwashers: [['w60', 'Повнорозмірні, 60 см', p => p.width >= 55], ['w45', 'Вузькі, 45 см', p => p.width < 55]],
   stoves: [['gas', 'Газові', p => p.gas], ['electric', 'Електричні', p => !p.gas]],
 };
@@ -468,6 +469,8 @@ function parse(p) {
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
     load: cat.id === 'washers' ? loadType(low, model, width, height) : '',
     gas: cat.id === 'stoves' && /газ|підпал/.test(low),
+    // Сушильні: з тепловим насосом або тенові (конденсаційні/вентиляційні з ТЕНом). Без жодної згадки — не відносимо нікуди.
+    dry: cat.id !== 'dryers' ? '' : /теплов\S* насос|heat ?pump|wärmepumpe/.test(low) ? 'heatpump' : /(?:^|[^а-яіїє])тен(?:ов|ом|\b|[^а-яіїє])|конденсац|вентиляц|витяжн/.test(low) ? 'heater' : '',
   };
 }
 
