@@ -22,7 +22,7 @@ jobs:
           python-version: "3.12"
       - run: pip install --quiet telethon==1.46.0 cryptg
       - if: ${{ inputs.probe }}
-        run: cd scripts && python tg_probe.py
+        run: python scripts/scrape.py && python -c "import json;d=json.load(open('img/tg/req/index.json'));print('index',len(d['ids']),d['max'])" && du -sh img/tg/req
         env:
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
