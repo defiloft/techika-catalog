@@ -106,6 +106,30 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .footer{margin-top:32px;padding:0 var(--gutter);font-size:13px;color:var(--concrete)}
 .footer p+p{margin-top:4px}
 
+/* ---- вітрина на головній: плитки категорій + «Найбільші знижки» і «Нові надходження» ---- */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:4px 0 0;padding:0 var(--gutter);list-style:none}
+@media(min-width:960px){.tiles{grid-template-columns:repeat(9,minmax(0,1fr));gap:12px}}
+.tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:8px;width:100%;height:100%;min-height:96px;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--body);text-align:left}
+.tile:hover{border-color:#b9bfc6}
+.tile svg{width:30px;height:30px;color:var(--marker)}
+.tile b{display:block;font-size:13.5px;font-weight:600;line-height:1.2}
+.tile .cnt{font-size:12px}
+.tile.sale{background:var(--sale-bg);border-color:#f3c4bd}.tile.sale svg{color:var(--sale)}
+.tile.all{background:var(--floor);color:#fff;border-color:var(--floor)}.tile.all svg{color:#fff}.tile.all .cnt{color:#ffffffb0}
+.shelf{margin:22px 0 0}
+.shead2{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 var(--gutter);margin-bottom:6px}
+.shead2 h2{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.shead2 button{min-height:var(--tap);padding:0 4px;border:0;background:none;color:var(--marker);font-weight:600;font-size:14px;white-space:nowrap}
+.hrow{display:grid;grid-auto-flow:column;grid-auto-columns:42%;gap:10px;overflow-x:auto;margin:0;padding:0 var(--gutter) 6px;list-style:none;scrollbar-width:none;scroll-snap-type:x mandatory;scroll-padding:0 var(--gutter)}
+.hrow::-webkit-scrollbar{display:none}
+.hrow>li{display:flex;min-width:0;scroll-snap-align:start}.hrow>li>*{flex:1}
+@media(min-width:640px){.hrow{grid-auto-columns:28%}}
+@media(min-width:960px){.hrow{grid-auto-columns:calc((100% - 2*var(--gutter) - 4*18px)/5);gap:18px}}
+.allbtn{display:flex;width:calc(100% - 2*var(--gutter));max-width:420px;margin:28px auto 0}
+.morebtn{display:flex;flex-direction:column;align-items:center;gap:8px;margin:22px var(--gutter) 0;text-align:center}
+.morebtn .btn{width:100%;max-width:420px;background:var(--body)}
+.morebtn small{color:var(--concrete);font-size:13px}
+
 /* price sticker */
 .sticker{display:inline-flex;align-items:baseline;gap:4px;padding:0 10px 1px 9px;background:var(--body);border:1px solid var(--line);border-radius:var(--r-tag);color:var(--marker);font-family:var(--font-marker);font-weight:700;line-height:1;transform:rotate(-2.5deg);transform-origin:left bottom;box-shadow:0 1px #24272b0f;white-space:nowrap}
 .sticker .cur{font-size:.62em}
@@ -254,7 +278,6 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
   </div>
   <nav class="scroller cats" id="cats" aria-label="Категорії"></nav>
   <div class="catmenu" id="catmenu" role="group" aria-label="Усі категорії" hidden></div>
-  <div class="scroller" id="prices" role="group" aria-label="Ціна"></div>
   <div class="active" id="active" aria-label="Активні фільтри" hidden></div>
   <div class="toolbar">
     <p class="count" id="count" aria-live="polite"></p>
@@ -549,6 +572,9 @@ function hl(text, ranges) {
 /* ---------- стан, URL ---------- */
 let ALL = [], BY = new Map(), BRANDS = [], PMAX = 50000, UPDATED = '';
 const EMPTY = {q: '', cat: null, sub: null, brands: [], cond: [], load: [], narrow: false};
+// Товарів за раз (далі «Показати ще»); SHOWALL — користувач натиснув «Дивитися всі» на вітрині.
+const STEP = 20;
+let LIMIT = STEP, SHOWALL = false;
 let S = {...EMPTY}, HITS = null, openId = null, draft = null, CATMENU = false, CNT = new Map(), SALES = 0, SUBN = new Map();
 const ints = v => v != null && v !== '' && !isNaN(+v) ? +v : undefined;
 const pair = v => { if (!v) return [undefined, undefined]; const [a, b] = v.split('-'); return [ints(a), ints(b)]; };
@@ -572,7 +598,7 @@ function toURL(s, p) {
   const q = u.toString(); return location.pathname + (q ? '?' + q : '');
 }
 function setState(next, push) {
-  S = next; history.replaceState(history.state, '', toURL(S, openId)); render();
+  S = next; LIMIT = STEP; SHOWALL = false; history.replaceState(history.state, '', toURL(S, openId)); render();
 }
 
 /* ---------- фільтрація ---------- */
@@ -639,7 +665,6 @@ function render() {
   fitCats();
   const nf = nFilters(S);
   $('#fopen').classList.toggle('on', !!nf); $('#fopen span').textContent = `Фільтри${nf ? ` (${nf})` : ''}`;
-  $('#prices').innerHTML = PRESETS.map(r => `<button type="button" class="chip" data-preset="${r.id}" aria-pressed="${S.pmin === r.min && S.pmax === r.max}">${r.label}</button>`).join('');
   const act = activeChips(S);
   $('#active').hidden = !act.length;
   $('#active').innerHTML = act.map((a, i) => `<button type="button" class="achip" data-rm="${i}" aria-label="Прибрати фільтр: ${esc(a.label)}">${esc(a.label)}${X(12)}</button>`).join('') + (act.length ? '<button type="button" class="reset" data-resetall>Скинути все</button>' : '');
@@ -647,9 +672,24 @@ function render() {
   $('#count').textContent = goods(list.length);
   $('#sort').innerHTML = (S.q.trim() ? '<option value="relevance">За збігом</option>' : '') + [['new', 'Новіші'], ['cheap', 'Дешевші'], ['expensive', 'Дорожчі']].map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
   $('#sort').value = m;
-  $('#list').innerHTML = list.length
-    ? `<ul class="grid">${list.map((p, i) => `<li>${card(p, HITS?.get(p.key), false, i < 4)}</li>`).join('')}</ul>`
+  const home = !SHOWALL && !S.q.trim() && !S.cat && !nFilters(S) && !S.sort;
+  $('.toolbar').style.display = home ? 'none' : '';
+  const shown = list.slice(0, LIMIT), left = list.length - shown.length;
+  const more = left ? `<div class="morebtn"><button type="button" class="btn ghost" data-more>Показати ще ${Math.min(STEP, left)}</button><small>Показано ${shown.length} з ${list.length}</small></div>` : '';
+  $('#list').innerHTML = home ? homeA(list) : list.length
+    ? `<ul class="grid">${shown.map((p, i) => `<li>${card(p, HITS?.get(p.key), false, i < 4)}</li>`).join('')}</ul>` + more
     : `<div class="empty"><h2>${ALL.length ? 'Нічого не знайшли' : 'Каталог оновлюється'}</h2><p>${ALL.length ? 'Спробуйте інший бренд або приберіть фільтр ціни' : 'Товари з’являться після першого оновлення.'}</p>${ALL.length ? '<button type="button" class="btn primary" data-resetall>Скинути фільтри</button>' : ''}</div>`;
+}
+/* ---------- вітрина ---------- */
+function homeA(list) {
+  const cats = GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id)).sort((a, b) => CNT.get(b) - CNT.get(a)).slice(0, 7);
+  const tile = (id, nm, n, cls = '', ic = icon(id, 30)) => `<li><button type="button" class="tile ${cls}" ${id ? `data-cat="${id}"` : 'data-allcats'}>${ic}<span><b>${esc(nm)}</b><span class="cnt">${n}</span></span></button></li>`;
+  const shelf = (title, items, btn) => items.length ? `<section class="shelf"><div class="shead2"><h2>${title}</h2>${btn}</div><ul class="hrow">${items.slice(0, 10).map(p => `<li>${card(p, null, true)}</li>`).join('')}</ul></section>` : '';
+  const sale = list.filter(p => p.oldPrice && p.price).sort((a, b) => pct(b) - pct(a));
+  return `<ul class="tiles">${SALES ? tile('sale', 'Розпродаж', `${SALES} товарів`, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}${tile(null, 'Усі категорії', `${GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id)).length} розділів`, 'all', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>')}</ul>`
+    + shelf('Найбільші знижки', sale, `<button type="button" data-cat="sale">Усі ${SALES} →</button>`)
+    + shelf('Нові надходження', list, `<button type="button" data-showall>Усі →</button>`)
+    + `<button type="button" class="btn primary allbtn" data-showall>Дивитися всі ${goods(list.length)}</button>`;
 }
 // На широкому екрані категорії — в один рядок: що не влізло, ховаємо (воно є в «Усі категорії»).
 // Підкатегорії в меню «Усі категорії» — дрібним рядком під своєю категорією.
@@ -856,11 +896,11 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && CATMENU) {
 let fitT; addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(fitCats, 80); });
 document.fonts?.ready.then(fitCats);
 $('#fopen').onclick = () => { draft = {...S}; renderFilters(); sheetOpen($('#fsheet')); };
-$('#prices').onclick = e => {
-  const b = e.target.closest('[data-preset]'); if (!b) return; const r = PRESETS.find(x => x.id === b.dataset.preset);
-  setState(S.pmin === r.min && S.pmax === r.max ? {...S, pmin: undefined, pmax: undefined} : {...S, pmin: r.min, pmax: r.max});
-};
 document.addEventListener('click', e => {
+  if (e.target.closest('[data-more]')) { LIMIT += STEP; return render(); }
+  if (e.target.closest('[data-showall]')) { SHOWALL = true; render(); return $('.toolbar').scrollIntoView({behavior: 'smooth'}); }
+  if (e.target.closest('[data-allcats]')) { CATMENU = true; render(); return scrollTo({top: 0, behavior: 'smooth'}); }
+  const tc = e.target.closest('#list [data-cat]'); if (tc) { setState({...S, cat: tc.dataset.cat, sub: null}); return scrollTo({top: 0}); }
   if (e.target.closest('[data-resetall]')) return setState({...EMPTY, sort: S.sort});
   const rm = e.target.closest('[data-rm]'); if (rm) return setState(activeChips(S)[+rm.dataset.rm].rm(S));
   const a = e.target.closest('a[data-open]');
