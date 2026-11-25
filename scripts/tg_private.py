@@ -170,7 +170,9 @@ async def _req_topic(client):
         e = d.entity
         if not getattr(e, "forum", False):
             continue
-        r = await client(functions.channels.GetForumTopicsRequest(channel=e, offset_date=None, offset_id=0, offset_topic=0, limit=100))
+        kw = dict(offset_date=None, offset_id=0, offset_topic=0, limit=100)
+        req = getattr(functions.messages, "GetForumTopicsRequest", None)  # у старих версіях Telethon — у channels
+        r = await client(req(peer=e, **kw) if req else functions.channels.GetForumTopicsRequest(channel=e, **kw))
         ts = [t for t in r.topics if any(k in norm(getattr(t, "title", "")) for k in REQ_TOPIC)]
         if ts:
             t = next((t for t in ts if d.id == REQ_CHAT and t.id == REQ_TOPIC_ID), ts[0])
