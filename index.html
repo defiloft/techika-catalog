@@ -491,7 +491,7 @@ function parse(p) {
   for (const c of p.chips || []) if (chips.length < 3 && !chips.some(x => x.split(' ')[0] === c.split(' ')[0]) && !/см$/.test(c)) chips.push(c);
   return {
     id: String(p.pid || p.id), key: p.id, cat: cat.id, brand, model, price, oldPrice,
-    photos: [...new Set([...(p.images || []), ...(p.extra || [])])],  // + фото з теми «Запит фото» за ID date: p.date || '', url: p.url, text: t,
+    photos: [...new Set([...(p.images || []), ...(p.extra || [])])], date: p.date || '', url: p.url, text: t,  // extra — фото з теми «Запит фото» за ID
     washdry: cat.id === 'washers' && /прально.?сушильн|завантаження\s+суш/i.test(t),  // прально-сушильна: підкатегорія в «Пральних»
     isNew, reserved, warrantyText, warrantyMonths, height, width, depth,
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
