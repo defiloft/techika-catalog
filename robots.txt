@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techika.com.ua/sitemap.xml
