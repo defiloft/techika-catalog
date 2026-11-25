@@ -75,7 +75,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .cats .chip svg{width:18px;height:18px}
 .cats .chip[hidden]{display:none}
 .subcats{padding-top:0}.subcats[hidden]{display:none}.subcats .chip{min-height:34px;font-size:13px}
-.csubs{display:flex;flex-wrap:wrap;gap:2px 4px;padding:0 4px 6px 38px}
+.csubs{display:flex;flex-wrap:wrap;gap:2px 4px;margin:0 0 6px 18px;padding:0 4px 0 12px;border-left:2px solid var(--line)}
 .csub{display:inline-flex;align-items:center;gap:5px;min-height:30px;padding:0 8px;border:0;border-radius:8px;background:none;color:var(--concrete);font-size:13px;font-weight:500}
 .csub:hover{background:var(--soft);color:var(--floor)}.csub[aria-pressed=true]{background:#2f45c914;color:var(--marker)}.csub.zero{opacity:.45}
 .more{order:-1;background:var(--soft)}
@@ -96,7 +96,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .citem[aria-pressed=true] .cnt{color:var(--marker)}
 .citem.zero{opacity:.45}
 .citem span.nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media(max-width:639px){.catmenu{display:block;padding:12px 12px 2px}.cgroup{display:flex;flex-wrap:wrap;gap:6px}.cgroup h3{width:100%;padding:0 2px}.citem{width:auto;min-height:38px;gap:6px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:14px}.citem svg{width:18px;height:18px}.citem .cnt{margin-left:0}.citem[aria-pressed=true]{border-color:var(--marker)}.csubs{width:100%;padding:0 0 4px 10px}.csub::before{content:"↳";color:var(--concrete)}}
+@media(max-width:639px){.catmenu{display:block;padding:12px 12px 2px}.cgroup{display:flex;flex-wrap:wrap;gap:6px}.cgroup h3{width:100%;padding:0 2px}.citem{width:auto;min-height:38px;gap:6px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:14px}.citem svg{width:18px;height:18px}.citem .cnt{margin-left:0}.citem[aria-pressed=true]{border-color:var(--marker)}.cblock{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin:2px 0}.csubs{display:flex;flex-wrap:wrap;gap:4px;margin-left:22px;padding:2px 0 4px 10px;border-left:2px solid var(--line)}.csub{min-height:34px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--body)}}
 @media(min-width:960px){.catmenu{grid-template-columns:repeat(5,minmax(0,1fr))}.cats{flex-wrap:nowrap;overflow:hidden}.more{order:0}.more .m-m{display:none}.more .m-d{display:inline}}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0 var(--gutter);list-style:none}
 .grid>li{display:flex;min-width:0}.grid>li>*{flex:1}
@@ -626,7 +626,7 @@ function render() {
     (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
     shown.map(c => `<button type="button" class="chip" data-cat="${c.id}" aria-pressed="${S.cat === c.id}">${icon(c.id)}${esc(c.short)}<span class="cnt">${cc.get(c.id) || 0}</span></button>`).join('') +
     `<button type="button" class="chip more" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="m-m">Категорії</span><span class="m-d">Усі категорії</span>${car}</button>`;
-  $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id && !S.sub}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>` + subsMenu(id)).join('')}</div>` : ''; }).join('');
+  $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => { const sm = subsMenu(id), it = `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id && !S.sub}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>`; return sm ? `<div class="cblock">${it}${sm}</div>` : it; }).join('')}</div>` : ''; }).join('');
   $('#catmenu').hidden = !CATMENU;
   fitCats();
   // Підкатегорії вибраної категорії: «Усі …» + підвиди з кількістю.
