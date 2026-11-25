@@ -78,7 +78,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .csub{display:inline-flex;align-items:center;gap:5px;min-height:30px;padding:0 8px;border:0;border-radius:8px;background:none;color:var(--concrete);font-size:13px;font-weight:500}
 .csub:hover{background:var(--soft);color:var(--floor)}.csub[aria-pressed=true]{background:#2f45c914;color:var(--marker)}.csub.zero{opacity:.45}
 .more{order:-1;background:var(--soft)}
-.more .m-d{display:none}
+.more.on{border-color:var(--marker);background:#2f45c914;color:var(--marker)}
 .more svg.car{width:12px;height:12px;transition:transform .15s}
 .more[aria-expanded=true]{border-color:var(--floor)}
 .more[aria-expanded=true] svg.car{transform:rotate(180deg)}
@@ -96,7 +96,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .citem.zero{opacity:.45}
 .citem span.nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:639px){.catmenu{display:block;padding:12px 12px 2px}.cgroup{display:flex;flex-wrap:wrap;gap:6px}.cgroup h3{width:100%;padding:0 2px}.citem{width:auto;min-height:38px;gap:6px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:14px}.citem svg{width:18px;height:18px}.citem .cnt{margin-left:0}.citem[aria-pressed=true]{border-color:var(--marker)}.cblock{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin:2px 0}.csubs{display:flex;flex-wrap:wrap;gap:4px;margin-left:22px;padding:2px 0 4px 10px;border-left:2px solid var(--line)}.csub{min-height:34px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--body)}}
-@media(min-width:960px){.catmenu{grid-template-columns:repeat(5,minmax(0,1fr))}.cats{flex-wrap:nowrap;overflow:hidden}.more{order:0}.more .m-m{display:none}.more .m-d{display:inline}}
+@media(min-width:960px){.catmenu{grid-template-columns:repeat(5,minmax(0,1fr))}.cats{flex-wrap:nowrap;overflow:hidden}}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0 var(--gutter);list-style:none}
 .grid>li{display:flex;min-width:0}.grid>li>*{flex:1}
 @media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
@@ -617,14 +617,12 @@ function render() {
   $('#q').value !== S.q && ($('#q').value = S.q);
   $('#qclear').hidden = !S.q;
   const cc = countBy(S, HITS, 'cat', p => p.cat), total = [...cc.values()].reduce((a, b) => a + b, 0);
-  // Рядок: найбільші категорії першими; решта ховається під «Ще» (див. fitCats).
-  const shown = CATS.filter(c => c.id !== 'other' && CNT.get(c.id)).sort((a, b) => CNT.get(b.id) - CNT.get(a.id));
   const sale = ALL.filter(p => p.oldPrice && pass(p, S, HITS, 'cat')).length;
   const car = '<svg class="car" viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4.5l3 3 3-3"/></svg>';
-  $('#cats').innerHTML = `<button type="button" class="chip" data-cat="" aria-pressed="${!S.cat}">Усі<span class="cnt">${total}</span></button>` +
-    (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
-    shown.map(c => `<button type="button" class="chip" data-cat="${c.id}" aria-pressed="${S.cat === c.id}">${icon(c.id)}${esc(c.short)}<span class="cnt">${cc.get(c.id) || 0}</span></button>`).join('') +
-    `<button type="button" class="chip more" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="m-m">Категорії</span><span class="m-d">Усі категорії</span>${car}</button>`;
+  // Смуга над товарами: лише кнопка меню «Категорії» (з назвою вибраної категорії) і «Розпродаж». Самі категорії — у меню.
+  const pick = S.cat && S.cat !== 'sale' ? CAT[S.cat].name : '';
+  $('#cats').innerHTML = (SALES ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
+    `<button type="button" class="chip more${pick ? ' on' : ''}" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="m-m">${esc(pick || 'Категорії')}</span>${car}</button>`;
   $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => { const sm = subsMenu(id), it = `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id && !S.sub}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>`; return sm ? `<div class="cblock">${it}${sm}</div>` : it; }).join('')}</div>` : ''; }).join('');
   $('#catmenu').hidden = !CATMENU;
   fitCats();
@@ -651,18 +649,10 @@ function subsMenu(id) {
   return `<div class="csubs">${subs.map(([sid, nm, f]) => { const n = base.filter(f).length;
     return `<button type="button" class="csub${n ? '' : ' zero'}" data-cat="${id}" data-sub="${sid}" aria-pressed="${S.cat === id && S.sub === sid}">${esc(nm)}<span class="cnt">${n}</span></button>`; }).join('')}</div>`;
 }
-function fitCats() {
-  const nav = $('#cats'), chips = [...nav.querySelectorAll('.chip[data-cat]:not([data-cat=""]):not(.sale)')], more = $('#catmore');
-  if (!more) return;  // шрифти можуть довантажитись раніше за перший render
-  chips.forEach(c => c.hidden = false);
-  if (!matchMedia('(min-width:960px)').matches) return;
-  const max = nav.clientWidth - parseFloat(getComputedStyle(nav).paddingRight), sel = chips.find(c => c.getAttribute('aria-pressed') === 'true');
-  let hide = 0;
-  for (let i = chips.length - 1; i >= 0 && more.offsetLeft + more.offsetWidth > max; i--) if (chips[i] !== sel) { chips[i].hidden = true; hide++; }
-  more.querySelector('.m-d').textContent = hide ? `Ще ${hide}` : 'Усі категорії';
-}
+function fitCats() {}  // смуга більше не має чипів категорій, підганяти нічого
 function activeChips(s) {
   const a = [], add = (label, rm) => a.push({label, rm});
+  s.cat && s.cat !== 'sale' && add(CAT[s.cat].name, x => ({...x, cat: null, sub: null}));
   const sub = subOf(s.cat, s.sub); sub && add(sub[1], x => ({...x, sub: null}));  // вибрана підкатегорія (з меню або «Фільтрів»)
   if (s.pmin != null || s.pmax != null) { const pr = PRESETS.find(r => r.min === s.pmin && r.max === s.pmax); add(pr ? pr.label : range(s.pmin, s.pmax, ' грн'), x => ({...x, pmin: undefined, pmax: undefined})); }
   s.brands.forEach(b => add(b, x => ({...x, brands: x.brands.filter(y => y !== b)})));
