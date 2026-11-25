@@ -326,7 +326,7 @@ const GROUPS = [
 // Канали, де разом кілька видів техніки: ці категорії відокремлюємо за текстом допису.
 // Підкатегорії: рядок під категоріями і пункти в меню «Усі категорії». Товар може бути в кількох (напр. No Frost і низький).
 const SUBS = {
-  washers: [['front', 'Фронтальні', p => p.load === 'front'], ['top', 'Вертикальні', p => p.load === 'top']],
+  washers: [['front', 'Фронтальні', p => p.load === 'front'], ['top', 'Вертикальні', p => p.load === 'top'], ['washdry', 'Прально-сушильні', p => p.washdry]],
   fridges: [['nofrost', 'No Frost', p => p.cooling === 'No Frost'], ['drip', 'Крапельні', p => p.cooling === 'Крапельна'],
     ['low', 'Низькі, до 1 м', p => p.height < 100], ['sbs', 'Side-by-side', p => p.width >= 80]],
   freezers: [['tall', 'Високі', p => p.height >= 100], ['low', 'Низькі, до 1 м', p => p.height < 100], ['nofrost', 'No Frost', p => p.cooling === 'No Frost']],
