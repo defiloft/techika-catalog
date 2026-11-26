@@ -459,7 +459,7 @@ const SUBS = {
   fridges: [['nofrost', 'No Frost', p => p.cooling === 'No Frost'], ['drip', 'Крапельні', p => p.cooling === 'Крапельна'],
     ['low', 'Низькі, до 1 м', p => p.height < 100], ['sbs', 'Side-by-side', p => p.width >= 80]],
   freezers: [['tall', 'Високі', p => p.height >= 100], ['low', 'Низькі, до 1 м', p => p.height < 100], ['nofrost', 'No Frost', p => p.cooling === 'No Frost']],
-  dryers: [['heatpump', 'Тепловий', p => p.dry === 'heatpump'], ['heater', 'Теновий', p => p.dry === 'heater']],
+  dryers: [['heatpump', 'Теплові', p => p.dry === 'heatpump'], ['heater', 'Тенові', p => p.dry === 'heater']],
   hobs: [['gas', 'Газові', p => p.gas], ['induction', 'Індукція', p => !p.gas && /індукц/i.test(p.text)], ['electric', 'Електричні', p => !p.gas && !/індукц/i.test(p.text)]],
   dishwashers: [['w60', 'Повнорозмірні, 60 см', p => p.width >= 55], ['w45', 'Вузькі, 45 см', p => p.width < 55]],
   stoves: [['gas', 'Газові', p => p.stove === 'gas'], ['combi', 'Комбіновані', p => p.stove === 'combi'], ['electric', 'Електричні', p => p.stove === 'electric']],
@@ -865,7 +865,7 @@ function homeA(list) {
     + `<button type="button" class="btn primary allbtn" data-showall>Дивитися всі ${goods(list.length)}</button>`;
 }
 // Підкатегорії в меню категорій — дрібним рядком під своєю категорією.
-// Підкатегорії, що мають товари; одну-єдину, яка збігається з усією категорією («Тепловий 22» з 22 сушильних), не показуємо.
+// Підкатегорії, що мають товари; одну-єдину, яка збігається з усією категорією («Теплові 22» з 22 сушильних), не показуємо.
 const subsOf = id => { const xs = (SUBS[id] || []).filter(x => SUBN.get(id + '/' + x[0])); return xs.length === 1 && SUBN.get(id + '/' + xs[0][0]) === CNT.get(id) ? [] : xs; };
 function subsMenu(id) {
   const subs = subsOf(id);
