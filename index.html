@@ -669,6 +669,9 @@ function parse(p) {
   const diag = (t.match(/діагональ\D{0,5}(\d{2,3})/i) || [])[1], sets = (t.match(/(\d{1,2})(?:-?ти)?\s*комплект/i) || [])[1];
   const cooling = /no ?frost/i.test(t) ? 'No Frost' : /к[ра]{1,3}п[аеі]?л\S*н/i.test(t) ? 'Крапельна' : /компресорн/i.test(t) ? 'Компресорна' : '';
   const chips = [];
+  // Сушильні: тип (як підкатегорії в меню) — першим чипом на картці.
+  const dry = cat.id !== 'dryers' ? '' : /теплов\S* насос|heat ?pump|wärmepumpe/.test(low) ? 'heatpump' : /(?:^|[^а-яіїє])тен(?:ов|ом|\b|[^а-яіїє])|конденсац|вентиляц|витяжн/.test(low) ? 'heater' : '';
+  if (dry) chips.push(dry === 'heatpump' ? 'Тепловий' : 'Теновий');
   if (cat.id === 'washers' || cat.id === 'dryers') { kg && chips.push(`${kg.replace(',', '.')} кг`); rpm && chips.push(`${rpm} об`); }
   if (cooling) chips.push(cooling);
   if (sets) chips.push(`${sets} компл.`);
@@ -688,7 +691,7 @@ function parse(p) {
     stove: cat.id !== 'stoves' ? '' : !/газ|підпал/.test(low) ? 'electric'
       : /комбінов|гриль\s+електр|конфорка\s*-?\s*електр|конве[кн]ц\S*\s+(?:є|так)/.test(low) ? 'combi' : 'gas',
     // Сушильні: з тепловим насосом або тенові (конденсаційні/вентиляційні з ТЕНом). Без жодної згадки — не відносимо нікуди.
-    dry: cat.id !== 'dryers' ? '' : /теплов\S* насос|heat ?pump|wärmepumpe/.test(low) ? 'heatpump' : /(?:^|[^а-яіїє])тен(?:ов|ом|\b|[^а-яіїє])|конденсац|вентиляц|витяжн/.test(low) ? 'heater' : '',
+    dry,
   };
 }
 
@@ -994,7 +997,7 @@ function specsOf(p) {
     ['Місткість', p.sets && `до ${p.sets} комплектів`], ['Діагональ', p.diag && `${p.diag}″`],
     ['Тип плити', {gas:'Газова', electric:'Електрична', combi:'Комбінована'}[p.stove]],
     ['Тип', p.cat === 'hobs' && (p.gas ? 'Газова' : /індукц/i.test(p.text) ? 'Індукційна' : 'Електрична')],
-    ['Тип сушіння', {heatpump:'Тепловий насос', heater:'ТЕН'}[p.dry]], ...(p.feats || []),
+    ['Тип', {heatpump:'Тепловий (тепловий насос)', heater:'Теновий'}[p.dry]], ...(p.feats || []),
     ['Висота', p.height && `${p.height} см`], ['Ширина', p.width && `${p.width} см`], ['Глибина', p.depth && `${p.depth} см`]].filter(r => r[1]);
 }
 function renderProduct(p) {
