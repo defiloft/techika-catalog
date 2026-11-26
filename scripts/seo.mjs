@@ -236,6 +236,7 @@ const TRL = ${RU.tr.toString().replace('WORDS[', 'RU_WORDS[')};
   const DESC = `Б/у и новая бытовая техника из Германии и Европы в Киеве: стиральные и сушильные машины, холодильники, посудомойки, плиты, духовые шкафы, кофемашины. Проверенная, с гарантией. ${RUL.addr}.`;
   head = head.replace('<html lang="uk">', '<html lang="ru">')
     .replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="../">')
+    .replace('<a class="logolink" href="./" data-home', '<a class="logolink" href="ru/" data-home')  // з <base href="../"> «./» вело б на українську головну
     .replace(/<title>[^<]*<\/title>/, `<title>${esc(TITLE)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(DESC)}">`)
     .replace('<link rel="canonical" href="https://techika.com.ua/">', `<link rel="canonical" href="${SITE}ru/">`)
