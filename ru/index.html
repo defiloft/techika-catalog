@@ -332,6 +332,54 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .promo.bf b{font-size:20px;letter-spacing:.06em;text-transform:uppercase}
 .promo.bf .go{background:#ff4b2e;color:#fff}
 @media(max-width:479px){.promo .go{display:none}.promo .big{font-size:38px}}
+/* Black Friday: живий банер. A — таймер і відблиск, B — стрічка товарів, C — слайди. */
+.timer{display:flex;align-items:center;gap:4px;margin-top:8px;font-size:12px;color:#c9ccd2;font-variant-numeric:tabular-nums}
+.timer i{font-style:normal;margin-right:4px}
+.timer b{display:inline-grid;place-items:center;min-width:30px;padding:4px 5px;border-radius:7px;background:#2a2d33;color:#fff;font-size:15px!important;letter-spacing:0!important;text-transform:none!important;line-height:1.1}
+.timer b small{display:block;margin:0;font-size:9.5px;font-weight:500;color:#9aa0a8;opacity:1}
+.promo.bf{position:relative;overflow:hidden}
+.promo.shine:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,#ffffff1f 47%,#ffffff33 50%,#ffffff1f 53%,transparent 65%);transform:translateX(-120%);animation:shine 4.5s ease-in-out 1s infinite;pointer-events:none}
+@keyframes shine{0%{transform:translateX(-120%)}35%,100%{transform:translateX(120%)}}
+.promo.shine .big{animation:stamp 4.5s ease-in-out 1s infinite;transform-origin:50% 60%}
+@keyframes stamp{0%,40%,100%{transform:rotate(-4deg) scale(1)}46%{transform:rotate(-7deg) scale(1.12)}52%{transform:rotate(-3deg) scale(.98)}58%{transform:rotate(-4deg) scale(1)}}
+.bfbox{width:calc(100% - 2*var(--gutter));margin:4px var(--gutter) 14px;border-radius:var(--r-card);background:#111214;background-image:radial-gradient(120% 140% at 0% 0%,#2a2c31 0,#111214 60%);border:1px solid #2f3238;box-shadow:0 6px 18px #11121459;color:#fff;overflow:hidden}
+.bfhead{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px 10px;border:0;background:none;color:inherit;text-align:left}
+.bfhead .big{flex:none;font-family:var(--font-marker);font-size:40px;font-weight:700;line-height:.9;color:#ff4b2e;transform:rotate(-4deg)}
+.bfhead b{display:block;font-size:19px;letter-spacing:.06em;text-transform:uppercase;line-height:1.15}
+.bfhead small{display:block;font-size:13px;color:#c9ccd2}
+.dcard.dall{display:grid;place-items:center;height:100%;min-height:180px;padding:12px;border:0;background:#ffffff14;color:#fff;font-weight:600;font-size:14px;text-align:center}
+.bfhead .all{margin-left:auto;align-self:flex-start;flex:none;font-size:13.5px;font-weight:600;color:#ff7a62;white-space:nowrap}
+.deals{display:flex;gap:10px;margin:0;overflow-x:auto;padding:2px 16px 16px;scrollbar-width:none;overscroll-behavior-x:contain}
+.deals::-webkit-scrollbar{display:none}
+.deals li{flex:none;list-style:none}
+.dcard{display:block;width:118px;border-radius:12px;background:#fff;color:var(--floor);overflow:hidden;text-decoration:none}
+.dcard .ph{position:relative;display:block;aspect-ratio:1;background:var(--photo-wall)}
+.dcard .fr,.slide .pimg .fr{display:block;width:100%;height:100%}
+.dcard .ph img,.dcard .ph svg{width:100%;height:100%;object-fit:cover;display:block}
+.dcard .dpct{position:absolute;top:6px;left:6px;padding:2px 7px;border-radius:999px;background:#ff4b2e;color:#fff;font-weight:700;font-size:13px}
+.dcard .pr{display:block;padding:7px 9px 0;font-weight:700;font-size:15px}
+.dcard s{display:block;padding:0 9px;font-size:12px;color:#8a9099}
+.dcard .nm{display:block;padding:2px 9px 9px;font-size:12px;color:var(--concrete);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slides{position:relative;width:calc(100% - 2*var(--gutter));margin:4px var(--gutter) 14px}
+.strack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:var(--r-card);box-shadow:0 6px 18px #11121440}
+.strack::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;display:flex;align-items:center;gap:14px;min-height:132px;padding:16px;border:0;color:#fff;text-align:left;text-decoration:none;background:#111214;background-image:radial-gradient(120% 140% at 0% 0%,#2a2c31 0,#111214 60%)}
+.slide .big{flex:none;font-family:var(--font-marker);font-size:46px;font-weight:700;line-height:.9;color:#ff4b2e;transform:rotate(-4deg)}
+.slide b{display:block;font-size:19px;line-height:1.2}
+.slide .up{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ff7a62;margin-bottom:3px}
+.slide small{display:block;margin-top:3px;font-size:13.5px;color:#d3d6db}
+.slide.red{background:linear-gradient(105deg,#c62d18,#e8612c)}.slide.red .big,.slide.red .up{color:#fff}.slide.red small{color:#fff}
+.slide.blue{background:linear-gradient(105deg,#1f2f8f,#2f45c9)}.slide.blue .up{color:#ffd2c8}
+.slide .pimg{flex:none;width:96px;height:96px;border-radius:12px;overflow:hidden;background:#fff;position:relative}
+.slide .pimg img,.slide .pimg svg{width:100%;height:100%;object-fit:cover;display:block}
+.slide .pimg .dpct{position:absolute;top:5px;left:5px;padding:1px 6px;border-radius:999px;background:#ff4b2e;color:#fff;font-weight:700;font-size:12px}
+.slide s{color:#ffffffb3;font-size:13px;margin-left:6px}
+.sdots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.sdots i{width:7px;height:7px;border-radius:9px;background:#24272b40;transition:width .3s,background .3s}
+.sdots i.on{width:20px;background:var(--floor)}
+@media(min-width:960px){.dcard{width:150px}.slide{min-height:150px;padding:20px 26px}.bfhead{padding:18px 24px 12px}.deals{padding:2px 24px 20px}}
+@media(max-width:479px){.bfhead .all{display:none}}
+@media(prefers-reduced-motion:reduce){.promo.shine:after{display:none}}
 @media(min-width:960px){.promo{padding:18px 24px}.promo .big{font-size:56px}.promo b{font-size:20px}}
 /* «Повідомити, коли з'явиться» */
 .wish{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:28px var(--gutter) 0;padding:18px;border-radius:var(--r-card);background:var(--body);border:1px solid var(--line)}
@@ -418,6 +466,8 @@ const SHOP = {
   promo: '', promoNote: '',
   // Black Friday: до цієї дати (включно, за київським часом) банер чорний з написом «Black Friday», після — знову звичайний «Розпродаж техніки».
   blackFridayUntil: '2026-11-30',
+  // Вигляд банера Black Friday: 'a' — таймер і відблиск, 'b' — стрічка товарів зі знижкою, 'c' — слайди. Для перегляду: ?promo=b
+  promoStyle: 'b',
 };
 SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
 
@@ -1024,7 +1074,7 @@ function renderProduct(p) {
   $('#pmini').textContent = nameOf(p);
   $('#pbody').innerHTML = `<article class="pwrap">
     <div class="gallery"><div class="gtrack" tabindex="${n > 1 ? 0 : -1}" aria-roledescription="галерея" aria-label="${esc(nameOf(p))}: ${n} фото">${Array.from({length: n}, (_, i) => `<div class="slide">${frame(p, i, i === 0)}</div>`).join('')}</div>
-      ${n > 1 ? `<div class="dots" aria-hidden="true">${Array.from({length: n}, (_, i) => `<span class="${i ? '' : 'on'}"></span>`).join('')}</div>
+      ${n > 1 ? `<div class="sdots" aria-hidden="true">${Array.from({length: n}, (_, i) => `<span class="${i ? '' : 'on'}"></span>`).join('')}</div>
       <button type="button" class="nav prev" data-g="-1" aria-label="Предыдущее фото" disabled>${ARROW('l')}</button><button type="button" class="nav next" data-g="1" aria-label="Следующее фото">${ARROW('r')}</button>` : ''}</div>
     <div class="pmain">
       ${p.price ? `<div class="prow">${sticker(p.price, 'l')}</div>${deal(p, 1)}` : ''}
@@ -1127,10 +1177,47 @@ function promo() {
   const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Kyiv'}).format(new Date());
   if (!SHOP.promo && top && SHOP.blackFridayUntil && today <= SHOP.blackFridayUntil) {
     const [, m, d] = SHOP.blackFridayUntil.split('-'), until = `${+d} ${['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'][m - 1]}`;
-    return `<button type="button" class="promo bf" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>Black Friday</b><small>${goods(sale.length)} со скидкой до −${top}%. Только до ${until}</small></span><span class="go">Смотреть →</span></button>`;
+    const style = new URLSearchParams(location.search).get('promo') || SHOP.promoStyle;
+    const timer = `<span class="timer" data-left aria-label="До конца акции">${leftHTML()}</span>`;
+    const best = [...sale].sort((a, b) => pct(b) - pct(a));
+    const pic = p => p.photos[0] ? `<span class="fr"><img src="${esc(p.photos[0])}" alt="" loading="lazy" decoding="async" draggable="false" data-cat="${p.cat}"></span>` : illustration(p.cat, '');
+    if (style === 'b') {
+      const dcard = p => `<li><a class="dcard" href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}"><span class="ph">${pic(p)}<span class="dpct">−${pct(p)}%</span></span><span class="pr">${money(p.price)} ${SHOP.currency}</span><s>${money(p.oldPrice)} ${SHOP.currency}</s><span class="nm">${esc(nameOf(p))}</span></a></li>`;
+      return `<section class="bfbox"><button type="button" class="bfhead" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>Black Friday</b><small>${goods(sale.length)} · только до ${until}</small>${timer}</span><span class="all">Все →</span></button><ul class="deals" data-auto>${best.slice(0, 12).map(dcard).join('')}<li><button type="button" class="dcard dall" data-cat="sale">Все ${goods(sale.length)} →</button></li></ul></section>`;
+    }
+    if (style === 'c') {
+      const byCat = new Map(); for (const p of sale) { const c = byCat.get(p.cat) || []; c.push(p); byCat.set(p.cat, c); }
+      const cats = [...byCat].sort((a, b) => b[1].length - a[1].length).slice(0, 2), p = best[0];
+      const slides = [`<button type="button" class="slide" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><span class="up">Black Friday</span><b>${goods(sale.length)} со скидкой</b>${timer}</span></button>`,
+        `<a class="slide red" href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}"><span class="pimg">${pic(p)}<span class="dpct">−${pct(p)}%</span></span><span><span class="up">Самая большая скидка</span><b>${esc(nameOf(p))}</b><small><strong>${money(p.price)} ${SHOP.currency}</strong><s>${money(p.oldPrice)} ${SHOP.currency}</s></small></span></a>`,
+        ...cats.map(([c, xs], i) => `<button type="button" class="slide${i ? '' : ' blue'}" data-cat="sale"><span class="big" aria-hidden="true">−${Math.max(...xs.map(pct))}%</span><span><span class="up">${esc(CAT[c].name)}</span><b>${goods(xs.length)} со скидкой</b><small>Только до ${until}</small></span></button>`)];
+      return `<section class="slides" aria-label="Black Friday"><div class="strack" data-slides>${slides.join('')}</div><div class="sdots" aria-hidden="true">${slides.map((_, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</div></section>`;
+    }
+    return `<button type="button" class="promo bf${style === 'a' ? ' shine' : ''}" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>Black Friday</b><small>${goods(sale.length)} со скидкой до −${top}%. Только до ${until}</small>${style === 'a' ? timer : ''}</span><span class="go">Смотреть →</span></button>`;
   }
   return `<button type="button" class="promo" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>${esc(SHOP.promo || 'Распродажа техники')}</b><small>${esc(SHOP.promoNote || `${goods(sale.length)} со скидкой до −${top}%. Количество ограничено`)}</small></span><span class="go">Смотреть →</span></button>`;
 }
+// Скільки лишилось до кінця Black Friday (кінець дня за Києвом; у листопаді Київ — UTC+2).
+function leftHTML() {
+  const ms = Math.max(0, new Date(SHOP.blackFridayUntil + 'T23:59:59+02:00') - Date.now()), s = Math.floor(ms / 1000);
+  const box = (n, l) => `<b>${String(n).padStart(2, '0')}<small>${l}</small></b>`;
+  return `<i>Осталось</i>${box(Math.floor(s / 86400), 'дн')}${box(Math.floor(s / 3600) % 24, 'ч')}${box(Math.floor(s / 60) % 60, 'мин')}${box(s % 60, 'сек')}`;
+}
+setInterval(() => document.querySelectorAll('[data-left]').forEach(el => el.innerHTML = leftHTML()), 1000);
+// Рух у банері: стрічка товарів повільно їде сама, слайди гортаються кожні 5 с. Якщо людина торкнулась — чекаємо 6 с.
+// Хто вимкнув анімації в системі (prefers-reduced-motion) — нічого не рухається само, лише гортання пальцем.
+const CALM = matchMedia('(prefers-reduced-motion: reduce)');
+let HOLD = 0, SLIDE_T = Date.now(), DX = 0;
+['pointerdown', 'touchstart', 'wheel'].forEach(t => document.addEventListener(t, e => { if (e.target.closest?.('[data-auto],[data-slides]')) HOLD = Date.now() + 6000; }, {passive: true}));
+(function tick() {
+  requestAnimationFrame(tick);
+  if (CALM.matches || Date.now() < HOLD || document.hidden) return;
+  const d = document.querySelector('[data-auto]');
+  if (d && !d.matches(':hover')) { DX += .5; if (DX >= 1) { d.scrollLeft += Math.floor(DX); DX %= 1; } if (d.scrollLeft + d.clientWidth >= d.scrollWidth - 1) d.scrollLeft = 0; }
+  const t = document.querySelector('[data-slides]');
+  if (t && Date.now() - SLIDE_T > 5000) { SLIDE_T = Date.now(); const n = Math.round(t.scrollLeft / t.clientWidth) + 1; t.scrollTo({left: n * t.clientWidth >= t.scrollWidth - 1 ? 0 : n * t.clientWidth, behavior: 'smooth'}); }
+})();
+document.addEventListener('scroll', e => { const t = e.target; if (t.matches?.('[data-slides]')) { const n = Math.round(t.scrollLeft / t.clientWidth); t.nextElementSibling.querySelectorAll('i').forEach((x, i) => x.classList.toggle('on', i === n)); } }, true);
 // Що саме шукає людина: запит + вибрана категорія й фільтри.
 const wishText = () => { const w = [S.q.trim() && `«${S.q.trim()}»`, S.cat === 'sale' && 'распродажа', ...activeChips(S).map(a => a.label)].filter(Boolean);
   return `Добрый день! Ищу: ${w.join(', ') || 'технику'}. Напишите, пожалуйста, когда появится.`; };

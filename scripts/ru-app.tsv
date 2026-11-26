@@ -164,3 +164,11 @@ href="katalog/${SLUG[id]}/"	href="ru/katalog/${SLUG[id]}/"
 ALL = (d.products || []).map(parse).filter(	ALL = (d.products || []).map(parse).map(p => p && Object.assign(p, {chips: p.chips.map(TRL), warrantyText: TRL(p.warrantyText)})).filter(
 var H='uk',P='ru/'	var H='ru',P='../'
 <a class="langbtn" href="ru/" hreflang="ru" lang="ru" data-lang="ru" aria-label="Русская версия сайта">RU</a>	<a class="langbtn" href="./" hreflang="uk" lang="uk" data-lang="uk" aria-label="Українська версія сайту">UA</a>
+· лише до ${until}	· только до ${until}
+aria-label="До кінця акції"	aria-label="До конца акции"
+<i>Залишилось</i>	<i>Осталось</i>
+'дн')}${box(Math.floor(s / 3600) % 24, 'год')}${box(Math.floor(s / 60) % 60, 'хв')}${box(s % 60, 'сек')}	'дн')}${box(Math.floor(s / 3600) % 24, 'ч')}${box(Math.floor(s / 60) % 60, 'мин')}${box(s % 60, 'сек')}
+>Усі ${goods(sale.length)} →<	>Все ${goods(sale.length)} →<
+} зі знижкою</b>	} со скидкой</b>
+<span class="up">Найбільша знижка</span>	<span class="up">Самая большая скидка</span>
+<small>Лише до ${until}</small>	<small>Только до ${until}</small>
