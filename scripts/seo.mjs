@@ -44,7 +44,7 @@ const UK = {
   // Рід: «б/в» однаково, а «нова/новий» — ні.
   fem: new Set(['washers', 'dryers', 'freezers', 'dishwashers', 'hobs', 'stoves', 'ovens', 'micro', 'hoods', 'coffee', 'treadmills']),
   used: 'б/в', newF: 'нова', newM: 'новий', catName: c => c.name,
-  shop: SHOP.name, logo: `Техніка з Європи <span>Вигідно!</span>`, home: 'Головна', toHome: 'На головну', sections: 'Розділи каталогу',
+  shop: SHOP.name, logo: `Техніка з Європи <span>Вигідно!</span>`, home: 'Головна', toHome: 'На головну', sections: 'Розділи каталогу', sectionsShort: 'Розділи:',
   addr: `м. ${SHOP.city}, ${SHOP.address}`, hint: SHOP.addressHint, hours: SHOP.hours, map: 'На карті',
   about: 'вживана та нова побутова техніка з Європи в Києві.',
   goods: n => `${n} ${plural(n, 'товар', 'товари', 'товарів')}`,
@@ -62,7 +62,7 @@ const UK = {
 const RUL = {
   ...UK, code: 'ru', locale: 'ru_UA', base: 'ru/', slug: RU.SLUG, tr: RU.tr, one: RU.ONE, fem: RU.FEM,
   used: 'б/у', newF: 'новая', newM: 'новый', catName: c => RU.NAME[c.id] || c.name,
-  shop: 'Техника из Европы', logo: `Техника из Европы <span>Выгодно!</span>`, home: 'Главная', toHome: 'На главную', sections: 'Разделы каталога',
+  shop: 'Техника из Европы', logo: `Техника из Европы <span>Выгодно!</span>`, home: 'Главная', toHome: 'На главную', sections: 'Разделы каталога', sectionsShort: 'Разделы:',
   addr: `г. Киев, ${RU.tr(SHOP.address)}`, hint: SHOP.addressHint.replace('Шулявська', 'Шулявская'), hours: SHOP.hours.replace('без вихідних', 'без выходных'), map: 'На карте',
   about: 'б/у и новая бытовая техника из Европы в Киеве.',
   goods: n => `${n} ${plural(n, 'товар', 'товара', 'товаров')}`,
@@ -134,7 +134,7 @@ ${body}
   <p>${esc(L.addr)} (${esc(L.hint)}) · ${esc(L.hours)} · <a href="${esc(SHOP.mapUrl)}" target="_blank" rel="noopener">${L.map}</a></p>
   <div class="askrow"><p class="ask">${L.askAll}</p>
   <p class="btns"><a class="btn tg" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.1.4-1.1 1.1-.2 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.6zM9.6 14.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2z"/></svg>Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c5 0 8.6 2.4 8.6 8.2s-3.6 8-8.6 8c-.9 0-1.8-.1-2.6-.3L6 21v-3.2C4.2 16.4 3.4 14.2 3.4 11 3.4 5.2 7 2.8 12 2.8z"/><path d="M9.2 7.6c.4-.2.8 0 1 .4l.6 1.3c.1.3 0 .6-.2.8l-.4.4c.4 1 1.3 1.9 2.3 2.3l.4-.4c.2-.2.5-.3.8-.2l1.3.6c.4.2.6.6.4 1-.4 1-1.4 1.5-2.4 1.1-2.2-.8-3.9-2.5-4.7-4.7-.4-1 .1-2 .9-2.6z" fill="currentColor" stroke="none"/></svg>Viber</a></p></div>
-  <nav class="cats" aria-label="${L.sections}">${CATLIST.map(c => `<a href="${up}${L.base}katalog/${L.slug[c.id]}/">${esc(L.catName(c))}</a>`).join('')}</nav>
+  <nav class="cats" aria-label="${L.sections}"><b>${L.sectionsShort}</b>${CATLIST.map(c => `<a href="${up}${L.base}katalog/${L.slug[c.id]}/">${esc(L.catName(c))}</a>`).join('')}</nav>
   <p class="langs">${sw}</p>
 </footer>
 </div>
