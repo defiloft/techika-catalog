@@ -158,6 +158,22 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .morebtn{display:flex;flex-direction:column;align-items:center;gap:8px;margin:22px var(--gutter) 0;text-align:center}
 .morebtn .btn{width:100%;max-width:420px;background:var(--body)}
 .morebtn small{color:var(--concrete);font-size:13px}
+/* ---- викуп / утилізація старої техніки (BUY) ---- */
+.buy{display:flex;align-items:center;gap:14px;width:calc(100% - 2*var(--gutter));margin:18px var(--gutter) 0;padding:14px 16px;border:1px solid #bfe0cb;border-radius:var(--r-card);background:#eaf6ee;color:var(--floor);text-align:left}
+.buy:hover{border-color:#8cc8a2}
+.bico{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--ok);color:#fff}
+.bico svg{width:30px;height:30px}
+.buy b{display:block;font-size:16.5px;line-height:1.25}
+.buy small{display:block;margin-top:3px;color:var(--concrete);font-size:13.5px;line-height:1.35}
+.buy .go{margin-left:auto;flex:none;padding:9px 14px;border-radius:11px;background:var(--ok);color:#fff;font-weight:700;font-size:14px;white-space:nowrap}
+@media(max-width:479px){.buy .go{display:none}}
+@media(min-width:960px){.buy{padding:18px 24px;gap:20px}.buy b{font-size:19px}.buy small{font-size:14.5px}}
+.blist{margin:0;padding:6px var(--gutter) 4px;list-style:none}
+.blist li{display:flex;gap:10px;padding:9px 0;font-size:15px;line-height:1.4}
+.blist li::before{content:"";flex:none;width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--ok)}
+.blist li.no::before{background:var(--line)}.blist li.no{color:var(--concrete)}
+.blead{padding:14px var(--gutter) 0;font-size:15px;color:var(--concrete)}
+.btel{color:var(--floor);font-weight:600}
 
 /* price sticker */
 .sticker{display:inline-flex;align-items:baseline;gap:4px;padding:0 10px 1px 9px;background:var(--body);border:1px solid var(--line);border-radius:var(--r-tag);color:var(--marker);font-family:var(--font-marker);font-weight:700;line-height:1;transform:rotate(-2.5deg);transform-origin:left bottom;box-shadow:0 1px #24272b0f;white-space:nowrap}
@@ -434,6 +450,15 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
     <div class="sfoot" id="cfoot"></div>
   </div>
 </div>
+<div class="sheet" id="bsheet" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Выкуп техники" tabindex="-1">
+    <div class="handle" aria-hidden="true"></div>
+    <header class="shead"><h2>Выкуп и вывоз техники</h2><button type="button" class="iconbtn" data-close aria-label="Закрыть"></button></header>
+    <div class="sbody" id="bbody"></div>
+    <div class="sfoot" id="bfoot"></div>
+  </div>
+</div>
 <button type="button" class="cartbar" id="cartbar" hidden></button>
 <div id="toast" role="status"></div>
 
@@ -447,6 +472,8 @@ const SHOP = {
   promo: '', promoNote: '',
   // Black Friday: до цієї дати (включно, за київським часом) банер чорний з написом «Black Friday», після — знову звичайний «Розпродаж техніки».
   blackFridayUntil: '2026-11-30',
+  // Картка «Викупимо або вивеземо вашу стару техніку» на головній. false — сховати.
+  buyback: true,
 };
 SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
 
@@ -905,6 +932,7 @@ function homeA(list) {
   const shelf = (title, items, btn) => items.length ? `<section class="shelf"><div class="shead2"><h2>${title}</h2>${btn}</div><ul class="hrow">${items.slice(0, 10).map(p => `<li>${card(p, null, true)}</li>`).join('')}</ul></section>` : '';
   const sale = list.filter(p => p.oldPrice && p.price).sort((a, b) => pct(b) - pct(a));
   return promo() + `<ul class="tiles">${SALES ? tile('sale', 'Распродажа', SALES, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}</ul>`
+    + buyCard()
     + shelf('Самые большие скидки', sale, `<button type="button" data-cat="sale">Все ${SALES} →</button>`)
     + shelf('Новые поступления', list, `<button type="button" data-showall>Все →</button>`)
     + `<button type="button" class="btn primary allbtn" data-showall>Смотреть все ${goods(list.length)}</button>`;
@@ -947,9 +975,9 @@ function sheetOpen(el) {
 function sheetClose(el) {
   if (el.hidden) return;
   el.classList.remove('shown');
-  setTimeout(() => { el.hidden = true; if ($('#fsheet').hidden && $('#psheet').hidden && $('#csheet').hidden) document.documentElement.classList.remove('no-scroll'); el._ret?.focus?.({preventScroll: true}); }, 260);
+  setTimeout(() => { el.hidden = true; if ($('#fsheet').hidden && $('#psheet').hidden && $('#csheet').hidden && $('#bsheet').hidden) document.documentElement.classList.remove('no-scroll'); el._ret?.focus?.({preventScroll: true}); }, 260);
 }
-for (const el of [$('#fsheet'), $('#psheet'), $('#csheet')]) {
+for (const el of [$('#fsheet'), $('#psheet'), $('#csheet'), $('#bsheet')]) {
   el.querySelectorAll('[data-close]').forEach(b => { if (b.tagName === 'BUTTON') b.innerHTML = X(16); b.onclick = () => el.id === 'psheet' ? closeProduct() : sheetClose(el); });
   el.addEventListener('keydown', e => {
     if (e.key === 'Escape') { e.stopPropagation(); el.id === 'psheet' ? closeProduct() : sheetClose(el); }
@@ -960,7 +988,7 @@ for (const el of [$('#fsheet'), $('#psheet'), $('#csheet')]) {
 
 // Свайп вниз закриває шторку (телефон): тягнемо за ручку/шапку або будь-де, коли вміст прокручено до самого верху.
 // Горизонтальні свайпи (галерея фото, «Схожі») не чіпаємо: напрям визначаємо за першим рухом пальця.
-for (const el of [$('#fsheet'), $('#psheet'), $('#csheet')]) {
+for (const el of [$('#fsheet'), $('#psheet'), $('#csheet'), $('#bsheet')]) {
   const panel = el.querySelector('.panel'), body = el.querySelector('.sbody');
   let y0, x0, t0, dy = 0, mode = '';
   panel.addEventListener('touchstart', e => {
@@ -1231,6 +1259,29 @@ document.addEventListener('error', e => { const i = e.target; if (i.tagName === 
 
 /* ---------- банер, «Повідомити, коли з'явиться» ---------- */
 const tgLink = t => `https://t.me/${SHOP.tg}?text=${encodeURIComponent(t)}`;
+/* ---------- викуп і вивіз старої техніки ---------- */
+const BUYICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><path d="M5.5 11l1.7 1.7L10.5 9.4"/></svg>';
+const BUY = {
+  title: 'Выкупим или вывезем вашу старую технику',
+  short: 'Покупаем рабочую и неисправную. Вывоз бесплатно по Киеву и области.',
+  items: ['Покупаем рабочую и неисправную бытовую технику: стиральные машины, холодильники, морозильные камеры, микроволновки, газовые и электроплиты.',
+    'Вывезем бесплатно и аккуратно — по Киеву и области, в удобное для вас время.',
+    'Каждую технику оцениваем индивидуально: пришлите фото и модель — назовём цену.'],
+  no: 'Технику старше 15 лет и бойлеры не берём.',
+  ask: 'Добрый день! Хочу продать / сдать старую технику: ',
+};
+const buyBtns = () => `<a class="btn tgb" href="${tgLink(BUY.ask)}" target="_blank" rel="noopener" data-track="click-telegram">${TGICON}Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">${VBICON}Viber</a>`;
+const buyPhone = () => SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
+// Картка на головній під плитками категорій; натиск відкриває шторку з умовами (умови — з оголошень на OLX).
+const buyCard = () => SHOP.buyback ? `<button type="button" class="buy" data-buy><span class="bico">${BUYICON}</span><span><b>${BUY.title}</b><small>${BUY.short}</small></span><span class="go">Подробнее</span></button>` : '';
+function buyOpen() {
+  $('#bbody').innerHTML = `<p class="blead">Не знаете, куда деть старую стиральную машину или холодильник? Напишите нам.</p><ul class="blist">${BUY.items.map(t => `<li>${t}</li>`).join('')}<li class="no">${BUY.no}</li></ul>
+    <p class="blead">Или звоните: <a class="btel" href="tel:+${SHOP.viber}">${buyPhone()}</a></p>`;
+  $('#bfoot').innerHTML = buyBtns().replace(/class="btn /g, 'class="btn block ');
+  sheetOpen($('#bsheet'));
+}
+document.addEventListener('click', e => { if (e.target.closest('[data-buy]')) buyOpen(); });
+$('#bsheet').addEventListener('click', e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); });
 function promo() {
   const sale = ALL.filter(p => p.oldPrice && p.price), top = sale.length ? Math.max(...sale.map(pct)) : 0;
   if (!SHOP.promo && !top) return '';
