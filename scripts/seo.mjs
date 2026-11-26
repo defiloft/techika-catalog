@@ -84,6 +84,10 @@ const BY = {uk: UK, ru: RUL};
 // Адреса однієї й тієї самої сторінки різними мовами: ключ 'home' | 'cat:<id>' | 'p:<файл>'.
 const rel = (L, key) => L.base + (key === 'home' ? '' : key.startsWith('cat:') ? `katalog/${L.slug[key.slice(4)]}/` : `tovar/${key.slice(2)}`);
 const urlOf = (L, key) => SITE + rel(L, key);
+// Той самий скрипт вибору мови, що й у index.html (там він написаний вручну): беремо його звідти.
+const LANGJS = (html.match(/<script>\/\* Мова:[\s\S]*?<\/script>/) || [''])[0];
+if (!LANGJS) throw new Error('index.html: не знайшов скрипт вибору мови');
+const langjs = (here, to) => LANGJS.replace(/var H='uk',P='[^']*'/, `var H='${here}',P='${to}'`);
 const alternates = key => LANGS.map(L => `<link rel="alternate" hreflang="${L.code}" href="${urlOf(L, key)}">`).join('\n') +
   `\n<link rel="alternate" hreflang="x-default" href="${urlOf(UK, key)}">`;
 
@@ -94,7 +98,7 @@ const CATLIST = CATS.filter(c => SLUG[c.id] && COUNT[c.id]);
 function page(L, {key, title, desc, image, up, body, json}) {
   const canon = urlOf(L, key), other = BY[L.switchTo];
   // Перемикач мови: на українських сторінках — скромне посилання внизу, на російських — ще й «UA» вгорі.
-  const sw = `<a class="lang" href="${up}${rel(other, key)}" hreflang="${other.code}" lang="${other.code}">${L.switchLabel}</a>`;
+  const sw = `<a class="lang" href="${up}${rel(other, key)}" hreflang="${other.code}" lang="${other.code}" data-lang="${other.code}">${L.switchLabel}</a>`;
   return `<!doctype html>
 <html lang="${L.code}">
 <head>
@@ -104,6 +108,7 @@ function page(L, {key, title, desc, image, up, body, json}) {
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${canon}">
 ${alternates(key)}
+${langjs(L.code, up + rel(other, key))}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="${L.locale}">
 <meta property="og:site_name" content="${esc(L.shop)}">
@@ -122,7 +127,7 @@ ${json.map(ld).join('\n')}
 </head>
 <body>
 <div class="page">
-<header class="header"><a class="shop" href="${up}${L.base}">${L.logo}</a>${L.code === 'uk' ? '' : `<span class="hlang"><a href="${up}${rel(other, key)}" hreflang="uk" lang="uk" title="${L.switchLabel}">UA</a></span>`}<a href="${up}${L.base}" aria-label="${L.toHome}"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
+<header class="header"><a class="shop" href="${up}${L.base}">${L.logo}</a>${L.code === 'uk' ? '' : `<span class="hlang"><a href="${up}${rel(other, key)}" hreflang="uk" lang="uk" data-lang="uk" title="${L.switchLabel}">UA</a></span>`}<a href="${up}${L.base}" aria-label="${L.toHome}"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
 ${body}
 <footer class="footer">
   <p><b>${esc(L.shop)}</b> — ${L.about}</p>
@@ -157,7 +162,7 @@ for (const c of CATLIST) {
 <nav class="crumbs"><a href="${up}${L.base}">${L.home}</a> › <span>${esc(L.catName(c))}</span></nav>
 <h1>${esc(t.h1)}</h1>
 <p class="lead">${esc(L.lead(items.length, L.addr, L.hours.replace(/, без вих\S+/, '')))}</p>
-<p><a class="btn primary" href="${up}?cat=${c.id}">${L.filters}</a></p>
+<p><a class="btn primary" href="${up}${L.base}?cat=${c.id}">${L.filters}</a></p>
 <ul class="grid">${items.map(p => card(L, p, up)).join('')}</ul>
 </main>`;
     out.set(rel(L, key) + 'index.html', page(L, {key, title: t.title, desc: t.desc, up, body, json: [
@@ -188,7 +193,7 @@ ${p.price ? `<p class="price big">${money(p.price)} <small>грн</small>${p.old
 <p class="sub">ID ${esc(p.id)} · ${p.isNew ? L.isNew : L.isUsed} · ${p.reserved ? L.reserved : L.inStock}${warr ? ` · ${L.Warranty} ${esc(warr)}` : ''}</p>
 <p class="btns"><a class="btn primary" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(ask)}" target="_blank" rel="noopener" data-track="click-telegram">${L.write}</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></p>
 <p class="desc">${text}</p>
-<p><a href="${up}?p=${encodeURIComponent(p.id)}">${L.open}</a></p>
+<p><a href="${up}${L.base}?p=${encodeURIComponent(p.id)}">${L.open}</a></p>
 </div>
 </div>
 </main>`;
@@ -202,21 +207,43 @@ ${p.price ? `<p class="price big">${money(p.price)} <small>грн</small>${p.old
   }
 }
 
-// Російська головна (ru/). Українська головна — сам каталог index.html, його не генеруємо.
+// Російська головна (ru/) — повний каталог: копія index.html з перекладеним інтерфейсом.
+// Фрагменти для заміни — у scripts/ru-app.tsv; розбір дописів не чіпаємо (там регулярки на українські слова).
 {
-  const L = RUL, up = '../', key = 'home';
-  const body = `<main>
-<h1>Б/у техника из Европы в Киеве</h1>
-<p class="lead">Стиральные и сушильные машины, холодильники, посудомоечные машины, плиты, духовые шкафы, кофемашины и другая бытовая техника из Германии и Европы. ${RUL.goods(ALL.length)} в наличии, каждая проверена перед продажей, с гарантией. Магазин: ${esc(L.addr)} (${esc(L.hint)}), ежедневно ${esc(L.hours.replace(/, без вых\S+/, ''))}.</p>
-<p class="btns"><a class="btn primary" href="${up}">Открыть весь каталог</a></p>
-<h2>Разделы</h2>
-<ul class="tiles">${CATLIST.map(c => `<li><a href="${up}${L.base}katalog/${L.slug[c.id]}/">${esc(L.catName(c))} <span>${COUNT[c.id]}</span></a></li>`).join('')}</ul>
-<h2>Новые поступления</h2>
-<ul class="grid">${ALL.slice(0, 24).map(p => card(L, p, up)).join('')}</ul>
-</main>`;
-  out.set('ru/index.html', page(L, {key, title: `Б/у техника из Европы в Киеве — стиральные машины, холодильники | ${L.shop}`,
-    desc: `Б/у и новая бытовая техника из Германии и Европы в Киеве: стиральные и сушильные машины, холодильники, посудомойки, плиты, кофемашины. Проверенная, с гарантией. ${L.addr}.`,
-    up, body, json: [{'@context': 'https://schema.org', ...STORE}]}));
+  const pairs = fs.readFileSync(path.join(ROOT, 'scripts/ru-app.tsv'), 'utf8').split('\n').filter(l => l && !l.startsWith('#')).map(l => l.split('\t'));
+  const a = html.indexOf('/* ---------- розбір допису з Telegram'), b = html.indexOf('/* ---------- пошук:');
+  let head = html.slice(0, a), tail = html.slice(b);
+  const middle = html.slice(a, b);
+  const missed = [];
+  for (const [uk, ru] of pairs) {
+    if (!head.includes(uk) && !tail.includes(uk)) { missed.push(uk); continue; }
+    head = head.split(uk).join(ru); tail = tail.split(uk).join(ru);
+  }
+  if (missed.length) console.warn(`ru/index.html: не знайшов у index.html ${missed.length} фрагм.:\n  ` + missed.join('\n  '));
+  // Назви розділів і переклад характеристик — під час роботи сторінки (CATS потрібні розбору дописів українською).
+  const boot = `/* ---------- російська версія (цей файл генерує scripts/seo.mjs з index.html — правте index.html) ---------- */
+const RU_CAT = ${JSON.stringify(Object.fromEntries(CATS.map(c => [c.id, {name: RU.NAME[c.id] || c.name, short: RU.SHORT[c.id] || c.short, ...(c.one && {one: RU.ONE[c.id] || c.one})}])))};
+for (const c of CATS) { const r = RU_CAT[c.id]; c.terms = [...c.terms, c.name.toLowerCase(), r.name.toLowerCase()]; Object.assign(c, r); }
+Object.assign(SLUG, ${JSON.stringify(RU.SLUG)});
+const RU_WORDS = ${JSON.stringify(RU.WORDS)};
+const TRL = ${RU.tr.toString().replace('WORDS[', 'RU_WORDS[')};
+
+`;
+  const at = head.indexOf('/* ---------- іконки');
+  head = head.slice(0, at) + boot + head.slice(at);
+  const TITLE = `Б/у техника из Европы в Киеве — стиральные машины, холодильники | ${RUL.shop}`;
+  const DESC = `Б/у и новая бытовая техника из Германии и Европы в Киеве: стиральные и сушильные машины, холодильники, посудомойки, плиты, духовые шкафы, кофемашины. Проверенная, с гарантией. ${RUL.addr}.`;
+  head = head.replace('<html lang="uk">', '<html lang="ru">')
+    .replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="../">')
+    .replace(/<title>[^<]*<\/title>/, `<title>${esc(TITLE)}</title>`)
+    .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(DESC)}">`)
+    .replace('<link rel="canonical" href="https://techika.com.ua/">', `<link rel="canonical" href="${SITE}ru/">`)
+    .replace('content="uk_UA"', 'content="ru_UA"')
+    .replace(/<meta property="og:site_name" content="[^"]*">/, `<meta property="og:site_name" content="${esc(RUL.shop)}">`)
+    .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(TITLE)}">`)
+    .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(DESC)}">`)
+    .replace(`<meta property="og:url" content="${SITE}">`, `<meta property="og:url" content="${SITE}ru/">`);
+  out.set('ru/index.html', head + middle + tail);
 }
 
 // Записуємо лише змінене; сторінки проданих товарів і порожніх розділів прибираємо (обома мовами).
