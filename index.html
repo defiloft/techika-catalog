@@ -329,11 +329,31 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .promo b{display:block;font-size:17px;line-height:1.2}
 .promo small{display:block;margin-top:2px;font-size:13.5px;opacity:.92}
 .promo .go{margin-left:auto;flex:none;padding:9px 14px;border-radius:11px;background:#fff;color:var(--sale);font-weight:700;font-size:14px;white-space:nowrap}
-.promo.bf{background:#111214;background-image:radial-gradient(120% 140% at 0% 0%,#2a2c31 0,#111214 60%);box-shadow:0 6px 18px #11121459;border:1px solid #2f3238}
-.promo.bf .big{color:#ff4b2e}
-.promo.bf b{font-size:20px;letter-spacing:.06em;text-transform:uppercase}
-.promo.bf .go{background:#ff4b2e;color:#fff}
 @media(max-width:479px){.promo .go{display:none}.promo .big{font-size:38px}}
+/* Black Friday: слайди, що гортаються самі (акція з таймером, найбільша знижка, категорії). */
+.timer{display:flex;align-items:center;gap:4px;margin-top:8px;font-size:12px;color:#c9ccd2;font-variant-numeric:tabular-nums}
+.timer i{font-style:normal;margin-right:4px}
+.timer b{display:inline-grid;place-items:center;min-width:30px;padding:4px 5px;border-radius:7px;background:#2a2d33;color:#fff;font-size:15px!important;letter-spacing:0!important;text-transform:none!important;line-height:1.1}
+.timer b small{display:block;margin:0;font-size:9.5px;font-weight:500;color:#9aa0a8;opacity:1}
+.bfslides{position:relative;width:calc(100% - 2*var(--gutter));margin:4px var(--gutter) 14px}
+.bftrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:var(--r-card);box-shadow:0 6px 18px #11121440}
+.bftrack::-webkit-scrollbar{display:none}
+.bfs{flex:0 0 100%;scroll-snap-align:start;display:flex;align-items:center;gap:14px;min-height:132px;padding:16px;border:0;color:#fff;text-align:left;text-decoration:none;background:#111214;background-image:radial-gradient(120% 140% at 0% 0%,#2a2c31 0,#111214 60%)}
+.bfs .big{flex:none;font-family:var(--font-marker);font-size:46px;font-weight:700;line-height:.9;color:#ff4b2e;transform:rotate(-4deg)}
+.bfs b{display:block;font-size:19px;line-height:1.2}
+.bfs .up{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ff7a62;margin-bottom:3px}
+.bfs small{display:block;margin-top:3px;font-size:13.5px;color:#d3d6db}
+.bfs.red{background:linear-gradient(105deg,#c62d18,#e8612c)}.bfs.red .big,.bfs.red .up{color:#fff}.bfs.red small{color:#fff}
+.bfs.blue{background:linear-gradient(105deg,#1f2f8f,#2f45c9)}.bfs.blue .up{color:#ffd2c8}
+.bfs .pimg{flex:none;width:96px;height:96px;border-radius:12px;overflow:hidden;background:#fff;position:relative}
+.bfs .pimg .fr{display:block;width:100%;height:100%}
+.bfs .pimg img,.bfs .pimg svg{width:100%;height:100%;object-fit:cover;display:block}
+.bfs .pimg .dpct{position:absolute;top:5px;left:5px;padding:1px 6px;border-radius:999px;background:#ff4b2e;color:#fff;font-weight:700;font-size:12px}
+.bfs s{color:#ffffffb3;font-size:13px;margin-left:6px}
+.bfdots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.bfdots i{width:7px;height:7px;border-radius:9px;background:#24272b40;transition:width .3s,background .3s}
+.bfdots i.on{width:20px;background:var(--floor)}
+@media(min-width:960px){.bfs{min-height:150px;gap:28px;padding:22px 40px}.bfs .big{font-size:64px}.bfs b{font-size:26px}.bfs .up{font-size:13px}.bfs small{font-size:15px}.bfs .pimg{width:120px;height:120px}}
 @media(min-width:960px){.promo{padding:18px 24px}.promo .big{font-size:56px}.promo b{font-size:20px}}
 /* «Повідомити, коли з'явиться» */
 .wish{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:28px var(--gutter) 0;padding:18px;border-radius:var(--r-card);background:var(--body);border:1px solid var(--line)}
@@ -1117,10 +1137,36 @@ function promo() {
   const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Kyiv'}).format(new Date());
   if (!SHOP.promo && top && SHOP.blackFridayUntil && today <= SHOP.blackFridayUntil) {
     const [, m, d] = SHOP.blackFridayUntil.split('-'), until = `${+d} ${['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'][m - 1]}`;
-    return `<button type="button" class="promo bf" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>Black Friday</b><small>${goods(sale.length)} зі знижкою до −${top}%. Лише до ${until}</small></span><span class="go">Дивитися →</span></button>`;
+    const timer = `<span class="timer" data-left aria-label="До кінця акції">${leftHTML()}</span>`;
+    const best = [...sale].sort((a, b) => pct(b) - pct(a));
+    const pic = p => p.photos[0] ? `<span class="fr"><img src="${esc(p.photos[0])}" alt="" loading="lazy" decoding="async" draggable="false" data-cat="${p.cat}"></span>` : illustration(p.cat, '');
+    const byCat = new Map(); for (const p of sale) { const c = byCat.get(p.cat) || []; c.push(p); byCat.set(p.cat, c); }
+    const cats = [...byCat].sort((a, b) => b[1].length - a[1].length).slice(0, 2), p = best[0];
+    const slides = [`<button type="button" class="bfs" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><span class="up">Black Friday</span><b>${goods(sale.length)} зі знижкою</b>${timer}</span></button>`,
+        `<a class="bfs red" href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}"><span class="pimg">${pic(p)}<span class="dpct">−${pct(p)}%</span></span><span><span class="up">Найбільша знижка</span><b>${esc(nameOf(p))}</b><small><strong>${money(p.price)} ${SHOP.currency}</strong><s>${money(p.oldPrice)} ${SHOP.currency}</s></small></span></a>`,
+        ...cats.map(([c, xs], i) => `<button type="button" class="bfs${i ? '' : ' blue'}" data-cat="sale"><span class="big" aria-hidden="true">−${Math.max(...xs.map(pct))}%</span><span><span class="up">${esc(CAT[c].name)}</span><b>${goods(xs.length)} зі знижкою</b><small>Лише до ${until}</small></span></button>`)];
+    return `<section class="bfslides" aria-label="Black Friday"><div class="bftrack" data-slides>${slides.join('')}</div><div class="bfdots" aria-hidden="true">${slides.map((_, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</div></section>`;
   }
   return `<button type="button" class="promo" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>${esc(SHOP.promo || 'Розпродаж техніки')}</b><small>${esc(SHOP.promoNote || `${goods(sale.length)} зі знижкою до −${top}%. Кількість обмежена`)}</small></span><span class="go">Дивитися →</span></button>`;
 }
+// Скільки лишилось до кінця Black Friday (кінець дня за Києвом; у листопаді Київ — UTC+2).
+function leftHTML() {
+  const ms = Math.max(0, new Date(SHOP.blackFridayUntil + 'T23:59:59+02:00') - Date.now()), s = Math.floor(ms / 1000);
+  const box = (n, l) => `<b>${String(n).padStart(2, '0')}<small>${l}</small></b>`;
+  return `<i>Залишилось</i>${box(Math.floor(s / 86400), 'дн')}${box(Math.floor(s / 3600) % 24, 'год')}${box(Math.floor(s / 60) % 60, 'хв')}${box(s % 60, 'сек')}`;
+}
+setInterval(() => document.querySelectorAll('[data-left]').forEach(el => el.innerHTML = leftHTML()), 1000);
+// Слайди банера гортаються самі кожні 5 с. Якщо людина торкнулась — чекаємо 6 с.
+// Хто вимкнув анімації в системі (prefers-reduced-motion) — нічого не рухається само, лише гортання пальцем.
+const CALM = matchMedia('(prefers-reduced-motion: reduce)');
+let HOLD = 0, SLIDE_T = Date.now();
+['pointerdown', 'touchstart', 'wheel'].forEach(t => document.addEventListener(t, e => { if (e.target.closest?.('[data-slides]')) HOLD = Date.now() + 6000; }, {passive: true}));
+setInterval(() => {
+  if (CALM.matches || Date.now() < HOLD || document.hidden) return;
+  const t = document.querySelector('[data-slides]');
+  if (t && Date.now() - SLIDE_T > 5000) { SLIDE_T = Date.now(); const n = Math.round(t.scrollLeft / t.clientWidth) + 1; t.scrollTo({left: n * t.clientWidth >= t.scrollWidth - 1 ? 0 : n * t.clientWidth, behavior: 'smooth'}); }
+}, 500);
+document.addEventListener('scroll', e => { const t = e.target; if (t.matches?.('[data-slides]')) { const n = Math.round(t.scrollLeft / t.clientWidth); t.nextElementSibling.querySelectorAll('i').forEach((x, i) => x.classList.toggle('on', i === n)); } }, true);
 // Що саме шукає людина: запит + вибрана категорія й фільтри.
 const wishText = () => { const w = [S.q.trim() && `«${S.q.trim()}»`, S.cat === 'sale' && 'розпродаж', ...activeChips(S).map(a => a.label)].filter(Boolean);
   return `Добрий день! Шукаю: ${w.join(', ') || 'техніку'}. Напишіть, будь ласка, коли з’явиться.`; };
