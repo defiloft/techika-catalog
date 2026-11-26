@@ -1063,6 +1063,11 @@ function specsOf(p) {
 const RUV = document.documentElement.lang === 'ru';
 let WEB = new Map();
 const webKey = p => `${p.brand} ${p.model}`.toUpperCase().replace(/[^0-9A-ZА-ЯІЇЄҐ]/g, '');
+// Модель у дописі буває з регіональним хвостом («/EO», «/UA»), серією спереду («2200 series EP2220/10») чи кодом після неї («RS68CG883DS9EF9752»).
+const webGet = p => { const K = s => s.toUpperCase().replace(/[^0-9A-ZА-ЯІЇЄҐ]/g, ''), b = K(p.brand || ''), full = webKey(p);
+  for (const m of [String(p.model || '').replace(/\/[A-Z0-9]{1,3}$/i, ''), String(p.model || '').split(/\s+/).pop()]) { const w = WEB.get(b + K(m)); if (w) return w; }
+  let best = null, bl = 0; for (const k of WEB.keys()) if (k.length > bl && k.length >= b.length + 6 && k.startsWith(b) && full.startsWith(k)) { best = k; bl = k.length; }
+  return best && WEB.get(best); };
 const WSPEC = [
   ['energy', 'Клас енергоспоживання', 'Класс энергопотребления'],
   ['kwh', 'Споживання енергії', 'Потребление энергии', 'кВт·год/рік', 'кВт·ч/год'],
@@ -1097,7 +1102,7 @@ const WSPEC = [
   ['feat', 'Особливості', 'Особенности'],
 ];
 function webSpecs(p, own) {
-  const w = WEB.get(webKey(p)); if (!w) return null;
+  const w = WEB.get(webKey(p)) || webGet(p); if (!w) return null;
   const have = new Set(own.map(r => String(r[0]).toLowerCase()));
   const rows = WSPEC.filter(([k, uk]) => w.s[k] != null && !have.has(uk.toLowerCase()) && !(k === 'defrost' && p.cooling) && !(k === 'air' && /м³/.test(p.text || '')))
     .map(([k, uk, ru, u, ur, pre]) => {
