@@ -606,9 +606,6 @@ function featsOf(t, low, cat) {
       /чавунн\S* решітк/.test(low) && 'чавунні решітки', /турбоко[мн]форк/.test(low) && 'турбоконфорка'].filter(Boolean);
     if (top.length) F.push(['Поверхня', up(top.join(', '))]);
   }
-  // Пральні, сушильні
-  const dkg = g(/(\d+(?:[.,]\d)?)\s*кг\s+завантаження\s+суш/i);
-  if (dkg) F.push(['Завантаження сушіння', `${dkg.replace(',', '.')} кг`]);
   // Тренажери
   const lt = g(/тип(?:\s+навантаження)?[\s:]+([а-яіїє]*(?:магн|маніт|гідравл|механ)[а-яіїє]*)/i);
   if (lt && cat !== 'treadmills') F.push(['Тип навантаження', /електр/i.test(lt) ? 'Електромагнітний' : /гідр/i.test(lt) ? 'Гідравлічний' : /механ/i.test(lt) ? 'Механічний' : 'Магнітний']);
@@ -697,7 +694,7 @@ function parse(p) {
     id: String(p.pid || p.id), key: p.id, cat: cat.id, brand, model, price, oldPrice,
     photos: [...new Set([...(p.images || []), ...(p.extra || [])])], date: p.date || '', url: p.url, text: t,  // extra — фото з теми «Запит фото» за ID
     washdry: cat.id === 'washers' && /прально.?сушильн|завантаження\s+суш/i.test(t),  // прально-сушильна: підкатегорія в «Пральних»
-    isNew, reserved, warrantyText, warrantyMonths, height, width, depth, feats: featsOf(t, low, cat.id),
+    isNew, reserved, warrantyText, warrantyMonths, dkg: num((t.match(/(\d+(?:[.,]\d)?)\s*кг\s+завантаження\s+суш/i) || [])[1] || ''), height, width, depth, feats: featsOf(t, low, cat.id),
     kg: kg ? num(kg) : undefined, rpm, cooling, diag, sets, chips: chips.slice(0, 3),
     load: cat.id === 'washers' ? loadType(low, model, width, height) : '',
     gas: (cat.id === 'stoves' || cat.id === 'hobs') && /газ|підпал/.test(low),
@@ -1007,7 +1004,7 @@ $('#fapply').onclick = () => { setState(draft); sheetClose($('#fsheet')); };
 /* ---------- картка товару ---------- */
 const msg = p => `Добрый день! Интересует ID ${p.id}, ${nameOf(p)}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim();
 function specsOf(p) {
-  return [['Состояние', p.isNew ? 'Новая' : 'Б/у'], ['Загрузка', p.kg && `${p.kg} кг`], ['Отжим', p.rpm && `${p.rpm} об/мин`],
+  return [['Состояние', p.isNew ? 'Новая' : 'Б/у'], [p.dkg ? 'Загрузка стирки' : 'Загрузка', p.kg && `${p.kg} кг`], ['Загрузка сушки', p.dkg && `${p.dkg} кг`], ['Отжим', p.rpm && `${p.rpm} об/мин`],
     ['Тип загрузки', p.load && (p.load === 'front' ? 'Фронтальная' : 'Вертикальная')], ['Система охлаждения', p.cooling],
     ['Вместимость', p.sets && `до ${p.sets} комплектов`], ['Диагональ', p.diag && `${p.diag}″`],
     ['Тип плиты', {gas:'Газовая', electric:'Электрическая', combi:'Комбинированная'}[p.stove]],
