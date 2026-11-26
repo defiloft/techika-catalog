@@ -163,3 +163,4 @@ href="katalog/${SLUG[id]}/"	href="ru/katalog/${SLUG[id]}/"
 <p class="flang"><a href="ru/" hreflang="ru" lang="ru" data-lang="ru">На русском</a></p>	<p class="flang"><a href="./" hreflang="uk" lang="uk" data-lang="uk">Українською</a></p>
 ALL = (d.products || []).map(parse).filter(	ALL = (d.products || []).map(parse).map(p => p && Object.assign(p, {chips: p.chips.map(TRL), warrantyText: TRL(p.warrantyText)})).filter(
 var H='uk',P='ru/'	var H='ru',P='../'
+<a class="langbtn" href="ru/" hreflang="ru" lang="ru" data-lang="ru" aria-label="Русская версия сайта">RU</a>	<a class="langbtn" href="./" hreflang="uk" lang="uk" data-lang="uk" aria-label="Українська версія сайту">UA</a>
