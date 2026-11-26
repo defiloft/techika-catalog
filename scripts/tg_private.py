@@ -10,7 +10,8 @@
 з якого на нього є посилання. Фото зберігаються в img/tg/, бо з приватного
 каналу Telegram не віддає публічних посилань на картинки.
 """
-import asyncio, os, time
+import asyncio, json, os, re, time
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 MAX_MSGS = 500    # скільки останніх дописів читати з кожного приватного каналу
@@ -24,10 +25,30 @@ def configured():
     return all(os.environ.get(k) for k in ("TG_API_ID", "TG_API_HASH", "TG_SESSION"))
 
 
-def fetch(invites, extract_post):
-    """invites: {hash: хаб}; extract_post(text, id) → dict або None. Повертає (товари, {chat_id: ok}) або None, якщо вхід не вдався."""
+# Додаткові фото: тема «Запит фото/відео/наявність» у робочій групі магазину. Менеджери кидають туди
+# альбом із підписом «ID110376» — ці фото показуємо в галереї товару з тим самим ID.
+REQ_TOPIC = ("запит фото", "запрос фото")  # шукаємо тему за назвою
+REQ_CHAT, REQ_TOPIC_ID = -1002351969498, 14029  # де вона була 2026-11-25 (щоб не шукати щоразу)
+REQ_DAYS = 365      # перший раз переглядаємо тему за рік (альбоми там бувають і 3–4-місячні)
+REQ_RECHECK = 300   # далі лише нові повідомлення + стільки останніх (раптом підпис дописали пізніше)
+SEARCH_PER_RUN = 40  # ID без фото, які за один запуск шукаємо по всій групі (в інших темах)
+SEARCH_AGAIN = 3 * 86400  # той самий ID шукаємо знову не частіше, ніж раз на 3 дні
+REQ_INDEX = IMG / "req" / "index.json"  # що вже знайдено в темі: {ID: [повідомлення з фото]}
+MAX_EXTRA = 6       # додаткових фото на товар (кожне ~65 КБ зберігається в репозиторії)
+REQ_BUDGET = 8 * 60
+REQ_ID = re.compile(r"\bI[DД]\s*[:#№-]?\s*(\d{4,7})\b|^\s*(\d{6})\s*$", re.I | re.M)
+
+
+def has_id(p):
+    """pid — справжній ID з тексту допису, а не номер повідомлення."""
+    return p.get("pid", "") in re.findall(r"\bID[:\s#]*(\d{4,})", p.get("text", ""), re.I)
+
+
+def fetch(invites, extract_post, want=()):
+    """invites: {hash: хаб}; extract_post(text, id) → dict або None; want — ID товарів, яким шукати додаткові фото.
+    Повертає (товари, {chat_id: ok}, {ID: [фото]} або None) або None, якщо вхід не вдався."""
     try:
-        return asyncio.run(asyncio.wait_for(_fetch(invites, extract_post, time.monotonic() + BUDGET), BUDGET + 600))
+        return asyncio.run(asyncio.wait_for(_fetch(invites, extract_post, set(want), time.monotonic() + BUDGET), BUDGET + REQ_BUDGET + 600))
     except Exception as e:  # будь-яка біда з Telegram не повинна ламати публічну частину
         print(f"! приватні канали: {type(e).__name__}: {e}")
         return None
@@ -70,7 +91,7 @@ async def _photo(client, msg, path):
     return bool(await client.download_media(msg, file=str(path), thumb=thumb))
 
 
-async def _fetch(invites, extract_post, deadline):
+async def _fetch(invites, extract_post, want, deadline):
     from telethon import TelegramClient, errors
     from telethon.sessions import StringSession
 
@@ -101,7 +122,13 @@ async def _fetch(invites, extract_post, deadline):
             except Exception as e:
                 status[chat.id] = False
                 print(f"! «{getattr(chat, 'title', chat.id)}»: {type(e).__name__}: {e}")
-        return items, status
+        want |= {p["pid"] for p in items if has_id(p)}
+        try:
+            extra = await _requests(client, want, time.monotonic() + REQ_BUDGET)
+        except Exception as e:
+            print(f"! додаткові фото: {type(e).__name__}: {e}")
+            extra = None
+        return items, status, extra
     finally:
         await client.disconnect()
 
@@ -138,9 +165,127 @@ async def _read_chat(client, chat, hub, extract_post, deadline):
     return out, True
 
 
+async def _req_topic(client):
+    """(група, id теми) для «Запит фото/відео/наявність» або None."""
+    from telethon import functions
+    norm = lambda t: (t or "").casefold()
+    async for d in client.iter_dialogs(limit=300):
+        e = d.entity
+        if not getattr(e, "forum", False):
+            continue
+        kw = dict(offset_date=None, offset_id=0, offset_topic=0, limit=100)
+        req = getattr(functions.messages, "GetForumTopicsRequest", None)  # у старих версіях Telethon — у channels
+        r = await client(req(peer=e, **kw) if req else functions.channels.GetForumTopicsRequest(channel=e, **kw))
+        ts = [t for t in r.topics if any(k in norm(getattr(t, "title", "")) for k in REQ_TOPIC)]
+        if ts:
+            t = next((t for t in ts if d.id == REQ_CHAT and t.id == REQ_TOPIC_ID), ts[0])
+            return e, t.id
+    return None
+
+
+def _album_id(msgs, texts, topic):
+    """ID товару з підпису альбому (або з повідомлення, на яке він відповідає); None, якщо ID немає чи їх кілька."""
+    cap = " ".join(m.message or "" for m in msgs)
+    if not REQ_ID.search(cap):
+        r = next((m.reply_to for m in msgs if m.reply_to and m.reply_to.reply_to_msg_id != topic), None)
+        cap = texts.get(getattr(r, "reply_to_msg_id", None), "") if r else ""
+    ids = {a or b for a, b in REQ_ID.findall(cap)}
+    return ids.pop() if len(ids) == 1 else None  # кілька ID в одному альбомі — не вгадуємо, чиє фото
+
+
+def _short(msgs):
+    """Підпис альбому — лише ID і кілька слів, а не повний допис товару (ті фото вже є з каналу)."""
+    cap = "\n".join(m.message or "" for m in msgs).strip()
+    return len([l for l in cap.splitlines() if l.strip()]) <= 3 and len(cap) <= 120
+
+
+async def _search_rest(client, chat, topic, want, idx, deadline):
+    """Шукає по всій групі (усі теми) ID товарів, для яких у темі «Запит фото» нічого немає."""
+    done = idx.setdefault("searched", {})
+    now = int(time.time())
+    todo = sorted((p for p in want if p not in idx["ids"] and now - done.get(p, 0) > SEARCH_AGAIN), key=lambda p: done.get(p, 0))
+    found = 0
+    for pid in todo[:SEARCH_PER_RUN]:
+        if time.monotonic() > deadline:
+            break
+        hits = {}
+        for q in ("ID" + pid, pid):
+            async for m in client.iter_messages(chat, search=q, limit=30):
+                if m.photo and pid in {a or b for a, b in REQ_ID.findall(m.message or "")}:
+                    hits[m.id] = m
+            await asyncio.sleep(1)
+        done[pid] = now
+        photos = []
+        for m in sorted(hits.values(), key=lambda m: -m.id):  # від нових до старих
+            album = [m]
+            if m.grouped_id:  # решта фото альбому — сусідні повідомлення з тим самим grouped_id
+                near = await client.get_messages(chat, ids=list(range(m.id - 10, m.id + 11)))
+                album = sorted((x for x in near if x and x.grouped_id == m.grouped_id and x.photo), key=lambda x: x.id)
+            if len({a or b for a, b in REQ_ID.findall(" ".join(x.message or "" for x in album))}) == 1 and _short(album):
+                photos += [x.id for x in album if x.id not in photos]
+        if photos:
+            idx["ids"][pid] = photos[:MAX_EXTRA]
+            found += 1
+    if todo:
+        print(f"  пошук по всій групі: перевірено {min(len(todo), SEARCH_PER_RUN)} ID з {len(todo)}, знайдено фото для {found}")
+
+
+async def _requests(client, want, deadline):
+    """{ID товару: [фото]} з теми запитів; лише для товарів, які є в каталозі. None — тему не знайдено.
+    Переглянуте запам'ятовуємо в REQ_INDEX, тож щоразу читаємо лише нові повідомлення."""
+    found = await _req_topic(client)
+    if not found:
+        print("~ додаткові фото: тему «Запит фото» не знайдено, акаунт має бути в робочій групі")
+        return None
+    chat, topic = found
+    idx = json.loads(REQ_INDEX.read_text()) if REQ_INDEX.exists() else {}
+    if idx.get("chat") != chat.id or idx.get("topic") != topic:
+        idx = {"chat": chat.id, "topic": topic, "max": 0, "ids": {}}
+    since = datetime.now(timezone.utc) - timedelta(days=REQ_DAYS)
+    groups, texts, top = {}, {}, idx["max"]
+    async for m in client.iter_messages(chat, reply_to=topic, min_id=max(0, idx["max"] - REQ_RECHECK)):
+        if m.date < since:
+            break
+        top = max(top, m.id)
+        texts[m.id] = m.message or ""
+        if m.photo:
+            groups.setdefault(m.grouped_id or ("m", m.id), []).append(m)
+    seen = {i for v in idx["ids"].values() for i in v}
+    # Від старих альбомів до нових: новіші фото стають першими.
+    for msgs in sorted(groups.values(), key=lambda g: max(m.id for m in g)):
+        msgs.sort(key=lambda m: m.id)
+        pid = _album_id(msgs, texts, topic)
+        new = [m.id for m in msgs if m.id not in seen]
+        if pid and new:
+            idx["ids"][pid] = (new + [i for i in idx["ids"].get(pid, []) if i not in new])[:MAX_EXTRA]
+    idx["max"] = top
+    await _search_rest(client, chat, topic, want, idx, deadline - REQ_BUDGET / 2)
+    deadline = max(deadline, time.monotonic() + 5 * 60)  # перший перегляд теми довгий; на фото лишаємо час
+    # Завантажуємо лише відсутні фото товарів, які зараз є в каталозі.
+    need = [i for pid in want for i in idx["ids"].get(pid, []) if not (IMG / "req" / f"{i}.jpg").exists()]
+    got = 0
+    for k in range(0, len(need), 100):
+        if time.monotonic() > deadline:
+            print("  ~ додаткові фото: час вичерпано, решту докачаю наступного разу")
+            break
+        for m in await client.get_messages(chat, ids=need[k:k + 100]):
+            if m and await _photo(client, m, IMG / "req" / f"{m.id}.jpg"):
+                got += 1
+    REQ_INDEX.parent.mkdir(parents=True, exist_ok=True)
+    REQ_INDEX.write_text(json.dumps(idx, separators=(",", ":")))
+    out = {}
+    for pid in want:
+        ph = [f"img/tg/req/{i}.jpg" for i in idx["ids"].get(pid, []) if (IMG / "req" / f"{i}.jpg").exists()]
+        if ph:
+            out[pid] = ph
+    print(f"+ додаткові фото: у темі є фото для {len(idx['ids'])} ID; з них у каталозі {len(out)} з {len(want)}; "
+          f"переглянуто альбомів {len(groups)}, завантажено нових фото {got}")
+    return out
+
+
 def cleanup(products):
     """Видаляє фото дописів, яких більше немає в каталозі."""
-    keep = {i for p in products for i in p.get("images", [])}
+    keep = {i for p in products for i in p.get("images", []) + p.get("extra", [])}
     if not IMG.exists():
         return
     for f in IMG.rglob("*.jpg"):

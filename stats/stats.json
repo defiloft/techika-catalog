@@ -1,0 +1,24 @@
+{
+ "updated": "2026-11-26T06:23+00:00",
+ "yesterday": {
+  "visits": 0,
+  "telegram": 0,
+  "viber": 0,
+  "start": "2026-11-25",
+  "end": "2026-11-25"
+ },
+ "last7": {
+  "visits": 0,
+  "telegram": 0,
+  "viber": 0,
+  "start": "2026-11-19",
+  "end": "2026-11-25"
+ },
+ "last30": {
+  "visits": 0,
+  "telegram": 0,
+  "viber": 0,
+  "start": "2026-10-27",
+  "end": "2026-11-25"
+ }
+}
