@@ -21,7 +21,7 @@ address: 'вул. Вадима Гетьмана, 1', city: 'Київ', addressHi
 'Комбіновані'	'Комбинированные'
 label:'від 20 000 грн'	label:'от 20 000 грн'
 'товар', 'товари', 'товарів'	'товар', 'товара', 'товаров'
-<a href="./" data-home>Техніка з Європи <span class="tagline">Вигідно</span>	<a href="ru/" data-home>Техника из Европы <span class="tagline">Выгодно</span>
+<a href="./" data-home>Техніка з Європи <span class="tagline">Вигідно!</span>	<a href="ru/" data-home>Техника из Европы <span class="tagline">Выгодно!</span>
 aria-label="Кошик"	aria-label="Корзина"
 <h2 id="ctitle">Кошик</h2>	<h2 id="ctitle">Корзина</h2>
 Пошук по каталогу	Поиск по каталогу

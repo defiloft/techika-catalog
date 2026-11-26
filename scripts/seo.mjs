@@ -44,7 +44,7 @@ const UK = {
   // Рід: «б/в» однаково, а «нова/новий» — ні.
   fem: new Set(['washers', 'dryers', 'freezers', 'dishwashers', 'hobs', 'stoves', 'ovens', 'micro', 'hoods', 'coffee', 'treadmills']),
   used: 'б/в', newF: 'нова', newM: 'новий', catName: c => c.name,
-  shop: SHOP.name, logo: `Техніка з Європи <span>Вигідно</span>`, home: 'Головна', toHome: 'На головну', sections: 'Розділи каталогу',
+  shop: SHOP.name, logo: `Техніка з Європи <span>Вигідно!</span>`, home: 'Головна', toHome: 'На головну', sections: 'Розділи каталогу',
   addr: `м. ${SHOP.city}, ${SHOP.address}`, hint: SHOP.addressHint, hours: SHOP.hours, map: 'На карті',
   about: 'вживана та нова побутова техніка з Європи в Києві.',
   goods: n => `${n} ${plural(n, 'товар', 'товари', 'товарів')}`,
@@ -62,7 +62,7 @@ const UK = {
 const RUL = {
   ...UK, code: 'ru', locale: 'ru_UA', base: 'ru/', slug: RU.SLUG, tr: RU.tr, one: RU.ONE, fem: RU.FEM,
   used: 'б/у', newF: 'новая', newM: 'новый', catName: c => RU.NAME[c.id] || c.name,
-  shop: 'Техника из Европы', logo: `Техника из Европы <span>Выгодно</span>`, home: 'Главная', toHome: 'На главную', sections: 'Разделы каталога',
+  shop: 'Техника из Европы', logo: `Техника из Европы <span>Выгодно!</span>`, home: 'Главная', toHome: 'На главную', sections: 'Разделы каталога',
   addr: `г. Киев, ${RU.tr(SHOP.address)}`, hint: SHOP.addressHint.replace('Шулявська', 'Шулявская'), hours: SHOP.hours.replace('без вихідних', 'без выходных'), map: 'На карте',
   about: 'б/у и новая бытовая техника из Европы в Киеве.',
   goods: n => `${n} ${plural(n, 'товар', 'товара', 'товаров')}`,
