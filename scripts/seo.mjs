@@ -58,15 +58,6 @@ const UK = {
   filters: 'Відкрити з фільтрами', fromEU: 'з Європи', forPrice: 'за', warranty: 'гарантія', Warranty: 'Гарантія', look: 'Подивитися',
   ask: 'Добрий день! Цікавить', photo: 'фото', isNew: 'Нова', isUsed: 'Б/в', reserved: 'Заброньовано', inStock: 'В наявності',
   write: 'Написати в Telegram', askAll: 'З усіх питань пишіть:', open: 'Відкрити в каталозі', switchTo: 'ru', switchLabel: 'На русском',
-  // Сторінка vykup/: викуп і вивіз старої техніки (умови — з оголошень OLX магазину).
-  buy: {crumb: 'Викуп техніки', h1: 'Викуп і вивіз старої побутової техніки в Києві',
-    title: 'Викуп б/в техніки та утилізація в Києві — вивіз безкоштовно | Техніка з Європи',
-    desc: 'Купуємо робочу й несправну побутову техніку: пральні машини, холодильники, морозильні камери, мікрохвильовки, плити. Вивіз безкоштовно по Києву та області.',
-    lead: 'Не знаєте, куди подіти стару пральну машину чи холодильник? Ми викупимо або безкоштовно вивеземо її — робочу чи несправну.',
-    takeH: 'Що беремо', take: ['Пральні машини (Bosch, Siemens, AEG, LG, Samsung, Whirlpool та інші)', 'Холодильники та морозильні камери', 'Мікрохвильовки', 'Газові та електричні плити'],
-    no: ['Техніку, старшу за 15 років, і бойлери не беремо.'],
-    howH: 'Як це працює', how: ['Напишіть у Telegram чи Viber або зателефонуйте: надішліть фото та модель техніки.', 'Оцінимо кожну техніку індивідуально й назвемо ціну.', 'Приїдемо у зручний для вас час, акуратно винесемо й вивеземо — безкоштовно, по Києву та області.'],
-    call: 'Подзвонити', ask: 'Добрий день! Хочу продати / здати стару техніку: '},
 };
 const RUL = {
   ...UK, code: 'ru', locale: 'ru_UA', base: 'ru/', slug: RU.SLUG, tr: RU.tr, one: RU.ONE, fem: RU.FEM,
@@ -86,20 +77,12 @@ const RUL = {
   filters: 'Открыть с фильтрами', fromEU: 'из Европы', forPrice: 'за', warranty: 'гарантия', Warranty: 'Гарантия', look: 'Посмотреть',
   ask: 'Добрый день! Интересует', photo: 'фото', isNew: 'Новая', isUsed: 'Б/у', reserved: 'Забронировано', inStock: 'В наличии',
   write: 'Написать в Telegram', askAll: 'По всем вопросам пишите:', open: 'Открыть в каталоге', switchTo: 'uk', switchLabel: 'Українською',
-  buy: {crumb: 'Выкуп техники', h1: 'Выкуп и вывоз старой бытовой техники в Киеве',
-    title: 'Выкуп б/у техники и утилизация в Киеве — вывоз бесплатно | Техника из Европы',
-    desc: 'Покупаем рабочую и неисправную бытовую технику: стиральные машины, холодильники, морозильные камеры, микроволновки, плиты. Вывоз бесплатно по Киеву и области.',
-    lead: 'Не знаете, куда деть старую стиральную машину или холодильник? Мы выкупим или бесплатно вывезем её — рабочую или неисправную.',
-    takeH: 'Что берём', take: ['Стиральные машины (Bosch, Siemens, AEG, LG, Samsung, Whirlpool и другие)', 'Холодильники и морозильные камеры', 'Микроволновки', 'Газовые и электрические плиты'],
-    no: ['Технику старше 15 лет и бойлеры не берём.'],
-    howH: 'Как это работает', how: ['Напишите в Telegram или Viber или позвоните: пришлите фото и модель техники.', 'Оценим каждую технику индивидуально и назовём цену.', 'Приедем в удобное для вас время, аккуратно вынесем и вывезем — бесплатно, по Киеву и области.'],
-    call: 'Позвонить', ask: 'Добрый день! Хочу продать / сдать старую технику: '},
 };
 const LANGS = [UK, RUL];
 const BY = {uk: UK, ru: RUL};
 
 // Адреса однієї й тієї самої сторінки різними мовами: ключ 'home' | 'cat:<id>' | 'p:<файл>'.
-const rel = (L, key) => L.base + (key === 'home' ? '' : key === 'vykup' ? 'vykup/' : key.startsWith('cat:') ? `katalog/${L.slug[key.slice(4)]}/` : `tovar/${key.slice(2)}`);
+const rel = (L, key) => L.base + (key === 'home' ? '' : key.startsWith('cat:') ? `katalog/${L.slug[key.slice(4)]}/` : `tovar/${key.slice(2)}`);
 const urlOf = (L, key) => SITE + rel(L, key);
 // Той самий скрипт вибору мови, що й у index.html (там він написаний вручну): беремо його звідти.
 const LANGJS = (html.match(/<script>\/\* Мова:[\s\S]*?<\/script>/) || [''])[0];
@@ -223,27 +206,6 @@ ${p.price ? `<p class="price big">${money(p.price)} <small>грн</small>${p.old
         availability: p.reserved ? 'https://schema.org/LimitedAvailability' : 'https://schema.org/InStock', seller: {'@id': SITE + '#shop'}}})};
     out.set(rel(L, key), page(L, {key, title, desc, image: p.photos[0] && src(p.photos[0], SITE), up, body, json: [product, {'@context': 'https://schema.org', ...STORE}]}));
   }
-}
-
-// Сторінка «Викуп і вивіз техніки» (vykup/, ru/vykup/).
-urls.push(['vykup', '']);
-for (const L of LANGS) {
-  const B = L.buy, up = L.base ? '../../' : '../', key = 'vykup';
-  const ph = SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
-  const li = (xs, cls = '') => xs.map(t => `<li${cls}>${esc(t)}</li>`).join('');
-  const btns = `<p class="btns"><a class="btn tg" href="https://t.me/${SHOP.tg}?text=${encodeURIComponent(B.ask)}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a><a class="btn tel" href="tel:+${SHOP.viber}" data-track="click-phone">${B.call} ${ph}</a></p>`;
-  const body = `<main class="buyp">
-<nav class="crumbs"><a href="${up}${L.base}">${L.home}</a> › <span>${esc(B.crumb)}</span></nav>
-<h1>${esc(B.h1)}</h1>
-<p class="lead">${esc(B.lead)}</p>
-${btns}
-<section class="box"><h2>${esc(B.takeH)}</h2><ul>${li(B.take)}${li(B.no, ' class="no"')}</ul></section>
-<section class="box"><h2>${esc(B.howH)}</h2><ul class="steps">${li(B.how)}</ul></section>
-${btns}
-</main>`;
-  out.set(rel(L, key) + 'index.html', page(L, {key, title: B.title, desc: B.desc, up, body, json: [{'@context': 'https://schema.org', ...STORE},
-    {'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
-      {'@type': 'ListItem', position: 1, name: L.home, item: urlOf(L, 'home')}, {'@type': 'ListItem', position: 2, name: B.crumb, item: urlOf(L, key)}]}]}));
 }
 
 // Російська головна (ru/) — повний каталог: копія index.html з перекладеним інтерфейсом.

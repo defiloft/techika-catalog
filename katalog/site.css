@@ -50,12 +50,3 @@ h2{margin:26px 0 0;font-size:19px}
 @media(max-width:639px){.shop span{display:block}}
 @media(max-width:389px){.shop{font-size:17px}.logo{width:36px;height:36px}.header{gap:8px}}
 .footer .ask{margin:0;color:var(--floor);font-weight:600;font-size:17px;line-height:1.25;max-width:9em}.askrow{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:14px 0 10px}.askrow .btns{flex-direction:column;flex-wrap:nowrap;width:190px;flex:none;margin:0}.askrow .btn{justify-content:center}.btn svg{margin-right:6px;flex:none}
-/* Сторінка «Викуп і вивіз техніки» (vykup/) */
-.buyp{max-width:760px}
-.buyp .box{margin:16px 0;padding:18px;border:1px solid #bfe0cb;border-radius:16px;background:#eaf6ee}
-.buyp h2{margin:0 0 10px;font-size:18px}
-.buyp ul{margin:0;padding:0;list-style:none}.buyp li{position:relative;padding:5px 0 5px 20px}
-.buyp li:before{content:"";position:absolute;left:3px;top:.95em;width:8px;height:8px;border-radius:50%;background:#1f8a4c}
-.buyp li.no{color:var(--concrete)}.buyp li.no:before{background:#b6bcc3}
-.buyp .tel{background:#1f8a4c;border-color:#1f8a4c;color:#fff}
-.buyp .steps{counter-reset:s}.buyp .steps li{padding-left:34px}.buyp .steps li:before{counter-increment:s;content:counter(s);top:5px;left:0;width:24px;height:24px;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}

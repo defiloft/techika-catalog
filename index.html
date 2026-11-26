@@ -173,15 +173,6 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .blist li.no::before{background:var(--line)}.blist li.no{color:var(--concrete)}
 .blead{padding:14px var(--gutter) 0;font-size:15px;color:var(--concrete)}
 .btel{color:var(--floor);font-weight:600}
-.fbuy{display:flex;flex-direction:column;gap:12px;margin:0 0 22px;padding:16px;border-radius:var(--r-card);background:#eaf6ee;border:1px solid #bfe0cb}
-.fbuy h2{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;color:var(--floor)}
-.fbuy h2 .bico{width:36px;height:36px;border-radius:10px}.fbuy h2 .bico svg{width:22px;height:22px}
-.fbuy ul{margin:0;padding:0;list-style:none;color:var(--floor);font-size:14px;line-height:1.45}
-.fbuy li{position:relative;padding-left:16px;margin-bottom:4px;break-inside:avoid}.fbuy li::before{content:"";position:absolute;left:2px;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--ok)}
-.fbuy li.no{color:var(--concrete)}.fbuy li.no::before{background:#b6bcc3}
-.fbuy .row{display:flex;gap:8px;flex-wrap:wrap}.fbuy .btn{min-height:44px;padding:0 14px;font-size:14px;flex:1}
-@media(min-width:960px){.fbuy{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px 32px;padding:20px 24px}.fbuy h2{grid-column:1/-1}.fbuy ul{columns:2;column-gap:28px}.fbuy .row{flex-direction:column}.fbuy .btn{min-width:150px}}
-.chip.buyc{border-color:#bfe0cb;background:#eaf6ee;color:#17693a;text-decoration:none}.chip.buyc svg{color:var(--ok)}
 
 /* price sticker */
 .sticker{display:inline-flex;align-items:baseline;gap:4px;padding:0 10px 1px 9px;background:var(--body);border:1px solid var(--line);border-radius:var(--r-tag);color:var(--marker);font-family:var(--font-marker);font-weight:700;line-height:1;transform:rotate(-2.5deg);transform-origin:left bottom;box-shadow:0 1px #24272b0f;white-space:nowrap}
@@ -480,9 +471,8 @@ const SHOP = {
   promo: '', promoNote: '',
   // Black Friday: до цієї дати (включно, за київським часом) банер чорний з написом «Black Friday», після — знову звичайний «Розпродаж техніки».
   blackFridayUntil: '2026-11-30',
-  // Викуп і вивіз старої техніки: де показувати. 'a' — картка на головній, 'b' — блок унизу сторінки, 'c' — кнопка біля «Категорій» + окрема сторінка vykup/.
-  // Можна кілька: 'ab'. Порожньо — ніде. Для перегляду: ?buyback=b
-  buyback: '',
+  // Картка «Викупимо або вивеземо вашу стару техніку» на головній. false — сховати.
+  buyback: true,
 };
 SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
 
@@ -903,7 +893,7 @@ function render() {
   // Вітрина: головна без пошуку, категорії й фільтрів. На ній «Розпродаж» — плитка, тож кнопку над товарами ховаємо.
   const home = !SHOWALL && !S.q.trim() && !S.cat && !nFilters(S) && !S.sort;
   $('#cats').innerHTML = (SALES && !home ? `<button type="button" class="chip sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}Розпродаж<span class="cnt">${sale}</span></button>` : '') +
-    `<button type="button" class="chip more${pick ? ' on' : ''}" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span>${esc(pick || 'Категорії')}</span>${car}</button>` + buyChip();
+    `<button type="button" class="chip more${pick ? ' on' : ''}" id="catmore" aria-expanded="${CATMENU}" aria-controls="catmenu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span>${esc(pick || 'Категорії')}</span>${car}</button>`;
   $('#catmenu').innerHTML = (SALES ? `<div class="cgroup"><h3>Акції</h3><button type="button" class="citem sale" data-cat="sale" aria-pressed="${S.cat === 'sale'}">${SALEICON}<span class="nm">Розпродаж</span><span class="cnt">${sale}</span></button></div>` : '') + GROUPS.map(([g, ids]) => { const cs = ids.filter(id => CNT.get(id)); return cs.length ? `<div class="cgroup"><h3>${g}</h3>${cs.map(id => { const sm = subsMenu(id), it = `<button type="button" class="citem${cc.get(id) ? '' : ' zero'}" data-cat="${id}" aria-pressed="${S.cat === id && !S.sub}">${icon(id)}<span class="nm">${esc(CAT[id].name)}</span><span class="cnt">${cc.get(id) || 0}</span></button>`; return sm ? `<div class="cblock">${it}${sm}</div>` : it; }).join('')}</div>` : ''; }).join('');
   $('#catmenu').hidden = !CATMENU;
   const nf = nFilters(S);
@@ -1257,7 +1247,6 @@ document.addEventListener('error', e => { const i = e.target; if (i.tagName === 
 /* ---------- банер, «Повідомити, коли з'явиться» ---------- */
 const tgLink = t => `https://t.me/${SHOP.tg}?text=${encodeURIComponent(t)}`;
 /* ---------- викуп і вивіз старої техніки ---------- */
-const BUYV = new URLSearchParams(location.search).get('buyback') ?? SHOP.buyback ?? '';
 const BUYICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><path d="M5.5 11l1.7 1.7L10.5 9.4"/></svg>';
 const BUY = {
   title: 'Викупимо або вивеземо вашу стару техніку',
@@ -1270,8 +1259,8 @@ const BUY = {
 };
 const buyBtns = () => `<a class="btn tgb" href="${tgLink(BUY.ask)}" target="_blank" rel="noopener" data-track="click-telegram">${TGICON}Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">${VBICON}Viber</a>`;
 const buyPhone = () => SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
-// Варіант A: картка на головній під плитками категорій; натиск відкриває шторку з умовами.
-const buyCard = () => BUYV.includes('a') ? `<button type="button" class="buy" data-buy><span class="bico">${BUYICON}</span><span><b>${BUY.title}</b><small>${BUY.short}</small></span><span class="go">Детальніше</span></button>` : '';
+// Картка на головній під плитками категорій; натиск відкриває шторку з умовами (умови — з оголошень на OLX).
+const buyCard = () => SHOP.buyback ? `<button type="button" class="buy" data-buy><span class="bico">${BUYICON}</span><span><b>${BUY.title}</b><small>${BUY.short}</small></span><span class="go">Детальніше</span></button>` : '';
 function buyOpen() {
   $('#bbody').innerHTML = `<p class="blead">Не знаєте, куди подіти стару пральну машину чи холодильник? Напишіть нам.</p><ul class="blist">${BUY.items.map(t => `<li>${t}</li>`).join('')}<li class="no">${BUY.no}</li></ul>
     <p class="blead">Або телефонуйте: <a class="btel" href="tel:+${SHOP.viber}">${buyPhone()}</a></p>`;
@@ -1280,11 +1269,6 @@ function buyOpen() {
 }
 document.addEventListener('click', e => { if (e.target.closest('[data-buy]')) buyOpen(); });
 $('#bsheet').addEventListener('click', e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); });
-// Варіант B: блок унизу кожної сторінки каталогу, над адресою.
-const buyFooter = () => BUYV.includes('b') ? `<section class="fbuy" aria-label="Викуп техніки"><h2><span class="bico">${BUYICON}</span>${BUY.title}</h2>
-  <ul>${BUY.items.map(t => `<li>${t}</li>`).join('')}<li class="no">${BUY.no}</li></ul><div class="row">${buyBtns()}</div></section>` : '';
-// Варіант C: кнопка в смузі біля «Категорій» — веде на окрему сторінку vykup/.
-const buyChip = () => BUYV.includes('c') ? `<a class="chip buyc" href="vykup/">${BUYICON}Викуп техніки</a>` : '';
 function promo() {
   const sale = ALL.filter(p => p.oldPrice && p.price), top = sale.length ? Math.max(...sale.map(pct)) : 0;
   if (!SHOP.promo && !top) return '';
@@ -1394,7 +1378,7 @@ function footer() {
   const t = UPDATED ? new Date(UPDATED) : null;
   // Низ сторінки: адреса з посиланням на карту, кнопки месенджерів і час оновлення товарів.
   const ph = SHOP.viber.replace(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
-  $('#footer').innerHTML = buyFooter() + `<div class="fcard">
+  $('#footer').innerHTML = `<div class="fcard">
     <a class="faddr" href="${SHOP.mapUrl}" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
       <span>м. ${esc(SHOP.city)}, ${esc(SHOP.address)}<small>${esc(SHOP.addressHint)}</small><u>Відкрити на карті →</u></span></a>
     <p class="faddr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>${esc(SHOP.hours)}</span></p>
