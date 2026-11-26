@@ -1,0 +1,164 @@
+{
+ "note": "Характеристики моделей з сайтів виробників і магазинів. Ключ — бренд+модель без пробілів і знаків, великими літерами. Лише значення, яких немає в дописах.",
+ "updated": "2026-11-26",
+ "items": {
+  "ELECTROLUXEW6S4R27W": {
+   "name": "Electrolux EW6S4R27W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/stiral-naja-mashina-electrolux-ew6s4r27w.html",
+   "s": {
+    "energy": "A+++",
+    "kwh": 174,
+    "wclass": "A",
+    "sclass": "B",
+    "feat": [
+     "Fuzzy Logic, антиалергія, захист від протікань, Time Manager",
+     "Fuzzy Logic, антиаллергия, защита от протечек, Time Manager"
+    ]
+   }
+  },
+  "HISENSE75E7KQPRO": {
+   "name": "Hisense 75E7KQ PRO",
+   "site": "tvsfaq.com",
+   "src": "https://www.tvsfaq.com/en/specifications/hisense-75e7kq-pro",
+   "s": {
+    "res": "4K (3840×2160)",
+    "hdr": "Dolby Vision, HDR10+, HLG",
+    "os": "VIDAA",
+    "sound": [
+     "2×15 Вт + сабвуфер 20 Вт",
+     "2×15 Вт + сабвуфер 20 Вт"
+    ],
+    "hdmi": [
+     "4 (з них 2× HDMI 2.1)",
+     "4 (из них 2× HDMI 2.1)"
+    ],
+    "energy": "G"
+   }
+  },
+  "HISENSERB470N4EFC1": {
+   "name": "Hisense RB470N4EFC1",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/holodil-nik-hisense-rb470n4efc1.html",
+   "s": {
+    "energy": "A++",
+    "kwh": 169,
+    "climate": "SN-N-ST-T",
+    "auton": 9,
+    "noise": 35,
+    "vol": 335,
+    "volf": 229,
+    "volz": 106,
+    "defrost": [
+     "No Frost",
+     "No Frost"
+    ],
+    "frz": 13,
+    "feat": [
+     "інверторний компресор, Smart Fresh, швидке заморожування",
+     "инверторный компрессор, Smart Fresh, быстрая заморозка"
+    ]
+   }
+  },
+  "INDESITLI8S1W": {
+   "name": "Indesit LI8 S1 W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/holodil-nik-indesit-li8-s1-w.html",
+   "s": {
+    "energy": "A+",
+    "kwh": 272,
+    "vol": 303,
+    "volf": 213,
+    "volz": 90,
+    "auton": 19,
+    "frz": 2,
+    "climate": "SN-N-ST",
+    "noise": 41
+   }
+  },
+  "LGF10B9LD": {
+   "name": "LG F10B9LD",
+   "site": "lg.com",
+   "src": "https://www.lg.com/ro/masini-de-spalat/lg-F10B9LD",
+   "s": {
+    "energy": "A++",
+    "kwh": 171,
+    "sclass": "B",
+    "noise": 54,
+    "noises": 74,
+    "feat": [
+     "прямий привід Direct Drive, 6 Motion, Smart Diagnosis",
+     "прямой привод Direct Drive, 6 Motion, Smart Diagnosis"
+    ]
+   }
+  },
+  "SAMSUNGWW60K42101W": {
+   "name": "Samsung WW60K42101W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/stiral-naja-mashina-samsung-ww60k42101wdua.html",
+   "s": {
+    "energy": "A+++",
+    "kwh": 122,
+    "sclass": "B",
+    "noise": 54,
+    "noises": 73,
+    "feat": [
+     "Digital Inverter, Smart Check, Diamond Drum",
+     "Digital Inverter, Smart Check, Diamond Drum"
+    ]
+   }
+  },
+  "SAMSUNGWW80K6210RW": {
+   "name": "Samsung WW80K6210RW",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/stiral-naja-mashina-samsung-ww80k6210rw-ua.html",
+   "s": {
+    "energy": "A+++",
+    "kwh": 136,
+    "wclass": "A",
+    "sclass": "B",
+    "noise": 56,
+    "noises": 75,
+    "feat": [
+     "Eco Bubble, Diamond Drum, Smart Check, інверторний двигун",
+     "Eco Bubble, Diamond Drum, Smart Check, инверторный двигатель"
+    ]
+   }
+  },
+  "VESTFROSTCW286W": {
+   "name": "Vestfrost CW286W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/holodil-nik-vestfrost-cw-286-w.html",
+   "s": {
+    "energy": "A+",
+    "kwh": 264,
+    "vol": 286,
+    "volf": 202,
+    "volz": 84,
+    "noise": 40,
+    "climate": "N-ST-T",
+    "frz": 4,
+    "auton": 17
+   }
+  },
+  "WHIRLPOOLAKZ96220IX": {
+   "name": "Whirlpool AKZ9 6220IX",
+   "site": "Whirlpool (технічний лист)",
+   "src": "https://www.appliancesdirect.co.uk/PDFs/AKZ96220IX_ProductDataSheetBrochure1.PDF",
+   "s": {
+    "energy": "A+",
+    "ovol": 73,
+    "clean": [
+     "гідролізне (SmartClean)",
+     "гидролизная (SmartClean)"
+    ],
+    "prog": 16,
+    "tmax": 250,
+    "feat": [
+     "Cook3 — 3 страви одночасно, телескопічні напрямні, плавне закривання дверцят",
+     "Cook3 — 3 блюда одновременно, телескопические направляющие, плавное закрывание дверцы"
+    ]
+   }
+  }
+ }
+}
