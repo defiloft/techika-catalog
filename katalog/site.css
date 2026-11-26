@@ -49,3 +49,4 @@ h2{margin:26px 0 0;font-size:19px}
 @media(min-width:960px){.logo{width:52px;height:52px}}
 @media(max-width:639px){.shop span{display:block}}
 @media(max-width:389px){.shop{font-size:17px}.logo{width:36px;height:36px}.header{gap:8px}}
+.footer .ask{margin:14px 0 8px;color:var(--floor);font-weight:600}.btn svg{margin-right:6px;flex:none}

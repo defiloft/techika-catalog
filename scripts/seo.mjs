@@ -57,7 +57,7 @@ const UK = {
   lead: (n, addr, hours) => `${UK.goods(n)} в наявності. Уся техніка — з Європи, перевірена перед продажем, з гарантією. Подивитися наживо: ${addr}, щодня ${hours}.`,
   filters: 'Відкрити з фільтрами', fromEU: 'з Європи', forPrice: 'за', warranty: 'гарантія', Warranty: 'Гарантія', look: 'Подивитися',
   ask: 'Добрий день! Цікавить', photo: 'фото', isNew: 'Нова', isUsed: 'Б/в', reserved: 'Заброньовано', inStock: 'В наявності',
-  write: 'Написати в Telegram', open: 'Відкрити в каталозі', switchTo: 'ru', switchLabel: 'На русском',
+  write: 'Написати в Telegram', askAll: 'З усіх питань пишіть:', open: 'Відкрити в каталозі', switchTo: 'ru', switchLabel: 'На русском',
 };
 const RUL = {
   ...UK, code: 'ru', locale: 'ru_UA', base: 'ru/', slug: RU.SLUG, tr: RU.tr, one: RU.ONE, fem: RU.FEM,
@@ -76,7 +76,7 @@ const RUL = {
   lead: (n, addr, hours) => `${RUL.goods(n)} в наличии. Вся техника — из Европы, проверена перед продажей, с гарантией. Посмотреть вживую: ${addr}, ежедневно ${hours}.`,
   filters: 'Открыть с фильтрами', fromEU: 'из Европы', forPrice: 'за', warranty: 'гарантия', Warranty: 'Гарантия', look: 'Посмотреть',
   ask: 'Добрый день! Интересует', photo: 'фото', isNew: 'Новая', isUsed: 'Б/у', reserved: 'Забронировано', inStock: 'В наличии',
-  write: 'Написать в Telegram', open: 'Открыть в каталоге', switchTo: 'uk', switchLabel: 'Українською',
+  write: 'Написать в Telegram', askAll: 'По всем вопросам пишите:', open: 'Открыть в каталоге', switchTo: 'uk', switchLabel: 'Українською',
 };
 const LANGS = [UK, RUL];
 const BY = {uk: UK, ru: RUL};
@@ -132,7 +132,8 @@ ${body}
 <footer class="footer">
   <p><b>${esc(L.shop)}</b> — ${L.about}</p>
   <p>${esc(L.addr)} (${esc(L.hint)}) · ${esc(L.hours)} · <a href="${esc(SHOP.mapUrl)}" target="_blank" rel="noopener">${L.map}</a></p>
-  <p class="btns"><a class="btn tg" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></p>
+  <p class="ask">${L.askAll}</p>
+  <p class="btns"><a class="btn tg" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.1.4-1.1 1.1-.2 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.6zM9.6 14.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2z"/></svg>Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c5 0 8.6 2.4 8.6 8.2s-3.6 8-8.6 8c-.9 0-1.8-.1-2.6-.3L6 21v-3.2C4.2 16.4 3.4 14.2 3.4 11 3.4 5.2 7 2.8 12 2.8z"/><path d="M9.2 7.6c.4-.2.8 0 1 .4l.6 1.3c.1.3 0 .6-.2.8l-.4.4c.4 1 1.3 1.9 2.3 2.3l.4-.4c.2-.2.5-.3.8-.2l1.3.6c.4.2.6.6.4 1-.4 1-1.4 1.5-2.4 1.1-2.2-.8-3.9-2.5-4.7-4.7-.4-1 .1-2 .9-2.6z" fill="currentColor" stroke="none"/></svg>Viber</a></p>
   <nav class="cats" aria-label="${L.sections}">${CATLIST.map(c => `<a href="${up}${L.base}katalog/${L.slug[c.id]}/">${esc(L.catName(c))}</a>`).join('')}</nav>
   <p class="langs">${sw}</p>
 </footer>
