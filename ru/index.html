@@ -880,7 +880,7 @@ function homeA(list) {
     + `<button type="button" class="btn primary allbtn" data-showall>Смотреть все ${goods(list.length)}</button>`;
 }
 // Підкатегорії в меню категорій — дрібним рядком під своєю категорією.
-// Підкатегорії, що мають товари; одну-єдину, яка збігається з усією категорією («Тепловий 22» з 22 сушильних), не показуємо.
+// Підкатегорії, що мають товари; одну-єдину, яка збігається з усією категорією («Теплові 22» з 22 сушильних), не показуємо.
 const subsOf = id => { const xs = (SUBS[id] || []).filter(x => SUBN.get(id + '/' + x[0])); return xs.length === 1 && SUBN.get(id + '/' + xs[0][0]) === CNT.get(id) ? [] : xs; };
 function subsMenu(id) {
   const subs = subsOf(id);
