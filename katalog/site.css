@@ -47,3 +47,5 @@ h2{margin:26px 0 0;font-size:19px}
 .tiles span{color:var(--concrete);font-weight:400}
 .logolink{flex:none;display:block;color:var(--marker)}.logo{display:block;width:42px;height:42px}.header>.shop{flex:1;min-width:0}
 @media(min-width:960px){.logo{width:52px;height:52px}}
+@media(max-width:639px){.shop span{display:block}}
+@media(max-width:389px){.shop{font-size:17px}.logo{width:36px;height:36px}.header{gap:8px}}
