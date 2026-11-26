@@ -17,6 +17,9 @@ PATHS = {"visits": "/", "telegram": "click-telegram", "viber": "click-viber"}
 
 
 def count(path, start, end):
+    # GoatCounter бере години «hour <= end», де end — це опівніч, тож щоб
+    # включити останній день повністю, передаємо наступну дату.
+    end = end + dt.timedelta(days=1)
     url = (f"https://{CODE}.goatcounter.com/counter/{urllib.parse.quote(path, safe='')}.json"
            f"?start={start}&end={end}")
     try:
