@@ -49,4 +49,4 @@ h2{margin:26px 0 0;font-size:19px}
 @media(min-width:960px){.logo{width:52px;height:52px}}
 @media(max-width:639px){.shop span{display:block}}
 @media(max-width:389px){.shop{font-size:17px}.logo{width:36px;height:36px}.header{gap:8px}}
-.footer .ask{margin:14px 0 8px;color:var(--floor);font-weight:600}.btn svg{margin-right:6px;flex:none}
+.footer .ask{margin:0;color:var(--floor);font-weight:600;font-size:17px;line-height:1.25;max-width:9em}.askrow{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:14px 0 10px}.askrow .btns{flex-direction:column;flex-wrap:nowrap;width:190px;flex:none;margin:0}.askrow .btn{justify-content:center}.btn svg{margin-right:6px;flex:none}
