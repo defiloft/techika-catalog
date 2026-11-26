@@ -127,7 +127,7 @@ ${json.map(ld).join('\n')}
 </head>
 <body>
 <div class="page">
-<header class="header"><a class="shop" href="${up}${L.base}">${L.logo}</a><span class="hlang"><a href="${up}${rel(other, key)}" hreflang="${other.code}" lang="${other.code}" data-lang="${other.code}" title="${L.switchLabel}">${other.code === 'uk' ? 'UA' : 'RU'}</a></span><a href="${up}${L.base}" aria-label="${L.toHome}"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
+<header class="header"><a class="logolink" href="${up}${L.base}" aria-label="${L.toHome}"><svg class="logo" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="12" width="24" height="31" rx="3"/><path d="M4 19h24M8 15.5h5M22 15.5h2"/><circle cx="16" cy="31" r="7"/><path d="M12.5 31.5c1.2-1 2.3-1 3.5 0s2.3 1 3.5 0"/><rect x="31" y="5" width="13" height="38" rx="2.5"/><path d="M31 18h13M34.5 9.5v4M34.5 22v6"/></svg></a><a class="shop" href="${up}${L.base}">${L.logo}</a><span class="hlang"><a href="${up}${rel(other, key)}" hreflang="${other.code}" lang="${other.code}" data-lang="${other.code}" title="${L.switchLabel}">${other.code === 'uk' ? 'UA' : 'RU'}</a></span></header>
 ${body}
 <footer class="footer">
   <p><b>${esc(L.shop)}</b> — ${L.about}</p>
