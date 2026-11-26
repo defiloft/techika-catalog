@@ -954,6 +954,32 @@ for (const el of [$('#fsheet'), $('#psheet'), $('#csheet')]) {
   });
 }
 
+// Свайп вниз закриває шторку (телефон): тягнемо за ручку/шапку або будь-де, коли вміст прокручено до самого верху.
+// Горизонтальні свайпи (галерея фото, «Схожі») не чіпаємо: напрям визначаємо за першим рухом пальця.
+for (const el of [$('#fsheet'), $('#psheet'), $('#csheet')]) {
+  const panel = el.querySelector('.panel'), body = el.querySelector('.sbody');
+  let y0, x0, t0, dy = 0, mode = '';
+  panel.addEventListener('touchstart', e => {
+    if (innerWidth >= 760 || e.touches.length > 1 || e.target.closest('input,select,textarea')) { mode = 'no'; return; }
+    y0 = e.touches[0].clientY; x0 = e.touches[0].clientX; t0 = Date.now(); dy = 0;
+    mode = e.target.closest('.handle,.shead,.mini') || !body.contains(e.target) || body.scrollTop <= 0 ? '' : 'no';
+  }, {passive: true});
+  panel.addEventListener('touchmove', e => {
+    if (mode === 'no') return;
+    const d = e.touches[0].clientY - y0, dx = e.touches[0].clientX - x0;
+    if (!mode) { if (Math.abs(d) < 6 && Math.abs(dx) < 6) return; mode = d > 0 && Math.abs(d) > Math.abs(dx) && body.scrollTop <= 0 ? 'drag' : 'no'; if (mode === 'no') return; panel.style.transition = 'none'; }
+    dy = Math.max(0, d); panel.style.transform = `translateY(${dy}px)`; e.preventDefault();
+  }, {passive: false});
+  const end = () => {
+    if (mode !== 'drag') { mode = ''; return; }
+    mode = ''; panel.style.transition = '';
+    const fast = dy / Math.max(1, Date.now() - t0) > .5;
+    if (dy > Math.min(140, panel.offsetHeight * .25) || (fast && dy > 30)) { panel.style.transform = ''; sheetClose(el); if (el.id === 'psheet') closeProduct(); }  // спершу ховаємо (history.back асинхронний)
+    else panel.style.transform = '';
+  };
+  panel.addEventListener('touchend', end); panel.addEventListener('touchcancel', end);
+}
+
 /* ---------- фільтри ---------- */
 const LI = 500;
 function renderFilters() {
