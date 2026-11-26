@@ -275,6 +275,10 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .specs div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
 .specs dt{color:var(--concrete)}
 .specs dd{margin:0;text-align:right;font-weight:500}
+.specs .mfh{display:block;padding:16px 0 6px;font-size:13px;font-weight:600;color:var(--concrete);text-transform:uppercase;letter-spacing:.04em}
+.specs .mf dd{font-weight:400}
+.specs .src{display:block;border:0;padding:8px 0 0;font-size:12.5px;color:var(--concrete);line-height:1.45}
+.specs .src a{color:inherit}
 .info{display:flex;gap:12px;padding:14px;border-radius:12px;background:var(--soft)}
 .info p{margin-top:4px;font-size:14px}
 .info+.info{margin-top:8px}
@@ -1067,6 +1071,61 @@ function specsOf(p) {
     ['Тип', {heatpump:'Тепловой (тепловой насос)', heater:'ТЭНовый'}[p.dry]], ...(p.feats || []),
     ['Высота', p.height && `${p.height} см`], ['Ширина', p.width && `${p.width} см`], ['Глубина', p.depth && `${p.depth} см`]].filter(r => r[1]);
 }
+/* Характеристики моделі з інтернету (specs-web.json): лише те, чого немає в дописі. Допис завжди головніший.
+   Значення: число (одиниця додається тут) або текст; текст двома мовами — ["укр", "рус"]. */
+const RUV = document.documentElement.lang === 'ru';
+let WEB = new Map();
+const webKey = p => `${p.brand} ${p.model}`.toUpperCase().replace(/[^0-9A-ZА-ЯІЇЄҐ]/g, '');
+const WSPEC = [
+  ['energy', 'Клас енергоспоживання', 'Класс энергопотребления'],
+  ['kwh', 'Споживання енергії', 'Потребление энергии', 'кВт·год/рік', 'кВт·ч/год'],
+  ['kwhc', 'Енергія за цикл', 'Энергия за цикл', 'кВт·год', 'кВт·ч'],
+  ['vol', 'Загальний об’єм', 'Общий объём', 'л'],
+  ['volf', 'Холодильна камера', 'Холодильная камера', 'л'],
+  ['volz', 'Морозильна камера', 'Морозильная камера', 'л'],
+  ['ovol', 'Об’єм духовки', 'Объём духовки', 'л'],
+  ['defrost', 'Розморожування', 'Разморозка'],
+  ['climate', 'Кліматичний клас', 'Климатический класс'],
+  ['frz', 'Заморожування', 'Заморозка', 'кг/добу', 'кг/сутки'],
+  ['auton', 'Тримає холод без світла', 'Держит холод без света', 'год', 'ч', 'до '],
+  ['prog', 'Програм', 'Программ'],
+  ['wclass', 'Клас прання', 'Класс стирки'],
+  ['sclass', 'Клас віджиму', 'Класс отжима'],
+  ['cond', 'Клас конденсації', 'Класс конденсации'],
+  ['water', 'Витрата води за цикл', 'Расход воды за цикл', 'л'],
+  ['noise', 'Рівень шуму', 'Уровень шума', 'дБ'],
+  ['noises', 'Шум під час віджиму', 'Шум при отжиме', 'дБ'],
+  ['clean', 'Очищення', 'Очистка'],
+  ['tmax', 'Макс. температура', 'Макс. температура', '°C'],
+  ['power', 'Потужність', 'Мощность', 'Вт'],
+  ['bar', 'Тиск помпи', 'Давление помпы', 'бар'],
+  ['tank', 'Резервуар для води', 'Резервуар для воды', 'л'],
+  ['air', 'Продуктивність', 'Производительность', 'м³/год', 'м³/ч'],
+  ['res', 'Роздільна здатність', 'Разрешение'],
+  ['hz', 'Частота оновлення', 'Частота обновления', 'Гц'],
+  ['hdr', 'HDR', 'HDR'],
+  ['os', 'Smart TV', 'Smart TV'],
+  ['sound', 'Звук', 'Звук'],
+  ['hdmi', 'HDMI', 'HDMI'],
+  ['feat', 'Особливості', 'Особенности'],
+];
+function webSpecs(p, own) {
+  const w = WEB.get(webKey(p)); if (!w) return null;
+  const have = new Set(own.map(r => String(r[0]).toLowerCase()));
+  const rows = WSPEC.filter(([k, uk]) => w.s[k] != null && !have.has(uk.toLowerCase()) && !(k === 'defrost' && p.cooling) && !(k === 'air' && /м³/.test(p.text || '')))
+    .map(([k, uk, ru, u, ur, pre]) => {
+      let v = w.s[k]; v = Array.isArray(v) ? v[RUV ? 1 : 0] : String(v);
+      const unit = RUV ? (ur ?? u) : u;
+      return [RUV ? ru : uk, `${pre || ''}${v}${unit ? ' ' + unit : ''}`];
+    });
+  return rows.length ? {rows, site: w.site, src: w.src} : null;
+}
+function specsHtml(p) {
+  const own = specsOf(p), web = webSpecs(p, own);
+  return own.map(([k, v]) => `<div><dt>${TRL(k)}</dt><dd>${esc(TRL(v))}</dd></div>`).join('') + (web ? `<div class="mfh">${RUV ? 'По данным производителя' : 'За даними виробника'}</div>`
+    + web.rows.map(([k, v]) => `<div class="mf"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')
+    + `<div class="src">${RUV ? 'Справочно, для новой модели' : 'Довідково, для нової моделі'} (${RUV ? 'источник' : 'джерело'}: <a href="${esc(web.src)}" target="_blank" rel="noopener nofollow">${esc(web.site)}</a>). ${p.isNew ? '' : RUV ? 'Конкретный б/у экземпляр может отличаться — уточняйте в Telegram или Viber.' : 'Конкретний б/в екземпляр може відрізнятися — уточнюйте в Telegram чи Viber.'}</div>` : '');
+}
 function renderProduct(p) {
   const n = Math.max(p.photos.length, 1);
   // Схожі: та сама категорія; вище ті, що з тих самих підкатегорій (No Frost, низькі, вузькі…), вільні (не бронь) і ближчі за ціною.
@@ -1086,7 +1145,7 @@ function renderProduct(p) {
       <div class="idrow"><b>ID ${esc(p.id)}</b><button type="button" class="copy" data-copy aria-live="polite">Скопировать</button>
         ${p.reserved ? '<span class="holdtag">Бронь</span>' : '<span class="oktag">В наличии</span>'}</div>
       ${p.reserved ? `<p class="notice">Товар забронирован. Можем написать вам, если бронь снимут.<br><a class="link" href="${tgLink(`Добрый день! ID ${p.id}, ${nameOf(p)} сейчас в брони. Напишите, пожалуйста, если освободится. ${linkOf(p)}`)}" target="_blank" rel="noopener" data-track="click-telegram">Сообщить, когда освободится →</a></p>` : ''}
-      <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsOf(p).map(([k, v]) => `<div><dt>${TRL(k)}</dt><dd>${esc(TRL(v))}</dd></div>`).join('')}</dl></section>
+      <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsHtml(p)}</dl></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
         <div><h3 class="h3">${p.warrantyText ? `Гарантия ${esc(p.warrantyText)}` : 'Гарантия — уточняйте'}</h3><p class="muted">Проверяем каждый прибор перед продажей. Если что-то не так — ремонт или замена.</p></div></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v10h-11zM13.5 9.5h4l3.5 3.5v3.5h-7.5"/><circle cx="6.5" cy="17.5" r="1.8" fill="var(--soft)"/><circle cx="17" cy="17.5" r="1.8" fill="var(--soft)"/></svg>
@@ -1291,7 +1350,8 @@ function footer() {
   <p class="flang"><a href="./" hreflang="uk" lang="uk" data-lang="uk">Українською</a></p>`;
   $('#footer').onclick = e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); };
 }
-fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => {
+const webP = fetch('specs-web.json', {cache: 'no-cache'}).then(r => r.json()).then(d => { WEB = new Map(Object.entries(d.items || {})); }).catch(() => {});
+fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => webP.then(() => d)).then(d => {
   const seen = new Set();
   ALL = (d.products || []).map(parse).map(p => p && Object.assign(p, {chips: p.chips.map(TRL), warrantyText: TRL(p.warrantyText)})).filter(p => p && !seen.has(p.id) && seen.add(p.id));
   BY = new Map(ALL.map(p => [p.id, p])); UPDATED = d.updated || '';

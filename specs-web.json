@@ -1,0 +1,890 @@
+{
+ "note": "Характеристики моделей з сайтів виробників і магазинів. Ключ — бренд+модель без пробілів і знаків, великими літерами. Лише значення, яких немає в дописах.",
+ "updated": "2026-11-26",
+ "items": {
+  "AMICAAWDG7512CL": {
+   "name": "Amica AWDG7512CL",
+   "site": "amica.pl",
+   "src": "https://www.amica.pl/productpagepdf/product/printaction/product_id/36001",
+   "s": {
+    "energy": "D / E",
+    "kwhc": 0.69,
+    "prog": 15,
+    "water": 45,
+    "noises": 76,
+    "feat": [
+     "відкладений старт, блокування від дітей, рівні сушіння",
+     "отложенный старт, блокировка от детей, уровни сушки"
+    ]
+   }
+  },
+  "BEKORSNE445E22": {
+   "name": "Beko RSNE445E22",
+   "site": "eldorado.ua",
+   "src": "https://eldorado.ua/uk/offer_1426712/p71209432/",
+   "s": {
+    "energy": "A+",
+    "kwh": 168,
+    "vol": 375,
+    "noise": 39,
+    "feat": [
+     "дисплей, перевішування дверей, фільтр від запахів",
+     "дисплей, перевешивание дверей, фильтр от запахов"
+    ]
+   }
+  },
+  "BEKOWRS5511BAW": {
+   "name": "Beko WRS5511BAW",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/stiral-naja-mashina-beko-wrs-5511-baw.html",
+   "s": {
+    "energy": "A++",
+    "wclass": "A",
+    "sclass": "C",
+    "noise": 60,
+    "noises": 78,
+    "feat": [
+     "частковий AquaStop, відкладений старт до 9 год, програма «Сорочки»",
+     "частичный AquaStop, отложенный старт до 9 ч, программа «Рубашки»"
+    ]
+   }
+  },
+  "BOSCHSRV55T03EU": {
+   "name": "Bosch SRV55T03EU",
+   "site": "Bosch (технічний лист)",
+   "src": "https://media3.bosch-home.com/Documents/specsheet/fr-FR/SRV55T03EU.pdf",
+   "s": {
+    "kwhc": 0.8,
+    "noise": 47,
+    "prog": 5,
+    "feat": [
+     "AquaStop, Rackmatic, розпізнавання засобу 3 в 1, відкладений старт 1–19 год",
+     "AquaStop, Rackmatic, распознавание средства 3 в 1, отложенный старт 1–19 ч"
+    ]
+   }
+  },
+  "CANDYAQUA100F": {
+   "name": "Candy AQUA100F",
+   "site": "Candy (технічний лист)",
+   "src": "https://www.appliancesdirect.co.uk/PDFs/77265725/1/AQUA100F/1-80_1_classic.pdf",
+   "s": {
+    "energy": "A",
+    "kwh": 147,
+    "wclass": "A",
+    "sclass": "C",
+    "water": 26,
+    "noise": 56,
+    "noises": 78,
+    "prog": 11,
+    "feat": [
+     "відкладений старт до 9 год, програма для алергіків",
+     "отложенный старт до 9 ч, программа для аллергиков"
+    ]
+   }
+  },
+  "CANDYROW4964DWME1S": {
+   "name": "Candy ROW4964DWME/1-S",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/stiral-no-sushil-naja-mashina-candy-row-4964dwme-1-9.html",
+   "s": {
+    "energy": "A",
+    "wclass": "A",
+    "sclass": "B",
+    "water": 48,
+    "noise": 56,
+    "noises": 78,
+    "feat": [
+     "керування через Wi-Fi, дозавантаження білизни, блокування від дітей",
+     "управление через Wi-Fi, дозагрузка белья, блокировка от детей"
+    ]
+   }
+  },
+  "ELECTROLUXEW6S426BUI": {
+   "name": "Electrolux EW6S426BUI",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/stiral-naja-mashina-electrolux-ew6s426bui.html",
+   "s": {
+    "energy": "A+++ (−10%)",
+    "kwh": 137,
+    "wclass": "A",
+    "sclass": "B",
+    "noise": 54,
+    "noises": 77,
+    "feat": [
+     "обробка парою, SensiCare, Fuzzy Logic, Time Manager",
+     "обработка паром, SensiCare, Fuzzy Logic, Time Manager"
+    ]
+   }
+  },
+  "ELECTROLUXEW6S4R27W": {
+   "name": "Electrolux EW6S4R27W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/stiral-naja-mashina-electrolux-ew6s4r27w.html",
+   "s": {
+    "energy": "A+++",
+    "kwh": 174,
+    "wclass": "A",
+    "sclass": "B",
+    "feat": [
+     "Fuzzy Logic, антиалергія, захист від протікань, Time Manager",
+     "Fuzzy Logic, антиаллергия, защита от протечек, Time Manager"
+    ]
+   }
+  },
+  "ELECTROLUXEW6T4062U": {
+   "name": "Electrolux EW6T4062U",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/stiral-naja-mashina-electrolux-ew6t4062u.html",
+   "s": {
+    "energy": "A+++",
+    "wclass": "A",
+    "water": 47,
+    "noise": 56,
+    "noises": 75,
+    "feat": [
+     "SensiCare, Eco Valve, Fuzzy Logic",
+     "SensiCare, Eco Valve, Fuzzy Logic"
+    ]
+   }
+  },
+  "GORENJEWS511SYW": {
+   "name": "Gorenje WS511SYW",
+   "site": "eldorado.ua",
+   "src": "https://eldorado.ua/gorenje-ws-511-syw/p1075914/",
+   "s": {
+    "energy": "A",
+    "wclass": "A",
+    "sclass": "C"
+   }
+  },
+  "HISENSE75E7KQPRO": {
+   "name": "Hisense 75E7KQ PRO",
+   "site": "tvsfaq.com",
+   "src": "https://www.tvsfaq.com/en/specifications/hisense-75e7kq-pro",
+   "s": {
+    "res": "4K (3840×2160)",
+    "hdr": "Dolby Vision, HDR10+, HLG",
+    "os": "VIDAA",
+    "sound": [
+     "2×15 Вт + сабвуфер 20 Вт",
+     "2×15 Вт + сабвуфер 20 Вт"
+    ],
+    "hdmi": [
+     "4 (з них 2× HDMI 2.1)",
+     "4 (из них 2× HDMI 2.1)"
+    ],
+    "energy": "G"
+   }
+  },
+  "HISENSEDHQA903V": {
+   "name": "Hisense DHQA903V",
+   "site": "alza.cz",
+   "src": "https://www.alza.cz/hisense-dhqa903v-d12622168.htm",
+   "s": {
+    "energy": "D",
+    "cond": "C",
+    "noise": 64,
+    "prog": 11,
+    "feat": [
+     "тепловий насос, захист від зминання, відкладений старт",
+     "тепловой насос, защита от сминания, отложенный старт"
+    ]
+   }
+  },
+  "HISENSEDHQA903VPL": {
+   "name": "Hisense DHQA903V/PL",
+   "site": "alza.cz",
+   "src": "https://www.alza.cz/hisense-dhqa903v-d12622168.htm",
+   "s": {
+    "energy": "D",
+    "cond": "C",
+    "noise": 64,
+    "prog": 11,
+    "feat": [
+     "тепловий насос, захист від зминання, відкладений старт",
+     "тепловой насос, защита от сминания, отложенный старт"
+    ]
+   }
+  },
+  "HISENSEHV603D40": {
+   "name": "Hisense HV603D40",
+   "site": "Hisense (технічний лист)",
+   "src": "https://www.hisense.es/wp-content/uploads/2021/04/HV603D40-ES.pdf",
+   "s": {
+    "noise": 46,
+    "prog": 7,
+    "feat": [
+     "Total AquaStop, відкладений старт, самоочисний фільтр",
+     "Total AquaStop, отложенный старт, самоочищающийся фильтр"
+    ]
+   }
+  },
+  "HISENSERB470N4EFC1": {
+   "name": "Hisense RB470N4EFC1",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/holodil-nik-hisense-rb470n4efc1.html",
+   "s": {
+    "energy": "A++",
+    "kwh": 169,
+    "climate": "SN-N-ST-T",
+    "auton": 9,
+    "noise": 35,
+    "vol": 335,
+    "volf": 229,
+    "volz": 106,
+    "defrost": [
+     "No Frost",
+     "No Frost"
+    ],
+    "frz": 13,
+    "feat": [
+     "інверторний компресор, Smart Fresh, швидке заморожування",
+     "инверторный компрессор, Smart Fresh, быстрая заморозка"
+    ]
+   }
+  },
+  "HISENSERS650N4AC2": {
+   "name": "Hisense RS650N4AC2",
+   "site": "epicentrk.ua",
+   "src": "https://epicentrk.ua/shop/kholodilnik-hisense-rs650n4ac2.html",
+   "s": {
+    "kwh": 314,
+    "noise": 43,
+    "feat": [
+     "інверторний компресор, приховані ручки",
+     "инверторный компрессор, скрытые ручки"
+    ]
+   }
+  },
+  "HISENSERS818N4TFE": {
+   "name": "Hisense RS818N4TFE",
+   "site": "markselectrical.co.uk",
+   "src": "https://markselectrical.co.uk/rs818n4tfe_hisense-american-fridge-freezer",
+   "s": {
+    "energy": "E",
+    "kwh": 346,
+    "vol": 632,
+    "defrost": "No Frost",
+    "climate": "SN-T",
+    "noise": 38,
+    "feat": [
+     "Wi-Fi, інверторний компресор, льодогенератор, диспенсер води",
+     "Wi-Fi, инверторный компрессор, льдогенератор, диспенсер воды"
+    ]
+   }
+  },
+  "HISENSEWD5I1245BWRH": {
+   "name": "Hisense WD5I1245BWRH",
+   "site": "hisense.com",
+   "src": "https://it.hisense.com/prodotti/lavaggio/lavasciuga/WASHER-DRY-WD5I1245BWRH-WD5I1245BWRH-HSN/p/000000000020016941",
+   "s": {
+    "kwhc": 0.381,
+    "water": 44,
+    "prog": 23,
+    "noises": 72,
+    "feat": [
+     "сушіння з тепловим насосом, Wi-Fi, пара",
+     "сушка с тепловым насосом, Wi-Fi, пар"
+    ]
+   }
+  },
+  "HISENSEWD5S1045BW": {
+   "name": "Hisense WD5S1045BW",
+   "site": "markselectrical.co.uk",
+   "src": "https://markselectrical.co.uk/wd5s1045bw_hisense-washer-dryer",
+   "s": {
+    "energy": "A / D",
+    "sclass": "B",
+    "noises": 72,
+    "feat": [
+     "пара, Wi-Fi, автодозування, сушіння",
+     "пар, Wi-Fi, автодозирование, сушка"
+    ]
+   }
+  },
+  "HISENSEWF3S8045BW3": {
+   "name": "Hisense WF3S8045BW3",
+   "site": "digitec.ch",
+   "src": "https://www.digitec.ch/en/s1/product/hisense-wf3s8045bw3-waschmaschine-stand-8-kg-1400-umin-weiss-8-kg-left-washing-machine-49753997",
+   "s": {
+    "energy": "A"
+   }
+  },
+  "HISENSEWF5I1045BWQ": {
+   "name": "Hisense WF5I1045BWQ",
+   "site": "hisense.es",
+   "src": "https://www.hisense.es/wp-content/uploads/2025/04/WF5i1045BWQ-1.pdf",
+   "s": {
+    "feat": [
+     "TFT-дисплей, Wi-Fi, зменшена глибина",
+     "TFT-дисплей, Wi-Fi, уменьшенная глубина"
+    ]
+   }
+  },
+  "HISENSEWF5S1045BW": {
+   "name": "Hisense WF5S1045BW",
+   "site": "markselectrical.co.uk",
+   "src": "https://markselectrical.co.uk/WF5S1045BW",
+   "s": {
+    "energy": "A",
+    "kwhc": 0.52,
+    "prog": 19,
+    "wclass": "A",
+    "sclass": "B",
+    "water": 41,
+    "noises": 72,
+    "feat": [
+     "інверторний мотор, пара, Wi-Fi, автодозування",
+     "инверторный мотор, пар, Wi-Fi, автодозирование"
+    ]
+   }
+  },
+  "HISENSEWF7S1247BW": {
+   "name": "Hisense WF7S1247BW",
+   "site": "hisense.com",
+   "src": "https://fin.hisense.com/data-sheets/laundry/wf7s1247bw",
+   "s": {
+    "energy": "A",
+    "prog": 20,
+    "noises": 70,
+    "feat": [
+     "Wi-Fi, моніторинг енергії",
+     "Wi-Fi, мониторинг энергии"
+    ]
+   }
+  },
+  "HISENSEWFQA8014EVJM": {
+   "name": "Hisense WFQA8014EVJM",
+   "site": "hisense.es",
+   "src": "https://hisense.es/wp-content/uploads/2023/04/WFQA8014EVJMW.pdf",
+   "s": {
+    "energy": "A",
+    "water": 45,
+    "feat": [
+     "Wi-Fi, пара, інверторний мотор",
+     "Wi-Fi, пар, инверторный мотор"
+    ]
+   }
+  },
+  "HISENSEWFQP9014EVM": {
+   "name": "Hisense WFQP9014EVM",
+   "site": "hisense.es",
+   "src": "https://www.hisense.es/lavadoras/frontal/lavadora-wfqp9014evm",
+   "s": {
+    "energy": "C",
+    "sclass": "B",
+    "water": 42,
+    "feat": [
+     "пара, інверторний мотор",
+     "пар, инверторный мотор"
+    ]
+   }
+  },
+  "INDESITB18025": {
+   "name": "Indesit B 18.025",
+   "site": "eldorado.ua",
+   "src": "https://eldorado.ua/indesit-b-18-.025-wt/p1062485/",
+   "s": {
+    "energy": "B",
+    "volz": 85,
+    "noise": 39
+   }
+  },
+  "INDESITLI8S1ES": {
+   "name": "Indesit LI8S1ES",
+   "site": "moyo.ua",
+   "src": "https://www.moyo.ua/ua/xolodilnik_indesit_li8s1es/496362.html",
+   "s": {
+    "energy": "A+",
+    "kwh": 309,
+    "vol": 303,
+    "volf": 213,
+    "volz": 90,
+    "noise": 38,
+    "feat": [
+     "LED-освітлення, перевішування дверей, Low Frost",
+     "LED-освещение, перевешивание дверей, Low Frost"
+    ]
+   }
+  },
+  "INDESITLI8S1W": {
+   "name": "Indesit LI8 S1 W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/holodil-nik-indesit-li8-s1-w.html",
+   "s": {
+    "energy": "A+",
+    "kwh": 272,
+    "vol": 303,
+    "volf": 213,
+    "volz": 90,
+    "auton": 19,
+    "frz": 2,
+    "climate": "SN-N-ST",
+    "noise": 41
+   }
+  },
+  "KRUPSEA875E10": {
+   "name": "Krups EA875E10",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/kofemashina-krups-ea875e10.html",
+   "s": {
+    "power": 1450,
+    "bar": 15,
+    "tank": 3,
+    "prog": 15,
+    "feat": [
+     "вбудована кавомолка, автокапучинатор, автоочищення",
+     "встроенная кофемолка, автокапучинатор, автоочистка"
+    ]
+   }
+  },
+  "LGF10B9LD": {
+   "name": "LG F10B9LD",
+   "site": "lg.com",
+   "src": "https://www.lg.com/ro/masini-de-spalat/lg-F10B9LD",
+   "s": {
+    "energy": "A++",
+    "kwh": 171,
+    "sclass": "B",
+    "noise": 54,
+    "noises": 74,
+    "feat": [
+     "прямий привід Direct Drive, 6 Motion, Smart Diagnosis",
+     "прямой привод Direct Drive, 6 Motion, Smart Diagnosis"
+    ]
+   }
+  },
+  "LGF2J5HS4W": {
+   "name": "LG F2J5HS4W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/stiral-naja-mashina-lg-f2j5hs4w.html",
+   "s": {
+    "energy": "A",
+    "kwhc": 1.19,
+    "water": 48,
+    "wclass": "A",
+    "sclass": "B",
+    "noises": 74,
+    "feat": [
+     "6 Motion, інверторний Direct Drive, обробка парою Spa Steam, NFC",
+     "6 Motion, инверторный Direct Drive, обработка паром Spa Steam, NFC"
+    ]
+   }
+  },
+  "PHILIPSEP222010": {
+   "name": "Philips EP2220/10",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/kofemashina-philips-ep2220-10.html",
+   "s": {
+    "power": 1500,
+    "bar": 15,
+    "tank": 1.8,
+    "prog": 2,
+    "feat": [
+     "вбудована кавомолка, панарело, знімна заварна група",
+     "встроенная кофемолка, панарелло, съемная заварочная группа"
+    ]
+   }
+  },
+  "SAMSUNGDV90M5200QW": {
+   "name": "Samsung DV90M5200QW",
+   "site": "samsung.com",
+   "src": "https://www.samsung.com/ph/washers-and-dryers/dryers/9kg-white-dv90m5200qw-tc/",
+   "s": {
+    "feat": [
+     "тепловий насос, OptimalDry, фільтр 2-в-1, реверсивні дверцята",
+     "тепловой насос, OptimalDry, фильтр 2-в-1, реверсивная дверца"
+    ]
+   }
+  },
+  "SAMSUNGDV90TA240AE": {
+   "name": "Samsung DV90TA240AE",
+   "site": "samsung.com",
+   "src": "https://images.samsung.com/is/content/samsung/p6/common/energylabel/common-energylabel-dv90ta240ae-eo-productfiche.pdf",
+   "s": {
+    "kwhc": 1.05,
+    "cond": "C",
+    "noise": 64,
+    "feat": [
+     "тепловий насос, OptimalDry, функція «без зморшок», реверсивні дверцята",
+     "тепловой насос, OptimalDry, функция «без складок», реверсивная дверца"
+    ]
+   }
+  },
+  "SAMSUNGDV90TA240AEEO": {
+   "name": "Samsung DV90TA240AE",
+   "site": "samsung.com",
+   "src": "https://images.samsung.com/is/content/samsung/p6/common/energylabel/common-energylabel-dv90ta240ae-eo-productfiche.pdf",
+   "s": {
+    "kwhc": 1.05,
+    "cond": "C",
+    "noise": 64,
+    "feat": [
+     "тепловий насос, OptimalDry, функція «без зморшок», реверсивні дверцята",
+     "тепловой насос, OptimalDry, функция «без складок», реверсивная дверца"
+    ]
+   }
+  },
+  "SAMSUNGNB69R5701RS": {
+   "name": "Samsung NB69R5701RS",
+   "site": "ao.com (енергетичний лист)",
+   "src": "https://media.ao.com/de-DE/energieeffizienzklasse/produktdatenblatt/f-nb69r5701rs_ssl.pdf",
+   "s": {
+    "energy": "A",
+    "ovol": 69
+   }
+  },
+  "SAMSUNGNK36C5703TS": {
+   "name": "Samsung NK36C5703TS",
+   "site": "markselectrical.co.uk",
+   "src": "https://markselectrical.co.uk/nk36c5703ts%2fur_samsung-90cm-chimney-cooker-hood-with-auto-connectivity",
+   "s": {
+    "energy": "A",
+    "air": 622,
+    "noise": 72,
+    "feat": [
+     "4 швидкості, автозв'язок з варильною поверхнею",
+     "4 скорости, автосвязь с варочной поверхностью"
+    ]
+   }
+  },
+  "SAMSUNGNV66M3531BB": {
+   "name": "Samsung NV66M3531BB",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/duhovoj-shkaf-jelektricheskij-samsung-nv66m3531bs-wt.html",
+   "s": {
+    "energy": "A",
+    "ovol": 66,
+    "tmax": 250,
+    "clean": [
+     "каталітичне",
+     "каталитическая"
+    ],
+    "feat": [
+     "Dual Cook (дві зони), подвійна конвекція, блокування панелі",
+     "Dual Cook (две зоны), двойная конвекция, блокировка панели"
+    ]
+   }
+  },
+  "SAMSUNGNV70K2340RS": {
+   "name": "Samsung NV70K2340RS",
+   "site": "epicentrk.ua",
+   "src": "https://epicentrk.ua/shop/dukhovoy-shkaf-samsung-nv70k2340rs-wt.html",
+   "s": {
+    "energy": "A",
+    "ovol": 70,
+    "clean": [
+     "каталітичне",
+     "каталитическая"
+    ],
+    "prog": 20,
+    "feat": [
+     "Dual Fan, телескопічні напрямні, дисплей, захист від дітей",
+     "Dual Fan, телескопические направляющие, дисплей, защита от детей"
+    ]
+   }
+  },
+  "SAMSUNGRH69CG895DS9": {
+   "name": "Samsung RH69CG895DS9",
+   "site": "markselectrical.co.uk",
+   "src": "https://markselectrical.co.uk/rh69cg895ds9eu_samsung-american-fridge-freezer",
+   "s": {
+    "vol": 645,
+    "defrost": "No Frost",
+    "noise": 35,
+    "feat": [
+     "Beverage Center, льодогенератор, Wi-Fi",
+     "Beverage Center, льдогенератор, Wi-Fi"
+    ]
+   }
+  },
+  "SAMSUNGRS65DG54R3S9": {
+   "name": "Samsung RS65DG54R3S9",
+   "site": "coolblue.be",
+   "src": "https://www.coolblue.be/en/product/948771/samsung-rs65dg54r3s9ef-wifi.html",
+   "s": {
+    "energy": "E",
+    "kwh": 345,
+    "vol": 635,
+    "volf": 417,
+    "volz": 218,
+    "defrost": "No Frost",
+    "noise": 37,
+    "feat": [
+     "Wi-Fi, диспенсер води й льоду, SpaceMax",
+     "Wi-Fi, диспенсер воды и льда, SpaceMax"
+    ]
+   }
+  },
+  "SAMSUNGRS68A8520S9": {
+   "name": "Samsung RS68A8520S9",
+   "site": "eldorado.ua",
+   "src": "https://eldorado.ua/holodilinik-samsung-rs-68-a-8520-s-9ua/p71322161/",
+   "s": {
+    "energy": "A+",
+    "volf": 402,
+    "volz": 207,
+    "noise": 38,
+    "feat": [
+     "дисплей, режим «Відпустка», льодогенератор, суперохолодження",
+     "дисплей, режим «Отпуск», ледогенератор, суперохлаждение"
+    ]
+   }
+  },
+  "SAMSUNGRS68A884CB1": {
+   "name": "Samsung RS68A884CB1",
+   "site": "coolblue.nl",
+   "src": "https://www.coolblue.nl/en/product/889057/samsung-rs68a884cb1-ef.html",
+   "s": {
+    "energy": "C",
+    "kwh": 225,
+    "vol": 635,
+    "volf": 409,
+    "volz": 226,
+    "defrost": "No Frost",
+    "noise": 35,
+    "feat": [
+     "Twin Cooling Plus, Metal Cooling, диспенсер води",
+     "Twin Cooling Plus, Metal Cooling, диспенсер воды"
+    ]
+   }
+  },
+  "SAMSUNGRS68CG883DS9": {
+   "name": "Samsung RS68CG883DS9",
+   "site": "coolblue.nl",
+   "src": "https://coolblue.nl/en/product/927276/samsung-rs68cg883ds9ef.html",
+   "s": {
+    "energy": "D",
+    "kwh": 281,
+    "vol": 634,
+    "volf": 409,
+    "volz": 225,
+    "defrost": "No Frost",
+    "noise": 35,
+    "feat": [
+     "диспенсер води й льоду, Twin Cooling Plus, SmartThings",
+     "диспенсер воды и льда, Twin Cooling Plus, SmartThings"
+    ]
+   }
+  },
+  "SAMSUNGWD10T754CBH": {
+   "name": "Samsung WD10T754CBH",
+   "site": "eldorado.ua",
+   "src": "https://eldorado.ua/pralino-sushilina-mashina-samsung-wd-10-t-754-cbhua/p71316710/",
+   "s": {
+    "energy": "A",
+    "wclass": "A",
+    "sclass": "A",
+    "noise": 52,
+    "noises": 73,
+    "prog": 25,
+    "feat": [
+     "Eco Bubble, дозавантаження білизни, сушіння",
+     "Eco Bubble, дозагрузка белья, сушка"
+    ]
+   }
+  },
+  "SAMSUNGWD80K5410OW": {
+   "name": "Samsung WD80K5410OW",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/stiral-naja-mashina-samsung-wd80k5410ow-ua.html",
+   "s": {
+    "energy": "A",
+    "wclass": "A",
+    "sclass": "A",
+    "feat": [
+     "інверторний двигун Digital Inverter, AddWash, EcoBubble, Diamond Drum",
+     "инверторный двигатель Digital Inverter, AddWash, EcoBubble, Diamond Drum"
+    ]
+   }
+  },
+  "SAMSUNGWD80K5410OWUA": {
+   "name": "Samsung WD80K5410OW",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/stiral-naja-mashina-samsung-wd80k5410ow-ua.html",
+   "s": {
+    "energy": "A",
+    "wclass": "A",
+    "sclass": "A",
+    "feat": [
+     "інверторний двигун Digital Inverter, AddWash, EcoBubble, Diamond Drum",
+     "инверторный двигатель Digital Inverter, AddWash, EcoBubble, Diamond Drum"
+    ]
+   }
+  },
+  "SAMSUNGWD81TA049BE": {
+   "name": "Samsung WD81TA049BE",
+   "site": "coolblue.de",
+   "src": "https://www.coolblue.de/en/product/963673/samsung-wd81ta049be-eg-8-5kg.html",
+   "s": {
+    "energy": "C / E",
+    "noises": 72,
+    "prog": 14,
+    "feat": [
+     "прання+сушіння 59 хв, Air Wash, пара",
+     "стирка+сушка 59 мин, Air Wash, пар"
+    ]
+   }
+  },
+  "SAMSUNGWW60K42101W": {
+   "name": "Samsung WW60K42101W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/stiral-naja-mashina-samsung-ww60k42101wdua.html",
+   "s": {
+    "energy": "A+++",
+    "kwh": 122,
+    "sclass": "B",
+    "noise": 54,
+    "noises": 73,
+    "feat": [
+     "Digital Inverter, Smart Check, Diamond Drum",
+     "Digital Inverter, Smart Check, Diamond Drum"
+    ]
+   }
+  },
+  "SAMSUNGWW80K6210RW": {
+   "name": "Samsung WW80K6210RW",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/stiral-naja-mashina-samsung-ww80k6210rw-ua.html",
+   "s": {
+    "energy": "A+++",
+    "kwh": 136,
+    "wclass": "A",
+    "sclass": "B",
+    "noise": 56,
+    "noises": 75,
+    "feat": [
+     "Eco Bubble, Diamond Drum, Smart Check, інверторний двигун",
+     "Eco Bubble, Diamond Drum, Smart Check, инверторный двигатель"
+    ]
+   }
+  },
+  "SAMSUNGWW80T3040BW": {
+   "name": "Samsung WW80T3040BW",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/ua/stiral-naja-mashina-samsung-ww80t3040bw-ua.html",
+   "s": {
+    "energy": "A+++",
+    "kwh": 177,
+    "sclass": "B",
+    "water": 48,
+    "noise": 62,
+    "noises": 75,
+    "prog": 14,
+    "feat": [
+     "Digital Inverter, очищення барабана, швидке прання 18 хв",
+     "Digital Inverter, очистка барабана, быстрая стирка 18 мин"
+    ]
+   }
+  },
+  "SAMSUNGWW90M741N00": {
+   "name": "Samsung WW90M741N00",
+   "site": "samsung.com",
+   "src": "https://www.samsung.com/pl/washers-and-dryers/washing-machines/front-load-9kg-inox-ww90m741noo-eo/",
+   "s": {
+    "energy": "A+++",
+    "kwh": 130,
+    "noise": 49,
+    "noises": 73,
+    "sclass": "A",
+    "feat": [
+     "EcoBubble, QuickDrive, AddWash, обробка парою",
+     "EcoBubble, QuickDrive, AddWash, обработка паром"
+    ]
+   }
+  },
+  "SAMSUNGWW90T554DTW": {
+   "name": "Samsung WW90T554DTW",
+   "site": "samsung.com",
+   "src": "https://images.samsung.com/is/content/samsung/p5/common/energylabel/common-energylabel-ww90t554dtw-s3-productfiche.pdf",
+   "s": {
+    "energy": "A",
+    "kwhc": 0.494,
+    "water": 50,
+    "sclass": "B",
+    "noises": 72,
+    "feat": [
+     "Eco Bubble, AddWash, інверторний мотор, пара, Wi-Fi",
+     "Eco Bubble, AddWash, инверторный мотор, пар, Wi-Fi"
+    ]
+   }
+  },
+  "SHARPSJBA05DMXW1UA": {
+   "name": "Sharp SJ-BA05DMXW1-UA",
+   "site": "epicentrk.ua",
+   "src": "https://epicentrk.ua/ua/shop/kholodilnik-sharp-sj-ba05dmxw1-ua.html",
+   "s": {
+    "vol": 288,
+    "kwh": 261,
+    "defrost": [
+     "No Frost",
+     "No Frost"
+    ],
+    "noise": 42,
+    "feat": [
+     "інверторний компресор, приховані ручки",
+     "инверторный компрессор, скрытые ручки"
+    ]
+   }
+  },
+  "SIEMENSKG39NAIAU": {
+   "name": "Siemens KG39NAIAU",
+   "site": "Siemens (технічний лист)",
+   "src": "https://www.gigantti.fi/document/dv_doc_D18000138453819/1089423/siemens-iq500-jaakaappipakastin-kg39naiau-ruostumaton-teras.PDF",
+   "s": {
+    "energy": "A",
+    "kwh": 112,
+    "vol": 363,
+    "volf": 260,
+    "volz": 103,
+    "defrost": [
+     "No Frost",
+     "No Frost"
+    ],
+    "climate": "SN-T",
+    "frz": 10,
+    "auton": 21,
+    "noise": 29,
+    "feat": [
+     "hyperFresh (зона свіжості 0 °C), Total No Frost, підсвітка морозилки",
+     "hyperFresh (зона свежести 0 °C), Total No Frost, подсветка морозилки"
+    ]
+   }
+  },
+  "VESTFROSTCW286W": {
+   "name": "Vestfrost CW286W",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/holodil-nik-vestfrost-cw-286-w.html",
+   "s": {
+    "energy": "A+",
+    "kwh": 264,
+    "vol": 286,
+    "volf": 202,
+    "volz": 84,
+    "noise": 40,
+    "climate": "N-ST-T",
+    "frz": 4,
+    "auton": 17
+   }
+  },
+  "WHIRLPOOLAKZ96220IX": {
+   "name": "Whirlpool AKZ9 6220IX",
+   "site": "Whirlpool (технічний лист)",
+   "src": "https://www.appliancesdirect.co.uk/PDFs/AKZ96220IX_ProductDataSheetBrochure1.PDF",
+   "s": {
+    "energy": "A+",
+    "ovol": 73,
+    "clean": [
+     "гідролізне (SmartClean)",
+     "гидролизная (SmartClean)"
+    ],
+    "prog": 16,
+    "tmax": 250,
+    "feat": [
+     "Cook3 — 3 страви одночасно, телескопічні напрямні, плавне закривання дверцят",
+     "Cook3 — 3 блюда одновременно, телескопические направляющие, плавное закрывание дверцы"
+    ]
+   }
+  }
+ }
+}
