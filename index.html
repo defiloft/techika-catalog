@@ -10,6 +10,8 @@
 <link rel="alternate" hreflang="uk" href="https://techika.com.ua/">
 <link rel="alternate" hreflang="ru" href="https://techika.com.ua/ru/">
 <link rel="alternate" hreflang="x-default" href="https://techika.com.ua/">
+<script>/* Мова: уперше відкриваємо ту, що стоїть першою в браузері (російська → ru/), далі — ту, яку людина вибрала перемикачем. Ботів не перенаправляємо. */
+(function(){var H='uk',P='ru/',s;try{s=localStorage.getItem('lang')}catch(e){}var L=(navigator.languages||[navigator.language||'']).map(function(x){return String(x).slice(0,2).toLowerCase()}),u=L.indexOf('uk'),r=L.indexOf('ru'),w=s||(r>-1&&(u<0||r<u)?'ru':u>-1?'uk':'');if(w&&w!==H&&!/bot|crawl|spider|slurp|preview|lighthouse|headless/i.test(navigator.userAgent))location.replace(new URL(P,location.href).pathname+location.search+location.hash);document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-lang]');if(a)try{localStorage.setItem('lang',a.dataset.lang)}catch(x){}})})();</script>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
 <meta property="og:site_name" content="Техніка з Європи">
@@ -1192,7 +1194,7 @@ function footer() {
     <div class="fbtns"><a class="btn tgb" href="https://t.me/${SHOP.tg}" target="_blank" rel="noopener" data-track="click-telegram">Telegram</a><a class="btn vb" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber">Viber</a></div>
   </div>${t && !isNaN(t) ? `<p class="fupd">Товар оновлено ${t.toLocaleString('uk-UA', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit'})}</p>` : ''}
   <nav class="fcats" aria-label="Розділи каталогу">${GROUPS.flatMap(g => g[1]).filter(id => CNT.get(id) && SLUG[id]).map(id => `<a href="katalog/${SLUG[id]}/">${esc(CAT[id].name)}</a>`).join('')}</nav>
-  <p class="flang"><a href="ru/" hreflang="ru" lang="ru">На русском</a></p>`;
+  <p class="flang"><a href="ru/" hreflang="ru" lang="ru" data-lang="ru">На русском</a></p>`;
   $('#footer').onclick = e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); };
 }
 fetch('products.json', {cache: 'no-cache'}).then(r => r.json()).catch(() => ({products: []})).then(d => {
