@@ -1,0 +1,12 @@
+name: gc-today (temporary)
+on:
+  push:
+    branches: [claude/project-thread-ue6cp6]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          d=$(TZ=Europe/Kyiv date +%F); n=$(TZ=Europe/Kyiv date -d tomorrow +%F)
+          for p in %2F click-telegram click-viber; do echo "RESULT $p $(curl -s "https://techika-catalog.goatcounter.com/counter/$p.json?start=$d&end=$n")"; done
+          echo "RESULT site-has-counter $(curl -sL https://techika.com.ua/ | grep -c goatcounter)"
