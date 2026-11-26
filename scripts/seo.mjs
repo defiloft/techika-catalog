@@ -127,7 +127,7 @@ ${json.map(ld).join('\n')}
 </head>
 <body>
 <div class="page">
-<header class="header"><a class="shop" href="${up}${L.base}">${L.logo}</a>${L.code === 'uk' ? '' : `<span class="hlang"><a href="${up}${rel(other, key)}" hreflang="uk" lang="uk" data-lang="uk" title="${L.switchLabel}">UA</a></span>`}<a href="${up}${L.base}" aria-label="${L.toHome}"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
+<header class="header"><a class="shop" href="${up}${L.base}">${L.logo}</a><span class="hlang"><a href="${up}${rel(other, key)}" hreflang="${other.code}" lang="${other.code}" data-lang="${other.code}" title="${L.switchLabel}">${other.code === 'uk' ? 'UA' : 'RU'}</a></span><a href="${up}${L.base}" aria-label="${L.toHome}"><img class="emblem" src="${up}img/emblem.png?v=2" width="48" height="48" alt=""></a></header>
 ${body}
 <footer class="footer">
   <p><b>${esc(L.shop)}</b> — ${L.about}</p>
