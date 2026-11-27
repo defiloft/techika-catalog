@@ -1,24 +1,24 @@
 {
- "updated": "2026-11-26T07:18+00:00",
+ "updated": "2026-11-27T06:26+00:00",
  "yesterday": {
-  "visits": 16,
-  "telegram": 0,
+  "visits": 36,
+  "telegram": 1,
   "viber": 0,
-  "start": "2026-11-25",
-  "end": "2026-11-25"
+  "start": "2026-11-26",
+  "end": "2026-11-26"
  },
  "last7": {
-  "visits": 16,
-  "telegram": 0,
+  "visits": 52,
+  "telegram": 1,
   "viber": 0,
-  "start": "2026-11-19",
-  "end": "2026-11-25"
+  "start": "2026-11-20",
+  "end": "2026-11-26"
  },
  "last30": {
-  "visits": 16,
-  "telegram": 0,
+  "visits": 52,
+  "telegram": 1,
   "viber": 0,
-  "start": "2026-10-27",
-  "end": "2026-11-25"
+  "start": "2026-10-28",
+  "end": "2026-11-26"
  }
 }
