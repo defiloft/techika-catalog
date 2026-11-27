@@ -59,6 +59,59 @@
  ],
  "products": [
   {
+   "id": "posudomyini_mashyny/4337",
+   "channel": "posudomyini_mashyny",
+   "title": "ID111132",
+   "text": "ID111132\nЦіна 8800 грн\nTeka DW8 41FI\nДо 12 комплектів \nВисота 83 см\nШирина 45 см\nГлибина 60 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
+   "price": 8800,
+   "images": [
+    "https://cdn4.telesco.pe/file/avyTs_0dr5aWatp3VLp-DZPsSArA0hrLMrlPBrQPcIQu4cVYfOOJQt8YyKcKrVLo--6_EvNbVQ1zlGo_Ax7OPN0-6-RdlxdV6vHKfrxyWIn0uY_VUgsn5jMUKq5ZYeeVciMpIBlFcwMaHMVmKwa5vruPx50ZQy6K3qmZ8mcgLon895CSMTA9nRs_61hBFlwJjq5zFH4T3RBNvTqsEqgYBleHfkZbJVE6asS22MDL8ukIkzxgilPA2Tqx7xYXoHHRKWV-U-Iey2uWqJcGNEpmINqhWa_cbMjBQQv1lx9RRnw5Gw4e9UzKzOa4bqTCBPJTiwlj1g7EQ5_OPUZlIL5jAA.jpg",
+    "https://cdn4.telesco.pe/file/V3L1CnpFbPIAY4XVALdien09FCNjvSDFtlwYZqo9WGfmQJ6Gd57VSoo-ITzywGh-3C2Q_2F4waPO01AuXKJeXMmLHoPE1IKMGb5SpvybWPHxd1g6-DIko3ktXdEDyTm2ryibDBPp_8eV_UoTmNpp8_eDbjTEpiC4Bgpb0j6icMHK6bcrGvYomoQv3H391Bp8G5PwM2KxmSIxZ9CTR7yAo_UxzskCvtkRuP9VHZ7vluVGM0DJ9hlvkALJGebrsvNM7UJxOVxwLXqSmgHfQlOlKWy0O0KAcgKZioIPqNnBYgGMVJuczFYCwviDZnuGzSlZX025Joa42qG_z8bppk_03w.jpg"
+   ],
+   "date": "2026-11-27T14:26:42+00:00",
+   "url": "https://t.me/posudomyini_mashyny/4337",
+   "from": "",
+   "brand": "Teka",
+   "model": "DW8 41FI",
+   "pid": "111132",
+   "chips": [
+    "83×45×60 см",
+    "12 компл."
+   ],
+   "extra": [
+    "img/tg/req/144268.jpg",
+    "img/tg/req/144269.jpg",
+    "img/tg/req/144270.jpg",
+    "img/tg/req/144271.jpg",
+    "img/tg/req/144272.jpg",
+    "img/tg/req/144273.jpg"
+   ]
+  },
+  {
+   "title": "ID111148",
+   "text": "ID111148\nЦіна 9499 грн\nElectrolux EWS1266CL\n6 кг завантаження \n1200 обертів \nВисота 85 см \nШирина 60 см \nГлибина 40 см \nГарантія 3 місяці \nВул. Вадима Гетьмана, 1",
+   "price": 9499,
+   "brand": "Electrolux",
+   "model": "EWS1266CL",
+   "pid": "111148",
+   "chips": [
+    "85×60×40 см",
+    "6 кг",
+    "1200 об"
+   ],
+   "images": [
+    "img/tg/1572068527/13759.jpg",
+    "img/tg/1572068527/13760.jpg"
+   ],
+   "id": "pralni_sushylni_mashyny/c1572068527_13759",
+   "channel": "pralni_sushylni_mashyny",
+   "chat": 1572068527,
+   "date": "2026-11-27T14:19:01+00:00",
+   "url": "https://t.me/c/1572068527/13759",
+   "from": "",
+   "private": true
+  },
+  {
    "title": "ID110447",
    "text": "ID110447\nЦіна 5499 грн\nGrunhelm GDI359I\nГриль є \nКонвекція є\nВисота 60 см \nШирина 59.5 см \nГлибина 59 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 5499,
@@ -78,12 +131,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144265.jpg",
+    "img/tg/req/144266.jpg",
     "img/tg/req/144259.jpg",
     "img/tg/req/144260.jpg",
     "img/tg/req/144261.jpg",
-    "img/tg/req/144262.jpg",
-    "img/tg/req/144263.jpg",
-    "img/tg/req/144264.jpg"
+    "img/tg/req/144262.jpg"
    ]
   },
   {
@@ -109,12 +162,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144254.jpg",
+    "img/tg/req/144255.jpg",
     "img/tg/req/144256.jpg",
     "img/tg/req/144257.jpg",
     "img/tg/req/144250.jpg",
-    "img/tg/req/144251.jpg",
-    "img/tg/req/144252.jpg",
-    "img/tg/req/144253.jpg"
+    "img/tg/req/144251.jpg"
    ]
   },
   {
@@ -140,12 +193,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144248.jpg",
     "img/tg/req/144249.jpg",
     "img/tg/req/144243.jpg",
     "img/tg/req/144244.jpg",
     "img/tg/req/144245.jpg",
-    "img/tg/req/144246.jpg",
-    "img/tg/req/144247.jpg"
+    "img/tg/req/144246.jpg"
    ]
   },
   {
@@ -203,12 +256,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144231.jpg",
+    "img/tg/req/144232.jpg",
     "img/tg/req/144233.jpg",
     "img/tg/req/144234.jpg",
     "img/tg/req/144227.jpg",
-    "img/tg/req/144228.jpg",
-    "img/tg/req/144229.jpg",
-    "img/tg/req/144230.jpg"
+    "img/tg/req/144228.jpg"
    ]
   },
   {
@@ -255,12 +308,12 @@
     "120 кг"
    ],
    "extra": [
+    "img/tg/req/144202.jpg",
     "img/tg/req/144203.jpg",
     "img/tg/req/144204.jpg",
     "img/tg/req/144205.jpg",
     "img/tg/req/144206.jpg",
-    "img/tg/req/144200.jpg",
-    "img/tg/req/144201.jpg"
+    "img/tg/req/144200.jpg"
    ]
   },
   {
@@ -308,12 +361,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144197.jpg",
+    "img/tg/req/144198.jpg",
     "img/tg/req/144191.jpg",
     "img/tg/req/144192.jpg",
     "img/tg/req/144193.jpg",
-    "img/tg/req/144194.jpg",
-    "img/tg/req/144195.jpg",
-    "img/tg/req/144196.jpg"
+    "img/tg/req/144194.jpg"
    ]
   },
   {
@@ -339,12 +392,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144183.jpg",
+    "img/tg/req/144184.jpg",
     "img/tg/req/144185.jpg",
     "img/tg/req/144186.jpg",
     "img/tg/req/144179.jpg",
-    "img/tg/req/144180.jpg",
-    "img/tg/req/144181.jpg",
-    "img/tg/req/144182.jpg"
+    "img/tg/req/144180.jpg"
    ]
   },
   {
@@ -399,12 +452,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144139.jpg",
     "img/tg/req/144140.jpg",
     "img/tg/req/144141.jpg",
     "img/tg/req/144142.jpg",
     "img/tg/req/144143.jpg",
-    "img/tg/req/144144.jpg",
-    "img/tg/req/144138.jpg"
+    "img/tg/req/144144.jpg"
    ]
   },
   {
@@ -430,12 +483,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144130.jpg",
+    "img/tg/req/144131.jpg",
     "img/tg/req/144132.jpg",
     "img/tg/req/144133.jpg",
     "img/tg/req/144134.jpg",
-    "img/tg/req/144135.jpg",
-    "img/tg/req/144136.jpg",
-    "img/tg/req/144137.jpg"
+    "img/tg/req/144135.jpg"
    ]
   },
   {
@@ -461,12 +514,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144123.jpg",
+    "img/tg/req/144124.jpg",
+    "img/tg/req/144125.jpg",
     "img/tg/req/144126.jpg",
     "img/tg/req/144127.jpg",
-    "img/tg/req/144128.jpg",
-    "img/tg/req/144120.jpg",
-    "img/tg/req/144121.jpg",
-    "img/tg/req/144122.jpg"
+    "img/tg/req/144128.jpg"
    ]
   },
   {
@@ -492,12 +545,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144114.jpg",
+    "img/tg/req/144115.jpg",
+    "img/tg/req/144116.jpg",
     "img/tg/req/144117.jpg",
     "img/tg/req/144118.jpg",
-    "img/tg/req/144119.jpg",
-    "img/tg/req/144111.jpg",
-    "img/tg/req/144112.jpg",
-    "img/tg/req/144113.jpg"
+    "img/tg/req/144119.jpg"
    ]
   },
   {
@@ -523,12 +576,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144109.jpg",
+    "img/tg/req/144110.jpg",
     "img/tg/req/144103.jpg",
     "img/tg/req/144104.jpg",
     "img/tg/req/144105.jpg",
-    "img/tg/req/144106.jpg",
-    "img/tg/req/144107.jpg",
-    "img/tg/req/144108.jpg"
+    "img/tg/req/144106.jpg"
    ]
   },
   {
@@ -584,12 +637,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144094.jpg",
+    "img/tg/req/144095.jpg",
     "img/tg/req/144088.jpg",
     "img/tg/req/144089.jpg",
     "img/tg/req/144090.jpg",
-    "img/tg/req/144091.jpg",
-    "img/tg/req/144092.jpg",
-    "img/tg/req/144093.jpg"
+    "img/tg/req/144091.jpg"
    ]
   },
   {
@@ -616,12 +669,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144081.jpg",
     "img/tg/req/144082.jpg",
     "img/tg/req/144083.jpg",
     "img/tg/req/144084.jpg",
     "img/tg/req/144085.jpg",
-    "img/tg/req/144086.jpg",
-    "img/tg/req/144087.jpg"
+    "img/tg/req/144086.jpg"
    ]
   },
   {
@@ -646,12 +699,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144077.jpg",
+    "img/tg/req/144078.jpg",
     "img/tg/req/144071.jpg",
     "img/tg/req/144072.jpg",
     "img/tg/req/144073.jpg",
-    "img/tg/req/144074.jpg",
-    "img/tg/req/144075.jpg",
-    "img/tg/req/144076.jpg"
+    "img/tg/req/144074.jpg"
    ]
   },
   {
@@ -677,12 +730,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144068.jpg",
+    "img/tg/req/144069.jpg",
     "img/tg/req/144062.jpg",
     "img/tg/req/144063.jpg",
     "img/tg/req/144064.jpg",
-    "img/tg/req/144065.jpg",
-    "img/tg/req/144066.jpg",
-    "img/tg/req/144067.jpg"
+    "img/tg/req/144065.jpg"
    ]
   },
   {
@@ -708,12 +761,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144054.jpg",
     "img/tg/req/144055.jpg",
     "img/tg/req/144056.jpg",
     "img/tg/req/144057.jpg",
     "img/tg/req/144058.jpg",
-    "img/tg/req/144059.jpg",
-    "img/tg/req/144060.jpg"
+    "img/tg/req/144059.jpg"
    ]
   },
   {
@@ -768,12 +821,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144036.jpg",
+    "img/tg/req/144037.jpg",
     "img/tg/req/144038.jpg",
     "img/tg/req/144039.jpg",
     "img/tg/req/144032.jpg",
-    "img/tg/req/144033.jpg",
-    "img/tg/req/144034.jpg",
-    "img/tg/req/144035.jpg"
+    "img/tg/req/144033.jpg"
    ]
   },
   {
@@ -799,12 +852,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144027.jpg",
+    "img/tg/req/144028.jpg",
     "img/tg/req/144029.jpg",
     "img/tg/req/144030.jpg",
     "img/tg/req/144023.jpg",
-    "img/tg/req/144024.jpg",
-    "img/tg/req/144025.jpg",
-    "img/tg/req/144026.jpg"
+    "img/tg/req/144024.jpg"
    ]
   },
   {
@@ -861,12 +914,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/143991.jpg",
     "img/tg/req/143985.jpg",
     "img/tg/req/143986.jpg",
     "img/tg/req/143987.jpg",
     "img/tg/req/143988.jpg",
-    "img/tg/req/143989.jpg",
-    "img/tg/req/143990.jpg"
+    "img/tg/req/143989.jpg"
    ]
   },
   {
@@ -4487,7 +4540,7 @@
    "text": "ID105175\nЦіна 10999 грн\n🔥Нова ціна 8600 грн🔥\n❗️ЗНИЖКА 20%❗️ \nGrundig\nNoFrost система охолодження \nВисота 182 см  \nШирина 60 см\nГлибина 63 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 8600,
    "images": [
-    "https://cdn4.telesco.pe/file/Tfw-vQEufPPyDzEI8z0HI5nCmcoMtm0GkcGnQGtroPJ-0HiuhcGmHjPxjmEcmwtkgofNAK6BgGxGvQhx6P6dPzx3K60gUJvME16SNjQlqKGZwhlGiSUOgSbxp6xNtWZZBGlffIVUA1aoKIkaznGBeiYDaEg4IgmkcTbdnyRIp6xNj732jp8ctx2qi9q0NOCMtn-2geZQy21ejm-q3ThiNzbSltmGva7sDzkUmNv7E5aT7FG3xELMZiLYV31kKib0kugLMJWHyQ5usnChL5NYk7B3_1Ep8oPdxDtgYOjOjVHlPnoatlBHqJrEGW7x7y_-J1CMHi85rofHtf2IIRDGtg.jpg",
+    "https://cdn4.telesco.pe/file/bjKkC_Vwz7QcxUyh8qwv_XcfZFjAjAF9i_GCBLjkLMTuaQCWNfRVBwP_FDKTNwtVxDaMHisd6aoN8C8G82_D26EK0mLs06gNm8QMVnQUk6JTlxKmGpCzxj1oky8u1Wp7Z2pj6YeAZpIhXFlFybJ929JGynWVjL6L_vPwP5Qg4HfsESRcbOGDLq97fn7AQdBKMFxNecI2sBE56eiPbEcDIckPJKdGXx1OHfCnGFfJyli6aMUNrT2WfegdYqxrihZEbhm-hzf0AwIYTvRnMNKOrl9Ei4Eupi1X-sgJFuXdz9YChIORvpz5FoopArkE1eF-UP2HWHot4DQvFcXqcW9BcQ.jpg",
     "https://cdn4.telesco.pe/file/tvz8UG7dvcVfX7huKhAT_Ypzon83xNX7KN97DRtOrWi6_LjZSonN1NtmN9MTc7QxA3eZZyhJ-594Rh2oyN43bloJ1LIjnDUbAu1L1ZKCTdQhF1JXNNAzYpaCLnKYVaDu4m7WuWo1OKE22LJSm0bJhHTjtdSyEI7eFt8jhrfQNEyp82aT3Gz-kcNCOJP-l7_N6CPMgORX1aLpxPnDGQZ91YLOWeZdURVyoL2PUIOzBjAcrB8OL6Yjl65uDpwHGm4iEr9pfg9aTGqBkLzT46pWAywLRFtShg7eqM8bSF4aJKsK2MTZ2qZVCQ2pGYOj9myn-P5hSIsG9CVc2aSO-0EJxg.jpg"
    ],
    "date": "2026-11-23T15:37:26+00:00",
@@ -6904,8 +6957,8 @@
    "text": "ID74791\nЦіна 24999 грн\nОрбітрек Eurofit NAVARRE\nТип навантаження електромагнітний \nМаксимальна вага користувача 150 кг\n16 рівнів навантаження\nВага маховика 28 кг\nДовжина кроку 51 см \n14 днів гарантія\nВул. Вадима Гетьмана, 1",
    "price": 24999,
    "images": [
-    "https://cdn4.telesco.pe/file/IGCOsewNDWILnvgLjyvp3zr5Neai09Zkq9j73jUuubVNUYT2pm_xJ0eyfgHmPw7Q79oaJYnLuiK5nSZJMJhzHueYOFRExWOzM57odp0zD4FUURmUgdoeQPHc2-BSzKGvXat7uc-w69eONElmQS1BGb9N_L4qB0U8E17GkTpM-R0YSz5B78CwiEHNU8aI9X4Sy1UXWFxPCpnQ2wJapWFnqBXtsObJYxhCGbBlI9OYkd8aafIZ7IoxrBeVbAJ7RwqlSRqh9YzNjNj7AZfi63AMOtek1A691vlYGSBVSwthjHO4-cRJ8DoLjn-KgWB9C4l_jdp7puLe8rUvVdpxEOUxOw.jpg",
-    "https://cdn4.telesco.pe/file/thUkkK11_DVdYR4eiZfebe5DmUI3Cn5jbFTlLrNZeKZv6r1i_zrywaQmHgOlTfH4ehvYQA1w7r8IdNC4hXVvB0lfLLSJoJlPqiU4NB-SNm3nS_3gPvCGuHY37N8wiFRC7eC2MuYU7eKCxO5cndk28RVZJMTysIa6wkMq_9oqLOT4SND113LitjtS4mC3pYnIzRkBszUEWgTMRvjeRwCjRxFH2h2ECdrw6WHlw0HWK4jezWH3c04iJGKL-2ympXckAXumXSMJbF56SOXbUcfbqLaG7OqiJUlHkukaq_7_HDouTeZDRfTyMfQEfHObz1nfFqc5QpWVXYHDhROCmvJLhw.jpg"
+    "https://cdn4.telesco.pe/file/SqKQAd2Uy0c-SLHc_JrL3qHttfexsOnFKlZGr_DhseT__LDGjniXIT7Y1H2NCn1TVAc0Vx5uIuMystEN_1nMry4Bv7IpKIk_HJLpS4clCVHSGxLOCMXpjTXn_CSP1cGkxXCvj0UPQao6lohwt8B1I5xBJoU5woxY6B0aaaah0DLCmmeYRFnHWLY2OXQZvoSZKS0a88-5O8Gz7R4RfLPM8TkmbnaHVbv4H3f3GX-Yt6AlQbP5z_rEom1dXQpaPWSgSgxROaQeSmV9EPJW-5LbQ3LES2q2J4vtbnjZ_xkc0wIl8gqrhr6WG83jZTEgntMR2-8KJRnCq54x3CYn-2d1tA.jpg",
+    "https://cdn4.telesco.pe/file/aPBuTDYxfD-srU8OvniUoepDDCuVY8gWz20GY35cns6gZFlmgj4vahQKRLR2VaRfEZYt-LtLKifxgUsCfzrj-1HXFNtBfX4gYVd_t7as-TG68u9KUVTgZ29vRjh7X7ymz9MROlZ1Pu2DECF-hG86fh8ff-rO-AmTIXNKh64QurrZzUXOwPBPPB-elZaeXV4Z8bfiducxHCLy_0J3y13qhCeJ758odNzoXwOPi-p83qRnFpo6s-KdlXdKSuwDvOP_igWov8jIfQAGLrqFUuFyFHB1GbCz0X-CgUNzo6TzhnWzYxctxY9QSY5bQOVvW0hnLfY2pFaTLD63Jpd74bRRKg.jpg"
    ],
    "date": "2026-11-19T09:45:19+00:00",
    "url": "https://t.me/orbitreky/2002",
@@ -6924,8 +6977,8 @@
    "text": "ID68105\nЦіна 7499 грн \nBody Sculpture BE-6650 \nТип навантаження магнітний \nМаксимальна вага користувача 100 кг \n8 рівнів навантаження \nВага маховика 8 кг \nДовжина кроку 35 см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 7499,
    "images": [
-    "https://cdn4.telesco.pe/file/bvZjeRobYaEI0v_BmjbfZ0nHt7iL-FVJjSkA9FH-r1m8xO6q2FDyDgEX1VE08HwzjGePRJ6LlMBbURTAbAHlHydV0mY3Qc_CABu2M8wTMbGVJhuoU0baM2jbiVSXg37uWR5ZUmCasqs3BOlic-EvdNf-5HLJoqgj6F3vucL2_da7_8WhZN4pZy0FmcnwA0ZlnwOLfwuC0PybtQzwQp95_sUrEG6e4o2X2AQFS9fdQyIhAiiRsQVOk6nWt_EghwAEGXpLTT_34Mx2TSHsYD9c2o-xPEEpPjP3SHwdb0q-oyLnJ9UWodDZ12ojaa9y1Vb1pvS3nuU-b3jjqJrbCCnvkw.jpg",
-    "https://cdn4.telesco.pe/file/j3crCfhbhB8IfN4qgbzLHZDxnMFUPIMapwuZ9beiB3lUTyecRLrI3beYoMP9t5vT0PwwVF_W2VDs2K36bH5Sp4aTwdcSPfyju9PvFjzhZ-MuB7NyIMIL-MpbKA9KiPFL735OB2BHE1k-XzFFb-7GlhyZ_prdojG8HgOx7Zsb1EIfh6mDg4CnoK6-v6nKuul4_47d_ZTacBd6FY481gvq1DdA0v4jWJ3NvxcJnaSDKiD-6GNSFfFDBz1qj_UvDTQX74KO6_bYfhNrY6bTdoAml6SS5Aj0e18xy1KaPrGT8P-k9mkmPmMs-uE-T0gsxiUGqaWsYjM9_LhWxE8Xm_2rUw.jpg"
+    "https://cdn4.telesco.pe/file/Mhrsl8RpbQboo5s7lzX183fSWZSP__iunJfSc7cD3isIkcDzvBSfTWIH8fZBbGAcyrLwg6n4UN6U6cpUUqp8rWmqlZvojFT60aUGzaiwz59M33mv4Og7p5XvoiBJLHND1hn52qETk4jxvRaFeuWY4FPRkLUxnA5RkmugOWSnHMj8FLLozEwVP_vp34u9z_K9ecPBXKpkDFu4mpVIbK_TZtba3sHiDQKFlHffAR26bAcKUh2x3bySjDvbARPW5fYVN85-b7HlHO6QIlZrbi0O1lUC2kJnUmsB1OOGhgxjzc4vtz5T0i0IJxLSRSp_4xCFa9yiVr1QdoHBK-SLKgUwEg.jpg",
+    "https://cdn4.telesco.pe/file/D-SnKZblFtJuj3-HqSxtSFOnGb8U9DjWd3-1jdk-SEjOqrGYJvkZNy934hnMj4oqu_oGd9PJ9nJsRgDmV0XHuqXgr6Fx3jFqoXAI_hcZdQuLm-80g5o-ls4cv_SnEINDD0-bWgoyNgxSshHL4W_xrHk2ipWtmFo8GcTuolpkCv5TpNzr_cEq8OjUvvXp7ayCB4sqXSJSJxA_EsbxmY-EbjKHIOuC9fvDT6GX96HhrxhFk9lLL3SYyicpGJrEt17WOnRThETnKfEeR-igkdtb1iuFgxFkruUIfySKabU_tqKN3M5krro1vmqRZoXKGddXf5Y_MPxKUYTXDn0c8XVU7Q.jpg"
    ],
    "date": "2026-11-19T09:45:19+00:00",
    "url": "https://t.me/orbitreky/2004",
@@ -6944,9 +6997,9 @@
    "text": "ID99655\nЦіна 9999 грн\nНова ціна 6800 грн \nЗнижка 32%\nОрбітрек OMA Fitness smart E50\nТип магнітний \n8 рівнів навантаження \nВага маховика 8 кг\nДовжина кроку 36  см\nМаксимальна вага користувача 120 кг \nГарантія 14 днів\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 6800,
    "images": [
-    "https://cdn4.telesco.pe/file/AITL-OF6NRpJcRht2Lsyb6Re5xXLNoWEU8VzdDYhq2dSxozxcZvMpq98coOrazq-3V5pFhMXqLgSDXuiEuOm627yY33iprYapv8anWzCNPQJfb1HmcgYwI9hJlbc8TMOwgU-tDHydQluIQn1PHAkGQfPA_dilMGKstSkYuKN5DEkvxzwvBxG3FYY6gA_2lhDTc_-lUaQDvT0IfF2v-v24jtwxlICYK6SjCVZgvelOup0gLwlGNynG3Kz7YxLodKWBI9nD5qQqHlWbrzR631fovUuom0Bv4JG49sqlB_xBhkKhNYDmXxsnH9uCq524GSnWCUZP0Y1ZBEAHY3Ke0Pvrg.jpg",
+    "https://cdn4.telesco.pe/file/Qq96uPmP-2CNYp6zCOvTIrokZuFDSXPw2qvl-UuMqEV_vN22LUfLIL4C_M3K0bQ_Got7Q34ShdHEL1MKJ34DW7NFouRX8CUlEJwGY29_w06K4tW8rYbsBIvvey8RgW1apoUpGezGu21pe6-1yA-DvbDU7I1wD2cJYRAdBvY8oFIgiBSvwyKqN0fzSCayhsGJATaH7XDqtFlCC5B7ToE_ZsfZ2PppVUmV28gi8QTTAsJpKjXmpX86wP-wCueeb7l9TFx5ywicd6wlgviv4EJOOgVwgYkLQUWbRXRJyOlHurVtCfi4kqarCIUi7W0piC4MqhmvVCWkA6rEghbt5ZeLFA.jpg",
     "https://cdn4.telesco.pe/file/QwciaaK3DYpyneTMwTT6pS8GHBy_b8odrmMoC1aXVBICWKcFlMdwUrrcw4yoQFtNNyIDCL7hj0MDiSktTv0BzoMadREwGT3QY-u3v9c536PPEyG5X4pcQs9vQ-35ntLS6_n74siYCv2JsupBsIjcdUCxGfhjRZPF7vdZIXC2UwFEsblGyLDfgVjzI5CmrLtlQYRxX4sl7a_TmGO0ZMKvisY8lcfMWlI3kcxDR1BUzeHNRi66TQkjn7VRb1d_jDLzoF40wh53vmD536C3boHWd8NrbMsWOiIriXpdOvvku6kO8wquTRjxGy_bSs3FKnT7FF-0NV-LR7pg1oJ_YJxyIg.jpg",
-    "https://cdn4.telesco.pe/file/FWfuQV0FIxPmTvpU7FUxo3MNj0Xc-Azj9cJGg2WIZcHCbzmJCv7PhdiiZyGkUx0DLlyw2uaaVhL9kLYYc_drvXFi6DQRJ4L4phlXfT3YPql3tFTC7cEmpIzrhiKmPb75LBok_e-uBdN7XK8ONQ8qrWyBpjN5JnhhZJFbJFzX4TwYRcslCvqLcN6xY2BUaR7laB_VFOw8zKpWzjhlhzWChJxdeUsh_Zuhu0lAJNzXubONd5DEd_wZBlqxi0wCYpyrd_LO58U-CAUfgChNNhIixRGwiyE-VuMwvnddAFV0b0CPQFu5OdXPgeImYe0XqPvVNum2iDZEavLPXymWHcl5Kg.jpg"
+    "https://cdn4.telesco.pe/file/sqogyC-m88aBuE1zpVLQUR5yZzl3HP3TC-fj-otDJ9XahB7MjHYsF3nAfOJ6WyIfd0udN0rGKDw5sHRPFf9g7BDxmWmc8a7506QSz3ZQeUPiqS_gJxVaGt1vZNdUgIMOtj1icGTBevpUYaup_WePBe-RNI0ukemiD6neAMtA-bNA2HhvE9oEVw-4H6bvhIJnXzq9cnlDhP3lUqv_cngTyuwTSFn1fFJhd5BqxflsJh25r0zPs-4WGlt5DpKRPDuzA2Q7egqPztH4yyF1jRRMyGHT94dJTn201yJlfUn3iPnOYL8MISMRTHZE4diPqKA7u9y7psA-411uGq2xRH8phg.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1981",
@@ -6973,9 +7026,9 @@
    "text": "ID98435\nЦіна 11999 грн\nНова ціна 9400 грн\nЗнижка 21%\nОрбітрек Sportop E850\nТип електромагнітний  \n8 рівнів навантаження \nВага маховика 8 кг\nДовжина кроку 33  см\nМаксимальна вага користувача 120 кг \nГарантія 14 днів\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 9400,
    "images": [
-    "https://cdn4.telesco.pe/file/O3jOPlQg8AzQnGIDnRoaC8wISLYG77wFpc6D1ySGxDGm2RWK-J4HpsxKOdz8IXs0eaFL6MiDRaxbF84o0My1wEMP3z7y6RbJGLISneKmk50p0XjGgupnx8wKYnMtVA3Ix6ANqfP5xxRREWbC8-M83882EEsZbdwP1Gyb66O0MR9mY0J9vwRNchZ8rSsoz03dXbdKaTpDUCFS-Xx9_yxVPynA4EG01QkIivGbih79-6pAhRsUGjGowQ0M-UTrWEN2Id63_KsICQ7tepBo7arIY-1CsZscnzFyXh4bzmFNW-SLc4mGOBXLw4cR-yjkTysNPGXZHrLFn8R68fjYtoxyJw.jpg",
-    "https://cdn4.telesco.pe/file/M2DnmYpqyvaVWWSl4QEFGm8dNDxQA5ASJN2vmahKAdhsucH5aLpyM5JYYLZTTF5Ch8aLRgyrD_14FvJYwyiV5wO56sdRAc_W4UnOqUA6sAWA1zGdQ4yuT779afA3qvejFHivdvdLUF8HfLT3QPEfOR3HtqaVrMYRTETEt9jwRj61jhPHPRYmNBBvifpO5nzgFDOQh_c-mSPcBX1IT2i-GY2-gRXJDkOGmHBYbwCjJoWX4dmxMVvY4AwzeANVpMupeO6XJmGCBPxKy_O6r1BVGe0aOPbzNiB8v5C1QoOnSVFvvuiskBwXEewyKmhzGtEqLQbYIn0aMtGtDKUNdceO8g.jpg",
-    "https://cdn4.telesco.pe/file/YccIM9jm9wiCRsRXaq_Clsu8jyfcwDDLvHYvfEgOU4uzkvdxgw6AuOEmjEls60ndffFu60xRwDftnOqfM8RMpQyEESzvfND5ohYn1z6sC5V48DWEEkRFU8tZPQfBHE6nRjmMgvR1wNMQfeoy3Q8GhsvtHNR_ojOVEeS2URQ5EOWwsB1XlIgBHEU6GwsrlN9_nIdO4nWAoWTUGtNjVrKiWIuSyt53HhoG7C9f3w_7ItxoMyyzjWX6x31KMFRqhvTn8l-YO31yVmJWbdDeZAlGhiuIUViaLjbS4-DnB5MGSm-Jz-RzUTwCSyXTP2Df1a8N_DADPwkz94LMHQoUtOUb2w.jpg"
+    "https://cdn4.telesco.pe/file/IGs8Tz821Z5AvwbsmwwBqk2kT5fKSllIhFMafFQSOkhIbWPuN_WiwhaLsh7AvAihQfeLw5ncEvt9inMn7uR35GxLhd9NcP5vSk6cldFCoxs6bwiwyCvoNha7j1nx6ZsSCX8ZduR9V-6pdEtIrqWlFR8yKts5EroJ2pfD_l_CgWF7Q5okWfjSrGY_blqzd2tT-kzKphFwAQBEZ0wBi6jYGySrxv4gts_yj9qjkfvWqmy6LcRT7hSm46GUkxr8hxdlDxuXcfVoo5KCzf6R2CN5LuBY4Zdfx22h2bgpneG0dt6I0Fp0haxGBA-KGbP2a90w5rzxLwg8BGgQv9l3GiVLUg.jpg",
+    "https://cdn4.telesco.pe/file/gz8i8mngiutKZibKjNDmTWX4KC-ApHyKjN3mwEdHKJ0XA8YeQmyuZLHSMKxhIfV6LbKhBSFinm8K9-ctNAMUlklxcXLy1HNeVNYSCRkOuP5B1yqPbp3CTO-PhN2vmr2XMUdKIKylIG27KSdPaYRnLRXAUdMQei6twpMelDZYMGxnyNPlTGsDkDQAxGhxNy16MrANkFVAm7iUB_SeYSa5eaJqv7Ea1MGLLhiPzG6sn16vmxFNgDeSNWyuoXWe8qz3F4yNUWZp030ycGjo-1HLOEKuTSnvYr7ZDOgYvKhSsvpZN35GSzmKpQ62ixkwk94WKxmDIr_H0D3LoZGrqGbeiQ.jpg",
+    "https://cdn4.telesco.pe/file/dMRhTycp5lO4euZeo-2w3OfzlyI4PhepKdpnSo88RpEZvHZj899LS9O5ITG-hZX7c26ghr2r_D6PI9zjYEWUAp1CuNf9YGwBu0jlnLzG7WT4hsCO58yBlZ8nWA36bH6Tg2vGNZ-iollVJ6EvozDXbJADBrexKDVOZ6fppD_PKMr435-C7fQHY5YHe85TBdUj6C9TWeEU1fmPhnYW9klUngXwT_oOk7QWsyZvPAqyKPf3-Me8KIFau3I-H4JeyP6VjXxht6cuAq-55wZuIq-z2DZiXumOWi7KKCxUIYTUVY9kMToYI8sgPi7J6cLDhDQOIk2JQnWUzKfC1lpJAH2MOA.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1987",
@@ -7003,8 +7056,8 @@
    "price": 6999,
    "images": [
     "https://cdn4.telesco.pe/file/DPr4hwM5kTBq7CSnH7seCpzVkQqYKPH-wYReSmrmNFGfuyvDIJNzaEY7Ev-msWzEhAaSXDbYwJ9PHZA3Z201VluA0jS8_Lvc62Qr_Iq8ygeaNnR-ZXrPBN0Qaw38dLLx2Mw-eRGr5Ec3TA7q8cJ63Vv2mMg50HyJI4CDZ8ZAIIY5qiQbNcN23n8hTVQyZiuWowPgThU6NK9UGhbarlxV9miDR3ToEWN9hmM30PjZYTnpyvYQ8VqbD3Rb3YvGcT5ClWA8vGHVjsASdIlVG2SsD_86pNmKosfMDgysefyV58s_Yjt-U1gvf56FnGM7G7qB4-23Jb54tUwG80Ix1wH46w.jpg",
-    "https://cdn4.telesco.pe/file/kwyzeJY-Z5T1hb5QmCUbGB3h5G6oEP7R4eIfCpSXQPji0rK34_b3Pvypsp9e6KRk3Vqh48BjsDIS09C2m3VeBl0eUNY8Y1NA18VkQFUuCSMy2uUVE3hjTGrFqpYAec0xrPQK_-XhYeA8e03F64UAq54GS2eS3AW2GG_p2SAflGMx17LO4L02Vt70uUchriSzK9-n6nxav0qTda_uV6HvaEZt1vVwXkOnE-Gm3GWB1Pqjtl2MjNhMnk_vS3ErRC6u7cY_oE6kuap3J1Bj-Kz5DdTW-wHiGBD2DcZLX_r8OGoVzxFXj1D34UNwi-nGlOaOMGBcUk5nDKMSwuTDnN8OvQ.jpg",
-    "https://cdn4.telesco.pe/file/YeP5ManAOI1mlhlfYoA3-rowU6bG2rxO9jFqc7YQSFWb9ntNq7bC4ZfkDP5RU_GITtG58uR3mViibLDedgGGPGexXb2n_x8US-wK88Kq56GaTFVq59qHicXu-qZqPUJADXw8F8XzurnkojHV3Ovhjc16moY4zO1R3gC5WFDMJCG6TgYjjCNgHbWOruedRSXBz3fPjkdOkmUcKhkldPa6eDK1K8VZ5I9gM6dy2ojSngmnAWAsgv3UNmlf33BX6S66K8fYGWn3Aq-mvBT58eH1ZIdWKbjAtpont7uajWZt7ZRvHCajZpPhGfJ94woPXiAEJAJJDx-EsGcdcm19OavfNQ.jpg"
+    "https://cdn4.telesco.pe/file/Tw7N3sDAZnduqtaZKJ1JGEgjrcq66AGwWHqFogTU0lNxs1v1dVR7KD3ZwgF8p90GQqSdRF3mGxnmllFoZj-YBgLT6jgssup82X5jD9UQulk1YcafFugoBgkIUhztKYm1D1JUn5s-lkLT0DPEAUsA5tCpjlL88Z4kKQLjPUFvF_-89nTosUsBvJwlgkWQLHnpPWjBT_r_O4MSdXZ5mbOU1lShRfh06zCHLF4yXKWHUv83crFDLJ4usmsqjWIxeP6s3WpSPuIIMZXnFRtyCqiiXmonzlRCNiCDbSEGHUwjlO_lWI0Vt4R_w9H5zi9EZiHpeY5oPeM3CF57-iNmcPQDgQ.jpg",
+    "https://cdn4.telesco.pe/file/Gt_CT0X7kzxyEGJQClUAtffmwufVK9WGr_d3-jjaUpNc1-xL9QziJ0KAiuPnE63_lxeibXbGk6DSRfMZS0lw0hvICV2zDcWzVU59gCRIEMtbJFXx_oq-OQv79D5KcTSO-lVaIkhlUTFwhtf0f-ieXyZioQxPPPxjuu8yxhkRb6TzyzBlUgaMNXCmjq3zo81-MqLDrbhaWUjaVbws8HMaPFCflWszn3ms2bb3KLda-T3MLNlcO0UTx8zxS5CyvAwKK0VvpqduwvcWhDh8UTDJcCh2PMau5atLFmoInMIQ14gIVU17408rZxiZwSCftQ03SS5TFVkVNuDBKFT6zHP8ZQ.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1990",
@@ -7031,9 +7084,9 @@
    "text": "ID99666\nЦіна 11999 грн\nНова ціна 9999 грн\nЗнижка 20%\nОрбітрек Sportop E850\nТип електромагнітний \n8 рівнів навантаження \nВага маховика 8 кг\nДовжина кроку 33  см\nМаксимальна вага користувача 120 кг \nГарантія 14 днів\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/CaKQNDoSH2t3yKsT9ysHwujr58dDk9ua9ri3tep-lk4wKAdLyDeOVGpCZBwxJpjxI-pyp_fYzCxWHOwYHddzHKqNwTNyVkoSUm6HCCQHUVxLhmacqk2dodMiLIgJkf1pDE6mGi_B89-NQvWMz5UEpg4cbktjVqq-bZM4jIWsE37ki6IzQmSYLykc434WeJtUOCd2CjXXYqX0HbOZ0l_uT0breDd9tKEsm-GONBnkjY3S4p8XJbfMquWnv69vcWfOK1o0o3K1TTpxaA_tVWQTNJuH-ie80gvUsiOEEv6EOX_fpaELmjkGB1c9PIadyU8VTc_2mj0-XGE4zfq8OA1Tkg.jpg",
-    "https://cdn4.telesco.pe/file/A2ZRTKgAApEd60CF2mlZjpQdVvOinvi0xN2sKw3MwVI0CIPo6hhP0IUpW9PugMTX66agaRAXWIQEq9beY2oiHxEC-6oLk5tsGXJccSJKenIobpjNheVo0SydsmpBqc_jddkS4PHu1jW6IZVc-j9-cU6LGV51j1kyCc-JUbrbRzczOCYLD-sgF_iC4eXmuJSSxbrlOPHMbDwwU5E7F6f6PRsKQMHvwg9urAiVYW-Ajn5R22mDVmvN57vQdVySNkvhME_ZP48DsIhIMumxFqJS6xWE3rd4hDJQXD60USvUS1PgAEctyZ6VkgqKoIIQdZCIBKHcRcOcuMO7iw64xbFWbQ.jpg",
-    "https://cdn4.telesco.pe/file/Qb9kJ5BZWj2613DCfQbiolsJllRX53pfbWh9natdfT6w2wSAK9U-Nqp_lc1eRgGUtZ79brxG3x_XgpE--8VBfB6CvzpSkDVmQJZcPeYq66U7npcy--dqr6-8DiiGM--7zfnHR7imnhL09Si0oKreU8yWvuAy7X6p5BxqDb2YnUtpcqIC5yviI0ydUnZ-4opxe1nuTbFMqbv6BCU0Bxcq8E0LV8I2-RJ2cHZLLAAVvV99n4b2YKem41Ahw1mLCTUoTWgVwiGttpbar98kNmzbLoUtlxrCh5NF450vT_C6PBVVJlOvcdl3ybzq8RntnI0QSV-WmPzslqhgE8xHiCBv_Q.jpg"
+    "https://cdn4.telesco.pe/file/DBr9UJPwvLrrx4YVh6zfLQWQ2mhGSRs-p31vr-vTR3QM2twFDHTs4BK2vtTbLuunRHQSr_oOLitRMILUpbNHT1dY_TV2kmuT06qAk7sq8X6WUeLkQ26pUji3KK0fIJ5LAsCyYxGCVdkyFkUGgkHQTYLtK_UOHi9EZYahwiVsf0tqtluD0e-6di9u2nX0SO6epWyt4N4aLce7YY4mxJ3NlO9k88bAweMWRZoYaeHctTNyVNvjmNf1Mt4CH1H_jcq-IgnrmmKowvrWWz7QYn-SeLxNDB5PCmCUtyjNwhSd47--exgi7PQ03uLD0KBVp0DLm868gZi6Pu_kdMZ1ybucHg.jpg",
+    "https://cdn4.telesco.pe/file/vQiihofMDpzk4l8iplvO7Jm5e8I0E2qVsDarR2f8cbrCf4PYSM04JpqCmWplKEDFmhXcxDHDgVPiAbUiIrBs9eyQOxrtCxbeH5ew9jCl7SUEdH3u54hOzKINquLJYqIRnr0z-qhGL_SRkhH_NNfhWOTpV08QuXcmzdU8LQu3SCK0noBK3p_XTA1Orj6mFyjwzknERv3RJd1pjJMKCVEIFbMTQ-XccDs11-eUwYmRDksYnXL_TK4j4mNf9lxbIGtH1wz5241lLRAi2QiWmhPGiumPPfTQWjBpYjyblcfRO63pTU5mzeVmUR-9TKIMo9Ye6eEnBsqgiK-aMDvm1OrbOA.jpg",
+    "https://cdn4.telesco.pe/file/EWJsf5-8Zx_evnU0r0xR7JKug5WKRj_eaNAaYBrXe-xsWyoke-bgGbueyckNglyza8edVkmNKGbVn6m7Mc5IMM_q0Ou2ek6lTTI1zEFHXSVCZoq99Lo-mjteWRV1R7w4EIbeFSc_WXB4VezxxAep0wplxTtt8hm_E1MggiGwIHMlTNhZCsLWezu60SoBUXkh1oZiZh3VE9tpIlSXtu0tDTWfHuC_1uqC4VblZ_OSegk8j-IxUfCqyglMBbFnvbFCVN2Nqhqli1jxg9ScG2bjSWwuEC0QC4pQIM9DzwceOki5tzb0X4NG_-exDT14rRQ6X0Cz0No2-keLvOtG6r445Q.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1993",
@@ -7060,9 +7113,9 @@
    "text": "ID95341\nЦіна 22499 грн \n💥 Нова ціна  16499 грн\nЗнижка 26%\nОрбітрек GoVital\nLYPS 610\nТип навантаження електромагнітний\nМаксимальна вага користувача 120 кг \n8 рівнів навантаження \nВага маховика 8 кг\nДовжина кроку 42 см \nГарантія 14 днів\nВул. Вадима Гетьмана, 1",
    "price": 16499,
    "images": [
-    "https://cdn4.telesco.pe/file/QCCFqZ2NGYZWXjJfWQNCP0Fsz_tSBMiTWGkp5y8ClCM8cFf29iIdEjdcCYlb5OXNdyJvQJzA-tpTxb_gCP75u7vM5_HrMWVCrt00l05ffdjWr3_owXcUH7R3jfVauCnhdQ9_D5SFjsaVcfoeBevqjchwgugG5NGGG2gwCJOBieZnXzKKs2snvYW-9AVota4n4R6MWS2tCT9EIAeNE-qj9o0zmaU9uq3PCJfXZ9Dge9wc_YKJDp1XvNhispgLRm7kvtvPhqhg1W8QH82mmABsipU5hUmJ3ctY9a1UvKWQ8KpR8jRgv0RnM0PVhweTp9i1dalCoHZp6F4cPlH19vuJ5Q.jpg",
-    "https://cdn4.telesco.pe/file/nZZ66dBsxSAHTGz5Mx3DnR3eewy0VjeKH5DO0vzNDbtmz9FjRM8ValvwbGWzKvvLYovx-wd9vmHWyiYMel7wJiOHE5he9rEe-aHKhaP5OU-8coYz8oxnn1grk_HfsChv_53HtjBotzQSSWGQPpRZnucaUMAMBsYDHPcm65_uV0cOgGAWfFAt717cmNdWLaR2FuFRQN5pdiZmBJTXJlxNhI6rmpHfbyEkevJnWfb1tzlPaFrwDz9_XWeiNxOa8WmT39b4enyReh3UEd6zNy_nfNomiGErOOAWsImH45ZCGcwOnJuV6DEU9etRrca5y-kaOQzm8pdHbfebtprGtX8hVA.jpg",
-    "https://cdn4.telesco.pe/file/ecuyZSGbAIbZQsxO_IQlc0L7ce6svfzkEATPlvyqwDC2Ddm6kK-fATGA1JjyP8TwDOWYnNub5mu6pgVQzce5pdo0gmR8gIUJH6ItrqN5GV9WO0UDZZUaqSvhJKjzDCG0WXK_aLFflPVG8mjQb2o1Nd5K7-vQDPuR8i7bgQoLIOdzqKxyg2XgyCIYr_5SayAkMCzqmgJBEgEwDq7LyJZTIfIrYcXcRRqwn4Zw18cqtQ6MeE1mf_ysY8CgmeT96jwtj7z9jogfhF54FyNq9vQIo7Q12DGZySn3QVhr35khKjzwU1anQxvt1YATh2aWglsfqVw0mGZ86mA8ThKs1x7nnw.jpg"
+    "https://cdn4.telesco.pe/file/NNTY2dXpSeqZ5GXDRDE34q6OIMsF5Au3s9lqYFuAiv7GhY_Ayu9b6ydxw-kq-yOygstorXpqH63BvK-sQ-dIQoSscPcrLZ6OZmH-h6JsdApnLcDW7fXKrzAy1LYyi7EZfvsV6GSYErN7HyvNgeukOhJ0OGFwTty0keP6wQDU4YKmR4bBI4aSUPAbppQZHi8WlOqf_lMkq4_VGn7tjIaEU1X7pNklU18QDwV3VA2JLIwWpP-pgW71oyT__N0EouHMp6AG1Bl4Ptm1Ng9L1SHs__6Uj4wY6wx4rZjKKH8xcmugtR7sxqW-Jp4ooomSTLmRF1gXAwL7eiXUiymFOCWmZw.jpg",
+    "https://cdn4.telesco.pe/file/bWoT6pFI4Mo9k-ANRBVee7u2cpBiPo5DmU-BxIzNU1j1DTGksoKKHOPCs_mJ_KFrPNuEmYofUS1C4lHo-dDcbPDtSORH1EDWFtOJyOPcrBMoMqwNZO3aH_4kUb0HNBMRnLNSpGN2396Kyd_MoArKc873DXBr_nBdbbTiulVCfuP9amZPBIQW4PWXDtNnftNEO0Tfq8CXATdBZKJo1KG0nG2tL4k9VxNwVwB7ZwFvM8SB5hC_ApvkwEAEpatljjNTWZnL3PesFd4h9JrsrH3-KZr46OrXSeRC22Km8SjnpRJI2RVe6rMM1_wfpnw_WfdOlBWtwODQocM0m6cXLlLEWA.jpg",
+    "https://cdn4.telesco.pe/file/JgDGpcA06c31Hz8MyVoj_zUclH8tZMVD56Bupc_CpGIlMAISTI-fQgpIpGoQuQrX76E-3uh5tiQMAATHlVbnBNQpyIH-VEquvHlBu5ZhTFSXsnLDR7inc0VToofhAPJd0I3k12LiIR1Te0PAnDd9YiUlr0TdV3bpJl5pRHDGTowPHf1CxpOM8ZDmZJ6ka86Xy7igIUYsbDx7Lm3nN96pTmRPHF73C5cSMkKVxoQzeLsf-nN_YJy4Ma-utBiXDE4__GMi2DvsuTlkb7AqsQUVPcgq343Xt5ORlGXdppomL-nUVSwTYsR0D0iSOqveCEyAY1fG4ipoQKB_YQQT1w__XA.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1996",
@@ -7089,9 +7142,9 @@
    "text": "ID79905\nЦіна 13 999 грн \nНова ціна 11999 грн\nОрбітрек Kettler rivo M\nТип навантаження Магнітний \nМаксимальна вага користувача 110 кг \n8 рівні навантаження \nВага маховика 12 кг\nДовжина кроку 30 см \n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 11999,
    "images": [
-    "https://cdn4.telesco.pe/file/qiZezpiru3E-zNzXabruQO0oEECCgEBlN_Z8wdIlRssfD_vI9dkNMhD8a0-rt7MoqT4vZV9HKIoe-KO_KLrZzGSocuziPo3CmZ0MBH6jMOhApAGHpScfSXlXzEilCM3TvvAWmxk-Fkbil4gYVzBtwAF8NSh_G7PnoLkE4n4vUGR3IaQtZAv9JPr2P2CnvVJfuDW44Hp3rCgUZVPUC5ONrQZi5udYP43c_PiWDtCyxLocrPuadDvpJSNZVU7hVc2Qxe-CqihzQhY2Bnzp-HsYJWsd5CM6s9q0XhzV61qAvgIhv3ln4F40vl3UVlBPblqgeT7Wx0O4E5ncLOS6ccc6Bg.jpg",
-    "https://cdn4.telesco.pe/file/uBlc7ld8B0Y_MTuIz1uGjBWWMM-HMjNfXVVKL725jnuWkOmzKXr8i5z0omQsa04EARV4GDWPHb5eKEO7evYC7NgL-1ttpGMnczUEDi72UBk0bFSotybma55MYOhmtoAQ_yoDRc4zpD80PaNuQZuMi604eYId-cwF0-Eh2bF1hEGnU0VWJLoNvknOPuxeB_YZfz0igZDPHSalodF-PyvHBDqcyTyNNrGz_gsHcWwe7Wnpje7dQiY3gbYLklLhmh3DPYpbbHokvzlje3QLsr8YkD8SF1JP1jflNUEbE1X31bJj3Zj9DJJ45cSiu_2KAgueYDO9dvw4We0YuuurlxEr1Q.jpg",
-    "https://cdn4.telesco.pe/file/pQppgh5GjPXirY3hE3RcixThAS1jql5LjbjtPKIgtd6QVN2Nh44OlRvxHcJUfAZx8Ri4bVzgOd_3Na7RUFsgItIugwj22WXzYmHbQPLW0WiUar6h7ZpwwonsANs_-K12yZu53YWrYoYz0SRGsiUJSrr6ifiSEylxe2suR1S9X3y3pneRJd8LQIEzWdW1b1gcD0bJEu8VM6tyCbhWygy-Gz1h4oDwrsNPAms8wLcYQzbpnt0w_cO9c1r8FYPTWouehRWkef3ejeTnTNzigRkc5cB7E75fTXYtMu-1dx00ZHmxw-S3uXH8GtEM22SC3JUpOfs-XlkImIYil7ONYfd82g.jpg"
+    "https://cdn4.telesco.pe/file/aM8eifZ3QBlZaD6u7ISaSW-U4tD3zFeZUVfbg4-4yDPvElQuBDsu81U_Tec3TLNZaMLYtKYsF51M0Qx-xmb3ksOwZGmQSFANi4BxEBPbqfEVCp8DWIGvyU1KqAVYGxC12krCr9ygShmQINsb0UEvBcY-2LZjYmAcc7OWFlnEgwK4TAHFkuKnl0aK5N0lXjfeNacEQc7o_4W3Bye1zcWn2E6a5ItQojQ4vi1NBzngnCamMISY6k0JeTqBqMkrwrQNOtKv795AScSTD0rrQA0p-eX662zouykbjzee_xcJ4VbBRfcLwLfpgFieLCNFrYky_Al9_5RjtUMehm7V0RR7ng.jpg",
+    "https://cdn4.telesco.pe/file/EodTg47nOOVys1v67POdHblYmGaQ833KGojWbfKY34lXEnpJnKDTo14bLWf4uvelEqjCrAVQqtaxb2Ih4ffEW4OZeab3uqu3T8d6HU_eQMpJN65eDYZVmEz88F6WIXU2FBQWIEKyoRWsToWY3Onvkf36ELc-gTQq9xLVPezcU7X2_k5tX-uACs4jAqS0oRnV_24cuWPqBvJ7pX5R7Yp-WVFcreJRPrUzmRLVjZ6aw7Fha1Bj8-WWD8ySAhtNvEebP_aii-lfBQWBgFrQCTJBQwpk7Q-R0LrRTn5iyWU3ylppHE4RJ5qhWcp4-co-pUCCg6hpiwi7GZZKfGdcX201jA.jpg",
+    "https://cdn4.telesco.pe/file/iLHjNoHAEExTJz14TzPcNO95tGRjNzrCJ6Rz5y2TfFLJer_hrXE5VgwH66iuW1znOduxy3AOZ2bQbTTkk0gr64skrDH9kiWhK9ZGqnVXSamyErC-m46KcP-WU8HmNj9yOm3u3EGUlpSoqmBAIadDgUKhisupTbY_UHvPdCVXSS9T_ElALwNmz9QSZ7g1GIEnastNrHxVIHHm3B9D3ANSLR2VOD0cgOVfcXca0RcirwYY05XhpDtJwRnPILJDAXwTnzC5vI49I8FiSMArfE-rlHeU2oeL9bMP2w4nrMqENP3s2dsdIEpa36pPXLh-ikbceF2amL1KmTrbztkon_gORw.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1999",
@@ -7118,8 +7171,8 @@
    "text": "ID16625\nЦіна 12999 грн \n💥 Нова ціна 7800 грн 💥\nЗнижка 40%\nSportop E 820\nТип навантаження електромагнітний \nМаксимальна вага користувача 110 кг \n12 рівнів навантаження \nВага маховика 6 кг \nДовжина кроку 36 см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 7800,
    "images": [
-    "https://cdn4.telesco.pe/file/DDiLUpVm0GMt23lS27q6L-khT7KoVuvL7tbSQ-YOc4DoA9xhN-1cqqv4ZFZnnWBYxf4sZXbhWhQedplzW_B3ZuP8eS1c11XEi0jbXb0oLs13c6XC180BCD0TI_HlQoWoe1wZDCnrH7or9zaXs8joNXKqkLq--G8iGDyw21hIyVYmXq53Y-KWyJscgYAXHZMoQhvb6jB6sRxlojt0SPP40twxndhRORcGwo-0riUnK5iPHypzYdmF0rM0ycEnXlSV428__QvB2HYsbf_-tCNcaZxHFu4fU7T549yJYK8Jj54k09MxBsFxCJT0S5Bzo45YhOi-J4DFiCbSAidAhnvXew.jpg",
-    "https://cdn4.telesco.pe/file/hTGB60KC68fGeoz7oYNz-B_9GtN3O0X4IS__HHQUSw21d1cuV86a90lfvFi4IHsKRy7Nvo204KWxvondXNO3EtlchbuhmmfiOpH3fu_oTKcXtVhZAxolLrkRL8uSw8EKyhZfXuPWO991Zc3l_NmtXCwqbshgVUuFEF0VilFmavdjFvHg2bdtoSymEWBI0s-YJ-9lXwsMqxsDoxamyQMIb_gg2vKG7s5Zf4IKAUi0s8pqMmlkAybF0cadsubqv-3iRMHvXHmW-TKLOkaErg8nfo7InTK_8NWhqfnaeAE1Boehalbtcd-2V-1f87ob3G8ti0uRHVDbWBK-tfrJT7uxNw.jpg"
+    "https://cdn4.telesco.pe/file/mfGNYiNDyTHxxKY-Ps7PvPqZCKoAVnUT18XWUov6aUIpARC0hAW-qwnyz0uowiMkSabtOvJX95a7Qj37jsCsgxJ8Wsojo6w_H4yW7elcPWq9cj-sjCuMYAuKSUyZfKzOE7dHS_eVARFdAfISjOfyrFKecfnvXXu9g-khDfxAUFELb9qnjF2LNJw_Q6J1EQC2PRPVjt1z5wu--ApfIy77L3vjA3HMsGhkdqm1I58c8JW20vbiSo36oqOOZ12hMxw7EWpXN0aEODT1AYHfCqOc-XVs75emwHpcoqeIgrs27a2aXidOMSrwstGox19I3FyFAIR0dPuxRrPgK3iodTo1Sw.jpg",
+    "https://cdn4.telesco.pe/file/BnEfI8LyaoTJ_luwxVaWJMistr6cNJ0r0w-X-2PBtGMF8C7WwTEp9mTf60JntOOWhrdIT1_J9GzJbnTwx0dM4-MKgdWabuw-61nGE9GtRpRbDjIKTrTh-5SARP428FQ7jZ7W01WekX2PujOftI3jtfdeXRdIOKJPyPf8HUuGE2cczMXh8ATETvRk9tgsNifCcSiwjkAL7yDCUWGk9fRK0oiQg47XvO9Jy1IaU-wX3YHBJOFQ_AIUkyXEjBrORsb9ppVu-CNk7NUxSCrpYJy8b6n-b630zlLc-NRFUnWbfOVoCDlOGOt7YReNVW7ptQxNeFXuXoSOUhaoxMJeKnhVaw.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1974",
@@ -7138,8 +7191,8 @@
    "text": "ID78653\nЦіна 9999 грн \n💥 Нова ціна 7700 грн\nЗнижка 23%\nSportop E320\nТип навантаження магнітний \nМаксимальна вага користувача 100 грн \n8 рівнів навантаження \n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 7700,
    "images": [
-    "https://cdn4.telesco.pe/file/NRCWgbOrWQ1fFEby3209vzDXj4z8S_ucxJUVa845TyC40y8FzXVuOj64pGPXTahwSZy0AsuLoizV5urFTTBMtfWcH4DwU24l0j2vkIad01SgAUqZ2Si0dpnoWuHASSTOACTIh5Yns9WKmND_IpFVdrvEvFjqJHT99QmVkML2iYfFGCdaLbK0L1qEq08fikVOouW-67t-aZrc0gPg9bM0XInomrQPeQOsVH7_toXwbn6-QFo-08UCdJSnLKNhwLAgQb5Fyiy8qcefKqHGvH3n-WIlgAJDhG2W5P1dpmFI_thy2tUihug0E1B9JEcuNGYCXWbgXZ_A6Y_VmUzC15vRZw.jpg",
-    "https://cdn4.telesco.pe/file/AmPqG_UdtU1gP-U7PK17AYJ9sOD6kvMe10so1vXtWie4cKlqMi09FbaTR9tL41lkFLSJcprvSZFA4WUXU_H8HTP8L2PvV9sOTZr5ugT_nO54a8B_Ro6z89ZzVC3HoIdH7dQpBdZWatDaz5BXxlUALwQYutVVl4U5CwNHOPZbcV9H6ZNb5jaertGFLocUyeKc-PyCnHGP5QUcOU-8QQZGoHIuNJ_p46W_hlLE7D1NPEU9G1VaV_FY82bMmxXmxWlrmHfq2JM_yfPHqJj2dZ5PLLfvGjalHSu9OzomaQfj6hE5OWDNSfhqoR8V5kDxFEIQYWLsrvdSV5Q0_8mn6QSE0g.jpg"
+    "https://cdn4.telesco.pe/file/EnNtdvb_Z05TT8yDYDTmWlXH0SaZgLojQKLZpj7V4sBoyJk9d_pYZJIg_jOa69L3pU1ryOwX0TRQptQEN9_z644aHYdOQQCwrVNT8ZYVzrAJgblsiWqtdVlGxdceyGiTIuCDvEcr88c95TcFtCzY0ZeLnKK4cam8iuuActQFrOas3uwQhaamg6e1YAPHUJ_5iGjh60qgNu64boanXzZZJ2hUc-RpRoHf4JfgkNxnu-LkwIFUZvjo6Iylp4b-NY2YGz_p1AQUdOlIVDepvH77j_WUmGl2nhspl2XKKm_aSSR4KeJDeEwqsJP5kbRYirmcB-pbYcmJPFtVvJFyb6MfUw.jpg",
+    "https://cdn4.telesco.pe/file/moK7MpjuADrakpSVnqU_5Bx78jDrj65LXThlanvB4serpKkUJMPeqZGAqirYrq4HDNKvJM5_H8OIaYph0HWOxsWtD6A_wHFfu3zwT5NwrBbOIotfSKc6txmoCSil6ylMXWWzGzoRVpJNtlrzyg89_Jeyx_Jc63lpRz2bjO4_uI29GaBX-IWJggQG9jK7sRwWwJQozdvRp-R6lLyd-4wP0z9VEM-s0Nnity3WPwIQ-AkNb8WmRpxdChZXZ8aasGyCcDuIHKg1Oq25twaeukwKvG8iiKkpMuandXXU0WI97iqmfGYpoCuXS_ciuyOFJGE3J1w5TWCzb-H4-rp1YYG7XA.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1976",
@@ -7164,9 +7217,9 @@
    "text": "ID73485\nЦіна 24500 грн \n💥 Нова ціна 15999 грн 💥\nЗнижка 34%\nОрбітрек HouseFit HB 8049ELM \nТип навантаження електромагнітний \nМаксимальна вага користувача 125 кг \n16 рівнів навантаження \nВага маховика 8 кг \nДовжина кроку 40 см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 15999,
    "images": [
-    "https://cdn4.telesco.pe/file/uWD4FU4rMdfSLsRQR8BTghHrgOOkd4tdsKNXOtgpRt1NTg9DE8aWd9w6P9ssXK473lf3uhJq05Vx0T4DJvEdiwqb338ZnAPKstrrU7UBPtpOTFh8BeCb_UaLGVA9-89-Q6BGt8rYVsmFs4FYtOVrbTleqqezkYWIdH3E49gn6OK7SyDWW-JavIIdKG58nhYlS6IixF7M4cApQMi7tQlCAajPLWCPu2ckh40P1_1V1_8LiOz3-4v2r_WiR6zMzwCt6UtVo0NM_GP786vGuhjCf_1A4wMSOf5f9j_6Ungq0J2wz3c86BIos4vOHNNaix9KYnt08FoCOXHHcIVnj7-9uw.jpg",
-    "https://cdn4.telesco.pe/file/gunV0cDsfnrULBgtTeLCDpAtkIWxV-7C863ayiBWx4ekSvIOVlPTh-QdTvk4Z8mytuzJedeWFZpkb4J5BOCVDG4-x1wECdTy0Jsy1jgZe-tRtmce6ArQJaY1td93uzRVUjBoN0K9gywATUecEMmLtIdLfbLnoaLCn7_f9SFJwus06YAyJCJu5VT_57tZGZpUPnGuoM9fE1r_oGrN_5QXERBpyZJU5b8z0vGf4QEcVH80_0wIVhMgagsqnc1BlPkgR3hMEiGi4x6C6RCBseyCrKasn1-l-CBUdPOVV8BuSlyosDZTv7jRkC65-D3F25ZYvCjjJ9NtOfTj8rRVO8pWzQ.jpg",
-    "https://cdn4.telesco.pe/file/jyZvNNzzpgOEcuH9jrDaBfVpILWlhfPZIBEjKHhdDVJThD-VGQ9i6rJuxhBK18LTZSP_tbgMs-680a5de1UgSOdgrFTYsXVBDeczZAkIKWhurX8HcSVngVGxfDhtsRYQk5bW7rzSn7QWiJlMCJmCcaIboqWPjS1hzitU_dHJdqIZDnBvODMgpJqxzLcTG9_g0vvfSa0Gb32Hd_3znAMnwO5TE8-5zxtJJqZbMQbGLGejclpcV3pbJ0-CQzNQxC56G3_27zu6Kg0dM0VLifROyALlE1pJjQe9TqXnYbvgGZ7HoMAO8QpoeWh05WjMGsHu7i1axKVUHleSqbDS0EXDkQ.jpg"
+    "https://cdn4.telesco.pe/file/A2pwyJaWSezUx72XSG5quXvhM8UkivbJEVkb3bNnLc_QT2ndOqSAhSsrjj8pZHIx5yXl6MsB9G2AoMLVTynJvd9e0ZdhHNSMs_Y7Kunir-_GLg4cHDW3J80xkdOJhT9HpmIukdWNxRZn4GV-4J91Am8Z7DdsYdjvjQNIySXMQZQhgrsYWoXUq8dPoPIF6IYKf2ZQKjgaRHwuFW-CrP8env9e052dE9vhZbPJJ7gL7qktz_bOyA8V0ZCUnl3K64z8XXclpaWjkNVyhAi6clkU2W5gFNdYmGcxiu9ZLYKMhRotVJwLoiMKdQk0chYwbdDtCsCgeWnWQi28unn2H0HDWQ.jpg",
+    "https://cdn4.telesco.pe/file/pZA2ZjjHit1HIPeTWeeaqHfQAA65my4wBBF1KFkoP26bCzOV-LBZnx8optcH5OttGOdNPp8kAClR7phJdQKJuB-OCk5aOt1OPz7tu1io4yjHucmqbG5FS-uYRdIogWvMXHTyTeI_omEMV1Z-cuALb8Cti-q0uqMECO6zbVHvsX9ikNukz_Io3VBtd8wd2P946NzV6O0JkdKrS7cVEcojwDR5RaG4YXN4HrmlR2oWAMnShIF1OLPnALJeycYGIeVFY8HDakCVHRSR3ZPy6pE6jnY2tp2B2NWN8Tu6uhKP2tRHrn_K-OnadP2Xo73lHEm8tofIaef2X4JFuFds2rVtrw.jpg",
+    "https://cdn4.telesco.pe/file/F9HlzvBrPxs_U50HPSjVOU6WNIngAD3QnMOfH6dvGcsNUdgYzbCND_KWhDazfYTmKSGUvOcDG8wCTcOwgOV96clqbmo2TZhBOMNSyTJV5t_3XABsd6bOfZ8OYNbFHffS7-YFpawijpJvh8U9Y-WcuSiJhV3s9oQTjU4hFl68tziBX0roMT9CS4aqeCe2-12NdAEyAW_0PZXop8OOfkECo2mXsOGaBPSYdrkdAng6TnUs59WM-aiepJ0ZKGBPWQJwKl3IfV5cNuyaLPRmwmRXQbWRhRbhlQMjVIKqUE5aiQ8ByzNOjo6e_7oHVWqWWm0mKLygFCH5YSw9jSGsTAvZrA.jpg"
    ],
    "date": "2026-11-19T09:45:18+00:00",
    "url": "https://t.me/orbitreky/1978",
@@ -7185,8 +7238,8 @@
    "text": "ID78217\nЦіна 9999 грн \n💥 Нова ціна 6999 грн\nЗнижка 30%\nBH Fitness Athlon Dual G2336U\nТип навантаження електромагнітний \nМаксимальна вага користувача 120 кг\n10 рівнів навантаження \nДовжина кроку 30 см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 6999,
    "images": [
-    "https://cdn4.telesco.pe/file/Fp2dNIrbUW890VIAAY79o-MqBlAAIc1cTwzLhQbRlIRUUFBuG-DGIvec6o5Jk3LlG2wU68IWGjKHL9b3LdJXictRoP-4iJqjpFG-OqaOIOqa_ecMl7Et6BV1vn8jv-P0SKjGU7rWUl8xFPgKcR5CTPST7o8fN4lnaBTf9sXdn4UD2JZAlgKrOiGhRGgIGVrmognOhD5yEwq4rsa3gPbMDdoiK4RqTjfYZJwd5Xs4lqOmj_X7m_Lvtj4Cw4k03pinRyWpE-4lXjSrAkHpZD-F8sphIV81sZDdRrsaF9TUFWIb_6_pNfFSPmRB16CSa3DigvR8Iigp9wZRbbD6BxtTXA.jpg",
-    "https://cdn4.telesco.pe/file/a60Beem4CSxV69L0jtq__RKFXuueW-k2eI1bu-Hd17DdxcS1N4JF144q-GSen19TJBO--eonfS6fiq-CSzwJWI6wYtLH586WHCcV9EMgwY-gjQqme2v8P4p9h3zuP4cEaHmcZBYXtMCbZGYz4V0y3-awSEFQYpawiy4Ir55s0JpPnupEtpUuoHRO9FGNQ_m0d35eC0-tphuSQGkx13aLvLmVLMJoGQ6CVh5lJ6mZzVUIQi2Mbs6_LhFgxXNw3Rz5OR_SrU535dWy1rumYE9mFkqtuSIJkloLxfsx7gsbQinJe1-p-tTa5erWz3jC0RfCUH7mucSANte0x2KUNQ3Z5Q.jpg"
+    "https://cdn4.telesco.pe/file/l_P8ZhryCouQOYRVrRCXPGLtGAJN9pQz3haBEU_QNSa6ekWfCnnH51PCaFmoiaYH2W2EGHj5Bs1qXRuNVRQ66gfjXmo8fFP9DnKitfr7Jy5bZnn8eZjALLLCyyyvKPbImkI5hOUQOOOci32WswKZsPc_sSKXeVL6GrMU6KA_yKWENpg6-IznaRdfbiFnXEQrJdBBOfUclzAzERwlqoXxJ8TmfW1pb8Ts5SrbfFfzgp51OaISUnTJCXeXhlHz6P-CiZi9wVvyRXm07C0TMnkDh8KLM9e9NHSOZgHbyOt3eqws74YwesLhAURGkRCM2ZAPFbgB3TrxX2bSSQrmVBvSNg.jpg",
+    "https://cdn4.telesco.pe/file/jMIuFsYno5MfkNUwib4WZxKppIwGhEyNs8pjPSjhF5RuYeoBrjW2v4QWt71hdKJCg_fL1C97hF7sAs3lc81cglWtB3vRws7W8mOTG5y0IUUyMLc8BsHhysSrpLL_IfB0S2ADaqmObB_7OTm5tWK05Y8tpNmKylqAdzefcsOCeZWI3TBJJsn2RZ588pEXm533anZvYJHIBNql7HstSfUqHIuz6yDgR2430pAIX0MoFjF8JxqM43B6uNdSMHvBgC3PW1dVsGUIF8Dp56EIn4VydJQdzirLXjj7IcOMgF7gSxvOwEoLIy5ptfAj_l8R2mkemalZPjA97F2MEgKWuo-qvw.jpg"
    ],
    "date": "2026-11-19T09:45:17+00:00",
    "url": "https://t.me/orbitreky/1969",
@@ -7211,9 +7264,9 @@
    "text": "ID97566\nЦіна 11999 грн\nНова ціна 9999 грн\nSportop E850 \nТип навантаження електромагнітний \nМаксимальна вага користувача 120 кг \n8 рівнів навантаження \nВага маховика 8 кг \nДовжина кроку 33 см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/ZDYbN351z7WMFbUS1JNR2TaxDvhqDrKpa7osWR5DxHJz8C0MFwK9Asup7DV_l26BZpsE_liWEoUuQ5TjgzXE7_71wMAanc8ZvH5k9l3jNiThH6BQvjy8XoUySUhpTPKpDtYwQA9lnsLYME6UorMoTdVbf_PyN1B_FRAhFYDYNeqtnsfgeZii3I3ZGRd6nQxY5hj7VVekCQFP-cIKdbT65a9CkIFjVgOEiGQK-91vS9-nHtZ44fwWeVl5xUa5hkYW6sThIyQEeiUU7n5CD8UzJY-8qCpTXScA6PwYvLrVbySO3hN2M05K1fF7E0-G6JHVKnsSyVh8DgJmYwzVvf325w.jpg",
-    "https://cdn4.telesco.pe/file/rvLjdCh0vsHchkkbQBvF_CT0IrcFpmNxmoYSY2vpVBK9lBy9FjACB2ZnTh2qXX967sCdToMGmvCnoalu1mNu2QYyPwhgaFzkYnN5thE_ItB54q0ih_oNIg4DC8E1QrqbryZfeUeGAm462qFVN2zTGuHB3yYLawhpIQ-XnHQG39fr28T8DJBoNKhEgJsF4Q8bYxJFpKGetkNM7AmOEVvn64THUaIHfT_ffiIcunYVol_u7CDtmYtUU4q4oiCYNVkwccKxbRvyEPEULSBQMBuvSTqfFSCWlVm9xlP0eoZcCAfWF-mhMalgCm3nNHcZJEGUDyR8NqYPMtQQfq8I_jf23Q.jpg",
-    "https://cdn4.telesco.pe/file/QWJ7Y_oWEGpGpehP24mHR7eWd8U8TGJrhLR9ozM9mTriQr3new1HS_Nc3ViBcjLIPN8u3aS6kiGZN6EhcG2xIWIlV4QRfVOFGlIAXbXTemWptAbvbIwVrSS90r1mFr_YiJ1uRKfRsx0DWinz_0eWR8E3uBEWwv8oyRk5eYjClIcfBHXnKffhU18oo43WX8mOysErQS3qFdhDNvOEaAf8qPpRmqKLAeNfNCZaiifjBMC2m6WEykLz8nJQ8w7OI32lhbRA41IhTYhi9_GoFlwBjXAVyDVeQxlsCOmaFXdaWiUu77Do-Cz_TWY_-nyRrNPpjnwdjSa_cmZ-N7b4aW11XQ.jpg"
+    "https://cdn4.telesco.pe/file/Ll33MOHPmVu3-5v-iUPv2QJJ57_JdE9XTu22dZBONlmE_dlgQubj3BobI4ZhGNA_b0Kglj8Ga0q2HrCQG9Zh3FIbLz-VIsl_AzpdTpw4Y8mIbvNBELK7k8ZhFhTWxkARyUZ5WK_Vn0DiyGTVASf4GgzneDAM2upWMv8Dy7mO4Cc61HCP5t44aqYZypLjOvSe0KUxk7-jgMp4NxwD9KCqAtylY7eN0HVRMJCEk4G_NMHsQAFwlUBinSEQq3xRaj50ynfmXyn_KLEk-pUZQBa3itGMFFrOFHX4pfDYzAli-T3dt6tArs2qflu8L_slXRlGQGrKDPGfLtCXbCALJIlldA.jpg",
+    "https://cdn4.telesco.pe/file/ti_rhd1VNQ-Uno-VVwreF4rtVQsNzWNtr2N7LVpJv3XowG27H2O4uv1wvz0hEPXvD0AvL7Z4XRvTvybW1CG6cBVzoxHyERgltBk6l7GfpgZMDH3iEHovLxeinxhKlue8yXu6aUpfY17hERaAWwLj_zODogOP7_NrR_NpQQR56wBQSIDL09HqOzakAuP0sDKl8qJ6i6zmWy_x0SZuSlvWatfEx5VBGx1N4NfZ4HULI2xKEPgc9rexij0CvroHy9RMSTWNx11u_lRAryT7G6bG-o3PueEqrJf4iMmKH9nK4EqmQotT56n-jXXTf5fngkvjE0qbarxwf_Kd9slqdxU8cQ.jpg",
+    "https://cdn4.telesco.pe/file/dhtoUgAdP8kzTQGoxSesuq6X4Yl9mxb61fhuEi0qPuU4L7TaIBVOjZq2wI7eJZX0-3D1bsU9U_5OxGrCY63MC38d9t4DpX7kLZQKPs51_HRM01ZiA6YR2pUJOKSyHEnLam3_86a-iFlVJkvtUy6fomg0shB0yrTFe8Z19eKBe72LOBCKuoGRGxoX-L1PXYwXOTnOQYn0qgodcu3YhkYXJ9STIXoo6T9ey4nvolGa7g2Jp7djgXmixR8VQwc5FjGsRzWaXH8YFHdTG7W8bwNjGwELp-q-EIwKRwd4M5d7ERCbWHhQZcIIpBU94rIqR2M-Y6RLr1gZokxAI0nbtSazmA.jpg"
    ],
    "date": "2026-11-19T09:45:17+00:00",
    "url": "https://t.me/orbitreky/1971",
@@ -7238,9 +7291,9 @@
    "text": "ID87410\nЦіна 8499 грн \n💥 Нова ціна 6400 грн\nЗнижка 25%\nMOTIVE FITNESS \nТип навантаження електромагнітний \nМаксимальна вага користувача 120 кг\n16 рівнів навантаження \nВага маховика 9 кг \n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 6400,
    "images": [
-    "https://cdn4.telesco.pe/file/kU0iphAr1ds0LXYn_yoRe_abvVK6Z_JEv53HZs9ce6I72YJmC6JbLKXzwVGQ8O_NAFVID7Ory_w5ZGtQlPAcwOLMmMGaBAj0iTReVJGueUgHVBafAAbCv7Ku1R2Te_gxHW_q3GhR2VK1x0g7VpuITHIiS7hOLJhdXouPaxhuNTv77cEusNErTp6tpnjEezTq0J4DMuJmNv-b2yNqBdyOsQ_GS7QHpAkmGhtlOYzFfqLmn2oK7fKJF4CdBMrhSWA3vvGIMeGHy1C-xNVzN0A_7SSHSfPeI__Nn5rjjCBOYxd_TR_t4B1FkVQh-lDG_s0-Wr_MslaKhzd9LndrmAweHQ.jpg",
-    "https://cdn4.telesco.pe/file/s2C246ab9iydJv50nYLXqQud4B6iPy3kn225kbP3sQSb6CZjDEaUdiAz18AOh3yCCQJQ2Hb4p5Fp8o5FT2D3ZOIMEmTUrzA0Y-JOQ0Me9nbGerf4xoeduafSHDiN5cC7ynF19gTFYKTxVyfWvCx1eO9LFbbijIAUU7drxedVmt4PVOHNqFqPZiSAMgah-3G3DAGFtCxfDy82IRoJ2RbuWbgTx4yQ4TCdLDTVc_CKvB7Zqqzm8vY6mxXLWO745quSu_LEoOOlS8jJ7lA8NJ2IIFCRMsGb6UraaeG4d1sZ07yH06PZb4JJmg3uaoBuq6e8JXZD2QDNOUKi5RhG_O7dTw.jpg",
-    "https://cdn4.telesco.pe/file/p2XTIDxaUXkCELOCNfGNpmSPv4muWg0MWMYrw3QN5fquhkbl29-nSe0PSzHMLHgC0jQrrMLUYB8GjUzzFJx2y-AKQAzZzM5tHK3JL7klav07qNGpFa1LyWFf2jRFp_K0efUhQ_vNKq9e777nvaMGPVnj9GYwhC0cs_NvnsgQJlgzMBy__5CSfY_BPfm0sTZ2AsF60YANBrhVDBbeS0zDcna0OgP6fhoC1Udzw9my44PWdLVBh_nfAYCckYXuUHEONCvb0vRrUWIwXt2WGhlw0ZUIRB-HnSh0Q6YoQKcSFSeP5povZYxsaJTI8TnYRNhWdSXV8TAw6jRpFIDUgcTKWw.jpg"
+    "https://cdn4.telesco.pe/file/oKIHjF2LvW3aFMJxqVSXpkoi26KwhP4jRDf2F9XA4yUYv0CxI4C3dHPz28marAlTSmgXLcwe9WmjtVPUGYw-IwRz9PXVKOZmroFqRuyyiQMXt7ifVWCwl1DIjt-MvVqwKnQoLmy05sb8G_CWIFL4ZNsyuXWPXOeHKruewV073OHncVfSEFBVwMlUMnviFiV1CGS0RCb6lU1Qztgym0Zojrx-D5ZBDdR9_zN2b-XgW18npZwE5VHoT385su1Dd2V9iNoewnn39ZPZPsBMI7VW-QD_mY_7xHoB6xa4LBiD4qaLNhvBvxOjzXnHDle5nt2CzuEsgHGUzo_ymqf_6TyLsg.jpg",
+    "https://cdn4.telesco.pe/file/hxHNFB8Qv9s-cbcM2xc00NwOMaKymCnMFwUfCMIxqtNPzVEQy4loQ0aDXAnmxU-u_Q7EUfRuPFJdi7OgI7vddTPICnTVhRFhqbqc3dWbaMej_xXipUPHn_vy6myYdBfQ5gEmeFwhn7UU1wlkoaZfn6S5TcBdS0JJsUTkr2T04TVrGcGxzhD8Fj1zYhrwAUwNv3fF2LstMxY-2ENqO4RR1KI6mp4VsVqjhCE3HL2w04VcCIQFUWNfljVX3bL_RcvGRtrTEwsF_9ey0PzjtuTTqOB8oDwLPFvQlQdT52lXkuEnWJZPTQeVRN_DtPBNI1vtlijV8tVc8jGxny7HZzmgGw.jpg",
+    "https://cdn4.telesco.pe/file/V1WhtQtkL86wZc19r84_ecSwwAvzMfcpJiEuTSnv2fExbPkQeX4S05GtCGX1FiFOd2deoGkjMPYo885_7_4gNWqpRwVvvbzpTe6YjQinVQtpTrihlXbCi4eN7SZj85I3UCXPtN4oVG70cO4H6iFvgXgpKHbipMXVLJQPUVzxCCZ6AIwWxixgXuImWKYPPFe8WXDkaeSGi_1tcdOpkSeWvRdkWHNqv0buoPJhiT1tzHbOG-nxCOn0kBVuajcngflT7jt432Po1FvkMJSZMeW_YgzhFQNwSp3MMPoHjzYtTrsH14Y9bL6EkD9RsVwLDOkd4E5Baet60wb2yawA4AKHCA.jpg"
    ],
    "date": "2026-11-19T09:43:03+00:00",
    "url": "https://t.me/velotrenagery/1033",
@@ -7266,8 +7319,8 @@
    "text": "ID95355\n❗️СТОК❗️\nЦіна 22 499 грн \nНова ціна 18499 грн\nFinnlo \n3194 VARON XTR BT\nТип навантаження електроманітний  \nМаксимальна вага користувача 150 кг\n16 рівнів навантаження \nВага маховика 8 кг \n14 днів гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 18499,
    "images": [
-    "https://cdn4.telesco.pe/file/gObXOFCCw2d3kYqnJ_n0aRpA55ltFBAaDRcWbqberyYMnhZSuLOIiNzrp9wyGT3ijiYvjiNEely2X-AO_BSHuGMiqEq4UNtb_hGimaL1ArsQYA7_QqV6OPY-gl048roe_Rybk95mUEC0PVse8jmQvxTKZv2VELB9JUXVUB5Y3DTvlwua10uYsRjJEXDk0COMIA2N3O2cvT1eOtDyZFqftaZThBjJGiohayC8FxdBeQKdAYTQIVG-sAmIl9GkPIfHRho_LQdcJ8piNGyCeijMe8HYZoMEpzHA7WqIyOEr_8uDmh8gYhM3uuZ-soyX3v6Xtiv8Tk5EArjb0y4osGjnNg.jpg",
-    "https://cdn4.telesco.pe/file/d3KHm91RCDm2tGm2AYwnMM5dV1grhXKyNNX87W5G9MdU70vgCVQ0Mw-qDsoiSucuR-nnvFsVxqBuYBaVYskudvawxPQLr1DaQrOCT_JTr9a0U5c2E3gnu221q0Y50k6L_Vu-2r8Fl0fCraGbZmasI_QInmxRjDb-MTa9CyZj3f5EgHli1ae4bdMBdTuQG0dsO-mAMrPJFyg1ZpfHzUzWqy2NhefI9wcIX5drfLtJeH5d32iP_piOQUeXvJjwLcygPuMPGn3-MxXfYH29v0hcmSzTJyJnj3RCiBWTuJ3VqGJHkkHIseFy97g0_MKodIugm2TFzY9K6TMwtA37gubQfA.jpg"
+    "https://cdn4.telesco.pe/file/IJFz8E4WNM8Z3tuH3igRwVtl7roe3zHk65V5bOVnGOIzMZHKUIoT5kbGN5jHBx3TMxG2fyk5ePLdo4ZNWxLzWqOiTL5G9brLzGCedV9mlFvv3bKXpBF_5kvsX74K-RcOaTwESMmRiSAeuPdA0yOIuhoSVqSx3JOg-go2TUDWec7SeD1W5z6-PSvB6R_vA29CkrPhebnoeGLFQ8Gc3QqC7UGqP7vrIwg7gIYquhpBTL9mnBluzORTzGHmx_kmVr4vWiQGNUIc6iSSI-9zc1wfacPjK6SlQcN5G8_dv5A_Febend0vx_jPdWlvFwFSyadjRUKlNnG5AHcW3waXtL7j9Q.jpg",
+    "https://cdn4.telesco.pe/file/r6qq9sTkUwX0FztqR4145wupI8cSEBJ61KKU8OIrkUT0w45HN1461av2Kzl1vWvk5NZGrRH0-dLj_ewl-G1Uz1v3ifNWcIZDefZbTcdFsPU86uIop44o2B13JoyhTC76ipB-hKBKo1TCZRc7gBVImtTohAdZ8EMFQIhy7nDJCCSdzKY01oj3tg4odFBnfscQ3kHTBBXT6qflNDjE2hgsR794Dl09WeR3S3SSFjaWaxL5daLzphuNyfrfVBXwzmmjOUAHra8FDgCC_ENCcD52nTg2YnQz7ETDxxul5wdsFKEaPICpm_n7SRwbviMj7fHuSIhHcBM71Q-2CFOLkpYlsg.jpg"
    ],
    "date": "2026-11-19T09:43:03+00:00",
    "url": "https://t.me/velotrenagery/1036",
@@ -7286,8 +7339,8 @@
    "text": "ID76625\nЦіна 39999 грн \n🔥 Нова ціна 24999 грн\nЗнижка 37%\nVision Fitness E3200\nТип навантаження електромагнітний \nМаксимальна вага користувача 135 кг\n20 рівнів навантаження \nВага маховика 11 кг \n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 24999,
    "images": [
-    "https://cdn4.telesco.pe/file/iMxCmaVjprv4lHpz0twbZkH8TmnxnIqFOoJKaZEdL5ziFqr-ptFcEoLhMauSmrMIGdjEZtcRVGtW-_1eUpQ7vrcsxm5ATHuJ33cJtY5iH_Pw887O8vloJsyJRkNcemUAvWafVO9Z9vrWS_Vz8PRBL7KglTCgq-x9LdajyMFDxG-0vutGecGplyjEPvqzcA-23vY7NaJqkVJcvsF8MQByHMeWr2GGHErJSUQYYoHCtk8NRADkB6hp0RHZZJ2H5tGiKq2djYGX_MUTt9tCeUdn1aytSS91soi0Y0G8s-yUj8N5UGX5qREF7KpKarC4duaIUdG2aETxrjE19dmqG5lSiw.jpg",
-    "https://cdn4.telesco.pe/file/KwBD5xCWZyCsWn_iBBSJuCw1jA1DHSZBvqyNdxQM1KmYOro8KqEKiWdH8ox-SuIj836PGefuT4o3UKFYpB4qgT4JfNZB205EQ4W7kctHxpDu2QVpDn731o0VdJbmaheCat4IrcnDPrFfhVTXQRPCoamlHErrX9uJ7bEQkBTf1A0neYTohtECPos3IfCYAZx9tfmqzVk6V7ndLmOt04rc7iDgXcJA5bas7C96aw8j7GVPeFIWqHJChuZqQ_DS4MJYExCi0hvYkOOQRxq5YNQXckgVRodM77lgDuFkOwR1Ngbw2ayglYa-C74AHulBFolsdMMndrWo9D8b1cbf_VXhKg.jpg"
+    "https://cdn4.telesco.pe/file/kkgFeX_w2BfL5FJlmkAlTZf-FcDh4xphY1D9rKYQhj54FkMNp6v7A5g09BHMS2GiSX4J0y1uvKEhWnHPhPcqPqZF3NOpX3tFMQKOqJZe1g2bTSioyGfYnEmnUfPQLA-xr9rcybjvBnoz9SfQNDwc0gdg7qhOBVSRl5etsaI1Ml_G_2kHWGLBXp_4F2keQyfjCmROJ_TR4Gk5rDsQOeqg_6EPUIY5NauEMU1ip1fT0biI8qNb-dkYoh8ELzYwC-A6HvqX8gsfSn3RthlGxvU4gcAN1m5vtfPHXdlE2ricXkG1rYA2hT5HigXc4Vsd9o-VycBtfxQF3dIyXH-IFnfSyQ.jpg",
+    "https://cdn4.telesco.pe/file/n61fZYz8tTvX1x3pCJu1OpkOKQ1bxshaovCTmUVHIAB-9V3H0-W16c64CXi3v30J8imWlLL6FL-TtZ2JvqrBWxbVlpRa5hLxNwSur2yoeSXjUxWvdec_lNvNKs3VT2R19EmMMtwDa6xrLs3CirzVaOVrngHPW7IjGtbSDSGvfnJcSb93j0GC9vZQFnOKCv8S70JatjxTAVZFevxGzO6kk5ud5REByXcT1lW-iqghpdNK8F3fR1NTJ4p35AkoaE1aXrZJkth2MoS5ucMwBiMwnO_uSTpoHOxDePhDmtSrxsUmtsNJQ_iDIb1cURJmlEE9QoqGheSgHKH7zTg3UrY1og.jpg"
    ],
    "date": "2026-11-19T09:43:03+00:00",
    "url": "https://t.me/velotrenagery/1038",
@@ -7314,8 +7367,8 @@
    "text": "ID95356\n❗️СТОК❗️\nЦіна 22 499 грн \nНова ціна 17499 грн\nЗнижка 22%\nFinnlo \n3194 VARON XTR BT\nТип навантаження електроманітний  \nМаксимальна вага користувача 150 кг\n16 рівнів навантаження \nВага маховика 8 кг \n14 днів гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 17499,
    "images": [
-    "https://cdn4.telesco.pe/file/r3iSzyNhQizyJOJaPkEtAk0qeif-eg8UCML-9yul0YiJ9a8Ee1BdZ4568bZBQ5XKCjPrVwuJXbTsPPDA-Dw64107tt4j4q6FRkTpaoIDMU6xuhCFMO3vAzEZTS9Z9ZxigKUuPsM9hkJFLQLyZEmt6LXgQA8Fv5aFg_3Xdm_3-sN2qahS4NeWpZsu2oRb6KxbAEc2ZJsu7iPraAgKZAujqS-FWyksOn8_swRagnI4e17eSJGLxeuB4QKfL-WHcEpph8AoIFWwHNB104n9cIj7H8ea9cMlV7hF9C4B_1mSEWQsycw1nyoH_BdT4-z_4KBEO6NCzlGOa63T9k_xcuLCag.jpg",
-    "https://cdn4.telesco.pe/file/JfFNKBLLimZ9S3tEeSlkYId0TI6iyMXOtYMAkNl5Gh-YG8lkxV7EAkh1Hi-xMf5f4a1c2Nv0xOv8Ii7bD8_iDjNaQWrY5gX0C_CSleoLxR7Nrq2x2QrcC0e316B7hyxtBpjORjoUuO3QR9VUnttyrPjEhfQOCXKy7mnRthYOPpKnMnZcumDu6dmeUb0qA8iv05WLfiZuTfd7ex7UIi7th7CiIa87T7OyT1zzypYuNnlZS9NeZlhbNh6lnFtwdIQ5blo5brwgTXE8sRoVxeTFcTKu3L2nHpWHgB46MHutIO3H3-4UBsbbodQIQZeUVWT8vyksaffGbftuIov8afKqbA.jpg"
+    "https://cdn4.telesco.pe/file/hDcwkZNVZ1apariQerBfruohp-GlaDgzBTVhT0zlsOzMf8wjQ1Re5rAkBb9LAym0Y0mpp_FkxkEbMV8ClS4SVTky5NXvR49W905A3IhDiQcdBg0e8_myvwS4wa_GipgLc-H7oiuXl4s69f02ri8IxkfSWQQaaZsmDnhBkSimSaLZFdkrjrzTMvrCK8MqED7GPcP6ewdA22hjA5abL4yTLS3CXR-oJQQXsUltY5MCAU96t4ztGvi8R8bynvRmJ5dg5LD4z2Ip2h0LcAXmApbOdy4FAK6NJtvFih0Bi04fC2_ObwxgGyOsg_YCccmeN-Gr4McSrY_A3ohnrJZC48AJJA.jpg",
+    "https://cdn4.telesco.pe/file/ExCniII1s21KFBt20VKda4hdfaNOJ_6M_JMyDx64dNoKFYB41mzIjNiKRYVwpPfNzhHeCtrjIiiaTcMRPBa3ryzPo5OuWbYCfEGp3yPPIjlbaN3P90BJ6TJwYwfmd2xBv-54ifX4y39CK2NmyRtX-JTVWK71ORj7Gx15tbdZ2szZ635TsithrTctc6cRQ3C5lAsm_lErKfi9CxAZYBav4JimvU9CDSAvo8P_Kp7CPUg6jaZ_uWL4vL0jJh8rtfDPZJceCg4wlP87DjpDxhRsASYKr0QtGO6hi_xVWvWOqqNJoJ-_nYpfphs1cKwdfp-3X8aFHnklC49ONPq0ILQX6g.jpg"
    ],
    "date": "2026-11-19T09:43:03+00:00",
    "url": "https://t.me/velotrenagery/1043",
@@ -7334,9 +7387,9 @@
    "text": "ID102660\nЦіна 15999 грн\nНова ціна 13999 грн \nKettler\nAXOS Cycle M\nТип навантаження манітний  \nМаксимальна вага користувача 110 кг\n8 рівнів навантаження \nВага маховика 6 кг \n14 днів гарантія\nВул. Вадима Гетьмана, 1",
    "price": 13999,
    "images": [
-    "https://cdn4.telesco.pe/file/BExPXLKWR64Uizkr1SIZ15b_-qrbWbILO5cEAriXPjkZtw8_T6jbu_jPht6z_dPd3SzHkOz3SoQoFEDBmKMjsoGP359Wb4WxhrjlOvflBQ2WMhIdeyi1DFls69VdYsQqlKrASrGPBUT46SAuNKUh41spW5eNm3rVpwvVlWlxOo-3xUJaJYfefUCJeq3YAzDTfsCl_hGBmCIt56vQjTnzQrC3NIsz1v9jqnx6GTp3RjSSlxhu0EE_QQFgkStG77ovJIy0qeLRQe8WIoKfcc7oe_zShjes8-Jyq28QUWDBiFhS1CGLlL5hDq5MvrcpfYnQ9Isf5HliJesS3RjwmDzwFw.jpg",
-    "https://cdn4.telesco.pe/file/MasTDh40Dh2M3CKicyovUF_mUTTYOb3gDL1ZFFwfL1ad70OzAJRk1yvCU4LEudhupiU4gYS0Awr5Dwn1dWNWhjWi_7dl_6hAo2WZZBK05igpM81RWq1aXkCIX0mNLH-wGMhB0x04sdi-XLrKKw4fRz4TzNWUivSBpBbGKiHXXarziltwWfkAMm-RHQeqGncvjpgWiRKDjxA9Am3c0-4ju8-uhXVfjlIyPwXSXIHybWfTw7vQ9Q-jC4mlcx_bry1k_3r9xXzB-VxpJtlJvagvbX0o3JK_tZko-MWoE35oFEDwKAKlbGpsfeTNSIRyadmV-qwXVnL5aOn80ylvWjqeNw.jpg",
-    "https://cdn4.telesco.pe/file/IKr1LJRmNwjhwvnQFKVgN5zg_fuiBDaBSFy6s3MJoftvnWeVqJZKDIy40j0mk-GWgXsem5GJwWSNuW6RdZ4QWplYU5vLlcSdtmABCvzoGmRUotjLlBUGPNp9bbBoQRxsWKPN9zIH9zlXVOJEJAvw7Uf-TocTNOV9Qeu_EbBIo9VwS1QPnDv49mEkXN5uXfRvkGrKase6pjpLttnrITtENHaZwmxmnKhQhyFQbfRAPgQvcso0yoD4gegps3aQ0V5rU39GdUwR8Fh9_ew0qDsq2MgYtZQW3QA9CtzWw8S8LkztD_FzTPU1pTj6keX9H5Ra-dQifYug1NBRUxbyBHoZTw.jpg"
+    "https://cdn4.telesco.pe/file/FB358j7HmIbKUsJmADdNQ10ks5yyTWH_sX6pXOS3CupzxGN4B6V3ziVPSn4tz_ZKWb022LFL-oQMkc_ID3SCZTb1Aj5wLyjLtaUIkZvOX2at-jJ53ti7jp2Ujt5JI0-KM_qxiPmdVymIYTzmdMV5rMup2nLL-VDQoVEzYLD50g9fDyfbv09pg8rtNpn0bm0iYAmit6va-GVuGeAhYDo49Yr9vhWQL4MexAnxlQWeiwLrf1s32aUhKLuSwEp6VIvGal2M1itA4tcoRXhIZcW-uvaFI-CPKJdGm2SqmvtO3MZZtmSbjKqIRtNZUMPI3NxRQ47TFQzYwkR2owQUijUThw.jpg",
+    "https://cdn4.telesco.pe/file/iszd2L4VSlhR4h6O0l4HByuSkiF3rlTn8v9vxohWejqsI5jBdoGFFhytWTKE7JVC2kmT8iJL_ElxADRJijIJVwqShZDhsU9DUKMPQq8dE5EwBa3e0ysV7pPTizudMGGyrjXZdPvtC94jm-gqNyb5APAnmYDi4byUjfWPCYn_CUuEnHodescWi8j6zeuJhq66xe44ApH5Lobshqadrx361vRWoeekICvgmA8a-OvRQ8JPoCB-akQUy3X93Caqv1KycupSYEq6R4GD81xbMYChC5TOoeJ44MYRhvZNi_I7cuDm4q3V5PPbJ2M7oCD_HufUioXIlhpPVFjc5tTn9TBlxA.jpg",
+    "https://cdn4.telesco.pe/file/ZDHO2qWlLjypGgaD22wJ1jGtuTVdIoCUgTaYTbt_sGX3qSIoqgUNadvCh2tUHU6688X6QI1YdbvvJZKElea6en4zyMuE25Iv1Bdt5-fzfWsSjgX5ST4P-4RRpdrmvTsrfKw-isRMmp19pNNu74PfaNnTM-X7XeapGESCkvxJmDFQ2rVNpaHjAdzmcRfj-OiQjaEurfwiXOu-Djk3U97slqxWbFhuWDQHL0NvYWhjB2ZVbFi6FvZEoATB0NdA2Q9WlRXzQJ33zCF0rUqbNOc8lPBp8j3ViQpH5PGV7eM5ohBOhLlxLKfJ0GrcRI7B_EOHNXONBSlDh0b4mxoHJAzVTQ.jpg"
    ],
    "date": "2026-11-19T09:43:03+00:00",
    "url": "https://t.me/velotrenagery/1045",
@@ -7363,8 +7416,8 @@
    "text": "ID72470\nЦіна 7700 грн \nНова ціна 4999 грн\nЗнижка 35%\nВелотренажер HouseFit \nТип навантаження магнітний \nМаксимальна вага користувача 90 кг \n8 рівнів навантаження \nВага маховика 5 кг \n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 4999,
    "images": [
-    "https://cdn4.telesco.pe/file/WIs09cqSSBFkY1-iRPcSWNezGFNmIYiie2z6XhHSE_tUJNzy4V0lv_Qy1FbMcbokv0BvNq_0IfCrqhAGxOeNrvk8Fi2rl-CLMVEQIHDSb4ZBzeQ7R4vDO-IIuITJFWyNoxLt33hT1kyCJ0ckrXYIb3EI6Lqdq0OMAabLz2YtCAoMDk5ACp2tNCz_NF0LwIlLcD1PQmGGay04hUU4c4DSnDKO-rk1QGZXAVBlzwZkpUrrOaUzEd3dyouXSw1mjBmh9XjgAK8JTEuMrIOiIK4DiZKwxF5mF1Ctk6C_FLTD1KkKrOB0rHpY5Mz2FxZ0qGmgo3g7nDp4T_q-1_Ot-oKShw.jpg",
-    "https://cdn4.telesco.pe/file/tbiCRVAQx7yeaZePBTHPGJqoFfqcxo2XzGqKmeca7XoZLE0-qHOLHgKp9VeKo9BqwdPT60iQk7n9kY8ycNg16VkV2l5YCZzKtdoH5g5PQ29CwjWfiNqTz0MvvYt03sod7c8fAFSMuxA8qppXAHS2ZYz7I4y2dhEdZDqcOMsvxmB-FuXTnFVAuQ-o_OpQakHyrixUznrEDDgpHBF1MnM206xWLVHu9NznqNR4qqtbIs2LpOgFm53SnrsiFh7qxYAc_XrLpJuq2_Z6RwyaDDMf9XICF0qBcEiA4wVZb15XE1sexL_CM8uPfjD1Y2_PhWKYfBpJCY1Z-CEcRQmpoBU-TQ.jpg"
+    "https://cdn4.telesco.pe/file/vKJcsx-Z9lqheQI4KC-rxUD043_jBzfjvf9uTVoJXR_OHBmPv-Jp6TpACJuMysMpYUObiCMCWI6nqyQjWxBT2LxNzf4eGIXOZ71GF0bHB6obs9AdGzAWJnkCt5mcwVBw4cQAfuFvakJZLWhrdCdiIKIUw_oipISjhhGaoM4VWVerZS3kv3CXNpLDovKC5ZWeJnF4em9VlR49N4Iwbgt47Dk8PfiyHOk256x2wdmWrxVlyJCWgmzTiRvftXK3Gow-9IPplFeRhPAy4TIdb0etbjK-O_yE58Ngi92GK8x_eDu1Hl3LrvfU0Cuudu5IY52LiXda5IDoT1k08RQoFFir8Q.jpg",
+    "https://cdn4.telesco.pe/file/bTzse-e2NniqDHDWL9d9uevqcdsIrmSIRE_OKJxwXisjccwrAH3O4xGxB26UUbqG3ipmMYgw-0-ioYrYWXp2l0KYcDuvFWg67mJkF5rZj7NsEZ39C3BjFEBBZRqbl6SEVdRek4cNOQij85XmxqzopFjTJx0OGvQTtRi1rnUQnWzZ2AlmuAnHlmelTPV02FywaUuCYUxcuYOqwN5p8eiNoIACceexkIZmBBh8pacSxyynitcqicmTTnvp1w9HIhT-qnE3_Nn3oekfaI_dtgyzuN6HmT63uVcYtkCt6mpB6DNMpqqxOAANTCFzR5rfLVKmpBt4NvP-4GX4mQcRgqE3bw.jpg"
    ],
    "date": "2026-11-19T09:43:02+00:00",
    "url": "https://t.me/velotrenagery/1028",
@@ -7383,9 +7436,9 @@
    "text": "ID81276\nЦіна 24 999 грн \n🔥 Нова ціна 17 999 грн\nЗнижка 28%\nNordicTrack GX 5.0\nТип навантаження електромагнітний \nМаксимальна вага користувача 125 кг\n20 рівнів навантаження \nВага маховика 10 кг \n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 17999,
    "images": [
-    "https://cdn4.telesco.pe/file/jyq6VSIwW9_kNVEAj9_X79rGgQug3W2PDG1j7z_nygBf4lwq7OEpeXXh0bWQjFx0BxFeN9CbT_k8SjKKCXEXL5w8ipGBo2QLIKiFRdiq1JLdJVbFpXFO1Gq_obnW3RMOhHj74qI959p5rl9IBBvolGQ10y7humRUebolBprKmJx48EGilZ0exfLP8qqV28mS1G0Eb-ULJjm5tx2vnrq1XG_3Z5OeUN6xGqRrsrWP0ij_-smYW_jzaXM39jhEfyJD3e7yTrYulIcwk80XNxc1tcGGxlZrrZlPshcFPzuCFkyku6h5cWYLneCBXtMkXbADUJjKaBTfcjgAedyjYvE5PA.jpg",
-    "https://cdn4.telesco.pe/file/mHb9aINvKYAy5jcF7337YhwnDBQT0aoprh2u8ghnV5kKV0zqcMhs90q_0xSWq3rkKijoT3yW3_6aRnI4FXeIpT_DltpvhuckSnpDF49e5ZoVKWWuQVhCiylIw1E3MN8dzRBCBMnYu3Q-TALQwgPiqam0o3BzS94Bm6aMJ6qmrxf3frpCuTDTXdIyKjEC5SGQmQTWl6I-hsQKPwCqKKRvcra6_nYp_6qF8BpyxdRIn-lcnValrn7asgtFycvJV5DSWVWs4aPpY0KM2Plv9HSAv3DpQPZrHXcxD7i5FmuGg0jlOLfGjOxRpl_yGDkzgpiFfgI8-tImaRVQfnUObNc5Ng.jpg",
-    "https://cdn4.telesco.pe/file/gl1ca1WWkKT8ZBS2e8KNzs2K9lDSPDm5LNfyOgkO7tZhEB9XUwEDBjslCuiFNLsLYpZAfdIoi9JjQV9zEBdYYTWW3IB9JoBgcBe04A3yQgymEPcv77TrDoUXcQvCjfTTpHHUlFBpAPJHwrpZdLRZbhVEnzNN8-Sbr_V61eNu4hAGKt5g8HDewsU3qTz8KpgKuCGXUz25Ft1vvEuDrvZ6aoQ1Cs78FMnUsuJ3fULRYy7WWULv2Ig6W9O3SOkuShfYRGLbIt1fjGiQDGkiK_zFa-f0F2KNhNE0qbUaEysTAIDE__yaT1m5k3b-x7yIQ4cdKXQMFzRS7yUrhmdk-JYKxA.jpg"
+    "https://cdn4.telesco.pe/file/ZDaDPG_ZGtdW4zPe8zpL7B2f6BKD2Ddpi7GLU8wQiFggkibY_al1fS9CB69BPtMTxSh3QGdccoKpfpVrVQVhk5OT_2eFSzluo8HNWQCQYESNGXDjVv2JGg4n7o9TFLlYkZcp3bTuPkx0guFa99l3Hd99m0Li_3cNvuZzPu7YGzValdFVn4IYBA8OUSWVXix-BgGW1wlf4EmY1AcFhT7ZBPEgInHQmoaTpIXXGlLyVIjXj5H9M29MY1Kt5lkY9ZETtI6heOLEGMs_Q-yCm4OwmLQM1LcPgdf8jzNCzoO11cHwjWVs0PHL-oaP2nN2SbI-VwOZHQL2m-RfGpCtADWNPg.jpg",
+    "https://cdn4.telesco.pe/file/aHonNRYlZc2l5rFiknvtK5VSeWvqMXxrYA3GKMzGIxjpm0yiqCbBdYM6hjeuTPpEnOaaegv5DAnz7qxtFTh9A9M5zZIzohdHP5FO6MguUfr7uoI_yfH3Hqnh2AuKJU1JIPNGya7CqOWxi73lXmRmib-Nb3ujYGhmvKJsLz3GDAaKiE_lbIx-0pwO6kTSoey0BsbftQ7uasbAifsLoA77899Xk3K7Ga_5Sye4zK-_-pj-LZDl20V0-7NFUE9_11wWqaKQWA51sqhB-2fa1zJvxwLdFF6fVNTOEF8V0ccqLvHdsRawntZN5XYp9LqA56A5aWuEBagH7RkneJjxtuGGFQ.jpg",
+    "https://cdn4.telesco.pe/file/oDYUWCL4CcNDVpq88iKPh5avusEEwKjTsVQmqmLvpjKHKb6gRgEeD0QG7L6I5E4ktPg_YE3Jkqjpdl1OztKR6SbAmNMJdfHxCJrD_kkUYFqDU8A_LA8PD3c_iJM5YULsEL4YLX--Y1EIIe-ooM30kQkME8FOYujASqUYYPSl0YyUctu6grfQTryDP7-eWjFgWwnsT_4WCROt_8EHhB2UFsvPctqlMuObubXf1O5Y-SAMHmD3rX_feqZSML29rLAXEo9nBJoPGGOLPh25iV5L90Ss80S8MnOuFvT-nPndnHvvnroSu6UM8quLlJyDLaOJF9w__0OeSg677dnWD5JaMA.jpg"
    ],
    "date": "2026-11-19T09:43:02+00:00",
    "url": "https://t.me/velotrenagery/1030",
@@ -7510,9 +7563,9 @@
    "text": "ID103145\nЦіна 14999 грн\n🔥Нова ціна 13 999 грн🔥\nБігова доріжка\nInterFit TS2 K240N\nТип доріжки  електричний \nМаксимальна вага користувача 100 кг \nМаксимальна швидкість 10 км/год\nКут нахилу механічний\nРозмір бігового полотна 120х40 см\nГарантія 14 днів\nВул. Вадима Гетьмана, 1",
    "price": 13999,
    "images": [
-    "https://cdn4.telesco.pe/file/UprbktcyXHeOM_olSECXSBLZllrV8gZHeFDhaEqACUSrjbdx2nyKVbjyH3tBgTSTB2g4vq1igfImLPTOPnAbR-A_BGcEUwyOBc6XzgtbwrzrMTR_Fyl4s_KwH_dlTvhZqS6F2C_PCKUb3OAlo6OrtwsyLFw_C5NOrpJ763YBxgZIjqhNmU1hCmW_PVwed3IltLiYXDlpBRlL_xfYjMxOVQL91Py-KixXpMosp3SL1IUPGJOBVfKr1DUR1TA9ZoiQYYKdIc3ZTLJGe6SjcpxXOFpYhImilI3JyhJSAupF8KXD_jdWkJvaWTizKTYvWFMACTYt-k2ERHpFmaX25g0ucw.jpg",
-    "https://cdn4.telesco.pe/file/ZchqvmiZ7y_12l8iwmO7PrdggcfwH5HYu83VFxCwNyHvUDY_ZIdKpS1bi6Je0OgI-jDVNJafN8znYGs_2GCEYPrk6U6S40MBOM70nhkeR9A_7S93JSLnIhElvHi02fqhgzcaRnNy8KyYdmNIIGwI1zyvdcSW70IbSn6uFy3gXM99kb82o7YPx0lnTd8hx8EPW5nrg7hjrSb222zeJMy3Wnwgu41kPkGWP5ICtKz5F-Gr2xhhL4eOp5KEzIt6alyURGtcSbVN6M7CwyyJqjbbFVBra_t2-jvrl1lV7CihvV5iKgg07lwpz_NegBqU1a9dgk4Ecmc9-YYtDl_dqWOJSw.jpg",
-    "https://cdn4.telesco.pe/file/Qoz7wX1jy7jgGQ5LlNV89Frjt6DHqwpJCMwytWCYSp7HIfkqCLv77dcqHN2wdcYAzBbot9kpBJrwcUH-aMzmO4tBcD7D5WjhhbgNW-z6PIx4cKIgA0blBokdTEmb_yvfAlOR6Xu9Cc1nCalRQQnnk5Qf1DD95kalshC3G_E4Gr00l2F4V0GUHwjkb9QqndOdJFK0YdXvvFQa6hxli0O0mLMyz4jEjNZYVj2rt0Bh2NSwStfUcrJhsCORnI18rPzjeu-4KSqlrKeGJaJUL9kpTXq2FIUjUCxznta9B26n9FAB4cMcHkAPbTTCGmv-T7E5ves3wBQK5oz16RoikCfI_w.jpg"
+    "https://cdn4.telesco.pe/file/MaOxuhtb3-e5muSEmPIVOvQDHXMxhL2ybmMSyQMJmCxwBxVM1nuOjFiIZzi5KmyZOg2nS4I83KXHsYEyvpUV5r2y8KeEFLPoRizpG6LhN7XZJcM4tvUSBjUr47q05jfET-eAWN-a2SUOhUmQSzICCAKoS6ZYnXcULtr67V5CZXUPsPu492xbqtru-iiunLAjT81nd5EKxx8IzFS84ktzTZ9xKEd3O41VSaV4ZOlp62hyZscUzQcPTKB1AOSPv2enyKPK-titAt-IzR92moEOwriui1jF06oSxNIaxjqMsGCih8YEkh1sbj7G_1ZraztO_IGYISHqGBoeHWbSC62JAA.jpg",
+    "https://cdn4.telesco.pe/file/qj2gYbEy1yHykj-TEhytNTTkfZLX_6m8KCgLOATSsAoL_whWFDkoL6cMic5Gh4bxrLenZMXAC-_bQY43FeYyT1qPJxWXnOb935zjOgJ0SlfEs3fYnzh3GBPVrMMweSJ7jIpXI5i-81LyQpHHTJm-momPkHWVbBKHVuq9er7g0yfj_-cXTXng6vFaZ9vU95A9fPX8-wLI-3yCGAHeLaJL7oNEoTkg1I-676tS5F8ZcEsGpmsetEf1vw-zwZ-29hx7crBu_CjUtzW9Mlq5EBi0BIus67JJmEtpJaxkR64mHSOyp3N3nucft7GurxHbj7oduXhfen86DvKM_OWgBr3oVw.jpg",
+    "https://cdn4.telesco.pe/file/ZuBWjr8gyGOG5LxyVm4bLrboRTmn3dT_pkHHis_zw8RbSch2dDaahM0foviK7rfqUSC3Ri1bxNZLv4c6JUTwo7qUEOCfKmv5GooSBrMABbkLewxzGAPWb7HgTMidnv9nzVdw74g-h-6qTecObK11qBRxPfZMqbhl_zpOPeO-JMwvO6CXDEGko15kagGSJprRU1uv8GgzEsaZVlfNRwiJasL7faKbBNnjfHLxZp8nbHaX-ttwGDZs2m9SplUqPzOtueTQwihZHflw3g-y6OX3m2zqykwzkh08RSKvTeQ-uWE0xaNgd8F4T6BrNrMLL1nPq894lNf_RqGkqM4NizJN3Q.jpg"
    ],
    "date": "2026-11-19T09:41:15+00:00",
    "url": "https://t.me/bigovi_dorizhky/1396",
@@ -7540,8 +7593,8 @@
    "text": "ID103150\nЦіна 29999 грн\n🔥Нова ціна 24 999 грн🔥\nБігова доріжка\nPro-form 305CST\nТип доріжки  електричний \nМаксимальна вага користувача 135 кг \nМаксимальна швидкість 16 км/год\nКут нахилу автоматичний 10%\nРозмір бігового полотна 129х45 см\nГарантія 14 днів\nВул. Вадима Гетьмана, 1",
    "price": 24999,
    "images": [
-    "https://cdn4.telesco.pe/file/NEYHb0gcTxEW5HYBY9FR4XLxvFTG9bCo8x1YCYZyrr-bsD8LfudSeprCxp7RCTal33PgmjcTnuGBwqakK4b7pXDh6KoZ4j0lLWzxCeExj58qqGV-QGiizNBbaOookNBus9uS3xzPtPCzyYnFLgGmjqFxBjWzCQ_MRP0_uLYJVyRVPQx4fKLixAjEtsCp6j-CF32loGQm6WdlUxZ_V2AYhAP3JAsQD7do_Q41F2RtZo4515Z0fFjYP8_4VtkIA4MrvzalOu_JBzlDQ1sM8-p-VclZgLNKyRJtuXcM5gHS-49RoL0eJa4f0-z6BBUZWWNjPIaBBqz52YSkjWrphArv_Q.jpg",
-    "https://cdn4.telesco.pe/file/nL3tIsnJZ16VpTWsReJ3q_645u7eKJD8MrW0MBTUra_HCtEoDgooXdNmhXgEC0GDz30qpgj-3JrCswb6DZMmPwogoFDGMqXUaON42bXNqCSsIV4HguUNJs-CaxCc9PLCsxarsvCjAoKQFC9NheY7I-fYYHDntWvkd80JAVjVTNH6gDS1tyzSrp7tTDGsYMnLkhm4U87hI9KQME-VgzSTVek1z5wVMqMk7bnDh8WKRKDq2qcEk2wiWE2Fj_piYlSbotcNKLa1eNOaFSwRSa1F3hK65odziZJrj8VLF1vD2wPBbyHPsvQXSVUN2bDS-HjiD-iDQstDOIgfxfVVnUAzUw.jpg",
+    "https://cdn4.telesco.pe/file/G693XeUMEjqCSAImn62h4IL_sgXZbnzr2cVzdMfNVj0cTbqZxCQuOH6yYFf6jYLPASVfJ29f51WQ_3p3x6OrvWKO96D5z2QV5Ftuj6haCcauxkSb2_J6aOPQfpf81JHmiw-LRs_prXJR-YwOixnK-VPpmvhXtIiIDxm5D05K-UNVNn0HYugGhfPeoh8cCTnRbIxz4ljML7Xw5k_JbVZPwb2yHqhW_EO-n4MxBFNI_aNENFzylqpbD1SDvpydFJEd7xHvVSiXC2lavaT_4gAMSMHbhC9jo-1AD8-rfuIeM1KhTYRWE-PxnTwKl0n-L_2UcihY85QDRZhRKGABG0wFQA.jpg",
+    "https://cdn4.telesco.pe/file/t9qnhbepDLE8HuBl0AqHI4YH5ixDWhag-7aMzpuQU2k9niqR0i1JGZjIm2813rUPEgIG-K8hOxt34SZMN-q0r9B0THi-QzI1OFPjzPaQj1vB9qjSYxvn41YKzKw1msEYUSoinbwQeWmCunlOSt2WcNk0Z-k7ltr9kdfpAXhG5sgGgdlVyjkfE9u1mtwD8yQ7aQpiET9l86YzvKb04fr0VWJd1EBRFhtIQ23vdQDExdBInYxiRBTkTxS5L1DMSy3M001OkSmcMTCMVGm5m7KV7HWri-6ehsq6gRy3cXTJFlwkRm76KYoOOpdQoMERurBG-yb-kHGEAi0CtqgFzntW9g.jpg",
     "https://cdn4.telesco.pe/file/qZSoK5GLz3uYCXyqVwmJcvac2LUKpdcBbbSsF8klP7jBzhDxYlVHnaN0hIO4gylIaocEDlb8kBHQOFWop58L1LQvKcBHc_m_LgASvwCM41oxpXt5ONOa5ZOSOIn8bH1C4iluOs9bu9UTW91mrlsDsMJlBcyTUsi3D-YqmdyNQE2dX5TJrAmjBbFB88D30rA7CTNfDkKywRQdGYYban_fXnRAANSaE7RfV7Wh7zqzGk1xLwDzpqtntdgFu0wNjv3CPlLD9LheXnZj_4jIusy1U9O-0Bps3WQ0t1MJ09sToe85QzstPmO3jTTs3Tl9vty9qeM7OmvDV_bhhLiqEUh7iw.jpg"
    ],
    "date": "2026-11-19T09:41:15+00:00",
@@ -7570,8 +7623,8 @@
    "text": "ID77353\nЦіна 16 499 грн \n💥 Нова ціна 13 999 грн💥\nБігова доріжка Treadmill WCG-H518M\nТип доріжки електричний \nМаксимальна вага користувача 130 кг \nМаксимальна швидкість 17 км/год \nРегулювання кута ручне \nРозмір бігового полотна 114х41см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 13999,
    "images": [
-    "https://cdn4.telesco.pe/file/vpHm7rAt0sIect0pgy2xZQTvOGf_V9Gr4ZZFdK41iKv3m59qiVZkQwmZzismkNjYngswROV7nypNfvc8wfrl3KvQivynMIY32ZBCtIB7qGXfJzK25_-IphkNHltii1Zfx2_N_hXxiIiCI4iepk2Nvfh6-8vL8czIY5f4CxOqxq0LoiYTPN2JggcdrMIMHNQZUZCWt34uMZqZY6SHkpeOWuYnlf_U8RADksjJW_Kwd2pUHgTjiu0vlEBcNksLoWG2YWTCQcRlVO5ZjtskLacks0caTmwoDcXPSkXUPOspr0l4iSIeMwD45nWLTgaAT1Pf519a3FpY-K1mz92D3UckNg.jpg",
-    "https://cdn4.telesco.pe/file/Rtgrfjk3i36-VvIULZxy_hBXjj3Nv5mLCG3rxdHXkuEju_aZGMQ-c_frKbHYvXlrRKYtrFFm8Jjb2nxMGlK7v_oz3EaVi5Qkfv8RSHKn_zaSa2O4eVpeRukJ7yxkUBCAewMJuvCQh6yDkJe6BdtB1kR7Xr3qHBjk7LflMqNZZOpALPROLMcGAPDMo8TAPEaprks2fmZnoTMxVmNgFT26O6FBlcYTL0Ih4sk9A0__oH8VX_edDpF_KU6RVkBVQe7ax6RojdvsGfIy1PJe3k-vtvY_pl8kABbBupsu3refQthJ2ShqeNBNRcaJBkKMGeFw0h7GuJmWX5rqcMgT7eDONQ.jpg"
+    "https://cdn4.telesco.pe/file/YB4O3mE0Xe4gxmsRuVis9YmMch7mwsK0fPUvpQVxs7ZQWuLvmJZ-fupUhWtYg14YOeq8u6BxCPvp92mHarOOFP0wFbZkqnOYAByl9-NWkytCXvNNVXsxIWi6TFcadlIlvWjnQpQs6UJPaCaVQqKse0RLj2MgKKIyrL3ME9GsQXYBu7Mt8PdRmDsXD4or3NjNfYesS3JbILcxIZW52EAwsUR_TcjVWrD-Cr4k-v3qFxwmpPQksq41VArQaBTe0mfnoZ7NJWxKnViig-rSun3EyABHBpNU7BwA4PNUMasEkbRQ-sNCRg7Fu1lloRso52bBVdfRxJwcPo5YoF1YzCcTQA.jpg",
+    "https://cdn4.telesco.pe/file/a8L-rb620gTZi9GDrfk1YpqzOO_VoEooTPetwl8jX6Y7YtapYDCvCK5twPs07thm5uK1u5noQjC-tB6g-4DkTU44p4lwnJOANqkA2YVWNlvZGIX4XpVKKvl1F-nFxmXvBMYIhb0OU9LldF0mjT87OO9yhZgFhfh50Bt179PR1GjJM50xtjeT2VWPmsUsuATqUQuDOkfoo2RfEh-Nff18gLmeDAlQ8mJMyGG2FSrb4Pvshp04wuheY6H7SgJgTIrbggW-nsVEysHJguUzRi1WxEz6wHRn3lD3NA0Dd-PRfXBvGmeOUb-kIW79hPFjlv3fCADH75HbzxcRuQaLM-J-6w.jpg"
    ],
    "date": "2026-11-19T09:41:15+00:00",
    "url": "https://t.me/bigovi_dorizhky/1402",
@@ -7599,9 +7652,9 @@
    "text": "ID103167\nЦіна 23999 грн\n🔥Нова ціна 18 499 грн🔥\nБігова доріжка\nBH Fitness F1\nТип доріжки електричний \nМаксимальна вага користувача 135 кг \nМаксимальна швидкість 16 км/год\nКут нахилу автоматичний 15%\nРозмір бігового полотна 138х44 см\nГарантія 14 днів\nВул. Вадима Гетьмана, 1",
    "price": 18499,
    "images": [
-    "https://cdn4.telesco.pe/file/oGWgW8pUrE5R8LZg4CvGKQpnXAmGHuHvqQVmWOGzfU9U7w_rUo-FbQiSUwa7ebLjuCsc6PvKpF39vd2d3H2wPMk6kQUQWswxlkYH6eTcc8IA6ogtuLQcTpjc6jGXoH67RdAwF7NWRwCcWh5XIjSQGih94qWwHKj67xKHz15-ymqRfykLIfd6Bli1-5dOTNqlsgR3fw-wOTXL_iqR75-P2k_P8haJXHmXfLxUwiocf9fTFH5zLXTayJ1q24JaiKM7crjL14oLttJs-grshS0vWtRHWCsvJecrGEOrt_6oFOaJ43GAQNOcUtwoosu4Mejw15Aac3WHf0Qs3hGFF_Xsgw.jpg",
-    "https://cdn4.telesco.pe/file/B9fxwMUem37P9rm2BUIy720U2ChJtrAxTw-GAr_vyB5StkLsVjAQiPKdrWv6YJJiUgjH3HKbIDCBHv-VtwMMYOJpN2MvJsPGLoRT7ueMd233P8bTxoIsflDTBVh6q-6G6BlYY_UXsBm-muWMEJTmJhQY-Rs41SsWM7nfdv7QgxQ31Uzf4PJ4yoHk8uiWsCc3PTRIFF6lPwUKrZocBsQyWdsgFf4QIil7-3tb5-dW9BnXZ-k0xCKGMn6v1Uh8P-vKKgcs1h9J7l_5YwX0kV_QVbh-5JGtkRuxw8DJEjbNtnp2PPa7rY4wJVhroBtL5fLFH7L2rtMf6yqAlOiuEpLM0g.jpg",
-    "https://cdn4.telesco.pe/file/kNBHRYHFRwvvDVf1w_Ie9XPKpXS-jG85rGTRwWlxwP6W1b-rysR1zMfxr60Oyd_cOd0TDKSkYWXQDwsM-J81bO1Xs3TpFya7Z5ZTPgc9bxo3A7trPW_aK5sLhv2O-iS3pXw7OgBLqpJyPzsX2-oVyI9Qiz1RRuo_z9i4_91uRE0YDDU12bVDX7ss5Ns8_JuRxV9EeW_mSML787izXptmGCFcR70Yb5bx2p97iHKsjr-P7b0X38N6d57Rq3cK4qLBHnF6YzwV3Fzk9R5DRfmfnQOfVFJJopkj24DdklEPL0SNjDNYb947HmYfBH-XnfN8IeTO0BLz_1BYRXlinvvpTA.jpg"
+    "https://cdn4.telesco.pe/file/cXh3eHiqXU1AmWu7oY1a4ePqVFUor8bPdnCo2igAYmcg6bf3OkJE4t_gLyEbSF-9NJIYepvG3cGC7BIv41qAc6CA_9FWtYfd2MyGbguJA31JEwP6ccxibWub1rSJJaB-DFVOlmz3AjyJOCSTV2m0ZRfcZd3W0vgUdMECFH9_DfwPDDebGxI5fdlP06VyPqREiZshkvKDDZ06uugK5z3rDNTkKCeiqz05BRz7hmoy0_CwzGfrJS0Rs0HsOLgppdWqtighgjrimSrS_qWyOhSRs4fucOkss3F7eny_ld32Bf0O_V0U42VUgkgOvikMJr2LCobjEC52AillrPN6IUPb2w.jpg",
+    "https://cdn4.telesco.pe/file/qfrky1Awv1MVVq9Uwz8xtWEGD79G6WLijqh0jmMvTQaAmDnsZ0MrXs3zrcbiZCIk18gu8AcfoFn7o-vEMJW7R1kM3s6TK5Nd0dVfXRZBucPtoRb7pjbgHMe1WH_-jPPy0uvWpTCU7UxIjs_w1m7Phqui6xV1Qzy-KBcDrCkW6vrAbJqHyVo8XeDXm695G-PaJUEImpynSUREZmQ3oRkIX_G1RVoIdD2OpUPkCrz31YshivU9SOPmYqd5dRepxO1FTAFMZaBU8VfppEw2BBtlTH-cQ4kJ8UGiE7stIUtMojqtu-ST4vvLJGnEJpKyYig6f6lfMihizVSapf9f90bdbA.jpg",
+    "https://cdn4.telesco.pe/file/jaDw0zwqgCrcZqbQHUMyST3WiwBG6fE2rxMv1TDxPaHd-IzP-g1WENjVETH18V1j0p3YYUETFa0EtlH5UiKxRTfPnXsQllJLXrTlYyfBNeNpFz7uEmqJTyTaiJESVAq-c0MDnyM-GxbbeOzIl25BGcaROdNzK_-AIgvkuVqBuYTGHI1_xww0eTfPRVc7tyHYEL3NOZQxuXtcvW6DK4CXEATn7l12mYcvdLb37zVGHLinUpPV5-Ab0Ltv86n1YoHlpWkpNnQ1-zyXDoFXp9IKHW14uTJvZFj2qUlXbm0cFmD1I7rforS8d0cRMc0O-0y--L6cV6cVQrWrgk-XSCMu_A.jpg"
    ],
    "date": "2026-11-19T09:41:15+00:00",
    "url": "https://t.me/bigovi_dorizhky/1404",
@@ -7629,9 +7682,9 @@
    "text": "ID103065\nЦіна 23999 грн\n🔥Нова ціна 19 999 грн🔥\nБігова доріжка\nFitLogic\nAir Cushion T33E\nТип доріжки електричний \nМаксимальна вага користувача 110 кг \nМаксимальна швидкість 16 км/год\nКут нахилу механічний\nРозмір бігового полотна 133х45 см\nГарантія 14 днів\nВул. Вадима Гетьмана, 1",
    "price": 19999,
    "images": [
-    "https://cdn4.telesco.pe/file/IG8BLZm4Jn8IMqawjpFmRNypkSkG9uGz8nBYMrIoqA_I7Vf0S4W1JwTJbTWM0z9l_51zdnT2YPRokCVF6llZq_bLJYOtPInKcN0vbo0mMDD3cSDOzObRRwKhZsb7wjt9PZ3Ml1DCK091a0mhGZysx29FX53ZR6s4T-ZHeZ1m2DPH_UJmXOjWoFDcRjiLzD8pEr64AcN2FYlHC2mMWHWaI8kLs6OIB4DvkE6WUjMmjQepURwLaCsVtX6d1eC6MRoKZn7nBQcHLAiEr6lYvp0KwGVI_HS6_pcNFfcFgP1dQkfPmqsZ9w4UHZ_oWmJTCgqoVm4UCAgoZBTjVuY_pXkaZA.jpg",
-    "https://cdn4.telesco.pe/file/aBA-NW8WUod6-GwDLvA1CcNSaiSlTkxua_kvBjrnJ1EltykZ--XV2JvzbWWzEkMFlps3o_wbyqa9zDOnWbVokYs-5ygyxapEO0xS1S8aoYNW2GlvXTBDYR_F6KOWsEZuV0K2TfN2z9u7Wgm31Li2daf9dcleZPsgZ8GODt87_3onkbCQyKbSNHrM5i8MMWBdXDeJNMyZRJo_HCWjZDi78sEfLCZXtIKk__hUEaQ8BKPO9S9o1kH9fErFDpACqMHcUSuK7iMjgvZr_E_dYjhqg0941OBl7OIYT3JVUMu_gEKzH9q86GwGmi65LkWCn2PePglRefPeTjXFTKtHuRsOKQ.jpg",
-    "https://cdn4.telesco.pe/file/qwo9oXuoLBcu4j2m52YYVCfWjotZyn-xm6CCaHaih4Og8B5NJrUFvnQCAslJDjF9Ck7lW-WS021T9u0ZgFRr3Lcs1wP6rOjvBY2wRLEEkiaGkKYqJRSgNV3hdHemA49fDrLfvtQ8_-NNP_Mj3LWhAdqUnRxwUrncrypbR_l3OZNTJ9WBXI1JmjlxWPVlLGtmsis0gmpgXJtNlubYBIh4bISyPcNKWcTjX7aubRXubx54PCMYdLfb1fH5ET-GQE61D_NTkT9-CqxsqzNnQ_1ey2SuBo5wc8kK0SuzzHGJWDbY7Lfs-lj6ZPcFTl764GWWvEgUbeGwK5SkIKXer7-oKw.jpg"
+    "https://cdn4.telesco.pe/file/IlsCUDU0Tea0lUvHAqN8TcLmbEPa0-_u8qNsxhC0aIsgnyxo0zmadtHtliQfdAz7UhMJtjdsxQjcR1wwJyZ5awaCnSaO4T_odLiwGjTPyj7uz1hQ86UKiw4wGaaWIq_rIbKyF-1O1PuEldrV_1QEFP-NvfNJ5H3gMTdPhyfUOaWnoeB9YQlA53uTt61tLlyptCJJ3SQsZDJkaCARltRPlvLbCXbFHc0zJTu04ssUWOQUIoW5Got2tEL8SnRLLnM-kMgG5Pv90BRjJ0ISkBgEpI9ASQKctN8Mieqd5lEXxSBwJ3ONnJH76dSqaJp48-ylh9ljP6mnmmY3DP7iythfMg.jpg",
+    "https://cdn4.telesco.pe/file/igM8Gk47Ko0eeJqmL-kuQBnqart0OZ-fXpys9XtNuYYJengbDqD-1aYGTaQaO9cN5mQLc8rfxUO7_EMCqh0IE_sd0nqBE5aW7A60ROiLiY6VajBtINL25mT9H6O9qvNuNBgsskpshRPZh2LVSPimSypSW9ZeZIZWdaJw7qGxKt1d7l38CcI7wOibq9I6ZQ68l-2T63gZbe_g24Vzccu6EGBo9wL3lDKutvyWnJ-2DQAMQS-7kNgyFO4mLZiP9v3C79fCvN4R_6Cm_yhYxowlI01d3p4fSfU0oiZUmQMvRkgjiRv8Hg882VBe6TuFNrYqG37k6HRIVep9iMVMesvW0A.jpg",
+    "https://cdn4.telesco.pe/file/dfkac1pv_Mo_B36_WyP-KySiMZVkG3fpkgMrQKiQuqHfOhNPwkWWGExpmiD0DODH5LYTghbiNC1R8fF4J2TqNc698TGGTPmPgJClOFetSuteW_F5sek4M3Rge6edfm5j4wOnbQIDwN9znMO9577WcI4GvZ0n6RX9t_yZiqIf-IK6XmzLIV-sshPFyd5U4xg8pKn19zcR42x6cWp73GllC4Z8mXiUt0-HcD9AvVd7MRComXz_rt9J5YHzYVYjCqHMSOVl16rbyK8LArOlYAzNKOeOpuCdUk2HgA_AIGzNIurvEboX18rn4rcs6Hfg4GD9k9qtFf2Wu2N6GwwVPkdGXw.jpg"
    ],
    "date": "2026-11-19T09:41:15+00:00",
    "url": "https://t.me/bigovi_dorizhky/1407",
@@ -7659,9 +7712,9 @@
    "text": "ID104038\nЦіна 15999 грн\nБігова доріжка\nDrumFit WayHome 1000 Runner Sprint 07180\nТип доріжки електричний \nМаксимальна вага користувача 100 кг \nМаксимальна швидкість 10 км/год\nКут нахилу механічний\nРозмір бігового полотна 105х40 см\nГарантія 14 днів\nВул. Вадима Гетьмана, 1",
    "price": 15999,
    "images": [
-    "https://cdn4.telesco.pe/file/suA1UH1Vyq1pyNHTlQlaNBZ9hzNI9A7WxHCKbDKTG241i1YM-87nG6EYJJgKry7ZwBPJVcr-baC8xZIkwZbzrvbeGyKL3FKxCsos5phhDVAf-Xq_UpZLZDXm5AjdpgL4_f0sb6t_4HBZUPcwr-gfliKOqkBjHbl4HX0D10VEpUC2NTGJzsqt-ejb8a1VLdRSksJY2dHbCl4acm95DwClNU1KnNNbaVXXGnQP9Kg4FJd1eTRuTmd6IivoFf1yL5xXxQFYTfVTggqi8qN2qrfVni9Jl-PvPkfTsPItXuixl2MKDqIAswjR4GnjM1WoqzsCVoQtHtki1minkrWjRqBOFA.jpg",
-    "https://cdn4.telesco.pe/file/HVa5iNBLVQoJTs_ROUzwPHIf5RWTYNn7sTI-GxtJhxBWBymn1qoYZRjkadB4cvHvZ-D0OmGldIqXM3dQ3bP4tfbl42GXly0HwTSoELMnkd5ua-USviC1d6I9gZnBP_d35kQWoDTRQcJdrp9LUsYK2TOYcjru29n6g2KLAF4joWieH9ZeDtJALZm3VH0aXSBvcCJMTiGMT37UlVAHKbLF_FbZcBrlxKY_K6JHeIvTvH7nhgfZVoCHe6SniIRW5jMV2SKDYwRu-gvvd2_iKiu4WkHDL5JVCa8T7xFrancOrKjG5vl3NPcSbgG_GHyxc9hMaD-Mhvh5nM4HwPi43OMjaw.jpg",
-    "https://cdn4.telesco.pe/file/ZKTaQaxiHP66zMvo4ADHbfj9mm0fv6PmaovNgT1mwuApKTmRK8kv1I7Zy1KECK3vl27ssznF-yo56lWudnQIx_VuYnN3RPr6oC6G-BRb-t9zajxVtzhmq_PGrz-gvTO55AMFhEeCoqjzZ_ZTZZkpQVRt_hgwTPsUamsA3F26filuPLFqXNToBPrkLYkNHOK-lBkOA-S5bFIT1u3TBKCEFqBkU64MCDNM96Rsd098u0desO0fdPdd0MfJHMEdzgyXiAR8oyaGW28f1hTcm9oO1nYPg5eexgt3QqqpZyOh03eM7-1eUSxqNwrxBI0GCyG12NoQnsYjqu4FBkn-7XdA8g.jpg"
+    "https://cdn4.telesco.pe/file/P6wtEh5j9p6Nn6Ba2syrYbbf0eAkKUsR1cRBWMVFVFjx2tXpV2b9C2gr_KhqIIXV8J1YGadSA5vgwvOz6dzWcAFAvyw7Sk9GPUgmciz4eSKJdVM3tMznq0NReSwvWlupHf87sUmzrkZdOeQwvntSs62qdBnCTHLpVAOxgOcKKWFZWkxUFJReIXa7bell_GDga00STnwQOSb1X6zheF2UiwrvZUpVyMsLcoQ4dfbuu8kU-OD4VH9burZQYOq1VvT-QW3hnMSHgz7UxGb58mwBSkGyxnKfmk6HkK4G57i2RL9jrXf9ftfKU1XWcAtpAUZ95yTkIz8-eSLYZFZThcOuQQ.jpg",
+    "https://cdn4.telesco.pe/file/p_gmDh5MuPC8DbvMdM9d0PwqXxdSDabCfPZ80F2uhau0Dpz_5U-DUOHbodF3LhpAMWXU0bpPrgCnlsLBMUy8qlIRaXIgWJSIINaEqGRTOPfGobTbgIdgcSBjnvbpeBU2sN45nn5GGrSBLRIAZcsx-VHlp_9KVqhy6BNh8JqAjx_IXgN2zj5zgUtsoeMCLLuqsBHbchSEfcfqH5MeygRa6KQS3IybhVZWcG0XW53S_SoWbdxxCnfcp7WghVb9gCEcSxSlmv0QolOLnbo09o20MjjRVyxgrzqjcCekMuxqbe4zeNBDnujQlG31nh-fOs70DW97Q0QVOgqPkMGI3CodSw.jpg",
+    "https://cdn4.telesco.pe/file/dGCYHZI0-SREv1Y03ME6gOIJLv7uWx6v69Ii0d6uFuXMywx1kguMyIDL9nT5WTTfGvoR4gZ9By1cg0R0POh-JlhQ9WakcNbnwwNmSP5jJ_frCMkvDp8Xsb4Iw2KVasRE7q4l593B_5V5aAjIFDbInJB68b66GUB1a9U1SI7NGcw3QN-KH1_7WOatC7VuKZWM7h7U61YbiIjj7yohz8EoNnNoQcSFZPO9H9hwvMTJzya4ROZAHIhL-QzSPTW0c01Sp4OGX1H2FzAiXLgGURTows4O8thJiETJt1TfU0R7YTuriMYcDEc9nmIfr4ZYeVWFVcTOm7Ij7oQ7pJTJfOcmDA.jpg"
    ],
    "date": "2026-11-19T09:41:15+00:00",
    "url": "https://t.me/bigovi_dorizhky/1410",
@@ -7681,8 +7734,8 @@
    "text": "ID6476\nЦіна 16 999 грн\n🔥Нова ціна 15 999 грн🔥\nБігова доріжка Jogway ТЈХ31\nТип доріжки електричний \nМаксимальна вага користувача 120 кг\nМаксимальна швидкість 18 км\nРегулятор кута нахилу механічний \nРозмір бігового полотна 48х140\n14 днів гарантія\nВул. Вадима Гетьмана, 1",
    "price": 15999,
    "images": [
-    "https://cdn4.telesco.pe/file/ep_apV-g1OGs9_tWLGkFK0wBifCA8QO7Pcq7OYsc6FIk8FsBk5x0dXKoDGRapJ-aA5FDGEy9Kmzb9PR81djVJeSjvyb3vWBr2LYbR5cjuhJpKT9MO8MKPjSptx01gQ39hA0SmAPI0BzkM0ZUXVeVoxcltv5nxLBe5jk9pz2I4tmtdOhlHUQUGImfBk9pnvGQiW-48qJ7gBwXhMgu3VI_Yt6lRSOjhczKtoQQ_UF3PUJDZrELbUg64JzKvTh4AqPSzWACfOu0nbVQ7tBkE4LiQdsDHs49LSfw7DIXyXElTP3NkrQr3tbop4sPI1cGrMWwPfrlcA73UlmBVWQPftrkjA.jpg",
-    "https://cdn4.telesco.pe/file/j9-GfnVhtOIbiEMpvSoA9rQcpsZRGNlWFOX3cFSLDN1O70NT4Ddy7umZFwK-faryyVydcKm9GtH4BXh84PsRWGvf9oaetAIhuUC8-I2nl368PKU3-hUDyRBxilejqrQGdJkgjUP03a4K6q96cNG-ox2ecoGe9LuyGwrevBCcSUPhicNrQln9TelzgXrdjOUtUsSHxl88hmeGjydlqsu93_-kVZzpY--JM6vMLK7a_vIU81ID1ECAAPjdi34GHyT3Uz--W8cGtUI-tpQlwZg09rdQnlqlMD3daJKjgp89Wjhgq_lLzNj0BtjS8r8EmvcLvjAyXUuccK2sUMx1pazdew.jpg"
+    "https://cdn4.telesco.pe/file/UMLXjU9rMEKGQRPMJsOH4r5VvgtO5ddqIfXklGWOlA7mFh8Nae005A3epGz7gsV-SsuJ4XMCdn_Ds7xb_NROGhDHFl6EyKjYb0shZIMyfHVmvcjyp3phS2AX3EPDMH0mZEZVfs_D0SmdbD_pLPw_cG6M7whVjQFGik5sei6_a6k87e5Ocx4396ZoCNtpv8qfTmEcaViwySrRzgsbnBgvgXcm-K54yxCsIvNMgVg-gaRyRmWnPXLHOk1fA-lNZGAihui0wNdFU6sHxc6BHpArWsjchD2KuWWJBX2t6pdnjha-i3wuFdi-jE8Jt9_mjuxr960q6j_RTa33wAlBIYdSSA.jpg",
+    "https://cdn4.telesco.pe/file/bXSDroF8lzPM8v4EqK_8tcUVVumW1vyIViWIDgijfELCayiRyZDO7DU8hW4v_SS9d50_HGAUcsaOz7UmZn8NqNkW3bNjmM5DqaEyaFaBTDnRjZupp0uDt_nm6k5X27pisMU0Gt52zjkv9kBPx-nBLWN49jMHQpRZIEqEri3EAKE7rdPozLKpywRwVfDA3XzWnRHjQz23mymAvW1qZvcb9304KVqP6vDROApbCUHuQaW-RQaUiwatctLAZO-zefV8Eagz3TRlEGPti9Rm926NN5FEksOtch5To2-7e0H_fUzSsAH9qR1-fSyMo5r_mpbj-FBRIe1zud3t_Tikj74MaA.jpg"
    ],
    "date": "2026-11-19T09:41:14+00:00",
    "url": "https://t.me/bigovi_dorizhky/1392",
@@ -7701,8 +7754,8 @@
    "text": "Id99647\nSPT188NSH\nЦіна 9200 грн\n🔥Нова ціна 7800 грн🔥\nБігова доріжка HouseFit HT-9200HP\nТільки для ходьби \nТип доріжки електричний \nМаксимальна швидкість 12 км год.\nМаксимальна вага користувача 100 кг.\nРозмір бігового полотна 120х40 см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 7800,
    "images": [
-    "https://cdn4.telesco.pe/file/th6o2JdEoDvwcLGLNSnnLUgBfGDFUGttKS58oKe8jx2hZYvAdibv_z3tgjq2eIadgetr2lms4B78YrUwJ76YVy14o4A_x9lOLEhXqG1GBK-RM4pWsIDbQDb9er-zO-Jc7wBceE0lHDWOSxGE5ge_lomwHZUU-86UVK8F2ECBxdCkV6fb3rwOi71zHc788B5jA_-FtV-ZFgjCvwwXrcPZHBjOd9089azOuPl3hNW5INW_o9_CZ4hHNfxOYGAQ5vnhXdN3L8k8lEIOS9rHJ4KvgUwtr-YJbRDnryFWZzTy7hXkcbsUwK5tE5RIbjitAr1tGYCtkrXju3XrToT1H0D7Zg.jpg",
-    "https://cdn4.telesco.pe/file/noHzbkBRar4dNg-PifHma81sRJEsz4XTN9Tb0WPlX6_pba8xQycYXi83kG2QS20KiRrbQ39gP4QxBm-PIHN5MWhb0hr6IcqcDjIugabheA70cKkroEmowW2mo-Jpl5ASt3PSYw2UBAvYQ9bVAexd5xvM8xUToTWoOuDBGuuxGfxVIYB8L8zhlVg6-tUksvt0_xl3wFr71i1q78a3UTTgyTv_mC__6sWsOogEsqPV753-fK59orlLQxfpKnKcXIp-g5zRyjekc5MhKLGiRc9XNR4SDb7tpbKR34z3xruwmgvFZLOVbNs5M8ehf_aJ-T_-KmBIV0rXXSEV5WHqFo3CeA.jpg"
+    "https://cdn4.telesco.pe/file/M3UryebZ8NjnaSp8nSIhTnCWwngvSzHcF-LbEiLsagyikcf7I-8YYqLVDuxGYIOUjXg_YgAvgD5YacS-vwHIhQ0eaMXmFNCNHxwiKFo-FOgWGIzYlNURaRXfNyyIjhcl3mjt-bt8kHjfbD8pLD1y0dXcdcQhbvWuOZv-QYsWVYR4W3o1-U5bWEtoz9fY0Lf0x9RFL5Fgm5BYjlYE3mpJLH-bFfsDWZODbucrf0GcYNwrSV0AfDKRmuqUGi003_933ZsRj3jiqC2O30Fte6AsZUs_S8YfWSSAIgliVZVV_VnsN6FhE_kXeXsGOFbpxZm6mARMn3ywbwOS33NzkGJsOQ.jpg",
+    "https://cdn4.telesco.pe/file/Aluyb_DnX4vCTigh3w4kZ_hAZ8J9kqREYcB_rABAEauXs7GIg5Xq4tKcoI7wtpQtr4w2YC85Eih_7iCycKplfjLeDbRmGDI4kbJs6ZD2F8L-ztlTpumPHoHJt29RyixN2XVz3q0-lWu3Jtq3kojK2bXnG2OtW3G88pLwQHASbaST7BoXKsno_Bh7U053_FD6SBgvz0PBI9DMhcFIvlEMBDBduU2hDNmneEOhTuXZLfv-exdLAWzMAuGVqT2CV0d1rAq5-Feab0rBcT9tw4iQ2nn-SfNRZhgwCgpv8BwKTGpBhgGwLLlru6Ckncoxz3ANVO9kaVs7WixSIzalnErfbw.jpg"
    ],
    "date": "2026-11-19T09:41:14+00:00",
    "url": "https://t.me/bigovi_dorizhky/1394",
@@ -7730,9 +7783,9 @@
    "text": "ID78343\nЦіна 39 999  грн \n💥  Нова ціна 27 499 грн\n💥 ЗНИЖКА 31%\nБігова доріжка ProForm Performance 950  \nТип доріжки електричний \nМаксимальна вага користувача 135 кг \nМаксимальна швидкість 20 км/год \nРегулювання куту нахилу автоматичне до 10 градусів  \nРозмір бігового полотна 139х50 см\n14 днів гарантія \nВул. Вадима Гетьмана, 1",
    "price": 27499,
    "images": [
-    "https://cdn4.telesco.pe/file/L-VW33Gr_wVfnbIq8FVgUBZxJM_bhNOG1GBJwaJBjb-cHCFQvOmjJUy7ax_ydg6V9j9zr1v7OYJSbdtXguCUqW9KqKSQ-gjNUHK3mVUHZscbHlY8iR-y25BvcoUDEeRb7M54hr25t_t94VthmcuqyLRRPyToET8GS2zy-bkRfH4x29LWLHCTfWPXrvhrpiLtxRCVgAa9vAYUv-Vw9mjEHWCso0XYW0F0z4c3U9G5Miej7h-3x1H4R4D856_UjlKOPLlJ0lZnft6Y3-JGF5CwxhidILOkY9Bby1TbaVKKBxLIrOPeC_IfT3xu8AbreG6ekh-ApgjzcNRvODdnH7nDTA.jpg",
-    "https://cdn4.telesco.pe/file/WMUtcmIqJOinjCs_XciLVsAzX5ziBtYBqFXoHN0OTUVamldHRlFt-4QxW93oSFvYYTM6XmUL1uJjDtYMfzmiUHwvSvEfG99qLceSziv2kHnklTqX7YSibM2Eq9RBiKuCPTQTNEhEx_iqOCNDZdryTy0fPTyZuYNlklyepoQdxjXjOVGT0fO3ivdU3QNm2d2MElysxxJMbFBkdwIN34B3RQfQqPUlZSCbvrFqWdl7o-kbmi2_tgTsOoWU97dbD0shCJcw2D0If65yfaH1LshdIjbhsmDNStMgBt0XLRGf1o68y87vDJKZT1898wvtVECMPJ2fzl-OICEOv_lOjLSlgg.jpg",
-    "https://cdn4.telesco.pe/file/oXTGwKDXJxMIKbTod0brULCc5mT4iMHNcCbdo0fcHA54zH1R8sEJvNCruwUEbF7qJHQ-lKKlFn9uSGZNtiqwK5X9yCmhpTJqnsmIbPP1HXx6kx2HoyYjPkWWCIxHRQjWr95zAlyOthU2iTAOm47sQ_cH17CJPeKFS8y-43SZ1V3ateJiMI8po1FTZfZ-w8Wi6SZAXPKmMojaDSRNVMsIp07u50i_nAY1N32zsBWIjR73C_CC8two6RGOJuE78CEh-6PSuBlVfnW9nEnERjPvbgdwA92lCqwEVQT6bVaKxFYFYSp9JkJ_YbcJIPZKYAvJ58GPftHTDMvmv6EO4xk1aQ.jpg"
+    "https://cdn4.telesco.pe/file/DOAcPI7VaHEL53hnojD0X-uwVWI3hcMLs66WoK54Ng7lV-VEZz60w6LhfX5HqZn08FGmXEed4aqvczmn6UMEL75lB-2AxQoUvHAyw6B5ze3EHgdHj4LHAARSIlthiUkmF9KCK6h4ZAniB9BJv85boqpaWCL-pbY6lodUlx9Yp9LrZuBpXKbymdXBpor8i7lXywrvumzyHZ1l20EdkCTnwfxtt1-9pjAudTmsBsVMmJ6sl-yaJYguVRvZEExY-SdCX-mtA1sMMr26YPUqbK-o5F1-q-dq-sGped_k75a3SP4Ht6I_kJvje4MTrqImuBDKpxyT4zUNv3P4S0C4AKaDGA.jpg",
+    "https://cdn4.telesco.pe/file/EEkZ7j_8W5bzG3wEjabyz5JIzoEv4X3z60KcFWv8ITpNtvEUNaWPfprA9EWxZ_LhL5cCtKa0pOOU0862NUldbCmdD79PbDW9FyBH4_AueDgzwSRstgzqON_NpFpoHQptHOTkzn8EhJ_OSFppVgkU9XhNiAygZnnnGoXcenGS0ZYt8i0LIUwitZdi02jhsP8r37DD9BEkWSyy-5cbm96K_VDvCRJrzL4_IWLDPJk_oErw6ysE6WsQy9w_4DelYSROD3HMjVQ-F-RBA_HgDexq01ZPe2DYnw4If9JYwBJ1UFitCpse0Y5JQ5s-r359kcHOM5cSWPb0-RkF1Tr3yxfP7A.jpg",
+    "https://cdn4.telesco.pe/file/OK0vhdUNCINTcP23dDUgc_OPfbxo7D59w1aLtQg3uWhwhAE5HjtIRFXUWt6tA7VILJCq8lhp6xBcx-tgUeX6SMvtsaQPzzntjUSQshbuwyei3uCmpKgbN3GYXU3_34OWxd_A6H3mBqcVnSjV7WPiuHXNF-8Qva0d-WUh-r5TViy6cSRri9IWCboyfCR2lW5qvowywvJ-5C9NOEfPK-UPg8Myr8KPqSuvS6roBvHJnpc1fK0jF2vlyi1fkfcnvIMRgCM2Ixy-VKD4GcAFzdoy2LfTtF5om6Cb2oQwkdVmykXR2BzjwIGjbz-4T2AROHpA_5qtuNYQLf3alL5UVwVNJA.jpg"
    ],
    "date": "2026-11-19T09:41:14+00:00",
    "url": "https://t.me/bigovi_dorizhky/1386",
@@ -7753,8 +7806,8 @@
    "price": 34999,
    "images": [
     "https://cdn4.telesco.pe/file/huPbLKPEqOTJSBG9LEcSuQ9dO3qVnukGBctORORqY5q1mB2hY1byiYJby49UmMIyM1hgJo6BkvkTfh-BZxZ-lcKFdqr6WepK82ESazLIrNICS8e4qGfVjImi7UGxq_VxUW4p0cbYZPKBETxQo3F85Pe0T47V959-n2lkdo2h0b23yoY6p93yhA8DbU1xlW7Of5QD9sIhfOS2W8j78t2_9Hy5j2KW3eScYPFHNgosZB-z-cvHcyUpfe1crwIE_qCkapV9GAfORq1t1UCkX510fjJe_ZBeSbrucrWM9nHm4z_bC2lsfH-PsRZ71fMI7q3LGBRMbJHcFvj4jjEGMuB2jQ.jpg",
-    "https://cdn4.telesco.pe/file/ulYrxeRCaPiPnd86sCQMwD_rRpJc0CbKHeXXY35K7lmyS1R6NvhY3WEfcuF1H7TFmce2MHbanSnnwM8mZhfiuK7uI5EH4TtA1t62jvZfVdApDCB_HgEJOJ_72c5ECNVpU5c7GM6WesQOpUWuhJvSHTPI07Q5EwqM9D_Nh2t9uIpdjuytVaipQsFDbl16Tg6FoSn8XOGv5Uu6kV6GOmn3OLSuNeR9Xn_dUhyIUQulxa7XPvsYJ53XdvxiI79Z0PHlubp7GHiYYkvZgxsQ-ovqoNIRwk8WM85tzreR7jUqNSA0icIkx71l6JUGXG2A7AWpwd62YJpXZ_U6h-2gHbHhWg.jpg",
-    "https://cdn4.telesco.pe/file/oMA-bluOq0waMeM4PyVk7M3c2cL6BHU_njSlS7J1Yg7s9rju0OXDl2iV8Q1jpTV-83sS-ryPY2Sade620GqqwcXiRhXNkZ0qghBP5b3ZbC7gWovbd_JkHX24n7gOHs45KKS9LbC7vsL16DuMcgB4WLB7iV_4UOMsImL95-vHaMGhQQzXFbk2ptd9B5xHfHvNX39D8ld7ytrsGLpGCld7smsT0YNkjiD4UoErVz8_rf3JIxi5iCZ-jIfZ7OSAD1ziHMYE-rVTzmtAoRJ6w7NkKvIX9PFrm8nhjgnh9GDQ49Yg4eRTZpb36Y-xkOg85c1z9RL3Auk5D0PYLvsWPZcJzg.jpg"
+    "https://cdn4.telesco.pe/file/D32xpZY-p-HBzedzC7FS4hNc4QCJeSeF9-ISyXHw9JV_UkmmIDfpPnKvNh2G2C7Udc3GuLBeJaa_0Vb5wVU4xknNK3BQRL4avdc0xhTauJPhS73WoMhhqvEtOovofeTFiyHbbzYQCZFJDpqWqBoOGCjGYN22PUjeii-KWHb_xrjTn7FdT631DmM3d3PSSwQj5vUu9-sCfKJEg9UjjpOCwUdq-oJ3gtcNLNCn1LAhApKmNzkMB4P_eQk9pKwlr3Hr3upXs-53oo6hx_wyfkq_gWzHY71KO0iRIi8MgNBoOs7INdSmFDzvDXfe4Q9FtUJbuuWVoTvlE1AKm7WCXF_R-A.jpg",
+    "https://cdn4.telesco.pe/file/Vz5So_yJxt_6_BWu04eItHmVXE0IqoABVaDNR3-eGK2DS5UW4DOGKB7iXTCFhzMd8xCugNDGKcRDiyfojGMcfGV8RsvzlRU2MJ-_McWab_JWc4gCPKjVCoaLGg0-I9YJUxl_XUpnTIXOG1Y9B_F_eXye-W7Q4tCrzBWWCGEqfDrMbhdpHKsgz2hk6eDfGbAk4U2KtoulzxEeCXm1lX2EOWUhjuOICyxQUUpSVsT5_Q51t-B_Qvd2Lbx-cu6gVfUBv4OJoc_Q0w_PquAGPRC8nV1RLik3Or6IP0ZK6h0HPiAmfOFlZBMw5mQCkebn0mPz529rXfFcoXd3EJzhbu-rUw.jpg"
    ],
    "date": "2026-11-19T09:41:14+00:00",
    "url": "https://t.me/bigovi_dorizhky/1389",
@@ -9549,8 +9602,8 @@
    "text": "ID105551\nЦіна 6999 грн \nDelfa DF140\nКрапельна  система охолодження \nВисота 141 см\nШирина 55 см \nГлибина 55 см \nГарантія 3 місяці\nВул Вадима Гетьмана 1",
    "price": 6999,
    "images": [
-    "https://cdn4.telesco.pe/file/eDjR8IjGK-87Rvlt-KGQVMeiGugS_l0yOtbqLSapp3MzmGjRRyEj6Qj1mFuLH7ICvfwVA4Qve467Jv3nny4BNKlumjxPIMzRW0QbEKU61PABhS078in_DAbCyHY5nLBEmAcrFvqAJc12v7geI6J_NYbov6_93npzt5gC7sdDC_Gut2HeuvEsiKr4VUFa7BXQOC6ySp8C4FP-hSKyvyeZwPYUfy-8JUSlwd7fGlQiKn3VGpyy1cM4PkE8b8Yl7FeThiiWCS7zmuQ8ziLh_K2ZF7yrw9OziJSa4OjlRIPCawU_01DzG_RHJenKdjzSAegOcDBqHjTkpjGnhOdzRzNUDQ.jpg",
-    "https://cdn4.telesco.pe/file/kETCdpXZY6g6IoV6pd4ZSB0nehwOpHpJP6fzJuPaSaDn7-_qfrHZgFUupdVAENJkR98Ncyjp1xZgoZbFSpm8jOoKBGJeX0Dk48TaIejsi-BENKiO0Y8EC6YydNgEb0lzilRaqn71BrJPSrgiNgOOlG7v5C4tsPRcYn3r_yz-YrgDjiq15xaX5G-HunI9hlwFQRramOBsfrmcJMR_Pcc24Mh_0Kctse4W-uaJm0bADeBtpdhDzi8TKLM46Nggn3R9Qw4Py0azocLFaQYbHxjthRXH1x-uF7XvM3EQBHzxCHFaxZ8RHetujZDZXXw1cHIR0645TTnW2KT7UEfWtF666Q.jpg"
+    "https://cdn4.telesco.pe/file/J4FWd-OwWnnODNgVTElakTCbo__x1Z6KYKqZxcF65_I4uN1r7VDcj3ChdDNViZzQwuiy3j7PB_BaSYvfPIKAk5xrkX51uyKZT-b-TgNOp5sc8sFuh-cqMZ2RGoNaQSsebPTNLHSH2-hZGmEZ3Ky6wGIfYTFAYfWKOZR95mH01NEsK4E6Sc5EgfgASwItqRO8p_qRDY6N2OZCM1RMKt6UTR8V5oIdugVMfaCQj0Y2JieCrfNfn8BAWAj4v1pXBW0ewDo6WY0FDWUE9gSayjCnMra_65Tq8BNkuVXS_nkZtljbAf0lQ1F1eRd_tIaPWlI5g9aDDKkcog5h-JGi_9GPGw.jpg",
+    "https://cdn4.telesco.pe/file/bZcWQZMZfYBOrAZ9QrKURi5MBHyPz9SoGpzaBcgFEuYgYkvOFYA_oIfRO62qm4yWAEYzmWhA56F_8NUEc47RI4qf6fr322wbD2yhi3k43ir7DxlwUwRYC1j1XT34Y4FQ3t-Ffoe-zbLxtc02GCq_Gcvu6mTu3V_Wc0WmD_gbORVzy6AP52iX_d0dOxpmSyk1gpU7ZDp1QpkJwPNJBGXHFsDTv4ICiLC8FltntfUj5ZYZzv6mxSzA0xE1HvSToYP2-mpL3g48Vx_e9GTqIBqtoOxbfKenJNBdcFr1RoQpTZJD1KAa_g2G08W1NsVboOCDrV6-sOxninMBnr6Zbg2IYg.jpg"
    ],
    "date": "2026-11-19T08:31:24+00:00",
    "url": "https://t.me/morozylni_kamery/6602",
@@ -9570,8 +9623,8 @@
    "text": "ID105099\n❗NEW❗\nЦіна 9999 грн\nНова ціна 7999 грн\n👉Медичний👈\nEvermed\nBLF70W\nКрапельна система охолодження \nВисота 63 см \nШирина 55 см\nГлибина 61 см \nГарантія 3 місяці\nвул. Вадима Гетьмана, 1",
    "price": 7999,
    "images": [
-    "https://cdn4.telesco.pe/file/ZCIWqUFSbkKCcLgrW0A2lN7q1ISSRzBkOOBt2JbX5KoxX3iutgMw8LI-VGfIJx23XaOgU7U6JTr1NUdVpQ79hF45B__e9w1T8gjqILWBLUmLMz09iQss-rwBVGbHBPdK78pgw9BIuoGBIprehRfb9oyFbLhAs8MFJCFC9P-CkbWqEUxSWYOy5i_LP2TxIf0adXSE6yGgnhP_zHi4FP5D9Ud969F3uZ93SERSO-xey8_CG-VQ2eM3RjWLbVDlyVA1vVawxFWNc3cUqClSY2fnZBm5QroqQlT-sElA_6B8XVu90B_eJ95HUAsMQndBB2RN1x6-emUeFxboY7VyqO7Tmg.jpg",
-    "https://cdn4.telesco.pe/file/eCankdRs9Z-jRHUBq0UqD-AGB6aq3vOnL0pbDD9AoptP8VPr8thIgOSymzOYIFpRE6wmwCVbea9J-63EXJowAf-eEtFKin9asslf2kIjBdTnZtpzqH8MO6dBOqsWgrFPLWVsXUhz2RDcb9KrH8dXV413tNX63ZF0ZZ_I40L3zpQz_YpJ-WD0Q3EtGVVsR380heYoShWOQUYjaBD2SfFsyje67t_sdNsa8TkVcARqZfQ66gAkYnhtznguqi10BJht8L40xil0igJhtqflR_lnSZVyTBN5jnBrZ5V3WrP1sCmPmwlh6wo-r1pXLNGW39aw62GurXKSVOB6Xvf3uD5U3g.jpg"
+    "https://cdn4.telesco.pe/file/CvGGCpAUjuF_1mxZ9ptrLsObu7fVM10xOEXcdElgf22-bBPSVZMgrEwHQfzVPsNHwL6NgpRnrz_qh4fineCGdKdj62A8rkUzeOaaujuiSTegvyCOtrvnUq2PAn0Id-n2B3YrIP3wqr_lQXreSEx0adQgxkkcEjBSDxm-taWyaPHcp7RogtDZK3BD8rHARki8pxmAXtQtDfha_atwrjDLOiggHBFSBJefULrWltN3_XwA5Fx9b5dv0cOE0L-zeULlP9YC6OXAwYXzPqI_eDIj0vPh9rpeoUP4gnYSjyYcU7JBh1C3-F4DadF-OUXHhJkiBnQJuPcibbPJRwNgbcEfaA.jpg",
+    "https://cdn4.telesco.pe/file/O6oITjNNXFwHOBI1RvDLN66dzDmAcD-rPaQrLn48JgOU7AUqxmQK2J5b1ruaA2EuawHQvs9f_uRvPLhLovtrgiXTaFVdEZO_hU82K8ObxGi06KaDLpEuoiJMJ-rCkBBErEAI40vngZXO3oxhiQXTyqlA_iqz-JWvF_DUjvVaFkKJYuYXXYQUPPz7gtoFhgLAiTeeM1u_bDSPS-_yHy_N6xDKP2AM0uVqJxKsucRio5D-A53xhS_jpMfZ4ZMVefu4iwLKFr1kxjMWEvYiu8nGfaIM0Y62UgTTULrhU4atobnZVWiKBb3ZScoOGl-i0EsvXd3uacOhD60hPTWtWIb6Ug.jpg"
    ],
    "date": "2026-11-19T08:31:24+00:00",
    "url": "https://t.me/morozylni_kamery/6604",
@@ -9591,8 +9644,8 @@
    "text": "ID104772\nЦіна 13999 грн \nНова ціна 12999 грн\nLiebherr\nGNP2976\nNoFrost система охолодження \nВисота 163 см\nШирина 65 см \nГлибина 65 см \nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nвул. Вадима Гетьмана, 1",
    "price": 12999,
    "images": [
-    "https://cdn4.telesco.pe/file/mxyU-MyVmMBXGsmHy7OOuLtFWpekIXbyNWS2jKn8y8GpLEBL-3kruFkOORFM2oVOshkxLJBz-soJAwDO-dDdeIG43bC6KPc5tBRnpK-AX32ebUigEKjLg5394ZSzQZogSIpnLAsPBGjmYF6nh0oH0fmCBtSy_LPcvEWUD6k_lbK3dn80ld0vB2L8q2HB0o4hr0szVjn8zW_vIQ_Ef7x1QpQmnQQSs9Wy5Ym5Yrs5rGhZTzqqnKpqIaqZ5wsLIWUz6MLPo-KZ2937hjKySkI1rEeZODwzSCju1TBPapfGnSsnx9pP2cnq5Uy6MjQkTiRHqIQgy69VPnDw9EQJkOFdZw.jpg",
-    "https://cdn4.telesco.pe/file/Py2c1eE9LB26aQ1T5ZJvakV0rOGABkNMvLXbmfwvtBVCRbzCSx2BjI05ssVej799FedmgBWjEiHsGs1XihJhigB-RVWbTzgpX1JAbNzLldPxBrbPpOeFy9GChPc-ZikZ9mYRiEqbJTLTipMEP0HKKr3kkeENWFoknSvaXpFUe1nmNg9Lk92eWDRaNQTSM9nPTYF_jrY8LAR_v1kVurycKlYW81NZegYOiIn8o7F6unIzAHUnkgAS4bdCEKFWUc5ira5ydtOzCUhi_x_KQiBNs6F-2UC4hkF38GZcIYdFbVbM1zTA_T47BDHD_hRkAAJ4bkRtZ372hY7Qr474bp9BSA.jpg"
+    "https://cdn4.telesco.pe/file/teOYoghukTErqg7kZJ2DATxKQoD6LjJRX8x2HfqZHqx73mmb0twMROu5G6lGnuY7dEoynrdyxrdf8tr2UTlrdO3f_gaIxAHxyogqG2mMRIhxUsegnf8VikuGT3TKcxjjRObV56PNWTXxFb_7tw83rLYJ5BSVYsan57_J3dzMm-2NnEvRwVKf7oa4mFrNiAerSxNWJO3bCxRMvCbs8uYoyR23iNMMMdJDy8rxNUuKxNbyxic0DxaAMNXmCFEBrKzP7b-V6SqS9lvsYRGKnGEi-SANYQFwcTE0Zef8FdiLgGX_qH8ZNLIAHkcdyLDqZLrk1UmpViBO-5Nv_7MDo-e0Zw.jpg",
+    "https://cdn4.telesco.pe/file/ppCud-2Yvy8NaLA3T9WhC_883uNsaOjjp7snbPRzsOM645vPGdpGcRuHt3_4FRiP-hgfVkd2C1fDh74XwnRPdvi2SJXqDsVGTKQPuvpOBwhWPJpvvJC47BsK_-FamZhtax5rSXvRnClngd9uiEEDylu6uD6wMdRcVPMYw1bGggxil5Dl5EZNTCVWR2Js9tA8GbOWDTgA2WwytvoC--foR6HaiVjiBpICBMBjV5RWuQEWQTg3u3CNxxitC2LGkTkVpb3IuwmuHiqYZw0YhJnEhkdX1092Np1eLnRxKxagWql5CM3KlCli5X-Ifro0WMtJzjuwIz1HBgRfx9TYktwdNQ.jpg"
    ],
    "date": "2026-11-19T08:31:24+00:00",
    "url": "https://t.me/morozylni_kamery/6606",
@@ -9618,7 +9671,7 @@
    "text": "ID105466\nЦіна 8800 грн\nНова ціна 8299 грн\nSnaige\nP10001\nКрапельна система охолодження \nВисота 145 см\nШирина 60 см \nГлибина 58 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 8299,
    "images": [
-    "https://cdn4.telesco.pe/file/v3_Uh8iWOHQeY-lBrSA7WpUDNncJ3MDj0LKmkdU1qdQYWitA7eNAS9iQvXo9CVs5-dJsWO-WLQz6LJVnvv0R6Aj993gQVWP00ehMFmQ_77zSV6DapuL89mx9QSIKht1Dv7Q6Sm2-3LG_kpp_a3HOT6Kxcr1F-GsWv6Q9fQ5sG973OnBrDJ3qSXNdzXo3SVPt1TqOGzVI-SxGhKppZuyBQIDiAkOfaBJCHwvAMZLziYtdfNnbaPUK61lDf4xEwFycxm5wTyuSzYrCPfklmtQxXOVeNbYKsijPsDvdf_V3132JPQjk7TYnAHw05g6gWoFPV2Ss9dzG11dAyE16pTmnXA.jpg",
+    "https://cdn4.telesco.pe/file/l2JLNRVQmLSONhyBSFJ_7wsRfBA8a0SZPBGXxnX6bB_zs96zkvVuv4MXpDUVM9IdXKxGbXr3pRQt3d6KigCk4c4jaJmNvbCaczu6DIjikOx0ODNn0YuzqaVMzx2aJPSRBnqmeK4tgTA5z6Q74uttqzyQLTyAoV2l17zuNr7EoV9VGG1GTdsPgzdaM2jreMiBxXWAs7vuePlz2zD5kJQTOvIMDNMnJjAqXKVRV0ZLAukeG4zzIqly65r5HNHilHr1p1ugi-OuNoFbcKf0bVg90fUXmYeMdTkELwbyXhhQZlDKM3Zx-XWzCOkXQQFD5vvIFMsbk5Q2MG_cJK_36ESvJw.jpg",
     "https://cdn4.telesco.pe/file/ZsCPsr3spwhOcY_hIn89MyrfqH190FbBtiT3md--weWMQV4ZIO1t7Bzuy6gu29wnaHk2pfN7zjo0bl7aSJlTQIkqKe-kWVUTcWJ_V5S8FlN5FsDV0-_bZjCouD1sWTnXvdgfKn0FzFbTY7pfTZCltJ5r0vAcvrQ3cLFmuvZi6noE0E3AN_B18Xnv0fvtRmFniLqJIoSwPi-qJ13ZPKOxD5W7Jl6QHiAhx824kNsBVx8ud9lVfTh3AYLMNbiw6By7n8syGF77TtGT-PJcokVITHYX1kEoCLzZeYY589GFu1oQz4-5jHVvuqRmtTvbgqb9cfwIIaCKd4105Zfft6AMjg.jpg"
    ],
    "date": "2026-11-19T08:31:24+00:00",
@@ -10407,8 +10460,8 @@
    "text": "ID110334\nЦіна 5499 грн\nNord \nКапельна система охолодження \nВисота 88 см\nШирина 58 см\nГлибина 60 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 5499,
    "images": [
-    "https://cdn4.telesco.pe/file/CVVZ3Qjlk9rAEhlWGpkO9cx5yXsc94bVNm5XNaqcVFBshjU6NVzw_J2vh2hjo-67ChyKj6j62LZ5-EYvQ2Er9TANqBcQEzlX50mvPBsMBzR68NRocgjLzaVqJS5c1rfXIKZl6RGr0Tn3riu86sKy3MfmRAVpp5Nd8Rg4owyFtp6NKjYIBbf5ZiddlSLMy72eHtRTKaBPOVOWTa2q1lC2R5MQJ0siXSvZriDMQAg3iFuxvfkOiYbpbEUImmYAshimQgAud6-WpNX5IhQlV0MWAzJEF7UcK_XnxaLdHgyYHDI20x3txhDjwNAiOkSv72-krgtkf7EZ-vEydE2VqqAyZQ.jpg",
-    "https://cdn4.telesco.pe/file/ujMCFtpjzdg6dIwrUI6f2hCXwRL22GwIu0Q7-J6AV-CY8r8eDRbii0oT69FuOq-3iokZvmBiSrqLJAaLirfgKZgms53dRsbR0b33enQc81HpTSLE1r9aksyZfkSTq6-WO4HPlDRaW920Iv_a6ybCNsvy29KRYVredOlq-rSHAIYh4ZcUOsk3Ui-2EY7hcbTA-KrIfyLgtQ2irfhXP2KnKZdJBM8kp82z5fAU7c5C2hTXzSfGG9WKoy9GWTZUDGG-0rqG006Ubs56imFNUnub_VWhDl7hB0esEAzuJ_e6IsxikDB8bm5GNwtV6nQFi9NJy5RCIEQS__EjUgDbB6_bfA.jpg"
+    "https://cdn4.telesco.pe/file/JSyKY4BGXb06LfMSBN8GNhhZohb2h0-uyrBt4Swkr2dyehIe2bpHor5vchq-CHCbPJt_0ebcnN9sWhws8zjKayGxiaHliqwgsIu-ODZ9Q5S-r2vg0k-BANxRwREOSFO99LpoMUOdhZMWzgewmsSlDgLstSdWsvC10X8L1YwiCNTVHZlFTxM1O4BHdizzhKuX7oyPosiyzOg1Of8YbPb91zvIGrBTLjRi_AiFYwCBnflo3IHPggLZF2esZMtv44zVJLm0YXIm_Xb0GYO0soeDtrJ7ksddjO9BoXXtqvveDny7_IbSKwSQ8u-uTwXr-UDPBnYRVzhi9gzhawcsToDDBA.jpg",
+    "https://cdn4.telesco.pe/file/MFqHnY2zTFGUvclnwun7gxD2YOEI-4qKD3_dFnW6iy2c2zJaVzVP2LYQHXfyZZiUZgVsqlFmLYRRwsYD9dfPPi0xQOi0gyuCN2acmgm3PxJDd89FlEz3obMOwcG8UoSaFcng9Hj7uZyfUpy6rCPrMnWBvLvu6rCpXL5Yq7cav9_1nTfjil2VQAdBBcdeGCV324Pwt4fi8syH9cJCL-En0CmQgfMj1IWn93e9ftitM9xmdTK4XfZuNtDt_U2fWRmKKSjUvfc6Tl9MIm0r7k7xcnyusrx_cXZdsLYkyt6I3aa4C-n7ET-LRC6OVmQnj5VIL48E-htvSggpwe0BWOhPfQ.jpg"
    ],
    "date": "2026-11-18T14:48:52+00:00",
    "url": "https://t.me/morozylni_kamery/6600",
@@ -10951,8 +11004,8 @@
    "text": "ID110336\nЦіна 6499 грн\nBeko \nFSA 13000\nКапельна система охолодження \nВисота 103 см\nШирина 54 см\nГлибина 55 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 6499,
    "images": [
-    "https://cdn4.telesco.pe/file/cqZfJXYASpEKQBMlElktdPaqQJ-Qap8F9M3mYlciQiDwlZGLfF06BVy-x6FvmV-R3Pp2oeEsfJyRcKMeqTYYnL_INVIuPH6_b4bzXpUgNC-sacPQiPcXknZgL3kKdkjfoM5kobLtr8CvLL3cY5thM3LvcPlNOnRSAlFXGnrKhKCwj1OQYWnKccoGXb7TFXsH7tZIAiNXoEL4vPBYfDV96Ma5TLUyazBwLvq9oeLAk8F3AmPOFqDo2jjN3Di-D2K9sYJSN5yJ4-yNmVhk7RjZFwoubgRoQwMT-zpVkkIL9C3He1k5nb0XmLySEJEPV9doAttosTCLASQvc0rSEdpS6g.jpg",
-    "https://cdn4.telesco.pe/file/DxPHiWx58QBi4849wo95EnUJbRn9-a7bA3ngMWsbFFo9rywHBfi6v5vjOYHhLtWZfn2rklFztK_ReuzI4jDMDpIZ-LfbesDS-ue_A6p0Ul77Fdk_VY8yHrJw31aX9LMewtn-7JP3EOpBfQLdgPySlmoQ8ewl-GimpjT5PKNx8ho7wU-NYrppVN75XeMVgJRSl4cgr5_SzXgFTy3-377Bxz5pk3LS2a9_IRadNan0UKjKqnB3LyFdkBqsePXaRFJQQTB_T13e0nfTXyv41R_FFDkZmGZq5vmiMIMvIuFjiCsjDTkWns6L5g2WeNiNxHS4On-kZ09bHg5iYcFvPJC_Ww.jpg"
+    "https://cdn4.telesco.pe/file/GVPqRP1QjFPW3u66rwKKoA6VKq9E7ISAVk-KqcAZf9-dYsrWvxPZU4oWLREYrR7dRKAyms2LgvwUI-kkjws9-0yGhr1VNPQqkn37ixZ9DF4q4_VPJOA19iq2_QlSTMcPXi_hpS89ctNfgRYPz1Z_GjYhhIzm3NPaRNW0CzA-h8r4QU4aJA8JfCALgKr15kRtzhVIfc6qC9tVvx4jd00IUni7yE3vBB30N5kjuDtj89683YFjFP7-YZbdISDh5XT8HXi6iXf_TZXEoGuFroUml6JmEIYsfpJ7ZLE7LPEF_zQBilZF5A-CvggX5JnPB1SIYz-0dJrDHy4iF_Tih8_IEg.jpg",
+    "https://cdn4.telesco.pe/file/Cq8p-LbYUanwjN2CG5nZskzGovO2lh2EcieQYlKA94-eFpxJnBXG_Aamp8C-s0Z5l34ITXyQD7yU-7F_KIM7zaQbb3qVPYnus2t7F9v5Wk_dIMHINrl9-V1uGFBTspTETZ8LL1HXUyfivsOocDWfGDMLTDuTJsoIxjVsc7U-wEfX5fJnv-PrUGw1paK_ZwwPU_3Sx-0Sh8aKE4hyeO1OXPoWJgjac0QekhOuFeK4ncfyYA6mXfszL7smvBGpj8ZGSodYQfssnr47_zmaJCdIygdjq4iSaOA3avZ3Q6BZvNYbxqsbjFpoYf9PvV8JwUggvaiscIZQ78WyUZtJFO1x1w.jpg"
    ],
    "date": "2026-11-18T11:19:04+00:00",
    "url": "https://t.me/morozylni_kamery/6598",
@@ -12448,7 +12501,7 @@
    "text": "ID110228\nЦіна 7999 грн\nAriston \nДо 10 комплектів \nВисота 81 см\nШирина 45 см\nГлибина 57 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 7999,
    "images": [
-    "https://cdn4.telesco.pe/file/IcdGJArPVclJLn-xZMScu86v8apZo0mcOXz_2dvMO9sUersi_nWGOmJVNXR2kR1ZfzM2eJSzylrHfrcqCVtubp6qn1f-G45e9FW10mewRIRlncffi0jlKXPNVgPiK6dQIi_gC9fFheqOTfnVp9m0n9dU8kcoB5z5vDeiawtW_MBJU85KPyIX4asUjGL55X4rn57CSYvFMYG-ckbVIeQ-PDgul1UpHISWiCPtF5qXWkZ4hTg9K-JHKOrqbLIsEV08JV9pBHNWGu_wz5lN6ouaXhe3HPXP6XqFkMf6upvys9xyGJY42CnTuSppyMfBO38j3MlEblrjOo9Tav89vBB9bA.jpg",
+    "https://cdn4.telesco.pe/file/fM6CJ1pofv2m1dGI0tldMZTbToRFe-HLeVnum84UAqF6DRkx32FJMwveO_KlMJexVNp3d-_vIHbiGA6Zftv9OId8riQ4CkvN--7r3LI2odVt-tKvUqQelFTD8Wx-Jpsp-EjP0tDiqmp7Io5qWPymD-eexBBaLQp0w2vaZ2olPLDep3FGe2-CxFsU3b8Dsmpu_t7RRvUlqfVpWZkIgTNluEYw5Kg8Qro0jqyQTAzRwgP9dTYDT0JfjIozNAZpsWmnNFxeWPcl42TP_8qlEBGk_zzmH7hYZzOjOruTUTCtgA43VPClScRtrqJboY29D6wLFmsMRB_uNIMPjeA-77pZ0Q.jpg",
     "https://cdn4.telesco.pe/file/ENlB6LazmsFGUeq1bP68r4wdNgNMHKSqlsAhG4BQROHMq0igeK0ZcQVXZxuzEb5iWYLt_JrETFvjUC7KMx1cSwvmCrIukGkP7ToWzhUSggm85rUxvt7Wx7aIAp-lQwdnCRdXbdg_ICkVOT0gsOqoSLYeJy7UyBPtGO-xqgKo3q_hQUJnDzWZ3rNnwKOxMfxoAC67C1zJO1PEBoGC_6MeRSXWCqsiSxeLF00fR9GMwx5Aaf9Uz_EG2mSh7GDsyjo-VKaph4M2xOgCuvYRUkgMDCYuxCsqVI8sCCIxMVUGrgLuAj5Me419wIP5LLPNmfhpbohTDSDUMZVkHYZzWbuSQw.jpg"
    ],
    "date": "2026-11-16T15:10:11+00:00",
@@ -12565,8 +12618,8 @@
    "text": "ID110199\nЦіна 7999 грн\nArdesto\nURM-160М\nКрапельна система охолодження \nВисота 143 см\nШирина 55 см\nГлибина 56 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 7999,
    "images": [
-    "https://cdn4.telesco.pe/file/JROYQ-h33s76A3LDKCHHJLK-USKG_safOVW_1-ZCIF4QghozJqlpiTI_eR2sqe1aUFnVFhQtRtM2vdHwsBO2x4TLsADShakEu7F5THnELTo0ofzWxqpHQ7fn3fVyksnJqXD0Sr0V1ZjO7xvXvYkLAldq25DZ8tZ5wGXBR1tqGDMfSwAEBq5twutqwQl5Dlj_QRDyaQaDYb5cXIAWosgMxf7-7LZQD4_4mDTBre5EaDocwC_xlWJrS_Uy2nPoLqVduxbfWMwjxAM8tUMjlMwYL1GbE3u1-tUQ2gd80U4BUzpQLhvJ1nIbcpU0PaaHyPpX6G-5FndfKd3-6hhRm8BWLg.jpg",
-    "https://cdn4.telesco.pe/file/Z0mnPRpmblhxWPS5HH59yVoGMGkE3FE7w8DaMEG3a9tDeEE7n_5BC5D6l5pik0JbueiVDDofx28rtx1gYsoEXPbw9qkVcZ4Cdtugzev8eVMTvDq0w5i8hxT3jxm0RGIzaKC67Zrcb1-7KKLfcP2w44ulPLh7Z_Vpj25EQ1NAgKTvRTHlqR7QDSLrB9YY-piT3K-oGLxJsw2-K_BK5xxp2gZRffyn8VViNzT2gFoNYerWhuOUWlEIk8MBcVwv-vrMp2PMMokOtX-x_Lw1ISZT76fzlrn_Cht1biEzrhZQ_F9kowGVw9bCGDjvWS8J1vsraGOiordrxLbofMAoV3Kbiw.jpg"
+    "https://cdn4.telesco.pe/file/IvqGKV1J9i75qG8q9NDztd9vf_-d2j2TbunvGnaBvsHdYwnUt16i5YcW4OUypFpLLETZ7wdNzZ1z6gwd6oYr7IX5I99SEKIdykFAxuFrGzgfn9lIBEnidelxy04K2fvPMnKnavFxaUwoqt3a3RLle4YykxJo9HKcs3uitN_ND6NqzDXXxdfch0M4vrISi4DUcP1Xm8ZkTMwqcFGCWsWsdHDUELTRAOwzTWNfkjqJcQwgmUOHv0rE8Xc6L3hZ4hRFy-cqhzhkyYH-sY7fYZwaEjreF77EQbGrmK5ZUKSZCbtabBmY5z_0bACWHHrZOTTr-10JQJd-6h7ka-JdP-uKVw.jpg",
+    "https://cdn4.telesco.pe/file/gWQqeSWiF-0FIwc8f7_xmYhh6M6dNfj0rXtR-x5FOYMwKzDlCj7fA9EQoIRzQFEZNpXGYBZY0JeEdPBNOgbv2Gc1-mDhFytOcDFBATfMkWL9QzQtWXD-mGlbUYpoolpjyObbUas8qh8fEKNJ7dxlO01dfWoyyN2cdjwHX1OYrBoUTuKOKqohhxTVRxcr19rd0bIYExxNZyB58XA_2ZigmtBnmGs6xCaoraTegVDMhcft6j6STvhi9wUR1FPAkd6zJEzE6IiQxGNcoxI8bM4SYBn934eAUfeLrnm-I37KU0sD0XwQ0-vJPHmmEwd84K_p73HDz1x2qUKA_aswPQjDLA.jpg"
    ],
    "date": "2026-11-16T12:18:38+00:00",
    "url": "https://t.me/morozylni_kamery/6593",
@@ -12791,8 +12844,8 @@
    "text": "ID107288\n❗️NEW❗️\nЦіна 19 999 грн\nAriston UH8F1CX1\nNo frost система охолодження \nВисота 186 см\nШирина 60 см\nГлибина 60 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 19999,
    "images": [
-    "https://cdn4.telesco.pe/file/ttdv7-KE7kXvxaDoExXL1uEl_ZWCPO4MOjL0twv_oRrIBTVoqFBE8P1ZQ4-R0KxBAiNGJGzpvkWB307yaPD-ffmOSRd_XfrNm3RiolaNbtNvFnjXB_yhLXTOPZK4PMGFwBXl4T9db_pLDihc89O_ksKEEEufL4IsSpAb2QrrZJMCu3qojleqkfK5HKTBglIGvbJFgRgUlTRsgQlfrTGawaWHN2iVR9O1YxatnDd1dy1GaGGGPpbD30vqvDTgscelUe-JQTTePLYN9WGxgbDQPE4MpyCuRKuOcpCtKkAxqgc34-5RrLDMRQhjrT9mglaU9wIGZTfVw2tLYvX2V1ss-g.jpg",
-    "https://cdn4.telesco.pe/file/SVOFq-EABIV_zLnkV9Jq2zSZ08AxWxTToctLQdKsyEKesbMUa94uwalQYoBRE17WrjYX311HQZAslC1FPglW7Y6m_hydFEgRhSAr2UL-rxLHhA08G-1nH-IP8-syKdQ3mUSSlnlyS55X86ZQrHudxDapFGDR30pbDP5Vq9P3isl_qWXcmGluswcIz8TwON_JhJmHCPI54sF36ES5RZwutMvj8CZXO-9JhmgDe7rcTCsCO6JtVOlgH6XQRgbEKR6afMcaBEbWe1e5KMemPzL7njZgHwJS_lo587oYfwqyxJTHlmbnzJ0gua8FEKlIU88QEXxJfrunzJIM5D5L7EX0VA.jpg"
+    "https://cdn4.telesco.pe/file/EyLi6zXIXGHfH9sjYkcKi-VWc8wuzAK-24y3aDoXjsaHo16kMHNf0VQXfPGvsNO2o4FcGMpaQJkQUDHEOhdxTLJX4rMladFjGQ_0D0ulZDVRbBv0bYZ31UQN4XcJNvCfGVFcfNShy1w7kKywxz5bj7PGg8D4Om-U0_0MDOCut7U1N5Ts698kFXKWrwPNpWaFNdZUfcwkU_EP6Ev7nZaAUvISjfDAGtmCkMgcix_7kYFcLBUA86gGR-EZ5wd2ZDmIgIUKR7ZVkwCcPidwAdDziO-Su14pZNXGb5eXVqhHnfEZI4nBk2BhwlChKI0BePdDWTC72dlZT2SSY22Vr1Dduw.jpg",
+    "https://cdn4.telesco.pe/file/Ia-NnSroWwhcZdI_CeXwTGQr8MmqcIVkMqy81GQ42N2-hV6bKsvaItywoZ-JrmCDnIZOYPiP42XDXP3jcDwv37tkRXRp6Y9avhsK2skbAelTDwbs-WbaK-k6HxEn2pBXwcigaLC3UvvVFROjB3iGinpWTF7UGzfgVGyGVzbKL-nRifMXTQTrU1wh_w4MSkBo88iIAKOpb5DbIWDA-ctmC6ldMMVeZzUiJCz6vOe-T83HyKH7NrBAtgnSBJRXQ70DMxs8vPWNswrp2KKuoPCnZd5eVA4Cm3N4OvdS2NlnNoaGj_0iGM92YYQ3xFq815jWR018C8682TUPOBi6-JUYow.jpg"
    ],
    "date": "2026-11-15T09:05:45+00:00",
    "url": "https://t.me/morozylni_kamery/6591",
@@ -14095,8 +14148,8 @@
    "text": "ID108109\nЦіна 3499 грн\nTurboAir K804R Twin  \nМаксимальна потужність 450 м³\nВисота 16 см\nШирина 60 см\nГлибина 48 см\n1 місяць гарантія \nВул. Вадима Гетьмана, 1",
    "price": 3499,
    "images": [
-    "https://cdn4.telesco.pe/file/cTN6DycX0xGf4S7dH0CmvTWd0r0gOGOmbLCRuTqD1nvhlQuPSadnFtCBKrxUMfx_spsJbzpJgjDKM56L2ceVs3_zevi7SZcbqwIESnNo8o5-vrh7VCJ1lvnNmMFKKNO6p4SV_BrRwQM5YxJMgUpif-hxh3p4KdwhqgBDXzUd4e3Achq_lJ5rxQKa2hpLj7bi3_uOnhVMORaloyUNWw3O4fGaohSM2qe6RhgST3a7dnVPXYRAjxAPaiCI8ZeavvU4ZJjelk_qLdbt9qOtUb9FjzhMAlWZYyjsO7finaekguIUDBrFYlDJR1jsm-6taJfSuOK9ECIZOYqKcuQ4aojYsg.jpg",
-    "https://cdn4.telesco.pe/file/auefLld2pU1zExY0pxyXoCzfabG68PfFuRVBRUya8BGri5aLvMOsEsUU6bzjXZL4ziE01DyAW7HgkNWPtYvBUcHZc08hNan7uzU712prY8VeWNwpF8teDOHOGH38xDiu3_qitJoBOIQnh3-6h6Q1Qj_ir65B7CiyvHAG7vZjXKcqyTzJl7Ty6nev0j1T_RMvhQbffa8KlBm7jSDvy-UC_j7VHnD16di2_O8CVebESACkCUT1fOI2LllG2R3jMtpmgSCH7dJS7drhuaAyTTu-wvTou_pFtIGCWbsLxTEBVyyFEdmvcmiEmmXFjk5J1w_65ZJ0b448gIk0M4O41lBKtg.jpg"
+    "https://cdn4.telesco.pe/file/GaPKdA3Gmek80ILqVW13RuYLZDyG5CPMSAMGbwtqa04A9pT5LpOf9uHS06iB_MBRCK7PTUEWT4sBiU2MHQ5FrgMlb0B9PbwUYh2uGS6LbBSDJHBu8s4xpW9mdmk55ArHmKt_XvqLqktdb8aZEJwrJH_WD9ZL6SyKVdfR_HEwTrITfmZ66YQioDa2gRI0BPttDiHiez4gbqwuXeSckSrrCf8fwSclKtT1MFySRlvF_b70Gw1Da4x62Kv4BOq_DNXrjq4NCbKtvJMzsK2jGfFzYmelbqXULI4xWR-uTAySl-YBVAllBiqezGhHy7DPjTN4boJCNUFphQsLaFCL3iP5VA.jpg",
+    "https://cdn4.telesco.pe/file/tdZMtWoOV6AWNuqVrkZgwNoJFnVs4tdZ5bErlWUswHWmJvWk44B-f7oKlEd8dAozvHGrbNb-6O38juhU0HMpPNksbGQDnfOF8H3XHOZn3D0E_yVh5EhHb3rl5tnfekrfUws40COr8oxt9Lb9hrAHAb4XgskKnK8KcJNJ5IZXIsu-cOFYpTyChRwPluN49xewZo4SxcAdgtQlYwaCOdhAbvBmSbILno50KfCl2GZhLnYsj6pROWriwz0Ko1GWUKgWIJZEg-qEa6mHp-Z9zZHAlY4BV9H0SwKVy8vjEjtoBoW9Vc7s_Q_Szpi8V64hPo0U9kHfLfItIStGH6DGJeV4qQ.jpg"
    ],
    "date": "2026-11-03T16:04:12+00:00",
    "url": "https://t.me/vytiazhky/111",
@@ -14588,8 +14641,8 @@
    "text": "ID107572\nЦіна 16999 грн\nSMEG ST145\nДо 15 комплектів \nВисота 85 см\nШирина 60 см\nГлибина 55 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 16999,
    "images": [
-    "https://cdn4.telesco.pe/file/EsWxbGhzsnOBn_o2_kU7ZDfW3DdOrVgH0h12VPHMvv-AkJ7xfKvRxT1L-bpXc5sPDq8ALHkD58XdxXjU_4t_6oa5jBx7slTh8xC0SQARZGlqJmtTJVLunhzEXuQeq3lMSvMVD7quzJM0abKoerb96zALk-ofu-1PM0P0_QfC_ywS1JUEy_XUTEAS5soKvTvyJsAAQiegO18IslodZ6pA6EBsiPFv_hnB2yQJQ3z0AFzq7attAxYO2O3UfmQgBqU_F280nDeuyM3GFf5uVv8TMZbLZHpk7ovK8TZOk6txL9lvm_Nqclaw1cia8mw5-JMV6BvHXN5D7NF0xojquVa3rw.jpg",
-    "https://cdn4.telesco.pe/file/rdNCumChQdjiXWxynA5kxgRHIGbdNmp0o_o90daoxjNAQb66_zR6aCaqhfakMR6DyUmQAf4XmY3JcNak6Er8t7rHhROVeYhEeFgpVMMYK6O3gtWjmQEaTfKrQZ6sPNWq3eaFmfOoMVyppdF2NB9QYB8wfdJtZH-z9EZWmNGHVehQYIR1-0qukZOi4L0f8XRk4ilm_dB9zX6NRUJ51pMHMKIedGaPo__VaqVZ1PJtZbQtlQpD8oMBAzxioGzPJkQw4_hpKjTCfYhpsH_ugzEauHVo4O2WAcsu6UzdblVEd870keE3OoaqS1aDbLBHGa5gbV0cFvgEdUzL0pXLzbvkNw.jpg"
+    "https://cdn4.telesco.pe/file/XX_rOfu-ITToTOF4IBnjmmTCMU6zdI8Cg_H373j1uWa7bSM1QtvremvS2CS057uAl_fQ-tv430LrWOOgq4ONJJNahdLxO2p9ApWuUw5HCgXtGOqpoE_SQyFGzHQ23iZwuuEtWDq600ElQ7G-ORzt-XTrERuFzAuEUj4CST8dxCy0-SR_1OPAtNDOlES31bp3U0Zo_8LnHVngh2zFt91AwoUgMhZDso3yaFMGcLpwDDoatl_FyPZM2lZAqt6EBNvte_faSx8PBi7U2DDn4ORot5GvwxSF3hZ4wOfJZtNafPQEOI8DxeLghxSsuvIrfDJDoclZlLInXw8qHWn9STZOLw.jpg",
+    "https://cdn4.telesco.pe/file/TgnCGEfbNFvTOrPqKquK31wEUVtY4rp-TTFNfySHI6LJda_c1ImwfRQB7a6_HmAsTgbM0c9aIKRx9eiB5EfIywyHi62XkD22zRlcHDn8I8Hl80CUMeQsTOuiFpcYbb9nh4rWIwt0wfV7sFloMIJ8tc1Di1Dh1-4BzJXDULOiD9MioQaN2UtZ4hI5RF1FEAIOaVMs6edg1BGte7ZRH52Fq0BlXCvcsHDv5N_1ciJpQKuDIQEb-kNF9mH9HKpkjWNVaz6NxvFXroSTbix0It6Ki2memfrOqLDwRfaJySk2C9n7936oso7LMnOAb3nBPe5NAAOLYmvvUaa1_iqLpaCyOg.jpg"
    ],
    "date": "2026-11-01T12:47:24+00:00",
    "url": "https://t.me/posudomyini_mashyny/4308",
@@ -14727,7 +14780,7 @@
    "text": "ID108140\n❗СТОК❗\nЦіна 19999 грн\nSaeco NL9206AD-4\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 40 см\nШирина 28 см\nГлибина 48 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 19999,
    "images": [
-    "https://cdn4.telesco.pe/file/XD0TIi2tzc5Ds0u1wainjgjB_Y91ZvFaI3O7xBsTVvrIRCmrvL-brOdrApfJexJyGiXj8BApX2CCUI1OToz_AnfCLxaoISpFx0D4kM1HkVC0j2deRm8ALiKCTlWuv8zVDj6kuansZOkgZfnA43ATaz9-PZz86JUJ4k2uQJB8lblu5MDdNopcrHBtDHqje1ukcmOxoEcVFk9CHgNZygmL_kPf7IznbhbYBNF6L1HK2Ge_E5zeDW3OJt5_wwQKhA4R2_KD6o0y-kaT8IPomZxRvkv1qVoOaNiTndjaHa87sNTeXwvSp3FpKOtgNon05uPIMkIK8sfIJ_QIpsZgKBGD8A.jpg"
+    "https://cdn4.telesco.pe/file/V9o2dtvSnC-jNzqHTiryrCd44s72D4FoRSj1HenkAf7XCrdHoew5ypFN8Evyn2nw-Za7uOzQvypnPKfM9VXWCIYQyOzBpEgfTKF2E0jxZZN8rTF69wk_DwGd78u5DPPbyb6Rsncs5GQlQ4vTFKUhzJpY5fIGxC6iTdqGNP8vBtuJY6xqq4fnugjhX6sXqP92BG3cv7FgLLq1blqpPi2VoK2NO6bJI5Za7gYY3xMtczVbRGwvFf09gFE4LNbdnAa4opb6wD1zmHNeQG1XtnailTm81m0y1D1XtDiPSAcGQNdk8TCtG07HNWwwnlis8ZQ4eogrv5FpKnQ64l6CrKwozA.jpg"
    ],
    "date": "2026-10-30T16:04:47+00:00",
    "url": "https://t.me/kavomashyny/747",
@@ -15074,7 +15127,7 @@
    "text": "ID108152\nЦіна 9499 грн\nSnaige \nКрапельна система охолодження \nВисота 145см\nШирина 60 см\nГлибина 57 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 9499,
    "images": [
-    "https://cdn4.telesco.pe/file/EQBh49kh91qZdVSySOM2h1PRr77RYNcShwWWN7y3f9DApqtdTWEIOwJEvfUC-isWGU4QWPm1DDthGeah_DWoO7Y6Tu4fliJf5kBGDzm_bXpBQWxC0yf0hn2nsr5lpDWN7e8guaKKV0ORBuLa5zGyAbxp0AYXl_hZ4mAN0PP4i0GJ3aY2gcCFunHMMXJiSLl5WYTrXv1g7FDjRY6U4KFmxlVGutwyBIr-gGI6WvtxT58hn2L4WOBpQqDPb8s__qJW8lOfGwzn3fQX-tNb5TWr3BEjI2f1PquiECtyy8kEUXCeLSRKqHEIogF2gG3YnwNUJsesSAe0-ucqFaVsDjlYNg.jpg",
+    "https://cdn4.telesco.pe/file/MCbc2grOcZy8FV9vT2_EcPV24iGH5dqHdzBuE5PboAuVR00GP8oOyIg3Q7WaWW_L-RZ-S64Keezk09ldt9KmuTRYhw7SkAuD--_M9peRMYLqwYwXN30X98Ps4oND-SWysyAwmJ4B-muplq_73U9D-fn4vcfnChS4ksEQbuTLuxw1JcMYi4norgHuunW5A8MOmHnsP4OGRvUccNt4fWdaQ7vpE6YBI8P2cxYwuElYDbPy79OYWDVJ43DgwRq8rh7cP1tQOcsLEK0_FSJzZ1mMHciGb5U-da9wIbFSrOsJP6jbmalqRV0FJ53l2gHb1ZH9FRnVz1YdtIOngBb4lBoM6Q.jpg",
     "https://cdn4.telesco.pe/file/WlZMPRaphTibAAmyYTAPLjfkqzmLaCDUxY91dJwd-xSPKzxPgUp5kScnLugrGU_nq0Gu96IyVpC4_3nNADXlv38-JlbppfqJFMW4wTfTlTxvvdGPchs2-UbOefdx6bbdz12AtiJLMcc0aHeUu2i5o5e3XvSbmDSxIRSYoov_nqx0HJLnpHteHFZBisDBXwnibAaIG8vbM-hiGfkloGphT0d4WfvfaCHhbm0m7Zs8pirmgQ9MIOOKAS0Zvn_IEeVrMyv7Gk1x6LUbQV7dxo4_u7l6zyz76a6R-oALQB8l__MoXMB2xj96QS-ayY8cQFBpzafdIhDIbnG133BHGfvbzQ.jpg"
    ],
    "date": "2026-10-26T13:53:02+00:00",
@@ -15481,7 +15534,7 @@
    "text": "ID62632\nЦіна 14999 грн\nAEG\nPE4551-M\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 46 см\nШирина 60 см\nГлибина 39 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 14999,
    "images": [
-    "https://cdn4.telesco.pe/file/HmP4zqgpgZHM_4NLicsc61QJvZewxy3nkdjILs7ktA4po-9RwQywcIQxXiBimT7ME4yIClw3b7zbcaeY470hJYigknRPUi5Z01hoTyrooci7S_DIsOakaP0Xp6K5JOwN2ryXINXpTJR7Efr8zmKxcUyGzzwKJYBiE9QAmvUlhREJflSoocYAOibSCQj2bGyrciVcmzg5df5S2MmaGqMscB_fDVp8hzmnuwWx_jtEg6Si_3Wc78NnVQFf9De5uzPPjEPLMf6aVH8aZ-qiYJVqrtbeQbaClnOVj8PdJH84BmeiafJH5OBtQj4e-kF-b8rYFk8oZFu4yTLeB7sGDIHvAg.jpg"
+    "https://cdn4.telesco.pe/file/JCfwhyZNOojw8rS-pWFiltdIxcmEqz-wyMswuyRI8QMyu7ebkyXo0HWLbvz_afVtlukrKeWSWXulCP60b8LJ86UnNg_HNb5DEZOpJBkp02qSfNvyM2pNC9rX5jvhNk5PmKyGYm8ujaqTBY2FTMCiEGVdU9ISlQYazvJd0PBNqnuPwhs1Zircm8Y_O_Es0kOHY0GQNsM6efDGXdSjHp6bwsXzqlebt8VGLtUeI5EswsqRzj-OkPXbYcN2SWb4dmQVrFhTj03PVgNSkoRYczxMVs_rk-KYsYv62RBFKQL2wvIquyRAhzERunD_nVYH1loS6GJYIUALzyFMZwfqF1bozw.jpg"
    ],
    "date": "2026-10-24T12:56:52+00:00",
    "url": "https://t.me/kavomashyny/746",
@@ -15609,12 +15662,12 @@
    "from": "",
    "private": true,
    "extra": [
+    "img/tg/req/144161.jpg",
+    "img/tg/req/144162.jpg",
+    "img/tg/req/144165.jpg",
+    "img/tg/req/144166.jpg",
     "img/tg/req/144157.jpg",
-    "img/tg/req/144158.jpg",
-    "img/tg/req/144163.jpg",
-    "img/tg/req/144164.jpg",
-    "img/tg/req/144159.jpg",
-    "img/tg/req/144160.jpg"
+    "img/tg/req/144158.jpg"
    ]
   },
   {
@@ -15861,8 +15914,8 @@
    "text": "ID107733\nЦіна 8800 грн\nAEG\nF55000VIOP\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 56 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 8800,
    "images": [
-    "https://cdn4.telesco.pe/file/rsYU_aIfO_0SD5UsjpwWxT6eMIZGRzAL5-_AFULL8ZjSIn0BY29Dx41hZHgZzAlsWg-zaUPWfYwNzj0B5jKdAf5hM-dAwBoY25qbdSdi56qnDys3iFYu8WkUzKjV_X6Qb7qZvnVWGxqhv-a2xmojrDFOixOx5ujrELTYPDC2xoqMkhALr33_s2UUkEChJMpf4fJ4ooISLc143Ob4VyyfG5Wzx74pzMAlwUIb73fjm_10zwV12xEmeYdQZT-fDtFLU6HMh0yntoJ2TdHRPTg6Snr_JBiTMLRWt0AkSj-eJ5crTxk5kIVobTjpGl-X7_UGhtJjccmH-UzTAinTKOOfeQ.jpg",
-    "https://cdn4.telesco.pe/file/ZGmoTAdLkuralxSGgK3PUXhreYszmj1epGcetvQX4vgAx26P3mAxQYIVB4mzrbRPWgvzWAS81tUUwS3k7Fr8MPvothwwn2yE3huWieMII19kV066E7O1PFmCIxQ0dGlArlCrbNOtNmTs5D6-cJz4j0EMcVwaJRsB7MwUlvkBM0C-paSjfgTGnTYqdaT15eED0w9HwTrGe_nKeMyzqAXtWuOAsexgYIpCKeH8tUA93tl45lfNnGnl5GNVAV-fwql2IGItGh_fFZNR-FepT3jLdA3RHh1_Qwv8dusywFiBuZ7B8vhkASf8OLn8SWLanJCdtNffQUl8cS0c_c2etT-kiQ.jpg"
+    "https://cdn4.telesco.pe/file/II8NDaTpPHTEs_lH6BxiJaI24ATvffyFYJL51HzdvQ4yr0CJjIh9lN1YISPlbXGpuYjWB18WnpOADwftCbCTCuY9AGhQ1cGTbY3nL1BGvYVyXeOm1EJ8hKYD2t1a84yd_bt7epR5xGoaK0Sgh-fteYz-EBtQ-x6iB4ZDD5KDcxe_QOeD8c86fO3lZZ4D_f-y9doG5aTh8vlr3V_7m4aTOi2LqZZuMZlQs-hPYkO4IVE-qaDd_GxRU995t51SQJXZKozIN1shjxjYLCjJa8jU4n1_PlpmTxWcSRYHKijsb2i-_58gaeYYnyMmJ4R_19QzKymNh54cWQgnICPpbYYYLw.jpg",
+    "https://cdn4.telesco.pe/file/duXAM8Jcet5l4sl__So_b9WkIdjLd1xjAorY6XOfFsgE9K1gJwMRWi0Zvyvm9rGPqKg7ljFY4Zn2EajKkx5h0n-GAWXP3TRbu20h_KASoZ2a_r1rMoJUdFZGdmzxud3_UJ0CxnB8MbZP7xbx57dYit_c770JgTfkRf4T4S615vsXB2xWTQ_ebRZc7l9hfbbrl4Dj8W1PpWf_HhsJqz3Ru9Lu8udNWwNtQV08Vi-k2V4PyKRcmq-AqgRvKFKOIIkoX25nqsRJGQKDmNiK5AIPU4xOmyue8yh6u2p8r7taDmsRVHedVO9MNF0zRabyIRldR6Hise3CPMChvrFPH04kzg.jpg"
    ],
    "date": "2026-10-24T08:48:08+00:00",
    "url": "https://t.me/posudomyini_mashyny/4304",
@@ -16068,8 +16121,8 @@
    "text": "Id107737\nЦіна 9499 грн\nIndesit\nSFR167NF.002\nNofrost система охолодження \nВисота 167 см\nШирина 60 см\nГлибина 63 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 9499,
    "images": [
-    "https://cdn4.telesco.pe/file/MI0TBb83Y4GSAX9-qIydaK4WvR_1XKPLMlAvJYD7VP6Ba6NcNctthvaZORz3hBWOdFzyoqt1czUU5vg4UimFEmQYAD9MjifCs-23ZR1_sK35QlXRHCSvvpWVC198SM9DSIIE1HSsopFLysDtgiD0rAXnFdCnjyGEnaA-f5u4tW0UJOjTjt2Ec_oZQmr_QZygBkZX0SAlvkUms3ynZn-LZt-sWrhNcz4gmYdzKzQgJfBPh5jDTqmDOOqg81bW_iuDBY_ZNXDqeLrQqdrQO7jfk5zESRnEnlvj1zSqBCX1IOgWtD2R3TYLE5V5lcxAsBWhMsRicmp0HfvnYXJyKMztlw.jpg",
-    "https://cdn4.telesco.pe/file/iLiSb-ZxBwk7DZl-yoyme0cG_KiYXgmR7D67-1flt90thvKQZALJ9tqXO4YaTORadJx2LHLdfjx2zMW9IYUmprzHCPJ1B2PJbApFD9SxMYZuQ92Q_P0A57_kCiRdrW-ftSNFH2CTBNThE41vB7WBgvL_cEc0ByCW7P81vikalYGAjcc6TvsrX9H1bq-OXEbtxsMS1xQnJD3Chv3mTNboCerkrRJ3ubslseDIuZ8LPIA2Yv1TczOf1t6Q7KdFRC1YlC_yAXKv4p6xBKIRW7kyhoXff6YY9Mf_ZaQYaul8B0ACyurPrfG81bn4sCV1FpFSfuu8ipKXchZ_3WrHKiIaSQ.jpg"
+    "https://cdn4.telesco.pe/file/fKNjmdRzVTiCvgkxtmanvz29uNfYCWdgkZfbbvuVPHHjPiXfRikcswqGUVN8zSKrEa0KdQukJ5T14pYEJEn3f1h2-DNwRAJFNZh4V8NpGTx3omW5393K_Ss59WeGnQtkfzDz7rhgq8CkEmbRqiX2r0PRbbWj_2cDmp5o2-QRskmhln_Vwvuo9eHyz_nDRWnx5RBHAp22lh2NZWSSqpH8L_3D2Lrt0BJGfzsSOB0luT2XZOLBIZaLb-ymRXh2jOTeP8gnQKx8n1ObJf4rEdhUUEU6z5sadUCn8t6LCPARvPT295i6l4CZGUbPl3oLQbzV9mfmk4k9F4C5uA9mqNJjIw.jpg",
+    "https://cdn4.telesco.pe/file/CCxf691efUi9Sh0Y9rIIxYWcINTbVN1ZPG3PsJV3uBxA4I8RtiB68ninzbYLQQA7TZ2ulpjv9n5IdNIX28yDWob0de2KMxBOfq9ixMoJhtlEhLZrO-C3zy32Na3qrWsq4ic44r6z83FKsqu30tMj5dAgPZl2CX3GMqqo6AJ86A7OMIjE260cZx5JgqDVC9s395CGPtfgtW7Brab9M8R_R7YKMYPd2oVWlIFd5-9NatIrYrl1PywadQ1r-8xDTN2E-FEyTNl14sEi41m0eRc9CE58CDqXyFl-xdysjbrDqwWsRDe9RkgUysZMsRroKYYsc2vS7QYBOy4OQ00GopOXVg.jpg"
    ],
    "date": "2026-10-24T08:16:00+00:00",
    "url": "https://t.me/morozylni_kamery/6583",
@@ -16095,8 +16148,8 @@
    "text": "Id107505\nЦіна 7300 грн\nElenberg \nFR86\nВисота 85 см\nШирина 55 см\nГлибина 57 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 7300,
    "images": [
-    "https://cdn4.telesco.pe/file/e5cmm82E8_ehVKwSIy6uI2TOOIGgPNxVfMczyz-a_lXlJ03tNoBr3dLw8TU7cuJRy7fsQL_IBc2qjIiuBAbGGzqcl1PWcjk6ju5-usFnzc7Ju_BlMM_O4cLbYiU1jbUtPGMvRpJgkNpny9w84AwDuWeIS4xddlibjVhT23UPvj6sOY9zIBgMZQYTxOPsi-U3FIIltj-k61z5vpQ4KJPVF6HmWoblSL79dVRMPZMhZaBwGvVPap8lraFslu_qs4xpcHJOP8pj5L77cQEuuoV2IPpdQzHbF6DqdFCWRkStAEv5GvIeUlP6IPACD6iYX9xojMGIRTD0PA8KAYg98MZ7EQ.jpg",
-    "https://cdn4.telesco.pe/file/J7B-NBL-HnBoj1LmV0QtDno1uIYDT4y9Lq3NSQ1TptmlO5rrXJ8c53oBLE5gJ_AsKYKLHc58h2vrYPutHrxG6Yu_B819dA77ouXzvO8FgWjmcCq6yUsKM-TTkxj5S-w9JrUfqbRdtKdQOiSpsGhu6z_aLsOM5bvH7d77NK9_RvgUYC3ZQl5__Ss8tmtYGeP0h-gqaqi6NybTlIyGc_AOniTZIR8QUruR8OhovJDkr0JzU7bOeqAowc7wR0Iq7J9KcaxCmffN9FmwZvpGOXxYSGcv2Qft5rLNYFbRE8grPHDrrkdvoePJY568Mc-lTJCZOqU-rk_NYKd_8V5FGeaOGg.jpg"
+    "https://cdn4.telesco.pe/file/nqRBsEUXDAAH2M9egBocqF99dvUUaRt8ZI310NEn5wMppTcBOIrzOkSF-ogm_Svo4evSjdj-3iybz-c8YWKo7b1ds3rhkqWHFjAKMX0YdigUgo-7ucJ-fU9F6AaH39OcqE8VM8zFFE5CU2cEi3zzKoqYLhn97POuGhbktnZNj1CijxhTyoDeLLgQI2ljkBv_x_FKM-pKNbU3D1kt7SMQLlziU1uR_VN0SdCmqg9tnujrE4ohnvko71joEZKcAq9jUVL7QBcEOom-DMjSDrBiigWzw8fQX2uQiX4xunksudHSKFIx7kVvDneUwZwKK2cd7qiMc0UvcOSurH6CG7fjsQ.jpg",
+    "https://cdn4.telesco.pe/file/OMNG_fq-vXkyOTAbPGb5Jbwm_m1eqILu_S6F-VweOoEiHMLoAGXTcFu1MjGnYLHeU5yJubYgrE55bYREo0islPH9Gxw-d2NpXKsKwWjan7twUMaFS0zs-iw3gg5imyN_uAfklJnvSEGJueawibYXli7ZDT-kQzn7-khay8FkXZNRpSlT8enGsMCU1RiMQRAMkYdDcUAhmKuVk8dVatwWJXgbRYx3bbGU-FaraHNSPvdy_JBNkIgQBk-q1o-BlK_J8S7xvOI35EREUqHM93ezETMqF5lRz3DmZKh_mdlEzqm_tllk_0X0mgX2l37bB0CcYN6Eh9fpwWkJuvHLjz2Txg.jpg"
    ],
    "date": "2026-10-24T08:10:19+00:00",
    "url": "https://t.me/morozylni_kamery/6581",
@@ -16115,7 +16168,7 @@
    "text": "Id107887\nЦіна 6999 грн\nARDO\nКрапельна система охолодження \nВисота 131 см\nШирина 60 см\nГлибина 62 см\n3 місяці гарантія \nВул. Вадима Гетьмана 1",
    "price": 6999,
    "images": [
-    "https://cdn4.telesco.pe/file/n7IONDMslPbNSxEh0vxt6irolq16ydLQVHQy8vFSFgBARJMmikp2EcV81y3Fh_qAvKiAbFKq_vbil2LFmCrGDprdt5NMItxb8o3DdxJTqFkb_Cy7OQryrhUZYb_sAc3oUfJzyjzEWC08toFzUQZs1kPRhS9EcY4ji0P6IH3iAi0-h8toCsppfxBpD9-AjKzR9pmjCtscv6HhrwYz9Gg2fkicmeikUfl83TORgb_aLpr7bH2dw26yqsBOr0IeERS0UjxM3jTQowIEtXx6QkcU83wEnnHqMcPbyen-lsUWFzMjwUE7RyuMkoaXBXU3lTF68QcNwNpMVaFQbA2MPWMNHA.jpg",
+    "https://cdn4.telesco.pe/file/KIQ_QfKfNugCk-OofLuU-eDTh8E0GDtyfsmIhXYuQNz71dFu7sqGx64D_sbUEXWpUlM6SknHv3sCnHGUvldqpf3GGqx80HsRtRJpJf1v-WQT4AtTUMqbmynK8HoZpAe3zjmkxy6krGlOwMcBjzUmmNifbCQIDZja7rKb8EoWl0BcgSY4hCVU2EQKjJ396pVcbz86wtkzPVgeq8mmrPhMQWWJzeOXjA1LwoUnIrh5nVXuXUFb-jg7CK_75P8fr4nNjk1t5k3YmAaTpQoMKU7OIWXXKjfw9co_c2uxSZO8uPPRSsZYVPbCjc9hQSMt4w-_eBxbyfRCUPou2ADGmunBqw.jpg",
     "https://cdn4.telesco.pe/file/v8mkxCZkKSvUi157nTjMYiB0GPIn8zilnNaZJNOwqPQSJgbDzoeY5661Pr1DXbE4aiNthKzjgyleLqGSjlt0YRNnmnu8-OTrHYPSZC1OIqOCnkKKtPhND7qzHlA98zumjzMKXNCXY4C_jIi0ku4riYhnxHkDoymyhln1NLJ2-mGW1W1D-8QCtz0hXwl_dCUZILBzaGakfJn0m--Qx32CuvFU8fdF8GvSQ3aIH_yfhmTe4aRfZN34cEnGrBUjrK3x1--rE4Oy2rS2dBgIIxEonSoCogHUXjolCNO7CIO7-RpLpdyxqXM1KRlmrw7uHn2h2N4LcoV5iEuFpsKLA_cHxg.jpg"
    ],
    "date": "2026-10-24T08:06:01+00:00",
@@ -16889,8 +16942,8 @@
    "text": "ID105110\n❗NEW❗\nЦіна 9999 грн \nEVERmed BLF 70\nКрапельна система охолодження \nВисота 63 см\nШирина 55 см \nГлибина 61 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/ZV9e38eyWppN3ceon7USyjO-M0C7dvEiOOJ-fqck0ZUQG6DMMhcZUxhFbVQZ2ZFITtmIbLGBZS_9GNRX8JSaXzU8zsROIsCUrFjic8avysmXmGr6tmdLdjI4st0t6bsYkkMMndUyessUCAhFyySDEKfkAYujc7JITvuWVmARCHkzKKX62tuG0GcoHAE4LYApFXeOkdjyNOAUft0xmQRkG4vOW0ISxZ3vWLpGSe0kfwZJskoBj6suH9TAnmHO4VwoWeKf11JzArt52sicHP9NBZECuZCBByMcfYGaffO7g13_Cnk80OHQUN7TzHE6Ic07rnpE1655Ecjtx9DpYeMz3A.jpg",
-    "https://cdn4.telesco.pe/file/UVBj3GSpaxm1QqBPBqtkuSrS_WtSlqwCvCCMoait7z7JC6O3stfAu6aMSGVyViMYo3BhC4B8zRYq-_9SGAyqA-hcqn5KuyXTX21mjrdfL23yDz0KjUEK6qUK4sRhuSkof5T_hwgSSced7Ins22jilyMlx4kDEdtxQsplNw6W7DlnL6Agjp9b7vEis47qJ-16TdU2pKivvsZjuwn1tbuLZf3_mzzULBCTjo92rzqsD7SJDUExIvtas8-c1wZoR8STFU9_rOBGWOcF3fjQVW7O70s9V7vebp_wsBkcPI-B8FNpEP-LXWKgqEr6kIWH23HFTgwxbnA8bu3SScwlagLGLA.jpg"
+    "https://cdn4.telesco.pe/file/szeLB-wlTMbDCaFH9FPuHy5NacVnuexkrxelGbMawJNs_mIFRvJfdSf18pGiDcLmTnhOx7U0T_urqALuH6ClOAV_M9yyeUmp7mWwT4XJ1fJewe1Yv-c_tr4eoHuGA_snNTd_G4BcnPV5mg3oVcfOp17JC89v-gEbB9qaD9qN3dfH3o21FoQJxR_VFNpIu4NY4E7P88Ml0d6Gh3n0Ty9zdUHiX7MByI5FaA_jLs1nz77vp2TMPfDCy6upFLK1tOj9iBPPMWn6Wwsy2fL7AT6vf2wpjK1Hw-lqxer7OOBy2XEy6WYh0h421q5Xnxpy6-wXBvMg5VQQXuAcJmGMbG35-A.jpg",
+    "https://cdn4.telesco.pe/file/lPT14_CY1c_sg5HmnjQOQCZO4MMGpWoU6YSp4y3B15BnwMyNfX6KCNmcoAhlrijozX-eXbxufgq3LFlhPK0mbFjSfxdLK2A8xXqZJsmj9A27ai-lJTeeXjhASBMlszyNZb2Q3-L5tytNh5eAyXuE-Z9qEvmrvYf9XlkwIvR62SvbgPH-h4NJrvbVjfJ-OPL27KrVABQ90W6Hy0mlUd1Tjyl9D0e4OkghtkGbTEQa048gCCLQsGhwHfseHZVMKEduCxkM3DLmoU1E1qgb5u-vx1CTn2whcSK4LAGD46c5F_NnWO7prLAVA-eJvEWhaoHCnWNosixoEZEY9hUCABAXvg.jpg"
    ],
    "date": "2026-10-19T10:14:41+00:00",
    "url": "https://t.me/morozylni_kamery/6573",
@@ -16910,8 +16963,8 @@
    "text": "ID107504\nЦіна 4999 грн \nDelfa DRF-09\nКрапельна система охолодження \nВисота 83 см\nШирина 47 см \nГлибина 50 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 4999,
    "images": [
-    "https://cdn4.telesco.pe/file/dzkaK_bD6GeGOCNL5LL1pn_fLPSxb52VteYAf4-MZDXH1soXQBUwjtTDAwfm302WskS6K5GfQ_J9kAx4r0SQWOXC4KQhvgagHufQ0ET5eMGAlIWTBrmGAPf5QT-ypTD0Ar48kZvgUQ9U3ToWzHV2yxVpD-qmVkkbZTYf3zM-CyBXSJI076ph1lJX1KaEJglekCoD6TuH8bFd6BmX02F7-4nFTiwDI9abZab0d7BxBEJoHo8qJw-ppUUU-zC2iQC6YfPSnbPdlS5sNcOeHTcDAOM5s6ASQv8KbOekIcbf40kvHr6nnzCP7dQTs9J0y0MGjtDYJtwr8KzKX6As3O-VQg.jpg",
-    "https://cdn4.telesco.pe/file/q8lkfxcdVC24iUAOsAsnASSGU_AZpNtooQm9TGWUKrJI7IZqGDyeBGzYtCCdE-RR1X9g3oYP4K7uZYtieJ9XcOM-TtIzc5Y64hmrpXHJVu_MlANQgm8zaJHT8GuajVWXGC0Z93ZItSCvm-laPRYP3Ne7hvbCNpkE4Dk4irvgta_62VnN6Er5NNAJCYc11mlyqOgh2YGQruujtngagYuoN8kXZXh4D_A0frIfYWo0FUbUIef4wKdUxLq5FSGYvtjYl5i8_17Si6dX9lKErEvgWUPEW4mwzRB3_2l7WoO0KtioWrZKTplHPYS7OD2jbexQawfNcmXb4fBlTjch0xiq-w.jpg"
+    "https://cdn4.telesco.pe/file/WIX5G2AGOh2h8HZIk17Fd2Jwe-dyoJO5zeyqYNE3xLx-XQosRbsPSOKkeMO0P9bWzkrrfxoQtmhXt9yoFHC_Olkkd_WNZdAX9vG0WkivFYzczT93_F6EGo_gToZYPXM-sL7JzZKZA0b1bgeRKf2nJLXYP8YHVwdgp97OIeL71-cxUYW-CYkgGswMjZ5mjApDnAxsTeCvM-iKZE8BuuKcWO5s13zIZxRP6m9Kbzm8Qfw0vSSXhBzh7AJjg0eDvijh8zFA-QxtE0Qo0rFbOeCR5X_WVMGoD5avvHydSk9BtLt-eqw0qkMQ-WtgEfuM4-XjmsyYps4FJi1Tu3nv0mwwvA.jpg",
+    "https://cdn4.telesco.pe/file/aye0QcYJQ8QFWEEUSj_FKOqkDFXZ-qnjOCo6lTQ37Rtr6QJ-uHpMpvAEgMIeAuuh1TqjZpjL6tQc8iuiQgks3pdbkXTZaGSP2XRitXNB5vbmVcIL-lYjnMv0ribipgwCSNN3ztWbYKgcw5P_r57sw1CDO0-FyIS27RNdbweRFDUPrmFpOtXr4wS-IH8hNe8ztavxe8DfF1ZJxZ-boZhSHDbK147DLnOxisNRNim1uZ9MBEK62TjW1RaCNA48wJqibJuNi6WkS2P5e47mK_NWT676KKneJsDgJUOBnW_thCFpDmtdhlpJmoPVLcWKeNx75InsCY45GQKiTUSDiekLjw.jpg"
    ],
    "date": "2026-10-19T10:09:57+00:00",
    "url": "https://t.me/morozylni_kamery/6571",
@@ -16932,7 +16985,7 @@
    "price": 8499,
    "images": [
     "https://cdn4.telesco.pe/file/ByeCOlGyzUzN0In6XoVaEqZHMMdzjEPSvo4A_AUMsTJAA5Hy-kngPI3Q5YCbOoCbSFM6UWdEm8iy4IWvAFwSH53tGcwgqPKoYnsHmYmXSDJDsn2uud2fI_acA8jH0B41ZccXbMLY7jLMo50WkIn6Ci0kgHLJzLfrHIXiZcJ4NdAXgreCUleE6-ajdAnsuICOlPLhkbiQsPZD77PhcBl-_376Ir1Ow2kvw4IuCxDIZ_IZCA8pLRQT_Nuq3iQcNa63JjanHgIcqs-obr15zcKHDxdQ0ENSv9156gcSbcB9xf6NeCV-5dWSJ3XoOFlHZlw4OVJrdWo--SM2p0dVp4-1hg.jpg",
-    "https://cdn4.telesco.pe/file/NroJAats4aXzm3r0bUlm3hIx1xbFPyhZEwqZxuEXqn6OBUgFfpgY3GFH5iUs98Td3V06KbMQ82FTWF71j58agpmPG0aehHcUGxBGhuxvekhsEwmdysNTBShqlZEL6FD6ADrtCshw9fjsyOrnJ36NJNVCI_4Il7GkVB9shZ-sJI6vYiNHQTRSyiGyCL_5Wmut_vW6cW24Z3rcqf_-4wlKA_J4CN3oWvWhTj8Cnqf60za5oW0ALt18sdMKHwzHr0KSuiq_8RVUaNxEN7S4l9XngTMcOeV3UtvPwq-mPUN351Zj8Mbcy8bUkO8KBzG02v6lJRbC5ESCull1we4vqQpFHg.jpg"
+    "https://cdn4.telesco.pe/file/b9iY5-klQmK2TjFYTgbdoQcEaMHI-yytCkbV-D1aaber406e-FPeoDIKQgNyHvjxysCZAGzssLjYRocYbXxR0z9Mqan7w4SE8_ZhBwK6Dk8czWzqmXam1iILcywE--BSGrZ644P9Ij4IkIQ6K89Jv_krLDLc7dWq3RHPe0A9wrnutN3T9yng-QRjIfyVuQnYmxrMHZBsS4JvXCVz0LCY9G7FJZjos9xZhjbfgDa5Yg9DPyzaUWVpYkJS5Bm7mkBIM0kgQMDf6MgX5d0fV-IQDcUnlA7BTn5ViWMd-VxPgLb1J6TYV30zSOzV1-RkJdLpMpw2s6eBGi44-TpZB99kmA.jpg"
    ],
    "date": "2026-10-19T09:51:18+00:00",
    "url": "https://t.me/posudomyini_mashyny/4302",
@@ -17214,8 +17267,8 @@
    "text": "ID66926\nЦіна 9999 грн\nНова ціна 7999 грн\nЗнижка 20%\nHisense \nHV603D40\nДо 16 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 55 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 7999,
    "images": [
-    "https://cdn4.telesco.pe/file/gTdhjRJ1Y_JOgl1x0ObARpWlf8duumhL5wFab_hefKSvcZ9Cq7gWmitBG84dqOz7oJORTDmaQXm6TousDjr0S7eLc1bD_od7_EAUgI--9IXiMDDnwIdSZSzkwFiDhl-eWRovovQxMt3q4wrfB9qo76qR_OjRu81TmNRo6nwaRj-z1LwznuYyTK46qwR56KD5BYPtCOwUlsEfhCOxz0K-MsR22jOUZH2lDgr4-ItROyxhD-ajstXwu-RrW3yrGTvAMartKo_M6-C2xVpVwRt8FJ7QW4SqZljrwnJs3OHj7u5XmJZ4L8-TNj_o7K507QgE_nQ_dCsR90VxSo_ChTNYCQ.jpg",
-    "https://cdn4.telesco.pe/file/G8H_sCAqQ7NSR5gWzVDg2oKVeebGkaAdhYVpDyARqE8h_LjxCgyYFN44TLwwmZ4TZ-jL-o0YGxFCAfJnFG3-GyfQyxhDe-yeRcXAlmriv2BoSG1478bRQEFZ8j9xV95Y0SYGYU4dTeGvlJ8hq4bHBUNq95p7TSsXlxNiqDxEAJBQRpFhncKUWvgAzMkABi9qftLdkl6wum2-pzd1h157jqN9_8CYC4-2nQxKpolepUOXvT_tFIye9_cKg_1EA8Nh-_Bdrdaj5F6-jcVD_GpQ8bq7HzcjaoSbw5pjjnSvAqtW-pdIOq5T9FhLg0m6zCDk5jXFF2Qd2mNQVyB9pF1kQA.jpg"
+    "https://cdn4.telesco.pe/file/H1sdLYoUc7GYYcvDKiXbIPckHvERWq0jqtb3pLjrty9y2QctRG_r3f3_hBLCqmuWw-Y1bGLkUDTtd5YZc7MHt-gxTkdBLysysEjt85azS_w0fLhg2qscnFGP5g1CLMx805LAb4D1yiM5jqPpC8wg86wHoJKeXME9AqKiLlzojTVXBjVRJnoZcn0utsiBXjJR4W1sNJY8jw1u0fCRB926OYY8SAVpD3UGc8M4Nf75kp3vIiJlXB7Fd2KE7OUVDfXrSJFh7v7rmCN8o6MpDA3dSAtpcciJ5bDr_Ud3piyOkdUsQxy5h6KcSOmY3hsBWab_iH-EtE3J2mQADCUjY30ifg.jpg",
+    "https://cdn4.telesco.pe/file/kduQ3b-ZIWqvixrKMdsoPYRK5vtCBuqnjf5ddNPnIhpleV7b1F1Rk3FUkVmrkpeWwkcqoT1qzWhDEmSABe5KSxZeKSVY8yo4kPGePhtH0sO_ShNBjSj2VS2d1Hq2SGZyNGdW1uVTGSoUMnPtUn4Qts4w1PLh54UaAalkzYmjFbo7eORl1JNx1oUjxsX089MNbP1NFF_Ga3jyDVVHuwW0JxIM7QKLZaZ8CFUQbCG_XbPJlQIH_WIsorjL64wh-YNkvz6pKUcpcm7foGtgl-bu7G4RihCvr7L-FDIj-3jlQBB_39Ov5PzTcLyDv6eUGMn5SPuzncWEOMSUXoEXODz2sg.jpg"
    ],
    "date": "2026-10-11T16:05:51+00:00",
    "url": "https://t.me/posudomyini_mashyny/4286",
@@ -17235,8 +17288,8 @@
    "text": "ID15263\nЦіна 11999 грн\n🔥 Нова ціна 8800 грн\nMiele G 8051\n380 Вольт \nДо 15-ти комплектів \nВисота 83 см\nШирина 60 см \nГлибина 57 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 8800,
    "images": [
-    "https://cdn4.telesco.pe/file/UV_kAu3CwwJy_MQuNk-pDdKZMZAUMTNR3eiI1-iFkayC_UxlC7HZNv83MvDjCPTS4dwKZGmTeCTk760lAeR_Vj7wstYAoBhxeXzQfxR4nmyknu-CGcEAj6cZReS6LMwz6mf8byMnXVHo_2kQRaET205WMiFL54CkInpqVB_OsNo_LHXVgzP14YX2aR8-nU6jSKA44fr9vRZoPpY9mb9QjTtrzOeFzyU1Kk2M1XsxXpA-Er2xfiXyJOXEh1Sz5vyN3IcHPj5EUy3xaupD439IFwNIdfH_W1Ng5tUdObb1Lmv7jKa6ScNi1HGfgXv2x4nbp33puUPyzBaeqAOw8jbbRA.jpg",
-    "https://cdn4.telesco.pe/file/jP-AIDOIHzswgAR2ZtXNtiVpO4Iu0ABu_aWRJPf_IWFbcSIqBlTko4oaPHG_Qy3AypOrtOQkrf-K0wYOyypvFIHo39AyAPZLIPvPw1tTFsdnKQbfavqvSaV9PAJh4jg3njaIcdHrhbgYQSsFadVUF9p9VagDfxxg5lu3VfdDfhG2XPQjCd14oN1Xq3hZv5a0qBUXG5qF-jDkGxsqgBTITKsjYtmVdSIOViIoasWC1dj66At7o7g_ezB1j3KHWK8OtypEuZrv-e92_bcWyHljIu6n2pkvc1Wx-g2rQ5Oqo5Qc0Zn6nZsN5HXQUk0_CvffZXSpuGj_u9A0NVL7aBxiwg.jpg"
+    "https://cdn4.telesco.pe/file/TRn7As5sZvT5jGOFb7vnJh8Nck3qYmTfZp1pbxPiAxx_vPg300uvAbokqHHqJXAETnfGoalj3YezD8V28zssBAo2E9RIHqhJyxoPrDvUwDvUt77sTe7RIQpOb2BqoeawgHD6f6Ls-2VdF2eXsnZFXp1AsMLljlUcW4D2LghQSn6TQm6GKjTmvgmGSKAxwgJs2FqxEJ-TYvVai5jnTom4pfWinAmQ29B_zUVUyIKrc0bvk_Ajfgu61yjEYrnbsmVCFDcn1PDKH7EozJ8xnJXarWqX0ccyFO4LIRJIfOoSVIg8KlJaihbQRChja_CcSePeoJLgv1EoaTh8N00mkz9HBw.jpg",
+    "https://cdn4.telesco.pe/file/iYB4qxKIKSSPoOVkQujhx2jGYV8AgyN8-wG16smC2j1KIsSW_Jz6R13O2t-w3yowZd4VRZmmLtneFJ0yfBWwRypwyaAduYBgHFfZvpllzjR_lbsfNDAogoXwJtq0_bs4-oGBYUJKnwqHAKztmUb2KeAt4PE9HrqQRdSR9p8eYn9lcmHHclDT2nz8krycRp0Q4lmwnnxCf4NnwsyLkx2D-VJPRFjzGxiia_G3NP0E9JMmGqPdXP0_51SjivvlECIau-TfabpdfEh6UgX43HvVWoyb4e3jD-O9ZisLQjv6VIJJ73t5y2Osr36V3r3qyF8uhkE7MU-BTL8AsPZ2J6z_Qw.jpg"
    ],
    "date": "2026-10-11T16:05:51+00:00",
    "url": "https://t.me/posudomyini_mashyny/4290",
@@ -17264,8 +17317,8 @@
    "text": "ID102819\nЦіна 11999 грн\nBeko\nDSN6634FX\nДо 15 комплектів \nВисота 82 см\nШирина 61 см\nГлибина 58 см\nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 11999,
    "images": [
-    "https://cdn4.telesco.pe/file/YliespFODhBVxps_wYrKJ-OIA1-R9nrN56qTLWR6gO0WSJ6zZ9HwhR6ZONewAgmDq0aiqKW_LGEGhqIRGlM33jUGl4O0eGljszxcTEB09N4aPiqzn4eR8lgp7jl2avotoo366SK3YPafFK61v-60Sloy8eRsw4BrSlwZcOT5wlVndRR1vK-2vY0wctwO-lBwaNI3UF1jzByHw67537TzloOjeu0DtwuQotOy9a4zksZR0tjtJcwoLZFUkAF1c0O8OZNuYd-DlZIFqDfLAAkczVBahrbl6cWI-d3r1rn5ta_SznfPmoJll0f2l1-Iv06rse6XxGVQZEX1vYTEygAxpA.jpg",
-    "https://cdn4.telesco.pe/file/hWyMz36Az0KHxOmc8eApK5Sa6KTyweL07Mg1YeNp66sPuWa36hZRiGsBniVY98TZh2MR0jrHduecd5FXjKs56KqOAu6IvrbBJFQ1Ga9X5JSZbRW3gx4yCJF_1VaCF7m2wNaO9lVRHTZS9gUPLdY_bWM30xJtpV4w_1EwWGlUonziTflFO405wRu-w8l8oB47_tb8QOVFa0sTzEGOdVFOZsbdUb9TW0uEKbItEqO-0ulMiwIaizAlPzb4jbCtC1foP6xuDFFrSz-D6dmG8lMFJNYQFg7ZNeagHuaAvyH14T0dc6jcyKg-aBb4PF5cRLgvPJTkOHvLLtqgbPt4cF1iRA.jpg"
+    "https://cdn4.telesco.pe/file/M9SfNaBY-L9YrpQgMWi5gvY3BGFdC3lwJgxmyEUDg_VwG0Uq7Dsm-9TwmRqJvYViRvJaZl1EPUNgM7JqtGf8-B3PnfeP6tpKi7y8Gu_4LGpJLyiG6EsEVwmJoxphIg0yj5U7VRVdhdwgPPklK0e7EQJdDzHbNhTTHe_ieM9Q9VfMOnjIa1BKRttxV26x2JpBsWnXB8Jvmi-GgziZihP_YerSuI-Wfb9ssOtk_ArsA-VqBrhzgKw4c2F2UkzKX95O057OwD3RbraDHg2Ue6I9Tiv8OL7vwi64kx3dKVJx3MJ1OTvSiUIe-LPbyhLXdfT2-2-mqAnn8KuyM-EDjd-CcA.jpg",
+    "https://cdn4.telesco.pe/file/cq0uCuWoi3Ea4ZgFxmlbmS9SZymWoef7ZbL4fdnPStmVlNJ0RgjcumS-NVHiB4IoUQyx4wprGAw2XIem7uqYae7NKqlY1vvx_MIVH2x_0Tmv8KWqjMrfkjB37qPjBKjuCcvWZXY4wsUle8j7Z1H4d-HaQWSXiEFyVKk-N84iYod8crAs-mmf5EZu_6Bp_8iXXicEAJip5bD-Q3p0TILTCBhBcXTkAZuS4lhDNulxT9Hqo-FHWuvklA3fGRxgakjYxYIhPzXd2cxT2SfIUZrE3OR2-6JiD_rKMZh8nhTtKFdjyGnrFMOgwZeFpjl-Cet_GM5Mnnwln87D-TCppK_1vA.jpg"
    ],
    "date": "2026-10-11T16:05:50+00:00",
    "url": "https://t.me/posudomyini_mashyny/4272",
@@ -17293,8 +17346,8 @@
    "text": "ID74306\nЦіна 9999  грн\nHisense \nHV661C60\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 55 см\nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/AtC5IPPIyygLKuvKc9_TVysslzAtmhd2KrhUtgKP2YPspHK_MH9c81wZv2F9OfM4aL4wYWtgLXNLCzubjD2K4D6lGMUh_Vs7sFW3gu9W--PsLJXe7b1reqqZ65bSNxhsB2k5h3LfRoFb9ZJx6evfVxGqGcKPY06oi5JsrrgiBDm_Ut2I_0R2oM-S2RZv3ce-qeZ-wVTauqI5qvP8EADonoqcoNmu8fKBtjf0saV2-iuD4ITIeFhP9AELVHIAlPNOiJ1HD8wrZHwdWDOW5MqkuO8l8K0T4V1C848hfxtUi03ijo0piCazAdjliJU04H0miRW5hcHeyRnOFiE_SW0dhg.jpg",
-    "https://cdn4.telesco.pe/file/XXNMu-FKyeKf5GePAYoPYNDlujt7oPZ5SMo3XiWbecuFwhKJAeVZEq6fgMSn0Tmcmeyj1AbuG8bQjayw6ZagrYqz98e1mMAqGDuANj06heWmdbhozpeLPQ0JDGQKAQcYZXn-RIcCVzMvpMuvz-1LNkik4TOz0GQqNDr61w-Hk5bblKfqXWdOvCUyfmEngbaavchARfZeP6fMTJj2TtB37rwFX99v9eUa24Z1XQy8Vq6bsqa0yzB_lNCct80-0pdc5tnMsniEx7BMnknqCJmWBCLJUVpYceJGD2fMfPwRULuP7pt7HhgFQ6cqoIDKFTUDTNu3tR94_4l4kEvLFFVELw.jpg"
+    "https://cdn4.telesco.pe/file/I4lciinHHiU2b786_LBPRtsB9pcijMYxgjjblRTYyqBDuhsuiKsfiPGYOmqiTT7vyzg100SSjOU7BYlpFkVvUFeZhJK47cqXvVf7kWDiDcmraz6kvpd2nqVkZLGudn8Dkous2idUPMhy7W_poRowv0aM6X7V4QRaeeVQNp2VO3C7oiaZD5uysVx1OEnHWeBMM1RhYvq6tdeJe_plIqIxkcoWdm3_e0toxeGy8wHES2aTRIPIwOv8pN0Isbz60k4Or4DO-VieuPOCzfoII2s9KsEMusAaBWXa_BzLNLVQvKE_DZrxeC-Dc52XWQGTrH-bnGpjJNBmtawQefSAvx89qA.jpg",
+    "https://cdn4.telesco.pe/file/NgHJrdWmKmhL45WAjLq6lL73s1hSkdojwIxcGDD-VTh59WZkcMf_GExE_WVONhoGwQZwyxEGjovq4Ehv1YD4JkcSbOUt1-U1M71L0mhmzLr1yYdt_t_ul--MbUX0l5Y5thw_AdDBhL4p0V-D5NM1-uLh0vL2e42t7-G8BphAB-H4vM5XfYHC8TghSct5ZXOMgUJ9e4ycrQSmApe2VVQdANtv7LLDND478qHHM8d7Cr2eIvQB5Iltx406mZJlKcTJuID1esLmhNja07p-s6nKWLL-eWEgfZjjPGdVyz61eaPeWyioHA_Y8QhXdiGt1Vpvypi28oeDotJO1Ee1Y1tYeQ.jpg"
    ],
    "date": "2026-10-11T16:05:50+00:00",
    "url": "https://t.me/posudomyini_mashyny/4280",
@@ -17322,8 +17375,8 @@
    "text": "ID102819\nЦіна 11999 грн\nBeko \nDSN6634 FX\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 58 см\nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 11999,
    "images": [
-    "https://cdn4.telesco.pe/file/q4l70HOJtG0aPhadHnx9WolC_oo8mkPwzcl4rUh9PxTRWiz26rmQfS-o0hiQGcxyDZsQ88VJkyvG1Q6Lr-bo-XU5mH5Fl0MgST3m1AgILo3ZWvw4ZFdH3D4qg9Gsi30mmmgY_hKPXOY9bC5VpNr9tyYycRLM_sGL54Qfg0rVL026o1UxNTHQS06c2OaiVShhqx6DZ-OSletuHgZbN7XoYgwBVXHzlZoYJBxqRLSxx8Zm9-nDnkuZ7pLLDLIvJlgekdcoGejv-Jnj4QZ3ZIpBFgRFHrVw9UiMu0z2h9mtbsbfLPgRVZjGhuW6vo77VsrV9sF-lNML4UBgKi4ox8kWJg.jpg",
-    "https://cdn4.telesco.pe/file/d6kKigQR2QcAIdOb8xyfE4xlLueyzHgK0mvhPlJjlgNMPoeXYZ59gjC_TTU5ojLLyWhhgIa94hlSprIQ86clbSymq8d1Xh5IHFKKqIsR8Bsv5qUtr6ypP35VqjX0WEBQIYmHYVePVbmNnjJLyhj6aC9U5qaj04rSJqdw4hiIpwDU98i8M236tKJ-qllfqNdcYhhzrmV93YtLyLeiWw2QD-A4GW2D8byMtXSYfresbN6HeOC9Mp-flOI76DUL3cXN7k026o88ej0MP8bp4-SJuKfXVWpqDXEjK7G0Dcluxfqeeo_wwxuX3nYKb_MPs13lM2k_B10DyZFnrBtCpETZUA.jpg"
+    "https://cdn4.telesco.pe/file/S9tORmcsW7JP_EqK5fFNKN3ysIPCVbjsWIIbER2H8vCMVvjIb3MSwEEYbdzKDwp3IkN2FO1H5OC7wxgIp5HxYavddP7lnponyUqZNdiaQN0Qk_vJAeYKSRUHdA-gBP2RRtZId02zsXuYL7wjsY7ZGSuO0Ka4sFLx3mWWwlWdgwNbdWLnyh3bBjDwTsFx7SZl1NHLHX3_hqQNZDWIiRe4ZhCyV6_dxs8K-aYqX3Qo9Rq4ktNs23a6WEw8W5tL1cVW-VZTfTAVfavbH7N3tMixbrs464cS6scfPLsuG4rmGOc9SSpL4crBcj8uhYPZaEoXmwl7t_r472hD1C3ZFvr2Uw.jpg",
+    "https://cdn4.telesco.pe/file/ae1Z3bEwz0BweYKkWndv9uIhxR-YhkkyCqjOU64zdfHK8glzQhGEj6nP1l4I_urLULc3vNOzVTiDJVNdocHq3kfpSSydCBuRp-CSUrO1PFoaQRlm7LWNszvCDOlPoqUD9rMZbgGHEwijKKwzyZfC9YTMPI88nIqkHK4FpT-3jq8ClUFZUsNK3nq7JbUMkyO9YNjXiKezfqqzdvByO_hM61X-00xKENY20NSAyxr8mZRm_LvojEwGorrBzGvG5emektD6sI2w3vzx2Qfkc5KxSE7cuhLNwtPd_KfK1cKH5YPq98qulC2ZWhVyIGFbrucimGIsD6wXC4J3LZRZcy5udQ.jpg"
    ],
    "date": "2026-10-11T16:05:50+00:00",
    "url": "https://t.me/posudomyini_mashyny/4282",
@@ -17351,8 +17404,8 @@
    "text": "ID104312\nЦіна 7999 грн \nElectrolux EUF1900AOW\nКрапельна система охолодження \nВисота 125 см\nШирина 55 см \nГлибина 63 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 7999,
    "images": [
-    "https://cdn4.telesco.pe/file/hXJ2SqbiLc7FOrQamJfcXCPdHM7ZwmW14lmFH5Zk5iKYN_cG9F7wAcpU9zI2CvSjgykdHOX5Tm0ZewYd0IljbxUg09N3C-ItfJSm2Az2PiQTLe2WVEPPd4q7vqr1iBizEmfQcmAphbxkah23r5KRIyjJLkQorlOffoJ4I8RwstfSEem5m42KT8yqCTLjH-UFcXxl2DUBBb160_gG3_-_l6z0jrrf5Buahis0XwjAFerfM8I7ER9O7IuhjRedDggVNY3nw4C3ULATOVicOPB_4qnNVSy8ua1ckidnLaB7Wrj0QNQUjCpsd1fPKDSXDoPz_CX8tC4LYlLeFQTGrlTBiQ.jpg",
-    "https://cdn4.telesco.pe/file/a5S3PQmpmKfblxp0f1BOi9p8AZI9VM1ndTWceWnWZd3zLH6rB0AUqFiC-N1TFyd4PZIad9iyQBP7iPBYr7LbfjHNGzQLeKAcQmZ-4_2M4PR_7-sTk01mNnSyWuVjlQUJXqKb_v62FQE8H-VAuiBdLpgPQWkzgAuCV9i5PHuXr43oIBzet-grVSQnoFytdZSU_Vt736SLpw-34ob6Lnbv8ZSF8duICJ0CEns5ebjJG3bv_MwQLn-4kG_bT2qGmccaiNVCSCE3QnZ5VDhLAz8duTHpzSEqi6ooTOsB6vNHs_NsRxZ5S3jleq8vzTfK1ndQxRFkRKywwzrtvO-8hY6KHQ.jpg"
+    "https://cdn4.telesco.pe/file/DX7fK-CbSPhlQ_4GcnG0t4raZNV8olh_OWFpemmjhGR2V1Eh-kgDDXgL8OwlZXJo51VZbdMl82eGkMQwsIKAOsbSY_g7Jk7zJtV8ty8tCinokrOce0D3tZ7OniFdLvVB5rPr-lui5cp7OTyFL4jgIHi1AK6XzOUFceHi0_EzuIXYzl9R7hsuERyDXZBqjBE-RhHnXZXB7sQW7Mdro72cWkpjq8YWCBrFgsHG1hPaL6BvP82QhjeaNAdj5LME2vfvqN0DSlxL1JdY8cn714casiruj0F74wnAstA4Eidq2XioXrATWxkpT8UuyydYxXvPOj_RY-_tzOQlbyxtPDajUg.jpg",
+    "https://cdn4.telesco.pe/file/cwo-_l2AZmxtflQpJYqec3i1qC5wUeNZ3BCduMkb6YnP90Cvuqkj8v7ag37vbfsIH2-tUR4w6ir6rP_QpLI1W4LNiO8TUgeKk4N8Z_HkvzFjm_MMfP1Q8Bmoc3aSE9NL-tIIaeSE3HkUcwVdK2mgMUXetoz0rTxs7bbozVYFXAIEkGhWA1DZCbhXRzs8S9HkohkIuYp2wIAFfyP_WJA2dvHA8f9TMxLgjzM7iyQgUOb5JEi8w_s_OtA7GlTtRvh8v0LGrnXbQiIfAYPFFAxefaUCVk_QyKYvcQ6kyFMpe_vczx9hkb1-uF5A-Pix90ZqQVjCY-XvDyV284uwP-TBTg.jpg"
    ],
    "date": "2026-10-11T15:39:10+00:00",
    "url": "https://t.me/morozylni_kamery/6569",
@@ -17468,8 +17521,8 @@
    "text": "ID107281\nЦіна 13499 грн \nBeko FS127930\nКрапельна система охолодження \nВисота 170 см\nШирина 60 см \nГлибина 60 см \nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 13499,
    "images": [
-    "https://cdn4.telesco.pe/file/m74ovjsm6gwS4uybXfpZ6E4KGC_zy3QqfQxJna0vyhkvsJJ8Fdz3lzmtydbEaTRTN_uWxJVBy4B1dCIJiFXAV-t9s5jAtWXF7GnIcselZA1-2maS8vu8OuQmP6ko6JbupJiGqMGcrbHgPTjIFeUjt1pqZcGKOP0P2_sJEvk1bGcBESJhhiECUOTzXy1BIVW111JXOddsSs5lgt4tE1hXeFOahXUsY8Wk0uUnbC1rhYkRf5tPCBAxQ32Js--AF7SQ2VxtaOWW8pj9y6ZLUJd9QtlaOCMXHDac9a8byUEa-0SZ8NFCGm6an-JZV2tcfCZQBDo7K_JZB_o1wsvrPMnf5A.jpg",
-    "https://cdn4.telesco.pe/file/Lr2Py-N-vmfCcooMvSN6LYsTjvB7jqZR5KqQZ0SZ4WfyAy2TKziD-_z3j43uT-nCPyuxfpa6KADQ469pDfMPBkCC8L8L-CPXQdavFrW4odFUx3lfahYFHLxrWRUb3EqLSKNx9gmbotazs-ScgZ76k-9Zgd6xuoMNNzYsu96lYppANc3b68tNjjA7h4U1EK5hyjNrnlJDRmN6vHSU2qidClU0ugHDG9QU2cPW8qfGkesWgFboZzsrSdFnURf98wFQzWpX6bevGH0xQj0tbVPJ9eQn3JIkmVtPe2RFXBPNDy_sCrb6OboW7Uw070fnv_OlV1XMgRua02WmD2nilHGiEg.jpg"
+    "https://cdn4.telesco.pe/file/l3sihQAIFK5sCBXeM25i5AGM0DV-xjdkJwWctj2gWPMfyZeWR-M8r38QjrK-cp-GCVKIHaWDeWIMz1RZh6mrk2OZ82HFjDyfEkLsKq6T8K3ZzFQ9XomOEIV6yjDNl3CrlqgCafaS7qJO6d9mAAunIZ1T3ROQ-2glZ166YyLAY8GUnr4rEK7L_Cs5Huw30n-mOZkNazcJaIgAr6blTcBNijLNDO6blz_6bWChUxTNUFEOEJ3vzqEhE06WPsYR65MQiSRpjt4OScTKdVSAphBrPTMXwxkhKL-70Tc6X16xoujrFXm_YZqzRfj2egN1sT0saG0VmtQqjjwOA66v6nK4qg.jpg",
+    "https://cdn4.telesco.pe/file/SSCZn0P7UxIPJYb737uvT_l_2Den2Ti9PL7yZnC9dx5q5cPQxYIySiLmwglJ4WVUF4eXkKZxr21CL8XMHqNMpMf7QAqnb-Jb5MESTFN0QFcWu2dhXim3jqQTfiTOAn1gG1aZ7dMX2PBlrTmIEtT8CadmX24wro9ZlJMrIeR_bKlmvqHi307vfiuoMlTbGCQ9txtMlDS89clFGJO3ck-LrSTmIaDyBBdggSA5TRimN1-hD42O4yAVgefgM_GxdFwj4BQAAK6dNsCKrLJSkcoFE5T45vbfKRnja3oy1jLQzbxxvpLpstwB5Khm33N2WP5tVqkcvcXqDLlClKgNwnFlHg.jpg"
    ],
    "date": "2026-10-11T11:15:56+00:00",
    "url": "https://t.me/morozylni_kamery/6567",
@@ -17489,8 +17542,8 @@
    "text": "ID104578\nЦіна 8400 грн\nIndesit DIFP36\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 56 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 8400,
    "images": [
-    "https://cdn4.telesco.pe/file/gwVYRDUsqV3aGGcWgo6h2cX8aYTSxJ-c2R0khqVYvSjX2R73KcsCIjrK20h10B9AjMw5OoysvEmeOB_l6oDn-Zx8bNe_LKRoQjQMAqjU199eyjyuQ2qifUuAt_1_j9vTkrmdjaTiHriZ9YtAFHSB_E487hTZo8f92XtrIffE6BwtLmRvOUIthXnan3lr-xbL7GCTE2IKPTGqy64CNkgNeEDsV8OW7ExZcmO7y1eXE2bQ-h9bDuQZwdspqnFdiz79GF2sLBXdCwXPMslBrlfrstG5Zs7oPF8lnTB-ikkb8udWaJ_5xx5UTpZlTjujuL_Z76PZ8FGwvIiL2Ai_AErzZA.jpg",
-    "https://cdn4.telesco.pe/file/HNdUIuscrnjCASRCmIvLmY3aD2oBa0JaLMlbH94XIHV2QwGBRuwewxQnaXtD3yv2PrWPtlB97U9-U-mNuzwfUsgQGxYg29gqCzgiJLCslJ3K3-tCVyH-bkJBMiNdk5a3Ues8ObRHj_JxuLJqLL4wP-4Nwz5aVv7qz4K1YoJehaepGpFjem3oi9_iBbnWMb45jGcz3MABsa-f03JwvEXL01o3fDD1APs6GxocBR99dZtYKLRyFfedCrsvWmGgqAuHRT4fCpXtQA7Q97b7wY22DEk_LW24Jn9-a2dPXv3iA1WO7fVueTeZoPA6jWt7beevNouzYAKOQ93HJuie7sPvCw.jpg"
+    "https://cdn4.telesco.pe/file/J63mBHo2LqPzTX-zJaasc6xxoKKVuldW-q0lfCNlXMNIt9T4BtSvLY2j6CpvBnlcmN2QJnJZYunhpiGuUijZjnw0mpq0Ak3CHnj2BqzhlR9vyJBt_xQ9xgpYusSNZZFO5zwtns-PfhBfq-sTJmD1OEo9Akr0ZvpZTHnTciLhvpkZ2UotL2-ea7nk_CuqP7_xTqFhKtuJ9phBPRbuFn7ZTPBD8DSzEv8sdxRw51ZyN0XrgpJQM27Lhz14kMANZJZ99ubX-0ZR4sNh1E61uOiFMQaW0RDCMRmvZ0iBGMmivMDw9BRn7gF4W0ekzAqRpWwfglNBQ1idAmCoWz67kdnmew.jpg",
+    "https://cdn4.telesco.pe/file/Txm3ypABxjdgWpRt7pno5xNnk-8i8KS6xC2Ju03e6dKmTC6-F2PNHx97JV_IqiTcFBWP7eofKH7Sey-QZlWv1h4c3brDIoDkvS0Q84eYJb4pKypr8LuAjmiAjZ-jrEWt7nsM2eZYVHGmkRCJGqVnc9OCYtOPqrjvwbDJ_tEeTnCGAXi3jNxJ-SbQlwOK1TXUyuZsW4-3V8eVlZxDkyq9X8985jvQ71VZtAMhqOH_krLd2nvq2SjjXQUSOc3d_u6jDb1MsdgiNQg23Nl-Z9vRBbTREefScGn7SV6E_hFNtWt3ZDlKiMMzbXqu-1hJke4_mMIatRhDC_yLtoNbq3rKIw.jpg"
    ],
    "date": "2026-10-11T10:45:23+00:00",
    "url": "https://t.me/posudomyini_mashyny/4270",
@@ -17510,8 +17563,8 @@
    "text": "ID105794\nЦіна 9999 грн\nSmeg STA6143\nДо 15 комплектів \nВисота 82 см\nШирина 60 см\nГлибина 58 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/Up7-5A_dkiFxknpLw4Dr974Kwz6p335R2jdVjoBtNnFaZLy8ld03nQJB5F09KZ83c_RyjdAyncyt90-efIPmRHKC7rfftEakmjvGQ85K0t6mR3TmT_OPuEeQ3rU2UaUmUhAWnWcw6v4Cg3royV-rXysGEg1Nk37TAQyTcywaN2F7IdXPXLa7W8dmG1-PPidPOY4a8FA6Q6upO2tZXfyC1kVF9jxczl07BKH3QaCtK4QwiiErxJnNXCjhBqIhMeEnnveUkL2yDTd06QrYBsamp0rHeht7sH0PbHro9nCFFTLCGRxSoHROGNTy5c4uoquJMMXtKO4DVKIASaQbEFkkBg.jpg",
-    "https://cdn4.telesco.pe/file/B3h_NgNHXgDyWIFl5vLGpd-hvan8DWf1_0OSOdzM8OpaxKJDdpf4voZj7767Z33rsyk7BIbqEfKwPjIaF0diTP1en29_KIRyuff5UJktf-zsw3lJ-v0RIc-r8NwZm4h8eSYTNx6IGykhuEuRNMx0glUSwXVQWOuvfglZVPrmXtkdHoT4TR22xFuXLqDXmHpCPt-Ef6XYlYm-NN_b8SJ3GxLmMrIuJxM8Lo1Fo-ns1wWaZgvY78WT-6YNcTxgks60TUk-pH9kBTvrfNukcwrifoTb3daZXIAfkj_IJFWBxkBRsoCyw68ebrQGxFQ0Oxq1-K2BxZID93b5po3JNBsfOA.jpg"
+    "https://cdn4.telesco.pe/file/phkMf-tCTn1gV3O3KImkJ1yqPNdo6Wfm7XqxTJMtX0mjrHeawjGFn4uFXV5PWBSwKymCt4m4Cx2_w4bOFy66vKj3sfImWShOZn949msJGbLmRjmFNY6EkJcVFf4DIMurmJHTzzxWPVrmBh8Yk9DlEWjujVq_vUkabYFcOa67QhD-UIeO2SOGVCF475EfzTJJ_6YSXnGwo4Wuxup4VRhjZwp9hfll3HNuYQImTVTCWrjXqBLRpAX6qVxGG1s7Bb8N4gw5aVx8Ipdv2x6-X-Be5U0Kg652UCGaNFuii_-i41Munifobz4LZzjWCn0O5jqfLQot5_Co5P-sPlCeqcHjpA.jpg",
+    "https://cdn4.telesco.pe/file/rRm-vgYUIJzPP8GoayRuSWueXGUc_62aB4BYW5aOaZe7uyiy5Y90YILpJUnWspt7jKws4iXWLsQv3dUHPeqaPKzT1q1Xriub2o37Iqrv18GBQ193UwT65UoWBtJPdAPalI8wD54PwoQRVL5n9W2yMpJ9U7qwlSyHucU7KmK_HFHe-ZL4d84O95zO6Z7zXoJyDMed_mw_OYdg6xuXP0KYMv4GjTAV6s9svSp4yQAnUpgc7oWxFTa1Ca99kNke6zfubL82oYgizCyMV5e8p7ZMlF1DuJYJ9U3FcuXJtBrWnh2GS-UTxcyWdZaS1wCJ5_WbWnL0yLLKy0PyhIHDdUGtBA.jpg"
    ],
    "date": "2026-10-11T09:43:07+00:00",
    "url": "https://t.me/posudomyini_mashyny/4262",
@@ -17531,7 +17584,7 @@
    "text": "ID107299\nЦіна 13999 грн \nSiemens GS34NA30\nNoFrost система охолодження \nВисота 156 см\nШирина 70 см \nГлибина 68 см \nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 13999,
    "images": [
-    "https://cdn4.telesco.pe/file/XY4TN19r0nAqqsKg1g5sJc0vWDDN7GFLGW7V6rQOYm7i1PC7GFPoq6lT0ZNM_vHBXhQWHE53S7Mb365S91IWf8AKaie2s6PGPnBjickH3VGE4bobnKsHNkVeHE2Z0Xro3mItXUrlwBdRZpT6ItmJVLKZzXkP8VNRjlpTOQ13OnMlvhLoaWkq3pg6tgkitR7O1dEXgNpRYM713nokH9U0g5SmEKgFx_3Rif7gZU2itPK4ZeQFHpbcdX-cV7N4BxaP9V_hKsLKONCctPjZ-XdBTQQ7jdepYsKNXabq17_PHeV3sAnFduMumsN8hogqBzONQC8_ZQBMxCcIfNiJCJBx7Q.jpg",
+    "https://cdn4.telesco.pe/file/OLevI7OR2bhMX7Dpozaw5c2Lt5jzqyy00MWFCiBIWZWw-rfVT_okkbMFwhQDpyKoQQkc4SNQ7s-L3KKIhsQ3oXA2dJhr2-VbI4y9zK66VWDGqohBm37xkiuCZ8_SLhOQqAfv6pGSXc5nCWm2X_uszzbal8qeQzTUffyEti60yLM3pDKoRAPAQAj4fIlbvWJeIds1dWQNv5si-zzMCwqD3aNJL2mppd-ZjqTcQyKHVOVD7OzcalyetUVd4cxxmyRJC_LmATUbjocpClx8fLujGrs_xFdMN_TvvwqyOTPxJzGDzcvJ_3e25aXvYMlNMIkztHEmRvFi8z5DxRabgbjM2Q.jpg",
     "https://cdn4.telesco.pe/file/lmEq2d_4f5sgQOYkZsH3M_n83J-hE7DqxQEu6SXniKn4BFhdWfgIDB6L-_hR5jqWoYXEgvzE3dEk3czwI8QglC5wp4wkrKqPjxuYr7mFQf5c8hW4-u5ZMTjNq9PuaxKz-C3CFJNBfTti06rEsfq-So-lj-uHMdKCNR_z0k0Z6ty0E7CcrbHu0HFUkPVagF1hTd96MH4ImzCkc-pRdExbCSvq-QiEudT2Fi_fFQJEWCDXa7efQBYFH6VhKWtgizgYficr81A8KlvcEHbXl03A9vg7vatgFZDLBWWV4I-fV424g8k_sHWI4LJQNIA43TZXOK1Ox0THAXpkHG6U8GKydQ.jpg"
    ],
    "date": "2026-10-11T09:01:20+00:00",
@@ -18412,8 +18465,8 @@
    "text": "ID104777\nЦіна 13499 грн \nLiebherr\nGNP2476\nNoFrost система охолодження \nВисота 145 см\nШирина 65 см \nГлибина 68 см \nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 13499,
    "images": [
-    "https://cdn4.telesco.pe/file/J3mjW4uwQbyQ5m29X_iVC2dlY07fK9phd-urA4klyNnFuvmzeh4TR4hFwPYoHsYwas3QFx4z7yJMKrnBdsY_-H0poTL9riRQ71xniIszbV2QeA4fn1SKnzwI2YSv5Um3kvvH6AkMPrMe6mCQDREq2BhIM6h4EbnJjRyCUf7kJ5HHtkH2I13C4KAN9nO057CkwRJBYy908spjGLI81NnD__NvQMBaHiRQoEpiBzCYuTea8Wbd_v2B6SfFTataNrNMCq7WHFUBdR08kxRtgaMnNS0CcnpD9m2Jbg24_zJhNcob72St5mUIp5Ep30bJc7Rmu0sPe9k7r8U_NupfsY2cZg.jpg",
-    "https://cdn4.telesco.pe/file/CfwFmbxkTyrH3btuXurq036R1hHbKMuHWCdTTwzdpZSkE3-209Lj0wqBgzO-kdoZNc2bCN_3GaZm24vOyNKiBPakbf9RXj978WkJ8uomI4QnkwpQzVw6CMN-9v9gLc0R5f_Mj6ARGpOuccrs3_nFfPGKWW05I_39ov9FppQMOvpb24R9khiE-SOdQmrK38xJcvGlKFoDrhBvVWX8zAu6U_12LqPepoL5miIYDOv0YBfMnay13RLCqtLrDisXl8RXRGbsQ2wjoZb5svYKX9m87K6hXGgjUMTVEKX9UcxNJgO0Y32nlCyCMKCtAEbB9uqYDheBRnKDYbPp1AMqopHuzQ.jpg"
+    "https://cdn4.telesco.pe/file/KCX5g6mSZeAkwkhyQ-rKKMOQXhkRp28toDNVZm_qzp7Hr_N1Nkp-6tGqS_MO7oDTyNaFGmZWIRJEnna_1eDX9sVwW3dtXICZP8DFiRYIpiSqhWndbMi6WVuGDcF_eSVJXN10g7Nyj8nQN9r3SiD_QW3UMDpoBWG5w6Ytjn8Xp5OzOUwCGdkld5Zr4HdukIQPu-_hTaAa3ezoz9hmL-hHBHRidPE5CiHJj8ZBiPol9OTRC0TOQggZqCMr20HR2YxXmbvLRw30OqdmEKRNjnA7PNpixq0P23fGpejUHXvn8SnLAf45cc4Fr5EeDy1fhsGrZp76gjMwOes0v8duT1Ki5w.jpg",
+    "https://cdn4.telesco.pe/file/urhVxaL5jfLzSs54XJq8mxBmQbx0_5WQ0bh_WlmQTZBiqiXOhf-l2N71wsqlw0PTlb8Y7VlQL6aD3nqJCrIyWNAowky1pVRW7_dqpsS_XBNCecQ5AkEWhw26IUKX8taU8JlryX3aaKQ-VgQEknKq9VhT7VW57XYkIQ3McysoOCdzZcE91FwfM_iu_pWtqkaEbVbMFZuqizduhw77Qbwh1lVIwgSApg9h4ArpMYiqK5NjhskaA5Cr3sULM8jeunEGLB86S0aSDRAMNSRJseCtMgpXTQwhVQle6El6Xx2rDGMG-mUIGEBcj1YqRP21P31nsf85mErYfpPwdRhoLIXWEg.jpg"
    ],
    "date": "2026-10-07T19:36:19+00:00",
    "url": "https://t.me/morozylni_kamery/6561",
@@ -18439,8 +18492,8 @@
    "text": "Id104746\nNEW\nЦіна 5999 грн\nMIO STAR\nBD - 35 - 53H\nКрапельна система охолодження \nВисота 51.5 см \nШирина 44 см\nГлибина 48 см \n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 5999,
    "images": [
-    "https://cdn4.telesco.pe/file/Uwvw5qD_YQHlwNcPhkJz9Y_sIVJlW9lammtlS6fMlUMQoMzX-Jwwlmxw0J54SggdS0IMx998cgxC63zFTjTeVKds6_xdwOcOW4BhMIscXVU5VA4mGmCV0E7uPBvheskvNQQBkYuLXp14pltopCFPVv5MvuI-RiR7hDXpRfCQUEgIf0HMWTtorn1gvi-BO_5ORiDnU4uTIiuXCE0W17oE_6z7LcWxQUTR5GTXDGP_FaWqXASYD84tTUAzBaFWph6vDlzz69jPXBh6W3_HzA8zVdKfif6HqFdxPb0REhl_iZBImM4LvId4_zElq_RmMDJKuxg9tQ3ocqxoTSTA7w5SPg.jpg",
-    "https://cdn4.telesco.pe/file/B1iGmvIxHY4qkx8Ly8IbgXVt21XzHi0BQfehmH_zsukC_gswNa8SpsDi3YXNe2nDpBB4AUr737c_Ii67guo2zrdTe-fY-HB0Lrb9cMagsd1PPcHx2D3hX9QucbyObVXCypAvJWefNaC-5Mctfnx1sIB5a8z9jOM9iBvdEovyFeUaK6Z_0GF1eE93DgrZ9oCv2mvAK0fB37vN91F3dX80yfyeJ07JUjoDGrFQADKIEPgEPpNK-a1dxoCuxDJBKhGIKdRWavVCeaVzQTWZxSbDXW0Jm_lG1MQiioGyvdP2Ws5w0PlfQ8kzjuooA7HX0c4_JK7qVLzNp9kqdgNij5FDew.jpg"
+    "https://cdn4.telesco.pe/file/oSZC5YvoO73VoZ3QzhfFNIvfbcTI--MPmXMcAcnD8CUT8tj1yu1twoK41h-qbpkThd7u2Q7mPT-t8YQ-82Y73aDJ5cJ5bZbqRLwgig0_oI10MX_GI8UX7YqeyWosLUHJ7dBba8j8Ys2bXhgZDRmMyVEr9zi1nBLWDgJEfjl7m1gDWHcivkc_ac4rTN78aRz6druMuNoTFA0sZJ9BbsZ60UqtioI0yo2YP977Z-ehWmeE3nQDkOkIFj4WFszfXa37JI-oSnJY-BMSdFw3j4EMFqdxaSiVLxdURPgzQLVAbm2iMY1jhRMVEueyQYHy4zxrfFxItaZO3mi6bWCPuESZSQ.jpg",
+    "https://cdn4.telesco.pe/file/GTpmoYLo1tikboUzhXS4krpmDkt72WF7ac4AuOE5PAoNRY2Wsdppv3VtVxEObpMxZbRdyIeH2JiuQr6LclQg82rJY1tXi-SOKo1tEt8dJtujqwLQkUkPf7cjiy9dIhyOhMHrhnsxpqb8ifuHc1PW8iGfv0B3Y4Z2Frtyh-qqiAZtWlTsn56-89ZkEorlw5P7R8Dcr2t80QZYAi1xY7QmoPjmflj_abNU1G3AE6dgd228pSLSPsAvAsLx8Le5TwFOd0JCiI9taj7MO5B6dCu6CsN97dvZSKlXsujVgQ_Np63su506vVfTWihz_RWy1ztkgy3iIhcAwL3AMsurfpKGzg.jpg"
    ],
    "date": "2026-10-07T19:36:18+00:00",
    "url": "https://t.me/morozylni_kamery/6551",
@@ -18467,8 +18520,8 @@
    "text": "ID104778\nЦіна 13499 грн \nLiebherr\nNo Frost система охолодження \nВисота 146 см\nШирина 66 см \nГлибина 66 см \n3 місяці гарантія \nТовар з 🇪🇺 🇪🇺 🇪🇺 \nВул. Вадима Гетьмана, 1",
    "price": 13499,
    "images": [
-    "https://cdn4.telesco.pe/file/Y3yM7ryB2398MjDgSjt7japD2fl8MyQjJ5f9anABCU4viPLX7Vt9LTdjPxETrDygUhD8JK9o6asATPXry1Z9g7KJ0AfdFHzO6RTpk6y09gmSX3rn9S3c8qEnPsMI6nZgEZ8fgeMuG4f_p9D6ejpM6fI-HmVDC48jBsAW776OipAw_unrHPc7g1s6AW_5oKmDUntsCMrbUBYeyOWy8qZohbxJ_Xj3fZDiDPUifk4t1_mxrzao7K6_0QFMOLwZAPB0b5MgHqPOjLqZlGPp0kR1ZlMAlmLGVyYzzkP8j2LKsF1VRO7Lw-UN4Kw8VgJ_7dc8dlBtjPuOWh27XZ6zS3wbjg.jpg",
-    "https://cdn4.telesco.pe/file/BxoozH1apBBfH7vN98cz0fJn58fmaPTKqwZA_k1Vwx6LMfdZhVHOLvAm8RPJeKfiBcfQlSJbJWP2iTj7aXru2ACjGxYCVdyM37JdIOrXcDzgXG8Jst9imm88ovO8K1tw40Ofm8FTkD3zx1GgUKlhUrWxgIDk_PCygOreMl7hlOaTsfT__iNv6fiq3ZxnjMZ8G-DRj-qWUoGwUXdskl1Bue9HTeMDx9jky3ZDP5O_9DQK5UZBF0CGe_uXCZqxoSnem1PqD19P912JgNVxfRDslCnLRSTAVKWw1gnwv5c4JibHpga-nvsXyB2FgKKCws7OQBmxLSw6mT4CsZP4xXG3pg.jpg"
+    "https://cdn4.telesco.pe/file/cel0Sp2613Xjp3HDHHMGDosHAUq8OmXhf9ZjZJw2b-GrHSXHZRlLYEgMYrTtmsvgpeFSlx9go7NzUCsGm4dfcGh1TkbS-W5I4G34DmDWW34ZlB3fWxW5KnNd7Pqh7NMp7_p3AV0zGyay-m7N3aONTWEqKIlOXXASQvSZBZ82-zaKuP9GxWp3XD3n8eG1XDu9BpfHQlXAZrGRDgeoM1_pCQ9Pp-9wL4BOl16MGM3TzErJZLcHqYg4s65WRRfgwl0zHGG67s5FvpY7uBDChzH1d_qKYkjL9hJ33MxNdmipbTKGgI-gZpR3KUP0rbNmGr6UkzAKPssr-ZjPbewnpZil5Q.jpg",
+    "https://cdn4.telesco.pe/file/FPbCjANtWZIl5BONh7MxbyHzCVqcy3TINBvX1QSnePEJQGGwXkI2lwi1ATsceCN7sLUXj1hTrQBnLhkY0VK6jYdz9RzB6C_bKK8DHQqWF7lInlMzdkiTlQgN0rPnLneSJ_UO664fn6Lz7AQtwRhALbklLUdXXSD14R-hs9nlcZsovQ_9cjHTPDPmQFYFCUghOJdxvUYi2AU9nugJRi8qcnScPc_qq3XzwlKj2QkIVRs0Qx6DxrcYbNkoAEw6rIJzG52pFWDlEKIUS550_u1M7O6GRIY3SKmMDlwqw2-9hA6ft3yc0HEssogvIi7y3uzT_LOJDV2ap-S4MTri-ITiog.jpg"
    ],
    "date": "2026-10-07T19:36:18+00:00",
    "url": "https://t.me/morozylni_kamery/6559",
@@ -18496,7 +18549,7 @@
    "text": "ID105105\n❗NEW❗\nЦіна 9999 грн\n👉Медичний👈\nEvermed\nBLF70W\nКрапельна система охолодження \nВисота 63 см \nШирина 55 см\nГлибина 61 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/N8hb_K6q9K5VNWP016ypvKxPMeCXIfjes21y9UTdvufUTM5-8kuBWVZJsf2sNd7bRae6zS44oaG14Khk8tgql-M6CTlLgp57fkyEutciGdpxh5lROus0VYFV0VNZ8kNZc0ViSPiXYfonTc7U4RgywEhGInZwiPVNE2WRFA0_J8b-mIe8xd5VU1RzF_pWhRBGDNyA9-tsc-GzKukknL0M6YrZ_XcJ5gIFI9OVexgvd0M9zurD35yZXeOfLykg_8ZPqGrBZahB4iAqaFW6T8tKi_wQWM1Ro0ehwlBy3WGC5IR_0yVQ1K1cy8-2KnrbcHKt-sSAFxfIX3bDIVBY_ThHvg.jpg",
+    "https://cdn4.telesco.pe/file/RK7_17Z9dnXcQ2c-a5YTjUEL5HFLkICAhGUuW_QIRyGeNkaiU8Izcd1vm-WfjDPOlNnx8oTiKB2LoUlhI0GoPf6Vb654pQiPQ3IUIF8wExwxBdDBEBntFxHYE0nkvOiCv7AqBfHGxt4o2vRND6S_KIBhkxF5krY_nQGvhAgUvdI7MDtUJA55cmnVlOQAdjd0vFOCzCS251KBnm8gSgvBGsUFF_Pz7qzM4cKdhgYCg1htKSU9aGYNvLCsypvfw6q-g6_xM9LV7zlqhBS7OzaKcj14qyWsN2xapbj8UGAcwE5OMo0s35WWIi6f7GiXwcaI-_9Yv9CwM6_jBDMAq7tY1A.jpg",
     "https://cdn4.telesco.pe/file/Ri-7WisMlaX3kPIoewG59-xXMa8-3mj3Wc5IKpmvqaxNLTtt3nT9bWnqt2CgVL-lLdCqolP3R0P5MavPwR-WlLzCoTsADYWzdQ_RFzcbc--75Zj73vp-SaX6yFn3psBikhyHXT4y-oZ6sa8oAO3fCar4MMAPXmqo7YqB0zkchkFIeEJMlFG32EmP1XjAcUE_cA67be7Ku1AMZzsfyiJHPOfwf1rML_DgmHVqOLxpJSR0yb8ChQE9aSQ8GZQljUdoUQpn-7yotlqwNYNwnRq_LX0-6uQJ_Zt4qTQGViK24uzJQ_Y1vxlsdJ95EI06d1qoed-Zth6xAx8SqFCx-KiEUA.jpg"
    ],
    "date": "2026-10-07T19:36:18+00:00",
@@ -18517,8 +18570,8 @@
    "text": "ID105103\n❗NEW❗\nЦіна 9999 грн\n👉Медичний👈\nEvermed\nBLF70W\nКрапельна система охолодження \nВисота 63 см \nШирина 55 см\nГлибина 61 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/ROxE8CrcZuxCzDWDKIiPk7TqJf0m2_uXH-R29dJO-OKt0aViOLX2tXirHD6s5M1k71LhL5U_i4VmN20i2Lahy1XgTvEq4rgczM530pSJ51i_PuOVx7HpWdgOBG_vCVovLbvGbXZgFrqGdjmKqH8hpK0ipc3IoC-Ip9X4W_dn3BcMOxqPBNXhQgdIyA9dUJEB9KnEdCYIGMncDjm9g_ESXAfU9Zbu4UDL9DnHHi9YrLU561Kw1M2B5rkkbbFRgm-h2PruLesdHb9jGk8gK2uwdXIFgHFKsxAI-f4wn8g40YaAaQ0ieCJ2NrZmiy5dv-OLcCqaCQlZWQuB1vs8gJ0lSQ.jpg",
-    "https://cdn4.telesco.pe/file/iZ2img8SD8Buqo1pFgUnuk1wDzf62GHZ0Qd0g2HXHWaVlFzFCdI75vgcvPW8w7vBrGFDVAGLG1q4KWYlxhZ8myJ8ffWMn-NhMPYkM5W0Ck01VIcX4nP_czKpe06zVEc9LMzZxuHjizl453-mDGIKpJT2CCtKAUrH_qnjFUIGkhUL1GmAxkM1AUAcGVct4ruzFD0eytrqOg4kyTdYowQU13sen3qHPZE5zh7BcwPIURowuffCRDvI5sIzJsy9D3jtviYyt0zRQfOwYmeXgrTCQ9Ol427EMlReQ_MuqMJI11YXK6aC0NRngKV3ujTvqt5OWrNM0lVI2ZxyNIA_I1hpZQ.jpg"
+    "https://cdn4.telesco.pe/file/Eb7c6MoKqkE8H3IPvzF-XmNTNBPxlpBHFzjZg2R_xPI9uMNLazjyZVbdzvUeaW6q6azi0oR9rsYNb1mQv9T3n3I6TCj8h00Ow9GM-nogaIiBK6g0YA8z7xDMuluPnbvlkoWV4phLaS6GGgHEL0gE_mzt5ANXtIJ-DUYqR6GTmlatPDHpxquVXE8epQGJ6wLTv1elllQq7e6PF6DHNN5bOLcUuZRpwrC9LHrWtjPOIt8exkVOGT2suJVOpbsU-elYMZ4zUL9-N3uqHMsSB4hHyqNLIEOr2wU2ywzNzNUCa3pV5ZsVDl3QMSkkjkSXQH7Csahqd-ONPmdHxc1FFo5ldw.jpg",
+    "https://cdn4.telesco.pe/file/IrE9VfHvArpv4x4Mu4mCv_Tw-TTWPmUXel3dPZgYsFmJg5AzFre-ZzFXTDf0tS3DiKawDtBbtRzF20syo36FOs6mZyszWUEOnMlWE2Ynxo_0DKUBQOFVBq9TTkCXD1DZEj0_DKbeviHDfhL-htn3IvZoTeCRQS8FKco0h3AT4oJSt_Euj-yHnsmrI8IhHDhrysz81RNBjUweE3Ns2e5tCyKxeczaKp1byoCJSOprzgfhTnYIaPCuXU9wq9zX6nlOLNmD1_FcqI2uGtzfclePSvdGwjyouk6qLuTYps3ZDBMj-8Xf4NJJG57ny7KKM_4sGF_txcGdMxpM0Z5FAbKk0g.jpg"
    ],
    "date": "2026-10-07T19:36:18+00:00",
    "url": "https://t.me/morozylni_kamery/6543",
@@ -18538,8 +18591,8 @@
    "text": "ID105104\n❗NEW❗\nЦіна 9999 грн\n👉Медичний👈\nEvermed\nBLF70W\nКрапельна система охолодження \nВисота 63 см \nШирина 55 см\nГлибина 61 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/c4nWO2pZY0_bupEM8ERj28E_-p3YE8OvCa9lyARHIi96sA6XyV41b69gdtUS0eBFXDV8osXVPPoG0tFRcevtZMV_4MiNye2SrQm86D-9cdcF3_EaZbmCDQ5R3lBzJRp-gOXBKRVBkMc_t6f9Vax1iYFPv_8XuPedIcBMbR6M7kko4YpcJNtjBEae9zAIJ_tF0YDLNb6RxeomylVMFMuNP_YKCZ1p2XN4lEpTu8LZmihYpV-Jbr_X9rAsvi1rADZg6C1x7c96-YUMdaNGwKvZRygn6wpJkpgYx0QHa9zNzLlnt5oZvuqbcTdAn7J4IbZ1qwpl5ysczeGZlTN6KtcfGg.jpg",
-    "https://cdn4.telesco.pe/file/RLLZDUQpCeDDW4D51jw7fs0-tD65V3T6ZT3S1lfRiDsKtGyZSG_99cTV2AN-fIsnVTwBeOlM3o47cmkqYjFwKveQitU9Pw9DZgaoL_Xn88Nk9My6CbZeO33mJ7VflpgiNLz1Dq0v9GRVHylqUGcCd_YcGW2CQYiOuLko-AkZcmAWjZ8xbIy9W_GsNpq158k01zeHsxFrVXj0U7x7_uy3l1AKfkamWfd6h32xdZJ7bWW2jL7LBLo33QnXTPxx0LiR9biARWIYxW4YSTW7xBSN5lMpItOIwfoLlCQv4eNZ7kI9nMNdwoT1jzunvPMaRRWn4md-M8eRB8Ern5le6AY2DQ.jpg"
+    "https://cdn4.telesco.pe/file/NOI40ajMjZ5ATiusLKApmQhBC1El2UKRKJD0N4JCRotEvj3Dba_lg0guZZbDITucAT7RGjDHMb-GYHqQiDqVjTjfEP270_4k2NLobBkGU1o8pnXy4-v2iVdvrl2uFVTfVfidwlmxggR6o_D-KlS8aDmZPLE3hfOdh3i3h5MDEUyEE3u_bK-qMl6SbtvfIGbLASqk-Ko62vuyKcUWJpCnlTdgvrgQSKp_3z4qIXx7aGmz6FMOP2gjL9oR9Z8U0Wi44WNHqwz8RQW2Ym0emLs4f6Iq9VeFQw4CTCX9uE0E_tH2GXd79xLdNJY2XK5igpDWYFoaWoFdz_jVRP7Gk3FKGw.jpg",
+    "https://cdn4.telesco.pe/file/AMZI1XZV3s4qLB_M9VhlYzulO8u3CSr5OikuyBMerJyTlxY9S391q-L78SPdC_kgxkkQsw8vmLermPnBGHEQh2bes14tbsNMWSc7_WzN479Fi0lXUqS5EexqvwPC1J74pdp0Y7vAIs-p_8ou6me6KY0mY4thiAocWLCeqFIzk5IiNmTn8QKVsErHaTdyZLe6zSzzFxUTTtZCy5pnHVn8LNAVV1IuW5u5wUhGDtH4NPd6CYRhL94YSN8RfYth54G4sdkthV3_Q9FbZlP8VjUrI6KeqHDGsEef6fYcmOFu_pum0038bbsgzWjf7iia20v2GVmITv7dyMPahgoSen3E0A.jpg"
    ],
    "date": "2026-10-07T19:36:18+00:00",
    "url": "https://t.me/morozylni_kamery/6545",
@@ -18559,8 +18612,8 @@
    "text": "ID105107\n❗NEW❗\nЦіна 9999 грн\n👉Медичний👈\nEvermed\nBLF70W\nКрапельна система охолодження \nВисота 63 см \nШирина 55 см\nГлибина 61 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 9999,
    "images": [
-    "https://cdn4.telesco.pe/file/QIX7dy7mLqjA9myb7Q8nVEXEYab6dOEWljs6__LDt2YucFfBavUaPXiI_wLvb578-bDjsBBQ7L5CMik-qDeMFRNv1NAt0AN_QP4Vyv6nK_OsFJvv-E5iAHiejgcwssP0oI_XTyaLKV7QFKwDXhMKLZdLqw4eJfUbHARkI6EREsPYawb5MwgwsznVYDQ40oZu9e-M0L866Ig9pyJeP2EvEw4lWdLJCp4JiXuiY9Ipxuuf63R4yReLFUb3LjWOFt6x7YgNex1VJ7yoJDT4dacdVoWt66X4TnVkhsuIx0dmW0G4zw66LCwq5S5Jx7iS-fHB4NCdJM7wPfBO0NNYdYY5ng.jpg",
-    "https://cdn4.telesco.pe/file/uBX1f-AvKnvT-jsY_o02TRmTy1MKm7sVETW0cdYtyncYW3g5BiaHjpy2Mzc5z-PpY4CSk22gtmEj97ThNs7VWrOj3vGTJWSOge1kSklH_BUMK7exZu0lamhL2onHf3COudGz3KjXwH6cMB6KuhznYd4CPLR0K2t3FPiogZrYuqy46VGdqadeUTGjvn6IqU0P4ROo4i2OXykhA0aNosypkpGp-r0W4bHJXStIg_TfKvY9sGVLWh_GFhW3NM3sb5_TP1i5JLHgGQPeo7jnAng4M4WfRhUw6xFQqnFQIDGAnM1Dsv5tu2BCUkLWiyhmAXLAEEClX8CKJtnltifg935xSQ.jpg"
+    "https://cdn4.telesco.pe/file/uv42tFRumOr-Kn0V874o-64Ui99e4Bm_D5vsFZrkSeuACI2jzmzmcK-8kIPvIyqZRZx5GHwgiv-olkqo6B51A6VH3SuhoHZk40VAz57fvSCCyDWwVvZkz5h7qgANr9YOhxsAees_1_CV3_ThlOWBC5OCQPhdc3hE1ljTMa6wVwlRq5mP8fWF0ODyUUc6FevAQ7p3yF3MLAIuteSLtM3wF53kvgwx6qvb7u86B_Ptx2lGMPBa6wDtCaGiMDSH4r6XzRwc2g9230TfDYh7fSTHrOkVRPPs4dhyiyBMh7vf2TD7IN7wvcJXkk763Gc8YdpTigkOY00YXWeIw41Sg02Mig.jpg",
+    "https://cdn4.telesco.pe/file/PPJTjsoNOKccQtyVfuTwKbSSjBHhdE4Xws-4OahDKu_yy_np3JvDesHIdvKMi3uQmjdnL--inkzMw-iWsaxeoUIfb1q6M1u462VKPpeIh80hlcn8-OuAuaMgssbOaJk53Zf79ufw7dvxgM2HapFAuiBrON30P5Jq4CGKDFWIPZJgGTlccZ0cFJdb7JiTldsdGNmqDSYVwWIoHlQ2mMQeghoOJEbuNZgyuO8obsHoQdMrPpKjYYFosQKpmwaM-gZTNjW_KeZh6tDRXY5UJoqORpMeqm3S3bndm_Y40byqOOKRBllq0Ig4Zhp-IucfNUrWksCTSu7BSFKvQ7EHpB7aiQ.jpg"
    ],
    "date": "2026-10-07T19:36:18+00:00",
    "url": "https://t.me/morozylni_kamery/6547",
@@ -18580,8 +18633,8 @@
    "text": "ID104248\nЦіна 7499 грн\nIndesit\nSFR100.001\nКрапельна система охолодження \nВисота 100 см\nШирина 60 см \nГлибина 63 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 7499,
    "images": [
-    "https://cdn4.telesco.pe/file/UEYFxMWwsnH4cKCYK3ZzLKMHMKKsUe-KBwabYDkUjS-eKJo6IJ2v6fqYQG9Q5a2HnOidkwaowj63ZQGk_zAON5KlwSr5UL-bw9WLvDp8H5kCx_uuD7wT8oMuzBEGTLB0ZUe3YFeN7TgMcd_vsOCExHFkIvwkBIanSr-KCmKWIpet9dstB9ir_FTTy2Khyt0gvedVCn_wfc85QfGnIIoIkNlW6uZjfllUY8rSJOr7q3v90xtoAyeWYcIlHiJmiHFy-Xymab6Y7mmPo5nx5aWHvEunS6mDv1TWn1TPO9TsGJLtPfL1FDb-JE_alKsaJfg_zJKVXoZ6NcBNfsk_Dzqi0A.jpg",
-    "https://cdn4.telesco.pe/file/vJ_jp3u1i-VhneWqoJUzBMfmVWydQ-QQxccGjEXzYvCG25AzAi_y0NzhY9FcSFAa6Gv2Xn5XcHCohheO3RAWUSDchzi6bbNqoZ-xjnzBUPa1HMnWHBlcD5--RDa2txHXf0z_k78H1il695zykAK19eHPepDhsER6i569BheDrV7b9lP9xZyV0mPwWXzhoG6kNseNBo9yLd7U3DlQpWus14lngGVwslpEx6Q5iuHrqzNC5zfObbsUt5G2ITudf2XFKoW-YMdSgsGzdV8rOYldurLqPUew0XCOfqvbSV4KXDs6ptPsTZuDLSSY9QOAPnHBjr35hQjEgg-yRyDgahHFCw.jpg"
+    "https://cdn4.telesco.pe/file/AWn4G-KG-xYKamvXxzNMC0RAeqiNb6R9YfAHoO8V03XAPdkTWljVxYp2ZCczAqZiLNzM53oI0WuTuO8Mpf7gH46dqjWGi58sKL7egBWYdVyZCH2Pqx2MvYmRkkTVV6ZcwLi535l1IR2LvsClYNmmTeTOmhXU0cfwupgFZVPf-1vi8ChkIQC3209Zzhq63oFWTOv8KC7zHHk5JI1GX0kIbz0ELwmhAC7HhnbtiJ6P8D-4e5bKdPBQ-hPGV3bU_iCqpXh1QQOpyA041d4RDDU0fS9yG15PA2L8FQ35SzBN4cy648S1yhBlqnc5zTWUGSLgjw0s6BuXawmWHpMp9krdsQ.jpg",
+    "https://cdn4.telesco.pe/file/iomNnwnQSyOGLp85PyjL-TXw8v4cfixiN8gmJzBcvFgIJeAaDuWz4RHy5NX5GMBmARxB3Zl9M19COzHQad7gBQSCCTWGjI5hR79y9gEp9OgHeRk6fIEeEgdO3Ybevn-1w3O_bykUswZxNRoCQIukaNmzO45edQRWwwgGalnWuVWTDpumenkRZjnEjdTi9UceZCsbrgEd9p4umxd_MbAYFfjdi0CZli6nORY09uCo7AAV4t_alHtVe6Er8nq_cPJFLKGryCbt-euimVKeAbUhB8URWroxGFWMtFamseMg1XuoQkQWCz1u_7-Nfb65Q0E7TbmIzYD9slyEaZcN7oadlw.jpg"
    ],
    "date": "2026-10-07T19:36:18+00:00",
    "url": "https://t.me/morozylni_kamery/6549",
@@ -18609,7 +18662,7 @@
    "text": "ID104221\nЦіна  12 999 грн\nKrups EA875E10\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 38 см\nШирина 24 см\nГлибина 35 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 12999,
    "images": [
-    "https://cdn4.telesco.pe/file/byoTxhb4MSFGmFJ8Bb65wJwUutyr2XnvsmgcaZj9SXQtguG_2-j5AbV3V0hHPwWXLqW_GamPskCJu-sBDvkvf3kFo9QY4Xt5vt2YuNxd6ybfSJWWEMHOfbklKb2upV2Ar8zAZEC9XHbyDPdRL3TKd6smI3grnv6kTXDwWa5z859_VvzSw0Y7ySKY6kzujdtzSxDTF0vRpfnNJziFKwGCG77tAT8lz7zLDWCxhliTMcrnw3YDW5u26ta9pikmHevhLRH7Zpkt8T-LGFvqBsLF9K5Y8cNxJ5IeJFtddF0z34uXmGs93GklGzAz1zQAJEjV7ogEyY0KE8gVJevQMw2X4w.jpg"
+    "https://cdn4.telesco.pe/file/nbUa3Aq_HtU2wET2R9I_D271oiimObxiDuNwgFqP3jzBCxvy9-hCC3i7FBv9Mij4tYugi-2ffIIJFcFRv5QaS2zcPvEen49amP7qUuYUx7HBh0iBUYfa0HcqeF9Sq6Q2E4czyeyl1pF2F-Ja5wlDxet81X5IXSpao7-zcF9MQx7TjHycMiiwSV97_l6DbDZTFxqB8Og4b3Ll6LUkzcg_iNIKFwg4zK4xcMVQg9WMjFHZb9EoROrw5_7rQNdw5-PPUBxvaGOPyXmsD_8H4DWhC_boNI56Yz-nCiQkW7d-KixKeFZryQQow64PGZ9-Q_T9ZEwnUuOtu5glmbVg4WHshQ.jpg"
    ],
    "date": "2026-10-07T19:33:27+00:00",
    "url": "https://t.me/kavomashyny/737",
@@ -18636,7 +18689,7 @@
    "text": "ID86047\nЦіна 12999 грн\n❗СТОК❗\nPhillips 2200 series \nEP2220/10\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз \nЄ капучінатор \nВисота 37.5 см\nШирина 24 см\nГлибина 43 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 12999,
    "images": [
-    "https://cdn4.telesco.pe/file/oiDGOqX1rP-Hf94E7LcmmG41ApGkpXFAFIk_iz4QBUqyrQ2z4b2nATqcw1co_urIdZtJhdm605ur0e4fKljLIOIq2e6OwI9tMYREjYsStxuUToxRObxFV6CC51ACmF8pn1vWGKdZDS7fdSoyF9DF0TV7Bj3BDl4O7L3tyebklXBgGYFHT_Ci_VzGycmxLHP7kDT810Ai4YY6icV3NZda61Lk-hd6PmZfTqRE0iSyMigfHdH_5xheXjxUPrFx_zGGf2ZWLkcfC6hfyAf4R9-5yaPG4aAQiBo7XD1_Yq46nZxSSrjug7YPIz4aJDEdO-1g718XXCNHWYmKIbx3xsctZQ.jpg"
+    "https://cdn4.telesco.pe/file/U1xvpGTnwxMqRoO1GEIeBbzfyPmibK7IwXSWRlHzNTqo4ZBiyNl5dRfPW9GF7m7syJ_IBNBYRszo61HNmUbSh_fpX2ls_su2tbAdjxm30DLqpSQwhqdErTYuj99pJFc0YBzM5hu81QPpIGQWMxRuIZAr8DdijREJ7Uj23_gIg37WzDB7bvAxiLVC9l7G6F-rHlcWaD8PNtudxzMVp_2xVrFBRv6UxGYL_FwPPzp7q3BifgmeKlN9noremfQTOSjwFuLFHXUdyK9nk-DKhR8hKJUNFgTjqYjlKsMfFoVHCj0iwmyWrmM-wCk4rSMtm4pohgmfAh497KfCzRM0DbQnOA.jpg"
    ],
    "date": "2026-10-07T19:33:27+00:00",
    "url": "https://t.me/kavomashyny/738",
@@ -18659,7 +18712,7 @@
    "text": "№8423\nID73440\nЦіна 19999 грн\n💫 Нова ціна 15999 грн\nLaCimbali\nМ1 Program \nЗернова кава\nРегулювання помолу є\nВисота 80 см\nШирина 35 см\nГлибина 62 см\nГарантія 3 місяці \nВул. Вадима Гетьмана, 1",
    "price": 15999,
    "images": [
-    "https://cdn4.telesco.pe/file/ulSA7UABUHLO0wO1Vh_B_xsNPdpPqNcyrnByegUEEO0z1V5hNi2-Q5eaY2BsU1UbIrP_DzUEAEXEIGN1B13-CsniOy0CpxKN-hd1qnThxW6ymuKoFKvCSDOpgGXf6Uc3JnQGR5FpwI4jmyNfSPpUeaOy9LWtTxK39jeW1QvjwIB8SCwFRO5wbLx1ZI-8eL5FRbhLpZNZLUbYkPmyOP4F2sMgeddT-XZ9K9WI4dd4JCqkDDqvrr7o4Ix8-ITdZH-zzo4kiswhB_Sh7uGeB9fZX7u9Fx6zijMOWuIQC1bVa6u7lL8eoNgUSKJGZhRirOatf-wJhE6xnqmMH-WKNNRFng.jpg"
+    "https://cdn4.telesco.pe/file/S0SnG4uNkWBKXlsxli-t1k3AtNJc3IcKktHfT5kBrSOTsgz5jXHE1jOvBDweukErNAt8HkfjYuZGT9aibjyUpeHF0BPnJjWRPOdYLsPqeUeJOSd8q1JNZL462soZOSvPBSwfbYYaek-UAmsJvqcwaejh0BvL8CMs0rL2sm6PP1OqVc_jtIBSPrb2HTrbQSbDdf89evp1xYavusIpQlZWc5UFE5ObeXeAaQp1laAAdFNVe-EvItfcftAtvy-TXyJIlQokvg27d4hKknDRdt91NgFyz6mZ8124OgYoVa6dTYRv6O2pfoxIYoBsdHnVoqw_Fw0rJuCZid3pFs5D0EBI8Q.jpg"
    ],
    "date": "2026-10-07T19:33:27+00:00",
    "url": "https://t.me/kavomashyny/742",
@@ -18681,7 +18734,7 @@
    "text": "ID104265\n❗️NEW❗️\nЦіна 17 999 грн\nGrunhelm\nGACM20\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз \nПідігрів Чашок \nВисота 38 см\nШирина 22 см\nГлибина 47 см\n24 місяці гарантія \nВул. Вадима Гетьмана, 1",
    "price": 17999,
    "images": [
-    "https://cdn4.telesco.pe/file/ZDzOjauDw21Vhna9UpYY4PICdbDk7GS3iYCUMeNHomi-LX4Vk3QkBNHF51vzGXoCcF5-vgNtu-WUwPkkn45fMISEhzVgfV1ZWNPENtgfsK8-iw4a8a5WLeY9cWd9suYcKIJzx6HcktZh1XPArQEw7tjim78dVkrAFkmEmC6kRX1et3VNn1H7icvmvoinmKLZGuv9hOr7yaD3OqoSB2QdxzZXYIwSuLm3lAEC0EgJkqxiye_N8BniO7KcQLYqIiWVPIO5JIbOkP6jkto1CL-mBZR79KAH7xdLsfdFgwBX5suLLLZN3S4-FhgLtOsWw3mTIqKhsdwf26JR_9makVAZYQ.jpg"
+    "https://cdn4.telesco.pe/file/V9iMQn3vnTwuwCqUNX3K5HjOMGGnTKEkZKUGGnI3AV_3g5ga34wOpdfZ9ANYakuNajfT28FuDxm8Yaf8dMuclsw_BMdZBT6qIEl8FxajSzTS3raom6DPB_qoeKE3d1x_TihAEY5H6ntXlZC-Ib6CWhRgrKph5HxEMSgBFojBxCEWkyrLkpFxWN6VoloNhokPaLTveciDgZOPEA8njim7YNseO1HQLWMGvZ_kNsQEXiAJbGA0ebE1t_PtqAx7GBYOwi4Rj3z20_YuaRg08TJV67gYfGvVeOxySzGabdZIfpRCIz67Zl_g1HU4JiWa43vyeUjJonQ_LTXWPRrgKK_78A.jpg"
    ],
    "date": "2026-10-07T19:33:27+00:00",
    "url": "https://t.me/kavomashyny/743",
@@ -18700,7 +18753,7 @@
    "text": "ID104263\n❗️NEW❗️\nЦіна 17 999 грн\nGrunhelm\nGACM01\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз \nПідігрів Чашок \nВисота 36.5 см\nШирина 26 см\nГлибина 46 см\n24 місяці гарантія \nВул. Вадима Гетьмана, 1",
    "price": 17999,
    "images": [
-    "https://cdn4.telesco.pe/file/ii_Wh8pARtBtGEg_nzB7d2sONX0mn3SsM76M-deQJ6tUtrvS1XqOvZlSbFzbBHBx4mTZzcyNpqhxy6mhcHDDbbz_zedOv94HKWjayknUqjnyajFWEhDLD5XZUl3xDWp96F8wJXA3RSklCVQKIZ0spPzoMFmGHINBYGn6E0TMSrAEkxrphn3IUw_qD5G1UHunq-iWhk2_zysnTPPWvkTRbF7PDQgY2JsLEYGX702cLVx8K07Y6OWev3eCEr1Ip21NyuxfJTOykjCyAISJGKjAejd4RjKPFWugIHpM0olaKZf69FYfI0GpGtfEPUMLYgSbW_TdLZWvAjJJnHlNqFSukg.jpg"
+    "https://cdn4.telesco.pe/file/BVmCcybCzcY1mV0XCkFa61gdlPbDWz1W2-L2fP-wKrABGrZGjG3FlolV5xxdxwhplmV2vjyhgdcuGmJIufhaDm6WwHHYp4SPtyzHi1_3mAdmdMPuBTPj4fmKRXkGKYkf4k6krN2bAa46NHe_JhxdMnCaEsXZRudnrybgN6wRklADZcbjk7hvrNjxvFcDrb8Qi5zbO4rIZoE8Y5lxeDpOmO9S9KWlGixPlzdAym_exFC4CkmwVkcqWMi_Rzu_LewE6nkxa2SBP5XXUH2h3-HgTuCcT1TUn8p4QubND_ReNCnDeomcTk2Ks6afuEVBf0zpcOoinYiHkfyStn51NXwhFw.jpg"
    ],
    "date": "2026-10-07T19:33:27+00:00",
    "url": "https://t.me/kavomashyny/744",
@@ -18717,7 +18770,7 @@
    "text": "ID104300\nЦіна 19999 грн\nSaeco\nNL9206AD-4\nТип: в зернах, мелена.\nМожливість приготування дві чашки за раз\nВисота 40 см\nШирина 28 см\nГлибина 48 см\nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 19999,
    "images": [
-    "https://cdn4.telesco.pe/file/kua1xQON4y7251wUNx5y8bt6luzS_AksMEuGcgWOAtRTeFQJXiSDvPxHEGRIAZ_-VOWNKnW7StuALfaJxmDAKax3B3TGf3rm2JRi2T1ts0C37AUdeakLI60SyrdYTEek-eOWDf14xPtRsXXspLgur3jOpvfTEwMt0zaUj1DzOfbTREHyV7A0uAUJJ-L-ekm30dJka6oW6vT8i8Goik7akzh21gSbDzcJYwVPTPq-sxv-QgarMfJKSbbbNmb1SAqm4Q8uGppX1vLgP8OBS-5QwBNTogsN5pI-j_rDBdsfInPRzFlCNorsfEWogWmdUKD-F1iZBNokN_YNMx8gtZuE7A.jpg"
+    "https://cdn4.telesco.pe/file/BBhdqnFCTKbbaHdKq683i4naWNdXD1q7z8BN4ovht7_jrnG7SjIYNfStv9zkwRvPY6WF_huWYds7P8AEapFhJQuF_TbCurmW1GvfM0TOWimVP1fZAZPJQDbCzdB82jqoJKql4dZZ4WKcuSMjzePWpvi_6qzYBJgmaU5mOO_12ETBaWQrGHvRvOsv7_NLQ9stNAysTiOb1zODLMFVK953elRlXg4c0Jw2uqa_GGL24k-_QPXxPC-5j1qn7oII40aIQiB5_TwMGpTcdE20QmSLIgvWCyWeBAB4Ew4Ek8BUxoDSnQfrI88_9gQpNVmRqxhuWw0oIyQQyeQxfmUQKgvgPg.jpg"
    ],
    "date": "2026-10-07T19:33:27+00:00",
    "url": "https://t.me/kavomashyny/745",
@@ -18774,8 +18827,8 @@
    "text": "ID75441\nЦіна 13999 грн\nНова ціна 10 700 грн\n🔥NEW🔥\nSamsung \nNK36C5703TS/UR\nМаксимальна потужність 744 м³/год\nВисота 114.5 см\nШирина 90 см\nГлибина 45 см\n3 місяці гарантія \nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 10700,
    "images": [
-    "https://cdn4.telesco.pe/file/TyHxd9VXMEyTKuyjctxSZ5A4S3wi0RGnDwo5oiOVSqAwWp2NH53JVQl1sC04sFd6RgLmhY7enXHz3vJZhVTUeVJiuFfM32fWIKWXOLFkibVvPq8cKeYZzvD_vzG3VGL4mQhwGjhdu0ADtlljGRDA-0x35mNvTxQNFkaW__BaHCZRNtkTJG14lDp-E9zilv_U-kwHit6b4caLCoWIaQaX5Mm-vXtKVtGgV5lR9eHE3IoEVNnVdxy2-8mAmZEyvmq58M6uFALheEruRqQvODBgcEHE5PA9I4rJNNInS8eEQWMQPcVQAXAmsZnObqC4eQx6wGgjzHvbV6pvRzrOVL6d4A.jpg",
-    "https://cdn4.telesco.pe/file/ihgkpZIKLDPJeozTJ2mXOA1tbCe_AkeOZAcVXvO2vVdkJRLm7Rt-kZaUZdJV5segliAD04Y9nSQKZBo9XxQ40ggd_AuEvkjre4AKut8vXgIILVcpLZYUdZ_dB9q-kqV2fOhEh1mN03MNMwWt441enJAmof12zjrSsmLCRy0NrGHFirV1QZefGufLzyS7_C2tX4mrlYmSjqrxISINUbhqG50TYRNjHfCeeyMohbe01qft-bdr0pajRgDwmGFo-546ouJ0qggZv_pQk_RIevlaGflQsKcaROW4Gjc4LXrZ8xaqj9Kjw_VClK8XfCP9NNgj5ypaYWlN9fsQfyYZCAVfqg.jpg"
+    "https://cdn4.telesco.pe/file/HWU1eVdAROdH4GB5OVMw_r9EbS-u2ZErptABXKoqzkMDigd9afVrkpczRYSVVY-ENugbv_VZDh-a61tquuYuNtpJt-iEvrF_8rmnVQkYqW2BJCMndzuP9OjvhD9rEaz1prmGpp5tEYAfHnyCnX1K9YHnjkY9LACC0M0_y8HrBDVRsPzQ9ePwS1eI_2FIbH-hRNyVgxH8-w2IoUWoCvJ7nGbUGxJI2Zdw-tXr7kfp0b-X8WViFJiJKV-ioeFk2E7EKGr9qLe5EhxjuYbscJlFNrw7o9Q0Zu2RmZH2nTc5R427ghUUzov6eobJYgSuG5MsgHGGlbrO8_N8AYrQFlYHig.jpg",
+    "https://cdn4.telesco.pe/file/dFr-S6JbBsTJgLY8OEcZG0xIsqEKCTTs_NyIwhybnSWeCLcu8LH9bhyrYVjAT61JyyXUg5INneOXy2xShdShk2I67WBoEp5bub1nj5albk4AfBVhHLvD4X51Kvp30gagzilTd_bYk31lscPKfKbfcvO4yLZ4bJJu-aqRFj-Pn4oCaJLtq4CgCVeRwMYseoxjw-ZT-cX6Z2c5st5ies1bPpo_XDky4WZjP_ZeiVzYd6eJ2g8rz2NzeVtCT6hIW-iNwBSYdn_tRFCBRFykQc6wefEqH_Fvjj_iEYtXVAZYgvqZpe8ZQU5Tl7bj8SsUbfFBznYxKgA1FumFNQFvDsNCKg.jpg"
    ],
    "date": "2026-10-07T19:30:24+00:00",
    "url": "https://t.me/vytiazhky/109",
@@ -18999,8 +19052,8 @@
    "text": "ID105346\nЦіна 3400 грн\nInterline UNNA WH A/60 PB/2/T\nМаксимальна потужність 650 м³/год\nВисота 49 см\nШирина 60 см\nГлибина 22 см\n3 місяці гарантія \nВул. Вадима Гетьмана, 1",
    "price": 3400,
    "images": [
-    "https://cdn4.telesco.pe/file/EccGLDsp9Bj1yNBnzxd2YD0SRKpewXcBqvkvi2wsP9-dJMuP9g_xPNrE_Ym_r5QbFmhVTtyeW_Rmh5qj-plGZUCYaxzy-is6tpElmJ36Mrn197uvvIETiCbk8nIMWRdmjN5JAdlBznGZ5XnMhFelbcv9hmm2L-JcQKSfDNVN2vNhCkJw0j_IhV0DOkyvfa1dYEc-ilesb8fef80i2npwpz6KZyKBfvAjzKtxfWh9j31m-u4nwHsbn8hZ0icB3OMSVDki4Ju9WrwohTDGQUsKNS0u9OGJ1MmuOiIFmcwBUsJ2TVc0VRhgSAtKa7CsFI0tJp-Ea5dZKvXlourlSlTL-w.jpg",
-    "https://cdn4.telesco.pe/file/ui5Txqdki8nPjZKyiMyrBOXKjfGDdHCFvSPxRPy9Qw6mWKgRKRIxPZottHutzvvAzJ5DjXfTMsSd9ForQn8_3WVGokuFeOVbNWN2lUmkkhXhrMAxDtIzqwcZfdKg2qcx4QWkgM_98QfIeYA-WYAFBZkw9tvanJH33g6kMScXPts7lP4T0FUWFIEUymNe15KHNycaxQpcn-5WfTc6hLbfVN_Pp8DUmHPEAOQzarTwansT5VhukdggdaVXjyOwN5TBhprRxhDcoV5njD7oAe1kdKu7gkWrvUDTrUwHmwacX6MP6GvcxSoWia7nMwpJOg_3esAM9YR-tNnq9iU0YdyrMg.jpg"
+    "https://cdn4.telesco.pe/file/P8z0Rm1rpLYtVCGGEWFCvpBXlZzpoKBCBGmtOhDrzDV51hyZTDutyW9d5YybBrYh7iarkdfBe6LCi6tA3v8IQQ2iI48t0sCpqOFsVKyq3xB44CT3sXDKCPL7J6uiSgoFFf35KKbFocr9S4ZCmf95-awXClqdKJYOerbL9cJQZ5uwedz3UcH4Q-bzK5DI4N5x4Oy9Ryh85yayyxWCEsGdWijv4BhP9UIGh-x9KiI65YXENo98uHJRPKM9KFvwBtfA8p3dlXeQJAJtRgqkz5KNvvddPWsIxILbtddeAWGQavIBgWrMttY8DPDmw5LO6I5sbRviOuyjFUGvfA0MJ5SCAg.jpg",
+    "https://cdn4.telesco.pe/file/j3_9FvXhmE5gAvCzWZyfZkqbdlpwwJizlgg7xVnteMVlhkhJCfAtU5R7RNT6dcZvdtToUOhLj7xK_5Vt2aXbx2k_vfXBIsNdzGrnGGBeh_bx47q79aKWLJmrjxdvcM7uwKCK9zsZoV-5Q0i1ujOOb1cNAZFgkMD3wEoWPV1VI9r9J8zB1wkFRdGlcTvSpDywdVsakgZOvK229CSrzdF8879RT24zFOEFwaHcIVlSMIW8WFWG3EJ55ieEgksHjJi_wwv3Ag_DcOSUD1KTfipvtb9y9eK23JZxrvmcPte5_Uf7QiZVRNbQN_YzflqOFBFsntWSkKVGnOLVH9fZhXqJVA.jpg"
    ],
    "date": "2026-10-07T15:16:08+00:00",
    "url": "https://t.me/vytiazhky/107",
@@ -19744,8 +19797,8 @@
    "text": "ID104124\nЦіна 5999 грн\nAtlant MSH-154-02\nКрапельна  система охолодження\nВисота 150 см\nШирина 60 см\nГлибина 60 cм\nГарантія 3 місяцi\nВул. Вадима Гетьмана, 1",
    "price": 5999,
    "images": [
-    "https://cdn4.telesco.pe/file/ObvofEGGatWW9RYyOz_ZTJ4304T8QdjoA1VgX2aG__BBXUHp1lKHrgHle6qKnjxZwXXh7IeZTCEKnsrh7PtifJxa74TmDckuv6aOAQGmTDasZDkFgs6Gao9zOpPNa1HQ5gZ6AOBzgLqe7C7HRMaq_7URkdv-bbf7QkTn5aQ6mOJhniG99RIVh4Gqya3z0DKph5ol-bPL7rLibbEAVyzJuQ9SPk-evao_uI-NkRtHLkLTX7vELkXbCT5jC3QIaJOfYDVQxVAKh90loCpSFLI3qYyMu-OmLTwPxYeRqd4x3Oxya3G_ePixoAFepoocS7Zp--hGuSx9V-64yYUqJAn6Uw.jpg",
-    "https://cdn4.telesco.pe/file/GBkn4aPXqm-Fyodq-4XJXHyOXLbQAw_5tyQLxsWLDRAzB6s4cBXD6zCgNNEiEJFbABw6DzFtj4qSkw1kTfkieQFhTfnhKc9xns2pYW_kSwFiy6oBIEhrobFAg8Zepx3-Q1OJ0yNBflIr9pu7yhrQYmZ9CElns0YwrPclELsDZXTT6hqHJWJ4mqsYz42Ld8ky_g938lYFUMaNCpGYSpmrGhYl9CL0MAfgRKPF2pCuMSkRatD_cgKztGT-LkoJiqbwVhbVKpd_Ten_qU42uVu-LS7OsgA_44B3hmYW06HEg6pICKgBVLCNQ0qloBpQYAWIFxeort704CFDRyhaoIJKXw.jpg"
+    "https://cdn4.telesco.pe/file/m0idbbXQUfs29E3eBoOFaGpfTjVPfd7tIw1JVpGrgkH_8cMOoI28WuQwVviu4S7Wo5izokAgVnDXr3d1VtvRlBAZ3x6tFGs6DUDvoTUca8LWWM5v7WiWiSyd9-nbZ-xQSlLK8UofQAQfs11hJ7CVyk6K42IVS3hbg_EgArED7Wxc9b-0BRa17bdYoWw2BVNn5ouztutTIRAmcqALo5vlB1yXDHA-0I0rsYTjk8QxN4HWUHxY6-KrKtW1eveElQtlMh2CoMJGVvewuKXA7tuVYSq0SFrq2EHF3z89UhoImnk9NSO079kCMmuvs0_BcUR0mgWluN_t-FXmcVGrYOYxTA.jpg",
+    "https://cdn4.telesco.pe/file/GSq7-PLdlffntUwZw9bqeMpSyyp_gpzljA06k-0lkKy9hfEulgM1dZugBzeQVwzrp9MEah1np8Opdq38NEJga-teX6BQcQBndoBknvOPYjsacEkqzbGSuwK_EA2zIeipXeHK2fiKf39It2YNU_Rrgi_Kby2Y5b-aGgkJvqr9KLWKJFzjf6z8c5cH-3bdvxqRfdRCdZD700E34aoFCgLSZCALWa5maOvfagZ19hlaOsndHfd8CS5J9N2irm2GtpcwLwEo9pnElYgVpjimbmnSZ0h8MVctJGZ_fICJgfS7xwsJVfTKu67Rp2jJTC0ACQOACuw3BAD2uIfHhH_2O-a5LA.jpg"
    ],
    "date": "2026-10-06T09:20:36+00:00",
    "url": "https://t.me/morozylni_kamery/6531",
@@ -20081,8 +20134,8 @@
    "text": "ID107291 \nНова ціна 15499 грн\nBosch \nFD8908\nNoFrost система охолодження \nВисота 170 см\nШирина 70 см \nГлибина 67 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 15499,
    "images": [
-    "https://cdn4.telesco.pe/file/arvSbVGjPno0lGjwW3SmSpm3L5m-2jKMayB4EMTert5j-ZxkZC7VeuoWyLyjc6vazJhomr2FJTO-Zjtz9qYt7kdkq9b_oG-XVVVRWNSSK83SNqZE1eSbgqduIZHwNodlA5lrVKjJSfLYyoLq22Op_GvE0OQd0iScsf4RAk6jvLMLRiFroFWecCFoOgcyOUvQ5ovOuIJlIFgLX_6AF1lNY5tg9w1iXt1uTho7GnNkqRBF2NHD44zJ3J_WmEdunY1UTuTb0XYyIWpOWJZcg6WXIBMITKXXP1d1q5DQZaTaiOJ0arvXPknMuRsVnf4G5acIDojdTtjcJ20tRsQ32mo3gg.jpg",
-    "https://cdn4.telesco.pe/file/Nfen61Kv7wXLXXKKkY6C-wOBN5RMlfakxEYlCTfFYEjTslAD7-5-ZXdqiiZdAD6iSa2uDyH5SqylfAbWiBcZzjqVGEtVGbXkvatoLlOUCHMcYdjknm0phx-6iSiQw4_MKxKhr3b4BnAGQ9wSvbEPbFtZRkoijiMaM2-6y5ZE5YMkSTdUJ0bZSZ13WKopFEZQcMgBy7pafJxLI4y3yXiOto1DjjDUJyyfJFzxfeh1Tmz3XBDj1CwEKJfJ4WEAI4-MTfNxhUzH_uqoCiFCCxxNTwSypa3JXq5KAF2Kbz6IPH1wGiBe4rzamQpEgqszjVPkytVE6jzCLHY62spp9k9a0Q.jpg"
+    "https://cdn4.telesco.pe/file/T6kRHkLPs1t28TsDQRnPHFHVWfC2_J-tEPGpl-psucdapfqMFLKHzbWZBT01BPlTjwu04PaeCIP8CvaSK6X2ftDedM4eaabHds6A5IYx_wOWAaq6qSCGf6zG2NIa-leGYTu-QCR6h2KlW8B3eDDOZLCqJP6LRW2-HAFUh6IPcFQr4Uv6dlT1iL8yLQkXdKJZSHR69wTw0hJnTSE6zMuWu_lyiNMq9dlKkoHa3_PGC9ZlBYIea2y_-_SKSmLH3SvPCxMqLEPFoFxdsxWU35z4ETBj54jIZxwUiqlHwE7bWLox3y7sxJdWu6lt1qUxnihIYeYSylFgXr_ifnpGEImUIQ.jpg",
+    "https://cdn4.telesco.pe/file/DQdDuQMaN_0u3ctuzNI6Q-b-M762_kblNKx60_QvpvHvYSZMtPzbwE2tXMlQHZYNK1KPGdk_KROJ8a4eRNaLoJjvBqAD2vI3v5uNv299kA28MXcqs6vR-OMp61neWbEFFjwxl598mnrSwm1fNgsSa3VRdvaSiDJx0WlP_rDgpRFavfTzP_hJ-dbvgnXLrZJBoMysAGwVfyq2_AsXh7UvAbenBdkt7Zh-RTrfeQ-bP6rmGW_GRwCxeHglcUjLDc5cVE_ECUH4gnAMUBh3ZrwpBnKKOM-qW8w6Izb6KXMmbFtoAraLpxUVZOjwrv82Vm28hzg4t60CqcU5c6dUFbioYQ.jpg"
    ],
    "date": "2026-10-05T10:06:25+00:00",
    "url": "https://t.me/morozylni_kamery/6525",
@@ -20101,8 +20154,8 @@
    "text": "ID107293 \nНова ціна 15999 грн\nBosch \nNoFrost система охолодження \nВисота 175 см\nШирина 68 см \nГлибина 75 см \nГарантія 3 місяці\nВул. Вадима Гетьмана, 1",
    "price": 15999,
    "images": [
-    "https://cdn4.telesco.pe/file/Lap6Nyld_DG3I2pzs0ZZXHadOgnY1LXEttzQNRyxg6h1ssAvHv2GT4weMBIKhrIWiMqiPrsu5eAdsxR6Jg1aG2I72YZur9syrp8rRalRmdHRfY7sOgTc9DtXf2SEu_i0ejVGwp4YleNwRrLS9zv8JX-cpP59DjNLbkidHtiZO0xemlR-8QxAnCnWw1O7EcBL4TA7gYiKgcZimJSLsbaK8Icv1LJIdRkYcDnGl7pcrB2RQi1uhpzN_mex4WwX68YwnDFIEIUdfrE6CThllCJkTMY1iI0nTQPsL-IUW0anyyszrK6Kdaerq-oODhcILZ5S577mrM8Nl4ap2QiIptRoRA.jpg",
-    "https://cdn4.telesco.pe/file/ZtBGQTKvUnhfz8V1QhTUzTJxxV_QGU1KIC86-Gqa08Y5YOkl0xUirNQO0bik-Z3Pmql-jm8H1IdbYl6W7uH06w3ztHlifcEsWRxm2FfdTvQuUrVe05xyZ2SFaEUzbxgiyLqSRqw1u6iPbOOHBBdeHJbL-D8677Jr9TqKiyNO0OQKAEfx3xmIXRimTckt9zfzDtHaypd5g9EAR5RUqZI1hSzW_JnECq_hiOM6Zy4HSCjCfCZ6-9zTHr1VCjvmE3yvdfldqdU7U93EAzI0SQs2eDrPPRuqGlgcR1yI7r2yJMqaetfP-q19uHrf3pSk5wSjFrMV6uEFkr9UOkmwTsEAKA.jpg"
+    "https://cdn4.telesco.pe/file/D52hdYcw0Wz_o2n24ZZvBh4lv3HvrOZgwkdYVzwuNy7YbmdZsfdqClROaVKu0FS3rw3A0FSdFx1Xsy7NFJkvkQwq_7J39_oIAcnNFWdEfWlOrfmzsZ52hLN4tJT8zFnqfPgFfh836T4vBbd_vsxW73q-q1h_lGMWGvPTIyceGJNPw7J58CXZP86h5AUvfvaUc83E5lJTbcqM9eGof_FU0aDRVZGN5E03T6BLkrSQfBZbmUc5RIiTg7_Q9udxKY11M1a8Y27TFWoYdAoFmt_PLeVA7H9UUu6z_DvMm2qtUweKe5kXyPE0JzqNHjEnXMhvpXPPbICrKC1ANt39F2ceoQ.jpg",
+    "https://cdn4.telesco.pe/file/fG6W6hEFObYigGfm0mV-WqbGPfX95sv3gChiyTFqIXLgAfUGfWAnHiUOAe3WQ_lRSr6YCVNdmkktYxJ0PfeTN0HdyrGaBBveqTMR1vg6JboWWCkUdGSugfvn1LLNLAxpDKGJqzXDx4qJG5UzJXlBHKUTZ31L8fq_ddOxIikvO8CAtwp5i3ykfZ3g97YLKJ3fHF65Ie_M2t48EuXxsPeHR4xyFH7lSk8A2E43UOf5h72BM1d_xGZxi1z4htfjm5EDYMmjMdB5uT4T8Ezbzer2DHBQPIopQTZ2FosSsuVU01AYV94V6y2yJha8PG0JvUShYV50impCHzWGifZGbAXlIg.jpg"
    ],
    "date": "2026-10-05T10:00:03+00:00",
    "url": "https://t.me/morozylni_kamery/6523",
@@ -20596,8 +20649,8 @@
    "text": "ID107293\nЦіна 15999 грн\nBoschGSN54AW40\nNoFrost система охолодження \nВисота 175 см\nШирина 70 см \nГлибина 76 см \nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 15999,
    "images": [
-    "https://cdn4.telesco.pe/file/OgEC3jWVvSeg79Gb3GLyl9azMOw0XMEGliSUiSRvqYGrewix1eODrwEEV7o2qSDFfKdVPB91CM-5jwD8Ndygt2KQwuOiXhpCvCdUIqBTVrDtpzFcCYy_GD3ZOvPF-EeXNjVG5tnSSMQlVJGZkxI0FbFToLAzhUTW29XFdZnlBwfcWRmh7hVyQG_uZIXhRYMRjpGJQilHyZdo6clW0I-M2Cd2lUEn5epynChQGbo9wYl0pjBYCEDdRsk2A2u6B3Ys1NiLdKsP7KThB2BXQ7izM1XOYN9VMw4oV-rduEqJQPvKmeK0pIfo6mjNH9d6ebUHu__tdK7vu3EPSAcYmuojmA.jpg",
-    "https://cdn4.telesco.pe/file/Zk7cc7PEcF6Gx5q_RqtWWEZToeFa_kwuCCUQ9ODVsjrEsO-KW2I6by_jravbItCH3GxOrSDRlETYZG6yWktY5eVEpVduSVlyF_BJqCuPcBaYwfq6ywhiqCI8ewZdgWXAYgACwSU73tmXuCyANKbPJgzdwlGxTBwLor2kSPCBu4oUfbNouucnmwysVj-M8hWgkimwoP3USCtMpOiT4fiMdQqRVdGe6Tl7z9nDH8blW9MyHF-QtdRSkYfHLaP2lGOwOBzIPYajq96TzlI6UKTjvoKLV5YBeqvuJyiGvwoX8i5N9xj1W2LPDLa2FaeprRKAUdTNA3MqodvcfiPRo-tPVg.jpg"
+    "https://cdn4.telesco.pe/file/qp0tS-He2L0nsbAV0JGYymKR-vNknTvFyU2ol824OWvRbdvqMrJlW1coEwKyNK2CPnYBA81WWLcqmPz7Wf8x5R0-YZRJ-pTFMAqFK4e0iXKNDOXk491BGI852RYvLI2YPmqrVl6gC30EaWEffMP63lBtlfBiarMSwgY2KojrRbfdxhPMzXD2sKjq6mCDhKwbDTUDzQN0WXxUlNJl6H0XAwwLzD9Rm1SNOJhRK5ZUvlFRvtp9OxtVXts1k54c-Kfxo-Fn5z1RBdOuJx-knt7mxaElabF2tMMTM5QSqoSUsYA_81bW-4h96C-hACLxJRC0HjTF2p4b0uJhAts6AlInvg.jpg",
+    "https://cdn4.telesco.pe/file/BbUf6w3sZ1hACbRf4hCaGA9oo77aKybtxD-E4Mus12rgYJ17xZ5Eq7HybeuDyA-HC5-Tu9XlZfN6eM9qY5tzNXSgxUMJpOz9qe0XNbQE57IBPB751_6bRlUlJ6AuLzzyQrCnVfDEx-tPQr9ef3fF4_lOBTt8uR9IGOmRF2V49e1p-nIb2KlUoa6tQVvuOXgQ_fABLjLH08IIwyBXIHw9WihW33KienHYtM-UAI5MgKZxjuKRq88s4FJFY8YD2r7Tf3m-EmvZ05u_HQB5aBUCcLAYK6RuySjQLgBegC79Y90prJMWrL7bfOAJH2qtd3K1jb5MzGo7PXwm4BxD5lSEyw.jpg"
    ],
    "date": "2026-10-04T08:07:43+00:00",
    "url": "https://t.me/morozylni_kamery/6517",
@@ -20684,8 +20737,8 @@
    "text": "ID107301\nЦіна 14500 грн\nBosch \nNoFrost система охолодження \nВисота 160 см\nШирина 70 см \nГлибина 75 см \nГарантія 3 місяці\nТовар з 🇪🇺🇪🇺🇪🇺\nВул. Вадима Гетьмана, 1",
    "price": 14500,
    "images": [
-    "https://cdn4.telesco.pe/file/GzqnQ0tgtBC3eO08XDpGVuXjEiO0u3iGCns32jpL5vECgOlcwzIyr2cjV8Vn0RtLyI2eXCvK_sHxBDjc23cXoudwNpSP0IRNyBHVmpDiXH6oAuakgVheHfHAS9EIStb_I9rcJr7kkA5z9RpHJU2S370RH7aS2JpzSQvvDvOzh-3Mhah3wRkEb2P9ec3s3sWdISLr69mv2zGTXgGZFpmbjsp_tEEhpniCYtmU57-6RNHPi7kz4iyMpiIb0A-Wf4GZ2Q8m6b1WJXMuKSh9dUax4izZ6YCHHgv_w_Yt7K37D6qSwOXAmbl6CZrVyXccG92ZGtFQ9fUzud--tl1L0nm8Eg.jpg",
-    "https://cdn4.telesco.pe/file/P8fIXaoAAg33FSC7ZWG-vZut-s6ExaHUxNjz3T4zLudrv-OabqCNTyaG-uMunIdbkOf1U4-IXsErt8FAQYhFUw-ji8ZfKUbIoms4DROqK9YH4_Y54U5MedFDaAg4wAAGdrJj4ERiSglN3AWvJE1ee88FTUAmDH4LYNBIkgTAl0rXQ0UdlKMm7Lr2GlUeITn83tn08h51LdmWadJ-o5QHMXdo9_3-0sjnDD8bJRk2KiyMcWW8mNq5z6fBcyYyoPvbAZG-8izzAsNszOWSTNbnLOcx0BGfyejVpd_vFEmLs1m6lVcRyLzBL6fG9J9vrnuZx19xX00iCUYQyJqOhmG5CA.jpg"
+    "https://cdn4.telesco.pe/file/qruC2JOnZvCXuTNUXhToiHHQmhYr-Gb_CM9ynZNX5WI2xwnwXhdE2Ef5rxhiYUKI2H729RAMpjfeH9bE-S_om0SBJMrAVko0CxVG1JVk50EcrzKEEUmazH8Z3AzEH3dbh6bs7yPyq63He-FJK3QrC2PjpEpXmH-8rT_1Noo1IK1d5554QuuQeIXctSvFcWmzD286Tn5rAm4l5CAWli4n09E3abVa7dDtduf9L_O3RR81VrlRYGsJvgHixbsPcJmCZcPmqfkBywzK_EMgBJPVU_86_zJyMDNGwhDN_B8d88_Hied8HRzw_CSD9jLu20RujQN1qhAellXtC4TE6tINdw.jpg",
+    "https://cdn4.telesco.pe/file/XmdhzXlkVmRUQ98fNAULEkJV9zk5Xo22o9H5yPpxb69QfyQei8ErYPokalR9SeA08rIdYhsWndPxeqszdnLfJn_ECvJeBwDAfX_u_G5R0nr2qZwUjVh_jS83q0Je3nCHOBL8DVST65NQvIRXh0Md91lvTA-zLMC16dwBcjb0uvy-BVySsOXZTMCRI-TxBPNWA1Xb0PVr9xwO2ecl9pRiKAT2IAk4KqDMcp6AqN7sZe2PgDlQjXJyaScTcr3WsgwoLtF1XW6QTd8SSQb6o-ySGyK7se82qMUzjNagHJhBD6cKsWU819mkaiyocs4uK0p3iA7QM3FN9_6LO6LlbwLzYw.jpg"
    ],
    "date": "2026-10-04T07:17:32+00:00",
    "url": "https://t.me/morozylni_kamery/6505",
@@ -21516,5 +21569,5 @@
    "private": true
   }
  ],
- "updated": "2026-11-27T13:51:49+00:00"
+ "updated": "2026-11-27T14:50:02+00:00"
 }
