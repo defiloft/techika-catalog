@@ -173,6 +173,33 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .blist li.no::before{background:var(--line)}.blist li.no{color:var(--concrete)}
 /* «не беремо» — жовта плашка «Зверніть увагу» */
 .bno{margin:6px var(--gutter) 4px;padding:12px 14px;border-radius:12px;background:#fff4d6;border-left:5px solid #e0a100;color:var(--floor);font-size:15px;line-height:1.4}.bno small{display:block;margin-bottom:2px;color:#9a6a00;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.bno b{font-weight:700}
+/* знижка за код із сайту */
+.kcode{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;letter-spacing:.06em;white-space:nowrap}
+.kpon{display:flex;align-items:center;gap:12px;width:100%;margin-top:14px;padding:12px 14px;border:2px dashed #e0a100;border-radius:14px;background:#fff8e6;color:var(--floor);text-align:left;font:inherit}
+.kpon .kv{flex:none;font-size:24px;font-weight:800;color:#b45309;font-variant-numeric:tabular-nums;line-height:1}
+.kpon .kt{flex:1;min-width:0;font-size:14px;line-height:1.35}.kpon .kt b{display:block;font-size:15.5px}.kpon .kt small{display:block;color:var(--concrete);font-size:13px}
+.kpon .go{flex:none;color:#b45309;font-weight:700;font-size:14px}
+.kpon.home{width:calc(100% - 2*var(--gutter));margin:12px var(--gutter) 0;padding:14px 16px}
+@media(max-width:479px){.kpon.home .go{display:none}}
+@media(min-width:960px){.kpon.home{padding:18px 24px;gap:20px}.kpon.home .kv{font-size:30px}.kpon.home .kt b{font-size:19px}.kpon.home .kt small{font-size:14.5px}}
+.kbar{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:9px var(--gutter);border:0;background:#1d2a8f;background:linear-gradient(90deg,#1d2a8f,#2f45c9);color:#fff;font:inherit;font-size:14px;line-height:1.3;text-align:center}
+.kbar .kcode{padding:2px 8px;border-radius:6px;background:#ffd34d;color:#1d1d1d;font-size:13.5px}.kbar u{text-underline-offset:3px;opacity:.9;white-space:nowrap}
+@media(max-width:389px){.kbar{font-size:13px;gap:6px}.kbar u{display:none}}
+.kprice{display:inline-flex;align-items:center;gap:5px;max-width:calc(100% - 16px);margin:6px 8px 0;padding:3px 8px;border-radius:8px;background:#e7f5ec;color:#16703c;font-size:13px;overflow:hidden;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kprice svg{flex:none}.compact .kprice{font-size:12.5px;padding:3px 7px}.compact .kprice svg{display:none}
+.pmain .kprice{margin:12px 0 0;padding:8px 12px;border:0;font:inherit;font-size:15px;font-weight:700;cursor:pointer}.pmain .kprice small{font-weight:600;color:#2f7d50}
+.kline{display:flex;align-items:center;gap:8px;margin-top:12px;padding:9px 12px;border-radius:var(--r-field);background:#eef1fb;color:var(--floor);font-size:14px;border:0;width:100%;text-align:left;font:inherit;font-size:14px}
+.kline .kcode{color:#1d2a8f}
+.crow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px var(--gutter) 0;font-size:15px;color:#16703c;font-weight:600}
+.ctotal s{font-size:15px;color:var(--concrete);font-weight:500;margin-right:6px}
+.kticket{margin:14px var(--gutter) 4px;padding:20px 16px;border:2px dashed #e0a100;border-radius:16px;background:#fff8e6;text-align:center}
+.kticket small{display:block;color:var(--concrete);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.kticket .kcode{display:block;margin:8px 0 6px;font-size:40px;color:var(--floor)}
+.kticket .kv{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--sale);color:#fff;font-weight:800;font-size:17px}
+.kticket .kcopy{display:block;margin:12px auto 0;min-height:40px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:var(--body);font:inherit;font-size:14px;font-weight:600;color:var(--floor)}
+.ksteps{margin:0;padding:6px var(--gutter) 4px;list-style:none;counter-reset:k}
+.ksteps li{display:flex;gap:12px;padding:9px 0;font-size:15px;line-height:1.4}
+.ksteps li::before{counter-increment:k;content:counter(k);flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--marker);color:#fff;font-size:13px;font-weight:700}
 .blead{padding:14px var(--gutter) 0;font-size:15px;color:var(--concrete)}
 .btel{color:var(--floor);font-weight:600}
 
@@ -397,6 +424,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 </head>
 <body>
 <div class="page">
+  <div id="kbar"></div>
   <header class="header"><a class="logolink" href="./" data-home aria-label="На головну"><svg class="logo" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="12" width="24" height="31" rx="3"/><path d="M4 19h24M8 15.5h5M22 15.5h2"/><circle cx="16" cy="31" r="7"/><path d="M12.5 31.5c1.2-1 2.3-1 3.5 0s2.3 1 3.5 0"/><rect x="31" y="5" width="13" height="38" rx="2.5"/><path d="M31 18h13M34.5 9.5v4M34.5 22v6"/></svg></a><h1 class="shop"><a href="./" data-home>Техніка з Європи <span class="tagline">Вигідно!</span></a></h1><div class="hright"><a class="langbtn" href="ru/" hreflang="ru" lang="ru" data-lang="ru" aria-label="Русская версия сайта">RU</a><button type="button" class="cartbtn" id="cartopen" aria-haspopup="dialog" aria-label="Кошик"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 11h10.8l2-8H6.4"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg><span class="badge" id="cartn" hidden></span></button></div></header>
   <div class="sticky">
     <label class="search">
@@ -460,6 +488,15 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
     <div class="sfoot" id="bfoot"></div>
   </div>
 </div>
+<div class="sheet" id="ksheet" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Знижка за код із сайту" tabindex="-1">
+    <div class="handle" aria-hidden="true"></div>
+    <header class="shead"><h2>Знижка за код із сайту</h2><button type="button" class="iconbtn" data-close aria-label="Закрити"></button></header>
+    <div class="sbody" id="kbody"></div>
+    <div class="sfoot" id="kfoot"></div>
+  </div>
+</div>
 <button type="button" class="cartbar" id="cartbar" hidden></button>
 <div id="toast" role="status"></div>
 
@@ -475,6 +512,11 @@ const SHOP = {
   blackFridayUntil: '2026-11-30',
   // Картка «Викупимо або вивеземо вашу стару техніку» на головній. false — сховати.
   buyback: true,
+  // Знижка за код із сайту: клієнт називає код у Telegram/Viber або на касі — так видно, що продаж прийшов із сайту.
+  // code — сам код, codeOff — знижка в гривнях. code: '' — вимкнути.
+  code: 'САЙТ200', codeOff: 200,
+  // Як показувати код: 'a' — купон у товарі й картка на головній, 'b' — плашка вгорі сайту, 'c' — «ціна з кодом» на товарах. Перегляд: ?code=b
+  codeStyle: 'a',
 };
 SHOP.mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SHOP.address + ', ' + SHOP.city);
 
@@ -878,7 +920,7 @@ function card(p, hit, compact, eager) {
   const flags = (p.reserved ? '<span class="hold">Бронь</span>' : '') + (p.isNew ? '<span class="isnew">Нова</span>' : '');
   return `<article class="card${compact ? ' compact' : ''}"><a href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}">
     <div class="photo">${frame(p, 0, eager)}${flags ? `<span class="flags">${flags}</span>` : ''}${p.oldPrice && p.price ? `<span class="off" aria-label="Знижка ${pct(p)}%">−${pct(p)}%</span>` : ''}${p.photos.length > 1 ? `<span class="nph" aria-label="${p.photos.length} фото"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>${p.photos.length}</span>` : ''}</div>
-    ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}${compact ? '' : deal(p)}
+    ${p.price ? `<div class="prow">${sticker(p.price)}</div>` : ''}${compact ? '' : deal(p)}${codeOnCard(p)}
     <h3 class="ctitle">${kindOf(p) ? `<span class="model">${esc(kindOf(p))}</span> ` : ''}<span class="brand">${hl(p.brand, hit?.brand)}</span> <span class="model">${hl(p.model, hit?.model)}</span></h3>
     ${!compact && p.chips.length ? `<ul class="pills" aria-label="Характеристики">${p.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}</a>${cartBtn(p)}</article>`;
 }
@@ -921,7 +963,7 @@ function homeA(list) {
   const shelf = (title, items, btn) => items.length ? `<section class="shelf"><div class="shead2"><h2>${title}</h2>${btn}</div><ul class="hrow">${items.slice(0, 10).map(p => `<li>${card(p, null, true)}</li>`).join('')}</ul></section>` : '';
   const sale = list.filter(p => p.oldPrice && p.price).sort((a, b) => pct(b) - pct(a));
   return promo() + `<ul class="tiles">${SALES ? tile('sale', 'Розпродаж', SALES, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}</ul>`
-    + buyCard()
+    + buyCard() + codeHome()
     + shelf('Найбільші знижки', sale, `<button type="button" data-cat="sale">Усі ${SALES} →</button>`)
     + shelf('Нові надходження', list, `<button type="button" data-showall>Усі →</button>`)
     + `<button type="button" class="btn primary allbtn" data-showall>Дивитися всі ${goods(list.length)}</button>`;
@@ -964,9 +1006,9 @@ function sheetOpen(el) {
 function sheetClose(el) {
   if (el.hidden) return;
   el.classList.remove('shown');
-  setTimeout(() => { el.hidden = true; if ($('#fsheet').hidden && $('#psheet').hidden && $('#csheet').hidden && $('#bsheet').hidden) document.documentElement.classList.remove('no-scroll'); el._ret?.focus?.({preventScroll: true}); }, 260);
+  setTimeout(() => { el.hidden = true; if ($('#fsheet').hidden && $('#psheet').hidden && $('#csheet').hidden && $('#bsheet').hidden && $('#ksheet').hidden) document.documentElement.classList.remove('no-scroll'); el._ret?.focus?.({preventScroll: true}); }, 260);
 }
-for (const el of [$('#fsheet'), $('#psheet'), $('#csheet'), $('#bsheet')]) {
+for (const el of [$('#fsheet'), $('#psheet'), $('#csheet'), $('#bsheet'), $('#ksheet')]) {
   el.querySelectorAll('[data-close]').forEach(b => { if (b.tagName === 'BUTTON') b.innerHTML = X(16); b.onclick = () => el.id === 'psheet' ? closeProduct() : sheetClose(el); });
   el.addEventListener('keydown', e => {
     if (e.key === 'Escape') { e.stopPropagation(); el.id === 'psheet' ? closeProduct() : sheetClose(el); }
@@ -977,7 +1019,7 @@ for (const el of [$('#fsheet'), $('#psheet'), $('#csheet'), $('#bsheet')]) {
 
 // Свайп вниз закриває шторку (телефон): тягнемо за ручку/шапку або будь-де, коли вміст прокручено до самого верху.
 // Горизонтальні свайпи (галерея фото, «Схожі») не чіпаємо: напрям визначаємо за першим рухом пальця.
-for (const el of [$('#fsheet'), $('#psheet'), $('#csheet'), $('#bsheet')]) {
+for (const el of [$('#fsheet'), $('#psheet'), $('#csheet'), $('#bsheet'), $('#ksheet')]) {
   const panel = el.querySelector('.panel'), body = el.querySelector('.sbody');
   let y0, x0, t0, dy = 0, mode = '';
   panel.addEventListener('touchstart', e => {
@@ -1078,7 +1120,9 @@ $('#freset').onclick = () => setDraft({pmin: undefined, pmax: undefined, brands:
 $('#fapply').onclick = () => { setState(draft); sheetClose($('#fsheet')); };
 
 /* ---------- картка товару ---------- */
-const msg = p => `Добрий день! Цікавить ID ${p.id}, ${nameOf(p)}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim();
+const msg = p => `Добрий день! Цікавить ID ${p.id}, ${nameOf(p)}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim() + codeMsg();
+// Рядок із кодом у кожному готовому повідомленні: менеджер бачить, що клієнт із сайту.
+const codeMsg = () => SHOP.code ? `\nКод знижки з сайту: ${SHOP.code} (−${SHOP.codeOff} грн)` : '';
 function specsOf(p) {
   return [['Стан', p.isNew ? 'Нова' : 'Б/в'], [p.dkg ? 'Завантаження прання' : 'Завантаження', p.kg && `${p.kg} кг`], ['Завантаження сушіння', p.dkg && `${p.dkg} кг`], ['Віджим', p.rpm && `${p.rpm} об/хв`],
     ['Тип завантаження', p.load && (p.load === 'front' ? 'Фронтальне' : 'Вертикальне')], ['Система охолодження', p.cooling],
@@ -1166,6 +1210,7 @@ function renderProduct(p) {
       ${kindOf(p) ? '' : `<p class="pcat">${esc(CAT[p.cat]?.name || '')}</p>`}
       <div class="idrow"><b>ID ${esc(p.id)}</b><button type="button" class="copy" data-copy aria-live="polite">Скопіювати</button>
         ${p.reserved ? '<span class="holdtag">Бронь</span>' : '<span class="oktag">В наявності</span>'}</div>
+      ${codeInProduct(p)}
       ${p.reserved ? `<p class="notice">Товар заброньований. Можемо написати вам, якщо бронь зніметься.<br><a class="link" href="${tgLink(`Добрий день! ID ${p.id}, ${nameOf(p)} зараз у броні. Напишіть, будь ласка, якщо звільниться. ${linkOf(p)}`)}" target="_blank" rel="noopener" data-track="click-telegram">Повідомити, коли звільниться →</a></p>` : ''}
       <section class="pblock"><h3 class="h3">Характеристики</h3><dl class="specs">${specsHtml(p)}</dl></section>
       <section class="pblock info"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
@@ -1278,6 +1323,48 @@ function buyOpen() {
 }
 document.addEventListener('click', e => { if (e.target.closest('[data-buy]')) buyOpen(); });
 $('#bsheet').addEventListener('click', e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); });
+/* ---------- знижка за код із сайту ---------- */
+const KSTYLE = (new URLSearchParams(location.search).get('code') || SHOP.codeStyle || 'a').toLowerCase();
+const KON = s => SHOP.code && KSTYLE === s;
+const TAGICON = '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.4"/></svg>';
+const kcode = () => `<span class="kcode">${esc(SHOP.code)}</span>`;
+const withCode = p => Math.max(p.price - SHOP.codeOff, 0);
+// A: картка на головній під «Викупом» і купон у товарі.
+const codeHome = () => KON('a') ? `<button type="button" class="kpon home" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Знижка ${SHOP.codeOff} грн за код із сайту</b><small>Назвіть код ${kcode()} у Telegram, Viber або в магазині</small></span><span class="go">Як отримати →</span></button>` : '';
+// C: «з кодом 7 800 грн» під ціною на картках.
+const codeOnCard = p => KON('c') && p.price ? `<span class="kprice">${TAGICON}з кодом ${money(withCode(p))}<span class="vh"> грн</span></span>` : '';
+function codeInProduct(p) {
+  if (!SHOP.code) return '';
+  if (KON('a')) return `<button type="button" class="kpon" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Ваш код: ${kcode()}</b><small>Назвіть його в чаті або покажіть цей екран у магазині</small></span><span class="go">›</span></button>`;
+  if (KON('b')) return `<button type="button" class="kline" data-kopen>${TAGICON}<span>Код ${kcode()} на −${SHOP.codeOff} грн уже додано в повідомлення</span></button>`;
+  if (KON('c') && p.price) return `<button type="button" class="kprice" data-kopen>${TAGICON}<span>${money(withCode(p))} грн з кодом ${kcode()} <small>· як отримати ›</small></span></button>`;
+  return '';
+}
+// Кошик: рядок зі знижкою й сума з кодом (для C — на кожен товар, для A/B — на замовлення).
+function codeTotal(sum, live) {
+  if (!SHOP.code) return `<div class="ctotal"><span>Разом</span><b>${money(sum)} грн</b></div>`;
+  const off = KSTYLE === 'c' ? SHOP.codeOff * live.filter(p => p.price).length : SHOP.codeOff;
+  return `<div class="crow"><span>Знижка за код ${kcode()}</span><span>−${money(off)} грн</span></div><div class="ctotal"><span>Разом з кодом</span><span><s>${money(sum)}</s><b>${money(Math.max(sum - off, 0))} грн</b></span></div>`;
+}
+// B: плашка над шапкою на всіх сторінках.
+function codeBar() { $('#kbar').innerHTML = KON('b') ? `<button type="button" class="kbar" data-kopen>${TAGICON}<span>−${SHOP.codeOff} грн з кодом</span>${kcode()}<u>Як отримати</u></button>` : ''; }
+function codeOpen() {
+  track('code-open');
+  $('#kbody').innerHTML = `<div class="kticket"><small>Код знижки з сайту</small>${kcode()}<span class="kv">−${SHOP.codeOff} грн</span><button type="button" class="kcopy" data-kcopy>Скопіювати код</button></div>
+    <ol class="ksteps"><li><span>Пишете нам у <b>Telegram або Viber</b> з сайту — код уже є в готовому повідомленні.</span></li>
+    <li><span>Приходите <b>в магазин</b> — покажіть цей екран продавцю або просто назвіть код.</span></li>
+    <li><span>Знижку ${SHOP.codeOff} грн віднімемо від ціни${KSTYLE === 'c' ? ' кожного товару' : ' покупки'}.</span></li></ol>
+    <p class="blead">м. ${esc(SHOP.city)}, ${esc(SHOP.address)} · ${esc(SHOP.hours)}</p>`;
+  $('#kfoot').innerHTML = `<a class="btn tgb block" href="${tgLink('Добрий день!' + codeMsg())}" target="_blank" rel="noopener" data-track="click-telegram">${TGICON}Telegram</a><a class="btn vb block" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber" data-kviber>${VBICON}Viber</a>`;
+  sheetOpen($('#ksheet'));
+}
+document.addEventListener('click', e => { if (e.target.closest('[data-kopen]')) codeOpen(); });
+$('#ksheet').addEventListener('click', async e => {
+  const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track);
+  if (e.target.closest('[data-kviber]')) copyText('Добрий день!' + codeMsg()).then(ok => ok && toast('Текст із кодом скопійовано — вставте його у Viber'));
+  const c = e.target.closest('[data-kcopy]'); if (c && await copyText(SHOP.code)) { c.textContent = 'Скопійовано'; setTimeout(() => c.textContent = 'Скопіювати код', 1600); }
+});
+codeBar();
 function promo() {
   const sale = ALL.filter(p => p.oldPrice && p.price), top = sale.length ? Math.max(...sale.map(pct)) : 0;
   if (!SHOP.promo && !top) return '';
@@ -1338,7 +1425,7 @@ const rmCart = id => { CART = CART.filter(x => x.id !== id); saveCart(); };
 // Товари з кошика, які ще є в каталозі (проданих уже немає в products.json).
 const cartLive = () => CART.map(x => BY.get(x.id)).filter(Boolean);
 const cartMsg = () => { const l = cartLive(), sum = l.reduce((a, p) => a + (p.price || 0), 0);
-  return `Добрий день! Хочу замовити:\n${l.map((p, i) => `${i + 1}. ID ${p.id} — ${fullName(p)}${p.price ? ` — ${money(p.price)} грн` : ''}\n${linkOf(p)}`).join('\n')}\nРазом: ${goods(l.length)}${sum ? `, ${money(sum)} грн` : ''}`; };
+  return `Добрий день! Хочу замовити:\n${l.map((p, i) => `${i + 1}. ID ${p.id} — ${fullName(p)}${p.price ? ` — ${money(p.price)} грн` : ''}\n${linkOf(p)}`).join('\n')}\nРазом: ${goods(l.length)}${sum ? `, ${money(sum)} грн` : ''}` + codeMsg(); };
 function updCart() {
   const live = cartLive(), n = CART.length, sum = live.reduce((a, p) => a + (p.price || 0), 0);
   $('#cartn').hidden = !n; $('#cartn').textContent = n;
@@ -1360,7 +1447,7 @@ function renderCart() {
     return `<li${p ? '' : ' class="gone"'}>${p ? `<button type="button" class="th" data-copen="${esc(x.id)}" aria-label="Відкрити ${esc(x.n)}">${p.photos[0] ? `<img src="${esc(p.photos[0])}" alt="" loading="lazy" data-cat="${p.cat}">` : illustration(p.cat, '')}</button>` : `<span class="th"></span>`}
       <button type="button" class="nm" ${p ? `data-copen="${esc(x.id)}"` : 'disabled'}><b>${esc(p ? fullName(p) : x.n)}</b><small>${p ? `ID ${esc(x.id)}${p.reserved ? ' · бронь' : ''}` : 'Уже продано'}</small></button>
       ${p?.price ? `<span class="pr">${money(p.price)} грн</span>` : ''}<button type="button" class="iconbtn" data-crm="${esc(x.id)}" aria-label="Прибрати ${esc(x.n)}">${X(14)}</button></li>`; }).join('')}</ul>
-    ${sum ? `<div class="ctotal"><span>Разом</span><b>${money(sum)} грн</b></div>` : ''}
+    ${sum ? codeTotal(sum, cartLive()) : ''}
     <p class="chint">Це ще не оплата. Надішліть список нам у Telegram або Viber — перевіримо наявність і домовимось про огляд чи доставку.</p>
     <button type="button" class="cclear" data-cclear>Очистити кошик</button>`;
   const ok = cartLive().length;
