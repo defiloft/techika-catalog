@@ -734,6 +734,8 @@ function parse(p) {
   const cm = w => { const m = t.match(new RegExp(w + '[^\\d\\n]{0,14}?(\\d{2,3}(?:[.,]\\d)?)[.,]?' + UNIT, 'i')); return m ? num(m[1]) : undefined; };
   // Плюс описки й скорочення з реальних дописів: «Виста», «Шириша», «Глиьина», «Глиб.».
   let height = cm('(?:висота|виста|вис\\.)'), width = cm('(?:ширина|шириша|шир\\.)'), depth = cm('(?:глибина|глиьина|глиб\\.?)');
+  // Описка «Ширина» двічі (ID110458: «Висота 177 / Ширина 91 / Ширина 75»): друга «ширина» після висоти й ширини — це глибина.
+  if (depth == null && height != null) { const ws = [...t.matchAll(new RegExp('(?:ширина|шириша|шир\\.)[^\\d\\n]{0,14}?(\\d{2,3}(?:[.,]\\d)?)[.,]?' + UNIT, 'gi'))]; if (ws.length === 2) depth = num(ws[1][1]); }
   const dims = t.replace(/^.*полотн.*$/gim, '').match(/(\d{2,3})\s*[xх×*]\s*(\d{2,3})(?:\s*[xх×*]\s*(\d{2,3}))?\s*(?:см|cm)/i);
   if (dims && height == null) [height, width, depth] = [num(dims[1]), num(dims[2]), dims[3] ? num(dims[3]) : undefined];
   if (cat.id === 'ovens' && height && height < 40) cat = CAT.micro;  // мікрохвильовки приходять з каналу духових: висота 25–32 см
@@ -1165,12 +1167,26 @@ const WSPEC = [
   ['os', 'Smart TV', 'Smart TV'],
   ['sound', 'Звук', 'Звук'],
   ['hdmi', 'HDMI', 'HDMI'],
+  ['height', 'Висота', 'Высота', 'см'],
+  ['width', 'Ширина', 'Ширина', 'см'],
+  ['depth', 'Глибина', 'Глубина', 'см'],
+  ['size', 'Габарити (Д×Ш×В)', 'Габариты (Д×Ш×В)', 'см'],
+  ['tvsize', 'Розміри без підставки (Ш×В×Г)', 'Размеры без подставки (Ш×В×Г)', 'см'],
+  ['weight', 'Вага', 'Вес', 'кг'],
+  ['maxu', 'Макс. вага користувача', 'Макс. вес пользователя', 'кг', 'кг', 'до '],
+  ['fly', 'Вага маховика', 'Вес маховика', 'кг'],
+  ['stride', 'Довжина кроку', 'Длина шага', 'см'],
+  ['speed', 'Макс. швидкість', 'Макс. скорость', 'км/год', 'км/ч'],
+  ['motor', 'Двигун', 'Двигатель'],
   ['feat', 'Особливості', 'Особенности'],
 ];
+// Розміри й параметри тренажерів: пропускаємо, якщо вони вже є в дописі (перевіряємо за даними, а не за підписом — на ru/ підписи перекладені).
+const WOWN = {height: p => p.height, width: p => p.width, depth: p => p.depth, size: p => p.height || p.width,
+  maxu: p => /вага користувача/i.test(p.text), fly: p => /маховик/i.test(p.text), stride: p => /довжина кроку/i.test(p.text), speed: p => /км\s*\/?\s*год/i.test(p.text)};
 function webSpecs(p, own) {
   const w = WEB.get(webKey(p)) || webGet(p); if (!w) return null;
   const have = new Set(own.map(r => String(r[0]).toLowerCase()));
-  const rows = WSPEC.filter(([k, uk]) => w.s[k] != null && !have.has(uk.toLowerCase()) && !(k === 'defrost' && p.cooling) && !(k === 'air' && /м³/.test(p.text || '')))
+  const rows = WSPEC.filter(([k, uk]) => w.s[k] != null && !have.has(uk.toLowerCase()) && !(WOWN[k] && WOWN[k](p)) && !(k === 'defrost' && p.cooling) && !(k === 'air' && /м³/.test(p.text || '')))
     .map(([k, uk, ru, u, ur, pre]) => {
       let v = w.s[k]; v = Array.isArray(v) ? v[RUV ? 1 : 0] : String(v);
       const unit = RUV ? (ur ?? u) : u;

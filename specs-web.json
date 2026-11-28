@@ -1,6 +1,6 @@
 {
  "note": "Характеристики моделей з сайтів виробників і магазинів. Ключ — бренд+модель без пробілів і знаків, великими літерами. Лише значення, яких немає в дописах.",
- "updated": "2026-11-26",
+ "updated": "2026-11-28",
  "items": {
   "AMICAAWDG7512CL": {
    "name": "Amica AWDG7512CL",
@@ -173,7 +173,9 @@
      "4 (з них 2× HDMI 2.1)",
      "4 (из них 2× HDMI 2.1)"
     ],
-    "energy": "G"
+    "energy": "G",
+    "tvsize": "167,5×96×7,8",
+    "weight": "29,9"
    }
   },
   "HISENSEDHQA903V": {
@@ -885,6 +887,123 @@
      "Cook3 — 3 блюда одновременно, телескопические направляющие, плавное закрывание дверцы"
     ]
    }
+  },
+  "FITLOGICT33": {
+   "name": "FitLogic T33",
+   "site": "comfy.ua",
+   "src": "https://comfy.ua/bigova-dorizhka-fitlogic-t33.html",
+   "s": {
+    "size": "175×76×138",
+    "weight": 62,
+    "maxu": 110,
+    "speed": 16,
+    "motor": [
+     "2,5 к.с. (пікова 3,75 к.с.)",
+     "2,5 л.с. (пиковая 3,75 л.с.)"
+    ]
+   },
+   "date": "2026-11-28"
+  },
+  "FITLOGICT33E": {
+   "name": "FitLogic T33E",
+   "site": "epicentrk.ua",
+   "src": "https://epicentrk.ua/ua/shop/begovaya-dorozhka-fitlogic-fitlogic-t33e-t33e.html",
+   "s": {
+    "size": "180×76×145",
+    "weight": 62,
+    "maxu": 110,
+    "speed": 16,
+    "motor": [
+     "2,5 к.с.",
+     "2,5 л.с."
+    ]
+   },
+   "date": "2026-11-28"
+  },
+  "FITLOGICT16C": {
+   "name": "FitLogic T16C",
+   "site": "epicentrk.ua",
+   "src": "https://epicentrk.ua/ua/shop/begovaya-dorozhka-t16c-fitlogic-t16c.html",
+   "s": {
+    "size": "195×91×155",
+    "weight": 85,
+    "maxu": 130,
+    "speed": 20,
+    "motor": [
+     "3,5 к.с.",
+     "3,5 л.с."
+    ]
+   },
+   "date": "2026-11-28"
+  },
+  "BHFITNESSF1": {
+   "name": "BH Fitness F1",
+   "site": "fitness-superstore.co.uk",
+   "src": "https://www.fitness-superstore.co.uk/bh-fitness-f1-folding-treadmill-1.html",
+   "s": {
+    "size": "174×78×140",
+    "weight": 86,
+    "maxu": 135,
+    "speed": 16,
+    "motor": [
+     "1,25 к.с. (пікова 2,5 к.с.)",
+     "1,25 л.с. (пиковая 2,5 л.с.)"
+    ]
+   },
+   "date": "2026-11-28"
+  },
+  "PROFORM305CST": {
+   "name": "ProForm 305 CST",
+   "site": "johnlewis.com",
+   "src": "https://www.johnlewis.com/proform-305-cst-treadmill/p5447702",
+   "s": {
+    "size": "154×81×165",
+    "weight": 80,
+    "maxu": 115,
+    "speed": 16,
+    "motor": [
+     "2 к.с.",
+     "2 л.с."
+    ]
+   },
+   "date": "2026-11-28"
+  },
+  "NORDICTRACKGX50": {
+   "name": "NordicTrack GX 5.0",
+   "site": "usa-homegym.com",
+   "src": "https://www.usa-homegym.com/exercise-bikes/nordictrack-gx-5-0-recumbent-bike-review",
+   "s": {
+    "size": "149×69×140",
+    "weight": 68,
+    "maxu": 159,
+    "fly": 8
+   },
+   "date": "2026-11-28"
+  },
+  "VISIONFITNESSE3200": {
+   "name": "Vision Fitness E3200",
+   "site": "fitness-superstore.co.uk",
+   "src": "https://www.fitness-superstore.co.uk/vision-fitness-e3200-upright-cycle-with-simple-console.html",
+   "s": {
+    "size": "104×66×142",
+    "weight": 47,
+    "maxu": 136,
+    "fly": 11
+   },
+   "date": "2026-11-28"
+  },
+  "PROFORM320ZLE": {
+   "name": "ProForm 320 ZLE",
+   "site": "fitness-superstore.co.uk",
+   "src": "https://www.fitness-superstore.co.uk/pro-form-320-zle-elliptical-trainer.html",
+   "s": {
+    "size": "167×66×157",
+    "weight": 59,
+    "maxu": 120,
+    "fly": 9,
+    "stride": 45
+   },
+   "date": "2026-11-28"
   }
  }
 }
