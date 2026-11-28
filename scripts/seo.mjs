@@ -49,17 +49,17 @@ const UK = {
   addr: `м. ${SHOP.city}, ${SHOP.address}`, hint: SHOP.addressHint, hours: SHOP.hours, map: 'На карті',
   about: 'вживана та нова побутова техніка з Європи в Києві.',
   goods: n => `${n} ${plural(n, 'товар', 'товари', 'товарів')}`,
-  // Заголовки розділів під пошукові запити. «б/у» в title — бо саме так найчастіше набирають навіть українською;
-  // в H1 і тексті — правильне «б/в» і «вживані». Тексти розділів — у scripts/seo-text.mjs.
+  // Заголовки розділів під пошукові запити. За Google Trends (Україна, 2025–2026) люди пишуть «бу» без скісної:
+  // «холодильник бу» в ~4 рази частіше за «холодильник б/у», а «б/в» і «вживаний» майже не шукають. Тому «бу» — в title і H1. Тексти розділів — у scripts/seo-text.mjs.
   txt: TXT.UK, kyiv: 'Київ', inKyiv: 'в Києві', ua: TXT.DELIVERY ? ', доставка по Україні' : '', orUa: TXT.DELIVERY ? ' або доставка по Україні' : '',
   catText(c, n, min, brands) {
     const from = min ? `, від ${money(min)} грн` : '', br = brands.length ? `. ${brands.slice(0, 4).join(', ')} та інші` : '';
-    if (c.id === 'sale') return {h1: `Уцінена техніка з Європи — розпродаж у Києві`, title: `Уцінена б/у техніка з Європи — знижки, Київ${this.ua} | ${this.shop}`,
+    if (c.id === 'sale') return {h1: `Уцінена техніка з Європи — розпродаж у Києві`, title: `Уцінена бу техніка з Європи — знижки, Київ${this.ua} | ${this.shop}`,
       desc: `Уцінка і знижки на вживану побутову техніку з Європи: ${this.goods(n)} зі зниженою ціною${from}. Перевірені, гарантія 3 місяці. ${this.addr}${this.orUa}.`,
       h2: 'Розпродаж вживаної техніки', text: 'Тут уся техніка зі зниженою ціною: пральні машини, холодильники, посудомийки, плити та інше. Знижки оновлюються щодня — що бачите на сторінці, те й в наявності.'};
     const t = this.txt[c.id] || {acc: c.name.toLowerCase(), text: ''};
-    return {h1: `${c.name} б/в з Європи — Київ${this.ua}`, title: `${c.name} б/у з Європи — купити в Києві${this.ua} | ${this.shop}`,
-      desc: `Купити ${t.acc} з Європи: ${n} в наявності${from}${br}. Перевірені, гарантія 3 місяці. ${this.addr} (${this.hint})${this.orUa}.`,
+    return {h1: `${c.name} бу з Європи — Київ${this.ua}`, title: `${c.name} бу з Європи — купити в Києві${this.ua} | ${this.shop}`,
+      desc: `Купити ${t.acc} (бу) з Європи: ${n} в наявності${from}${br}. Перевірені, гарантія 3 місяці. ${this.addr} (${this.hint})${this.orUa}.`,
       h2: `Купити ${t.acc} ${this.inKyiv}`, text: t.text};
   },
   facts: (n, min, brands, addr, hint, hours) => `Зараз в наявності ${UK.goods(n)}${min ? `, ціни від ${money(min)} грн` : ''}.${brands.length ? ` Бренди: ${brands.join(', ')}.` : ''} На кожну одиницю — гарантія 3 місяці. Подивитися й перевірити наживо можна в магазині: ${addr} (${hint}), щодня ${hours}.${TXT.DELIVERY ? ' Відправляємо по всій Україні — напишіть у Telegram чи Viber, і ми підкажемо вартість доставки.' : ''}`,
@@ -78,12 +78,12 @@ const RUL = {
   txt: TXT.RU, kyiv: 'Киев', inKyiv: 'в Киеве', ua: TXT.DELIVERY ? ', доставка по Украине' : '', orUa: TXT.DELIVERY ? ' или доставка по Украине' : '',
   catText(c, n, min, brands) {
     const from = min ? `, от ${money(min)} грн` : '', br = brands.length ? `. ${brands.slice(0, 4).join(', ')} и другие` : '';
-    if (c.id === 'sale') return {h1: 'Уцененная техника из Европы — распродажа в Киеве', title: `Уцененная б/у техника из Европы — скидки, Киев${this.ua} | ${this.shop}`,
+    if (c.id === 'sale') return {h1: 'Уцененная техника из Европы — распродажа в Киеве', title: `Уцененная бу техника из Европы — скидки, Киев${this.ua} | ${this.shop}`,
       desc: `Уценка и скидки на б/у бытовую технику из Европы: ${this.goods(n)} по сниженной цене${from}. Проверенные, гарантия 3 месяца. ${this.addr}${this.orUa}.`,
       h2: 'Распродажа б/у техники', text: 'Здесь вся техника со сниженной ценой: стиральные машины, холодильники, посудомойки, плиты и другое. Скидки обновляются ежедневно — что видите на странице, то и в наличии.'};
     const nm = this.catName(c), t = this.txt[c.id] || {acc: nm.toLowerCase(), text: ''};
-    return {h1: `${nm} б/у из Европы — Киев${this.ua}`, title: `${nm} б/у из Европы — купить в Киеве${this.ua} | ${this.shop}`,
-      desc: `Купить ${t.acc} из Европы: ${n} в наличии${from}${br}. Проверенные, гарантия 3 месяца. ${this.addr} (${this.hint})${this.orUa}.`,
+    return {h1: `${nm} бу из Европы — Киев${this.ua}`, title: `${nm} бу из Европы — купить в Киеве${this.ua} | ${this.shop}`,
+      desc: `Купить ${t.acc} (бу) из Европы: ${n} в наличии${from}${br}. Проверенные, гарантия 3 месяца. ${this.addr} (${this.hint})${this.orUa}.`,
       h2: `Купить ${t.acc} ${this.inKyiv}`, text: t.text};
   },
   facts: (n, min, brands, addr, hint, hours) => `Сейчас в наличии ${RUL.goods(n)}${min ? `, цены от ${money(min)} грн` : ''}.${brands.length ? ` Бренды: ${brands.join(', ')}.` : ''} На каждую единицу — гарантия 3 месяца. Посмотреть и проверить вживую можно в магазине: ${addr} (${hint}), ежедневно ${hours}.${TXT.DELIVERY ? ' Отправляем по всей Украине — напишите в Telegram или Viber, и мы подскажем стоимость доставки.' : ''}`,
@@ -255,7 +255,7 @@ const TRL = ${RU.tr.toString().replace('WORDS[', 'RU_WORDS[')};
 `;
   const at = head.indexOf('/* ---------- іконки');
   head = head.slice(0, at) + boot + head.slice(at);
-  const TITLE = `Б/у бытовая техника из Европы — Киев${RUL.ua} | ${RUL.shop}`;
+  const TITLE = `Бытовая техника из Европы бу — Киев${RUL.ua} | ${RUL.shop}`;
   const DESC = `Б/у бытовая техника из Германии и Европы: стиральные и сушильные машины, холодильники, посудомойки, плиты, духовки, кофемашины, телевизоры, тренажеры. Проверенная, гарантия 3 месяца. ${RUL.addr} (${RUL.hint}), ежедневно 10:00–19:00.${TXT.DELIVERY ? ' Доставка по Украине.' : ''}`;
   head = head.replace('<html lang="uk">', '<html lang="ru">')
     .replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="../">')
