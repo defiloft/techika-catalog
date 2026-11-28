@@ -62,7 +62,7 @@ const UK = {
       desc: `Купити ${t.acc} з Європи: ${n} в наявності${from}${br}. Перевірені, гарантія 3 місяці. ${this.addr} (${this.hint})${this.orUa}.`,
       h2: `Купити ${t.acc} ${this.inKyiv}`, text: t.text};
   },
-  facts: (n, min, brands, addr, hint, hours) => `Зараз в наявності ${UK.goods(n)}${min ? `, ціни від ${money(min)} грн` : ''}.${brands.length ? ` Бренди: ${brands.join(', ')}.` : ''} На кожну одиницю — гарантія 3 місяці. Подивитися й перевірити наживо можна в магазині: ${addr} (${hint}), щодня ${hours}.${TXT.DELIVERY ? ' Відправляємо по всій Україні — напишіть у Telegram чи Viber, і ми підкажемо вартість доставки.' : ''}`,
+  facts: (n, min, brands, addr, hint, hours) => `Зараз в наявності ${UK.goods(n)}${min ? `, ціни від ${money(min)} грн` : ''}.${brands.length ? ` Бренди: ${brands.join(', ')}.` : ''} На кожну одиницю — гарантія 3 місяці. Подивитися й перевірити наживо можна в магазині: ${addr} (${hint}), щодня ${hours}.${TXT.DELIVERY ? ' Відправляємо по всій Україні — напишіть у Telegram чи Viber, і домовимося про доставку.' : ''}`,
   lead: (n, addr, hours) => `${UK.goods(n)} в наявності. Уся техніка — з Європи, перевірена перед продажем, з гарантією. Подивитися наживо: ${addr}, щодня ${hours}.`,
   filters: 'Відкрити з фільтрами', fromEU: 'з Європи', forPrice: 'за', warranty: 'гарантія', Warranty: 'Гарантія', look: 'Подивитися',
   ask: 'Добрий день! Цікавить', photo: 'фото', isNew: 'Нова', isUsed: 'Б/в', reserved: 'Заброньовано', inStock: 'В наявності',
@@ -86,7 +86,7 @@ const RUL = {
       desc: `Купить ${t.acc} из Европы: ${n} в наличии${from}${br}. Проверенные, гарантия 3 месяца. ${this.addr} (${this.hint})${this.orUa}.`,
       h2: `Купить ${t.acc} ${this.inKyiv}`, text: t.text};
   },
-  facts: (n, min, brands, addr, hint, hours) => `Сейчас в наличии ${RUL.goods(n)}${min ? `, цены от ${money(min)} грн` : ''}.${brands.length ? ` Бренды: ${brands.join(', ')}.` : ''} На каждую единицу — гарантия 3 месяца. Посмотреть и проверить вживую можно в магазине: ${addr} (${hint}), ежедневно ${hours}.${TXT.DELIVERY ? ' Отправляем по всей Украине — напишите в Telegram или Viber, и мы подскажем стоимость доставки.' : ''}`,
+  facts: (n, min, brands, addr, hint, hours) => `Сейчас в наличии ${RUL.goods(n)}${min ? `, цены от ${money(min)} грн` : ''}.${brands.length ? ` Бренды: ${brands.join(', ')}.` : ''} На каждую единицу — гарантия 3 месяца. Посмотреть и проверить вживую можно в магазине: ${addr} (${hint}), ежедневно ${hours}.${TXT.DELIVERY ? ' Отправляем по всей Украине — напишите в Telegram или Viber, и договоримся о доставке.' : ''}`,
   lead: (n, addr, hours) => `${RUL.goods(n)} в наличии. Вся техника — из Европы, проверена перед продажей, с гарантией. Посмотреть вживую: ${addr}, ежедневно ${hours}.`,
   filters: 'Открыть с фильтрами', fromEU: 'из Европы', forPrice: 'за', warranty: 'гарантия', Warranty: 'Гарантия', look: 'Посмотреть',
   ask: 'Добрый день! Интересует', photo: 'фото', isNew: 'Новая', isUsed: 'Б/у', reserved: 'Забронировано', inStock: 'В наличии',
