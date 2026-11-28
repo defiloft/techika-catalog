@@ -179,6 +179,8 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .kpon{display:flex;align-items:center;gap:12px;width:100%;margin-top:14px;padding:12px 14px;border:2px dashed #e0a100;border-radius:14px;background:#fff8e6;color:var(--floor);text-align:left;font:inherit}
 .kpon .kv{flex:none;font-size:24px;font-weight:800;color:#b45309;font-variant-numeric:tabular-nums;line-height:1}
 .kpon .kt{flex:1;min-width:0;font-size:14px;line-height:1.35}.kpon .kt b{display:block;font-size:15.5px}.kpon .kt small{display:block;color:var(--concrete);font-size:13px}
+.kpon.no{border-color:var(--line);background:var(--soft)}.kpon.no .go{color:var(--concrete)}
+.cnote{padding:10px var(--gutter) 0;color:var(--concrete);font-size:13.5px}
 .kpon .go{flex:none;color:#b45309;font-weight:700;font-size:14px}
 .kpon.home{width:calc(100% - 2*var(--gutter));margin:12px var(--gutter) 0;padding:14px 16px}
 @media(max-width:479px){.kpon.home .go{display:none}}
@@ -1123,9 +1125,11 @@ $('#freset').onclick = () => setDraft({pmin: undefined, pmax: undefined, brands:
 $('#fapply').onclick = () => { setState(draft); sheetClose($('#fsheet')); };
 
 /* ---------- картка товару ---------- */
-const msg = p => `Добрый день! Интересует ID ${p.id}, ${nameOf(p)}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim() + codeMsg();
+const msg = p => `Добрый день! Интересует ID ${p.id}, ${nameOf(p)}${p.price ? `, ${money(p.price)} грн` : ''} ${p.url || ''}`.trim() + codeMsg(!onSale(p));
 // Рядок із кодом у кожному готовому повідомленні: менеджер бачить, що клієнт із сайту.
-const codeMsg = () => SHOP.code ? `\nКод скидки с сайта: ${SHOP.code} (−${SHOP.codeOff} грн)` : '';
+// На товари з розпродажу (є стара ціна) знижка за код не діє, але сам код лишаємо: він показує, що клієнт із сайту.
+const onSale = p => !!(p.oldPrice && p.price);
+const codeMsg = (ok = true) => !SHOP.code ? '' : ok ? `\nКод скидки с сайта: ${SHOP.code} (−${SHOP.codeOff} грн)` : `\nКод с сайта: ${SHOP.code}`;
 function specsOf(p) {
   return [['Состояние', p.isNew ? 'Новая' : 'Б/у'], [p.dkg ? 'Загрузка стирки' : 'Загрузка', p.kg && `${p.kg} кг`], ['Загрузка сушки', p.dkg && `${p.dkg} кг`], ['Отжим', p.rpm && `${p.rpm} об/мин`],
     ['Тип загрузки', p.load && (p.load === 'front' ? 'Фронтальная' : 'Вертикальная')], ['Система охлаждения', p.cooling],
@@ -1329,13 +1333,14 @@ $('#bsheet').addEventListener('click', e => { const a = e.target.closest('[data-
 /* ---------- знижка за код із сайту ---------- */
 const kcode = () => `<span class="kcode">${esc(SHOP.code)}</span>`;
 // Картка на головній під «Викупом» і купон у товарі.
-const codeHome = () => SHOP.code ? `<button type="button" class="kpon home" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Скидка ${SHOP.codeOff} грн за код с сайта</b><small>Назовите код ${kcode()} в Telegram, Viber или в магазине</small></span><span class="go">Как получить →</span></button>` : '';
-const codeInProduct = p => !SHOP.code ? '' : `<button type="button" class="kpon" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Ваш код: ${kcode()}</b><small>Назовите его в чате или покажите этот экран в магазине</small></span><span class="go">›</span></button>`;
-// Кошик: рядок зі знижкою й сума з кодом (знижка на замовлення).
-function codeTotal(sum) {
-  if (!SHOP.code) return `<div class="ctotal"><span>Итого</span><b>${money(sum)} грн</b></div>`;
-  const off = SHOP.codeOff;
-  return `<div class="crow"><span>Скидка за код ${kcode()}</span><span>−${money(off)} грн</span></div><div class="ctotal"><span>Итого с кодом</span><span><s>${money(sum)}</s><b>${money(Math.max(sum - off, 0))} грн</b></span></div>`;
+const codeHome = () => SHOP.code ? `<button type="button" class="kpon home" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Скидка ${SHOP.codeOff} грн за код с сайта</b><small>Назовите код ${kcode()} в Telegram, Viber или в магазине. Кроме товаров с распродажи.</small></span><span class="go">Как получить →</span></button>` : '';
+const codeInProduct = p => !SHOP.code ? '' : onSale(p) ? `<button type="button" class="kpon no" data-kopen><span class="kt"><b>Скидка по коду ${kcode()} не действует на товары с распродажи</b><small>Цена этого товара уже снижена.</small></span><span class="go">›</span></button>` : `<button type="button" class="kpon" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Ваш код: ${kcode()}</b><small>Назовите его в чате или покажите этот экран в магазине</small></span><span class="go">›</span></button>`;
+// Кошик: рядок зі знижкою й сума з кодом (знижка на замовлення, але не на товари з розпродажу).
+function codeTotal(sum, live) {
+  const base = live.filter(p => !onSale(p)).reduce((a, p) => a + (p.price || 0), 0), off = Math.min(SHOP.codeOff, base);
+  const note = SHOP.code && live.some(onSale) ? `<p class="cnote">Скидка по коду не действует на товары с распродажи.</p>` : '';
+  if (!SHOP.code || !off) return `<div class="ctotal"><span>Итого</span><b>${money(sum)} грн</b></div>` + note;
+  return note + `<div class="crow"><span>Скидка за код ${kcode()}</span><span>−${money(off)} грн</span></div><div class="ctotal"><span>Итого с кодом</span><span><s>${money(sum)}</s><b>${money(Math.max(sum - off, 0))} грн</b></span></div>`;
 }
 function codeOpen() {
   track('code-open');
@@ -1343,6 +1348,7 @@ function codeOpen() {
     <ol class="ksteps"><li><span>Пишете нам в <b>Telegram или Viber</b> с сайта — код уже есть в готовом сообщении.</span></li>
     <li><span>Приходите <b>в магазин</b> — покажите этот экран продавцу или просто назовите код.</span></li>
     <li><span>Скидку ${SHOP.codeOff} грн вычтем из цены покупки.</span></li></ol>
+    <p class="bno"><small>Обратите внимание</small>Код <b>не действует на товары с распродажи</b> (с перечёркнутой старой ценой).</p>
     <p class="blead">м. ${esc(SHOP.city)}, ${esc(SHOP.address)} · ${esc(SHOP.hours)}</p>`;
   $('#kfoot').innerHTML = `<a class="btn tgb block" href="${tgLink('Добрий день!' + codeMsg())}" target="_blank" rel="noopener" data-track="click-telegram">${TGICON}Telegram</a><a class="btn vb block" href="viber://chat?number=%2B${SHOP.viber}" data-track="click-viber" data-kviber>${VBICON}Viber</a>`;
   sheetOpen($('#ksheet'));
@@ -1413,7 +1419,7 @@ const rmCart = id => { CART = CART.filter(x => x.id !== id); saveCart(); };
 // Товари з кошика, які ще є в каталозі (проданих уже немає в products.json).
 const cartLive = () => CART.map(x => BY.get(x.id)).filter(Boolean);
 const cartMsg = () => { const l = cartLive(), sum = l.reduce((a, p) => a + (p.price || 0), 0);
-  return `Добрый день! Хочу заказать:\n${l.map((p, i) => `${i + 1}. ID ${p.id} — ${fullName(p)}${p.price ? ` — ${money(p.price)} грн` : ''}\n${linkOf(p)}`).join('\n')}\nИтого: ${goods(l.length)}${sum ? `, ${money(sum)} грн` : ''}` + codeMsg(); };
+  return `Добрый день! Хочу заказать:\n${l.map((p, i) => `${i + 1}. ID ${p.id} — ${fullName(p)}${p.price ? ` — ${money(p.price)} грн` : ''}\n${linkOf(p)}`).join('\n')}\nИтого: ${goods(l.length)}${sum ? `, ${money(sum)} грн` : ''}` + codeMsg(l.some(p => !onSale(p))); };
 function updCart() {
   const live = cartLive(), n = CART.length, sum = live.reduce((a, p) => a + (p.price || 0), 0);
   $('#cartn').hidden = !n; $('#cartn').textContent = n;
@@ -1435,7 +1441,7 @@ function renderCart() {
     return `<li${p ? '' : ' class="gone"'}>${p ? `<button type="button" class="th" data-copen="${esc(x.id)}" aria-label="Открыть ${esc(x.n)}">${p.photos[0] ? `<img src="${esc(p.photos[0])}" alt="" loading="lazy" data-cat="${p.cat}">` : illustration(p.cat, '')}</button>` : `<span class="th"></span>`}
       <button type="button" class="nm" ${p ? `data-copen="${esc(x.id)}"` : 'disabled'}><b>${esc(p ? fullName(p) : x.n)}</b><small>${p ? `ID ${esc(x.id)}${p.reserved ? ' · бронь' : ''}` : 'Уже продано'}</small></button>
       ${p?.price ? `<span class="pr">${money(p.price)} грн</span>` : ''}<button type="button" class="iconbtn" data-crm="${esc(x.id)}" aria-label="Убрать ${esc(x.n)}">${X(14)}</button></li>`; }).join('')}</ul>
-    ${sum ? codeTotal(sum) : ''}
+    ${sum ? codeTotal(sum, cartLive()) : ''}
     <p class="chint">Это ещё не оплата. Отправьте список нам в Telegram или Viber — проверим наличие и договоримся об осмотре или доставке.</p>
     <button type="button" class="cclear" data-cclear>Очистить корзину</button>`;
   const ok = cartLive().length;
