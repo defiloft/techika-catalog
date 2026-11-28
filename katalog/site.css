@@ -50,3 +50,7 @@ h2{margin:26px 0 0;font-size:19px}
 @media(max-width:639px){.shop span{display:block}}
 @media(max-width:389px){.shop{font-size:17px}.logo{width:36px;height:36px}.header{gap:8px}}
 .footer .ask{margin:0;color:var(--floor);font-weight:600;font-size:17px;line-height:1.25;max-width:9em}.askrow{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:14px 0 10px}.askrow .btns{flex-direction:column;flex-wrap:nowrap;width:190px;flex:none;margin:0}.askrow .btn{justify-content:center}.btn svg{margin-right:6px;flex:none}
+.about{margin:28px 0 8px;padding:18px 18px 16px;background:var(--body);border-radius:16px;max-width:760px}
+.about h2{margin:0 0 8px;font-size:18px;line-height:1.3}
+.about p{margin:0 0 8px;color:var(--concrete)}
+.about p:last-child{margin-bottom:0}

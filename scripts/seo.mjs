@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import * as RU from './ru.mjs';
+import * as TXT from './seo-text.mjs';
 
 const SITE = 'https://techika.com.ua/';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -48,12 +49,20 @@ const UK = {
   addr: `м. ${SHOP.city}, ${SHOP.address}`, hint: SHOP.addressHint, hours: SHOP.hours, map: 'На карті',
   about: 'вживана та нова побутова техніка з Європи в Києві.',
   goods: n => `${n} ${plural(n, 'товар', 'товари', 'товарів')}`,
-  catText(c, n, min) {
-    if (c.id === 'sale') return {h1: 'Розпродаж техніки з Європи в Києві', title: `Розпродаж б/в техніки з Європи — знижки, Київ | ${this.shop}`,
-      desc: `Знижки на вживану побутову техніку з Європи: ${this.goods(n)} зі зниженою ціною. Перевірені, з гарантією. ${this.addr}.`};
-    return {h1: `${c.name} б/в з Європи в Києві`, title: `${c.name} б/в з Європи — купити в Києві | ${this.shop}`,
-      desc: `${c.name} б/в та нові з Німеччини й Європи: ${n} в наявності, ціни від ${money(min)} грн. Перевірені, з гарантією. ${this.addr}, ${this.hours}.`};
+  // Заголовки розділів під пошукові запити. «б/у» в title — бо саме так найчастіше набирають навіть українською;
+  // в H1 і тексті — правильне «б/в» і «вживані». Тексти розділів — у scripts/seo-text.mjs.
+  txt: TXT.UK, kyiv: 'Київ', inKyiv: 'в Києві', ua: TXT.DELIVERY ? ', доставка по Україні' : '', orUa: TXT.DELIVERY ? ' або доставка по Україні' : '',
+  catText(c, n, min, brands) {
+    const from = min ? `, від ${money(min)} грн` : '', br = brands.length ? `. ${brands.slice(0, 4).join(', ')} та інші` : '';
+    if (c.id === 'sale') return {h1: `Уцінена техніка з Європи — розпродаж у Києві`, title: `Уцінена б/у техніка з Європи — знижки, Київ${this.ua} | ${this.shop}`,
+      desc: `Уцінка і знижки на вживану побутову техніку з Європи: ${this.goods(n)} зі зниженою ціною${from}. Перевірені, гарантія 3 місяці. ${this.addr}${this.orUa}.`,
+      h2: 'Розпродаж вживаної техніки', text: 'Тут уся техніка зі зниженою ціною: пральні машини, холодильники, посудомийки, плити та інше. Знижки оновлюються щодня — що бачите на сторінці, те й в наявності.'};
+    const t = this.txt[c.id] || {acc: c.name.toLowerCase(), text: ''};
+    return {h1: `${c.name} б/в з Європи — Київ${this.ua}`, title: `${c.name} б/у з Європи — купити в Києві${this.ua} | ${this.shop}`,
+      desc: `Купити ${t.acc} з Європи: ${n} в наявності${from}${br}. Перевірені, гарантія 3 місяці. ${this.addr} (${this.hint})${this.orUa}.`,
+      h2: `Купити ${t.acc} ${this.inKyiv}`, text: t.text};
   },
+  facts: (n, min, brands, addr, hint, hours) => `Зараз в наявності ${UK.goods(n)}${min ? `, ціни від ${money(min)} грн` : ''}.${brands.length ? ` Бренди: ${brands.join(', ')}.` : ''} На кожну одиницю — гарантія 3 місяці. Подивитися й перевірити наживо можна в магазині: ${addr} (${hint}), щодня ${hours}.${TXT.DELIVERY ? ' Відправляємо по всій Україні — напишіть у Telegram чи Viber, і ми підкажемо вартість доставки.' : ''}`,
   lead: (n, addr, hours) => `${UK.goods(n)} в наявності. Уся техніка — з Європи, перевірена перед продажем, з гарантією. Подивитися наживо: ${addr}, щодня ${hours}.`,
   filters: 'Відкрити з фільтрами', fromEU: 'з Європи', forPrice: 'за', warranty: 'гарантія', Warranty: 'Гарантія', look: 'Подивитися',
   ask: 'Добрий день! Цікавить', photo: 'фото', isNew: 'Нова', isUsed: 'Б/в', reserved: 'Заброньовано', inStock: 'В наявності',
@@ -66,13 +75,18 @@ const RUL = {
   addr: `г. Киев, ${RU.tr(SHOP.address)}`, hint: SHOP.addressHint.replace('Шулявська', 'Шулявская'), hours: SHOP.hours.replace('без вихідних', 'без выходных'), map: 'На карте',
   about: 'б/у и новая бытовая техника из Европы в Киеве.',
   goods: n => `${n} ${plural(n, 'товар', 'товара', 'товаров')}`,
-  catText(c, n, min) {
-    if (c.id === 'sale') return {h1: 'Распродажа техники из Европы в Киеве', title: `Распродажа б/у техники из Европы — скидки, Киев | ${this.shop}`,
-      desc: `Скидки на б/у бытовую технику из Европы: ${this.goods(n)} по сниженной цене. Проверенные, с гарантией. ${this.addr}.`};
-    const nm = this.catName(c);
-    return {h1: `${nm} б/у из Европы в Киеве`, title: `${nm} б/у из Европы — купить в Киеве | ${this.shop}`,
-      desc: `${nm} б/у и новые из Германии и Европы: ${n} в наличии, цены от ${money(min)} грн. Проверенные, с гарантией. ${this.addr}, ${this.hours}.`};
+  txt: TXT.RU, kyiv: 'Киев', inKyiv: 'в Киеве', ua: TXT.DELIVERY ? ', доставка по Украине' : '', orUa: TXT.DELIVERY ? ' или доставка по Украине' : '',
+  catText(c, n, min, brands) {
+    const from = min ? `, от ${money(min)} грн` : '', br = brands.length ? `. ${brands.slice(0, 4).join(', ')} и другие` : '';
+    if (c.id === 'sale') return {h1: 'Уцененная техника из Европы — распродажа в Киеве', title: `Уцененная б/у техника из Европы — скидки, Киев${this.ua} | ${this.shop}`,
+      desc: `Уценка и скидки на б/у бытовую технику из Европы: ${this.goods(n)} по сниженной цене${from}. Проверенные, гарантия 3 месяца. ${this.addr}${this.orUa}.`,
+      h2: 'Распродажа б/у техники', text: 'Здесь вся техника со сниженной ценой: стиральные машины, холодильники, посудомойки, плиты и другое. Скидки обновляются ежедневно — что видите на странице, то и в наличии.'};
+    const nm = this.catName(c), t = this.txt[c.id] || {acc: nm.toLowerCase(), text: ''};
+    return {h1: `${nm} б/у из Европы — Киев${this.ua}`, title: `${nm} б/у из Европы — купить в Киеве${this.ua} | ${this.shop}`,
+      desc: `Купить ${t.acc} из Европы: ${n} в наличии${from}${br}. Проверенные, гарантия 3 месяца. ${this.addr} (${this.hint})${this.orUa}.`,
+      h2: `Купить ${t.acc} ${this.inKyiv}`, text: t.text};
   },
+  facts: (n, min, brands, addr, hint, hours) => `Сейчас в наличии ${RUL.goods(n)}${min ? `, цены от ${money(min)} грн` : ''}.${brands.length ? ` Бренды: ${brands.join(', ')}.` : ''} На каждую единицу — гарантия 3 месяца. Посмотреть и проверить вживую можно в магазине: ${addr} (${hint}), ежедневно ${hours}.${TXT.DELIVERY ? ' Отправляем по всей Украине — напишите в Telegram или Viber, и мы подскажем стоимость доставки.' : ''}`,
   lead: (n, addr, hours) => `${RUL.goods(n)} в наличии. Вся техника — из Европы, проверена перед продажей, с гарантией. Посмотреть вживую: ${addr}, ежедневно ${hours}.`,
   filters: 'Открыть с фильтрами', fromEU: 'из Европы', forPrice: 'за', warranty: 'гарантия', Warranty: 'Гарантия', look: 'Посмотреть',
   ask: 'Добрый день! Интересует', photo: 'фото', isNew: 'Новая', isUsed: 'Б/у', reserved: 'Забронировано', inStock: 'В наличии',
@@ -155,16 +169,25 @@ const out = new Map();  // шлях → вміст
 const urls = [];        // [ключ сторінки, дата]
 
 for (const c of CATLIST) {
-  const items = ALL.filter(p => inCat(p, c.id)), key = 'cat:' + c.id, min = Math.min(...items.filter(p => p.price).map(p => p.price));
+  const items = ALL.filter(p => inCat(p, c.id)), key = 'cat:' + c.id, prices = items.filter(p => p.price).map(p => p.price), min = prices.length ? Math.min(...prices) : 0;
+  // Бренди, яких у розділі найбільше (люди часто шукають «Bosch б/у», «Miele з Німеччини»).
+  const bc = {};
+  for (const p of items) if (p.brand && !/^\d/.test(p.brand)) bc[p.brand] = (bc[p.brand] || 0) + 1;
+  const brands = Object.entries(bc).sort((a, b) => b[1] - a[1]).slice(0, 6).map(x => x[0]);
   urls.push([key, day(items[0]?.date)]);
   for (const L of LANGS) {
-    const t = L.catText(c, items.length, min), up = L.base ? '../../../' : '../../', canon = urlOf(L, key);
+    const t = L.catText(c, items.length, min, brands), up = L.base ? '../../../' : '../../', canon = urlOf(L, key);
     const body = `<main>
 <nav class="crumbs"><a href="${up}${L.base}">${L.home}</a> › <span>${esc(L.catName(c))}</span></nav>
 <h1>${esc(t.h1)}</h1>
 <p class="lead">${esc(L.lead(items.length, L.addr, L.hours.replace(/, без вих\S+/, '')))}</p>
 <p><a class="btn primary" href="${up}${L.base}?cat=${c.id}">${L.filters}</a></p>
 <ul class="grid">${items.map(p => card(L, p, up)).join('')}</ul>
+<section class="about">
+<h2>${esc(t.h2)}</h2>
+${t.text ? `<p>${esc(t.text)}</p>` : ''}
+<p>${esc(L.facts(items.length, min, brands, L.addr, L.hint, L.hours.replace(/, без в[иы]х\S+/, '')))}</p>
+</section>
 </main>`;
     out.set(rel(L, key) + 'index.html', page(L, {key, title: t.title, desc: t.desc, up, body, json: [
       {'@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -178,10 +201,10 @@ for (const p of ALL) {
   for (const L of LANGS) {
     const up = L.base ? '../../' : '../', canon = urlOf(L, key), one = L.one[p.cat], cname = L.catName(c);
     const head = `${one} ${nm || 'ID ' + p.id}`;
-    const title = `${head} ${state(L, p)}${p.price ? ` — ${money(p.price)} грн` : ''}, ${L.code === 'uk' ? 'Київ' : 'Киев'} | ${L.shop}`;
+    const title = `${head} ${state(L, p)}${p.price ? ` — ${money(p.price)} грн` : ''}, ${L.kyiv} | ${L.shop}`;
     const warr = L.tr(p.warrantyText);
     const facts = [L.tr(p.chips.join(', ')), warr && `${L.warranty} ${warr}`].filter(Boolean).join('; ');
-    const desc = `${head} ${state(L, p)} ${L.fromEU}${p.price ? ` ${L.forPrice} ${money(p.price)} грн` : ''}${facts ? ` (${facts})` : ''}. ID ${p.id}. ${L.look}: ${L.addr}.`;
+    const desc = `${head} ${state(L, p)} ${L.fromEU}${p.price ? ` ${L.forPrice} ${money(p.price)} грн` : ''}${facts ? ` (${facts})` : ''}. ID ${p.id}. ${L.look}: ${L.addr}${L.orUa}.`;
     const text = L.tr(p.text).split('\n').map(l => l.trim()).filter(Boolean).map(esc).join('<br>');
     const ask = `${L.ask} ID ${p.id}, ${nm}${p.price ? `, ${money(p.price)} грн` : ''}`;
     const body = `<main class="product">
@@ -232,8 +255,8 @@ const TRL = ${RU.tr.toString().replace('WORDS[', 'RU_WORDS[')};
 `;
   const at = head.indexOf('/* ---------- іконки');
   head = head.slice(0, at) + boot + head.slice(at);
-  const TITLE = `Б/у техника из Европы в Киеве — стиральные машины, холодильники | ${RUL.shop}`;
-  const DESC = `Б/у и новая бытовая техника из Германии и Европы в Киеве: стиральные и сушильные машины, холодильники, посудомойки, плиты, духовые шкафы, кофемашины. Проверенная, с гарантией. ${RUL.addr}.`;
+  const TITLE = `Б/у бытовая техника из Европы — Киев${RUL.ua} | ${RUL.shop}`;
+  const DESC = `Б/у бытовая техника из Германии и Европы: стиральные и сушильные машины, холодильники, посудомойки, плиты, духовки, кофемашины, телевизоры, тренажеры. Проверенная, гарантия 3 месяца. ${RUL.addr} (${RUL.hint}), ежедневно 10:00–19:00.${TXT.DELIVERY ? ' Доставка по Украине.' : ''}`;
   head = head.replace('<html lang="uk">', '<html lang="ru">')
     .replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="../">')
     .replace('<a class="logolink" href="./" data-home', '<a class="logolink" href="ru/" data-home')  // з <base href="../"> «./» вело б на українську головну
