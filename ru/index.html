@@ -182,9 +182,6 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .kpon.no{border-color:var(--line);background:var(--soft)}.kpon.no .go{color:var(--concrete)}
 .cnote{padding:10px var(--gutter) 0;color:var(--concrete);font-size:13.5px}
 .kpon .go{flex:none;color:#b45309;font-weight:700;font-size:14px}
-.kpon.home{width:calc(100% - 2*var(--gutter));margin:12px var(--gutter) 0;padding:14px 16px}
-@media(max-width:479px){.kpon.home .go{display:none}}
-@media(min-width:960px){.kpon.home{padding:18px 24px;gap:20px}.kpon.home .kv{font-size:30px}.kpon.home .kt b{font-size:19px}.kpon.home .kt small{font-size:14.5px}}
 .crow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px var(--gutter) 0;font-size:15px;color:#16703c;font-weight:600}
 .ctotal s{font-size:15px;color:var(--concrete);font-weight:500;margin-right:6px}
 .kticket{margin:14px var(--gutter) 4px;padding:20px 16px;border:2px dashed #e0a100;border-radius:16px;background:#fff8e6;text-align:center}
@@ -390,6 +387,7 @@ mark{background:transparent;color:inherit;box-shadow:inset 0 -.42em #2f45c933;bo
 .bfs .up{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ff7a62;margin-bottom:3px}
 .bfs small{display:block;margin-top:3px;font-size:13.5px;color:#d3d6db}
 .bfs.red{background:linear-gradient(105deg,#c62d18,#e8612c)}.bfs.red .big,.bfs.red .up{color:#fff}.bfs.red small{color:#fff}
+.bfs.gold{background:linear-gradient(105deg,#f2a900,#ffd34d);color:#1d1d1d}.bfs.gold .big{color:#1d1d1d}.bfs.gold .up{color:#5c4300}.bfs.gold small{color:#3d3200}.bfs.gold .kcode{padding:0 6px;border-radius:6px;background:#1d1d1d;color:#ffd34d}
 .bfs.blue{background:linear-gradient(105deg,#1f2f8f,#2f45c9)}.bfs.blue .up{color:#ffd2c8}
 .bfs .pimg{flex:none;width:96px;height:96px;border-radius:12px;overflow:hidden;background:#fff;position:relative}
 .bfs .pimg .fr{display:block;width:100%;height:100%}
@@ -968,7 +966,7 @@ function homeA(list) {
   const shelf = (title, items, btn) => items.length ? `<section class="shelf"><div class="shead2"><h2>${title}</h2>${btn}</div><ul class="hrow">${items.slice(0, 10).map(p => `<li>${card(p, null, true)}</li>`).join('')}</ul></section>` : '';
   const sale = list.filter(p => p.oldPrice && p.price).sort((a, b) => pct(b) - pct(a));
   return promo() + `<ul class="tiles">${SALES ? tile('sale', 'Распродажа', SALES, 'sale', SALEICON) : ''}${cats.map(id => tile(id, CAT[id].short, CNT.get(id))).join('')}</ul>`
-    + buyCard() + codeHome()
+    + buyCard()
     + shelf('Самые большие скидки', sale, `<button type="button" data-cat="sale">Все ${SALES} →</button>`)
     + shelf('Новые поступления', list, `<button type="button" data-showall>Все →</button>`)
     + `<button type="button" class="btn primary allbtn" data-showall>Смотреть все ${goods(list.length)}</button>`;
@@ -1332,8 +1330,8 @@ document.addEventListener('click', e => { if (e.target.closest('[data-buy]')) bu
 $('#bsheet').addEventListener('click', e => { const a = e.target.closest('[data-track]'); if (a) track(a.dataset.track); });
 /* ---------- знижка за код із сайту ---------- */
 const kcode = () => `<span class="kcode">${esc(SHOP.code)}</span>`;
-// Картка на головній під «Викупом» і купон у товарі.
-const codeHome = () => SHOP.code ? `<button type="button" class="kpon home" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Скидка ${SHOP.codeOff} грн за код с сайта</b><small>Назовите код ${kcode()} в Telegram, Viber или в магазине. Кроме товаров с распродажи.</small></span><span class="go">Как получить →</span></button>` : '';
+// Слайд у банері на головній і купон у товарі.
+const codeSlide = () => SHOP.code ? `<button type="button" class="bfs gold" data-kopen><span class="big" aria-hidden="true">−${SHOP.codeOff}</span><span><span class="up">Код скидки с сайта</span><b>${kcode()} — ещё −${SHOP.codeOff} грн</b><small>Назовите код в Telegram, Viber или в магазине. Кроме распродажи.</small></span></button>` : '';
 const codeInProduct = p => !SHOP.code ? '' : onSale(p) ? `<button type="button" class="kpon no" data-kopen><span class="kt"><b>Скидка по коду ${kcode()} не действует на товары с распродажи</b><small>Цена этого товара уже снижена.</small></span><span class="go">›</span></button>` : `<button type="button" class="kpon" data-kopen><span class="kv">−${SHOP.codeOff}<small style="font-size:.55em"> грн</small></span><span class="kt"><b>Ваш код: ${kcode()}</b><small>Назовите его в чате или покажите этот экран в магазине</small></span><span class="go">›</span></button>`;
 // Кошик: рядок зі знижкою й сума з кодом (знижка на замовлення, але не на товари з розпродажу).
 function codeTotal(sum, live) {
@@ -1374,11 +1372,15 @@ function promo() {
     const cats = [...byCat].sort((a, b) => b[1].length - a[1].length).slice(0, 2), p = best[0];
     const slides = [`<button type="button" class="bfs" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><span class="up">Black Friday</span><b>${goods(sale.length)} со скидкой</b>${timer}</span></button>`,
         `<a class="bfs red" href="${esc(toURL(S, p.id))}" data-open="${esc(p.id)}"><span class="pimg">${pic(p)}<span class="dpct">−${pct(p)}%</span></span><span><span class="up">Самая большая скидка</span><b>${esc(nameOf(p))}</b><small><strong>${money(p.price)} ${SHOP.currency}</strong><s>${money(p.oldPrice)} ${SHOP.currency}</s></small></span></a>`,
-        ...cats.map(([c, xs], i) => `<button type="button" class="bfs${i ? '' : ' blue'}" data-cat="sale"><span class="big" aria-hidden="true">−${Math.max(...xs.map(pct))}%</span><span><span class="up">${esc(CAT[c].name)}</span><b>${goods(xs.length)} со скидкой</b><small>Только до ${until}</small></span></button>`)];
-    return `<section class="bfslides" aria-label="Black Friday"><div class="bftrack" data-slides>${slides.join('')}</div><div class="bfdots" aria-hidden="true">${slides.map((_, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</div></section>`;
+        codeSlide(),
+        ...cats.map(([c, xs], i) => `<button type="button" class="bfs${i ? '' : ' blue'}" data-cat="sale"><span class="big" aria-hidden="true">−${Math.max(...xs.map(pct))}%</span><span><span class="up">${esc(CAT[c].name)}</span><b>${goods(xs.length)} со скидкой</b><small>Только до ${until}</small></span></button>`)].filter(Boolean);
+    return slidesHTML(slides, 'Black Friday');
   }
+  // Після Black Friday: банер розпродажу + слайд із кодом (якщо код увімкнено).
+  if (SHOP.code) return slidesHTML([`<button type="button" class="bfs red" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><span class="up">Распродажа</span><b>${esc(SHOP.promo || 'Распродажа техники')}</b><small>${esc(SHOP.promoNote || `${goods(sale.length)} со скидкой до −${top}%. Количество ограничено`)}</small></span></button>`, codeSlide()], 'Акции');
   return `<button type="button" class="promo" data-cat="sale"><span class="big" aria-hidden="true">${esc(big)}</span><span><b>${esc(SHOP.promo || 'Распродажа техники')}</b><small>${esc(SHOP.promoNote || `${goods(sale.length)} со скидкой до −${top}%. Количество ограничено`)}</small></span><span class="go">Смотреть →</span></button>`;
 }
+const slidesHTML = (slides, label) => `<section class="bfslides" aria-label="${label}"><div class="bftrack" data-slides>${slides.join('')}</div><div class="bfdots" aria-hidden="true">${slides.map((_, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</div></section>`;
 // Скільки лишилось до кінця Black Friday (кінець дня за Києвом; у листопаді Київ — UTC+2).
 function leftHTML() {
   const ms = Math.max(0, new Date(SHOP.blackFridayUntil + 'T23:59:59+02:00') - Date.now()), s = Math.floor(ms / 1000);
