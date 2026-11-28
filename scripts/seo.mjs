@@ -101,6 +101,9 @@ const urlOf = (L, key) => SITE + rel(L, key);
 // Той самий скрипт вибору мови, що й у index.html (там він написаний вручну): беремо його звідти.
 const LANGJS = (html.match(/<script>\/\* Мова:[\s\S]*?<\/script>/) || [''])[0];
 if (!LANGJS) throw new Error('index.html: не знайшов скрипт вибору мови');
+// Тег Google Ads (конверсії Telegram/Viber) — той самий, що в index.html, щоб ID вписувати в одному місці.
+const ADSJS = (html.match(/<script>\/\* Google Ads:[\s\S]*?<\/script>/) || [''])[0];
+if (!ADSJS) throw new Error('index.html: не знайшов тег Google Ads');
 const langjs = (here, to) => LANGJS.replace(/var H='uk',P='[^']*'/, `var H='${here}',P='${to}'`);
 const alternates = key => LANGS.map(L => `<link rel="alternate" hreflang="${L.code}" href="${urlOf(L, key)}">`).join('\n') +
   `\n<link rel="alternate" hreflang="x-default" href="${urlOf(UK, key)}">`;
@@ -138,6 +141,7 @@ ${langjs(L.code, up + rel(other, key))}
 ${json.map(ld).join('\n')}
 <script>window.goatcounter = {path: () => '/'};</script>
 <script data-goatcounter="https://techika-catalog.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+${ADSJS}
 </head>
 <body>
 <div class="page">
